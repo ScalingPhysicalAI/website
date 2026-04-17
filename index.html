@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ATOMS — Autonomous Factory for Space</title>
+<title>STARFORGE — Autonomous Factory for Space</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-image: url("./mars.jpeg");
     pointer-events: none;
     z-index: 9999;
     opacity: 0.4;
@@ -441,7 +441,7 @@
     font-size: clamp(48px, 6vw, 88px);
     line-height: 0.95;
     letter-spacing: 0.02em;
-    color: rgba(232,226,214,0.08);
+    color: #ccc;
     user-select: none;
     position: relative;
   }
@@ -697,7 +697,7 @@
   }
 
   #vision-full::before {
-    content: 'ATOMS';
+    content: 'STARFORGE';
     font-family: 'Bebas Neue', sans-serif;
     font-size: 28vw;
     color: rgba(184,156,114,0.025);
@@ -895,11 +895,11 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">ATOMS</a>
+  <a href="#" class="nav-logo">STARFORGE</a>
   <ul class="nav-links">
     <li><a href="#mission">Vision</a></li>
     <li><a href="#milestone">Milestone</a></li>
-    <li><a href="#closing">Contact</a></li>
+    <li><a href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com">Join Us</a></li>
   </ul>
 </nav>
 
@@ -950,16 +950,15 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag">Autonomous Industrial Systems</div>
     <h1 class="hero-title">
       Building the<br>
       <span>Autonomous</span><br>
       Factory for Space
     </h1>
-    <p class="hero-sub">Robots, humanoids, and AI working together to construct the future of launch infrastructure. Our vision: a fully autonomous Starbase Factory.</p>
+    <p class="hero-sub">Robots, humanoids, and AI working together to construct the future of launch infrastructure. Our vision: A Fully Autonomous Starbase Factory.</p>
     <div class="hero-ctas">
-      <a href="#built" class="btn-primary">See What We're Building</a>
-      <a href="#closing" class="btn-ghost">Talk to Us</a>
+      <a href="https://github.com/ScalingPhysicalAI" class="btn-primary">See What We're Building</a>
+      <a href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com" class="btn-ghost">Join Us</a>
     </div>
   </div>
 
@@ -975,8 +974,9 @@
 <section id="built">
   <div class="built-left reveal">
     <span class="section-label">What We Have Built</span>
-    <h2 class="section-title">Robotics + AI,<br>working as <span>one system</span></h2>
-    <p class="section-body">We have assembled the foundation of an autonomous industrial workforce — robots and AI that think, move, and build in coordination. Not in isolation. Together.</p>
+    <!-- Logistics robot and humanoid robots all controlled under on common brain -->
+    <h2 class="section-title">All robots<br>controlled under <span>one common brain</span></h2>
+    <p class="section-body">We have assembled the foundation of an autonomous industrial workforce — robots and AI that think, move, and build in coordination. Together.</p>
   </div>
   <div class="built-right reveal" style="transition-delay:0.15s">
     <div class="built-item">
@@ -988,7 +988,7 @@
         </svg>
       </div>
       <div>
-        <div class="built-item-title">Road Logistics Robot</div>
+        <div class="built-item-title">Logistics Robot</div>
         <div class="built-item-desc">Purpose-built for autonomous transport and materials handling across industrial environments and launch facilities.</div>
       </div>
     </div>
@@ -1025,16 +1025,16 @@
   <div class="reveal">
     <span class="section-label">The Mission</span>
     <h2 class="section-title">A Fully <span>Autonomous</span><br>Starbase Factory</h2>
-    <p class="section-body">We are building toward a future where large rockets, launch pads, and space infrastructure are constructed, managed, and scaled entirely by robots and AI — no longer bottlenecked by human coordination, labor constraints, or slow construction cycles.</p>
+    <p class="section-body">We are building a future where large rockets, launch pads, and space infrastructure are constructed, managed, and scaled entirely by robots and AI and no longer bottlenecked by human coordination, labor constraints, or slow construction cycles.</p>
   </div>
   <div class="mission-grid">
     <div class="mission-stat reveal" style="transition-delay:0.1s">
       <div class="stat-num">$5–10B</div>
-      <div class="stat-label">Development Cost / Starship</div>
+      <div class="stat-label">Development Cost of Starship</div>
       <div class="stat-desc">Building the next generation of launch systems at current efficiency is harder, slower, and far more capital-intensive than it needs to be.</div>
     </div>
     <div class="mission-stat reveal" style="transition-delay:0.2s">
-      <div class="stat-num">10×</div>
+      <div class="stat-num">1000×</div>
       <div class="stat-label">Target Efficiency Gain</div>
       <div class="stat-desc">By automating construction, logistics, and coordination, we believe it is possible to dramatically reduce cost and time required to build large-scale launch systems.</div>
     </div>
@@ -1072,7 +1072,7 @@
       </div>
       <div class="why-point reveal" style="transition-delay:0.3s">
         <div class="why-point-title">The technology is ready — the factories are not</div>
-        <p>The convergence of capable humanoids, autonomous logistics, and coordinating AI has arrived. What hasn't arrived yet is the systems layer that ties them together for industrial-scale output.</p>
+        <p>The convergence of capable humanoids, autonomous logistics, and coordinating AI has arrived. Now we are putting these systems together for industrial scale output.</p>
       </div>
     </div>
   </div>
@@ -1143,12 +1143,12 @@
     <div>
       <span class="section-label reveal">Our First Milestone</span>
       <h2 class="section-title reveal">Demonstrate robots<br><span>building a rocket</span></h2>
-      <p class="section-body reveal" style="margin-bottom:40px;">Every large vision starts with a clear proof point. Our first milestone as a startup is to demonstrate robots building a small model rocket — the first step toward proving that coordinated robots and AI can handle real-world assembly tasks that scale to launch infrastructure and beyond.</p>
+      <p class="section-body reveal" style="margin-bottom:40px;">Every large vision starts with a clear proof point. Our first milestone as a startup is to demonstrate robots building a small functional rocket — the first step toward proving that coordinated robots and AI can handle real-world assembly tasks that scale to launch infrastructure and beyond.</p>
       <div class="milestone-steps reveal">
         <div class="milestone-step">
           <span class="step-num">→ 01</span>
           <div class="step-text">
-            <strong>Robot-built model rocket</strong>
+            <strong>Robot-built rocket</strong>
             Coordinated humanoid and logistics robot assemble a small-scale rocket from components. First proof of real-world assembly.
           </div>
         </div>
@@ -1208,8 +1208,8 @@
         And we're starting now.
       </p>
       <div class="closing-ctas">
-        <a href="mailto:hello@atoms.ai" class="btn-primary">Partner With Us</a>
-        <a href="#built" class="btn-ghost">Follow Our Progress</a>
+        <a href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com" class="btn-primary">Join Us</a>
+        <a href="https://github.com/ScalingPhysicalAI" class="btn-ghost">Follow Our Progress</a>
       </div>
     </div>
     <div class="reveal" style="transition-delay:0.2s">
@@ -1228,7 +1228,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">ATOMS</div>
+  <div class="footer-logo">STARFORGE</div>
   <div class="footer-copy">© 2026 Atoms. Physical automation to transform industry and move the world.</div>
 </footer>
 
