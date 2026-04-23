@@ -19,18 +19,41 @@
     --dim: #3a3530;
   }
 
-  html { scroll-behavior: smooth; font-size: 16px; }
+  html, body { height: 100%; font-size: 16px; }
 
   body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Syne', sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  .deck-viewport {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .deck-stage {
+  position: relative;
+  width: min(100vw, calc(100vh * (16 / 9)));
+  height: min(100vh, calc(100vw * (9 / 16)));
+  aspect-ratio: 16 / 9;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
 
   /* NAV */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: absolute; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 20px 48px;
     background: rgba(8,8,8,0.9);
@@ -58,18 +81,23 @@
 
   /* SLIDES */
   .slide {
-    min-height: 100vh;
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 120px 80px 80px;
-    position: relative;
-    border-bottom: 1px solid var(--border);
+    overflow: hidden;
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: opacity 0.55s ease, transform 0.55s ease;
   }
-  .slide.visible { opacity: 1; transform: translateY(0); }
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
 
   /* slide number */
   .slide-num {
@@ -130,11 +158,6 @@
     font-family: 'Space Mono', monospace;
     letter-spacing: 0.05em;
   }
-  .cover-line {
-    position: absolute; top: 0; left: 48px;
-    width: 1px; height: 100%;
-    background: linear-gradient(to bottom, transparent, var(--dim) 30%, var(--dim) 70%, transparent);
-  }
 
   /* ── SECTION LABEL ── */
   .section-label {
@@ -194,6 +217,13 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
+  #s2 .stat-val {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(30px, 3.8vw, 48px);
+    letter-spacing: 0;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
 
   /* ── LIST ITEMS ── */
   .item-list {
@@ -220,7 +250,6 @@
     flex-shrink: 0;
     letter-spacing: 0.1em;
   }
-  .list-content {}
   .list-title {
     font-size: 17px;
     font-weight: 700;
@@ -246,7 +275,6 @@
     nav { padding: 16px 24px; }
     .slide { padding: 100px 28px 60px; }
     .slide-num { right: 28px; }
-    .cover-line { display: none; }
   }
 
   /* ── TRACTION CARDS ── */
@@ -290,24 +318,24 @@
   /* ── TEAM ── */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 2px;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 12px;
     margin-top: 56px;
   }
   .team-card {
-    padding: 32px;
+    padding: 40px;
     background: var(--surface);
     border: 1px solid var(--border);
   }
   .team-name {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--text);
   }
   .team-role {
     margin-top: 4px;
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     color: var(--accent2);
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -315,9 +343,9 @@
   .team-bio {
     margin-top: 14px;
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     color: var(--muted);
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   /* ── MARKET TIMELINE ── */
@@ -376,11 +404,18 @@
     display: flex; gap: 48px;
     margin-top: 48px;
   }
-  .ask-detail-item {}
+  .ask-detail-item {
+    min-width: 180px;
+  }
   .ask-detail-val {
-    font-size: 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
     font-weight: 700;
     color: var(--text);
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
   .ask-detail-label {
     margin-top: 4px;
@@ -406,6 +441,8 @@
 </head>
 <body>
 
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
 <nav>
   <div class="nav-logo">StarForge Robotics</div>
   <div class="nav-slides" id="navDots"></div>
@@ -415,7 +452,6 @@
 <section class="slide" id="s1" data-slide="1">
   <div class="cover-bg"></div>
   <div class="cover-grid"></div>
-  <div class="cover-line"></div>
   <div class="slide-num">01 / 09</div>
   <div class="cover-tag">Physical AI for Space Infrastructure</div>
   <h1 class="cover-title">
@@ -658,33 +694,77 @@
   <div class="hr" style="margin-top:48px;"></div>
   <p class="body-text">starforgerobotics.com &nbsp;·&nbsp; vipul@starforgerobotics.com</p>
 </section>
+</main>
+</div>
 
 <script>
-  const slides = document.querySelectorAll('.slide');
+  const deckStage = document.getElementById('deckStage');
+  const slides = Array.from(document.querySelectorAll('.slide'));
   const dotsContainer = document.getElementById('navDots');
+  let currentSlide = 0;
 
-  // Build nav dots
+  function renderSlides() {
+    slides.forEach((slide, i) => {
+      const offset = i - currentSlide;
+      slide.classList.toggle('active', offset === 0);
+      slide.style.transform = `translateX(${offset * 100}%)`;
+      slide.style.opacity = offset === 0 ? '1' : '0';
+    });
+
+    document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  function goToSlide(index) {
+    currentSlide = (index + slides.length) % slides.length;
+    renderSlides();
+  }
+
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentSlide - 1);
+  }
+
+  function handleKeyboardNavigation(event) {
+    // Ignore key handling while typing in editable fields.
+    const target = event.target;
+    if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
+      return;
+    }
+
+    if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+      event.preventDefault();
+      nextSlide();
+    } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+      event.preventDefault();
+      prevSlide();
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      goToSlide(0);
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      goToSlide(slides.length - 1);
+    }
+  }
+
   slides.forEach((_, i) => {
     const dot = document.createElement('div');
-    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
-    dot.addEventListener('click', () => slides[i].scrollIntoView({ behavior: 'smooth' }));
+    dot.className = 'nav-dot';
+    dot.addEventListener('click', (event) => {
+      event.stopPropagation();
+      goToSlide(i);
+    });
     dotsContainer.appendChild(dot);
   });
 
-  // Intersection observer for reveal + active dot
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        const idx = [...slides].indexOf(entry.target);
-        document.querySelectorAll('.nav-dot').forEach((d, i) => {
-          d.classList.toggle('active', i === idx);
-        });
-      }
-    });
-  }, { threshold: 0.2 });
+  deckStage.addEventListener('click', nextSlide);
+  document.addEventListener('keydown', handleKeyboardNavigation);
 
-  slides.forEach(s => observer.observe(s));
+  goToSlide(0);
 </script>
 </body>
 </html>
