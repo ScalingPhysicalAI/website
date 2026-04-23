@@ -98,6 +98,25 @@
     transform: translateX(0);
     pointer-events: auto;
   }
+  .slide.active .anim-in {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: riseIn 0.65s ease forwards;
+  }
+  .slide.active .anim-stagger-1 { animation-delay: 0.08s; }
+  .slide.active .anim-stagger-2 { animation-delay: 0.16s; }
+  .slide.active .anim-stagger-3 { animation-delay: 0.24s; }
+
+  @keyframes riseIn {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   /* slide number */
   .slide-num {
@@ -453,22 +472,22 @@
   <div class="cover-bg"></div>
   <div class="cover-grid"></div>
   <div class="slide-num">01 / 09</div>
-  <div class="cover-tag">Physical AI for Space Infrastructure</div>
+  <div class="cover-tag anim-in anim-stagger-1">Physical AI for Space Infrastructure</div>
   <h1 class="cover-title">
     Building<br>Autonomous
     <em>Factories</em>
     for Space
   </h1>
-  <p class="cover-sub">STARFORGE ROBOTICS &nbsp;·&nbsp; SEED ROUND 2026</p>
+  <p class="cover-sub anim-in anim-stagger-3">STARFORGE ROBOTICS &nbsp;·&nbsp; SEED ROUND 2026</p>
 </section>
 
 <!-- SLIDE 2 — MARKET OPPORTUNITY -->
 <section class="slide" id="s2" data-slide="2">
   <div class="slide-num">02 / 09</div>
   <div class="section-label">The Inflection Point</div>
-  <h2 class="headline">SpaceTech is on the cusp of <span class="hl">escape velocity</span></h2>
-  <p class="body-text">Launch cost per kg has dropped 16× since the Space Shuttle. One threshold changes everything.</p>
-  <div class="stat-grid">
+  <h2 class="headline anim-in anim-stagger-1">SpaceTech is on the cusp of <span class="hl">escape velocity</span></h2>
+  <p class="body-text anim-in anim-stagger-2">Launch cost per kg has dropped 16× since the Space Shuttle. One threshold changes everything.</p>
+  <div class="stat-grid anim-in anim-stagger-3">
     <div class="stat-cell">
       <div class="stat-val">$54,500</div>
       <div class="stat-label">Space Shuttle / kg</div>
@@ -486,15 +505,15 @@
       <div class="stat-label">Orbital datacenter breakeven</div>
     </div>
   </div>
-  <p class="body-text" style="margin-top:28px;">Once launch cost falls below $1,000/kg, orbital datacenters generate near-free money — converting solar energy into inference tokens.</p>
+  <p class="body-text anim-in anim-stagger-3" style="margin-top:28px;">Once launch cost falls below $1,000/kg, orbital datacenters generate near-free money — converting solar energy into inference tokens.</p>
 </section>
 
 <!-- SLIDE 3 — PROBLEM -->
 <section class="slide" id="s3" data-slide="3">
   <div class="slide-num">03 / 09</div>
   <div class="section-label">The Problem</div>
-  <h2 class="headline">Space needs bigger rockets.<br><span class="hl">Too many companies only scale cash burn.</span></h2>
-  <div class="item-list">
+  <h2 class="headline anim-in anim-stagger-1">Space needs bigger rockets.<br><span class="hl">Too many companies only scale cash burn.</span></h2>
+  <div class="item-list anim-in anim-stagger-2">
     <div class="list-item">
       <span class="list-idx">01</span>
       <div class="list-content">
@@ -530,10 +549,10 @@
 <section class="slide" id="s4" data-slide="4">
   <div class="slide-num">04 / 09</div>
   <div class="section-label">The Solution</div>
-  <h2 class="headline">AI must be trained — human <span class="hl">system-level knowledge doesn't scale.</span></h2>
-  <div class="hr"></div>
-  <p class="body-text">Reusable rockets are a solved problem. The challenge is now scaling them. Fully trained Physical AI can compress Falcon 9–class infrastructure into 1 year for under $100M.</p>
-  <div class="stat-grid" style="margin-top:48px;">
+  <h2 class="headline anim-in anim-stagger-1">AI must be trained — human <span class="hl">system-level knowledge doesn't scale.</span></h2>
+  <div class="hr anim-in anim-stagger-2"></div>
+  <p class="body-text anim-in anim-stagger-2">Reusable rockets are a solved problem. The challenge is now scaling them. Fully trained Physical AI can compress Falcon 9–class infrastructure into 1 year for under $100M.</p>
+  <div class="stat-grid anim-in anim-stagger-3" style="margin-top:48px;">
     <div class="stat-cell">
       <div class="stat-val">6 yrs</div>
       <div class="stat-label">Falcon 1 → Orbit · $90M</div>
@@ -557,8 +576,8 @@
 <section class="slide" id="s5" data-slide="5">
   <div class="slide-num">05 / 09</div>
   <div class="section-label">Our Product</div>
-  <h2 class="headline">The Physical AI backbone for the <span class="hl">SpaceTech industry</span></h2>
-  <div class="item-list" style="margin-top:48px;">
+  <h2 class="headline anim-in anim-stagger-1">The Physical AI backbone for the <span class="hl">SpaceTech industry</span></h2>
+  <div class="item-list anim-in anim-stagger-2" style="margin-top:48px;">
     <div class="list-item">
       <span class="list-idx">▸</span>
       <div class="list-content">
@@ -587,8 +606,8 @@
 <section class="slide" id="s6" data-slide="6">
   <div class="slide-num">06 / 09</div>
   <div class="section-label">Traction</div>
-  <h2 class="headline">Proof of <span class="hl">momentum</span></h2>
-  <div class="traction-grid">
+  <h2 class="headline anim-in anim-stagger-1">Proof of <span class="hl">momentum</span></h2>
+  <div class="traction-grid anim-in anim-stagger-2">
     <div class="traction-card">
       <div class="traction-icon">📋</div>
       <div class="traction-title">Letters of Intent</div>
@@ -611,8 +630,8 @@
 <section class="slide" id="s7" data-slide="7">
   <div class="slide-num">07 / 09</div>
   <div class="section-label">Founding Team</div>
-  <h2 class="headline">Built by <span class="hl">operators</span>, not theorists</h2>
-  <div class="team-grid">
+  <h2 class="headline anim-in anim-stagger-1">Built by <span class="hl">operators</span>, not theorists</h2>
+  <div class="team-grid anim-in anim-stagger-2">
     <div class="team-card">
       <div class="team-name">Vipul Saini</div>
       <div class="team-role">CEO · Chief Engineer</div>
@@ -645,8 +664,8 @@
 <section class="slide" id="s8" data-slide="8">
   <div class="slide-num">08 / 09</div>
   <div class="section-label">Market Size</div>
-  <h2 class="headline">A trillion-dollar SpaceX is the baseline.<br><span class="hl">This market is 100× bigger.</span></h2>
-  <div class="timeline">
+  <h2 class="headline anim-in anim-stagger-1">A trillion-dollar SpaceX is the baseline.<br><span class="hl">This market is 100× bigger.</span></h2>
+  <div class="timeline anim-in anim-stagger-2">
     <div class="timeline-row">
       <div class="timeline-period">2 YRS<br>NEAR TERM</div>
       <div>
@@ -675,9 +694,9 @@
 <section class="slide" id="s9" data-slide="9">
   <div class="slide-num">09 / 09</div>
   <div class="section-label">The Ask</div>
-  <h2 class="headline">Building toward fully autonomous <span class="hl">Starbase factories</span><br>on Earth, the Moon, and Mars.</h2>
-  <div class="ask-amount">$100M</div>
-  <div class="ask-details">
+  <h2 class="headline anim-in anim-stagger-1">Building toward fully autonomous <span class="hl">Starbase factories</span><br>on Earth, the Moon, and Mars.</h2>
+  <div class="ask-amount anim-in anim-stagger-2">$100M</div>
+  <div class="ask-details anim-in anim-stagger-3">
     <div class="ask-detail-item">
       <div class="ask-detail-val">Seed Round</div>
       <div class="ask-detail-label">Stage</div>
@@ -692,7 +711,7 @@
     </div>
   </div>
   <div class="hr" style="margin-top:48px;"></div>
-  <p class="body-text">starforgerobotics.com &nbsp;·&nbsp; vipul@starforgerobotics.com</p>
+  <p class="body-text anim-in anim-stagger-3">starforgerobotics.com &nbsp;·&nbsp; vipul@starforgerobotics.com</p>
 </section>
 </main>
 </div>
@@ -709,6 +728,16 @@
       slide.classList.toggle('active', offset === 0);
       slide.style.transform = `translateX(${offset * 100}%)`;
       slide.style.opacity = offset === 0 ? '1' : '0';
+
+      if (offset === 0) {
+        const animTargets = slide.querySelectorAll('.anim-in');
+        animTargets.forEach((node) => {
+          node.style.animation = 'none';
+          // Force reflow so animation restarts when revisiting slide.
+          void node.offsetWidth;
+          node.style.animation = '';
+        });
+      }
     });
 
     document.querySelectorAll('.nav-dot').forEach((dot, i) => {
