@@ -18,6 +18,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      PUBLIC_SHOPIFY_STORE_DOMAIN: ${{ secrets.PUBLIC_SHOPIFY_STORE_DOMAIN }}
+      PUBLIC_SHOPIFY_STOREFRONT_ACCESS: ${{ secrets.PUBLIC_SHOPIFY_STOREFRONT_ACCESS }}
+      PUBLIC_SHOPIFY_API_VERSION: ${{ secrets.PUBLIC_SHOPIFY_API_VERSION }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
