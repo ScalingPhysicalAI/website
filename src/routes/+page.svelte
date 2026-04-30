@@ -144,49 +144,6 @@
 
 <div class="hr-line"></div>
 
-<section id="solved">
-	<div class="solved-header reveal">
-		<span class="section-label">What We Have Solved</span>
-		<h2 class="section-title">The Robotics<br /><span>Data Flywheel</span></h2>
-		<p class="section-body">
-			We cracked the core challenge of physical AI: getting robots to generate the training data
-			that makes the AI smarter — at scale, in the real world, automatically.
-		</p>
-	</div>
-	<div class="solved-grid">
-		<div class="solved-card reveal" style="transition-delay:0.1s">
-			<div class="solved-card-num">01</div>
-			<div class="solved-card-title">Robots as Developer Platforms</div>
-			<p class="solved-card-body">
-				Thousands of developers and startups worldwide use our robots as development platforms,
-				deploying them across real-world environments and use cases.
-			</p>
-		</div>
-		<div class="solved-card reveal" style="transition-delay:0.2s">
-			<div class="solved-card-num">02</div>
-			<div class="solved-card-title">Train the Model, Earn Points</div>
-			<p class="solved-card-body">
-				Every deployment generates valuable training data. Developers earn points each time the
-				model is used in a real-world task, generating incentives from the
-				end customers.
-			</p>
-		</div>
-		<div class="solved-card reveal" style="transition-delay:0.3s">
-			<div class="solved-card-num">03</div>
-			<div class="solved-card-title">AI That Never Stops Learning</div>
-			<p class="solved-card-body">
-				Our AI backbone improves continuously through data collected by our robot infrastructure
-				operating on rocket systems compounding every day.
-			</p>
-		</div>
-	</div>
-	<div class="solved-cta reveal" style="transition-delay:0.4s">
-		<a href="/robo-dev-kit" class="btn-primary">Buy Robot Kit</a>
-	</div>
-</section>
-
-<div class="hr-line"></div>
-
 <section id="mission">
 	<div class="reveal">
 		<span class="section-label">The Mission</span>
@@ -337,6 +294,49 @@ SpaceX's launch service business generated a total revenue of $4.1 billion in 20
 				<strong>2029</strong>.
 			</p>
 		</div>
+	</div>
+</section>
+
+<div class="hr-line"></div>
+
+<section id="solved">
+	<div class="solved-header reveal">
+		<span class="section-label">What We Have Solved</span>
+		<h2 class="section-title">The Robotics<br /><span>Data Flywheel</span></h2>
+		<p class="section-body">
+			We cracked the core challenge of physical AI: getting robots to generate the training data
+			that makes the AI smarter — at scale, in the real world, automatically.
+		</p>
+	</div>
+	<div class="solved-grid">
+		<div class="solved-card reveal" style="transition-delay:0.1s">
+			<div class="solved-card-num">01</div>
+			<div class="solved-card-title">Robots as Developer Platforms</div>
+			<p class="solved-card-body">
+				Thousands of developers and startups worldwide use our robots as development platforms,
+				deploying them across real-world environments and use cases.
+			</p>
+		</div>
+		<div class="solved-card reveal" style="transition-delay:0.2s">
+			<div class="solved-card-num">02</div>
+			<div class="solved-card-title">Train the Model, Earn Points</div>
+			<p class="solved-card-body">
+				Every deployment generates valuable training data. Developers earn points each time the
+				model is used in a real-world task, generating incentives from the
+				end customers.
+			</p>
+		</div>
+		<div class="solved-card reveal" style="transition-delay:0.3s">
+			<div class="solved-card-num">03</div>
+			<div class="solved-card-title">AI That Never Stops Learning</div>
+			<p class="solved-card-body">
+				Our AI backbone improves continuously through data collected by our robot infrastructure
+				operating on rocket systems compounding every day.
+			</p>
+		</div>
+	</div>
+	<div class="solved-cta reveal" style="transition-delay:0.4s">
+		<a href="/robo-dev-kit" class="btn-primary">Buy Robot Kit</a>
 	</div>
 </section>
 
