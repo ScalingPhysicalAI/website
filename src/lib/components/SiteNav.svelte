@@ -8,7 +8,6 @@
 
 	const isHome = $derived(pathname === '/');
 	const isVision = $derived(pathname === '/vision');
-	const isRoboDevKit = $derived(pathname === '/robo-dev-kit');
 
 	function activeForAnchor(id: Exclude<Section, ''>) {
 		if (!isHome) return false;
@@ -33,14 +32,7 @@
 			>
 		</li>
 		<li>
-			<a
-				href={resolve('/robo-dev-kit')}
-				class:active={isRoboDevKit}
-				aria-current={isRoboDevKit ? 'page' : undefined}>Dev Kit</a
-			>
-		</li>
-		<li>
-			<a href={resolve('/#milestone')} class:active={activeForAnchor('milestone')}>Milestone</a>
+			<a href={resolve('/#milestone')} class:active={activeForAnchor('milestone')}>Milestones</a>
 		</li>
 		<li>
 			<JoinUsLink />

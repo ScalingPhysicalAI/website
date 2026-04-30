@@ -63,8 +63,7 @@
 			Factory for Space
 		</h1>
 		<p class="hero-sub">
-			Robots, humanoids, and AI working together to construct the future of launch infrastructure.
-			Our vision: A Fully Autonomous Starbase Factory.
+			Robots, and AI working together to construct the future of launch infrastructure.
 		</p>
 		<div class="hero-ctas">
 			<a href="https://github.com/ScalingPhysicalAI" class="btn-primary">See What We're Building</a>
@@ -93,28 +92,6 @@
 		<div class="built-item">
 			<div class="built-icon">
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-					<rect x="2" y="14" width="4" height="8" rx="1" /><rect
-						x="10"
-						y="10"
-						width="4"
-						height="12"
-						rx="1"
-					/>
-					<rect x="18" y="6" width="4" height="16" rx="1" />
-					<path d="M4 14V8a2 2 0 012-2h4M12 10V6a2 2 0 012-2h4" />
-				</svg>
-			</div>
-			<div>
-				<div class="built-item-title">Logistics Robot</div>
-				<div class="built-item-desc">
-					Purpose-built for autonomous transport and materials handling across industrial
-					environments and launch facilities.
-				</div>
-			</div>
-		</div>
-		<div class="built-item">
-			<div class="built-icon">
-				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
 					<circle cx="12" cy="6" r="3" /><path d="M12 9v6M8 21v-3a4 4 0 018 0v3" />
 					<path d="M5 12l3 3M19 12l-3 3" />
 				</svg>
@@ -130,13 +107,34 @@
 		<div class="built-item">
 			<div class="built-icon">
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+					<rect x="2" y="14" width="4" height="8" rx="1" /><rect
+						x="10"
+						y="10"
+						width="4"
+						height="12"
+						rx="1"
+					/>
+					<rect x="18" y="6" width="4" height="16" rx="1" />
+					<path d="M4 14V8a2 2 0 012-2h4M12 10V6a2 2 0 012-2h4" />
+				</svg>
+			</div>
+			<div>
+				<div class="built-item-title">Logistics Infra</div>
+				<div class="built-item-desc">
+					Robots operating heavy machines for transportation and materials handing across industrial environments and launch facilities.
+				</div>
+			</div>
+		</div>
+		<div class="built-item">
+			<div class="built-icon">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
 					<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
 				</svg>
 			</div>
 			<div>
 				<div class="built-item-title">AI Coordination System</div>
 				<div class="built-item-desc">
-					An AI that orchestrates both robots in real-time — unified perception, planning, and
+					An AI that orchestrates robots in real-time — unified perception, planning, and
 					execution across the entire autonomous workforce.
 				</div>
 			</div>
@@ -149,11 +147,11 @@
 <section id="mission">
 	<div class="reveal">
 		<span class="section-label">The Mission</span>
-		<h2 class="section-title">A Fully <span>Autonomous</span><br />Starbase Factory</h2>
+		<h2 class="section-title">A Fully <span>Autonomous</span><br />"Starbase" Factory</h2>
 		<p class="section-body">
 			We are building a future where large rockets, launch pads, and space infrastructure are
 			constructed, managed, and scaled entirely by robots and AI and no longer bottlenecked by human
-			coordination, labor constraints, or slow construction cycles.
+			errors, labor constraints, and slow construction cycles.
 		</p>
 	</div>
 	<div class="mission-grid">
@@ -306,12 +304,10 @@
 	<div class="milestone-layout">
 		<div>
 			<span class="section-label reveal">Our First Milestone</span>
-			<h2 class="section-title reveal">Demonstrate robots<br /><span>building a rocket</span></h2>
+			<h2 class="section-title reveal">Demonstrate physical AI backbone<br /><span>building a rocket</span></h2>
 			<p class="section-body reveal" style="margin-bottom:40px;">
-				Every large vision starts with a clear proof point. Our first milestone as a startup is to
-				demonstrate robots building a small functional rocket — the first step toward proving that
-				coordinated robots and AI can handle real-world assembly tasks that scale to launch
-				infrastructure and beyond.
+				Every large vision starts with a clear proof point. Our first milestone is to
+				demonstrate that our physical ai backbone design, simulates and coordinates with robots to build a functional rocket system.
 			</p>
 			<div class="milestone-steps reveal">
 				<div class="milestone-step">

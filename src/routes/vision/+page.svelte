@@ -41,13 +41,8 @@
 				that.
 			</p>
 
-			<div class="vision-image-block reveal" style="transition-delay:0.15s">
-				<img src="/assets/image4.png" alt="Launch capacity vs. demand" />
-				<div class="vision-image-caption">Launch capacity vs. demand — the growing gap</div>
-			</div>
-
 			<!-- Row: text left, image right -->
-			<div class="vision-split reveal" style="transition-delay:0.2s">
+			<div class="vision-split vision-split-launch reveal" style="transition-delay:0.15s">
 				<div class="vision-split-text">
 					<p class="vision-pull">The <span>2027 Mars window</span> is at risk.</p>
 					<p>
@@ -59,15 +54,13 @@
 					<p>One thing is clear: this has to change.</p>
 				</div>
 				<div class="vision-image-block" style="margin:0;">
-					<img src="/assets/image3.png" alt="Starbase infrastructure" />
-					<div class="vision-image-caption">
-						Starbase — foundational decisions shaping the entire timeline
-					</div>
+					<img src="/assets/image4.png" alt="Launch capacity vs. demand" />
+					<div class="vision-image-caption">Launch capacity vs. demand — the growing gap</div>
 				</div>
 			</div>
 
 			<!-- Row: image left, text right -->
-			<div class="vision-split reverse reveal" style="transition-delay:0.25s">
+			<div class="vision-split reverse vision-split-manufacturing reveal" style="transition-delay:0.25s">
 				<div class="vision-split-text">
 					<p class="vision-pull">Rockets have <span>no manufacturing playbook.</span></p>
 					<p>
@@ -83,27 +76,37 @@
 					</p>
 				</div>
 				<div class="vision-image-block" style="margin:0;">
+					<img src="/assets/image3.png" alt="Starbase infrastructure" />
+					<div class="vision-image-caption">
+						Starbase — foundational decisions shaping the entire timeline
+					</div>
+				</div>
+			</div>
+
+			<div class="vision-split vision-split-future reveal" style="transition-delay:0.3s">
+				<div class="vision-split-text">
+					<p>
+						This challenge will become even more critical in the future. The industry will need not just
+						launch vehicles, but far more complex space systems. Starship alone is not enough for
+						long-duration human space travel. We will need vehicles like space cyclers — capable of
+						generating artificial gravity — spacecraft too large to launch from Earth, that must be
+						assembled in orbit, much like the ISS.
+					</p>
+
+					<p>
+						The industry needs a fundamental shift. We must rethink not just how rockets are built, but
+						how the entire launch infrastructure is designed and constructed. The answer is physical AI
+						— systems not just good at reasoning, but at building real-world infrastructure. Humanoid
+						robots, logistics robots, and AI will be the bootstrapping layer for that future.
+					</p>
+				</div>
+				<div class="vision-image-block" style="margin:0;">
 					<img src="/assets/image1.png" alt="Humanoid robots in factory" />
 					<div class="vision-image-caption">
 						Humanoid robots — the physical layer of autonomous construction
 					</div>
 				</div>
 			</div>
-
-			<p class="reveal" style="transition-delay:0.3s">
-				This challenge will become even more critical in the future. The industry will need not just
-				launch vehicles, but far more complex space systems. Starship alone is not enough for
-				long-duration human space travel. We will need vehicles like space cyclers — capable of
-				generating artificial gravity — spacecraft too large to launch from Earth, that must be
-				assembled in orbit, much like the ISS.
-			</p>
-
-			<p class="reveal" style="transition-delay:0.35s">
-				The industry needs a fundamental shift. We must rethink not just how rockets are built, but
-				how the entire launch infrastructure is designed and constructed. The answer is physical AI
-				— systems not just good at reasoning, but at building real-world infrastructure. Humanoid
-				robots, logistics robots, and AI will be the bootstrapping layer for that future.
-			</p>
 
 			<div class="vision-two-col">
 				<div class="vision-image-block reveal" style="transition-delay:0.4s; margin:0;">

@@ -3,28 +3,16 @@
 	import JoinUsLink from '$lib/components/JoinUsLink.svelte';
 	import { setupRevealObserver } from '$lib/utils/reveal';
 
-	let { data } = $props();
-
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.12 });
 	});
-
-	function money(amount: string, currencyCode: string) {
-		const n = Number(amount);
-		if (!Number.isFinite(n)) return `${amount} ${currencyCode}`;
-		return new Intl.NumberFormat(undefined, { style: 'currency', currency: currencyCode }).format(n);
-	}
-
-	const product = $derived(data.product);
-	const firstVariant = $derived(product?.variants?.nodes?.[0]);
 </script>
 
 <svelte:head>
-	<title>{product?.seo?.title ?? product?.title ?? 'Robo Dev Kit'} — Build, test, iterate</title>
+	<title>Robo Dev Kit — Build, test, iterate</title>
 	<meta
 		name="description"
-		content={product?.seo?.description ??
-			'A robotics developer kit designed for fast iteration: modular hardware, real-time control, telemetry, and safety-first defaults.'}
+		content="A robotics developer kit designed for fast iteration: modular hardware, real-time control, telemetry, and safety-first defaults."
 	/>
 </svelte:head>
 
@@ -44,25 +32,14 @@
 			<a class="btn-primary" href="#buy">Get the kit</a>
 			<JoinUsLink className="btn-ghost" />
 		</div>
-		{#if product}
-			<div class="rdk-storeline reveal" style="transition-delay:0.1s">
-				<div class="rdk-storeline-title">{product.title}</div>
-				<div class="rdk-storeline-meta">
-					<span>
-						From
-						<strong>
-							{money(product.priceRange.minVariantPrice.amount, product.priceRange.minVariantPrice.currencyCode)}
-						</strong>
-					</span>
-					{#if firstVariant}
-						<span class="rdk-dot">◆</span>
-						<span class:rdk-out={!firstVariant.availableForSale}>
-							{firstVariant.availableForSale ? 'In stock' : 'Out of stock'}
-						</span>
-					{/if}
-				</div>
+		<div class="rdk-storeline reveal" style="transition-delay:0.1s">
+			<div class="rdk-storeline-title">Robo Dev Kit</div>
+			<div class="rdk-storeline-meta">
+				<span>Built for fast robotics iteration</span>
+				<span class="rdk-dot">◆</span>
+				<span>Request pricing</span>
 			</div>
-		{/if}
+		</div>
 		<div class="rdk-proof">
 			<div class="rdk-proof-item">
 				<div class="rdk-proof-k">Fast bring-up</div>
@@ -219,30 +196,13 @@
 			<div class="rdk-tier-badge">Recommended</div>
 			<div class="rdk-tier-name">Team</div>
 			<div class="rdk-tier-desc">For labs shipping weekly experiments and hardware iterations.</div>
-			<div class="rdk-tier-price">
-				{#if product}
-					From
-					{money(product.priceRange.minVariantPrice.amount, product.priceRange.minVariantPrice.currencyCode)}
-				{:else}
-					Live pricing (Storefront API)
-				{/if}
-			</div>
+			<div class="rdk-tier-price">Request pricing</div>
 			<ul class="rdk-tier-list">
 				<li>Everything in Starter</li>
 				<li>Spare modules for swap + repair</li>
 				<li>Bring-up checklist + test plan</li>
 			</ul>
-			{#if firstVariant}
-				<form method="POST" action="?/addToCart" class="rdk-tier-cta">
-					<input type="hidden" name="variantId" value={firstVariant.id} />
-					<input type="hidden" name="quantity" value="1" />
-					<button class="btn-primary" type="submit" disabled={!firstVariant.availableForSale}>
-						{firstVariant.availableForSale ? 'Checkout' : 'Sold out'}
-					</button>
-				</form>
-			{:else}
-				<a class="btn-primary rdk-tier-cta" href="#closing">Get a quote</a>
-			{/if}
+			<a class="btn-primary rdk-tier-cta" href="#closing">Get a quote</a>
 		</article>
 
 		<article class="rdk-tier reveal" style="transition-delay:0.16s">
@@ -303,9 +263,10 @@
 			</p>
 			<div class="hero-ctas" style="margin-top:28px;">
 				<JoinUsLink className="btn-primary" />
-				<a class="btn-ghost" href="mailto:sales@yourdomain.com">Email sales</a>
+				<a class="btn-ghost" href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com">
+					Email sales
+				</a>
 			</div>
-			<div class="rdk-note" style="margin-top:14px;">Replace “Email sales” with your preferred contact link.</div>
 		</div>
 
 		<div class="rdk-closing-card reveal" style="transition-delay:0.12s">
