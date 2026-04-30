@@ -42,7 +42,6 @@ export async function shopifyStorefrontFetch<TData>({
 	variables?: Record<string, unknown>;
 }): Promise<TData> {
 	const endpoint = `https://${storeDomain}/api/${apiVersion}/graphql.json`;
-	console.log(query)
 
 	const res = await fetch(endpoint, {
 		method: 'POST',

@@ -1,4 +1,4 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 import { shopifyStorefrontFetch } from '$lib/shopify/storefront';
 import {
 	PUBLIC_SHOPIFY_STORE_DOMAIN,
@@ -44,7 +44,7 @@ type ProductQueryData = {
 	};
 };
 
-export const load: PageServerLoad = async () => {
+export const load: PageLoad = async () => {
 	const data = await shopifyStorefrontFetch<ProductQueryData>({
 		storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN,
 		accessToken: PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN,
