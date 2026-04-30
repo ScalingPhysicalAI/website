@@ -17,8 +17,7 @@
 	<div class="vision-page-hero-content">
 		<span class="hero-tag">Starforge — Vision</span>
 		<h1 class="hero-title">
-			From one robot-build<br />
-			rocket to<br />
+			Robots to <br/> build a fully
 			<span>autonomous space infrastructure</span>
 		</h1>
 	</div>
@@ -100,21 +99,9 @@
 						robots, logistics robots, and AI will be the bootstrapping layer for that future.
 					</p>
 				</div>
-				<div class="vision-image-block" style="margin:0;">
-					<img src="/assets/image1.png" alt="Humanoid robots in factory" />
-					<div class="vision-image-caption">
-						Humanoid robots — the physical layer of autonomous construction
-					</div>
-				</div>
 			</div>
 
 			<div class="vision-two-col">
-				<div class="vision-image-block reveal" style="transition-delay:0.4s; margin:0;">
-					<img src="/assets/image2.png" alt="Autonomous logistics systems" />
-					<div class="vision-image-caption">
-						Autonomous logistics — coordinated systems at scale
-					</div>
-				</div>
 				<div
 					class="vision-image-block reveal"
 					style="transition-delay:0.45s; margin:0; display:flex; flex-direction:column; justify-content:center; background:rgba(255,255,255,0.01); padding:40px;"
@@ -133,6 +120,12 @@
 						Our first milestone: build, entirely with robots, all the infrastructure required to
 						launch a small rocket.
 					</p>
+				</div>
+				<div class="vision-image-block reveal" style="transition-delay:0.45s; margin:0;">
+					<img src="/assets/image1.png" alt="Humanoid robots in factory" />
+					<div class="vision-image-caption">
+						Humanoid robots — the physical layer of autonomous construction
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,35 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import JoinUsLink from '$lib/components/JoinUsLink.svelte';
 	import { setupRevealObserver } from '$lib/utils/reveal';
+
+	let { data } = $props();
+
+	const product = data.product;
+	const images = product.images.nodes.length > 0
+		? product.images.nodes
+		: product.featuredImage
+		? [product.featuredImage]
+		: [];
+
+	const price = new Intl.NumberFormat('en-US', {
+		style: 'currency',
+		currency: product.priceRange.minVariantPrice.currencyCode
+	}).format(Number(product.priceRange.minVariantPrice.amount));
+
+	const variant = product.variants.nodes[0];
+	const available = variant?.availableForSale ?? true;
+
+	let selectedImage = $state(0);
+	let quantity = $state(1);
+
+	function increment() { quantity = Math.min(quantity + 1, 99); }
+	function decrement() { quantity = Math.max(quantity - 1, 1); }
+
+	const cartUrl = $derived(
+		data.variantId
+			? `https://${data.storeDomain}/cart/${data.variantId}:${quantity}`
+			: null
+	);
 
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.12 });
@@ -9,75 +37,119 @@
 </script>
 
 <svelte:head>
-	<title>Robo Dev Kit — Build, test, iterate</title>
+	<title>Humanoid Robot Dev Kit — ScalingPhysicalAI</title>
 	<meta
 		name="description"
-		content="A robotics developer kit designed for fast iteration: modular hardware, real-time control, telemetry, and safety-first defaults."
+		content="Dextrous wearable hand for robot training data collection and an open-source joint actuator. The developer platform for humanoid robots."
 	/>
 </svelte:head>
 
 <header class="rdk-hero">
 	<div class="hero-scan-lines" aria-hidden="true"></div>
-	<div class="rdk-hero-inner">
-		<span class="hero-tag">Robo Dev Kit</span>
-		<h1 class="hero-title">
-			Ship robot<br />
-			behavior <span>faster</span>
-		</h1>
-		<p class="hero-sub">
-			A dev kit for robotics teams who want tight iteration loops — modular hardware, deterministic control,
-			and telemetry you can trust.
-		</p>
-		<div class="hero-ctas">
-			<a class="btn-primary" href="#buy">Get the kit</a>
-			<JoinUsLink className="btn-ghost" />
+	<div class="rdk-product-layout">
+
+		<!-- LEFT: Image gallery -->
+		<div class="rdk-gallery">
+			<div class="rdk-main-image">
+				{#if images[selectedImage]}
+					<img
+						src={images[selectedImage].url}
+						alt={images[selectedImage].altText ?? product.title}
+					/>
+				{:else}
+					<div class="rdk-image-placeholder">
+						<span class="rdk-placeholder-label">Robot Dev Kit</span>
+					</div>
+				{/if}
+			</div>
+			{#if images.length > 1}
+				<div class="rdk-thumbnails">
+					{#each images as img, i}
+						<button
+							class="rdk-thumb"
+							class:active={selectedImage === i}
+							onclick={() => (selectedImage = i)}
+							aria-label="View image {i + 1}"
+						>
+							<img src={img.url} alt={img.altText ?? ''} />
+						</button>
+					{/each}
+				</div>
+			{/if}
 		</div>
-		<div class="rdk-storeline reveal" style="transition-delay:0.1s">
-			<div class="rdk-storeline-title">Robo Dev Kit</div>
-			<div class="rdk-storeline-meta">
-				<span>Built for fast robotics iteration</span>
-				<span class="rdk-dot">◆</span>
-				<span>Request pricing</span>
+
+		<!-- RIGHT: Product info -->
+		<div class="rdk-product-info">
+			<span class="hero-tag">Humanoid Robot Dev Kit</span>
+			<h1 class="rdk-product-title">{product.title}</h1>
+
+			<div class="rdk-price-row">
+				<span class="rdk-price">{price}</span>
+				<span class="rdk-badge" class:rdk-badge--out={!available}>
+					{available ? 'Available' : 'Sold Out'}
+				</span>
+			</div>
+
+			<div class="rdk-divider-line"></div>
+
+			<div class="rdk-quantity-block">
+				<span class="rdk-qty-label">Quantity</span>
+				<div class="rdk-qty-control">
+					<button class="rdk-qty-btn" onclick={decrement} disabled={quantity <= 1} aria-label="Decrease">−</button>
+					<span class="rdk-qty-val">{quantity}</span>
+					<button class="rdk-qty-btn" onclick={increment} aria-label="Increase">+</button>
+				</div>
+			</div>
+
+			<div class="rdk-ctas">
+				{#if cartUrl && available}
+					<a class="btn-primary rdk-btn-buy" href={cartUrl}>Order Now</a>
+				{/if}
+				<a class="btn-ghost" href="mailto:vipulsaini594@gmail.com">Contact Sales</a>
+			</div>
+
+			<div class="rdk-divider-line"></div>
+
+			<div class="rdk-whats-included">
+				<span class="rdk-wi-label">What's included</span>
+				<div class="rdk-wi-tags">
+					<span class="rdk-wi-tag">Wearable dextrous hand</span>
+					<span class="rdk-wi-tag">Data collection SDK</span>
+					<span class="rdk-wi-tag">FOC firmware source</span>
+					<span class="rdk-wi-tag">Example training pipelines</span>
+				</div>
 			</div>
 		</div>
-		<div class="rdk-proof">
-			<div class="rdk-proof-item">
-				<div class="rdk-proof-k">Fast bring-up</div>
-				<div class="rdk-proof-v">Hours, not weeks</div>
-			</div>
-			<div class="rdk-proof-item">
-				<div class="rdk-proof-k">Built for iteration</div>
-				<div class="rdk-proof-v">Swap modules, keep software</div>
-			</div>
-			<div class="rdk-proof-item">
-				<div class="rdk-proof-k">Safety defaults</div>
-				<div class="rdk-proof-v">Limits, E‑stop, sanity checks</div>
-			</div>
-		</div>
+
 	</div>
 </header>
 
 <div class="hr-line"></div>
 
-<section class="rdk-section" id="why">
+<section class="rdk-section" id="platform">
 	<div class="rdk-grid">
 		<div class="reveal">
-			<span class="section-label">Why Robo Dev Kit</span>
-			<h2 class="section-title">Robotics is hard. Iteration shouldn’t be.</h2>
+			<span class="section-label">The Platform</span>
+			<h2 class="section-title">Android for<br /><span>humanoid robots</span></h2>
 			<p class="section-body">
-				Most robotics programs slow down in the same places: bring-up, wiring, flaky comms, unclear logs, and
-				the fear of “one bad command” ruining hardware. Robo Dev Kit is designed to remove friction from the
-				loop so your team can spend time on behavior — not babysitting tooling.
+				The missing layer in humanoid robotics is not hardware — it is data. Without training data,
+				robots cannot generalize to real-world tasks. We are building the platform that lets developers
+				create, collect, and deploy robot behavior at scale.
+			</p>
+			<p class="section-body" style="margin-top:20px;">
+				Developers build use-case apps — cooking, home assistance, vehicle operation — and publish
+				them to our app store. Every deployment generates the training data that makes the underlying
+				AI smarter.
 			</p>
 		</div>
-
 		<div class="rdk-card reveal" style="transition-delay:0.12s">
-			<div class="rdk-card-title">What it optimizes for</div>
+			<div class="rdk-card-title">Apps developers are building</div>
 			<ul class="rdk-bullets">
-				<li>Stable, repeatable experiments</li>
-				<li>Clean telemetry and debuggability</li>
-				<li>Modular hardware and simple replacements</li>
-				<li>Safety-first control primitives</li>
+				<li>Cooking robot — ingredient prep, stove operation</li>
+				<li>Home assistant — cleaning, object handling</li>
+				<li>Vehicle operation — steering, pedal control</li>
+				<li>Industrial assembly — precision manipulation</li>
+				<li>Warehouse picking — grasp planning at scale</li>
 			</ul>
 		</div>
 	</div>
@@ -85,197 +157,26 @@
 
 <div class="hr-line"></div>
 
-<section class="rdk-section" id="features">
-	<span class="section-label reveal">Key features</span>
-	<h2 class="section-title reveal">Everything you need to iterate daily</h2>
-
-	<div class="rdk-features">
-		<div class="rdk-feature reveal">
-			<div class="rdk-feature-top">
-				<div class="rdk-ico" aria-hidden="true">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-						<path d="M7 7h10v10H7z" />
-						<path d="M4 4h4v4H4zM16 4h4v4h-4zM4 16h4v4H4zM16 16h4v4h-4z" />
-					</svg>
-				</div>
-				<div class="rdk-feature-title">Modular hardware stack</div>
-			</div>
-			<p class="rdk-feature-desc">Swap actuators/sensors, keep the same software interface and test harness.</p>
-		</div>
-
-		<div class="rdk-feature reveal" style="transition-delay:0.08s">
-			<div class="rdk-feature-top">
-				<div class="rdk-ico" aria-hidden="true">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-						<path d="M4 12h16" />
-						<path d="M8 8l-4 4 4 4" />
-						<path d="M16 8l4 4-4 4" />
-					</svg>
-				</div>
-				<div class="rdk-feature-title">Deterministic control loop</div>
-			</div>
-			<p class="rdk-feature-desc">Consistent timing and guardrails so you can reproduce results across runs.</p>
-		</div>
-
-		<div class="rdk-feature reveal" style="transition-delay:0.16s">
-			<div class="rdk-feature-top">
-				<div class="rdk-ico" aria-hidden="true">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-						<path d="M12 2v20" />
-						<path d="M4 14c2-2 4-3 8-3s6-1 8-3" />
-						<path d="M4 18c2-2 4-3 8-3s6-1 8-3" opacity="0.6" />
-					</svg>
-				</div>
-				<div class="rdk-feature-title">Telemetry you can trust</div>
-			</div>
-			<p class="rdk-feature-desc">Unified event + metrics stream for debugging, replay, and performance tuning.</p>
-		</div>
-
-		<div class="rdk-feature reveal" style="transition-delay:0.24s">
-			<div class="rdk-feature-top">
-				<div class="rdk-ico" aria-hidden="true">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-						<path d="M12 2l9 4-9 4-9-4 9-4z" />
-						<path d="M3 10v7c0 2 4 5 9 5s9-3 9-5v-7" />
-					</svg>
-				</div>
-				<div class="rdk-feature-title">Safety defaults</div>
-			</div>
-			<p class="rdk-feature-desc">Current/velocity limits, watchdogs, and an E‑stop workflow built into the stack.</p>
-		</div>
-	</div>
-</section>
-
-<div class="hr-line"></div>
-
-<section class="rdk-section" id="included">
-	<div class="rdk-grid">
-		<div class="reveal">
-			<span class="section-label">In the box</span>
-			<h2 class="section-title">A complete kit for real experiments</h2>
-			<p class="section-body">
-				Designed to be used on a bench, in a lab, and in the field. Bring a laptop and start running
-				experiments the same day.
-			</p>
-		</div>
-
-		<div class="rdk-card reveal" style="transition-delay:0.12s">
-			<div class="rdk-card-title">Includes</div>
-			<ul class="rdk-bullets">
-				<li>Controller + power distribution</li>
-				<li>Motor/actuator interface</li>
-				<li>Sensor bus + timestamping</li>
-				<li>Calibration + test utilities</li>
-				<li>Example projects + starter templates</li>
-			</ul>
-			<div class="rdk-note">Exact BOM may vary by configuration.</div>
-		</div>
-	</div>
-</section>
-
-<div class="hr-line"></div>
-
-<section class="rdk-section" id="buy">
-	<span class="section-label reveal">Pricing</span>
-	<h2 class="section-title reveal">Start building this week</h2>
-
-	<div class="rdk-pricing">
-		<article class="rdk-tier reveal">
-			<div class="rdk-tier-name">Starter</div>
-			<div class="rdk-tier-desc">For individuals and small teams prototyping behaviors.</div>
-			<div class="rdk-tier-price">Contact</div>
-			<ul class="rdk-tier-list">
-				<li>Core controller stack</li>
-				<li>Reference wiring + harnessing</li>
-				<li>Example projects</li>
-			</ul>
-			<a class="btn-ghost rdk-tier-cta" href="#closing">Request details</a>
-		</article>
-
-		<article class="rdk-tier featured reveal" style="transition-delay:0.08s">
-			<div class="rdk-tier-badge">Recommended</div>
-			<div class="rdk-tier-name">Team</div>
-			<div class="rdk-tier-desc">For labs shipping weekly experiments and hardware iterations.</div>
-			<div class="rdk-tier-price">Request pricing</div>
-			<ul class="rdk-tier-list">
-				<li>Everything in Starter</li>
-				<li>Spare modules for swap + repair</li>
-				<li>Bring-up checklist + test plan</li>
-			</ul>
-			<a class="btn-primary rdk-tier-cta" href="#closing">Get a quote</a>
-		</article>
-
-		<article class="rdk-tier reveal" style="transition-delay:0.16s">
-			<div class="rdk-tier-name">Lab</div>
-			<div class="rdk-tier-desc">For orgs standardizing on a kit across multiple projects.</div>
-			<div class="rdk-tier-price">Contact</div>
-			<ul class="rdk-tier-list">
-				<li>Everything in Team</li>
-				<li>Multi-kit onboarding session</li>
-				<li>Priority support channel</li>
-			</ul>
-			<a class="btn-ghost rdk-tier-cta" href="#closing">Talk to us</a>
-		</article>
-	</div>
-</section>
-
-<div class="hr-line"></div>
-
-<section class="rdk-section" id="faq">
-	<span class="section-label reveal">FAQ</span>
-	<h2 class="section-title reveal">Common questions</h2>
-
-	<div class="rdk-faq">
-		<details class="rdk-faq-item reveal">
-			<summary>Is this a toy kit?</summary>
-			<p>
-				No — it’s designed for real robotics development. The focus is reliability, safety, and fast iteration
-				loops for engineering teams.
-			</p>
-		</details>
-		<details class="rdk-faq-item reveal" style="transition-delay:0.08s">
-			<summary>What software does it work with?</summary>
-			<p>
-				The kit is designed to integrate cleanly with modern robotics workflows. If you have a preferred stack,
-				we’ll align the configuration to your environment.
-			</p>
-		</details>
-		<details class="rdk-faq-item reveal" style="transition-delay:0.16s">
-			<summary>Can I buy replacement parts?</summary>
-			<p>
-				Yes — the kit is modular by design. Replacement modules and spares are available depending on your
-				configuration.
-			</p>
-		</details>
-	</div>
-</section>
-
-<div class="hr-line"></div>
-
-<section class="rdk-closing" id="closing">
+<section class="rdk-section rdk-closing" id="order">
 	<div class="rdk-closing-inner">
 		<div class="reveal">
-			<span class="section-label">Next step</span>
-			<h2 class="section-title">Tell us what you’re building</h2>
+			<span class="section-label">Get the kit</span>
+			<h2 class="section-title">Start building<br /><span>your robot app</span></h2>
 			<p class="section-body">
-				Share your project goals, target timelines, and the kind of experiments you run weekly — we’ll recommend
-				a configuration that gets you to a stable loop quickly.
+				Tell us what you're building — the use case, the manipulation tasks involved, and your
+				timeline. We'll get you set up with the right configuration.
 			</p>
-			<div class="hero-ctas" style="margin-top:28px;">
-				<JoinUsLink className="btn-primary" />
-				<a class="btn-ghost" href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com">
-					Email sales
-				</a>
+			<div class="hero-ctas" style="margin-top:32px;">
+				<a class="btn-primary" href="mailto:vipulsaini594@gmail.com">Order now</a>
+				<a class="btn-ghost" href="https://github.com/ScalingPhysicalAI">View on GitHub</a>
 			</div>
 		</div>
-
 		<div class="rdk-closing-card reveal" style="transition-delay:0.12s">
-			<div class="rdk-card-title">Ideal for</div>
+			<div class="rdk-card-title">What's included</div>
 			<ul class="rdk-bullets">
-				<li>Robotics startups</li>
-				<li>University labs</li>
-				<li>R&amp;D teams prototyping autonomy</li>
-				<li>Hardware teams validating actuators and sensors</li>
+				<li>Dextrous wearable hand hardware</li>
+				<li>Data collection SDK + logging tools</li>
+				<li>Example training pipelines</li>
 			</ul>
 		</div>
 	</div>

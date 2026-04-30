@@ -63,7 +63,7 @@
 			Factory for Space
 		</h1>
 		<p class="hero-sub">
-			Robots, and AI working together to construct the future of launch infrastructure.
+			Robots and AI working together to construct the future of launch infrastructure.
 		</p>
 		<div class="hero-ctas">
 			<a href="https://github.com/ScalingPhysicalAI" class="btn-primary">See What We're Building</a>
@@ -121,7 +121,7 @@
 			<div>
 				<div class="built-item-title">Logistics Infra</div>
 				<div class="built-item-desc">
-					Robots operating heavy machines for transportation and materials handing across industrial environments and launch facilities.
+					Robots operating heavy machines for transportation and materials handling across industrial environments and launch facilities.
 				</div>
 			</div>
 		</div>
@@ -144,10 +144,53 @@
 
 <div class="hr-line"></div>
 
+<section id="solved">
+	<div class="solved-header reveal">
+		<span class="section-label">What We Have Solved</span>
+		<h2 class="section-title">The Robotics<br /><span>Data Flywheel</span></h2>
+		<p class="section-body">
+			We cracked the core challenge of physical AI: getting robots to generate the training data
+			that makes the AI smarter — at scale, in the real world, automatically.
+		</p>
+	</div>
+	<div class="solved-grid">
+		<div class="solved-card reveal" style="transition-delay:0.1s">
+			<div class="solved-card-num">01</div>
+			<div class="solved-card-title">Robots as Developer Platforms</div>
+			<p class="solved-card-body">
+				Thousands of developers and startups worldwide use our robots as development platforms,
+				deploying them across real-world environments and use cases.
+			</p>
+		</div>
+		<div class="solved-card reveal" style="transition-delay:0.2s">
+			<div class="solved-card-num">02</div>
+			<div class="solved-card-title">Train the Model, Earn Points</div>
+			<p class="solved-card-body">
+				Every deployment generates valuable training data. Developers earn points each time the
+				model is used in a real-world task, generating incentives from the
+				end customers.
+			</p>
+		</div>
+		<div class="solved-card reveal" style="transition-delay:0.3s">
+			<div class="solved-card-num">03</div>
+			<div class="solved-card-title">AI That Never Stops Learning</div>
+			<p class="solved-card-body">
+				Our AI backbone improves continuously through data collected by our robot infrastructure
+				operating on rocket systems compounding every day.
+			</p>
+		</div>
+	</div>
+	<div class="solved-cta reveal" style="transition-delay:0.4s">
+		<a href="/robo-dev-kit" class="btn-primary">Buy Robot Kit</a>
+	</div>
+</section>
+
+<div class="hr-line"></div>
+
 <section id="mission">
 	<div class="reveal">
 		<span class="section-label">The Mission</span>
-		<h2 class="section-title">A Fully <span>Autonomous</span><br />"Starbase" Factory</h2>
+		<h2 class="section-title">A Fully <span>Autonomous</span><br />Starbase Factory</h2>
 		<p class="section-body">
 			We are building a future where large rockets, launch pads, and space infrastructure are
 			constructed, managed, and scaled entirely by robots and AI and no longer bottlenecked by human
@@ -172,19 +215,17 @@
 			</div>
 		</div>
 		<div class="mission-stat reveal" style="transition-delay:0.3s">
-			<div class="stat-num">∞</div>
-			<div class="stat-label">24/7 Autonomous Output</div>
+			<div class="stat-num">500$</div>
+			<div class="stat-label">Targeted cost of deploying payloads into low earth orbit</div>
 			<div class="stat-desc">
-				Autonomous factories do not sleep, do not fatigue, and do not require coordination overhead.
-				Factory output becomes an always-on capability.
+This enables orbital datacentre that generates almost free value, mostly converting free solar energy into inference tokens.
 			</div>
 		</div>
 		<div class="mission-stat reveal" style="transition-delay:0.4s">
-			<div class="stat-num">3</div>
-			<div class="stat-label">Core Systems Built</div>
+			<div class="stat-num">10B+</div>
+			<div class="stat-label">Projected Revenue</div>
 			<div class="stat-desc">
-				A logistics robot, a humanoid robot, and a unified AI coordination system — the three
-				pillars of an autonomous industrial workforce for space manufacturing.
+SpaceX's launch service business generated a total revenue of $4.1 billion in 2025. Our projection shows that as a launch provider our autonomous space infra could scale the bar.
 			</div>
 		</div>
 	</div>
@@ -203,26 +244,27 @@
 		</div>
 		<div class="why-points">
 			<div class="why-point reveal" style="transition-delay:0.1s">
-				<div class="why-point-title">Launch vehicles are extraordinarily expensive to build</div>
+				<div class="why-point-title">Space economics only work if launch costs include development reality</div>
 				<p>
-					The development cost of Starship alone is estimated at $5–10 billion. Without major leaps
-					in efficiency, developing the next generation becomes harder and far more
-					capital-intensive.
+					Starship does not get to $500 per Kg payload launch cost if the full $10B+ development
+					bill is included. The next era of launch demands a radically more efficient way to build
+					space infrastructure.
 				</p>
 			</div>
 			<div class="why-point reveal" style="transition-delay:0.2s">
-				<div class="why-point-title">AI and robotics can change the equation</div>
+				<div class="why-point-title">The Moon is the next milestone, and it cannot be built by flying labor in</div>
 				<p>
-					By automating construction, logistics, and coordination across the full factory stack, we
-					believe it is possible to improve efficiency by orders of magnitude and dramatically
-					reduce cost and time.
+					Human civilization’s next practical step is lunar construction. We are not sending
+					thousands of people to build on the Moon, which means we need to train AI and autonomous
+					systems now.
 				</p>
 			</div>
 			<div class="why-point reveal" style="transition-delay:0.3s">
-				<div class="why-point-title">The technology is ready — the factories are not</div>
+				<div class="why-point-title">Launch windows are strategic deadlines, not aspirations</div>
 				<p>
-					The convergence of capable humanoids, autonomous logistics, and coordinating AI has
-					arrived. Now we are putting these systems together for industrial scale output.
+					Delays have already pushed humanity past the early 2027 Mars launch opportunity. Missing
+					one window means waiting for the next, and in space, every slip compounds the cost of
+					progress.
 				</p>
 			</div>
 		</div>
@@ -304,35 +346,11 @@
 	<div class="milestone-layout">
 		<div>
 			<span class="section-label reveal">Our First Milestone</span>
-			<h2 class="section-title reveal">Demonstrate physical AI backbone<br /><span>building a rocket</span></h2>
+			<h2 class="section-title reveal">Demonstrate physical AI backbone<br /><span>building a fully reusable rocket system</span></h2>
 			<p class="section-body reveal" style="margin-bottom:40px;">
 				Every large vision starts with a clear proof point. Our first milestone is to
 				demonstrate that our physical ai backbone design, simulates and coordinates with robots to build a functional rocket system.
 			</p>
-			<div class="milestone-steps reveal">
-				<div class="milestone-step">
-					<span class="step-num">→ 01</span>
-					<div class="step-text">
-						<strong>Robot-built rocket</strong>
-						Coordinated humanoid and logistics robot assemble a small-scale rocket from components. First
-						proof of real-world assembly.
-					</div>
-				</div>
-				<div class="milestone-step">
-					<span class="step-num">→ 02</span>
-					<div class="step-text">
-						<strong>Full factory prototype</strong>
-						Autonomous cell capable of iterative, uninterrupted production cycles without human intervention.
-					</div>
-				</div>
-				<div class="milestone-step">
-					<span class="step-num">→ 03</span>
-					<div class="step-text">
-						<strong>Starbase-scale deployment</strong>
-						Launch infrastructure construction, managed and operated by autonomous systems.
-					</div>
-				</div>
-			</div>
 		</div>
 		<div class="milestone-visual reveal" style="transition-delay:0.2s">
 			<div class="milestone-rocket">
@@ -358,21 +376,6 @@
 			<div class="milestone-badge">Milestone 01 — In Progress</div>
 		</div>
 	</div>
-</section>
-
-<div class="hr-line"></div>
-
-<section id="vision">
-	<span class="vision-eyebrow reveal">Vision</span>
-	<h2 class="vision-headline reveal">
-		From one robot-built rocket<br />to <span>autonomous space infrastructure</span>
-	</h2>
-	<p class="vision-body reveal">
-		Today, the goal is a working demonstration. Tomorrow, it is autonomous manufacturing for the
-		space age. We are building the systems that turn factory construction, rocket infrastructure,
-		and launch preparation into an always-on autonomous capability.
-	</p>
-	<a href={resolve('/vision')} class="vision-full-link reveal">Read the full vision</a>
 </section>
 
 <div class="hr-line"></div>
