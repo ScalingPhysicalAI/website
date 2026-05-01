@@ -319,15 +319,6 @@ SpaceX's launch service business generated a total revenue of $4.1 billion in 20
 		</div>
 		<div class="solved-card reveal" style="transition-delay:0.2s">
 			<div class="solved-card-num">02</div>
-			<div class="solved-card-title">Train the Model, Earn Points</div>
-			<p class="solved-card-body">
-				Every deployment generates valuable training data. Developers earn points each time the
-				model is used in a real-world task, generating incentives from the
-				end customers.
-			</p>
-		</div>
-		<div class="solved-card reveal" style="transition-delay:0.3s">
-			<div class="solved-card-num">03</div>
 			<div class="solved-card-title">AI That Never Stops Learning</div>
 			<p class="solved-card-body">
 				Our AI backbone improves continuously through data collected by our robot infrastructure

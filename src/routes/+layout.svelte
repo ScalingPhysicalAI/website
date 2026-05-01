@@ -10,6 +10,16 @@
 
 	let currentSection = $state<'' | 'mission' | 'vision' | 'milestone'>('');
 
+	const normalizedPath = $derived(
+		page.url.pathname !== '/' ? page.url.pathname.replace(/\/$/, '') : page.url.pathname
+	);
+
+	const rdkNotification = $derived(
+		normalizedPath === '/robo-dev-kit'
+			? ((page.data as Record<string, any>).product?.notification?.value ?? null)
+			: null
+	);
+
 	function updateCurrentSection() {
 		if (page.url.pathname !== '/') return;
 		const ids = ['mission', 'vision', 'milestone'] as const;
@@ -27,9 +37,13 @@
 
 	onMount(() => {
 		$effect(() => {
-			const pathname = page.url.pathname;
+			const pathname = normalizedPath;
 			const nextClass =
-				pathname === '/vision' ? 'page-vision' : pathname === '/robo-dev-kit' ? 'page-robo-dev-kit' : '';
+				pathname === '/vision'
+					? 'page-vision'
+					: pathname === '/robo-dev-kit'
+						? 'page-robo-dev-kit'
+						: '';
 			document.body.className = nextClass;
 		});
 
@@ -54,14 +68,14 @@
 	/>
 </svelte:head>
 
-{#if page.url.pathname !== '/deck'}
-	<SiteNav pathname={page.url.pathname} {currentSection} />
+{#if normalizedPath !== '/deck'}
+	<SiteNav pathname={page.url.pathname} {currentSection} notification={rdkNotification} />
 {/if}
 
 <main id="main">
 	{@render children()}
 </main>
 
-{#if page.url.pathname !== '/deck'}
+{#if normalizedPath !== '/deck'}
 	<SiteFooter />
 {/if}

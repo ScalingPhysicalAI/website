@@ -82,8 +82,7 @@
 				</div>
 			</div>
 
-			<div class="vision-split vision-split-future reveal" style="transition-delay:0.3s">
-				<div class="vision-split-text">
+			<div class="vision-intro reveal" style="transition-delay:0.3s">
 					<p>
 						This challenge will become even more critical in the future. The industry will need not just
 						launch vehicles, but far more complex space systems. Starship alone is not enough for
@@ -98,7 +97,6 @@
 						— systems not just good at reasoning, but at building real-world infrastructure. Humanoid
 						robots, logistics robots, and AI will be the bootstrapping layer for that future.
 					</p>
-				</div>
 			</div>
 
 			<div class="vision-two-col">

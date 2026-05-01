@@ -18,6 +18,7 @@
 
 	const variant = product.variants.nodes[0];
 	const available = variant?.availableForSale ?? true;
+	const origin = product.origin?.value ?? null;
 
 	let selectedImage = $state(0);
 	let quantity = $state(1);
@@ -89,6 +90,10 @@
 					{available ? 'Available' : 'Sold Out'}
 				</span>
 			</div>
+
+			{#if origin}
+				<p class="rdk-origin">{origin}</p>
+			{/if}
 
 			<div class="rdk-divider-line"></div>
 

@@ -23,6 +23,8 @@ const QUERY = `
           price { amount currencyCode }
         }
       }
+      notification: metafield(namespace: "custom", key: "notification") { value }
+      origin: metafield(namespace: "custom", key: "origin") { value }
     }
   }
 `;
@@ -41,6 +43,8 @@ type ProductQueryData = {
 				price: { amount: string; currencyCode: string };
 			}>;
 		};
+		notification: { value: string } | null;
+		origin: { value: string } | null;
 	};
 };
 
