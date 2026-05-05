@@ -14,8 +14,7 @@
 	const normalizedPath = $derived(pathname !== '/' ? pathname.replace(/\/$/, '') : pathname);
 	const isHome = $derived(normalizedPath === '/');
 	const isVision = $derived(normalizedPath === '/vision');
-
-	function activeForAnchor(id: Exclude<Section, ''>) {
+function activeForAnchor(id: Exclude<Section, ''>) {
 		if (!isHome) return false;
 		return currentSection === id;
 	}
