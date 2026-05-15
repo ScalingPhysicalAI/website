@@ -3025,7 +3025,7 @@ body.page-blog {
 .blog-post-body {
 	padding: 72px 48px 140px;
 	display: grid;
-	grid-template-columns: 1fr min(680px, 100%) 1fr;
+	grid-template-columns: 1fr min(900px, 100%) 1fr;
 }
 
 .blog-post-article {
