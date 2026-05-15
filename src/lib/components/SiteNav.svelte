@@ -14,6 +14,7 @@
 	const normalizedPath = $derived(pathname !== '/' ? pathname.replace(/\/$/, '') : pathname);
 	const isHome = $derived(normalizedPath === '/');
 	const isVision = $derived(normalizedPath === '/vision');
+	const isBlog = $derived(normalizedPath.startsWith('/blog'));
 function activeForAnchor(id: Exclude<Section, ''>) {
 		if (!isHome) return false;
 		return currentSection === id;
@@ -54,6 +55,13 @@ function activeForAnchor(id: Exclude<Section, ''>) {
 			</li>
 			<li>
 				<a href={resolve('/#milestone')} class:active={activeForAnchor('milestone')}>Milestones</a>
+			</li>
+			<li>
+				<a
+					href={resolve('/blog/')}
+					class:active={isBlog}
+					aria-current={isBlog ? 'page' : undefined}>Blog</a
+				>
 			</li>
 			<li>
 				<JoinUsLink />

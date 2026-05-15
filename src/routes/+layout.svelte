@@ -45,7 +45,9 @@
 						? 'page-robo-dev-kit'
 						: pathname.startsWith('/developer')
 							? 'page-developer'
-							: '';
+							: pathname.startsWith('/blog')
+								? 'page-blog'
+								: '';
 			document.body.className = nextClass;
 		});
 
