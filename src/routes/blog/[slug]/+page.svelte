@@ -29,9 +29,6 @@
 				<span class="blog-post-meta-author">{data.metadata.author}</span>
 			</div>
 			<h1 class="blog-post-title">{data.metadata.title}</h1>
-			{#if data.metadata.excerpt}
-				<p class="blog-post-excerpt-lead">{data.metadata.excerpt}</p>
-			{/if}
 		</div>
 	</div>
 
