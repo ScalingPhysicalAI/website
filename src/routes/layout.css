@@ -3127,7 +3127,6 @@ body.page-blog {
 	padding: 16px 18px;
 	background: rgba(255, 255, 255, 0.02);
 	border: 1px solid rgba(184, 156, 114, 0.12);
-	backdrop-filter: blur(2px);
 }
 
 .blog-rocket-slide__stat-val {
@@ -3160,11 +3159,11 @@ body.page-blog {
 		background:
 			linear-gradient(
 				180deg,
-				rgba(5, 5, 5, 0.84) 0%,
-				rgba(5, 5, 5, 0.56) 45%,
-				rgba(5, 5, 5, 0.7) 100%
+				rgba(5, 5, 5, 0.76) 0%,
+				rgba(5, 5, 5, 0.42) 45%,
+				rgba(5, 5, 5, 0.62) 100%
 			),
-			linear-gradient(180deg, rgba(184, 156, 114, 0.16), rgba(184, 156, 114, 0));
+			linear-gradient(180deg, rgba(184, 156, 114, 0.12), rgba(184, 156, 114, 0));
 	}
 	.blog-rocket-slide__content {
 		max-width: none;
@@ -3173,6 +3172,10 @@ body.page-blog {
 	}
 	.blog-rocket-slide__stats {
 		grid-template-columns: 1fr;
+	}
+	.blog-rocket-slide__stat {
+		background: rgba(5, 5, 5, 0.26);
+		backdrop-filter: none;
 	}
 }
 
