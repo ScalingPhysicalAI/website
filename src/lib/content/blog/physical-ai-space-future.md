@@ -45,9 +45,11 @@ We are building Physical AI infrastructure for space manufacturing.
 **Forge-1** is the first rocket forged by our Physical AI stack — designed, simulated, and built through an autonomous AI-driven process. Its mission: carry a 5 kg payload to low Earth orbit.
 
 <div class="blog-rocket-slide">
+  <img src="/assets/rocket.jpeg" alt="FORGE-1 rocket" class="blog-rocket-slide__bg" />
+  <div class="blog-rocket-slide__tint"></div>
   <div class="blog-rocket-slide__content">
     <div class="blog-rocket-slide__label">Proof of Execution</div>
-    <div class="blog-rocket-slide__title">FORGE-1 — StarForge's first rocket</div>
+    <div class="blog-rocket-slide__title">StarForge designed, simulated, and built a 9-foot VTVL hopper rocket</div>
     <div class="blog-rocket-slide__stats">
       <div class="blog-rocket-slide__stat">
         <div class="blog-rocket-slide__stat-val">9 ft</div>
@@ -63,7 +65,6 @@ We are building Physical AI infrastructure for space manufacturing.
       </div>
     </div>
   </div>
-  <img src="/assets/rocket.jpeg" alt="FORGE-1" class="blog-rocket-slide__photo" />
 </div>
 
 This is just the beginning.
