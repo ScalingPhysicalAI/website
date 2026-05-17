@@ -3,6 +3,7 @@ title: "Physical AI Is the Key to Space"
 date: "2026-05-15"
 author: "Vipul Saini"
 excerpt: "The moon race is back — but this time it's not about planting a flag. It's about who gets there with Physical AI first. The companies that crack autonomous space manufacturing will own the future."
+image: "/assets/rocket.jpeg"
 ---
 
 Today, most of the time and money in rocket infrastructure goes into learning through real-world launch attempts. Every test, every failure, every iteration exists just to make the system 1% better.
@@ -42,6 +43,8 @@ The industry needs tens of thousands of rocket systems — not over the next dec
 We are building Physical AI infrastructure for space manufacturing.
 
 **Forge-1** is the first rocket forged by our Physical AI stack — designed, simulated, and built through an autonomous AI-driven process. Its mission: carry a 5 kg payload to low Earth orbit.
+
+<img src="/assets/rocket.jpeg" alt="FORGE-1 — StarForge's first rocket" class="blog-inline-img" />
 
 This is just the beginning.
 

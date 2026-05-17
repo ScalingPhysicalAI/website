@@ -6,6 +6,7 @@ interface PostMeta {
 	date: string;
 	author: string;
 	excerpt: string;
+	image?: string;
 }
 
 export const load: PageLoad = async () => {

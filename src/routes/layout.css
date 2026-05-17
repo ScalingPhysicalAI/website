@@ -2833,6 +2833,37 @@ body.page-blog {
 	overflow: hidden;
 }
 
+/* ── Post hero with image ── */
+.blog-post-hero.has-image {
+	background: var(--black);
+	min-height: 480px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.blog-post-hero-img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 55% 55%;
+	filter: brightness(0.55) contrast(1.1) saturate(0.4) sepia(0.1);
+	z-index: 0;
+}
+
+.blog-post-hero-fade {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background: linear-gradient(
+		180deg,
+		rgba(5, 5, 5, 0.3) 0%,
+		rgba(5, 5, 5, 0.6) 55%,
+		rgba(5, 5, 5, 0.95) 100%
+	);
+}
+
 .blog-hero::before {
 	content: 'UPDATES';
 	font-family: 'Bebas Neue', sans-serif;
@@ -2880,7 +2911,7 @@ body.page-blog {
 	max-width: 1100px;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	gap: 1px;
 	background: var(--border);
 	border: 1px solid var(--border);
@@ -2888,16 +2919,49 @@ body.page-blog {
 
 .blog-card {
 	display: flex;
-	flex-direction: column;
-	padding: 36px 32px 32px;
+	flex-direction: row;
 	background: var(--black);
 	text-decoration: none;
 	transition: background 0.25s;
-	min-height: 260px;
+	min-height: 220px;
 }
 
 .blog-card:hover {
 	background: rgba(184, 156, 114, 0.04);
+}
+
+.blog-card-image {
+	width: 260px;
+	flex-shrink: 0;
+	overflow: hidden;
+	order: 2;
+}
+
+.blog-card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 55% 65%;
+	filter: brightness(0.7) contrast(1.1) saturate(0.45) sepia(0.1);
+	transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+	filter: brightness(0.85) contrast(1.1) saturate(0.6);
+	transform: scale(1.03);
+}
+
+.blog-card-body {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 32px 32px 28px;
+	order: 1;
+}
+
+@media (max-width: 560px) {
+	.blog-card { flex-direction: column; }
+	.blog-card-image { width: 100%; height: 180px; order: 0; }
 }
 
 .blog-card-date {
@@ -3073,6 +3137,17 @@ body.page-blog {
 	border: none;
 	border-top: 1px solid var(--border);
 	margin: 60px 0;
+}
+
+.blog-inline-img {
+	display: block;
+	width: 100%;
+	max-height: 480px;
+	object-fit: cover;
+	object-position: 55% 60%;
+	filter: brightness(0.75) contrast(1.1) saturate(0.45) sepia(0.1);
+	margin: 40px 0;
+	border: 1px solid var(--border);
 }
 
 .blog-post-article ul,

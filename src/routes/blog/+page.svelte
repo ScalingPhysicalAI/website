@@ -31,12 +31,19 @@
 		<div class="blog-list-grid">
 			{#each data.posts as post}
 				<a href={resolve(`/blog/${post.slug}/`)} class="blog-card">
-					<div class="blog-card-date">{formatDate(post.date)}</div>
-					<h2 class="blog-card-title">{post.title}</h2>
-					<p class="blog-card-excerpt">{post.excerpt}</p>
-					<div class="blog-card-footer">
-						<span class="blog-card-author">{post.author}</span>
-						<span class="blog-card-arrow">→</span>
+					{#if post.image}
+						<div class="blog-card-image">
+							<img src={post.image} alt={post.title} />
+						</div>
+					{/if}
+					<div class="blog-card-body">
+						<div class="blog-card-date">{formatDate(post.date)}</div>
+						<h2 class="blog-card-title">{post.title}</h2>
+						<p class="blog-card-excerpt">{post.excerpt}</p>
+						<div class="blog-card-footer">
+							<span class="blog-card-author">{post.author}</span>
+							<span class="blog-card-arrow">→</span>
+						</div>
 					</div>
 				</a>
 			{/each}
