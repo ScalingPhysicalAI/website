@@ -40,4 +40,11 @@
 			{/if}
 		</article>
 	</div>
+
+	<section class="blog-cta-section">
+		<div class="blog-cta-content">
+			<h2 class="blog-cta-title">Join us to support this mission</h2>
+			<a href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com" class="blog-cta-btn">Get in touch →</a>
+		</div>
+	</section>
 </div>
