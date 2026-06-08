@@ -60,14 +60,12 @@
 		<h1 class="hero-title">
 			Building the<br />
 			<span>Autonomous</span><br />
-			Factory for Space
+			Factory for Space Exploration
 		</h1>
-		<p class="hero-sub">
-			Robots and AI working together to construct the future of launch infrastructure.
-		</p>
+		<p class="hero-sub"></p>
 		<div class="hero-ctas">
 			<a href="https://github.com/ScalingPhysicalAI" class="btn-primary">See What We're Building</a>
-		<JoinUsLink className="btn-ghost" />
+			<JoinUsLink className="btn-ghost" />
 		</div>
 	</div>
 
@@ -121,7 +119,8 @@
 			<div>
 				<div class="built-item-title">Logistics Infra</div>
 				<div class="built-item-desc">
-					Robots operating heavy machines for transportation and materials handling across industrial environments and launch facilities.
+					Robots operating heavy machines for transportation and materials handling across
+					industrial environments and launch facilities.
 				</div>
 			</div>
 		</div>
@@ -134,8 +133,8 @@
 			<div>
 				<div class="built-item-title">AI Coordination System</div>
 				<div class="built-item-desc">
-					An AI that orchestrates robots in real-time — unified perception, planning, and
-					execution across the entire autonomous workforce.
+					An AI that design systems and orchestrates robots in real-time — unified context, for
+					planning, and execution across the entire autonomous workforce.
 				</div>
 			</div>
 		</div>
@@ -147,16 +146,16 @@
 <section id="mission">
 	<div class="reveal">
 		<span class="section-label">The Mission</span>
-		<h2 class="section-title">A Fully <span>Autonomous</span><br />Starbase Factory</h2>
+		<h2 class="section-title">A Fully <span>Autonomous</span><br />Launch Factory</h2>
 		<p class="section-body">
 			We are building a future where large rockets, launch pads, and space infrastructure are
 			constructed, managed, and scaled entirely by robots and AI and no longer bottlenecked by human
-			errors, labor constraints, and slow construction cycles.
+			context, labor constraints, and slow construction cycles.
 		</p>
 	</div>
 	<div class="mission-grid">
 		<div class="mission-stat reveal" style="transition-delay:0.1s">
-			<div class="stat-num">$5–10B</div>
+			<div class="stat-num">$15–20</div>
 			<div class="stat-label">Development Cost of Starship</div>
 			<div class="stat-desc">
 				Building the next generation of launch systems at current efficiency is harder, slower, and
@@ -172,17 +171,19 @@
 			</div>
 		</div>
 		<div class="mission-stat reveal" style="transition-delay:0.3s">
-			<div class="stat-num">500$</div>
+			<div class="stat-num">150$</div>
 			<div class="stat-label">Targeted cost of deploying payloads into low earth orbit</div>
 			<div class="stat-desc">
-This enables orbital datacentre that generates almost free value, mostly converting free solar energy into inference tokens.
+				This enables orbital datacentre that generates almost free value, mostly converting free
+				solar energy into inference tokens.
 			</div>
 		</div>
 		<div class="mission-stat reveal" style="transition-delay:0.4s">
 			<div class="stat-num">10B+</div>
 			<div class="stat-label">Projected Revenue</div>
 			<div class="stat-desc">
-SpaceX's launch service business generated a total revenue of $4.1 billion in 2025. Our projection shows that as a launch provider our autonomous space infra could scale the bar.
+				SpaceX's launch service business generated a total revenue of $4.1 billion in 2025. Our
+				projection shows that as a launch provider our autonomous space infra could scale this bar.
 			</div>
 		</div>
 	</div>
@@ -201,27 +202,33 @@ SpaceX's launch service business generated a total revenue of $4.1 billion in 20
 		</div>
 		<div class="why-points">
 			<div class="why-point reveal" style="transition-delay:0.1s">
-				<div class="why-point-title">Space economics only work if launch costs include development reality</div>
+				<div class="why-point-title">
+					Space economics only work if launch costs include development expenses
+				</div>
 				<p>
-					Starship does not get to $500 per Kg payload launch cost if the full $10B+ development
+					Starship does not get to $150 per Kg payload launch cost if the full $20B+ development
 					bill is included. The next era of launch demands a radically more efficient way to build
 					space infrastructure.
 				</p>
 			</div>
-			<div class="why-point reveal" style="transition-delay:0.2s">
-				<div class="why-point-title">The Moon is the next milestone, and it cannot be built by flying labor in</div>
-				<p>
-					Human civilization’s next practical step is lunar construction. We are not sending
-					thousands of people to build on the Moon, which means we need to train AI and autonomous
-					systems now.
-				</p>
-			</div>
+
 			<div class="why-point reveal" style="transition-delay:0.3s">
 				<div class="why-point-title">Launch windows are strategic deadlines, not aspirations</div>
 				<p>
 					Delays have already pushed humanity past the early 2027 Mars launch opportunity. Missing
 					one window means waiting for the next, and in space, every slip compounds the cost of
 					progress.
+				</p>
+			</div>
+
+			<div class="why-point reveal" style="transition-delay:0.2s">
+				<div class="why-point-title">
+					The Moon is the next milestone, and it cannot be built by flying labor in
+				</div>
+				<p>
+					Human civilization’s next practical step is lunar construction. We are not sending
+					thousands of people to build on the Moon, which means we need to train AI and autonomous
+					systems now.
 				</p>
 			</div>
 		</div>
@@ -311,7 +318,7 @@ SpaceX's launch service business generated a total revenue of $4.1 billion in 20
 	<div class="solved-grid">
 		<div class="solved-card reveal" style="transition-delay:0.1s">
 			<div class="solved-card-num">01</div>
-			<div class="solved-card-title">Robots as Developer Platforms</div>
+			<div class="solved-card-title">Robots as Data Collection Platforms</div>
 			<p class="solved-card-body">
 				Thousands of developers and startups worldwide use our robots as development platforms,
 				deploying them across real-world environments and use cases.
@@ -326,9 +333,9 @@ SpaceX's launch service business generated a total revenue of $4.1 billion in 20
 			</p>
 		</div>
 	</div>
-	<div class="solved-cta reveal" style="transition-delay:0.4s">
-		<a href="/robo-dev-kit" class="btn-primary">Buy Robot Kit</a>
-	</div>
+	<!-- <div class="solved-cta reveal" style="transition-delay:0.4s"> -->
+		<!-- <a href="/robo-dev-kit" class="btn-primary">Buy Robot Kit</a> -->
+	<!-- </div> -->
 </section>
 
 <div class="hr-line"></div>
@@ -337,10 +344,13 @@ SpaceX's launch service business generated a total revenue of $4.1 billion in 20
 	<div class="milestone-layout">
 		<div>
 			<span class="section-label reveal">Our First Milestone</span>
-			<h2 class="section-title reveal">Demonstrate physical AI backbone<br /><span>building a fully reusable rocket system</span></h2>
+			<h2 class="section-title reveal">
+				Physical AI <br /><span>building a fully reusable rocket system</span> for orbital data center
+			</h2>
 			<p class="section-body reveal" style="margin-bottom:40px;">
-				Every large vision starts with a clear proof point. Our first milestone is to
-				demonstrate that our physical ai backbone design, simulates and coordinates with robots to build a functional rocket system.
+				Every large vision starts with a clear proof point. Our first milestone is to demonstrate
+				that our physical ai backbone design, simulates and coordinates with robots to build a
+				functional rocket system where upper stage becomes the orbital data center itself.
 			</p>
 		</div>
 		<div class="milestone-visual reveal" style="transition-delay:0.2s">

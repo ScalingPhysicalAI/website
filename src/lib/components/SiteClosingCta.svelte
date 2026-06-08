@@ -8,10 +8,7 @@
 			<span class="section-label">The Future</span>
 			<h2 class="section-title">The future of space will not be <span>built manually.</span></h2>
 			<p class="closing-manifesto">
-				<strong>It will be built by autonomous systems.</strong><br /><br />
-				We are building the systems that can turn factory construction, rocket infrastructure, and launch
-				preparation into an always-on autonomous capability.<br /><br />
-				And we're starting now.
+				It will be built by autonomous systems.<br /><br />
 			</p>
 			<div class="closing-ctas">
 				<JoinUsLink className="btn-primary" />
@@ -22,7 +19,7 @@
 			<div class="closing-info">
 				<span class="info-label">Headquarters</span>
 				<div class="info-address">
-					8-111, 78 SW 7th Street<br />
+					78 SW 7th Street, Suite 500<br />
 					Brickell City Centre<br />
 					Miami, Florida 33130<br />
 					United States
