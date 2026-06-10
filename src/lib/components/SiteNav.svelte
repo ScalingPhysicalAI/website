@@ -37,6 +37,9 @@ function activeForAnchor(id: Exclude<Section, ''>) {
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="site-header" bind:this={headerEl}>
+	<a class="announcement-bar" href={resolve('/blog/')}>
+		Starforge Raises $1M Pre-Seed Round to Build AI Data Centers in Orbit &nbsp;→
+	</a>
 	{#if notification}
 		<div class="rdk-notification-bar">{notification}</div>
 	{/if}

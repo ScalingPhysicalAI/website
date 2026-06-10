@@ -84,6 +84,28 @@ body::before {
 	outline-offset: 2px;
 }
 
+/* ── ANNOUNCEMENT BAR ── */
+.announcement-bar {
+	display: block;
+	width: 100%;
+	padding: 10px 24px;
+	background: #e8e4dc;
+	color: #1a1714;
+	font-family: 'Barlow', sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 0.04em;
+	text-align: center;
+	text-decoration: none;
+	transition: background 0.2s, color 0.2s;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.announcement-bar:hover {
+	background: #d4cfc5;
+	color: #0d0b09;
+}
+
 /* ── HEADER (notification bar + nav) ── */
 .site-header {
 	position: fixed;
