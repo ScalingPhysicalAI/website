@@ -7,6 +7,11 @@ interface PostMeta {
 	author: string;
 	excerpt: string;
 	image?: string;
+	cardImage?: boolean;
+	cardLabel?: string;
+	cardHeadline?: string;
+	cardHighlight?: string;
+	cardStats?: Array<{ val: string; label: string }>;
 }
 
 export const load: PageLoad = async () => {

@@ -2934,9 +2934,7 @@ body.page-blog {
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	gap: 1px;
-	background: var(--border);
-	border: 1px solid var(--border);
+	gap: 24px;
 }
 
 .blog-card {

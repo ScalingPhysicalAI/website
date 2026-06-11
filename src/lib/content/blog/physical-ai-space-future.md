@@ -4,6 +4,16 @@ date: "2026-05-15"
 author: "Vipul Saini"
 excerpt: "The moon race is back — but this time it's not about planting a flag. It's about who gets there with Physical AI first. The companies that crack autonomous space manufacturing will own the future."
 image: "/assets/rocket.jpeg"
+cardLabel: "Proof of Execution"
+cardHeadline: "StarForge designed, simulated, and built a"
+cardHighlight: "9-foot VTVL hopper rocket"
+cardStats:
+  - val: "9 ft"
+    label: "Vehicle Height"
+  - val: "VTVL"
+    label: "Architecture"
+  - val: "AI"
+    label: "Simulated"
 ---
 
 Today, most of the time and money in rocket infrastructure goes into learning through real-world launch attempts. Every test, every failure, every iteration exists just to make the system 1% better.
