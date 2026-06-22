@@ -7,9 +7,9 @@ image: "/assets/rocket.jpeg"
 cardImage: false
 ---
 
-Orbital data centres are the first real step toward a Kardashev Type II civilisation. Everything before that is either distraction, or backlog.
+Orbital data centres are the first real step toward a Kardashev Type II civilisation.
 
-For humanity to unlock truly unconstrained mechanical output, computation and energy need to break free from the limits of human money, labour, and terrestrial infrastructure.
+For humanity to unlock truly unconstrained mechanical output, computation and energy need to break free from the limits of money, labour, and terrestrial infrastructure.
 
 Orbital data centres can close that loop.
 
@@ -17,9 +17,9 @@ By using constant solar energy in orbit, they can provide the compute required f
 
 But making orbital data centres feasible requires solving the hardest infrastructure problem first: making access to orbit cheap, frequent, and reliable enough that payload delivery is no longer a constraint.
 
-At StarForge, we are building the technologies and training talent required to make orbital data centres cheap and scalable.
+At StarForge, we are building the technologies required to make orbital data centres cheap and scalable.
 
-The most important piece is rapidly reusable orbital launch infrastructure. Without owning this infrastructure, no organisation can bring down the cost of placing payloads into orbit to the level required for orbital data centres.
+The most important piece is rapidly reusable orbital launch infrastructure. Without owning this infrastructure, no organisation can bring down the cost of placing payloads into orbit to the level required for 5GW orbital data centres.
 
 Our launch system is designed around this requirement from day one. The booster stage is rapidly reusable, while the upper stage itself becomes the orbital data centre. This upper-stage architecture is stackable, allowing us to meet data centre wattage and bandwidth demands while also addressing orbital communication constraints.
 
@@ -33,8 +33,8 @@ That is why we have built our own physical AI infrastructure: to increase mechan
 
 ## The Team
 
-At StarForge, we have engineers with firsthand experience in liquid bi-propellant engine design, system engineering, and full-stack physical AI. We are building "Made in US" robotic and aerospace infrastructure from scratch — knowledge that is extremely rare and difficult to find anywhere in the world.
+At StarForge, we are engineers with firsthand experience in liquid bi-propellant engine design, systems engineering, and full-stack humanoid robots. We are building "Made in US" robotic and aerospace infrastructure from scratch — knowledge that is extremely rare in the world.
 
-If you are interested in learning any part of this, contributing to the mission, or working alongside one of the most ambitious early teams, reach out.
+If you are interested in learning any part of this, contributing to the mission, or working alongside one of the most ambitious teams, reach out.
 
-This pre-seed round is funded by the founder and close angel investors. We are open to offering meaningful equity to early supporters and engineers who want to help build the infrastructure layer for orbital data centres and, eventually, a Type II civilisation.
+This pre-seed round is funded by the founder and angel investors. We are open to offering equity to early supporters and engineers who wants to build the infrastructure layer for orbital data centres and, eventually, a Type II civilisation.
