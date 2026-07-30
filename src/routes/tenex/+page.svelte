@@ -136,7 +136,7 @@
 	<div class="rdk-grid">
 		<div class="reveal">
 			<span class="section-label">Why Now</span>
-			<h2 class="section-title">America's labor shortage<br /><span>needs a robotic workforce</span></h2>
+			<h2 class="section-title">America's Manufacturing<br /><span>needs a robotic workforce</span></h2>
 			<p class="section-body">
 				The US has a huge labour shortage for factories, plants and warehouses. The labour demand
 				is growing higher in every sector, be it automotive, datacentres or space tech. Companies
@@ -172,7 +172,7 @@
 	<div class="rdk-grid">
 		<div class="reveal">
 			<span class="section-label">The Platform</span>
-			<h2 class="section-title">Android for<br /><span>humanoid robots</span></h2>
+			<h2 class="section-title">Tenex Training<br /><span>Kit</span></h2>
 			<p class="section-body">
 				The missing layer in humanoid robotics is not hardware — it is data. Without training data,
 				robots cannot generalize to real-world tasks. We are building the platform that lets developers
@@ -209,7 +209,6 @@
 				timeline. We'll get you set up with the right configuration.
 			</p>
 			<div class="hero-ctas" style="margin-top:32px;">
-				<a class="btn-primary" href="/developer">Dev Portal</a>
 				<a class="btn-ghost" href="https://github.com/ScalingPhysicalAI">View on GitHub</a>
 			</div>
 		</div>
