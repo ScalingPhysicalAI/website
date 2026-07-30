@@ -28,3 +28,11 @@ Current robotic actuator technology isn't yet as efficient as human joints. So r
 To maximize productivity and minimize downtime, we've built a hot-swappable battery system that lets the robot autonomously replace depleted batteries with fully charged ones. The batteries live in the wheelbase, adding weight low in the robot and improving overall stability.
 
 The wheelbase also includes an adjustable center-of-gravity mechanism that can shift the batteries horizontally, keeping the robot balanced while lifting or carrying heavy objects — particularly when its arms are extended away from its central axis.
+
+## The Team
+
+At StarForge, we are engineers with firsthand experience in liquid bi-propellant engine design, systems engineering, and full-stack humanoid robots. We are building “Made in US” robotic and aerospace infrastructure from scratch — knowledge that is extremely rare in the world.
+
+If you are interested in learning any part of this, contributing to the mission, or working alongside one of the most ambitious teams, reach out.
+
+This pre-seed round is funded by the founder and angel investors. We are open to offering equity to early supporters and engineers who wants to build the infrastructure layer for orbital data centres and, eventually, a Type II civilisation.
