@@ -1,5 +1,5 @@
 ---
-title: "Starforge Raises $1M Pre-Seed Round to Build AI Data Centers in Orbit"
+title: "Strategy to build orbital data centers"
 date: "2026-06-11"
 author: "Vipul Saini"
 excerpt: "Orbital data centres are the first real step toward a Kardashev Type II civilisation. Everything before that is either distraction, or backlog."
