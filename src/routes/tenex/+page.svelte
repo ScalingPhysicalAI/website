@@ -19,6 +19,7 @@
 	const variant = product.variants.nodes[0];
 	const available = variant?.availableForSale ?? true;
 	const origin = product.origin?.value ?? null;
+	const isPrebook = (product.tags ?? []).some((tag: string) => tag.toLowerCase() === 'prebook');
 
 	let selectedImage = $state(0);
 	let quantity = $state(1);
@@ -108,7 +109,7 @@
 
 			<div class="rdk-ctas">
 				{#if cartUrl && available}
-					<a class="btn-primary rdk-btn-buy" href={cartUrl}>Order Now</a>
+					<a class="btn-primary rdk-btn-buy" href={cartUrl}>{isPrebook ? 'Prebook' : 'Order Now'}</a>
 				{/if}
 				<a class="btn-ghost" href="mailto:vipulsaini594@gmail.com">Contact Sales</a>
 			</div>
