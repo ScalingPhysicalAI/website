@@ -208,7 +208,6 @@
 				timeline. We'll get you set up with the right configuration.
 			</p>
 			<div class="hero-ctas" style="margin-top:32px;">
-				<a class="btn-primary" href="/developer">Dev Portal</a>
 				<a class="btn-ghost" href="https://github.com/ScalingPhysicalAI">View on GitHub</a>
 			</div>
 		</div>
