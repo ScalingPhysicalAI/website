@@ -119,7 +119,7 @@
 						launch a small rocket.
 					</p>
 				</div>
-				<div class="vision-image-block reveal" style="transition-delay:0.45s; margin:0;">
+				<div class="vision-image-block reveal" style="transition-delay:0.6s; margin:0;">
 					<img src="/assets/image1.png" alt="Humanoid robots in factory" />
 					<div class="vision-image-caption">
 						Humanoid robots — the physical layer of autonomous construction
