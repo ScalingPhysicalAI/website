@@ -171,7 +171,7 @@
 	<div class="rdk-grid">
 		<div class="reveal">
 			<span class="section-label">The Platform</span>
-			<h2 class="section-title">Android for<br /><span>humanoid robots</span></h2>
+			<h2 class="section-title">Tenex Training<br /><span>Kit</span></h2>
 			<p class="section-body">
 				The missing layer in humanoid robotics is not hardware — it is data. Without training data,
 				robots cannot generalize to real-world tasks. We are building the platform that lets developers
