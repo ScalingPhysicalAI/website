@@ -136,7 +136,7 @@
 	<div class="rdk-grid">
 		<div class="reveal">
 			<span class="section-label">Why Now</span>
-			<h2 class="section-title">America's Manufacturing<br /><span>needs a robotic workforce</span></h2>
+			<h2 class="section-title">America<br /><span>needs a robotic workforce</span></h2>
 			<p class="section-body">
 				The US has a huge labour shortage for factories, plants and warehouses. The labour demand
 				is growing higher in every sector, be it automotive, datacentres or space tech. Companies
