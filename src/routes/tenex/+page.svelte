@@ -131,6 +131,42 @@
 
 <div class="hr-line"></div>
 
+<section class="rdk-section" id="why-now">
+	<div class="rdk-grid">
+		<div class="reveal">
+			<span class="section-label">Why Now</span>
+			<h2 class="section-title">America's labor shortage<br /><span>needs a robotic workforce</span></h2>
+			<p class="section-body">
+				The US has a huge labour shortage for factories, plants and warehouses. The labour demand
+				is growing higher in every sector, be it automotive, datacentres or space tech. Companies
+				cannot bring in labour from other countries.
+			</p>
+			<p class="section-body" style="margin-top:20px;">
+				The solution is robots. The good thing about robots is that their AI model can be trained
+				to allow robots to work in any industry by simply connecting them to industry specific AI
+				models.
+			</p>
+			<p class="section-body" style="margin-top:20px;">
+				America's next industrial leap depends on one thing: manufacturing capacity. Across
+				critical physical industries — from space technology and automotive to advanced
+				manufacturing — the biggest constraint is no longer innovation. It is the ability to
+				build, operate, and scale. Our humanoid robots are designed to help close that gap.
+			</p>
+		</div>
+		<div class="rdk-card reveal" style="transition-delay:0.12s">
+			<div class="rdk-card-title">Built for real industrial work</div>
+			<ul class="rdk-bullets">
+				<li>Adjustable height for different tasks and workstations</li>
+				<li>Autonomous battery swapping for continuous operation</li>
+				<li>Intelligent indoor operation and workplace navigation</li>
+			</ul>
+			<p class="rdk-note">Designed, engineered, and assembled entirely in the United States.</p>
+		</div>
+	</div>
+</section>
+
+<div class="hr-line"></div>
+
 <section class="rdk-section" id="platform">
 	<div class="rdk-grid">
 		<div class="reveal">
