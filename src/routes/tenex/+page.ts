@@ -11,6 +11,7 @@ const QUERY = `
     product(handle: "robot-dev-kit") {
       id
       title
+      tags
       featuredImage { url altText }
       images(first: 10) { nodes { url altText } }
       priceRange {
@@ -33,6 +34,7 @@ type ProductQueryData = {
 	product: {
 		id: string;
 		title: string;
+		tags: string[];
 		featuredImage: { url: string; altText: string | null } | null;
 		images: { nodes: Array<{ url: string; altText: string | null }> };
 		priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
