@@ -15,7 +15,7 @@
 	);
 
 	const rdkNotification = $derived(
-		normalizedPath === '/robo-dev-kit'
+		normalizedPath === '/tenex'
 			? ((page.data as Record<string, any>).product?.notification?.value ?? null)
 			: null
 	);
@@ -41,8 +41,8 @@
 			const nextClass =
 				pathname === '/vision'
 					? 'page-vision'
-					: pathname === '/robo-dev-kit'
-						? 'page-robo-dev-kit'
+					: pathname === '/tenex'
+						? 'page-tenex'
 						: pathname.startsWith('/developer')
 							? 'page-developer'
 							: pathname.startsWith('/blog')

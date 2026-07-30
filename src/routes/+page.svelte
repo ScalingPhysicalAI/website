@@ -334,7 +334,7 @@
 		</div>
 	</div>
 	<!-- <div class="solved-cta reveal" style="transition-delay:0.4s"> -->
-		<!-- <a href="/robo-dev-kit" class="btn-primary">Buy Robot Kit</a> -->
+		<!-- <a href="/tenex" class="btn-primary">Buy Robot Kit</a> -->
 	<!-- </div> -->
 </section>
 
