@@ -39,7 +39,7 @@ function activeForAnchor(id: Exclude<Section, ''>) {
 <div class="site-header" bind:this={headerEl}>
 	{#if isHome}
 		<a class="announcement-bar" href={resolve('/blog/why-physical-ai-will-define-the-next-industrial-era/')}>
-			Starforge Raises $1M Pre-Seed Round to Build AI Data Centers in Orbit &nbsp;→
+			Starforge Raises $1M Pre-Seed Round to Build Rocket Factories &nbsp;→
 		</a>
 	{/if}
 	{#if notification}
