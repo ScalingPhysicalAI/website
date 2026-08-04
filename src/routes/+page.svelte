@@ -64,7 +64,7 @@
 		</h1>
 		<p class="hero-sub"></p>
 		<div class="hero-ctas">
-			<a href="/tenex" class="btn-primary">Preboook Our Robots</a>
+			<a href="/tenex" class="btn-primary">Try Our Robots</a>
 			<JoinUsLink className="btn-ghost" />
 		</div>
 	</div>
