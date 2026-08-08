@@ -29,6 +29,24 @@ To maximize productivity and minimize downtime, we've built a hot-swappable batt
 
 The wheelbase also includes an adjustable center-of-gravity mechanism that can shift the batteries horizontally, keeping the robot balanced while lifting or carrying heavy objects — particularly when its arms are extended away from its central axis.
 
+## The AI Stack
+
+AGI needs systems that can continuously collect real-world data and learn at scale. To be truly useful in the physical world, it will need a humanoid form factor — our environments, tools, and infrastructure are designed around the human body.
+
+America needs its own equivalent of Unitree. Scaling physical AI research in the US requires accessible, capable robotic platforms. Tenex provides the infrastructure to collect real-world data and train models tailored to your specific use case. The Tenex AI model is highly scalable and modular.
+
+We've built a three-layer architecture that handles everything from high-level reasoning down to sub-100ms fine-motor control:
+
+**System 2 (Server) — Vision-Language Action Model.** Understands human instructions and decomposes complex tasks into sequential steps. Perceives the environment and plans actions accordingly. Provides high-level reasoning, decision-making, and long-horizon planning with sufficient generalization for robots to operate across diverse scenarios. Operates at ~1 Hz.
+
+**System 1 (On-board computer) — Foundation model** responsible for motion planning and coarse action control. Ensures the robot approaches objects in an optimal way prior to contact. Operates at ~10 Hz. Most application-related training runs on System 1 using public or private domain data.
+
+**System 0 (On-board microcontroller) — Super high-frequency model** responsible for instantaneous interaction via fine-motor control. Leverages tactile feedback in real time to continuously readjust hand and finger positions during contact with objects. Operates at ~100 Hz.
+
+## Build Your Robot App
+
+Consider a simple pick-and-place warehouse robot. In the US, a single robot AI model can generate $20 per operating hour — $3,200 per month. A warehouse deployed with 20 robots generates approximately $64,000 per month, or $768,000 per year, in revenue.
+
 ## The Team
 
 At StarForge, we are engineers with firsthand experience in liquid bi-propellant engine design, systems engineering, and full-stack humanoid robots. We are building “Made in US” robotic and aerospace infrastructure from scratch — knowledge that is extremely rare in the world.
