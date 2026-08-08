@@ -136,32 +136,31 @@
 	<div class="rdk-grid">
 		<div class="reveal">
 			<span class="section-label">Why Now</span>
-			<h2 class="section-title">America<br /><span>needs a robotic workforce</span></h2>
+			<h2 class="section-title">AGI needs<br /><span>the physical world</span></h2>
 			<p class="section-body">
-				The US has a huge labour shortage for factories, plants and warehouses. The labour demand
-				is growing higher in every sector, be it automotive, datacentres or space tech. Companies
-				cannot bring in labour from other countries.
+				AGI requires systems that can continuously collect real-world data and learn at scale.
+				To be truly useful, it will need a humanoid form factor — our environments, tools, and
+				infrastructure are all designed around the human body.
 			</p>
 			<p class="section-body" style="margin-top:20px;">
-				The solution is robots. The good thing about robots is that their AI model can be trained
-				to allow robots to work in any industry by simply connecting them to industry specific AI
-				models.
+				America needs its own equivalent of Unitree. Scaling physical AI research in the US
+				requires accessible, capable robotic platforms that researchers and developers can
+				actually build on. That platform does not yet exist.
 			</p>
 			<p class="section-body" style="margin-top:20px;">
-				America's next industrial leap depends on one thing: manufacturing capacity. Across
-				critical physical industries — from space technology and automotive to advanced
-				manufacturing — the biggest constraint is no longer innovation. It is the ability to
-				build, operate, and scale. Our humanoid robots are designed to help close that gap.
+				Tenex provides the infrastructure to collect real-world data and train models tailored
+				to your specific use case — with an AI architecture that is highly scalable and modular,
+				from cloud reasoning down to sub-100ms fine-motor control.
 			</p>
 		</div>
 		<div class="rdk-card reveal" style="transition-delay:0.12s">
-			<div class="rdk-card-title">Built for real industrial work</div>
+			<div class="rdk-card-title">Three-layer AI architecture</div>
 			<ul class="rdk-bullets">
-				<li>Adjustable height for different tasks and workstations</li>
-				<li>Autonomous battery swapping for continuous operation</li>
-				<li>Intelligent indoor operation and workplace navigation</li>
+				<li><strong>System 2</strong> — Vision-Language Action Model for reasoning and long-horizon planning (~1 Hz)</li>
+				<li><strong>System 1</strong> — On-board foundation model for motion planning and coarse action control (~10 Hz)</li>
+				<li><strong>System 0</strong> — Microcontroller model for fine-motor control via tactile feedback (~100 Hz)</li>
 			</ul>
-			<p class="rdk-note">Designed, engineered, and assembled entirely in the United States.</p>
+			<p class="rdk-note">Scalable and modular — swap in your own models at any layer.</p>
 		</div>
 	</div>
 </section>
