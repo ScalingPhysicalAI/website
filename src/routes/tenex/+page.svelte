@@ -207,6 +207,11 @@
 				Tell us what you're building — the use case, the manipulation tasks involved, and your
 				timeline. We'll get you set up with the right configuration.
 			</p>
+			<p class="section-body" style="margin-top:20px;">
+				Consider a simple pick and place warehouse robot. In the US, the robot AI models can generate
+				you $20 per operating hour or $3,200 per month. A warehouse deployed with 20 robots would
+				generate approximately $64,000 per month, or $768,000 per year, in revenue.
+			</p>
 			<div class="hero-ctas" style="margin-top:32px;">
 				<a class="btn-ghost" href="https://github.com/ScalingPhysicalAI">View on GitHub</a>
 			</div>
