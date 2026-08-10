@@ -136,13 +136,8 @@
 	<div class="rdk-grid">
 		<div class="reveal">
 			<span class="section-label">Why Now</span>
-			<h2 class="section-title">AGI needs<br /><span>the physical world</span></h2>
+			<h2 class="section-title">Why Now</h2>
 			<p class="section-body">
-				AGI requires systems that can continuously collect real-world data and learn at scale.
-				To be truly useful, it will need a humanoid form factor — our environments, tools, and
-				infrastructure are all designed around the human body.
-			</p>
-			<p class="section-body" style="margin-top:20px;">
 				America needs its own equivalent of Unitree. Scaling physical AI research in the US
 				requires accessible, capable robotic platforms that researchers and developers can
 				actually build on. That platform does not yet exist.
