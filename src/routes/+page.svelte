@@ -64,7 +64,7 @@
 		</h1>
 		<p class="hero-sub"></p>
 		<div class="hero-ctas">
-			<a href="/tenex" class="btn-primary">Try Our Robots</a>
+			<a href="/buildo" class="btn-primary">Try Our Robots</a>
 			<JoinUsLink className="btn-ghost" />
 		</div>
 	</div>
@@ -334,7 +334,7 @@
 		</div>
 	</div>
 	<!-- <div class="solved-cta reveal" style="transition-delay:0.4s"> -->
-		<!-- <a href="/tenex" class="btn-primary">Buy Robot Kit</a> -->
+		<!-- <a href="/buildo" class="btn-primary">Buy Robot Kit</a> -->
 	<!-- </div> -->
 </section>
 

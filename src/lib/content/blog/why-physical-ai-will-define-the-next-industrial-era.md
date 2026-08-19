@@ -33,7 +33,7 @@ The wheelbase also includes an adjustable center-of-gravity mechanism that can s
 
 AGI needs systems that can continuously collect real-world data and learn at scale. To be truly useful in the physical world, it will need a humanoid form factor — our environments, tools, and infrastructure are designed around the human body.
 
-America needs its own equivalent of Unitree. Scaling physical AI research in the US requires accessible, capable robotic platforms. Tenex provides the infrastructure to collect real-world data and train models tailored to your specific use case. The Tenex AI model is highly scalable and modular.
+America needs its own equivalent of Unitree. Scaling physical AI research in the US requires accessible, capable robotic platforms. Buildo provides the infrastructure to collect real-world data and train models tailored to your specific use case. The Buildo AI model is highly scalable and modular.
 
 We've built a three-layer architecture that handles everything from high-level reasoning down to sub-100ms fine-motor control:
 

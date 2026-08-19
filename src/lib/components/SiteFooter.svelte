@@ -24,7 +24,7 @@
 			<div class="footer-col">
 				<span class="footer-col-label">Products</span>
 				<ul>
-					<li><a href={resolve('/tenex')}>Robo Dev Kit</a></li>
+					<li><a href={resolve('/buildo')}>Robo Dev Kit</a></li>
 					<li><a href={resolve('/#why-now')}>Why Now</a></li>
 					<li><a href={resolve('/#launch-window')}>Launch Window</a></li>
 				</ul>

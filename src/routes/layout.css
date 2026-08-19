@@ -1606,10 +1606,10 @@ body.page-vision footer {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   ROBO DEV KIT PAGE (page-tenex)
+   ROBO DEV KIT PAGE (page-buildo)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-body.page-tenex {
+body.page-buildo {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;

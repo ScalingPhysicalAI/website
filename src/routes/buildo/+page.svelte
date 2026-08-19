@@ -143,7 +143,7 @@
 				actually build on. That platform does not yet exist.
 			</p>
 			<p class="section-body" style="margin-top:20px;">
-				Tenex provides the infrastructure to collect real-world data and train models tailored
+				Buildo provides the infrastructure to collect real-world data and train models tailored
 				to your specific use case — with an AI architecture that is highly scalable and modular,
 				from cloud reasoning down to sub-100ms fine-motor control.
 			</p>
@@ -166,7 +166,7 @@
 	<div class="rdk-grid">
 		<div class="reveal">
 			<span class="section-label">The Platform</span>
-			<h2 class="section-title">Tenex Training<br /><span>Kit</span></h2>
+			<h2 class="section-title">Buildo Training<br /><span>Kit</span></h2>
 			<p class="section-body">
 				The missing layer in humanoid robotics is not hardware — it is data. Without training data,
 				robots cannot generalize to real-world tasks. We are building the platform that lets developers
