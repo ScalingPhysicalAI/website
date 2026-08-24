@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let currentSlide = 0;
-	const TOTAL = 9;
+	const TOTAL = 14;
 
 	function renderSlides() {
 		const nodes = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
@@ -91,7 +91,7 @@
 			<img src="/assets/logo.png" alt="StarForge" class="nav-logo-img" />
 			<div class="nav-center">
 				<div class="nav-slides" id="navDots"></div>
-				<span class="slide-counter" id="slideCounter">01 / 09</span>
+				<span class="slide-counter" id="slideCounter">01 / 14</span>
 			</div>
 			<button class="print-btn" onclick={printDeck}>
 				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
@@ -106,10 +106,10 @@
 			<div class="cover-content">
 				<div class="cover-tag anim-in anim-d1">Seed Round · 2026</div>
 				<h1 class="cover-title anim-in anim-d2">
-					Building<br />
-					<span class="hl-gold">Autonomous</span><br />
-					Factories for<br />
-					Space Infrastructure
+					Building the<br />
+					<span class="hl-gold">Compute Layer</span><br />
+					for Physical<br />
+					Intelligence
 				</h1>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a href="https://starforgerobotics.com" class="cover-url anim-in anim-d3">starforgerobotics.com</a>
@@ -128,160 +128,182 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 2 — MARKET / ORBITAL DATA CENTRES -->
+		<!-- SLIDE 2 — HUMANOID BOOTLOADER -->
 		<section class="slide" id="s2">
 			<div class="section-label anim-in anim-d1">The Opportunity</div>
 			<h2 class="headline anim-in anim-d2">
-				Orbital data centres:<br />
-				<span class="hl-gold">The next frontier that needs launch stack</span>
+				General purpose humanoid robots are<br />
+				the <span class="hl-gold">bootloader for Physical Intelligence</span>
 			</h2>
 			<div class="bullet-list anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>Companies that own their launch infrastructure will be the ones that make orbital commute <strong>economically feasible.</strong></p>
+					<p>Human environment keeps evolving. <strong>Physical intelligence needs continuous data collection.</strong></p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>The industry needs <strong>10s of 1000s of reusable rockets</strong> — not over the next decade, but effectively right now.</p>
+					<p><strong>Unitree</strong> — an open, community-driven approach built around an accessible robotics platform that enables researchers and developers to experiment, build, and contribute.</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>This demand cannot be filled with current rocket development costs and timelines. Starship development alone has already consumed <strong>$20 billion.</strong></p>
+					<p><strong>Figure / UBTECH</strong> — a vertically integrated approach where proprietary hardware, software, data collection, and AI development are handled by dedicated in-house teams on a closed platform.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 3 — PROBLEM / PHYSICAL AI -->
+		<!-- SLIDE 3 — UNITREE -->
 		<section class="slide" id="s3">
+			<div class="section-label anim-in anim-d1">Market Signal</div>
+			<h2 class="headline anim-in anim-d2">
+				Unitree: a great candidate for<br />
+				<span class="hl-gold">general purpose humanoid</span>
+			</h2>
+			<div class="bullet-list anim-in anim-d3">
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p><strong>70–80%</strong> of Unitree's humanoid sales were for research use cases; 20–30% for education and entertainment.</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>Unitree opened near <strong>$66B</strong> — 5× its last VC round of $1.9B and ~7× its IPO price.</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>Market validated: developers and researchers are actively choosing open humanoid platforms at <strong>massive scale.</strong></p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 4 — UNITREE LACKED BRAIN -->
+		<section class="slide" id="s4">
 			<div class="section-label anim-in anim-d1">The Problem</div>
 			<h2 class="headline anim-in anim-d2">
-				Physical AI is the <span class="hl-gold">key to space</span>
+				Unitree solved the <span class="hl-gold">body</span> —<br />
+				the brain remains unsolved
 			</h2>
 			<div class="bullet-list anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>Today most of the time and money in rocket infrastructure goes into <strong>learning through real world launch attempts.</strong></p>
+					<p>We saw Unitree robots dancing, running — but <strong>no real-world deployment</strong> at scale.</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>Every test, every failure and every iteration exists just to make the system <strong>1% better.</strong></p>
+					<p>Unitree argues they have solved the body and the <strong>brain is the next constraint.</strong></p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>A rocket program spans <strong>hundreds of thousands of components,</strong> millions of design decisions, years of test data.</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>Humans are remarkably bad at one thing — <strong>holding vast, interconnected context simultaneously.</strong></p>
+					<p>A robot foundation model approaching human-level generality could exceed <strong>500 billion parameters</strong> — making it extremely difficult and expensive to run on conventional research hardware.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 4 — SOLUTION -->
-		<section class="slide" id="s4">
+		<!-- SLIDE 5 — BREAKTHROUGH -->
+		<section class="slide" id="s5">
 			<div class="section-label anim-in anim-d1">Our Solution</div>
 			<h2 class="headline anim-in anim-d2">
-				We have built the <span class="hl-gold">Physical AI stack</span><br />
-				for Space Infrastructure
+				Our breakthrough allows running<br />
+				<span class="hl-gold">any sized model</span> on humanoid robots
 			</h2>
 			<div class="solution-cards anim-in anim-d3">
 				<div class="solution-card">
 					<div class="solution-card-num">01</div>
-					<p>Our Physical AI stack can ingest every simulation run, every failure mode, every material property, and every environmental variable — and iterate on all of it simultaneously. This <strong>compresses years of development cycles to months.</strong></p>
+					<p>This <strong>fundamentally changes the architecture and economics</strong> of intelligent humanoid robots — models of any size can now run efficiently inside the robot.</p>
 				</div>
 				<div class="solution-card">
 					<div class="solution-card-num">02</div>
-					<p>The stack controls <strong>all humanoid robots</strong> that can use tools and drive heavy machines — required to build a fully autonomous space infrastructure.</p>
+					<p>As more developers gain access and dramatically more physical-world data is collected, the ecosystem could produce increasingly advanced <strong>general-purpose robotic AI</strong> capable of orders-of-magnitude productivity improvements.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 5 — WHY US -->
-		<section class="slide" id="s5">
-			<div class="section-label anim-in anim-d1">Competitive Advantage</div>
-			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">us</span></h2>
+		<!-- SLIDE 6 — BUILDO KIT -->
+		<section class="slide" id="s6">
+			<div class="section-label anim-in anim-d1">Product</div>
+			<h2 class="headline anim-in anim-d2">
+				Buildo robot and<br />
+				<span class="hl-gold">training kit</span> — v1
+			</h2>
 			<div class="why-grid anim-in anim-d3">
 				<div class="why-card">
 					<div class="why-card-line"></div>
 					<div class="why-card-num">01</div>
-					<p class="why-card-body">Putting AI infrastructure in space requires a <strong>vertically integrated space tech</strong> company.</p>
+					<p class="why-card-body">Open humanoid platform designed for <strong>real-world data collection</strong> at scale.</p>
 				</div>
 				<div class="why-card">
 					<div class="why-card-line"></div>
 					<div class="why-card-num">02</div>
-					<p class="why-card-body">To train robot AI models we need physical data — <strong>we have solved this at scale.</strong></p>
+					<p class="why-card-body">Training kit enables researchers to <strong>deploy and fine-tune</strong> robot foundation models out of the box.</p>
 				</div>
 				<div class="why-card">
 					<div class="why-card-line"></div>
 					<div class="why-card-num">03</div>
-					<p class="why-card-body">We have the <strong>world's best AI model</strong> for robot industrial use cases.</p>
+					<p class="why-card-body">Actuator and dextrous hand solve the <strong>critical path</strong> in humanoid hardware — the Pareto components driving performance and cost.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 6 — TRACTION / ROCKET -->
-		<section class="slide" id="s6">
-			<div class="rocket-photo-bg">
-				<img src="/assets/rocket.jpeg" alt="FORGE-1 rocket" class="rocket-photo" />
-				<div class="rocket-photo-fade"></div>
-			</div>
-			<div class="rocket-left anim-in anim-d1">
-				<div class="section-label">Proof of Execution</div>
-				<h2 class="headline">
-					StarForge designed, simulated,<br />and built a<br />
-					<span class="hl-gold">9-foot VTVL hopper rocket</span>
-				</h2>
-				<div class="rocket-stats anim-in anim-d3">
-					<div class="rstat">
-						<div class="rstat-val">9 ft</div>
-						<div class="rstat-label">Vehicle Height</div>
-					</div>
-					<div class="rstat">
-						<div class="rstat-val">VTVL</div>
-						<div class="rstat-label">Architecture</div>
-					</div>
-					<div class="rstat">
-						<div class="rstat-val">AI</div>
-						<div class="rstat-label">Simulated</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 7 — TEAM -->
+		<!-- SLIDE 7 — INFRA -->
 		<section class="slide" id="s7">
-			<div class="section-label anim-in anim-d1">Founding Team</div>
-			<h2 class="headline anim-in anim-d2">Built by <span class="hl-gold">operators</span></h2>
-			<div class="team-grid anim-in anim-d3">
-				<div class="team-card">
-					<div class="team-initials">VS</div>
-					<div class="team-name">Vipul Saini</div>
-					<div class="team-role">CEO · Chief Engineer</div>
-					<div class="team-bio">Prev. Nymble Labs. Founded Cypherock, scaled to $600M AUM.</div>
+			<div class="section-label anim-in anim-d1">Platform</div>
+			<h2 class="headline anim-in anim-d2">
+				StarForge<br />
+				<span class="hl-gold">Physical Intelligence Infra</span>
+			</h2>
+			<div class="solution-cards anim-in anim-d3">
+				<div class="solution-card">
+					<div class="solution-card-num">Humanoid Platform</div>
+					<p>Enable researchers and developers to <strong>collect real-world data</strong> and build better physical AI models on an open, accessible platform.</p>
 				</div>
-				<div class="team-card">
-					<div class="team-initials">RJ</div>
-					<div class="team-name">Rakshit Jain</div>
-					<div class="team-role">Head of Mechatronics</div>
-					<div class="team-bio">Prev. Arka AeroSpace. IIIT Delhi. Deep aerospace manufacturing background.</div>
-				</div>
-				<div class="team-card">
-					<div class="team-initials">CS</div>
-					<div class="team-name">Chirag Singla</div>
-					<div class="team-role">Leading AI</div>
-					<div class="team-bio">Prev. Cypherock. Core AI and systems engineering across multiple product cycles.</div>
-				</div>
-				<div class="team-card">
-					<div class="team-initials">CS</div>
-					<div class="team-name">Celia Sherman</div>
-					<div class="team-role">Aerospace Lead</div>
-					<div class="team-bio">Aerospace Engineering, University of Miami. NAR Level 1 certified for high-power rocket launch.</div>
+				<div class="solution-card">
+					<div class="solution-card-num">Compute Layer</div>
+					<p>For researchers and developers to <strong>train and host robot models</strong> for inference — from any size model to production deployment.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 8 — COMPETITION -->
+		<!-- SLIDE 8 — DEVELOPER REWARDS -->
 		<section class="slide" id="s8">
+			<div class="section-label anim-in anim-d1">Ecosystem</div>
+			<h2 class="headline anim-in anim-d2">
+				Developers earn rewards for<br />
+				<span class="hl-gold">building and hosting models</span>
+			</h2>
+			<div class="bullet-list anim-in anim-d3">
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>Developers who build and contribute robot AI models to the platform <strong>earn direct rewards</strong> — aligning incentives with model quality.</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>Hosting models on the StarForge compute layer generates ongoing revenue for contributors, creating a <strong>self-reinforcing developer flywheel.</strong></p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>Strong developer base already in place — <strong>community-driven growth</strong> mirrors the open-source software model applied to physical AI.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 9 — REVENUE -->
+		<section class="slide" id="s9">
+			<div class="section-label anim-in anim-d1">Business Model</div>
+			<h2 class="headline anim-in anim-d2">
+				Revenue <span class="hl-gold">projection</span>
+			</h2>
+			<div class="solution-cards anim-in anim-d3">
+				<div class="solution-card">
+					<div class="solution-card-num">Hardware Sales Revenue</div>
+					<p>Humanoid robot and training kit sales to researchers, developers, and enterprises deploying physical AI in the real world. <strong>Recurring hardware upgrade cycles</strong> as models improve.</p>
+				</div>
+				<div class="solution-card">
+					<div class="solution-card-num">Compute Revenue</div>
+					<p>Training and inference hosting on the StarForge compute layer. Compute demand for physical intelligence will increase <strong>100× with increasing adoption</strong> — far exceeding digital AI today.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 10 — COMPETITION -->
+		<section class="slide" id="s10">
 			<div class="section-label anim-in anim-d1">Competitive Position</div>
 			<h2 class="headline anim-in anim-d2">
 				How we stand <span class="hl-gold">better</span> than competition
@@ -290,44 +312,146 @@
 				<div class="comp-item">
 					<div class="comp-num">01</div>
 					<div class="comp-content">
-						<div class="comp-title">SpaceX / Starship</div>
-						<p class="comp-body">Starship has consumed <strong>$20 billion</strong> in development costs. SpaceX cannot reduce payload launch cost significantly without affecting total profit margins — leaving the market wide open.</p>
+						<div class="comp-title">1X</div>
+						<p class="comp-body"><strong>Costly and open platform</strong> — high barrier to entry for most researchers and developers, limiting community growth and data collection scale.</p>
 					</div>
 				</div>
 				<div class="comp-item">
 					<div class="comp-num">02</div>
 					<div class="comp-content">
-						<div class="comp-title">The Physical AI Gap</div>
-						<p class="comp-body"><strong>No company</strong> has a physical AI solution deployed for space infrastructure development. We are uniquely positioned as the first mover in this category.</p>
+						<div class="comp-title">Figure</div>
+						<p class="comp-body"><strong>Costly and closed platform</strong> — vertically integrated approach restricts the developer ecosystem needed to rapidly advance physical AI models.</p>
+					</div>
+				</div>
+				<div class="comp-item">
+					<div class="comp-num">03</div>
+					<div class="comp-content">
+						<div class="comp-title">Nori and similar</div>
+						<p class="comp-body"><strong>Cheap but incapable</strong> — insufficient hardware performance to run meaningful physical AI models or collect high-quality training data.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 9 — ASK / VISION -->
-		<section class="slide" id="s9">
-			<div class="section-label anim-in anim-d1">The Ask</div>
-			<h2 class="headline anim-in anim-d2">Our <span class="hl-gold">vision</span></h2>
+		<!-- SLIDE 11 — WHY STARFORGE -->
+		<section class="slide" id="s11">
+			<div class="section-label anim-in anim-d1">Competitive Advantage</div>
+			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">StarForge</span></h2>
+			<div class="why-grid anim-in anim-d3">
+				<div class="why-card">
+					<div class="why-card-line"></div>
+					<div class="why-card-num">01</div>
+					<p class="why-card-body">We made a breakthrough that allows robots to run <strong>any sized model</strong> — making real-world deployments possible for the first time.</p>
+				</div>
+				<div class="why-card">
+					<div class="why-card-line"></div>
+					<div class="why-card-num">02</div>
+					<p class="why-card-body"><strong>Strong developer base already.</strong> Community-driven data collection at scale that closed competitors cannot replicate.</p>
+				</div>
+				<div class="why-card">
+					<div class="why-card-line"></div>
+					<div class="why-card-num">03</div>
+					<p class="why-card-body">Solved the entire humanoid robot hardware and supply chain — especially the <strong>actuator and dextrous hand</strong>, the critical-path components.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 12 — TEAM -->
+		<section class="slide" id="s12">
+			<div class="section-label anim-in anim-d1">Founding Team</div>
+			<h2 class="headline anim-in anim-d2">Built by <span class="hl-gold">builders</span></h2>
+			<div class="team-grid anim-in anim-d3">
+				<div class="team-card">
+					<div class="team-initials">VS</div>
+					<div class="team-name">Vipul Saini</div>
+					<div class="team-role">Founder · Chief Engineer</div>
+					<div class="team-bio">Founded Cypherock, scaled to $600M AUM. Previously Nymble Labs.</div>
+				</div>
+				<div class="team-card">
+					<div class="team-initials">RJ</div>
+					<div class="team-name">Rakshit Jain</div>
+					<div class="team-role">Senior Robotics Engineer</div>
+					<div class="team-bio">Deep robotics and mechatronics background. IIIT Delhi.</div>
+				</div>
+				<div class="team-card">
+					<div class="team-initials">SS</div>
+					<div class="team-name">Sarthak</div>
+					<div class="team-role">Senior Software Engineer</div>
+					<div class="team-bio">Core systems and software engineering across robotics stacks.</div>
+				</div>
+				<div class="team-card">
+					<div class="team-initials">CE</div>
+					<div class="team-name">Celia</div>
+					<div class="team-role">Aerospace Engineer</div>
+					<div class="team-bio">Aerospace engineering background. Structural and propulsion systems.</div>
+				</div>
+				<div class="team-card">
+					<div class="team-initials">AN</div>
+					<div class="team-name">Anay</div>
+					<div class="team-role">Electrical Engineer</div>
+					<div class="team-bio">Electrical systems design and embedded hardware integration.</div>
+				</div>
+				<div class="team-card">
+					<div class="team-initials">CS</div>
+					<div class="team-name">Chirag</div>
+					<div class="team-role">Software Engineer</div>
+					<div class="team-bio">AI and systems engineering across multiple product cycles.</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 13 — TRACTION -->
+		<section class="slide" id="s13">
+			<div class="section-label anim-in anim-d1">Traction</div>
+			<h2 class="headline anim-in anim-d2">
+				Businesses and developers<br />
+				<span class="hl-gold">love our robots</span>
+			</h2>
+			<div class="comp-list anim-in anim-d3">
+				<div class="comp-item">
+					<div class="comp-num">01</div>
+					<div class="comp-content">
+						<div class="comp-title">Mazout Electric</div>
+						<p class="comp-body">Building <strong>lithium ion batteries using robots</strong> — deploying StarForge humanoids for real industrial manufacturing tasks.</p>
+					</div>
+				</div>
+				<div class="comp-item">
+					<div class="comp-num">02</div>
+					<div class="comp-content">
+						<div class="comp-title">Aryan Madhav Verma</div>
+						<p class="comp-body">Building <strong>industrial use cases</strong> on the StarForge platform — validating demand for open, capable humanoid robots beyond research.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 14 — VISION / ASK -->
+		<section class="slide" id="s14">
+			<div class="section-label anim-in anim-d1">The Vision</div>
+			<h2 class="headline anim-in anim-d2">
+				Robotics <span class="hl-gold">AGI</span> in the next<br />
+				6 – 12 months
+			</h2>
 			<div class="vision-body anim-in anim-d3">
-				<p class="vision-text">Our first product will generate revenue as a <strong>rocket launch service provider</strong> for deploying orbital data centers in Low Earth Orbit.</p>
-				<p class="vision-text">SpaceX's launch service business revenue is estimated at approximately <strong>$4.1 billion in 2025</strong> — this is our addressable wedge.</p>
+				<p class="vision-text">Our thesis: ecosystem-driven acceleration could bring the industry substantially closer to <strong>general purpose robotics AGI within the next year</strong> — creating transformational productivity gains across multiple industries.</p>
+				<p class="vision-text">This will also produce specialised robots — high payload, space stations, lunar and Mars base operations. <strong>Compute demand for physical intelligence will increase 100× with adoption</strong>, far exceeding digital AI today.</p>
 			</div>
 			<div class="ask-row anim-in anim-d3">
-				<div class="ask-amount">$100M</div>
+				<div class="ask-amount">Seed</div>
 				<div class="ask-details">
 					<div class="ask-item">
-						<div class="ask-val">$1B</div>
-						<div class="ask-label">Post-Money Valuation</div>
+						<div class="ask-val">Hardware</div>
+						<div class="ask-label">Revenue Stream 1</div>
 					</div>
 					<div class="ask-divider"></div>
 					<div class="ask-item">
-						<div class="ask-val">Seed</div>
-						<div class="ask-label">Round Stage</div>
+						<div class="ask-val">Compute</div>
+						<div class="ask-label">Revenue Stream 2</div>
 					</div>
 					<div class="ask-divider"></div>
 					<div class="ask-item">
-						<div class="ask-val">LEO</div>
-						<div class="ask-label">First Target Market</div>
+						<div class="ask-val">Physical AI</div>
+						<div class="ask-label">Category</div>
 					</div>
 				</div>
 			</div>
@@ -729,90 +853,16 @@
 		font-weight: 500;
 	}
 
-	/* ── ROCKET SLIDE ── */
-	#s6 {
-		background: #050505;
-		padding: 0;
-		overflow: hidden;
-	}
-
-	.rocket-photo-bg {
-		position: absolute;
-		inset: 0;
-		z-index: 0;
-	}
-
-	.rocket-photo {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: 55% 65%;
-		filter: brightness(0.82) contrast(1.1) saturate(0.55) sepia(0.08);
-	}
-
-	.rocket-photo-fade {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			90deg,
-			rgba(5, 5, 5, 0.95) 0%,
-			rgba(5, 5, 5, 0.65) 28%,
-			rgba(5, 5, 5, 0.08) 50%,
-			rgba(5, 5, 5, 0.0) 100%
-		);
-	}
-
-	.rocket-left {
-		position: relative;
-		z-index: 2;
-		max-width: 44%;
-		padding: clamp(56px, 14vh, 96px) clamp(36px, 5vw, 72px);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		height: 100%;
-	}
-
-	.rocket-stats {
-		display: grid;
-		grid-template-columns: repeat(3, auto);
-		gap: 3px;
-		margin-top: clamp(12px, 4vh, 48px);
-	}
-
-	.rstat {
-		padding: clamp(12px, 3vh, 28px) clamp(12px, 2.5vw, 24px);
-		background: rgba(255,255,255,0.02);
-		border: 1px solid rgba(184, 156, 114, 0.1);
-	}
-
-	.rstat-val {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(22px, 5.5vmin, 42px);
-		color: #b89c72;
-		letter-spacing: 0.04em;
-		line-height: 1;
-	}
-
-	.rstat-label {
-		font-family: 'Space Mono', monospace;
-		font-size: 10px;
-		color: #6b6155;
-		letter-spacing: 0.15em;
-		text-transform: uppercase;
-		margin-top: 8px;
-	}
-
 	/* ── TEAM ── */
 	.team-grid {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(6, 1fr);
 		gap: 3px;
 		margin-top: clamp(12px, 4vh, 40px);
 	}
 
 	.team-card {
-		padding: clamp(14px, 3.5vh, 28px) clamp(12px, 2.5vw, 24px);
+		padding: clamp(14px, 3.5vh, 28px) clamp(10px, 2vw, 20px);
 		background: rgba(255,255,255,0.02);
 		border: 1px solid rgba(184, 156, 114, 0.1);
 		border-top: 2px solid rgba(184, 156, 114, 0.3);
@@ -834,15 +884,15 @@
 
 	.team-name {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.4vmin, 17px);
+		font-size: clamp(11px, 2vmin, 15px);
 		font-weight: 600;
 		color: #e8e2d6;
 	}
 
 	.team-role {
 		font-family: 'Space Mono', monospace;
-		font-size: clamp(8px, 1.4vmin, 10px);
-		letter-spacing: 0.12em;
+		font-size: clamp(7px, 1.2vmin, 9px);
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: #b89c72;
 		margin-top: 3px;
@@ -851,7 +901,7 @@
 
 	.team-bio {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(10px, 1.8vmin, 13px);
+		font-size: clamp(9px, 1.6vmin, 12px);
 		font-weight: 300;
 		color: #6b6155;
 		line-height: 1.6;
@@ -905,7 +955,7 @@
 	}
 
 	/* ── VISION / ASK ── */
-	#s9 {
+	#s14 {
 		background:
 			radial-gradient(ellipse 60% 80% at 90% 50%, rgba(184, 156, 114, 0.05) 0%, transparent 60%),
 			#050505;
@@ -1051,13 +1101,6 @@
 			min-height: 100vh;
 			padding: 80px 72px;
 			display: flex !important;
-		}
-
-		/* keep rocket bg anchored inside its slide */
-		#s6 {
-			position: relative !important;
-			padding: 0 !important;
-			overflow: hidden !important;
 		}
 
 		.cover-star { display: none; }
