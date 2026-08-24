@@ -422,6 +422,13 @@
 						<p class="comp-body">Building <strong>industrial use cases</strong> on the StarForge platform — validating demand for open, capable humanoid robots beyond research.</p>
 					</div>
 				</div>
+				<div class="comp-item">
+					<div class="comp-num">03</div>
+					<div class="comp-content">
+						<div class="comp-title">Rohan Aggarwal — Angel Investor</div>
+						<p class="comp-body">Co-founder of <strong>Cypherock</strong> — backing StarForge as an angel investor, bringing deep hardware and startup expertise.</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
