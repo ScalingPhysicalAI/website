@@ -256,7 +256,7 @@
 				</div>
 				<div class="solution-card">
 					<div class="solution-card-num">Compute Layer</div>
-					<p>For researchers and developers to <strong>train and host robot models</strong> for inference — from any size model to production deployment.</p>
+					<p><strong>Train and host robot models</strong> for inference — from any size model to production deployment.</p>
 				</div>
 			</div>
 		</section>
