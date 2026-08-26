@@ -131,7 +131,7 @@
 		</section>
 
 		<!-- SLIDE 2 — HUMANOID BOOTLOADER -->
-		<section class="slide slide-hidden" id="s2">
+		<section class="slide" id="s2">
 			<div class="section-label anim-in anim-d1">The Opportunity</div>
 			<h2 class="headline anim-in anim-d2">
 				General purpose humanoid robots are<br />
@@ -154,7 +154,7 @@
 		</section>
 
 		<!-- SLIDE 3 — UNITREE -->
-		<section class="slide slide-hidden" id="s3">
+		<section class="slide" id="s3">
 			<div class="section-label anim-in anim-d1">Market Signal</div>
 			<h2 class="headline anim-in anim-d2">
 				Unitree: a great candidate for<br />
@@ -177,7 +177,7 @@
 		</section>
 
 		<!-- SLIDE 4 — UNITREE LACKED BRAIN -->
-		<section class="slide slide-hidden" id="s4">
+		<section class="slide" id="s4">
 			<div class="section-label anim-in anim-d1">The Problem</div>
 			<h2 class="headline anim-in anim-d2">
 				Unitree solved the <span class="hl-gold">body</span> —<br />
@@ -200,7 +200,7 @@
 		</section>
 
 		<!-- SLIDE 5 — BREAKTHROUGH -->
-		<section class="slide slide-hidden" id="s5">
+		<section class="slide" id="s5">
 			<div class="section-label anim-in anim-d1">Our Solution</div>
 			<h2 class="headline anim-in anim-d2">
 				Our breakthrough allows running<br />
@@ -219,7 +219,7 @@
 		</section>
 
 		<!-- SLIDE 6 — BUILDO KIT -->
-		<section class="slide slide-hidden" id="s6">
+		<section class="slide" id="s6">
 			<div class="section-label anim-in anim-d1">Product</div>
 			<h2 class="headline anim-in anim-d2">
 				Buildo robot and<br />
@@ -245,7 +245,7 @@
 		</section>
 
 		<!-- SLIDE 7 — INFRA -->
-		<section class="slide slide-hidden" id="s7">
+		<section class="slide" id="s7">
 			<div class="section-label anim-in anim-d1">Platform</div>
 			<h2 class="headline anim-in anim-d2">
 				StarForge<br />
@@ -264,7 +264,7 @@
 		</section>
 
 		<!-- SLIDE 8 — DEVELOPER REWARDS -->
-		<section class="slide slide-hidden" id="s8">
+		<section class="slide" id="s8">
 			<div class="section-label anim-in anim-d1">Ecosystem</div>
 			<h2 class="headline anim-in anim-d2">
 				Developers earn rewards for<br />
@@ -287,7 +287,7 @@
 		</section>
 
 		<!-- SLIDE 9 — REVENUE -->
-		<section class="slide slide-hidden" id="s9">
+		<section class="slide" id="s9">
 			<div class="section-label anim-in anim-d1">Business Model</div>
 			<h2 class="headline anim-in anim-d2">
 				Revenue <span class="hl-gold">projection</span>
@@ -305,7 +305,7 @@
 		</section>
 
 		<!-- SLIDE 10 — COMPETITION -->
-		<section class="slide slide-hidden" id="s10">
+		<section class="slide" id="s10">
 			<div class="section-label anim-in anim-d1">Competitive Position</div>
 			<h2 class="headline anim-in anim-d2">
 				How we stand <span class="hl-gold">better</span> than competition
@@ -336,7 +336,7 @@
 		</section>
 
 		<!-- SLIDE 11 — WHY STARFORGE -->
-		<section class="slide slide-hidden" id="s11">
+		<section class="slide" id="s11">
 			<div class="section-label anim-in anim-d1">Competitive Advantage</div>
 			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">StarForge</span></h2>
 			<div class="why-grid anim-in anim-d3">
@@ -359,7 +359,7 @@
 		</section>
 
 		<!-- SLIDE 12 — TEAM -->
-		<section class="slide slide-hidden" id="s12">
+		<section class="slide" id="s12">
 			<div class="section-label anim-in anim-d1">Founding Team</div>
 			<h2 class="headline anim-in anim-d2">Built by <span class="hl-gold">builders</span></h2>
 			<div class="team-grid anim-in anim-d3">
@@ -403,7 +403,7 @@
 		</section>
 
 		<!-- SLIDE 13 — TRACTION -->
-		<section class="slide slide-hidden" id="s13">
+		<section class="slide" id="s13">
 			<div class="section-label anim-in anim-d1">Traction</div>
 			<h2 class="headline anim-in anim-d2">
 				Businesses and developers<br />
@@ -424,18 +424,11 @@
 						<p class="comp-body">Building <strong>industrial use cases</strong> on the StarForge platform — validating demand for open, capable humanoid robots beyond research.</p>
 					</div>
 				</div>
-				<div class="comp-item">
-					<div class="comp-num">03</div>
-					<div class="comp-content">
-						<div class="comp-title">Rohan Aggarwal — Angel Investor</div>
-						<p class="comp-body">Co-founder of <strong>Cypherock</strong> — backing StarForge as an angel investor, bringing deep hardware and startup expertise.</p>
-					</div>
-				</div>
 			</div>
 		</section>
 
 		<!-- SLIDE 14 — VISION / ASK -->
-		<section class="slide slide-hidden" id="s14">
+		<section class="slide" id="s14">
 			<div class="section-label anim-in anim-d1">The Vision</div>
 			<h2 class="headline anim-in anim-d2">
 				Robotics <span class="hl-gold">AGI</span> in the next<br />

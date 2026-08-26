@@ -53,4 +53,4 @@ At StarForge, we are engineers with firsthand experience in liquid bi-propellant
 
 If you are interested in learning any part of this, contributing to the mission, or working alongside one of the most ambitious teams, reach out.
 
-This pre-seed is funded by the founder. We are open to offering equity to early supporters and engineers who wants to build the infrastructure layer for orbital data centres and, eventually, a Type II civilisation.
+This pre-seed is funded by the founder, alongside **Rohan Aggarwal**, co-founder of Cypherock, backing StarForge as an angel investor and bringing deep hardware and startup expertise. We are open to offering equity to early supporters and engineers who wants to build the infrastructure layer for orbital data centres and, eventually, a Type II civilisation.

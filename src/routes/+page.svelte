@@ -55,43 +55,18 @@
 	<div class="hero-bg">
 		<div class="hero-scan-lines"></div>
 	</div>
-	<div class="hero-grid" aria-hidden="true"></div>
 
 	<div class="hero-content">
-		<span class="hero-tag">Physical AI · Autonomous Factory</span>
 		<h1 class="hero-title">
 			Building the<br />
 			<span>Autonomous</span><br />
 			Factory for Space Exploration
 		</h1>
-		<div class="hero-divider"></div>
+		<p class="hero-sub"></p>
 		<div class="hero-ctas">
 			<a href="/buildo" class="btn-primary">Try Our Robots</a>
 			<JoinUsLink className="btn-ghost" />
 		</div>
-	</div>
-
-	<div class="hero-star" aria-hidden="true">
-		<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path
-				d="M100 10 L108 92 L190 100 L108 108 L100 190 L92 108 L10 100 L92 92 Z"
-				fill="url(#heroStarGrad)"
-			/>
-			<defs>
-				<linearGradient
-					id="heroStarGrad"
-					x1="10"
-					y1="10"
-					x2="190"
-					y2="190"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop offset="0%" stop-color="#c4a96b" />
-					<stop offset="50%" stop-color="#8a6040" />
-					<stop offset="100%" stop-color="#c4a96b" />
-				</linearGradient>
-			</defs>
-		</svg>
 	</div>
 
 	<div class="scroll-indicator">
@@ -100,6 +75,7 @@
 	</div>
 </section>
 
+{#if false}
 <div class="hr-line"></div>
 
 <section id="built">
@@ -407,3 +383,4 @@
 <div class="hr-line"></div>
 
 <SiteClosingCta />
+{/if}
