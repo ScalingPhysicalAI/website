@@ -2,63 +2,27 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import { page } from '$app/state';
-	import { onMount } from 'svelte';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 
 	let { children } = $props();
 
-	let currentSection = $state<'' | 'mission' | 'vision' | 'milestone'>('');
-
 	const normalizedPath = $derived(
 		page.url.pathname !== '/' ? page.url.pathname.replace(/\/$/, '') : page.url.pathname
 	);
 
+	type PrebookPageData = { product?: { notification?: { value?: string } | null } | null };
+
 	const rdkNotification = $derived(
-		normalizedPath === '/buildo'
-			? ((page.data as Record<string, any>).product?.notification?.value ?? null)
+		normalizedPath === '/buildo-prebook'
+			? ((page.data as PrebookPageData).product?.notification?.value ?? null)
 			: null
 	);
 
-	function updateCurrentSection() {
-		if (page.url.pathname !== '/') return;
-		const ids = ['mission', 'vision', 'milestone'] as const;
-		let next: typeof currentSection = '';
+	const bodyClass = $derived(normalizedPath === '/buildo-prebook' ? 'page-buildo' : '');
 
-		for (const id of ids) {
-			const el = document.getElementById(id);
-			if (!el) continue;
-			const top = el.getBoundingClientRect().top + window.scrollY;
-			if (window.scrollY >= top - 200) next = id;
-		}
-
-		currentSection = next;
-	}
-
-	onMount(() => {
-		$effect(() => {
-			const pathname = normalizedPath;
-			const nextClass =
-				pathname === '/vision'
-					? 'page-vision'
-					: pathname === '/buildo'
-						? 'page-buildo'
-						: pathname.startsWith('/developer')
-							? 'page-developer'
-							: pathname.startsWith('/blog')
-								? 'page-blog'
-								: '';
-			document.body.className = nextClass;
-		});
-
-		if (typeof window !== 'undefined') {
-			updateCurrentSection();
-			window.addEventListener('scroll', updateCurrentSection, { passive: true });
-		}
-
-		return () => {
-			window.removeEventListener('scroll', updateCurrentSection);
-		};
+	$effect(() => {
+		document.body.className = bodyClass;
 	});
 </script>
 
@@ -73,7 +37,7 @@
 </svelte:head>
 
 {#if normalizedPath !== '/deck'}
-	<SiteNav pathname={page.url.pathname} {currentSection} notification={rdkNotification} />
+	<SiteNav pathname={page.url.pathname} notification={rdkNotification} />
 {/if}
 
 <main id="main">

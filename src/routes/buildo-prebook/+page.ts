@@ -50,20 +50,31 @@ type ProductQueryData = {
 	};
 };
 
+// Prebook is the primary conversion path across the site, so a Shopify outage must not
+// remove this page from the build. On failure the page renders a contact-only fallback.
 export const load: PageLoad = async () => {
-	const data = await shopifyStorefrontFetch<ProductQueryData>({
-		storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN,
-		accessToken: PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN,
-		apiVersion: PUBLIC_SHOPIFY_API_VERSION,
-		query: QUERY
-	});
+	try {
+		const data = await shopifyStorefrontFetch<ProductQueryData>({
+			storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN,
+			accessToken: PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+			apiVersion: PUBLIC_SHOPIFY_API_VERSION,
+			query: QUERY
+		});
 
-	const { product } = data;
-	const variantId = product.variants.nodes[0]?.id.split('/').pop() ?? null;
+		const { product } = data;
+		if (!product) {
+			return { product: null, variantId: null, storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN };
+		}
 
-	return {
-		product,
-		variantId,
-		storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN
-	};
+		const variantId = product.variants.nodes[0]?.id.split('/').pop() ?? null;
+
+		return {
+			product,
+			variantId,
+			storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN
+		};
+	} catch (err) {
+		console.error('[buildo-prebook] Shopify load failed, rendering fallback:', err);
+		return { product: null, variantId: null, storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN };
+	}
 };

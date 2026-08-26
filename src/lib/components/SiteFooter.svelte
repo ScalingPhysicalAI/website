@@ -7,43 +7,39 @@
 		<div class="footer-brand">
 			<div class="footer-logo">STARFORGE</div>
 			<p class="footer-tagline">Physical automation to transform industry and move the world.</p>
-			<a href="mailto:vipulsaini594@gmail.com" class="footer-contact-link">vipul@starforgerobotics.com</a>
+			<a href="mailto:vipulsaini594@gmail.com" class="footer-contact-link"
+				>vipul@starforgerobotics.com</a
+			>
 		</div>
 
 		<nav class="footer-nav" aria-label="Footer">
 			<div class="footer-col">
-				<span class="footer-col-label">Company</span>
+				<span class="footer-col-label">Product</span>
 				<ul>
-					<li><a href={resolve('/#mission')}>Mission</a></li>
-					<li><a href={resolve('/vision')}>Vision</a></li>
-					<li><a href={resolve('/#milestone')}>Milestones</a></li>
-					<li><a href={resolve('/#built')}>Technology</a></li>
+					<li><a href={resolve('/buildo')}>Buildo</a></li>
 				</ul>
 			</div>
 
 			<div class="footer-col">
-				<span class="footer-col-label">Products</span>
+				<span class="footer-col-label">Company</span>
 				<ul>
-					<li><a href={resolve('/buildo')}>Robo Dev Kit</a></li>
-					<li><a href={resolve('/#why-now')}>Why Now</a></li>
-					<li><a href={resolve('/#launch-window')}>Launch Window</a></li>
+					<li><a href={resolve('/team')}>Team</a></li>
 				</ul>
 			</div>
 
 			<div class="footer-col">
 				<span class="footer-col-label">Developers</span>
 				<ul>
-					<li><a href={resolve('/developer')}>Dev Portal</a></li>
-					<li><a href={resolve('/developer/register')}>Register</a></li>
-					<li><a href={resolve('/developer/login')}>Sign In</a></li>
-					<li><a href={resolve('/developer/dashboard')}>Dashboard</a></li>
+					<li><a href="https://portal.starforgerobotics.com">Dev Portal</a></li>
 				</ul>
 			</div>
 
 			<div class="footer-col">
 				<span class="footer-col-label">Connect</span>
 				<ul>
-					<li><a href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com">Contact Us</a></li>
+					<li>
+						<a href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com">Contact Us</a>
+					</li>
 					<li><a href={resolve('/deck')} aria-label="Investor deck">Investor Deck</a></li>
 				</ul>
 			</div>

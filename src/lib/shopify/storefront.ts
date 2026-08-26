@@ -54,14 +54,17 @@ export async function shopifyStorefrontFetch<TData>({
 
 	if (!res.ok) {
 		const body = await res.text().catch(() => '');
-		throw new Error(`Shopify Storefront API HTTP ${res.status} ${res.statusText}${body ? `: ${body}` : ''}`);
+		throw new Error(
+			`Shopify Storefront API HTTP ${res.status} ${res.statusText}${body ? `: ${body}` : ''}`
+		);
 	}
 
 	const json = (await res.json()) as { data?: TData; errors?: ShopifyGqlError[] };
 	if (json.errors?.length) {
-		throw new Error(`Shopify Storefront API GraphQL error: ${json.errors.map((e) => e.message).join('; ')}`);
+		throw new Error(
+			`Shopify Storefront API GraphQL error: ${json.errors.map((e) => e.message).join('; ')}`
+		);
 	}
 	if (!json.data) throw new Error('Shopify Storefront API returned no data');
 	return json.data;
 }
-
