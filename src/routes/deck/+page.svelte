@@ -81,7 +81,7 @@
 </script>
 
 <svelte:head>
-	<title>StarForge Robotics — Pitch Deck</title>
+	<title>StarForge Robotics  Pitch Deck</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
@@ -101,7 +101,7 @@
 			</button>
 		</nav>
 
-		<!-- SLIDE 1 — COVER -->
+		<!-- SLIDE 1  COVER -->
 		<section class="slide" id="s1">
 			<div class="cover-bg"></div>
 			<div class="cover-grid"></div>
@@ -130,7 +130,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 2 — HUMANOID BOOTLOADER -->
+		<!-- SLIDE 2  HUMANOID BOOTLOADER -->
 		<section class="slide" id="s2">
 			<div class="section-label anim-in anim-d1">The Opportunity</div>
 			<h2 class="headline anim-in anim-d2">
@@ -140,24 +140,23 @@
 			<div class="bullet-list anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>Human environment keeps evolving. <strong>Physical intelligence needs continuous data collection.</strong></p>
+					<p>Human environment keeps advancing. <strong>Physical intelligence needs continuous data collection.</strong></p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p><strong>Unitree</strong> — an open, community-driven approach built around an accessible robotics platform that enables researchers and developers to experiment, build, and contribute.</p>
+					<p><strong>Unitree G1</strong>  an open, community-driven approach built around an accessible robotics platform that enables researchers and developers to experiment, build, and contribute.</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p><strong>Figure / UBTECH</strong> — a vertically integrated approach where proprietary hardware, software, data collection, and AI development are handled by dedicated in-house teams on a closed platform.</p>
+					<p><strong>Figure AI</strong>  a vertically integrated approach where proprietary hardware, software, data collection, and AI development are handled by dedicated in-house teams.</p>
 				</div>
-			</div>
-		</section>
+			</div> </section>
 
-		<!-- SLIDE 3 — UNITREE -->
+		<!-- SLIDE 3  UNITREE -->
 		<section class="slide" id="s3">
 			<div class="section-label anim-in anim-d1">Market Signal</div>
 			<h2 class="headline anim-in anim-d2">
-				Unitree: a great candidate for<br />
+				Unitree G1: a great candidate for<br />
 				<span class="hl-gold">general purpose humanoid</span>
 			</h2>
 			<div class="bullet-list anim-in anim-d3">
@@ -167,39 +166,39 @@
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>Unitree opened near <strong>$66B</strong> — 5× its last VC round of $1.9B and ~7× its IPO price.</p>
+					<p>Unitree opened near <strong>$66B</strong>  5× its last VC round of $1.9B and ~7× its IPO price.</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>Market validated: developers and researchers are actively choosing open humanoid platforms at <strong>massive scale.</strong></p>
+					<p>Market Signal: developers and researchers are actively choosing open humanoid platforms at <strong>massive scale.</strong></p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 4 — UNITREE LACKED BRAIN -->
+		<!-- SLIDE 4  UNITREE LACKED BRAIN -->
 		<section class="slide" id="s4">
 			<div class="section-label anim-in anim-d1">The Problem</div>
 			<h2 class="headline anim-in anim-d2">
-				Unitree solved the <span class="hl-gold">body</span> —<br />
+				Unitree solved the <span class="hl-gold">body</span> <br />
 				the brain remains unsolved
 			</h2>
 			<div class="bullet-list anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>We saw Unitree robots dancing, running — but <strong>no real-world deployment</strong> at scale.</p>
+					<p>We saw Unitree robots dancing, running  but <strong>no real-world deployment</strong> at scale.</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>Unitree argues they have solved the body and the <strong>brain is the next constraint.</strong></p>
+					<p>Unitree argues they have solved the body and the <strong>brain is the next constraint.</strong><a class="citation" href="https://x.com/RoboStrategy/status/2087561451468681234" target="_blank" rel="noopener noreferrer">[1]</a></p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>A robot foundation model approaching human-level generality could exceed <strong>500 billion parameters</strong> — making it extremely difficult and expensive to run on conventional research hardware.</p>
+					<p>A robot foundation model approaching human-level generality could exceed <strong>500 billion parameters</strong>  making it extremely difficult and expensive to run on conventional research hardware.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 5 — BREAKTHROUGH -->
+		<!-- SLIDE 5  BREAKTHROUGH -->
 		<section class="slide" id="s5">
 			<div class="section-label anim-in anim-d1">Our Solution</div>
 			<h2 class="headline anim-in anim-d2">
@@ -209,61 +208,62 @@
 			<div class="solution-cards anim-in anim-d3">
 				<div class="solution-card">
 					<div class="solution-card-num">01</div>
-					<p>This <strong>fundamentally changes the architecture and economics</strong> of intelligent humanoid robots — models of any size can now run efficiently inside the robot.</p>
+					<p>This <strong>fundamentally changes the architecture and economics</strong> of intelligent humanoid robots. Models of any size can now run efficiently inside the robot.</p>
 				</div>
 				<div class="solution-card">
 					<div class="solution-card-num">02</div>
-					<p>As more developers gain access and dramatically more physical-world data is collected, the ecosystem could produce increasingly advanced <strong>general-purpose robotic AI</strong> capable of orders-of-magnitude productivity improvements.</p>
+					<p>More developer access and physical-world data could drive <strong>general-purpose robotic AI</strong> with orders-of-magnitude productivity gains.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 6 — BUILDO KIT -->
+		<!-- SLIDE 6  BUILDO KIT -->
 		<section class="slide" id="s6">
 			<div class="section-label anim-in anim-d1">Product</div>
 			<h2 class="headline anim-in anim-d2">
 				Buildo robot and<br />
-				<span class="hl-gold">training kit</span> — v1
+				<span class="hl-gold">training kit</span>  v1
 			</h2>
-			<div class="why-grid anim-in anim-d3">
-				<div class="why-card">
-					<div class="why-card-line"></div>
-					<div class="why-card-num">01</div>
-					<p class="why-card-body">Open humanoid platform designed for <strong>real-world data collection</strong> at scale.</p>
+			<div class="solution-cards anim-in anim-d3">
+				<div class="solution-card">
+					<div class="solution-card-num">01</div>
+					<p><strong>Buildo</strong> robot is designed for majority of <strong>real-world use cases.</strong></p>
 				</div>
-				<div class="why-card">
-					<div class="why-card-line"></div>
-					<div class="why-card-num">02</div>
-					<p class="why-card-body">Training kit enables researchers to <strong>deploy and fine-tune</strong> robot foundation models out of the box.</p>
-				</div>
-				<div class="why-card">
-					<div class="why-card-line"></div>
-					<div class="why-card-num">03</div>
-					<p class="why-card-body">Actuator and dextrous hand solve the <strong>critical path</strong> in humanoid hardware — the Pareto components driving performance and cost.</p>
+				<div class="solution-card">
+					<div class="solution-card-num">02</div>
+					<p>Training kit enables <strong>teleoperation and real-world data collection.</strong></p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 7 — INFRA -->
+		<!-- SLIDE 6B  CRITICAL PATH HARDWARE -->
+		<section class="slide" id="s6b">
+			<div class="section-label anim-in anim-d1">Product</div>
+			<h2 class="headline anim-in anim-d2">
+				Solving the <span class="hl-gold">critical path</span><br />
+				in humanoid hardware
+			</h2>
+			<div class="vision-body anim-in anim-d3">
+				<p class="vision-text">Humanoid product development follows a <strong>Pareto distribution</strong>  a few components drive a significant proportion of a system's performance and cost. In a humanoid, the <strong>actuator and dextrous hand</strong> are the critical path.</p>
+			</div>
+		</section>
+
+		<!-- SLIDE 7  INFRA -->
 		<section class="slide" id="s7">
 			<div class="section-label anim-in anim-d1">Platform</div>
 			<h2 class="headline anim-in anim-d2">
 				StarForge<br />
-				<span class="hl-gold">Physical Intelligence Infra</span>
+				<span class="hl-gold">Physical Intelligence Layer</span>
 			</h2>
 			<div class="solution-cards anim-in anim-d3">
 				<div class="solution-card">
-					<div class="solution-card-num">Humanoid Platform</div>
-					<p>Enable researchers and developers to <strong>collect real-world data</strong> and build better physical AI models on an open, accessible platform.</p>
-				</div>
-				<div class="solution-card">
 					<div class="solution-card-num">Compute Layer</div>
-					<p><strong>Train and host robot models</strong> for inference — from any size model to production deployment.</p>
+					<p><strong>Train and host robot models</strong> for inference  from any size model to production deployment.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 8 — DEVELOPER REWARDS -->
+		<!-- SLIDE 8  DEVELOPER REWARDS -->
 		<section class="slide" id="s8">
 			<div class="section-label anim-in anim-d1">Ecosystem</div>
 			<h2 class="headline anim-in anim-d2">
@@ -273,7 +273,7 @@
 			<div class="bullet-list anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>Developers who build and contribute robot AI models to the platform <strong>earn direct rewards</strong> — aligning incentives with model quality.</p>
+					<p>Developers who build and contribute robot AI models to the platform <strong>earn direct rewards</strong>  aligning incentives with model quality.</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
@@ -281,12 +281,12 @@
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
-					<p>Strong developer base already in place — <strong>community-driven growth</strong> mirrors the open-source software model applied to physical AI.</p>
+					<p>Strong developer base already in place  <strong>community-driven growth</strong> mirrors the open-source software model applied to physical AI.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 9 — REVENUE -->
+		<!-- SLIDE 9  REVENUE -->
 		<section class="slide" id="s9">
 			<div class="section-label anim-in anim-d1">Business Model</div>
 			<h2 class="headline anim-in anim-d2">
@@ -299,12 +299,12 @@
 				</div>
 				<div class="solution-card">
 					<div class="solution-card-num">Compute Revenue</div>
-					<p>Training and inference hosting on the StarForge compute layer. Compute demand for physical intelligence will increase <strong>100× with increasing adoption</strong> — far exceeding digital AI today.</p>
+					<p>Training and inference hosting on the StarForge compute layer. Compute demand for physical intelligence will increase <strong>100× with increasing adoption</strong>  far exceeding digital AI today.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 10 — COMPETITION -->
+		<!-- SLIDE 10  COMPETITION -->
 		<section class="slide" id="s10">
 			<div class="section-label anim-in anim-d1">Competitive Position</div>
 			<h2 class="headline anim-in anim-d2">
@@ -314,28 +314,28 @@
 				<div class="comp-item">
 					<div class="comp-num">01</div>
 					<div class="comp-content">
-						<div class="comp-title">1X</div>
-						<p class="comp-body"><strong>Costly and open platform</strong> — high barrier to entry for most researchers and developers, limiting community growth and data collection scale.</p>
+						<div class="comp-title">1X Neo</div>
+						<p class="comp-body"><strong>Costly and open platform</strong>  high barrier to entry for most researchers and developers, limiting community growth and data collection scale.</p>
 					</div>
 				</div>
 				<div class="comp-item">
 					<div class="comp-num">02</div>
 					<div class="comp-content">
-						<div class="comp-title">Figure</div>
-						<p class="comp-body"><strong>Costly and closed platform</strong> — vertically integrated approach restricts the developer ecosystem needed to rapidly advance physical AI models.</p>
+						<div class="comp-title">Figure O3</div>
+						<p class="comp-body"><strong>Costly and closed platform</strong>  vertically integrated approach restricts the developer ecosystem needed to rapidly advance physical AI models.</p>
 					</div>
 				</div>
 				<div class="comp-item">
 					<div class="comp-num">03</div>
 					<div class="comp-content">
 						<div class="comp-title">Nori and similar</div>
-						<p class="comp-body"><strong>Cheap but incapable</strong> — insufficient hardware performance to run meaningful physical AI models or collect high-quality training data.</p>
+						<p class="comp-body"><strong>Cheap but incapable</strong>  insufficient hardware performance to run meaningful physical AI models or collect high-quality training data.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 11 — WHY STARFORGE -->
+		<!-- SLIDE 11  WHY STARFORGE -->
 		<section class="slide" id="s11">
 			<div class="section-label anim-in anim-d1">Competitive Advantage</div>
 			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">StarForge</span></h2>
@@ -343,7 +343,7 @@
 				<div class="why-card">
 					<div class="why-card-line"></div>
 					<div class="why-card-num">01</div>
-					<p class="why-card-body">We made a breakthrough that allows robots to run <strong>any sized model</strong> — making real-world deployments possible for the first time.</p>
+					<p class="why-card-body">We made a breakthrough that allows robots to run <strong>any sized model</strong>  making real-world deployments possible for the first time.</p>
 				</div>
 				<div class="why-card">
 					<div class="why-card-line"></div>
@@ -353,12 +353,12 @@
 				<div class="why-card">
 					<div class="why-card-line"></div>
 					<div class="why-card-num">03</div>
-					<p class="why-card-body">Solved the entire humanoid robot hardware and supply chain — especially the <strong>actuator and dextrous hand</strong>, the critical-path components.</p>
+					<p class="why-card-body">Built the entire humanoid robot hardware and supply chain  especially the <strong>actuator and dextrous hand</strong>, the critical-path components.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 12 — TEAM -->
+		<!-- SLIDE 12  TEAM -->
 		<section class="slide" id="s12">
 			<div class="section-label anim-in anim-d1">Founding Team</div>
 			<h2 class="headline anim-in anim-d2">Built by <span class="hl-gold">builders</span></h2>
@@ -402,7 +402,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 13 — TRACTION -->
+		<!-- SLIDE 13  TRACTION -->
 		<section class="slide" id="s13">
 			<div class="section-label anim-in anim-d1">Traction</div>
 			<h2 class="headline anim-in anim-d2">
@@ -414,20 +414,27 @@
 					<div class="comp-num">01</div>
 					<div class="comp-content">
 						<div class="comp-title">Mazout Electric</div>
-						<p class="comp-body">Building <strong>lithium ion batteries using robots</strong> — deploying StarForge humanoids for real industrial manufacturing tasks.</p>
+						<p class="comp-body">Building <strong>lithium ion batteries using robots</strong>  deploying StarForge humanoids for real industrial manufacturing tasks.</p>
 					</div>
 				</div>
 				<div class="comp-item">
 					<div class="comp-num">02</div>
 					<div class="comp-content">
 						<div class="comp-title">Aryan Madhav Verma</div>
-						<p class="comp-body">Building <strong>industrial use cases</strong> on the StarForge platform — validating demand for open, capable humanoid robots beyond research.</p>
+						<p class="comp-body">Building <strong>industrial warehouses </strong> on the StarForge platform  validating demand for open, capable humanoid robots beyond research.</p>
+					</div>
+				</div>
+				<div class="comp-item">
+					<div class="comp-num">03</div>
+					<div class="comp-content">
+						<div class="comp-title">Developer Ecosystem</div>
+						<p class="comp-body"><strong>50+ developers</strong> are already using our compute platform  early signal of the community-driven flywheel taking hold.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 14 — VISION / ASK -->
+		<!-- SLIDE 14  VISION / ASK -->
 		<section class="slide" id="s14">
 			<div class="section-label anim-in anim-d1">The Vision</div>
 			<h2 class="headline anim-in anim-d2">
@@ -435,8 +442,9 @@
 				6 – 12 months
 			</h2>
 			<div class="vision-body anim-in anim-d3">
-				<p class="vision-text">Our thesis: ecosystem-driven acceleration could bring the industry substantially closer to <strong>general purpose robotics AGI within the next year</strong> — creating transformational productivity gains across multiple industries.</p>
-				<p class="vision-text">This will also produce specialised robots — high payload, space stations, lunar and Mars base operations. <strong>Compute demand for physical intelligence will increase 100× with adoption</strong>, far exceeding digital AI today.</p>
+				<p class="vision-text">Our thesis: ecosystem-driven acceleration could bring the industry substantially closer to <strong>general purpose robotics AGI within the next year</strong>  creating transformational productivity gains across multiple industries.</p>
+				<p class="vision-text">We intend to produce specialised robots for space stations, lunar and Mars base operations (Multi trillion $ space industry).</p>
+				<p class="vision-text"><strong>Compute demand for physical intelligence will increase 100× with adoption</strong>, far exceeding digital AI today.<a class="citation" href="https://www.prnewswire.com/news-releases/the-space-economy-is-heading-for-1-8-trillion-the-bottleneck-nobody-talks-about-is-getting-there-302830042.html" target="_blank" rel="noopener noreferrer">[2]</a></p>
 			</div>
 			<div class="ask-row anim-in anim-d3">
 				<div class="ask-amount">Seed</div>
@@ -762,6 +770,20 @@
 	.bullet-item p strong {
 		color: #e8e2d6;
 		font-weight: 500;
+	}
+
+	.citation {
+		color: #b89c72;
+		text-decoration: none;
+		font-size: 0.7em;
+		vertical-align: super;
+		line-height: 0;
+		margin-left: 1px;
+		cursor: pointer;
+	}
+
+	.citation:hover {
+		text-decoration: underline;
 	}
 
 	/* ── SOLUTION CARDS ── */
