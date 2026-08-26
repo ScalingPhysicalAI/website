@@ -37,7 +37,9 @@
 			<div class="footer-col">
 				<span class="footer-col-label">Connect</span>
 				<ul>
-					<li><a href="mailto:vipulsaini594@gmail.com">Contact</a></li>
+					<li>
+						<a href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com">Contact Us</a>
+					</li>
 					<li><a href={resolve('/deck')} aria-label="Investor deck">Investor Deck</a></li>
 				</ul>
 			</div>

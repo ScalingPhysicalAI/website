@@ -3,10 +3,10 @@
 	import { resolve } from '$app/paths';
 
 	let currentSlide = 0;
-	const TOTAL = 14;
+	const SLIDE_SELECTOR = '.slide:not(.slide-hidden)';
 
 	function renderSlides() {
-		const nodes = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
+		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		nodes.forEach((slide, i) => {
 			const offset = i - currentSlide;
 			slide.classList.toggle('active', offset === 0);
@@ -28,11 +28,11 @@
 
 		const el = document.getElementById('slideCounter');
 		if (el)
-			el.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(TOTAL).padStart(2, '0')}`;
+			el.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(nodes.length).padStart(2, '0')}`;
 	}
 
 	function goToSlide(index: number) {
-		const nodes = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
+		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		currentSlide = (index + nodes.length) % nodes.length;
 		renderSlides();
 	}
@@ -58,7 +58,7 @@
 			goToSlide(0);
 		} else if (event.key === 'End') {
 			event.preventDefault();
-			goToSlide(TOTAL - 1);
+			goToSlide(document.querySelectorAll(SLIDE_SELECTOR).length - 1);
 		}
 	}
 
@@ -68,7 +68,7 @@
 
 	onMount(() => {
 		const dotsContainer = document.getElementById('navDots');
-		const nodes = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
+		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		if (!dotsContainer || nodes.length === 0) return;
 
 		document.body.style.overflow = 'hidden';
@@ -180,7 +180,7 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						Human environment keeps evolving. <strong
+						Human environment keeps advancing. <strong
 							>Physical intelligence needs continuous data collection.</strong
 						>
 					</p>
@@ -188,14 +188,14 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong>Unitree</strong> — an open, community-driven approach built around an accessible robotics
-						platform that enables researchers and developers to experiment, build, and contribute.
+						<strong>Unitree G1</strong> — an open, community-driven approach built around an accessible
+						robotics platform that enables researchers and developers to experiment, build, and contribute.
 					</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong>Figure / UBTECH</strong> — a vertically integrated approach where proprietary hardware,
+						<strong>Figure AI</strong> — a vertically integrated approach where proprietary hardware,
 						software, data collection, and AI development are handled by dedicated in-house teams on a
 						closed platform.
 					</p>
@@ -228,8 +228,8 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						Market validated: developers and researchers are actively choosing open humanoid
-						platforms at <strong>massive scale.</strong>
+						Market Signal: developers and researchers are actively choosing open humanoid platforms
+						at <strong>massive scale.</strong>
 					</p>
 				</div>
 			</div>
@@ -255,6 +255,11 @@
 					<p>
 						Unitree argues they have solved the body and the <strong
 							>brain is the next constraint.</strong
+						><a
+							class="citation"
+							href="https://x.com/RoboStrategy/status/2087561451468681234"
+							target="_blank"
+							rel="noopener noreferrer">[1]</a
 						>
 					</p>
 				</div>
@@ -425,7 +430,7 @@
 				<div class="comp-item">
 					<div class="comp-num">01</div>
 					<div class="comp-content">
-						<div class="comp-title">1X</div>
+						<div class="comp-title">1X Neo</div>
 						<p class="comp-body">
 							<strong>Costly and open platform</strong> — high barrier to entry for most researchers and
 							developers, limiting community growth and data collection scale.
@@ -435,7 +440,7 @@
 				<div class="comp-item">
 					<div class="comp-num">02</div>
 					<div class="comp-content">
-						<div class="comp-title">Figure</div>
+						<div class="comp-title">Figure O3</div>
 						<p class="comp-body">
 							<strong>Costly and closed platform</strong> — vertically integrated approach restricts the
 							developer ecosystem needed to rapidly advance physical AI models.
@@ -480,7 +485,7 @@
 					<div class="why-card-line"></div>
 					<div class="why-card-num">03</div>
 					<p class="why-card-body">
-						Solved the entire humanoid robot hardware and supply chain — especially the <strong
+						Built the entire humanoid robot hardware and supply chain — especially the <strong
 							>actuator and dextrous hand</strong
 						>, the critical-path components.
 					</p>
@@ -559,7 +564,7 @@
 					<div class="comp-content">
 						<div class="comp-title">Aryan Madhav Verma</div>
 						<p class="comp-body">
-							Building <strong>industrial use cases</strong> on the StarForge platform — validating demand
+							Building <strong>industrial warehouses</strong> on the StarForge platform — validating demand
 							for open, capable humanoid robots beyond research.
 						</p>
 					</div>
@@ -567,10 +572,10 @@
 				<div class="comp-item">
 					<div class="comp-num">03</div>
 					<div class="comp-content">
-						<div class="comp-title">Rohan Aggarwal — Angel Investor</div>
+						<div class="comp-title">Developer Ecosystem</div>
 						<p class="comp-body">
-							Co-founder of <strong>Cypherock</strong> — backing StarForge as an angel investor, bringing
-							deep hardware and startup expertise.
+							<strong>50+ developers</strong> are already using our compute platform — early signal of
+							the community-driven flywheel taking hold.
 						</p>
 					</div>
 				</div>
@@ -591,10 +596,17 @@
 					> — creating transformational productivity gains across multiple industries.
 				</p>
 				<p class="vision-text">
-					This will also produce specialised robots — high payload, space stations, lunar and Mars
-					base operations. <strong
-						>Compute demand for physical intelligence will increase 100× with adoption</strong
-					>, far exceeding digital AI today.
+					We intend to produce specialised robots for space stations, lunar and Mars base operations
+					(multi-trillion-dollar space industry).
+				</p>
+				<p class="vision-text">
+					<strong>Compute demand for physical intelligence will increase 100× with adoption</strong
+					>, far exceeding digital AI today.<a
+						class="citation"
+						href="https://www.prnewswire.com/news-releases/the-space-economy-is-heading-for-1-8-trillion-the-bottleneck-nobody-talks-about-is-getting-there-302830042.html"
+						target="_blank"
+						rel="noopener noreferrer">[2]</a
+					>
 				</p>
 			</div>
 			<div class="ask-row anim-in anim-d3">
@@ -1198,6 +1210,29 @@
 		flex-direction: column;
 		gap: clamp(6px, 1.5vh, 12px);
 		max-width: 680px;
+	}
+
+	/* Source markers. Ported from the teammate's deck; recoloured from the old
+	   #b89c72 gold to the current accent, which that revision predates. */
+	.citation {
+		color: var(--deck-accent, #7a5e0f);
+		text-decoration: none;
+		font-size: 0.7em;
+		vertical-align: super;
+		line-height: 0;
+		margin-left: 1px;
+		cursor: pointer;
+	}
+
+	.citation:hover {
+		text-decoration: underline;
+	}
+
+	/* Utility for parking a slide without breaking the counter, which now reads
+	   the live slide count rather than a hardcoded total. Declared :global so
+	   Svelte does not strip it as unused before anything applies the class. */
+	:global(.slide-hidden) {
+		display: none !important;
 	}
 
 	.vision-text {
