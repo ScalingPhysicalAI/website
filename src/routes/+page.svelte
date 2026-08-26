@@ -75,7 +75,6 @@
 	</div>
 </section>
 
-{#if false}
 <div class="hr-line"></div>
 
 <section id="built">
@@ -383,4 +382,3 @@
 <div class="hr-line"></div>
 
 <SiteClosingCta />
-{/if}
