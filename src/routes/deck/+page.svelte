@@ -2,10 +2,11 @@
 	import { onMount } from 'svelte';
 
 	let currentSlide = 0;
-	const TOTAL = 14;
+	const SLIDE_SELECTOR = '.slide:not(.slide-hidden)';
 
 	function renderSlides() {
-		const nodes = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
+		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
+		const total = nodes.length;
 		nodes.forEach((slide, i) => {
 			const offset = i - currentSlide;
 			slide.classList.toggle('active', offset === 0);
@@ -26,11 +27,11 @@
 		});
 
 		const el = document.getElementById('slideCounter');
-		if (el) el.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(TOTAL).padStart(2, '0')}`;
+		if (el) el.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
 	}
 
 	function goToSlide(index: number) {
-		const nodes = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
+		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		currentSlide = (index + nodes.length) % nodes.length;
 		renderSlides();
 	}
@@ -41,10 +42,11 @@
 	function handleKey(event: KeyboardEvent) {
 		const t = event.target as HTMLElement | null;
 		if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+		const total = document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR).length;
 		if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') { event.preventDefault(); nextSlide(); }
 		else if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); prevSlide(); }
 		else if (event.key === 'Home') { event.preventDefault(); goToSlide(0); }
-		else if (event.key === 'End') { event.preventDefault(); goToSlide(TOTAL - 1); }
+		else if (event.key === 'End') { event.preventDefault(); goToSlide(total - 1); }
 	}
 
 	function printDeck() {
@@ -53,7 +55,7 @@
 
 	onMount(() => {
 		const dotsContainer = document.getElementById('navDots');
-		const nodes = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
+		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		if (!dotsContainer || nodes.length === 0) return;
 
 		document.body.style.overflow = 'hidden';
@@ -91,7 +93,7 @@
 			<img src="/assets/logo.png" alt="StarForge" class="nav-logo-img" />
 			<div class="nav-center">
 				<div class="nav-slides" id="navDots"></div>
-				<span class="slide-counter" id="slideCounter">01 / 14</span>
+				<span class="slide-counter" id="slideCounter">01 / 01</span>
 			</div>
 			<button class="print-btn" onclick={printDeck}>
 				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
@@ -129,7 +131,7 @@
 		</section>
 
 		<!-- SLIDE 2 — HUMANOID BOOTLOADER -->
-		<section class="slide" id="s2">
+		<section class="slide slide-hidden" id="s2">
 			<div class="section-label anim-in anim-d1">The Opportunity</div>
 			<h2 class="headline anim-in anim-d2">
 				General purpose humanoid robots are<br />
@@ -152,7 +154,7 @@
 		</section>
 
 		<!-- SLIDE 3 — UNITREE -->
-		<section class="slide" id="s3">
+		<section class="slide slide-hidden" id="s3">
 			<div class="section-label anim-in anim-d1">Market Signal</div>
 			<h2 class="headline anim-in anim-d2">
 				Unitree: a great candidate for<br />
@@ -175,7 +177,7 @@
 		</section>
 
 		<!-- SLIDE 4 — UNITREE LACKED BRAIN -->
-		<section class="slide" id="s4">
+		<section class="slide slide-hidden" id="s4">
 			<div class="section-label anim-in anim-d1">The Problem</div>
 			<h2 class="headline anim-in anim-d2">
 				Unitree solved the <span class="hl-gold">body</span> —<br />
@@ -198,7 +200,7 @@
 		</section>
 
 		<!-- SLIDE 5 — BREAKTHROUGH -->
-		<section class="slide" id="s5">
+		<section class="slide slide-hidden" id="s5">
 			<div class="section-label anim-in anim-d1">Our Solution</div>
 			<h2 class="headline anim-in anim-d2">
 				Our breakthrough allows running<br />
@@ -217,7 +219,7 @@
 		</section>
 
 		<!-- SLIDE 6 — BUILDO KIT -->
-		<section class="slide" id="s6">
+		<section class="slide slide-hidden" id="s6">
 			<div class="section-label anim-in anim-d1">Product</div>
 			<h2 class="headline anim-in anim-d2">
 				Buildo robot and<br />
@@ -243,7 +245,7 @@
 		</section>
 
 		<!-- SLIDE 7 — INFRA -->
-		<section class="slide" id="s7">
+		<section class="slide slide-hidden" id="s7">
 			<div class="section-label anim-in anim-d1">Platform</div>
 			<h2 class="headline anim-in anim-d2">
 				StarForge<br />
@@ -262,7 +264,7 @@
 		</section>
 
 		<!-- SLIDE 8 — DEVELOPER REWARDS -->
-		<section class="slide" id="s8">
+		<section class="slide slide-hidden" id="s8">
 			<div class="section-label anim-in anim-d1">Ecosystem</div>
 			<h2 class="headline anim-in anim-d2">
 				Developers earn rewards for<br />
@@ -285,7 +287,7 @@
 		</section>
 
 		<!-- SLIDE 9 — REVENUE -->
-		<section class="slide" id="s9">
+		<section class="slide slide-hidden" id="s9">
 			<div class="section-label anim-in anim-d1">Business Model</div>
 			<h2 class="headline anim-in anim-d2">
 				Revenue <span class="hl-gold">projection</span>
@@ -303,7 +305,7 @@
 		</section>
 
 		<!-- SLIDE 10 — COMPETITION -->
-		<section class="slide" id="s10">
+		<section class="slide slide-hidden" id="s10">
 			<div class="section-label anim-in anim-d1">Competitive Position</div>
 			<h2 class="headline anim-in anim-d2">
 				How we stand <span class="hl-gold">better</span> than competition
@@ -334,7 +336,7 @@
 		</section>
 
 		<!-- SLIDE 11 — WHY STARFORGE -->
-		<section class="slide" id="s11">
+		<section class="slide slide-hidden" id="s11">
 			<div class="section-label anim-in anim-d1">Competitive Advantage</div>
 			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">StarForge</span></h2>
 			<div class="why-grid anim-in anim-d3">
@@ -357,7 +359,7 @@
 		</section>
 
 		<!-- SLIDE 12 — TEAM -->
-		<section class="slide" id="s12">
+		<section class="slide slide-hidden" id="s12">
 			<div class="section-label anim-in anim-d1">Founding Team</div>
 			<h2 class="headline anim-in anim-d2">Built by <span class="hl-gold">builders</span></h2>
 			<div class="team-grid anim-in anim-d3">
@@ -401,7 +403,7 @@
 		</section>
 
 		<!-- SLIDE 13 — TRACTION -->
-		<section class="slide" id="s13">
+		<section class="slide slide-hidden" id="s13">
 			<div class="section-label anim-in anim-d1">Traction</div>
 			<h2 class="headline anim-in anim-d2">
 				Businesses and developers<br />
@@ -433,7 +435,7 @@
 		</section>
 
 		<!-- SLIDE 14 — VISION / ASK -->
-		<section class="slide" id="s14">
+		<section class="slide slide-hidden" id="s14">
 			<div class="section-label anim-in anim-d1">The Vision</div>
 			<h2 class="headline anim-in anim-d2">
 				Robotics <span class="hl-gold">AGI</span> in the next<br />
@@ -603,6 +605,7 @@
 	.arrow:hover { color: #b89c72; border-color: rgba(184, 156, 114, 0.4); background: rgba(8,8,8,0.9); }
 	.arrow-prev { left: 8px; }
 	.arrow-next { right: 8px; }
+	.arrow { display: none; }
 
 	/* ── SLIDES ── */
 	.slide {
@@ -618,6 +621,8 @@
 		transition: opacity 0.5s ease, transform 0.5s ease;
 		background: #080808;
 	}
+
+	.slide-hidden { display: none !important; }
 
 	:global(.slide.active) { opacity: 1; transform: translateX(0); pointer-events: auto; }
 

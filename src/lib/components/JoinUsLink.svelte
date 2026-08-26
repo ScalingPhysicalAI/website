@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { className = '', label = 'Join Us' }: { className?: string; label?: string } = $props();
+	let { className = '', label = 'Contact Us' }: { className?: string; label?: string } = $props();
 </script>
 
 <a
