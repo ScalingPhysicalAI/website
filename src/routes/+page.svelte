@@ -60,11 +60,13 @@
 		<h1 class="hero-title">
 			Building the<br />
 			<span>Autonomous</span><br />
-			Factory for Space Exploration
+			Factory for Space
 		</h1>
-		<p class="hero-sub"></p>
+		<p class="hero-sub">
+			Robots and AI working together to construct the future of launch infrastructure.
+		</p>
 		<div class="hero-ctas">
-			<a href="/buildo" class="btn-primary">Try Our Robots</a>
+			<a href="https://github.com/ScalingPhysicalAI" class="btn-primary">See What We're Building</a>
 			<JoinUsLink className="btn-ghost" />
 		</div>
 	</div>
