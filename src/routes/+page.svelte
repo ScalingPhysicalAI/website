@@ -3,10 +3,10 @@
 </script>
 
 <svelte:head>
-	<title>STARFORGE — Building the compute layer for physical AI</title>
+	<title>STARFORGE - Building the compute layer for physical AI</title>
 	<meta
 		name="description"
-		content="Starforge is building the compute layer for physical AI — the intelligence that lets humanoid robots work in the real world."
+		content="Starforge is building the compute layer for physical AI - the intelligence that lets humanoid robots work in the real world."
 	/>
 </svelte:head>
 
@@ -21,10 +21,9 @@
 			for physical AI
 		</h1>
 		<p class="hero-sub">
-			We're building the most capable robot. Meet
-			<a class="hero-sub-link" href={resolve('/buildo')}
+			Try our robot <a class="hero-sub-link" href={resolve('/buildo')}
 				>Buildo<span class="hero-sub-arrow" aria-hidden="true">↗</span></a
-			>.
+			>. The most capable and affordable robot made possible by our compute layer.
 		</p>
 		<div class="hero-ctas">
 			<a href="https://portal.starforgerobotics.com" class="btn-primary">Simulate Buildo</a>

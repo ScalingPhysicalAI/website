@@ -50,7 +50,7 @@
 </script>
 
 <svelte:head>
-	<title>Buildo — Humanoid Robot for Physical AI | STARFORGE</title>
+	<title>Buildo - Humanoid Robot for Physical AI | STARFORGE</title>
 	<meta
 		name="description"
 		content="Buildo is a general-purpose humanoid built for physical AI development. Three-layer on-board intelligence, five-fingered dexterous hands, and a data collection platform that trains itself."
@@ -96,7 +96,7 @@
 		<span class="section-label">The Architecture</span>
 		<h2 class="section-title">Three layers of<br /><span>on-board intelligence</span></h2>
 		<p class="section-body">
-			Reasoning, motion, and reflex run as separate loops at separate speeds — from cloud-scale
+			Reasoning, motion, and reflex run as separate loops at separate speeds - from cloud-scale
 			planning down to sub-100ms fine-motor control. Every layer is modular. Swap in your own model
 			at any tier.
 		</p>
@@ -124,7 +124,7 @@
 			<span class="section-label">Compute</span>
 			<h2 class="section-title">Any sized model,<br /><span>running on the robot</span></h2>
 			<p class="section-body">
-				The constraint on humanoid robotics has never been the chassis — it is what you can actually
+				The constraint on humanoid robotics has never been the chassis - it is what you can actually
 				run inside it. Buildo is built around a compute architecture that removes the model-size
 				ceiling, so capability is no longer traded away for latency.
 			</p>
@@ -136,10 +136,10 @@
 		<div class="bd-card reveal" style="transition-delay:0.12s">
 			<div class="bd-card-title">Built to be programmed</div>
 			<ul class="bd-bullets">
-				<li><strong>Open joint actuator</strong> — FOC firmware source included</li>
-				<li><strong>Data collection SDK</strong> — logging and replay tooling</li>
-				<li><strong>Example pipelines</strong> — training scaffolds you can fork</li>
-				<li><strong>Modular model layer</strong> — bring your own weights</li>
+				<li><strong>Open joint actuator</strong> - FOC firmware source included</li>
+				<li><strong>Data collection SDK</strong> - logging and replay tooling</li>
+				<li><strong>Example pipelines</strong> - training scaffolds you can fork</li>
+				<li><strong>Modular model layer</strong> - bring your own weights</li>
 			</ul>
 		</div>
 	</div>
@@ -154,7 +154,7 @@
 			<h2 class="section-title">Five-fingered hands<br /><span>for a human world</span></h2>
 			<p class="section-body">
 				Nearly every tool and object in industry was designed for a human hand. Five-fingered
-				dexterous manipulation is not a stylistic choice — it is the requirement for operating in
+				dexterous manipulation is not a stylistic choice - it is the requirement for operating in
 				environments that already exist, without rebuilding them around the robot.
 			</p>
 		</div>
@@ -162,7 +162,7 @@
 			<div class="bd-card-title">Learning by demonstration</div>
 			<p class="bd-card-body">
 				Our wearable system lets an operator move the robot directly and feel the same forces its
-				hands sense. Human skill transfers into the model without decades of experiential learning —
+				hands sense. Human skill transfers into the model without decades of experiential learning -
 				and every session becomes training data.
 			</p>
 		</div>

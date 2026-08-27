@@ -60,10 +60,10 @@
 </script>
 
 <svelte:head>
-	<title>Team — STARFORGE</title>
+	<title>Team - STARFORGE</title>
 	<meta
 		name="description"
-		content="The engineers building Starforge — the compute layer for physical AI, and Buildo, the humanoid it runs on."
+		content="The engineers building Starforge - the compute layer for physical AI, and Buildo, the humanoid it runs on."
 	/>
 </svelte:head>
 
