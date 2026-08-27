@@ -109,7 +109,7 @@
 			</a>
 			<div class="nav-center">
 				<div class="nav-slides" id="navDots"></div>
-				<span class="slide-counter" id="slideCounter">01 / 14</span>
+				<span class="slide-counter" id="slideCounter">01 / 15</span>
 			</div>
 			<button class="print-btn" onclick={printDeck}>
 				<svg
@@ -190,33 +190,40 @@
 
 		<!-- SLIDE 3 - UNITREE -->
 		<section class="slide" id="s3">
-			<div class="section-label anim-in anim-d1">Market Signal</div>
-			<h2 class="headline anim-in anim-d2">
-				Unitree: a great candidate for<br />
-				<span class="hl-gold">general purpose humanoid</span>
-			</h2>
-			<div class="bullet-list anim-in anim-d3">
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>
-						<strong>70–80%</strong> of Unitree's humanoid sales were for research use cases; 20–30% for
-						education and entertainment.
-					</p>
+			<div class="unitree-layout">
+				<div class="unitree-copy">
+					<div class="section-label anim-in anim-d1">Market Signal</div>
+					<h2 class="headline anim-in anim-d2">
+						Unitree: a great candidate for<br />
+						<span class="hl-gold">general purpose humanoid</span>
+					</h2>
+					<div class="bullet-list anim-in anim-d3">
+						<div class="bullet-item">
+							<span class="bullet-icon">▸</span>
+							<p>
+								<strong>70–80%</strong> of Unitree's humanoid sales were for research use cases; 20–30%
+								for education and entertainment.
+							</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon">▸</span>
+							<p>
+								Unitree opened near <strong>$66B</strong> - 5× its last VC round of $1.9B and ~7× its
+								IPO price.
+							</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon">▸</span>
+							<p>
+								Market Signal: developers and researchers are actively choosing open humanoid
+								platforms at <strong>massive scale.</strong>
+							</p>
+						</div>
+					</div>
 				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>
-						Unitree opened near <strong>$66B</strong> - 5× its last VC round of $1.9B and ~7× its IPO
-						price.
-					</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>
-						Market Signal: developers and researchers are actively choosing open humanoid platforms
-						at <strong>massive scale.</strong>
-					</p>
-				</div>
+				<figure class="unitree-figure anim-in anim-d3">
+					<img src="/assets/unitree-humanoid.webp" alt="Unitree general purpose humanoid" />
+				</figure>
 			</div>
 		</section>
 
@@ -289,27 +296,68 @@
 				Buildo robot and<br />
 				<span class="hl-gold">training kit</span> - v1
 			</h2>
-			<div class="why-grid why-grid--two anim-in anim-d3">
-				<div class="why-card">
-					<div class="why-card-line"></div>
-					<div class="why-card-num">01</div>
-					<p class="why-card-body">
-						<strong>Buildo</strong> robot is designed for majority of
-						<strong>real-world use cases</strong>.
-					</p>
+			<div class="product-pair anim-in anim-d3">
+				<div class="product-col">
+					<div class="why-card">
+						<div class="why-card-line"></div>
+						<div class="why-card-num">01</div>
+						<p class="why-card-body">
+							<strong>Buildo</strong> robot is designed for majority of
+							<strong>real-world use cases</strong>.
+						</p>
+					</div>
+					<figure class="product-shot">
+						<img src="/assets/buildo-product.webp" alt="Buildo robot" />
+					</figure>
 				</div>
-				<div class="why-card">
-					<div class="why-card-line"></div>
-					<div class="why-card-num">02</div>
-					<p class="why-card-body">
-						Training kit enables <strong>teleoperation and real-world data collection</strong>.
-					</p>
+				<div class="product-col">
+					<div class="why-card">
+						<div class="why-card-line"></div>
+						<div class="why-card-num">02</div>
+						<p class="why-card-body">
+							Training kit enables <strong>teleoperation and real-world data collection</strong>.
+						</p>
+					</div>
+					<figure class="product-shot">
+						<img src="/assets/buildo-kit.webp" alt="Buildo training kit" />
+					</figure>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 7 - INFRA -->
+		<!-- SLIDE 7 - CRITICAL PATH -->
 		<section class="slide" id="s7">
+			<div class="critical-layout">
+				<div class="critical-copy">
+					<div class="section-label anim-in anim-d1">Product</div>
+					<h2 class="headline anim-in anim-d2">
+						Solving the <span class="hl-gold">critical path</span><br />
+						in humanoid hardware
+					</h2>
+					<p class="critical-body anim-in anim-d3">
+						Humanoid product development follows a <strong>Pareto distribution</strong> - a few
+						components drive a significant proportion of a system's performance and cost. In a
+						humanoid, the <strong>actuator and dextrous hand</strong> are the critical path.
+					</p>
+				</div>
+				<div class="critical-photos anim-in anim-d3">
+					<figure class="critical-shot">
+						<img
+							src="/assets/critical-path-hands.webp"
+							alt="Five-fingered dexterous hands"
+						/>
+						<figcaption>5 fingered dexterous hands</figcaption>
+					</figure>
+					<figure class="critical-shot">
+						<img src="/assets/critical-path-actuators.webp" alt="Actuators" />
+						<figcaption>actuators</figcaption>
+					</figure>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 8 - INFRA -->
+		<section class="slide" id="s8">
 			<div class="section-label anim-in anim-d1">Platform</div>
 			<h2 class="headline anim-in anim-d2">
 				StarForge<br />
@@ -333,8 +381,8 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 8 - DEVELOPER REWARDS -->
-		<section class="slide" id="s8">
+		<!-- SLIDE 9 - DEVELOPER REWARDS -->
+		<section class="slide" id="s9">
 			<div class="section-label anim-in anim-d1">Ecosystem</div>
 			<h2 class="headline anim-in anim-d2">
 				Developers earn rewards for<br />
@@ -366,8 +414,8 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 9 - REVENUE -->
-		<section class="slide" id="s9">
+		<!-- SLIDE 10 - REVENUE -->
+		<section class="slide" id="s10">
 			<div class="section-label anim-in anim-d1">Business Model</div>
 			<h2 class="headline anim-in anim-d2">
 				Revenue <span class="hl-gold">projection</span>
@@ -393,8 +441,8 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 10 - COMPETITION -->
-		<section class="slide" id="s10">
+		<!-- SLIDE 11 - COMPETITION -->
+		<section class="slide" id="s11">
 			<div class="section-label anim-in anim-d1">Competitive Position</div>
 			<h2 class="headline anim-in anim-d2">
 				How we stand <span class="hl-gold">better</span> than competition
@@ -433,8 +481,8 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 11 - WHY STARFORGE -->
-		<section class="slide" id="s11">
+		<!-- SLIDE 12 - WHY STARFORGE -->
+		<section class="slide" id="s12">
 			<div class="section-label anim-in anim-d1">Competitive Advantage</div>
 			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">StarForge</span></h2>
 			<div class="why-grid anim-in anim-d3">
@@ -466,8 +514,8 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 12 - TEAM -->
-		<section class="slide" id="s12">
+		<!-- SLIDE 13 - TEAM -->
+		<section class="slide" id="s13">
 			<div class="section-label anim-in anim-d1">Founding Team</div>
 			<h2 class="headline anim-in anim-d2">Built by <span class="hl-gold">builders</span></h2>
 			<div class="team-grid anim-in anim-d3">
@@ -514,8 +562,8 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 13 - TRACTION -->
-		<section class="slide" id="s13">
+		<!-- SLIDE 14 - TRACTION -->
+		<section class="slide" id="s14">
 			<div class="section-label anim-in anim-d1">Traction</div>
 			<h2 class="headline anim-in anim-d2">
 				Businesses and developers<br />
@@ -555,8 +603,8 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 14 - VISION / ASK -->
-		<section class="slide" id="s14">
+		<!-- SLIDE 15 - VISION / ASK -->
+		<section class="slide" id="s15">
 			<div class="section-label anim-in anim-d1">The Vision</div>
 			<h2 class="headline anim-in anim-d2">
 				Robotics <span class="hl-gold">AGI</span> in the next<br />
@@ -860,6 +908,38 @@
 		color: #7a5e0f;
 	}
 
+	/* Slide 3: copy left, standing Unitree on the right in the open field. */
+	.unitree-layout {
+		display: grid;
+		grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+		gap: clamp(20px, 4vw, 48px);
+		align-items: center;
+		width: 100%;
+		flex: 1;
+		min-height: 0;
+	}
+
+	.unitree-copy .headline {
+		max-width: none;
+	}
+
+	.unitree-figure {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		min-width: 0;
+		height: 100%;
+	}
+
+	.unitree-figure img {
+		display: block;
+		width: auto;
+		max-width: 100%;
+		height: clamp(240px, min(62vh, 38vw), 520px);
+		object-fit: contain;
+	}
+
 	/* ── SLIDE 1 COVER ── */
 	#s1 {
 		justify-content: center;
@@ -1020,7 +1100,7 @@
 	}
 
 	/* ── SOLUTION CARDS ── */
-	/* Still used by slides 7 and 9. */
+	/* Used by slides 8 and 10. */
 	.solution-cards {
 		margin-top: clamp(16px, 5vh, 40px);
 		display: grid;
@@ -1119,10 +1199,143 @@
 
 	/* Slide 5 only. With the number removed the card has room, and it sits
 	   beside a large diagram, so the copy is set larger than the shared
-	   .solution-card used on slides 7 and 9. */
+	   .solution-card used on slides 8 and 10. */
 	.solution-layout .solution-card p {
 		font-size: clamp(13px, 2.4vmin, 17px);
 		line-height: 1.65;
+	}
+
+	/* Slide 6 carries two product columns. Content starts a little above
+	   vertical centre so the photos under the cards still clear the stage. */
+	#s6 {
+		justify-content: flex-start;
+		padding-top: clamp(52px, 11vh, 80px);
+	}
+
+	.product-pair {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 3px;
+		margin-top: clamp(12px, 3vh, 28px);
+		width: 100%;
+		flex: 1;
+		min-height: 0;
+	}
+
+	.product-col {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	.product-shot {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+		min-height: 0;
+		margin: clamp(10px, 2vh, 18px) 0 0;
+		background: #ffffff;
+	}
+
+	.product-shot img {
+		display: block;
+		width: auto;
+		max-width: 100%;
+		height: auto;
+		max-height: min(42vh, 320px);
+		object-fit: contain;
+	}
+
+	/* Slide 7: copy left, two labelled photos stacked on the right. The
+	   inner grid fills the stage so the title block sits at mid-height. */
+	#s7 {
+		justify-content: center;
+	}
+
+	.critical-layout {
+		display: grid;
+		grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+		gap: clamp(4px, 1vw, 12px);
+		align-items: center;
+		width: 100%;
+		flex: 1;
+		min-height: 0;
+	}
+
+	.critical-copy {
+		padding-top: clamp(8px, 2.4vh, 22px);
+	}
+
+	.critical-copy .headline {
+		max-width: none;
+	}
+
+	.critical-body {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(13px, 2.4vmin, 17px);
+		font-weight: 500;
+		line-height: 1.65;
+		color: #3a3630;
+		max-width: 46ch;
+		margin-top: clamp(16px, 3.6vh, 28px);
+		margin-left: 0;
+	}
+
+	.critical-body strong {
+		color: #141210;
+		font-weight: 500;
+	}
+
+	.critical-photos {
+		display: grid;
+		grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+		gap: clamp(12px, 2.2vh, 20px);
+		width: max-content;
+		max-width: 100%;
+		min-width: 0;
+		min-height: 0;
+		height: 100%;
+		margin-left: clamp(-28px, -2.4vw, -12px);
+		justify-self: start;
+		justify-items: stretch;
+	}
+
+	.critical-shot {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		width: auto;
+		min-width: 0;
+		min-height: 0;
+	}
+
+	.critical-shot img {
+		display: block;
+		width: auto;
+		max-width: 100%;
+		height: auto;
+		max-height: 100%;
+		flex: 1 1 auto;
+		min-height: 0;
+		object-fit: contain;
+		object-position: center;
+		background: #ffffff;
+	}
+
+	.critical-shot figcaption {
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(8px, 1.5vmin, 10px);
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: #7a5e0f;
+		margin-top: 8px;
+		flex-shrink: 0;
+		text-align: center;
+		width: 100%;
 	}
 
 	/* ── WHY US ── */
@@ -1131,12 +1344,6 @@
 		grid-template-columns: repeat(3, 1fr);
 		gap: 3px;
 		margin-top: clamp(16px, 5vh, 48px);
-	}
-
-	/* Slide 6 carries two cards; without this they would sit in two of three
-	   tracks and leave a dead column. Slide 11 still uses the three-up grid. */
-	.why-grid--two {
-		grid-template-columns: repeat(2, 1fr);
 	}
 
 	.why-card {
@@ -1281,7 +1488,7 @@
 	}
 
 	/* ── VISION / ASK ── */
-	#s14 {
+	#s15 {
 		background:
 			radial-gradient(ellipse 60% 80% at 90% 50%, rgba(20, 18, 16, 0.025) 0%, transparent 60%),
 			#f1efeb;
