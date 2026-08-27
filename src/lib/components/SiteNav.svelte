@@ -13,7 +13,6 @@
 	const normalizedPath = $derived(pathname !== '/' ? pathname.replace(/\/$/, '') : pathname);
 	const isBuildo = $derived(normalizedPath === '/buildo');
 	const isTeam = $derived(normalizedPath === '/team');
-	const isPrebook = $derived(normalizedPath === '/buildo-prebook');
 
 	let headerEl: HTMLDivElement;
 
@@ -53,14 +52,7 @@
 				>
 			</li>
 			<li>
-				<a href="https://portal.starforgerobotics.com">Developer Portal</a>
-			</li>
-			<li>
-				<a
-					href={resolve('/buildo-prebook')}
-					class:active={isPrebook}
-					aria-current={isPrebook ? 'page' : undefined}>Prebook</a
-				>
+				<a href="https://portal.starforgerobotics.com">Dev Portal</a>
 			</li>
 		</ul>
 	</nav>
@@ -81,19 +73,21 @@
 
 	.nav-logo-img {
 		display: block;
-		height: 56px;
+		/* This mark is taller than the previous crop (long star points), so the
+		   height is a step up to keep the word at a similar size. */
+		height: 72px;
 		width: auto;
 	}
 
 	@media (max-width: 900px) {
 		.nav-logo-img {
-			height: 44px;
+			height: 52px;
 		}
 	}
 
 	@media (max-width: 560px) {
 		.nav-logo-img {
-			height: 36px;
+			height: 40px;
 		}
 	}
 </style>

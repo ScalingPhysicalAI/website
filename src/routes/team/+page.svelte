@@ -39,7 +39,7 @@
 			initials: 'AS',
 			name: 'Anay Shiledar',
 			role: 'Electrical Engineer',
-			bio: 'Electrical systems design and embedded hardware integration.'
+			bio: 'UC Irvine electrical engineering student. Developed neuroelectronic devices and coded firmware for an F1 style race car.'
 		}
 	];
 
@@ -117,7 +117,7 @@
 			infrastructure from scratch, we want to hear from you.
 		</p>
 		<div class="tm-closing-ctas">
-			<a class="btn-primary" href="mailto:vipulsaini594@gmail.com?subject=Joining%20Starforge"
+			<a class="btn-primary" href="mailto:contact@starforgerobotics.com?subject=Joining%20Starforge"
 				>Get in touch</a
 			>
 			<a class="btn-ghost" href={resolve('/buildo')}>See what we build</a>

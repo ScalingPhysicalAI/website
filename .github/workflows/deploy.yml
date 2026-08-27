@@ -23,6 +23,11 @@ jobs:
       PUBLIC_SHOPIFY_STORE_DOMAIN: ${{ secrets.PUBLIC_SHOPIFY_STORE_DOMAIN }}
       PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN: ${{ secrets.PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN }}
       PUBLIC_SHOPIFY_API_VERSION: ${{ secrets.PUBLIC_SHOPIFY_API_VERSION }}
+      # Unset secrets arrive as empty strings, which disables analytics rather
+      # than failing the build, so the site deploys fine before they are added.
+      PUBLIC_ANALYTICS_PROVIDER: ${{ secrets.PUBLIC_ANALYTICS_PROVIDER }}
+      PUBLIC_ANALYTICS_SITE_ID: ${{ secrets.PUBLIC_ANALYTICS_SITE_ID }}
+      PUBLIC_ANALYTICS_HOST: ${{ secrets.PUBLIC_ANALYTICS_HOST }}
 
     steps:
       - name: Checkout

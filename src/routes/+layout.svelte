@@ -4,6 +4,7 @@
 	import { page } from '$app/state';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
+	import Analytics from '$lib/components/Analytics.svelte';
 
 	let { children } = $props();
 
@@ -11,15 +12,10 @@
 		page.url.pathname !== '/' ? page.url.pathname.replace(/\/$/, '') : page.url.pathname
 	);
 
-	type PrebookPageData = { product?: { notification?: { value?: string } | null } | null };
-
+	const bodyClass = $derived(normalizedPath === '/buildo' ? 'page-buildo' : '');
 	const rdkNotification = $derived(
-		normalizedPath === '/buildo-prebook'
-			? ((page.data as PrebookPageData).product?.notification?.value ?? null)
-			: null
+		normalizedPath === '/buildo' ? 'designed and assembled in the united states' : null
 	);
-
-	const bodyClass = $derived(normalizedPath === '/buildo-prebook' ? 'page-buildo' : '');
 
 	$effect(() => {
 		document.body.className = bodyClass;
@@ -35,6 +31,8 @@
 		rel="stylesheet"
 	/>
 </svelte:head>
+
+<Analytics />
 
 {#if normalizedPath !== '/deck'}
 	<SiteNav pathname={page.url.pathname} notification={rdkNotification} />

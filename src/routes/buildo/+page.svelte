@@ -1,7 +1,50 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
+
+	let { data } = $props();
+
+	const product = data.product;
+
+	const images = product
+		? product.images.nodes.length > 0
+			? product.images.nodes
+			: product.featuredImage
+				? [product.featuredImage]
+				: []
+		: [];
+
+	const price = product
+		? new Intl.NumberFormat('en-US', {
+				style: 'currency',
+				currency: product.priceRange.minVariantPrice.currencyCode
+			}).format(Number(product.priceRange.minVariantPrice.amount))
+		: null;
+
+	const variant = product?.variants.nodes[0];
+	const available = variant?.availableForSale ?? true;
+	const origin = product?.origin?.value ?? null;
+	// Matches a tag on the Shopify product, so it has to keep accepting the
+	// original 'prebook' spelling: the store still carries that tag even though
+	// the site now says preorder everywhere.
+	const isPreorder = (product?.tags ?? []).some((tag: string) => {
+		const t = tag.toLowerCase();
+		return t === 'preorder' || t === 'prebook';
+	});
+
+	let selectedImage = $state(0);
+	let quantity = $state(1);
+
+	function increment() {
+		quantity = Math.min(quantity + 1, 99);
+	}
+	function decrement() {
+		quantity = Math.max(quantity - 1, 1);
+	}
+
+	const cartUrl = $derived(
+		data.variantId ? `https://${data.storeDomain}/cart/${data.variantId}:${quantity}` : null
+	);
 
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.12 });
@@ -50,44 +93,145 @@
 </script>
 
 <svelte:head>
-	<title>Buildo - Humanoid Robot for Physical AI | STARFORGE</title>
+	<title>Buildo - Preorder the Humanoid for Physical AI | STARFORGE</title>
 	<meta
 		name="description"
-		content="Buildo is a general-purpose humanoid built for physical AI development. Three-layer on-board intelligence, five-fingered dexterous hands, and a data collection platform that trains itself."
+		content="Preorder Buildo, a general-purpose humanoid built for physical AI development. Three-layer on-board intelligence, five-fingered dexterous hands, and a data collection platform that trains itself."
 	/>
 </svelte:head>
 
 <div class="bd-scan" aria-hidden="true"></div>
 
-<header class="bd-hero">
+<header class="rdk-hero" id="preorder">
 	<div class="hero-scan-lines" aria-hidden="true"></div>
-	<div class="bd-hero-inner">
-		<div class="bd-hero-text">
-			<h1 class="bd-hero-title">Buildo</h1>
-			<p class="bd-hero-sub">
-				A general-purpose humanoid, built to work in the spaces people already work in.
-			</p>
-			<div class="bd-hero-ctas">
-				<a class="btn-primary" href={resolve('/buildo-prebook')}>Prebook</a>
-				<a class="btn-ghost" href="https://portal.starforgerobotics.com">Simulate Buildo</a>
-			</div>
-
-			<dl class="bd-specs" aria-label="Buildo specifications">
-				{#each specs as spec (spec.label)}
-					<div class="bd-spec">
-						<dt class="bd-spec-label">{spec.label}</dt>
-						<dd class="bd-spec-value">
-							{spec.value}<span class="bd-spec-unit">{spec.unit}</span>
-						</dd>
+	<div class="rdk-product-layout">
+		<!-- LEFT: Image gallery -->
+		<div class="rdk-gallery">
+			<div class="rdk-main-image">
+				{#if images[selectedImage]}
+					<img
+						src={images[selectedImage].url}
+						alt={images[selectedImage].altText ?? product?.title ?? 'Buildo'}
+						fetchpriority="high"
+					/>
+				{:else}
+					<div class="rdk-image-placeholder">
+						<span class="rdk-placeholder-label">Robot Dev Kit</span>
 					</div>
-				{/each}
-			</dl>
+				{/if}
+			</div>
+			{#if images.length > 1}
+				<div class="rdk-thumbnails">
+					{#each images as img, i (img.url)}
+						<button
+							class="rdk-thumb"
+							class:active={selectedImage === i}
+							onclick={() => (selectedImage = i)}
+							aria-label="View image {i + 1}"
+						>
+							<img src={img.url} alt={img.altText ?? ''} />
+						</button>
+					{/each}
+				</div>
+			{/if}
 		</div>
-		<div class="bd-hero-visual">
-			<img src="/assets/buildo-robot.jpg" alt="Buildo humanoid robot" fetchpriority="high" />
+
+		<!-- RIGHT: Product info -->
+		<div class="rdk-product-info">
+			<span class="hero-tag">humanoid robot + dev kit</span>
+			<h1 class="rdk-product-title">{product?.title ?? 'Buildo'}</h1>
+
+			{#if product}
+				<div class="rdk-price-row">
+					<span class="rdk-price">{price}</span>
+					<span class="rdk-badge" class:rdk-badge--out={!available}>
+						{available ? 'Available' : 'Sold Out'}
+					</span>
+				</div>
+
+				{#if origin}
+					<p class="rdk-origin">{origin}</p>
+				{/if}
+
+				<div class="rdk-divider-line"></div>
+
+				<div class="rdk-quantity-block">
+					<span class="rdk-qty-label">Quantity</span>
+					<div class="rdk-qty-control">
+						<button
+							class="rdk-qty-btn"
+							onclick={decrement}
+							disabled={quantity <= 1}
+							aria-label="Decrease">−</button
+						>
+						<span class="rdk-qty-val">{quantity}</span>
+						<button class="rdk-qty-btn" onclick={increment} aria-label="Increase">+</button>
+					</div>
+				</div>
+
+				<div class="rdk-ctas">
+					{#if cartUrl && available}
+						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+						<a class="btn-primary rdk-btn-buy" href={cartUrl}
+							>{isPreorder ? 'Preorder' : 'Order Now'}</a
+						>
+					{/if}
+					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Simulate Buildo</a>
+				</div>
+			{:else}
+				<p class="rdk-origin">
+					Online reservations are temporarily unavailable. Email us and we will hold your place in
+					the queue.
+				</p>
+
+				<div class="rdk-divider-line"></div>
+
+				<div class="rdk-ctas">
+					<a
+						class="btn-primary rdk-btn-buy"
+						href="mailto:contact@starforgerobotics.com?subject=Buildo%20Preorder">Preorder by email</a
+					>
+					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Simulate Buildo</a>
+				</div>
+			{/if}
+
+			<!-- The specifications now live further down this same page rather than on
+			     a separate one, so this jumps rather than navigates. -->
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+			<a class="rdk-specs-link" href="#specs">↓ Full specifications and features</a>
+
+			<div class="rdk-divider-line"></div>
+
+			<div class="rdk-whats-included">
+				<span class="rdk-wi-label">What's included</span>
+				<div class="rdk-wi-tags">
+					<span class="rdk-wi-tag">Wearable dextrous hand</span>
+					<span class="rdk-wi-tag">Data collection SDK</span>
+					<span class="rdk-wi-tag">FOC firmware source</span>
+					<span class="rdk-wi-tag">Example training pipelines</span>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>
+
+<div class="hr-line"></div>
+
+<!-- Kept from the old hero, which the product block above replaced. These are the
+     headline numbers for the machine and there is nowhere else on the site that
+     carries them. -->
+<section class="bd-section bd-spec-section" id="specs">
+	<dl class="bd-specs" aria-label="Buildo specifications">
+		{#each specs as spec (spec.label)}
+			<div class="bd-spec">
+				<dt class="bd-spec-label">{spec.label}</dt>
+				<dd class="bd-spec-value">
+					{spec.value}<span class="bd-spec-unit">{spec.unit}</span>
+				</dd>
+			</div>
+		{/each}
+	</dl>
+</section>
 
 <div class="hr-line"></div>
 
@@ -202,7 +346,9 @@
 			case and the manipulation tasks involved and we will get you the right configuration.
 		</p>
 		<div class="bd-hero-ctas" style="margin-top:36px;">
-			<a class="btn-primary" href={resolve('/buildo-prebook')}>Prebook</a>
+			<!-- Ordering happens at the top of this page now, so this returns there. -->
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+			<a class="btn-primary" href="#preorder">Preorder</a>
 			<a class="btn-ghost" href="https://portal.starforgerobotics.com">Simulate Buildo</a>
 		</div>
 	</div>
@@ -225,83 +371,48 @@
 		);
 	}
 
-	.bd-hero {
-		position: relative;
-		padding: calc(var(--header-height, 96px) + 40px) 48px 88px;
-		background:
-			linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.9) 100%),
-			radial-gradient(circle at 25% 20%, rgba(20, 18, 16, 0.072) 0%, transparent 55%),
-			linear-gradient(135deg, #f7f4ef 0%, #efe9df 40%, #faf8f4 100%);
-		overflow: hidden;
-		border-bottom: 1px solid var(--border);
-	}
-
-	.bd-hero-inner {
-		position: relative;
-		z-index: 2;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 64px;
-		/* Top-aligned, not centred: the name should start high and the spec
-		   block below it fills the column against the tall render. */
-		align-items: start;
-		max-width: 1200px;
-		margin: 0 auto;
-	}
-
-	.bd-hero-title {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(64px, 9vw, 140px);
-		font-weight: 500;
-		line-height: 0.92;
-		letter-spacing: 0.02em;
-		color: var(--ink);
-		margin: 16px 0 20px;
-	}
-
-	.bd-hero-sub {
-		font-size: clamp(15px, 1.3vw, 18px);
-		line-height: 1.7;
-		color: rgba(20, 18, 16, 0.82);
-		max-width: 46ch;
-		margin-bottom: 36px;
-	}
-
 	.bd-hero-ctas {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 14px;
 	}
 
-	/* Render ships on a flat #cfcdce studio backdrop; the panel extends it so the
-	   light product shot reads as deliberate against the dark hero. */
-	.bd-hero-visual {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: #cfcdce;
-		border: 2px solid var(--border);
-		overflow: hidden;
+	/* Came across with the product block; the rest of that page's styling is
+	   global, this one rule was scoped to it. */
+	.rdk-specs-link {
+		display: inline-block;
+		margin-top: 20px;
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: 11px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+		transition:
+			color 0.2s ease,
+			border-color 0.2s ease;
 	}
 
-	.bd-hero-visual img {
-		display: block;
-		width: auto;
-		max-width: 100%;
-		max-height: 620px;
-		height: auto;
+	.rdk-specs-link:hover {
+		color: var(--accent);
+		border-bottom-color: var(--accent);
 	}
 
 	/* ── SPEC BLOCK ── */
-	/* Sits directly under the CTAs in the left column so the text side fills to
-	   roughly the height of the portrait render beside it. */
+	/* A band of its own now that the product block has taken the top of the page,
+	   so it runs six across instead of stacking three-wide in a hero column. */
+	.bd-spec-section {
+		padding-top: 72px;
+		padding-bottom: 72px;
+	}
+
 	.bd-specs {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(6, 1fr);
 		gap: 26px 20px;
-		margin: 44px 0 0;
-		padding-top: 32px;
-		border-top: 1px solid var(--border);
+		margin: 0;
 	}
 
 	.bd-spec-label {
@@ -511,14 +622,13 @@
 
 	/* ── RESPONSIVE ── */
 	@media (max-width: 900px) {
-		.bd-hero {
-			padding: calc(var(--header-height, 96px) + 32px) 24px 64px;
-		}
-
-		.bd-hero-inner,
 		.bd-split {
 			grid-template-columns: 1fr;
 			gap: 48px;
+		}
+
+		.bd-specs {
+			grid-template-columns: repeat(3, 1fr);
 		}
 
 		.bd-split.reverse > :first-child {
