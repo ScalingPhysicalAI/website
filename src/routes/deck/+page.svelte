@@ -83,13 +83,12 @@
 			dotsContainer.appendChild(dot);
 		});
 
-		const stage = document.getElementById('deckStage');
-		stage?.addEventListener('click', nextSlide);
+		// Advancing on any click made it impossible to select text or follow a
+		// link on a slide; navigation is via the arrows, dots and keyboard.
 		document.addEventListener('keydown', handleKey);
 		goToSlide(0);
 
 		return () => {
-			stage?.removeEventListener('click', nextSlide);
 			document.removeEventListener('keydown', handleKey);
 			document.body.style.overflow = '';
 		};
@@ -97,7 +96,7 @@
 </script>
 
 <svelte:head>
-	<title>StarForge Robotics — Pitch Deck</title>
+	<title>StarForge Robotics - Pitch Deck</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
@@ -128,7 +127,7 @@
 			</button>
 		</nav>
 
-		<!-- SLIDE 1 — COVER -->
+		<!-- SLIDE 1 - COVER -->
 		<section class="slide" id="s1">
 			<div class="cover-bg"></div>
 			<div class="cover-grid"></div>
@@ -140,36 +139,23 @@
 					for Physical<br />
 					Intelligence
 				</h1>
+				<p class="cover-sub anim-in anim-d3">
+					Our robot <a
+						class="cover-sub-link"
+						href="https://starforgerobotics.com/buildo"
+						target="_blank"
+						rel="noopener noreferrer"
+						>Buildo<span class="cover-sub-arrow" aria-hidden="true">↗</span></a
+					>. The most capable and affordable robot made possible by our compute layer.
+				</p>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a href="https://starforgerobotics.com" class="cover-url anim-in anim-d3"
 					>starforgerobotics.com</a
 				>
 			</div>
-			<div class="cover-star anim-in anim-d2">
-				<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M100 10 L108 92 L190 100 L108 108 L100 190 L92 108 L10 100 L92 92 Z"
-						fill="url(#starGrad)"
-					/>
-					<defs>
-						<linearGradient
-							id="starGrad"
-							x1="10"
-							y1="10"
-							x2="190"
-							y2="190"
-							gradientUnits="userSpaceOnUse"
-						>
-							<stop offset="0%" stop-color="#96760a" />
-							<stop offset="50%" stop-color="#6b520d" />
-							<stop offset="100%" stop-color="#96760a" />
-						</linearGradient>
-					</defs>
-				</svg>
-			</div>
 		</section>
 
-		<!-- SLIDE 2 — HUMANOID BOOTLOADER -->
+		<!-- SLIDE 2 - HUMANOID BOOTLOADER -->
 		<section class="slide" id="s2">
 			<div class="section-label anim-in anim-d1">The Opportunity</div>
 			<h2 class="headline anim-in anim-d2">
@@ -188,22 +174,21 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong>Unitree G1</strong> — an open, community-driven approach built around an accessible
+						<strong>Unitree G1</strong> - an open, community-driven approach built around an accessible
 						robotics platform that enables researchers and developers to experiment, build, and contribute.
 					</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong>Figure AI</strong> — a vertically integrated approach where proprietary hardware,
-						software, data collection, and AI development are handled by dedicated in-house teams on a
-						closed platform.
+						<strong>Figure AI</strong> - a vertically integrated approach where proprietary hardware,
+						software, data collection, and AI development are handled by dedicated in-house teams.
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 3 — UNITREE -->
+		<!-- SLIDE 3 - UNITREE -->
 		<section class="slide" id="s3">
 			<div class="section-label anim-in anim-d1">Market Signal</div>
 			<h2 class="headline anim-in anim-d2">
@@ -221,7 +206,7 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						Unitree opened near <strong>$66B</strong> — 5× its last VC round of $1.9B and ~7× its IPO
+						Unitree opened near <strong>$66B</strong> - 5× its last VC round of $1.9B and ~7× its IPO
 						price.
 					</p>
 				</div>
@@ -235,18 +220,18 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 4 — UNITREE LACKED BRAIN -->
+		<!-- SLIDE 4 - UNITREE LACKED BRAIN -->
 		<section class="slide" id="s4">
 			<div class="section-label anim-in anim-d1">The Problem</div>
 			<h2 class="headline anim-in anim-d2">
-				Unitree solved the <span class="hl-gold">body</span> —<br />
+				Unitree solved the <span class="hl-gold">body</span> -<br />
 				the brain remains unsolved
 			</h2>
 			<div class="bullet-list anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						We saw Unitree robots dancing, running — but <strong>no real-world deployment</strong> at
+						We saw Unitree robots dancing, running - but <strong>no real-world deployment</strong> at
 						scale.
 					</p>
 				</div>
@@ -268,74 +253,62 @@
 					<p>
 						A robot foundation model approaching human-level generality could exceed <strong
 							>500 billion parameters</strong
-						> — making it extremely difficult and expensive to run on conventional research hardware.
+						> - making it extremely difficult and expensive to run on general purpose robots.
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 5 — BREAKTHROUGH -->
+		<!-- SLIDE 5 - BREAKTHROUGH -->
 		<section class="slide" id="s5">
 			<div class="section-label anim-in anim-d1">Our Solution</div>
 			<h2 class="headline anim-in anim-d2">
 				Our breakthrough allows running<br />
 				<span class="hl-gold">any sized model</span> on humanoid robots
 			</h2>
-			<div class="solution-cards anim-in anim-d3">
+			<div class="solution-layout anim-in anim-d3">
 				<div class="solution-card">
-					<div class="solution-card-num">01</div>
 					<p>
 						This <strong>fundamentally changes the architecture and economics</strong> of intelligent
-						humanoid robots — models of any size can now run efficiently inside the robot.
+						humanoid robots - models of any size can now run efficiently inside the robot.
 					</p>
 				</div>
-				<div class="solution-card">
-					<div class="solution-card-num">02</div>
-					<p>
-						As more developers gain access and dramatically more physical-world data is collected,
-						the ecosystem could produce increasingly advanced <strong
-							>general-purpose robotic AI</strong
-						> capable of orders-of-magnitude productivity improvements.
-					</p>
-				</div>
+				<figure class="solution-figure">
+					<img
+						src="/assets/architecture.jpg"
+						alt="Architecture diagram: a large base VLA and action head on the server route token projections to very small VLA models running on the robot, with continuous observation embeddings flowing from the robot back to the server."
+					/>
+				</figure>
 			</div>
 		</section>
 
-		<!-- SLIDE 6 — BUILDO KIT -->
+		<!-- SLIDE 6 - BUILDO KIT -->
 		<section class="slide" id="s6">
 			<div class="section-label anim-in anim-d1">Product</div>
 			<h2 class="headline anim-in anim-d2">
 				Buildo robot and<br />
-				<span class="hl-gold">training kit</span> — v1
+				<span class="hl-gold">training kit</span> - v1
 			</h2>
-			<div class="why-grid anim-in anim-d3">
+			<div class="why-grid why-grid--two anim-in anim-d3">
 				<div class="why-card">
 					<div class="why-card-line"></div>
 					<div class="why-card-num">01</div>
 					<p class="why-card-body">
-						Open humanoid platform designed for <strong>real-world data collection</strong> at scale.
+						<strong>Buildo</strong> robot is designed for majority of
+						<strong>real-world use cases</strong>.
 					</p>
 				</div>
 				<div class="why-card">
 					<div class="why-card-line"></div>
 					<div class="why-card-num">02</div>
 					<p class="why-card-body">
-						Training kit enables researchers to <strong>deploy and fine-tune</strong> robot foundation
-						models out of the box.
-					</p>
-				</div>
-				<div class="why-card">
-					<div class="why-card-line"></div>
-					<div class="why-card-num">03</div>
-					<p class="why-card-body">
-						Actuator and dextrous hand solve the <strong>critical path</strong> in humanoid hardware —
-						the Pareto components driving performance and cost.
+						Training kit enables <strong>teleoperation and real-world data collection</strong>.
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 7 — INFRA -->
+		<!-- SLIDE 7 - INFRA -->
 		<section class="slide" id="s7">
 			<div class="section-label anim-in anim-d1">Platform</div>
 			<h2 class="headline anim-in anim-d2">
@@ -353,14 +326,14 @@
 				<div class="solution-card">
 					<div class="solution-card-num">Compute Layer</div>
 					<p>
-						<strong>Train and host robot models</strong> for inference — from any size model to production
+						<strong>Train and host robot models</strong> for inference - from any size model to production
 						deployment.
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 8 — DEVELOPER REWARDS -->
+		<!-- SLIDE 8 - DEVELOPER REWARDS -->
 		<section class="slide" id="s8">
 			<div class="section-label anim-in anim-d1">Ecosystem</div>
 			<h2 class="headline anim-in anim-d2">
@@ -373,7 +346,7 @@
 					<p>
 						Developers who build and contribute robot AI models to the platform <strong
 							>earn direct rewards</strong
-						> — aligning incentives with model quality.
+						> - aligning incentives with model quality.
 					</p>
 				</div>
 				<div class="bullet-item">
@@ -386,14 +359,14 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						Strong developer base already in place — <strong>community-driven growth</strong> mirrors
+						Strong developer base already in place - <strong>community-driven growth</strong> mirrors
 						the open-source software model applied to physical AI.
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 9 — REVENUE -->
+		<!-- SLIDE 9 - REVENUE -->
 		<section class="slide" id="s9">
 			<div class="section-label anim-in anim-d1">Business Model</div>
 			<h2 class="headline anim-in anim-d2">
@@ -413,14 +386,14 @@
 					<div class="solution-card-num">Compute Revenue</div>
 					<p>
 						Training and inference hosting on the StarForge compute layer. Compute demand for
-						physical intelligence will increase <strong>100× with increasing adoption</strong> — far exceeding
+						physical intelligence will increase <strong>100× with increasing adoption</strong> - far exceeding
 						digital AI today.
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 10 — COMPETITION -->
+		<!-- SLIDE 10 - COMPETITION -->
 		<section class="slide" id="s10">
 			<div class="section-label anim-in anim-d1">Competitive Position</div>
 			<h2 class="headline anim-in anim-d2">
@@ -432,7 +405,7 @@
 					<div class="comp-content">
 						<div class="comp-title">1X Neo</div>
 						<p class="comp-body">
-							<strong>Costly and open platform</strong> — high barrier to entry for most researchers and
+							<strong>Costly and open platform</strong> - high barrier to entry for most researchers and
 							developers, limiting community growth and data collection scale.
 						</p>
 					</div>
@@ -442,7 +415,7 @@
 					<div class="comp-content">
 						<div class="comp-title">Figure O3</div>
 						<p class="comp-body">
-							<strong>Costly and closed platform</strong> — vertically integrated approach restricts the
+							<strong>Costly and closed platform</strong> - vertically integrated approach restricts the
 							developer ecosystem needed to rapidly advance physical AI models.
 						</p>
 					</div>
@@ -452,7 +425,7 @@
 					<div class="comp-content">
 						<div class="comp-title">Nori and similar</div>
 						<p class="comp-body">
-							<strong>Cheap but incapable</strong> — insufficient hardware performance to run meaningful
+							<strong>Cheap but incapable</strong> - insufficient hardware performance to run meaningful
 							physical AI models or collect high-quality training data.
 						</p>
 					</div>
@@ -460,7 +433,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 11 — WHY STARFORGE -->
+		<!-- SLIDE 11 - WHY STARFORGE -->
 		<section class="slide" id="s11">
 			<div class="section-label anim-in anim-d1">Competitive Advantage</div>
 			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">StarForge</span></h2>
@@ -469,7 +442,7 @@
 					<div class="why-card-line"></div>
 					<div class="why-card-num">01</div>
 					<p class="why-card-body">
-						We made a breakthrough that allows robots to run <strong>any sized model</strong> — making
+						We made a breakthrough that allows robots to run <strong>any sized model</strong> - making
 						real-world deployments possible for the first time.
 					</p>
 				</div>
@@ -485,7 +458,7 @@
 					<div class="why-card-line"></div>
 					<div class="why-card-num">03</div>
 					<p class="why-card-body">
-						Built the entire humanoid robot hardware and supply chain — especially the <strong
+						Built the entire humanoid robot hardware and supply chain - especially the <strong
 							>actuator and dextrous hand</strong
 						>, the critical-path components.
 					</p>
@@ -493,7 +466,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 12 — TEAM -->
+		<!-- SLIDE 12 - TEAM -->
 		<section class="slide" id="s12">
 			<div class="section-label anim-in anim-d1">Founding Team</div>
 			<h2 class="headline anim-in anim-d2">Built by <span class="hl-gold">builders</span></h2>
@@ -541,7 +514,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 13 — TRACTION -->
+		<!-- SLIDE 13 - TRACTION -->
 		<section class="slide" id="s13">
 			<div class="section-label anim-in anim-d1">Traction</div>
 			<h2 class="headline anim-in anim-d2">
@@ -554,7 +527,7 @@
 					<div class="comp-content">
 						<div class="comp-title">Mazout Electric</div>
 						<p class="comp-body">
-							Building <strong>lithium ion batteries using robots</strong> — deploying StarForge humanoids
+							Building <strong>lithium ion batteries using robots</strong> - deploying StarForge humanoids
 							for real industrial manufacturing tasks.
 						</p>
 					</div>
@@ -564,7 +537,7 @@
 					<div class="comp-content">
 						<div class="comp-title">Aryan Madhav Verma</div>
 						<p class="comp-body">
-							Building <strong>industrial warehouses</strong> on the StarForge platform — validating demand
+							Building <strong>industrial warehouses</strong> on the StarForge platform - validating demand
 							for open, capable humanoid robots beyond research.
 						</p>
 					</div>
@@ -574,7 +547,7 @@
 					<div class="comp-content">
 						<div class="comp-title">Developer Ecosystem</div>
 						<p class="comp-body">
-							<strong>50+ developers</strong> are already using our compute platform — early signal of
+							<strong>50+ developers</strong> are already using our compute platform - early signal of
 							the community-driven flywheel taking hold.
 						</p>
 					</div>
@@ -582,7 +555,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 14 — VISION / ASK -->
+		<!-- SLIDE 14 - VISION / ASK -->
 		<section class="slide" id="s14">
 			<div class="section-label anim-in anim-d1">The Vision</div>
 			<h2 class="headline anim-in anim-d2">
@@ -593,7 +566,7 @@
 				<p class="vision-text">
 					Our thesis: ecosystem-driven acceleration could bring the industry substantially closer to <strong
 						>general purpose robotics AGI within the next year</strong
-					> — creating transformational productivity gains across multiple industries.
+					> - creating transformational productivity gains across multiple industries.
 				</p>
 				<p class="vision-text">
 					We intend to produce specialised robots for space stations, lunar and Mars base operations
@@ -893,12 +866,31 @@
 		background: #f1efeb;
 	}
 
+	/* Cover slide only. The network art is 16:9 and the stage is 16:9, so `cover`
+	   maps it edge to edge with nothing cropped. The white ramp holds the left
+	   half solid - the cover title runs to roughly 49% of the stage - then
+	   releases across the right. It settles at 0.18 rather than 0 so the graphic
+	   stays a backdrop and never competes with the headline. */
 	.cover-bg {
 		position: absolute;
 		inset: 0;
-		background:
+		background-image:
+			linear-gradient(
+				90deg,
+				rgb(255, 255, 255) 0%,
+				rgb(255, 255, 255) 29%,
+				rgba(255, 255, 255, 0.82) 38%,
+				rgba(255, 255, 255, 0.5) 50%,
+				rgba(255, 255, 255, 0.24) 64%,
+				rgba(255, 255, 255, 0.18) 76%,
+				rgba(255, 255, 255, 0.18) 100%
+			),
 			radial-gradient(ellipse 70% 60% at 80% 50%, rgba(20, 18, 16, 0.03) 0%, transparent 70%),
-			radial-gradient(ellipse 40% 70% at 10% 80%, rgba(20, 18, 16, 0.015) 0%, transparent 60%);
+			radial-gradient(ellipse 40% 70% at 10% 80%, rgba(20, 18, 16, 0.015) 0%, transparent 60%),
+			url('/assets/network-graph.webp');
+		background-size: auto, auto, auto, cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 
 	.cover-grid {
@@ -951,14 +943,42 @@
 		letter-spacing: 0.08em;
 	}
 
-	.cover-star {
-		position: absolute;
-		right: 8%;
-		top: 50%;
-		transform: translateY(-50%);
-		width: clamp(160px, 28vw, 320px);
-		opacity: 0.85;
-		z-index: 2;
+	/* Sits under the title, deliberately well below it in scale so the headline
+	   still carries the slide. Sized in vmin like the title so it tracks the
+	   stage rather than the browser window. */
+	.cover-sub {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(11px, 1.9vmin, 19px);
+		font-weight: 500;
+		line-height: 1.55;
+		color: rgba(20, 18, 16, 0.82);
+		max-width: 46ch;
+		margin-top: clamp(14px, 2.4vmin, 26px);
+	}
+
+	.cover-sub-link {
+		color: var(--deck-accent, #7a5e0f);
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-thickness: 1px;
+		white-space: nowrap;
+		transition: color 0.2s ease;
+	}
+
+	.cover-sub-link:hover {
+		color: #5c460b;
+	}
+
+	/* inline-block stops the link's underline being drawn through the arrow. */
+	.cover-sub-arrow {
+		display: inline-block;
+		margin-left: 3px;
+		transition: transform 0.2s ease;
+	}
+
+	.cover-sub-link:hover .cover-sub-arrow {
+		transform: translate(2px, -2px);
 	}
 
 	/* ── BULLET LIST ── */
@@ -1000,12 +1020,61 @@
 	}
 
 	/* ── SOLUTION CARDS ── */
+	/* Still used by slides 7 and 9. */
 	.solution-cards {
 		margin-top: clamp(16px, 5vh, 40px);
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 3px;
 		max-width: 900px;
+	}
+
+	/* Slide 5 carries a much taller element than the rest of the deck. It sits
+	   lower than the trimmed 68px I first tried but still higher than the 96px
+	   the other slides use, and the bottom padding is trimmed hard so moving the
+	   title down costs the diagram no height. */
+	#s5 {
+		padding-top: clamp(48px, 10.6vh, 82px);
+		padding-bottom: clamp(8px, 1.6vh, 14px);
+	}
+
+	#s5 .section-label {
+		margin-bottom: clamp(6px, 1.4vh, 10px);
+	}
+
+	/* Slide 5: text left, diagram right. Columns are minmax(0, ...) so the image
+	   can shrink inside its track instead of forcing the grid wider than the
+	   slide. */
+	.solution-layout {
+		margin-top: clamp(4px, 1vh, 12px);
+		display: grid;
+		grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+		gap: clamp(16px, 3vw, 44px);
+		/* Centred against the diagram rather than pinned to the top, so the card
+		   sits at the diagram's midpoint instead of crowding the headline. */
+		align-items: center;
+		width: 100%;
+	}
+
+	.solution-figure {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 0;
+		margin: 0;
+	}
+
+	.solution-figure img {
+		display: block;
+		width: 100%;
+		height: auto;
+		/* The diagram is bound by slide height, not column width, so this cap is
+		   what actually sizes it. The stage is min(100vh, 56.25vw), so the cap
+		   has to track both: on a window wider than 16:9 the stage is shorter
+		   than the viewport and a plain vh value overflows it. */
+		max-height: clamp(200px, min(71vh, 40vw), 700px);
+		object-fit: contain;
+		background: #ffffff;
 	}
 
 	.solution-card {
@@ -1048,12 +1117,26 @@
 		font-weight: 500;
 	}
 
+	/* Slide 5 only. With the number removed the card has room, and it sits
+	   beside a large diagram, so the copy is set larger than the shared
+	   .solution-card used on slides 7 and 9. */
+	.solution-layout .solution-card p {
+		font-size: clamp(13px, 2.4vmin, 17px);
+		line-height: 1.65;
+	}
+
 	/* ── WHY US ── */
 	.why-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 3px;
 		margin-top: clamp(16px, 5vh, 48px);
+	}
+
+	/* Slide 6 carries two cards; without this they would sit in two of three
+	   tracks and leave a dead column. Slide 11 still uses the three-up grid. */
+	.why-grid--two {
+		grid-template-columns: repeat(2, 1fr);
 	}
 
 	.why-card {
@@ -1377,10 +1460,6 @@
 			min-height: 100vh;
 			padding: 80px 72px;
 			display: flex !important;
-		}
-
-		.cover-star {
-			display: none;
 		}
 	}
 </style>

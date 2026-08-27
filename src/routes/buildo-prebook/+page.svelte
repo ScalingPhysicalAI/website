@@ -47,7 +47,7 @@
 </script>
 
 <svelte:head>
-	<title>Prebook Buildo — STARFORGE</title>
+	<title>Prebook Buildo - STARFORGE</title>
 	<meta
 		name="description"
 		content="Reserve your Buildo humanoid development kit. Dextrous wearable hand for robot training data collection and an open-source joint actuator."
@@ -176,7 +176,7 @@
 			</p>
 			<p class="section-body" style="margin-top:20px;">
 				Buildo provides the infrastructure to collect real-world data and train models tailored to
-				your specific use case — with an AI architecture that is highly scalable and modular, from
+				your specific use case - with an AI architecture that is highly scalable and modular, from
 				cloud reasoning down to sub-100ms fine-motor control.
 			</p>
 		</div>
@@ -184,19 +184,19 @@
 			<div class="rdk-card-title">Three-layer AI architecture</div>
 			<ul class="rdk-bullets">
 				<li>
-					<strong>System 2</strong> — Vision-Language Action Model for reasoning and long-horizon planning
+					<strong>System 2</strong> - Vision-Language Action Model for reasoning and long-horizon planning
 					(~1 Hz)
 				</li>
 				<li>
-					<strong>System 1</strong> — On-board foundation model for motion planning and coarse action
+					<strong>System 1</strong> - On-board foundation model for motion planning and coarse action
 					control (~10 Hz)
 				</li>
 				<li>
-					<strong>System 0</strong> — Microcontroller model for fine-motor control via tactile feedback
+					<strong>System 0</strong> - Microcontroller model for fine-motor control via tactile feedback
 					(~100 Hz)
 				</li>
 			</ul>
-			<p class="rdk-note">Scalable and modular — swap in your own models at any layer.</p>
+			<p class="rdk-note">Scalable and modular - swap in your own models at any layer.</p>
 		</div>
 	</div>
 </section>
@@ -209,12 +209,12 @@
 			<span class="section-label">The Platform</span>
 			<h2 class="section-title">Buildo Training<br /><span>Kit</span></h2>
 			<p class="section-body">
-				The missing layer in humanoid robotics is not hardware — it is data. Without training data,
+				The missing layer in humanoid robotics is not hardware - it is data. Without training data,
 				robots cannot generalize to real-world tasks. We are building the platform that lets
 				developers create, collect, and deploy robot behavior at scale.
 			</p>
 			<p class="section-body" style="margin-top:20px;">
-				Developers build use-case apps — cooking, home assistance, vehicle operation — and publish
+				Developers build use-case apps - cooking, home assistance, vehicle operation - and publish
 				them to our app store. Every deployment generates the training data that makes the
 				underlying AI smarter.
 			</p>
@@ -222,11 +222,11 @@
 		<div class="rdk-card reveal" style="transition-delay:0.12s">
 			<div class="rdk-card-title">Apps developers are building</div>
 			<ul class="rdk-bullets">
-				<li>Cooking robot — ingredient prep, stove operation</li>
-				<li>Home assistant — cleaning, object handling</li>
-				<li>Vehicle operation — steering, pedal control</li>
-				<li>Industrial assembly — precision manipulation</li>
-				<li>Warehouse picking — grasp planning at scale</li>
+				<li>Cooking robot - ingredient prep, stove operation</li>
+				<li>Home assistant - cleaning, object handling</li>
+				<li>Vehicle operation - steering, pedal control</li>
+				<li>Industrial assembly - precision manipulation</li>
+				<li>Warehouse picking - grasp planning at scale</li>
 			</ul>
 		</div>
 	</div>
@@ -245,7 +245,7 @@
 				would generate approximately $64,000 per month, or $768,000 per year, in revenue.
 			</p>
 			<p class="section-body" style="margin-top:20px;">
-				Tell us what you're building — the use case, the manipulation tasks involved, and your
+				Tell us what you're building - the use case, the manipulation tasks involved, and your
 				timeline. We'll get you set up with the right configuration.
 			</p>
 			<div class="hero-ctas" style="margin-top:32px;">

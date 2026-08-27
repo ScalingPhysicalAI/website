@@ -8,7 +8,7 @@
    Borders and card fills are deliberately neutral ink rather than tinted
    accent; keeping the structure neutral lets the accent carry real emphasis
    where it is actually used. The gold from the logo star is intentionally not
-   reused as a UI colour — it cannot hold contrast on white at text sizes. */
+   reused as a UI colour - it cannot hold contrast on white at text sizes. */
 :root {
 	--bg: #ffffff;
 	--ink: #141210;
@@ -184,7 +184,7 @@ main#main {
 	padding-top: var(--header-height, 96px);
 	overflow: hidden;
 	/* The network backdrop lives here rather than on <body> so it appears on the
-	   homepage only — #hero exists on no other route. */
+	   homepage only - #hero exists on no other route. */
 	background-image: url('/assets/network-graph.webp');
 	background-position: center;
 	background-size: cover;
@@ -198,7 +198,7 @@ main#main {
 	   the type at all, then a gradual fade that reaches fully transparent
 	   before the right edge, so the network reads at full strength there.
 	   Stops are percentages because the headline is sized in vw (clamped), so
-	   its width tracks the viewport — percentages follow the text, px would
+	   its width tracks the viewport - percentages follow the text, px would
 	   drift off it.
 	   The vertical scrim is kept deliberately light; with the left side now
 	   solid it only has to soften the very top and bottom edges. */
@@ -274,7 +274,11 @@ main#main {
 	font-weight: 500;
 	line-height: 1.6;
 	color: rgba(20, 18, 16, 0.86);
-	max-width: 640px;
+	/* Held inside the hero scrim's opaque band (0-44% of the viewport, less the
+	   48px gutter) so the line wraps rather than running onto the network
+	   graphic. The clamp keeps the measure sane on both narrow and wide
+	   screens instead of tracking the viewport all the way down. */
+	max-width: clamp(320px, calc(44vw - 64px), 620px);
 	margin-bottom: 44px;
 	opacity: 0;
 	animation: fadeUp 0.9s 0.7s forwards;
@@ -1242,6 +1246,11 @@ footer {
 	}
 	.hero-content {
 		padding: 24px 24px 32px;
+	}
+	/* Narrow viewports have no side-by-side space to protect, so let the line
+	   use the full column. */
+	.hero-sub {
+		max-width: 100%;
 	}
 	.scroll-indicator {
 		display: none;
