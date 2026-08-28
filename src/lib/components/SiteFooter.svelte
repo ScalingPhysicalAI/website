@@ -6,9 +6,10 @@
 	<div class="footer-inner">
 		<div class="footer-brand">
 			<div class="footer-logo">STARFORGE</div>
-			<p class="footer-tagline">Physical automation to transform industry and move the world.</p>
-			<a href="mailto:vipulsaini594@gmail.com" class="footer-contact-link"
-				>vipul@starforgerobotics.com</a
+			<p class="footer-tagline">Building the compute layer for physical AI</p>
+			<p class="footer-location">Building out of New York City</p>
+			<a href="mailto:contact@starforgerobotics.com" class="footer-contact-link"
+				>contact@starforgerobotics.com</a
 			>
 		</div>
 
@@ -38,7 +39,7 @@
 				<span class="footer-col-label">Connect</span>
 				<ul>
 					<li>
-						<a href="mailto:vipulsaini594@gmail.com,vipul@starforgerobotics.com">Contact Us</a>
+						<a href="mailto:contact@starforgerobotics.com">Contact Us</a>
 					</li>
 				</ul>
 			</div>
@@ -47,6 +48,5 @@
 
 	<div class="footer-bottom">
 		<span class="footer-copy">© 2026 Starforge Robotics, Inc. All rights reserved.</span>
-		<span class="footer-build-tag">BUILT FOR MARS</span>
 	</div>
 </footer>
