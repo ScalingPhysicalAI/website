@@ -14,6 +14,7 @@
 		role: string;
 		bio: string;
 		linkedin?: string;
+		x?: string;
 	};
 
 	const founder: Member = {
@@ -21,7 +22,8 @@
 		name: 'Vipul Saini',
 		role: 'Founder · Chief Engineer',
 		bio: 'Ambitious founder with a degree in electronics and communication engineering from Delhi Technological University. Aiming for Kardashev Type 2 by 2040, he built Lockheed Martin UAVs in college and food robotics at Posha (SF, $8M Accel). Founded Cypherock in 2019, the safest crypto hardware wallet, leading it to $600M AUM.',
-		linkedin: 'https://www.linkedin.com/in/vipul-saini-59a24156/'
+		linkedin: 'https://www.linkedin.com/in/vipul-saini-59a24156/',
+		x: 'https://x.com/vipulsaini594'
 	};
 
 	// Split rather than one array so the page reads 1 / 3 / 2 down the page.
@@ -37,14 +39,14 @@
 			initials: 'SS',
 			name: 'Sarthak Mishra',
 			role: 'Senior Software Engineer',
-			bio: 'Sarthak is a full stack software engineer and previously gained experience working at Mazout Electric building software defined electric vehicles. Sarthak handles software engineering across the entire robotics stack.',
+			bio: 'Sarthak is a full-stack software engineer who handles backend architecture, mobile applications, and the real-time communication layers that tie hardware to software. He previously built software-defined electric vehicles at Mazout Electric, working across low-latency teleoperation, embedded systems, and cloud infrastructure. He designs and drives the software flow, from device to operator.',
 			linkedin: 'https://www.linkedin.com/in/sarthak-mishra-ba32501bb/'
 		},
 		{
 			initials: 'AS',
 			name: 'Anay Shiledar',
 			role: 'Electrical Engineer',
-			bio: 'Anay is a driven electrical engineering student at UC Irvine with great skill in embedded software and hardware integration. He builds implantable-electronics pipelines at the Neuroelectronics Research Lab, codes F1-style race-car firmware for FSAE Electric Racing, and designed embedded software and PCBs for a Level 1 rocket.',
+			bio: 'Anay is a driven electrical engineer from UC Irvine with great skill in embedded software and hardware integration. He builds implantable-electronics pipelines at the Neuroelectronics Research Lab, codes F1-style race-car firmware for FSAE Electric Racing, and designed embedded software and PCBs for a Level 1 rocket.',
 			linkedin: 'https://www.linkedin.com/in/anay-shiledar-629036209/'
 		}
 	];
@@ -61,7 +63,7 @@
 			initials: 'CS',
 			name: 'Chirag Singla',
 			role: 'Software Engineer',
-			bio: 'With a background in electronics and communication engineering, Chirag has experience solving the hardest engineering problems in the world, from complex cryptography to writing firmware for field oriented control to programming GPTs from scratch in C or Rust. Previously at Cypherock, the safest crypto hardware wallet company.',
+			bio: 'With a background in electronics and communication engineering, Chirag has experience solving the hardest engineering problems in the world, from complex cryptography to writing transformer models since the past 5 years. Previously at Cypherock, the safest crypto hardware wallet company.',
 			linkedin: 'https://www.linkedin.com/in/chirag-droid/'
 		}
 	];
@@ -86,7 +88,7 @@
 		<div class="tm-avatar tm-avatar--lg" aria-hidden="true">{founder.initials}</div>
 		<div class="tm-founder-text">
 			<h2 class="tm-name tm-name--lg">
-				<LinkedInName name={founder.name} href={founder.linkedin} />
+				<LinkedInName name={founder.name} linkedin={founder.linkedin} x={founder.x} />
 			</h2>
 			<div class="tm-role">{founder.role}</div>
 			<p class="tm-bio">{founder.bio}</p>
@@ -98,7 +100,7 @@
 			<article class="tm-card reveal" style="transition-delay:{0.06 * i}s">
 				<div class="tm-avatar" aria-hidden="true">{member.initials}</div>
 				<h2 class="tm-name">
-					<LinkedInName name={member.name} href={member.linkedin} />
+					<LinkedInName name={member.name} linkedin={member.linkedin} x={member.x} />
 				</h2>
 				<div class="tm-role">{member.role}</div>
 				<p class="tm-bio">{member.bio}</p>
@@ -111,7 +113,7 @@
 			<article class="tm-card reveal" style="transition-delay:{0.06 * i}s">
 				<div class="tm-avatar" aria-hidden="true">{member.initials}</div>
 				<h2 class="tm-name">
-					<LinkedInName name={member.name} href={member.linkedin} />
+					<LinkedInName name={member.name} linkedin={member.linkedin} x={member.x} />
 				</h2>
 				<div class="tm-role">{member.role}</div>
 				<p class="tm-bio">{member.bio}</p>
