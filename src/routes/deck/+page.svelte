@@ -425,7 +425,7 @@
 				<div class="product-price">
 					<span class="product-price-label">Retail price</span>
 					<span class="product-price-val">$10K</span>
-					<span class="product-price-note">At scale, no one can achieve this price point<br />in the United States</span>
+					<span class="product-price-note">No one can achieve this price point<br />in the United States</span>
 				</div>
 				<figure class="product-shot product-shot-2">
 					<img src="/assets/buildo-kit.webp" alt="Buildo training kit" />
@@ -563,7 +563,12 @@
 								Humanoid robot and training kit sales to researchers, developers, and enterprises
 								deploying physical AI in the real world. <strong
 									>Recurring hardware upgrade cycles</strong
-								> as models improve.
+								> as models improve.<a
+									class="citation"
+									href="https://x.com/RoboStrategy/status/2087561451468681234"
+									target="_blank"
+									rel="noopener noreferrer">[2]</a
+								>
 							</p>
 						</div>
 						<div class="solution-card">
@@ -575,27 +580,20 @@
 									class="citation"
 									href="https://x.com/a16z/status/2091200032162857328/photo/1"
 									target="_blank"
-									rel="noopener noreferrer">[2]</a
+									rel="noopener noreferrer">[3]</a
 								>
 							</p>
 						</div>
 					</div>
-					<div class="rev-visuals">
-						<figure class="infra-figure">
-							<figcaption>Growth of General Purpose Humanoid Robots</figcaption>
-							<img
-								src="/assets/unitree-ubtech-table.png"
-								alt="Unitree versus UBTECH market cap, revenue, and humanoid units sold"
-							/>
-						</figure>
-						<figure class="infra-figure">
-							<figcaption>AI Agent Token Usage</figcaption>
-							<img
-								src="/assets/agentic-tokens-chart.jpg"
-								alt="OpenRouter token usage: agentic tokens far exceed human token use"
-							/>
-						</figure>
-					</div>
+					<figure class="rev-visuals">
+						<figcaption>
+							<span class="hl-gold">Robot Unit Sales, Mobility Mix & Token Usage</span>
+						</figcaption>
+						<img
+							src="/assets/robot-sales-token-forecast.png"
+							alt="Forecast of robot unit sales by mobility mix and token usage, 2025 to 2028"
+						/>
+					</figure>
 				</div>
 			</div>
 		</section>
@@ -662,7 +660,7 @@
 								class="citation"
 								href="https://arxiv.org/abs/2509.14139"
 								target="_blank"
-								rel="noopener noreferrer">[3]</a
+								rel="noopener noreferrer">[4]</a
 							>
 						</figcaption>
 						<img
@@ -885,7 +883,7 @@
 						class="citation"
 						href="https://www.prnewswire.com/news-releases/the-space-economy-is-heading-for-1-8-trillion-the-bottleneck-nobody-talks-about-is-getting-there-302830042.html"
 						target="_blank"
-						rel="noopener noreferrer">[4]</a
+						rel="noopener noreferrer">[5]</a
 					>
 				</p>
 			</div>
@@ -1579,60 +1577,39 @@
 	}
 
 	.rev-visuals {
-		display: grid;
-		grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-		grid-template-rows: auto auto;
-		column-gap: clamp(8px, 1.4vw, 16px);
-		align-items: start;
-		min-width: 0;
-		min-height: 0;
-	}
-
-	.rev-visuals .infra-figure {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		min-width: 0;
+		min-height: 0;
+		margin: 0;
 	}
 
-	.rev-visuals > .infra-figure:first-child {
-		grid-column: 1;
-		grid-row: 2;
-		align-self: center;
-	}
-
-	.rev-visuals > .infra-figure:last-child {
-		grid-column: 2;
-		grid-row: 1 / -1;
-		display: grid;
-		grid-template-rows: subgrid;
-		justify-items: center;
-	}
-
-	.rev-visuals .infra-figure figcaption {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: #7a5e0f;
+	.rev-visuals figcaption {
+		font-family: 'Bebas Neue', sans-serif;
+		font-weight: 500;
+		font-size: clamp(16px, 2.6vmin, 24px);
+		letter-spacing: 0.04em;
 		text-align: center;
-		line-height: 1.35;
-		margin: 0 0 8px;
+		line-height: 1.15;
+		margin: 0 0 clamp(8px, 1.4vh, 12px);
 		width: 100%;
 	}
 
-	.rev-visuals .infra-figure img {
+	.rev-visuals img {
+		display: block;
 		width: 100%;
 		height: auto;
-		max-height: min(52vh, 440px);
+		max-height: min(56vh, 460px);
 		object-fit: contain;
 		object-position: center;
 		background: #ffffff;
 	}
 
 	#s10 .infra-body {
-		grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+		grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+		align-items: center;
 	}
 
 	/* Slide 6 carries two product columns. Content starts a little above
