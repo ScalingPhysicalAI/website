@@ -425,6 +425,7 @@
 				<div class="product-price">
 					<span class="product-price-label">Retail price</span>
 					<span class="product-price-val">$10K</span>
+					<span class="product-price-note">At scale, no one can achieve this price point<br />in the United States</span>
 				</div>
 				<figure class="product-shot product-shot-2">
 					<img src="/assets/buildo-kit.webp" alt="Buildo training kit" />
@@ -656,10 +657,17 @@
 						</div>
 					</div>
 					<figure class="comp-figure">
-						<figcaption>X poll from <span class="comp-year">2024</span></figcaption>
+						<figcaption>
+							robots are a security product<a
+								class="citation"
+								href="https://arxiv.org/abs/2509.14139"
+								target="_blank"
+								rel="noopener noreferrer">[4]</a
+							>
+						</figcaption>
 						<img
-							src="/assets/china-humanoid-ban-poll.png"
-							alt="April 2024 X poll: 72 percent said humanoids made in China will be banned in the US"
+							src="/assets/g1-security-architecture.png"
+							alt="Unitree G1 architecture: onboard stack, Unitree cloud, and telemetry to servers in China"
 						/>
 					</figure>
 				</div>
@@ -710,13 +718,14 @@
 					<div class="team-name">
 						<LinkedInName
 							name="Vipul Saini"
-							href="https://www.linkedin.com/in/vipul-saini-59a24156/"
+							linkedin="https://www.linkedin.com/in/vipul-saini-59a24156/"
+							x="https://x.com/vipulsaini594"
 						/>
 					</div>
 					<div class="team-role">Founder · Chief Engineer</div>
 					<div class="team-bio">
 						Ambitious founder with a degree in electronics and communication engineering from Delhi
-						Technological University. 						Aiming for Kardashev Type 2 by 2040, he built Lockheed
+						Technological University. Aiming for Kardashev Type 2 by 2040, he built Lockheed
 						Martin UAVs in college and food robotics at Posha (SF, $8M Accel). Founded Cypherock in 2019,
 						the safest crypto hardware wallet, leading it to $600M AUM.
 					</div>
@@ -726,7 +735,7 @@
 					<div class="team-name">
 						<LinkedInName
 							name="Rakshit Jain"
-							href="https://www.linkedin.com/in/rakshitjain003/"
+							linkedin="https://www.linkedin.com/in/rakshitjain003/"
 						/>
 					</div>
 					<div class="team-role">Senior Robotics Engineer</div>
@@ -742,14 +751,16 @@
 					<div class="team-name">
 						<LinkedInName
 							name="Sarthak Mishra"
-							href="https://www.linkedin.com/in/sarthak-mishra-ba32501bb/"
+							linkedin="https://www.linkedin.com/in/sarthak-mishra-ba32501bb/"
 						/>
 					</div>
 					<div class="team-role">Senior Software Engineer</div>
 					<div class="team-bio">
-						Sarthak is a full stack software engineer and previously gained experience working at Mazout
-						Electric building software defined electric vehicles. Sarthak handles software engineering
-						across the entire robotics stack.
+						Sarthak is a full-stack software engineer who handles backend architecture, mobile
+						applications, and the real-time communication layers that tie hardware to software. He
+						previously built software-defined electric vehicles at Mazout Electric, working across
+						low-latency teleoperation, embedded systems, and cloud infrastructure. He designs and
+						drives the software flow, from device to operator.
 					</div>
 				</div>
 				<div class="team-card">
@@ -757,12 +768,12 @@
 					<div class="team-name">
 						<LinkedInName
 							name="Anay Shiledar"
-							href="https://www.linkedin.com/in/anay-shiledar-629036209/"
+							linkedin="https://www.linkedin.com/in/anay-shiledar-629036209/"
 						/>
 					</div>
 					<div class="team-role">Electrical Engineer</div>
 					<div class="team-bio">
-						Anay is a driven electrical engineering student at UC Irvine with great skill in embedded
+						Anay is a driven electrical engineer from UC Irvine with great skill in embedded
 						software and hardware integration. He builds implantable-electronics pipelines at the
 						Neuroelectronics Research Lab, codes F1-style race-car firmware for FSAE Electric Racing, and
 						designed embedded software and PCBs for a Level 1 rocket.
@@ -773,7 +784,7 @@
 					<div class="team-name">
 						<LinkedInName
 							name="Celia Sherman"
-							href="https://www.linkedin.com/in/celia-sherman-a85967325/"
+							linkedin="https://www.linkedin.com/in/celia-sherman-a85967325/"
 						/>
 					</div>
 					<div class="team-role">Aerospace Engineer</div>
@@ -788,15 +799,15 @@
 					<div class="team-name">
 						<LinkedInName
 							name="Chirag Singla"
-							href="https://www.linkedin.com/in/chirag-droid/"
+							linkedin="https://www.linkedin.com/in/chirag-droid/"
 						/>
 					</div>
 					<div class="team-role">Software Engineer</div>
 					<div class="team-bio">
 						With a background in electronics and communication engineering, Chirag has experience
 						solving the hardest engineering problems in the world, from complex cryptography to writing
-						firmware for field oriented control to programming GPTs from scratch in C or Rust. Previously
-						at Cypherock, the safest crypto hardware wallet company.
+						transformer models since the past 5 years. Previously at Cypherock, the safest crypto
+						hardware wallet company.
 					</div>
 				</div>
 			</div>
@@ -1687,6 +1698,17 @@
 		font-size: clamp(28px, 5.5vmin, 42px);
 		line-height: 1;
 		color: #7a5e0f;
+	}
+
+	.product-price-note {
+		max-width: none;
+		margin-top: 6px;
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(13px, 2.2vmin, 18px);
+		font-weight: 500;
+		line-height: 1.3;
+		text-align: center;
+		color: #000;
 	}
 
 	.product-shot {
