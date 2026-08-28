@@ -31,12 +31,16 @@
 			alt: "Buildo's two five-fingered hands and forearms",
 			fit: 'bleed',
 			side: 'left',
-			anchor: 'bottom-right',
+			anchor: 'top-right',
 			lede: [
 				'Buildo has ',
 				{ accent: '5 fingered dexterous hands' },
 				' with tactile sensors, to move the world designed around humans.'
-			]
+			],
+			companion: {
+				image: '/assets/buildo-standing.webp',
+				alt: 'Buildo standing, full body'
+			}
 		},
 		{
 			id: 'base',
@@ -103,6 +107,17 @@
 		<figure class="part-visual">
 			<img src={part.image} alt={part.alt} loading="lazy" decoding="async" />
 		</figure>
+
+		{#if part.companion}
+			<figure class="part-companion">
+				<img
+					src={part.companion.image}
+					alt={part.companion.alt}
+					loading="lazy"
+					decoding="async"
+				/>
+			</figure>
+		{/if}
 
 		<div class="part-copy part-copy--{part.anchor} reveal">
 			<!-- Segments run flush against each other: any whitespace between them
@@ -297,6 +312,23 @@
 		max-width: none;
 	}
 
+	/* Full-body companion on the hands slide. Sized to read as standing in
+	   the room rather than filling the frame: tall enough to match the hands
+	   render, short enough that the copy still has air above the head. */
+	.part-companion {
+		position: absolute;
+		right: clamp(20px, 4vw, 56px);
+		bottom: 0;
+		z-index: 1;
+		margin: 0;
+	}
+
+	.part-companion img {
+		display: block;
+		height: min(68vh, 580px);
+		width: auto;
+	}
+
 	/* Bottom-aligned by the flex parent, so the oversize height spills upward and
 	   is clipped by the section, leaving the base sitting clear of the floor. */
 	.part--lift .part-visual img {
@@ -332,6 +364,18 @@
 	.part-copy--top-left {
 		left: clamp(24px, 6vw, 104px);
 		top: 20%;
+	}
+
+	/* Clears the standing figure on the hands slide: the companion occupies
+	   the lower right, so the lede sits in the open air above its head. */
+	.part-copy--top-right {
+		right: clamp(24px, 5vw, 72px);
+		top: clamp(96px, 16vh, 140px);
+		text-align: right;
+	}
+
+	.part-copy--top-right .part-lede {
+		max-width: min(34ch, 36vw);
 	}
 
 	/* Level with the column rather than the head or the floor, since that is the
@@ -406,8 +450,19 @@
 			align-self: center;
 		}
 
+		.part-companion {
+			position: static;
+			align-self: center;
+			order: 1;
+		}
+
+		.part-companion img {
+			height: min(48vh, 420px);
+		}
+
 		.part-copy,
 		.part-copy--top-left,
+		.part-copy--top-right,
 		.part-copy--mid-left,
 		.part-copy--bottom-right {
 			position: static;

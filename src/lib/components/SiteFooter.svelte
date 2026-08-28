@@ -7,7 +7,7 @@
 		<div class="footer-brand">
 			<div class="footer-logo">STARFORGE</div>
 			<p class="footer-tagline">Building the compute layer for physical AI</p>
-			<p class="footer-location">Building out of New York City</p>
+			<p class="footer-location">Made with love in New York City</p>
 			<a href="mailto:contact@starforgerobotics.com" class="footer-contact-link"
 				>contact@starforgerobotics.com</a
 			>
