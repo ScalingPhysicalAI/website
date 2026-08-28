@@ -18,7 +18,7 @@
 		initials: 'VS',
 		name: 'Vipul Saini',
 		role: 'Founder · Chief Engineer',
-		bio: 'Founded Cypherock, scaled to $600M AUM. Previously Nymble Labs.'
+		bio: 'Ambitious founder with a degree in electronics and communication engineering from Delhi Technological University. Aiming for Kardashev Type 2 by 2040, he built Lockheed Martin UAVs in college and food robotics at Posha (SF, $8M Accel). Founded Cypherock in 2019, the safest crypto hardware wallet, leading it to $600M AUM.'
 	};
 
 	// Split rather than one array so the page reads 1 / 3 / 2 down the page.
@@ -27,19 +27,19 @@
 			initials: 'RJ',
 			name: 'Rakshit Jain',
 			role: 'Senior Robotics Engineer',
-			bio: 'Deep robotics and mechatronics background. IIIT Delhi.'
+			bio: 'With a background of automobile engineering and 5+ years of hands-on product development experience across intelligent robotics, aerospace, electric mobility, and multiple patents in his name, Rakshit has a strong foundation in turning ideas into mass-manufactured products that are sold commercially today.'
 		},
 		{
 			initials: 'SS',
 			name: 'Sarthak',
 			role: 'Senior Software Engineer',
-			bio: 'Core systems and software engineering across robotics stacks.'
+			bio: 'Sarthak is a full stack software engineer and previously gained experience working at Mazout Electric building software defined electric vehicles. Sarthak handles software engineering across the entire robotics stack.'
 		},
 		{
 			initials: 'AS',
 			name: 'Anay Shiledar',
 			role: 'Electrical Engineer',
-			bio: 'UC Irvine electrical engineering student. Developed neuroelectronic devices and coded firmware for an F1 style race car.'
+			bio: 'Anay is a driven electrical engineering student at UC Irvine with great skill in embedded software and hardware integration. He builds implantable-electronics pipelines at the Neuroelectronics Research Lab, codes F1-style race-car firmware for FSAE Electric Racing, and designed embedded software and PCBs for a Level 1 rocket.'
 		}
 	];
 
@@ -48,13 +48,13 @@
 			initials: 'CS',
 			name: 'Celia Sherman',
 			role: 'Aerospace Engineer',
-			bio: 'Aerospace engineering background. Structural and propulsion systems.'
+			bio: "A maths prodigy and an aerospace engineer from the University of Miami. Celia's experience varies across composite material manufacturing, thermodynamics, and space robotics. Celia also holds NAR Level 1 certification for high powered rocket development."
 		},
 		{
 			initials: 'CS',
 			name: 'Chirag Singla',
 			role: 'Software Engineer',
-			bio: 'AI and systems engineering across multiple product cycles.'
+			bio: 'With a background in electronics and communication engineering, Chirag has experience solving the hardest engineering problems in the world, from complex cryptography to writing firmware for field oriented control to programming GPTs from scratch in C or Rust. Previously at Cypherock, the safest crypto hardware wallet company.'
 		}
 	];
 </script>
@@ -266,7 +266,7 @@
 	}
 
 	.tm-bio {
-		font-size: 15px;
+		font-size: 18px;
 		font-weight: 500;
 		line-height: 1.65;
 		color: rgba(20, 18, 16, 0.82);
