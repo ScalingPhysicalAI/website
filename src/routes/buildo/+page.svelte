@@ -23,7 +23,7 @@
 
 	const variant = product?.variants.nodes[0];
 	const available = variant?.availableForSale ?? true;
-	const origin = product?.origin?.value ?? null;
+	const origin = product?.origin?.value?.replace(/August/gi, 'September') ?? null;
 	// Matches a tag on the Shopify product, so it has to keep accepting the
 	// original 'prebook' spelling: the store still carries that tag even though
 	// the site now says preorder everywhere.
@@ -73,13 +73,15 @@
 
 	// Torque is quoted per joint. Newton-metres (N·m) is the torque unit; N/m is
 	// stiffness, so the spelling here is deliberate.
-	const specs = [
+	const specs: Array<{ label: string; value: string; unit: string; phrase?: boolean }> = [
 		{ label: 'Payload', value: '8', unit: 'KG' },
 		{ label: 'Height', value: '4–5', unit: 'FT' },
 		{ label: 'Speed', value: '2.3', unit: 'KM/H' },
 		{ label: 'Joint torque', value: '15', unit: 'N·M' },
 		{ label: 'Hands', value: '5', unit: 'FINGER' },
-		{ label: 'Reflex loop', value: '100', unit: 'HZ' }
+		{ label: 'Battery', value: 'Hot Swappable', unit: '', phrase: true },
+		{ label: 'Display', value: '5', unit: 'INCH HDMI' },
+		{ label: 'Depth Camera', value: '8MP', unit: 'BINOCULAR USB CAMERA' }
 	];
 
 	const applications = [
@@ -225,7 +227,7 @@
 		{#each specs as spec (spec.label)}
 			<div class="bd-spec">
 				<dt class="bd-spec-label">{spec.label}</dt>
-				<dd class="bd-spec-value">
+				<dd class="bd-spec-value" class:bd-spec-value--phrase={spec.phrase}>
 					{spec.value}<span class="bd-spec-unit">{spec.unit}</span>
 				</dd>
 			</div>
@@ -238,7 +240,7 @@
 <section class="bd-section">
 	<div class="bd-section-head reveal">
 		<span class="section-label">The Architecture</span>
-		<h2 class="section-title">Three layers of<br /><span>on-board intelligence</span></h2>
+		<h2 class="section-title">Three layers of<br /><span>intelligence</span></h2>
 		<p class="section-body">
 			Reasoning, motion, and reflex run as separate loops at separate speeds - from cloud-scale
 			planning down to sub-100ms fine-motor control. Every layer is modular. Swap in your own model
@@ -402,7 +404,7 @@
 
 	/* ── SPEC BLOCK ── */
 	/* A band of its own now that the product block has taken the top of the page,
-	   so it runs six across instead of stacking three-wide in a hero column. */
+	   so it can run as a single row of stats rather than stacking in a hero column. */
 	.bd-spec-section {
 		padding-top: 72px;
 		padding-bottom: 72px;
@@ -410,7 +412,7 @@
 
 	.bd-specs {
 		display: grid;
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		gap: 26px 20px;
 		margin: 0;
 	}
@@ -432,6 +434,15 @@
 		letter-spacing: 0.02em;
 		color: var(--ink);
 		margin: 0;
+	}
+
+	/* Bebas Neue has no lowercase glyphs, so mixed-case phrases use Barlow. */
+	.bd-spec-value--phrase {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(20px, 1.7vw, 26px);
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		line-height: 1.15;
 	}
 
 	.bd-spec-unit {

@@ -14,7 +14,7 @@
 
 	const bodyClass = $derived(normalizedPath === '/buildo' ? 'page-buildo' : '');
 	const rdkNotification = $derived(
-		normalizedPath === '/buildo' ? 'designed and assembled in the united states' : null
+		normalizedPath === '/buildo' ? 'designed and assembled in New York City' : null
 	);
 
 	$effect(() => {
