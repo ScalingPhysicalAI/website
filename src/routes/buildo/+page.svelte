@@ -74,9 +74,9 @@
 	// Torque is quoted per joint. Newton-metres (N·m) is the torque unit; N/m is
 	// stiffness, so the spelling here is deliberate.
 	const specs: Array<{ label: string; value: string; unit: string; phrase?: boolean }> = [
-		{ label: 'Payload', value: '8', unit: 'KG' },
+		{ label: 'Payload', value: '18', unit: 'LB' },
 		{ label: 'Height', value: '4–5', unit: 'FT' },
-		{ label: 'Speed', value: '2.3', unit: 'KM/H' },
+		{ label: 'Speed', value: '1.4', unit: 'MPH' },
 		{ label: 'Joint torque', value: '15', unit: 'N·M' },
 		{ label: 'Hands', value: '5', unit: 'FINGER' },
 		{ label: 'Battery', value: 'Hot Swappable', unit: '', phrase: true },

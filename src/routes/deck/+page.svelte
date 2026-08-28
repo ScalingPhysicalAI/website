@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
+	import LinkedInName from '$lib/components/LinkedInName.svelte';
 
 	let currentSlide = 0;
 	const SLIDE_SELECTOR = '.slide:not(.slide-hidden)';
@@ -706,7 +707,12 @@
 			<div class="team-grid anim-in anim-d3">
 				<div class="team-card">
 					<div class="team-initials">VS</div>
-					<div class="team-name">Vipul Saini</div>
+					<div class="team-name">
+						<LinkedInName
+							name="Vipul Saini"
+							href="https://www.linkedin.com/in/vipul-saini-59a24156/"
+						/>
+					</div>
 					<div class="team-role">Founder · Chief Engineer</div>
 					<div class="team-bio">
 						Ambitious founder with a degree in electronics and communication engineering from Delhi
@@ -717,7 +723,12 @@
 				</div>
 				<div class="team-card">
 					<div class="team-initials">RJ</div>
-					<div class="team-name">Rakshit Jain</div>
+					<div class="team-name">
+						<LinkedInName
+							name="Rakshit Jain"
+							href="https://www.linkedin.com/in/rakshitjain003/"
+						/>
+					</div>
 					<div class="team-role">Senior Robotics Engineer</div>
 					<div class="team-bio">
 						With a background of automobile engineering and 5+ years of hands-on product development
@@ -728,7 +739,12 @@
 				</div>
 				<div class="team-card">
 					<div class="team-initials">SS</div>
-					<div class="team-name">Sarthak</div>
+					<div class="team-name">
+						<LinkedInName
+							name="Sarthak Mishra"
+							href="https://www.linkedin.com/in/sarthak-mishra-ba32501bb/"
+						/>
+					</div>
 					<div class="team-role">Senior Software Engineer</div>
 					<div class="team-bio">
 						Sarthak is a full stack software engineer and previously gained experience working at Mazout
@@ -738,7 +754,12 @@
 				</div>
 				<div class="team-card">
 					<div class="team-initials">AN</div>
-					<div class="team-name">Anay Shiledar</div>
+					<div class="team-name">
+						<LinkedInName
+							name="Anay Shiledar"
+							href="https://www.linkedin.com/in/anay-shiledar-629036209/"
+						/>
+					</div>
 					<div class="team-role">Electrical Engineer</div>
 					<div class="team-bio">
 						Anay is a driven electrical engineering student at UC Irvine with great skill in embedded
@@ -749,7 +770,12 @@
 				</div>
 				<div class="team-card">
 					<div class="team-initials">CE</div>
-					<div class="team-name">Celia Sherman</div>
+					<div class="team-name">
+						<LinkedInName
+							name="Celia Sherman"
+							href="https://www.linkedin.com/in/celia-sherman-a85967325/"
+						/>
+					</div>
 					<div class="team-role">Aerospace Engineer</div>
 					<div class="team-bio">
 						A maths prodigy and an aerospace engineer from the University of Miami. Celia's experience
@@ -759,7 +785,12 @@
 				</div>
 				<div class="team-card">
 					<div class="team-initials">CS</div>
-					<div class="team-name">Chirag Singla</div>
+					<div class="team-name">
+						<LinkedInName
+							name="Chirag Singla"
+							href="https://www.linkedin.com/in/chirag-droid/"
+						/>
+					</div>
 					<div class="team-role">Software Engineer</div>
 					<div class="team-bio">
 						With a background in electronics and communication engineering, Chirag has experience
