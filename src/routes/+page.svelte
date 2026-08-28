@@ -50,7 +50,7 @@
 				{ accent: 'wheel based' },
 				' and it can ',
 				{ accent: 'adjust its height' },
-				' to reach the top of that cupboard no one can reach.'
+				' to reach the top of that cupboard no one can touch.'
 			],
 			// Last part section, so it closes the tour with somewhere to go next.
 			closing: true

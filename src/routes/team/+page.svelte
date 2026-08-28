@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
+	import LinkedInName from '$lib/components/LinkedInName.svelte';
 
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.12 });
@@ -12,13 +13,15 @@
 		name: string;
 		role: string;
 		bio: string;
+		linkedin?: string;
 	};
 
 	const founder: Member = {
 		initials: 'VS',
 		name: 'Vipul Saini',
 		role: 'Founder · Chief Engineer',
-		bio: 'Ambitious founder with a degree in electronics and communication engineering from Delhi Technological University. Aiming for Kardashev Type 2 by 2040, he built Lockheed Martin UAVs in college and food robotics at Posha (SF, $8M Accel). Founded Cypherock in 2019, the safest crypto hardware wallet, leading it to $600M AUM.'
+		bio: 'Ambitious founder with a degree in electronics and communication engineering from Delhi Technological University. Aiming for Kardashev Type 2 by 2040, he built Lockheed Martin UAVs in college and food robotics at Posha (SF, $8M Accel). Founded Cypherock in 2019, the safest crypto hardware wallet, leading it to $600M AUM.',
+		linkedin: 'https://www.linkedin.com/in/vipul-saini-59a24156/'
 	};
 
 	// Split rather than one array so the page reads 1 / 3 / 2 down the page.
@@ -27,19 +30,22 @@
 			initials: 'RJ',
 			name: 'Rakshit Jain',
 			role: 'Senior Robotics Engineer',
-			bio: 'With a background of automobile engineering and 5+ years of hands-on product development experience across intelligent robotics, aerospace, electric mobility, and multiple patents in his name, Rakshit has a strong foundation in turning ideas into mass-manufactured products that are sold commercially today.'
+			bio: 'With a background of automobile engineering and 5+ years of hands-on product development experience across intelligent robotics, aerospace, electric mobility, and multiple patents in his name, Rakshit has a strong foundation in turning ideas into mass-manufactured products that are sold commercially today.',
+			linkedin: 'https://www.linkedin.com/in/rakshitjain003/'
 		},
 		{
 			initials: 'SS',
-			name: 'Sarthak',
+			name: 'Sarthak Mishra',
 			role: 'Senior Software Engineer',
-			bio: 'Sarthak is a full stack software engineer and previously gained experience working at Mazout Electric building software defined electric vehicles. Sarthak handles software engineering across the entire robotics stack.'
+			bio: 'Sarthak is a full stack software engineer and previously gained experience working at Mazout Electric building software defined electric vehicles. Sarthak handles software engineering across the entire robotics stack.',
+			linkedin: 'https://www.linkedin.com/in/sarthak-mishra-ba32501bb/'
 		},
 		{
 			initials: 'AS',
 			name: 'Anay Shiledar',
 			role: 'Electrical Engineer',
-			bio: 'Anay is a driven electrical engineering student at UC Irvine with great skill in embedded software and hardware integration. He builds implantable-electronics pipelines at the Neuroelectronics Research Lab, codes F1-style race-car firmware for FSAE Electric Racing, and designed embedded software and PCBs for a Level 1 rocket.'
+			bio: 'Anay is a driven electrical engineering student at UC Irvine with great skill in embedded software and hardware integration. He builds implantable-electronics pipelines at the Neuroelectronics Research Lab, codes F1-style race-car firmware for FSAE Electric Racing, and designed embedded software and PCBs for a Level 1 rocket.',
+			linkedin: 'https://www.linkedin.com/in/anay-shiledar-629036209/'
 		}
 	];
 
@@ -48,13 +54,15 @@
 			initials: 'CS',
 			name: 'Celia Sherman',
 			role: 'Aerospace Engineer',
-			bio: "A maths prodigy and an aerospace engineer from the University of Miami. Celia's experience varies across composite material manufacturing, thermodynamics, and space robotics. Celia also holds NAR Level 1 certification for high powered rocket development."
+			bio: "A maths prodigy and an aerospace engineer from the University of Miami. Celia's experience varies across composite material manufacturing, thermodynamics, and space robotics. Celia also holds NAR Level 1 certification for high powered rocket development.",
+			linkedin: 'https://www.linkedin.com/in/celia-sherman-a85967325/'
 		},
 		{
 			initials: 'CS',
 			name: 'Chirag Singla',
 			role: 'Software Engineer',
-			bio: 'With a background in electronics and communication engineering, Chirag has experience solving the hardest engineering problems in the world, from complex cryptography to writing firmware for field oriented control to programming GPTs from scratch in C or Rust. Previously at Cypherock, the safest crypto hardware wallet company.'
+			bio: 'With a background in electronics and communication engineering, Chirag has experience solving the hardest engineering problems in the world, from complex cryptography to writing firmware for field oriented control to programming GPTs from scratch in C or Rust. Previously at Cypherock, the safest crypto hardware wallet company.',
+			linkedin: 'https://www.linkedin.com/in/chirag-droid/'
 		}
 	];
 </script>
@@ -77,7 +85,9 @@
 	<article class="tm-founder reveal">
 		<div class="tm-avatar tm-avatar--lg" aria-hidden="true">{founder.initials}</div>
 		<div class="tm-founder-text">
-			<h2 class="tm-name tm-name--lg">{founder.name}</h2>
+			<h2 class="tm-name tm-name--lg">
+				<LinkedInName name={founder.name} href={founder.linkedin} />
+			</h2>
 			<div class="tm-role">{founder.role}</div>
 			<p class="tm-bio">{founder.bio}</p>
 		</div>
@@ -87,7 +97,9 @@
 		{#each rowOfThree as member, i (member.name)}
 			<article class="tm-card reveal" style="transition-delay:{0.06 * i}s">
 				<div class="tm-avatar" aria-hidden="true">{member.initials}</div>
-				<h2 class="tm-name">{member.name}</h2>
+				<h2 class="tm-name">
+					<LinkedInName name={member.name} href={member.linkedin} />
+				</h2>
 				<div class="tm-role">{member.role}</div>
 				<p class="tm-bio">{member.bio}</p>
 			</article>
@@ -98,7 +110,9 @@
 		{#each rowOfTwo as member, i (member.name)}
 			<article class="tm-card reveal" style="transition-delay:{0.06 * i}s">
 				<div class="tm-avatar" aria-hidden="true">{member.initials}</div>
-				<h2 class="tm-name">{member.name}</h2>
+				<h2 class="tm-name">
+					<LinkedInName name={member.name} href={member.linkedin} />
+				</h2>
 				<div class="tm-role">{member.role}</div>
 				<p class="tm-bio">{member.bio}</p>
 			</article>
