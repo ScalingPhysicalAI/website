@@ -662,7 +662,7 @@
 								class="citation"
 								href="https://arxiv.org/abs/2509.14139"
 								target="_blank"
-								rel="noopener noreferrer">[4]</a
+								rel="noopener noreferrer">[3]</a
 							>
 						</figcaption>
 						<img
@@ -885,7 +885,7 @@
 						class="citation"
 						href="https://www.prnewswire.com/news-releases/the-space-economy-is-heading-for-1-8-trillion-the-bottleneck-nobody-talks-about-is-getting-there-302830042.html"
 						target="_blank"
-						rel="noopener noreferrer">[3]</a
+						rel="noopener noreferrer">[4]</a
 					>
 				</p>
 			</div>
