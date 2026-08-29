@@ -12,7 +12,10 @@
 		initials: string;
 		name: string;
 		role: string;
+		/** Carries inline markup, so it is rendered with {@html}. */
 		bio: string;
+		uni: string;
+		uniAlt: string;
 		linkedin?: string;
 		x?: string;
 	};
@@ -21,7 +24,9 @@
 		initials: 'VS',
 		name: 'Vipul Saini',
 		role: 'Founder · Chief Engineer',
-		bio: 'Ambitious founder with a degree in electronics and communication engineering from Delhi Technological University. Aiming for Kardashev Type 2 by 2040, he built Lockheed Martin UAVs in college and food robotics at Posha (SF, $8M Accel). Founded Cypherock in 2019, the safest crypto hardware wallet, leading it to $600M AUM.',
+		bio: 'Founded Cypherock and scaled the safest crypto hardware wallet to $600M AUM - <strong>hardware shipped at scale</strong>. He has already taken a hardware product from prototype to global production once.',
+		uni: '/assets/uni/vipul.png',
+		uniAlt: 'Delhi Technological University',
 		linkedin: 'https://www.linkedin.com/in/vipul-saini-59a24156/',
 		x: 'https://x.com/vipulsaini594'
 	};
@@ -32,21 +37,27 @@
 			initials: 'RJ',
 			name: 'Rakshit Jain',
 			role: 'Senior Robotics Engineer',
-			bio: 'With a background of automobile engineering and 5+ years of hands-on product development experience across intelligent robotics, aerospace, electric mobility, and multiple patents in his name, Rakshit has a strong foundation in turning ideas into mass-manufactured products that are sold commercially today.',
+			bio: 'Holds multiple patents and has put <strong>robotics and aerospace products into mass manufacturing</strong> that sell commercially today. He turns a design into something a factory can actually build.',
+			uni: '/assets/uni/rakshit.png',
+			uniAlt: 'Manipal Institute of Technology',
 			linkedin: 'https://www.linkedin.com/in/rakshitjain003/'
 		},
 		{
 			initials: 'SS',
 			name: 'Sarthak Mishra',
 			role: 'Senior Software Engineer',
-			bio: 'Sarthak is a full-stack software engineer who handles backend architecture, mobile applications, and the real-time communication layers that tie hardware to software. He previously built software-defined electric vehicles at Mazout Electric, working across low-latency teleoperation, embedded systems, and cloud infrastructure. He designs and drives the software flow, from device to operator.',
+			bio: 'Built software-defined electric vehicles at Mazout Electric across low-latency teleoperation, <strong>embedded systems</strong> and cloud. He owns the real-time link that ties the robot to its operator.',
+			uni: '/assets/uni/sarthak.png',
+			uniAlt: 'Amity University',
 			linkedin: 'https://www.linkedin.com/in/sarthak-mishra-ba32501bb/'
 		},
 		{
 			initials: 'AS',
 			name: 'Anay Shiledar',
 			role: 'Electrical Engineer',
-			bio: 'Anay is a driven electrical engineer from UC Irvine with great skill in embedded software and hardware integration. He builds implantable-electronics pipelines at the Neuroelectronics Research Lab, codes F1-style race-car firmware for FSAE Electric Racing, and designed embedded software and PCBs for a Level 1 rocket.',
+			bio: "Builds implantable-electronics pipelines at UC Irvine's Neuroelectronics Research Lab and race-car firmware for FSAE Electric. <strong>Embedded software</strong>, firmware and hardware integration are his craft.",
+			uni: '/assets/uni/anay.png',
+			uniAlt: 'University of California, Irvine',
 			linkedin: 'https://www.linkedin.com/in/anay-shiledar-629036209/'
 		}
 	];
@@ -56,14 +67,18 @@
 			initials: 'CS',
 			name: 'Celia Sherman',
 			role: 'Aerospace Engineer',
-			bio: "A maths prodigy and an aerospace engineer from the University of Miami. Celia's experience varies across composite material manufacturing, thermodynamics, and space robotics. Celia also holds NAR Level 1 certification for high powered rocket development.",
+			bio: "An <strong>aerospace engineer</strong> from the University of Miami working in space robotics, thermodynamics and composite manufacturing. She keeps Buildo's structures light, strong and cheap to build.",
+			uni: '/assets/uni/celia.png',
+			uniAlt: 'University of Miami',
 			linkedin: 'https://www.linkedin.com/in/celia-sherman-a85967325/'
 		},
 		{
 			initials: 'CS',
 			name: 'Chirag Singla',
 			role: 'Software Engineer',
-			bio: 'With a background in electronics and communication engineering, Chirag has experience solving the hardest engineering problems in the world, from complex cryptography to writing transformer models since the past 5 years. Previously at Cypherock, the safest crypto hardware wallet company.',
+			bio: "Has been writing <strong>transformer models</strong> for five years and shipped the cryptography behind Cypherock's hardware wallet. He builds the AI that has to run inside the robot.",
+			uni: '/assets/uni/chirag.png',
+			uniAlt: 'Bharati Vidyapeeth',
 			linkedin: 'https://www.linkedin.com/in/chirag-droid/'
 		}
 	];
@@ -85,25 +100,27 @@
 	<h1 class="tm-sr-title">Team</h1>
 
 	<article class="tm-founder reveal">
+		<img class="tm-uni" src={founder.uni} alt={founder.uniAlt} />
 		<div class="tm-avatar tm-avatar--lg" aria-hidden="true">{founder.initials}</div>
 		<div class="tm-founder-text">
 			<h2 class="tm-name tm-name--lg">
 				<LinkedInName name={founder.name} linkedin={founder.linkedin} x={founder.x} />
 			</h2>
 			<div class="tm-role">{founder.role}</div>
-			<p class="tm-bio">{founder.bio}</p>
+			<p class="tm-bio">{@html founder.bio}</p>
 		</div>
 	</article>
 
 	<div class="tm-row tm-row--three">
 		{#each rowOfThree as member, i (member.name)}
 			<article class="tm-card reveal" style="transition-delay:{0.06 * i}s">
+				<img class="tm-uni" src={member.uni} alt={member.uniAlt} />
 				<div class="tm-avatar" aria-hidden="true">{member.initials}</div>
 				<h2 class="tm-name">
 					<LinkedInName name={member.name} linkedin={member.linkedin} x={member.x} />
 				</h2>
 				<div class="tm-role">{member.role}</div>
-				<p class="tm-bio">{member.bio}</p>
+				<p class="tm-bio">{@html member.bio}</p>
 			</article>
 		{/each}
 	</div>
@@ -111,12 +128,13 @@
 	<div class="tm-row tm-row--two">
 		{#each rowOfTwo as member, i (member.name)}
 			<article class="tm-card reveal" style="transition-delay:{0.06 * i}s">
+				<img class="tm-uni" src={member.uni} alt={member.uniAlt} />
 				<div class="tm-avatar" aria-hidden="true">{member.initials}</div>
 				<h2 class="tm-name">
 					<LinkedInName name={member.name} linkedin={member.linkedin} x={member.x} />
 				</h2>
 				<div class="tm-role">{member.role}</div>
-				<p class="tm-bio">{member.bio}</p>
+				<p class="tm-bio">{@html member.bio}</p>
 			</article>
 		{/each}
 	</div>
@@ -184,10 +202,12 @@
 
 	/* ── FOUNDER ── */
 	.tm-founder {
+		position: relative;
 		display: flex;
 		align-items: flex-start;
 		gap: 32px;
 		padding: 40px;
+		padding-right: 160px;
 		border: 2px solid var(--border);
 		background: rgba(255, 255, 255, 0.72);
 	}
@@ -218,6 +238,7 @@
 	}
 
 	.tm-card {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		padding: 32px 28px;
@@ -231,6 +252,26 @@
 	.tm-card:hover {
 		border-color: var(--border-strong);
 		transform: translateY(-3px);
+	}
+
+	/* Logos vary between wordmarks and tall crests, so they are boxed to a
+	   common height and left to find their own width inside it. */
+	.tm-uni {
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		height: 46px;
+		width: auto;
+		max-width: 110px;
+		object-fit: contain;
+		object-position: right top;
+	}
+
+	.tm-founder .tm-uni {
+		top: 32px;
+		right: 32px;
+		height: 62px;
+		max-width: 150px;
 	}
 
 	/* ── AVATAR ── */
@@ -288,6 +329,12 @@
 		color: rgba(20, 18, 16, 0.82);
 	}
 
+	/* Bios are injected as markup, so the emphasis needs a global selector. */
+	.tm-bio :global(strong) {
+		font-weight: 700;
+		color: var(--ink);
+	}
+
 	/* ── CLOSING ── */
 	.tm-closing-inner {
 		max-width: 62ch;
@@ -314,6 +361,13 @@
 			flex-direction: column;
 			gap: 24px;
 			padding: 32px 24px;
+		}
+
+		.tm-founder .tm-uni {
+			top: 24px;
+			right: 24px;
+			height: 46px;
+			max-width: 110px;
 		}
 
 		.tm-row--three,
