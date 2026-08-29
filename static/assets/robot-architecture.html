@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Architecture - Starforge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    width: 1400px;
+    height: 1020px;
+    background-color: #ffffff;
+    color: #141210;
+    font-family: 'Barlow', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: relative;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    width: 1400px;
+    height: 1020px;
+    padding: 30px 48px 24px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  /* Short clean title at the top */
+  .top-title {
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #141210;
+    letter-spacing: -0.01em;
+  }
+
+  /* Main Diagram Stage */
+  .diagram-stage {
+    position: relative;
+    width: 1304px;
+    height: 840px;
+    margin: 0 auto;
+  }
+
+  /* SVG Overlay */
+  .svg-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Server & Robot Badges */
+  .header-badge {
+    position: absolute;
+    width: 180px;
+    height: 48px;
+    background: #ffffff;
+    border: 2px solid #141210;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #141210;
+    z-index: 20;
+  }
+
+  .badge-server {
+    left: 120px;
+    top: 8px;
+  }
+
+  .badge-robot {
+    left: 865px;
+    top: 8px;
+  }
+
+  /* Node Boxes */
+  .node-box {
+    position: absolute;
+    border: 2px solid #141210;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 18px;
+    z-index: 20;
+    box-shadow: 0 1px 3px rgba(20, 18, 16, 0.04);
+  }
+
+  .node-title {
+    font-family: 'Barlow', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: #141210;
+    line-height: 1.22;
+  }
+
+  .node-sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #4a443b;
+    margin-top: 5px;
+    line-height: 1.25;
+  }
+
+  /* Left Column Cards */
+  .box-large-vla {
+    left: 50px;
+    top: 85px;
+    width: 320px;
+    height: 120px;
+    background: #ffffff;
+  }
+
+  .box-action-expert {
+    left: 50px;
+    top: 345px;
+    width: 320px;
+    height: 140px;
+    background: #f6f3eb;
+  }
+
+  .box-observation {
+    left: 50px;
+    top: 615px;
+    width: 320px;
+    height: 100px;
+    background: #ffffff;
+  }
+
+  /* Right Column: Robot Boundary */
+  .robot-boundary {
+    position: absolute;
+    left: 690px;
+    top: 72px;
+    width: 550px;
+    height: 665px;
+    border: 2px dashed #7a5e0f;
+    border-radius: 16px;
+    background: rgba(122, 94, 15, 0.015);
+    z-index: 5;
+  }
+
+  .robot-boundary-title {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18.5px;
+    color: #7a5e0f;
+  }
+
+  /* Right Column Cards */
+  .box-small-vla-1 {
+    left: 770px;
+    top: 150px;
+    width: 310px;
+    height: 80px;
+    background: #f2ece1;
+  }
+
+  .box-small-vla-2 {
+    left: 770px;
+    top: 360px;
+    width: 310px;
+    height: 80px;
+    background: #f2ece1;
+  }
+
+  .box-embeddings {
+    left: 760px;
+    top: 555px;
+    width: 330px;
+    height: 105px;
+    background: #ebe4d6;
+  }
+
+  /* Edge Adapter Bracket Text */
+  .edge-adapter-container {
+    position: absolute;
+    left: 1105px;
+    top: 242px;
+    width: 120px;
+    font-family: 'Barlow', sans-serif;
+    z-index: 25;
+  }
+
+  .edge-adapter-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #7a5e0f;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .edge-adapter-sub {
+    font-size: 13px;
+    font-weight: 500;
+    color: #5f584e;
+    line-height: 1.25;
+  }
+
+  /* Center Router Component */
+  .router-circle {
+    position: absolute;
+    left: 512px;
+    top: 418px;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    border: 2.5px solid #7a5e0f;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+    box-shadow: 0 4px 12px rgba(122, 94, 15, 0.08);
+  }
+
+  /* Text Above Router */
+  .router-text-top {
+    position: absolute;
+    left: 350px;
+    top: 315px;
+    width: 220px;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    z-index: 25;
+  }
+
+  .router-text-top .main {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #7a5e0f;
+    line-height: 1.25;
+  }
+
+  .router-text-top .sub {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #7a5e0f;
+    line-height: 1.25;
+    margin-top: 5px;
+  }
+
+  /* Text Below Router Line */
+  .router-text-bottom {
+    position: absolute;
+    left: 360px;
+    top: 515px;
+    width: 175px;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 600;
+    color: #7a5e0f;
+    line-height: 1.25;
+    z-index: 25;
+  }
+
+  /* Text on Continuous Embeddings line */
+  .flow-text-continuous {
+    position: absolute;
+    left: 520px;
+    top: 605px;
+    width: 155px;
+    text-align: right;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #7a5e0f;
+    line-height: 1.25;
+    z-index: 25;
+  }
+
+  /* Bottom Legend */
+  .legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(20, 18, 16, 0.1);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .legend-line-svg {
+    width: 56px;
+    height: 14px;
+  }
+
+  .legend-label-bold {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 15.5px;
+    color: #141210;
+  }
+
+  .legend-label-desc {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: #5f584e;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Top Title -->
+  <div class="top-title">Architecture</div>
+
+  <!-- Main Diagram Stage -->
+  <div class="diagram-stage">
+    <svg class="svg-layer" viewBox="0 0 1304 840">
+      <defs>
+        <!-- Gold Arrow Marker -->
+        <marker id="arrow-gold" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+          <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7a5e0f" />
+        </marker>
+        <marker id="arrow-gold-dashed" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+          <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7a5e0f" />
+        </marker>
+      </defs>
+
+      <!-- 1. SOLID FLOW ARROWS (Gold #7a5e0f, stroke-width 2.5) -->
+      <!-- Robot Observation -> Action Expert (Vertical Up) -->
+      <line x1="210" y1="615" x2="210" y2="492" stroke="#7a5e0f" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+
+      <!-- Action Expert -> Large Base VLA (Vertical Up) -->
+      <line x1="210" y1="345" x2="210" y2="212" stroke="#7a5e0f" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+
+      <!-- Action Expert -> Router Circle (Horizontal Solid Line) -->
+      <line x1="370" y1="465" x2="510" y2="465" stroke="#7a5e0f" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+
+      <!-- Robot Observation -> Embeddings / Context (Horizontal Right, Step Up, Right) -->
+      <path d="M 370 665 L 635 665 L 635 607 L 750 607" fill="none" stroke="#7a5e0f" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+
+      <!-- Embeddings / Context -> Very Small VLA 2 (Two Parallel Vertical Arrows) -->
+      <line x1="845" y1="555" x2="845" y2="447" stroke="#7a5e0f" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+      <line x1="995" y1="555" x2="995" y2="447" stroke="#7a5e0f" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+
+      <!-- Very Small VLA 2 -> Very Small VLA 1 (Two Parallel Vertical Arrows) -->
+      <line x1="845" y1="360" x2="845" y2="237" stroke="#7a5e0f" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+      <line x1="995" y1="360" x2="995" y2="237" stroke="#7a5e0f" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+
+
+      <!-- 2. ROUTING DASHED FLOWS -->
+
+      <!-- Router Top -> Fork Point Dot -->
+      <line x1="549" y1="418" x2="549" y2="230" stroke="#7a5e0f" stroke-width="2.5" stroke-dasharray="6,4" />
+
+      <!-- Fork Point Junction Dot -->
+      <circle cx="549" cy="230" r="4.5" fill="#7a5e0f" />
+
+      <!-- Fork Point -> Large Base VLA (Horizontal Left into right of Large Base VLA) -->
+      <path d="M 549 230 L 549 145 L 378 145" fill="none" stroke="#7a5e0f" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrow-gold-dashed)" />
+
+      <!-- Fork Point -> Very Small VLA 1 (Right, Step Up, Right into left of VLA 1) -->
+      <path d="M 549 230 L 630 230 L 630 185 L 760 185" fill="none" stroke="#7a5e0f" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrow-gold-dashed)" />
+
+      <!-- Router Right -> Very Small VLA 2 (Direct/Stepped into left of VLA 2) -->
+      <path d="M 586 455 L 670 455 L 670 400 L 760 400" fill="none" stroke="#7a5e0f" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrow-gold-dashed)" />
+
+
+      <!-- 3. EDGE ADAPTER BRACKET (Right of Very Small VLA 1 & 2) -->
+      <path d="M 1085 175 L 1098 175 L 1098 285 L 1098 395 L 1085 395" fill="none" stroke="#7a5e0f" stroke-width="2" />
+    </svg>
+
+    <!-- Column Header Badges -->
+    <div class="header-badge badge-server">Server</div>
+    <div class="header-badge badge-robot">Robot</div>
+
+    <!-- Server Column Nodes -->
+    <div class="node-box box-large-vla">
+      <div class="node-title">Large Base VLA</div>
+      <div class="node-sub">(High-capacity model on server)</div>
+    </div>
+
+    <div class="node-box box-action-expert">
+      <div class="node-title">Action Expert /<br>Action Head Model</div>
+      <div class="node-sub">(Final-layer action features<br>to action-token projection)</div>
+    </div>
+
+    <div class="node-box box-observation">
+      <div class="node-title">Robot Observation</div>
+      <div class="node-sub">(Sensors / Cameras / State)</div>
+    </div>
+
+    <!-- Center Routing Hub -->
+    <div class="router-circle">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="#7a5e0f">
+        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+      </svg>
+    </div>
+
+    <div class="router-text-top">
+      <div class="main">Token projection<br>routed to one<br>selected model</div>
+      <div class="sub">(either Large Base VLA<br>or Very Small VLA 1<br>or Very Small VLA 2)</div>
+    </div>
+
+    <div class="router-text-bottom">
+      One target selected<br>per inference step
+    </div>
+
+    <div class="flow-text-continuous">
+      Continuous<br>context embeddings
+    </div>
+
+    <!-- Robot Column Boundary & Nodes -->
+    <div class="robot-boundary">
+      <div class="robot-boundary-title">Lightweight edge inference</div>
+    </div>
+
+    <div class="node-box box-small-vla-1">
+      <div class="node-title">Very Small VLA 1</div>
+    </div>
+
+    <div class="node-box box-small-vla-2">
+      <div class="node-title">Very Small VLA 2</div>
+    </div>
+
+    <div class="node-box box-embeddings">
+      <div class="node-title">Embeddings / Context</div>
+      <div class="node-sub">(Continuous observation context)</div>
+    </div>
+
+    <!-- Edge Adapter on Right -->
+    <div class="edge-adapter-container">
+      <div class="edge-adapter-title">Edge Adapter</div>
+      <div class="edge-adapter-sub">(Shared interface<br>uses latest<br>context)</div>
+    </div>
+  </div>
+
+  <!-- Legend at bottom -->
+  <div class="legend">
+    <div class="legend-item">
+      <svg class="legend-line-svg">
+        <line x1="2" y1="7" x2="48" y2="7" stroke="#7a5e0f" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+      </svg>
+      <span class="legend-label-bold">Data / Embedding Flow</span>
+      <span class="legend-label-desc">(Continuous flow of observations and embeddings)</span>
+    </div>
+
+    <div class="legend-item">
+      <svg class="legend-line-svg">
+        <line x1="2" y1="7" x2="48" y2="7" stroke="#7a5e0f" stroke-width="2.5" stroke-dasharray="5,3" marker-end="url(#arrow-gold)" />
+      </svg>
+      <span class="legend-label-bold">Routing Choice</span>
+      <span class="legend-label-desc">(Token projection routed to one selected model per inference step)</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

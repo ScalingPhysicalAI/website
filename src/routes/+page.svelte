@@ -73,14 +73,14 @@
 
 	<div class="hero-content">
 		<h1 class="hero-title">
-			Building the <span>compute layer</span><br />
-			for physical AI
+			Meet <span>Buildo</span>, our<br />
+			$10k open source<br />
+			humanoid robot
 		</h1>
 		<p class="hero-sub">
-			Check out our robot
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-			<a class="hero-sub-link" href="#{parts[0].id}">Buildo</a>. The most capable and affordable
-			robot made possible by our compute layer.
+			<a class="hero-sub-link" href="#{parts[0].id}">Buildo</a> is the most capable and affordable
+			robot made possible by our AI compute layer.
 		</p>
 		<div class="hero-ctas">
 			<a href={resolve('/buildo')} class="btn-primary">Preorder</a>
@@ -164,7 +164,7 @@
 		display: block;
 		width: 100%;
 		height: 100%;
-		animation: heroNudge 2.2s ease-in-out infinite;
+		animation: heroNudge 1.4s ease-in-out infinite;
 	}
 
 	@keyframes heroNudge {
