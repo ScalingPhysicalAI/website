@@ -135,7 +135,7 @@
 </script>
 
 <svelte:head>
-	<title>StarForge Robotics - Pitch Deck</title>
+	<title>StarForge Robotics - Compute Pitch Deck</title>
 	<meta name="robots" content="noindex" />
 	<!-- Unscoped so print engines honour page size and unstacked slides. -->
 	<style>
@@ -213,7 +213,7 @@
 			</a>
 			<div class="nav-center">
 				<div class="nav-slides" id="navDots"></div>
-				<span class="slide-counter" id="slideCounter">01 / 12</span>
+				<span class="slide-counter" id="slideCounter">01 / 15</span>
 			</div>
 			<button class="print-btn" type="button" onclick={printDeck}>
 				<svg
@@ -235,24 +235,22 @@
 		<section class="slide" id="s1">
 			<div class="cover-bg"></div>
 			<div class="cover-grid"></div>
-			<figure class="cover-figure anim-in anim-d2">
-				<img src="/assets/buildo-head.webp" alt="Buildo humanoid robot" />
-			</figure>
 			<div class="cover-content">
 				<div class="cover-tag anim-in anim-d1">Seed Round · 2026</div>
 				<h1 class="cover-title anim-in anim-d2">
-					Meet <span class="hl-gold">Buildo</span>, our<br />
-					$10k open source<br />
-					humanoid robot
+					Building the<br />
+					<span class="hl-gold">Compute Layer</span><br />
+					for Physical<br />
+					Intelligence
 				</h1>
 				<p class="cover-sub anim-in anim-d3">
-					<a
+					Our robot <a
 						class="cover-sub-link"
 						href="https://starforgerobotics.com/buildo"
 						target="_blank"
 						rel="noopener noreferrer"
 						>Buildo<span class="cover-sub-arrow" aria-hidden="true">↗</span></a
-					> is the most capable and affordable robot made possible by our AI compute layer.
+					>. The most capable and affordable robot made possible by our compute layer.
 				</p>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a
@@ -264,69 +262,68 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 2 - TRACTION -->
-		<section class="slide" id="s14">
-			<div class="section-label anim-in anim-d1">Traction</div>
+		<!-- SLIDE 2 - HUMANOID BOOTLOADER -->
+		<section class="slide" id="s2">
+			<div class="section-label anim-in anim-d1">The Opportunity</div>
 			<h2 class="headline anim-in anim-d2">
-				Businesses and developers<br />
-				<span class="hl-gold">love our robots</span>
+				General purpose humanoid robots are<br />
+				the <span class="hl-gold">bootloader for Physical Intelligence</span>
 			</h2>
-			<div class="comp-list anim-in anim-d3">
-				<div class="comp-item">
-					<div class="comp-num">01</div>
-					<div class="comp-content">
-						<div class="comp-title">
-							<a
-								href="https://zooty.mazoutelectric.com/"
-								target="_blank"
-								rel="noopener noreferrer">Mazout Electric</a
-							>
-						</div>
-						<p class="comp-body">
-							Building <strong>lithium ion batteries using robots</strong> - deploying StarForge humanoids
-							for real industrial manufacturing tasks.
-						</p>
-					</div>
+			<div class="bullet-list anim-in anim-d3">
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>
+						Human environment keeps advancing. <strong
+							>Physical intelligence needs continuous data collection.</strong
+						>
+					</p>
 				</div>
-				<div class="comp-item">
-					<div class="comp-num">02</div>
-					<div class="comp-content">
-						<div class="comp-title">Developer Ecosystem</div>
-						<p class="comp-body">
-							<strong>50+ developers</strong> are already using our compute platform - early signal of
-							the community-driven flywheel taking hold.
-						</p>
-					</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>
+						<strong>Unitree G1</strong> - an open, community-driven approach built around an accessible
+						robotics platform that enables researchers and developers to experiment, build, and contribute.
+					</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>
+						<strong>Figure AI</strong> - a vertically integrated approach where proprietary hardware,
+						software, data collection, and AI development are handled by dedicated in-house teams.
+					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 3 - UNITREE LACKED BRAIN -->
-		<section class="slide" id="s4">
+		<!-- SLIDE 3 - UNITREE -->
+		<section class="slide" id="s3">
 			<div class="unitree-layout">
 				<div class="unitree-copy">
-					<div class="section-label anim-in anim-d1">The Problem</div>
+					<div class="section-label anim-in anim-d1">Market Signal</div>
 					<h2 class="headline anim-in anim-d2">
-						Unitree solved the <span class="hl-gold">body</span> -<br />
-						the brain remains unsolved
+						Unitree: a great candidate for<br />
+						<span class="hl-gold">general purpose humanoid</span>
 					</h2>
 					<div class="bullet-list anim-in anim-d3">
 						<div class="bullet-item">
 							<span class="bullet-icon">▸</span>
 							<p>
-								<strong>Unitree G1</strong> - an open, community-driven platform that lets researchers
-								and developers experiment, build and contribute, with <strong
-									>over 11,000 G1 units</strong
-								> sold. However, we saw Unitree robots dancing and running with
-								<strong>no real-world deployment</strong> at scale.
+								<strong>70–80%</strong> of Unitree's humanoid sales were for research use cases; 20–30%
+								for education and entertainment.
 							</p>
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon">▸</span>
 							<p>
-								A robot foundation model approaching human-level generality could exceed <strong
-									>500 billion parameters</strong
-								> - making it extremely difficult and expensive to run on general purpose robots.
+								Unitree opened near <strong>$66B</strong> - 5× its last VC round of $1.9B and ~7× its
+								IPO price.
+							</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon">▸</span>
+							<p>
+								Market Signal: developers and researchers are actively choosing open humanoid
+								platforms at <strong>massive scale.</strong>
 							</p>
 						</div>
 					</div>
@@ -337,7 +334,46 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 4 - BREAKTHROUGH -->
+		<!-- SLIDE 4 - UNITREE LACKED BRAIN -->
+		<section class="slide" id="s4">
+			<div class="section-label anim-in anim-d1">The Problem</div>
+			<h2 class="headline anim-in anim-d2">
+				Unitree solved the <span class="hl-gold">body</span> -<br />
+				the brain remains unsolved
+			</h2>
+			<div class="bullet-list anim-in anim-d3">
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>
+						We saw Unitree robots dancing, running - but <strong>no real-world deployment</strong> at
+						scale.
+					</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>
+						Unitree argues they have solved the body and the <strong
+							>brain is the next constraint.</strong
+						><a
+							class="citation"
+							href="https://x.com/RoboStrategy/status/2087561451468681234"
+							target="_blank"
+							rel="noopener noreferrer">[1]</a
+						>
+					</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>
+						A robot foundation model approaching human-level generality could exceed <strong
+							>500 billion parameters</strong
+						> - making it extremely difficult and expensive to run on general purpose robots.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 5 - BREAKTHROUGH -->
 		<section class="slide" id="s5">
 			<div class="section-label anim-in anim-d1">Our Solution</div>
 			<h2 class="headline anim-in anim-d2">
@@ -351,38 +387,16 @@
 						humanoid robots - models of any size can now run efficiently inside the robot.
 					</p>
 				</div>
-				<div class="approach-table-wrap">
-					<table class="approach-table">
-						<thead>
-							<tr>
-								<th scope="col">Approach</th>
-								<th scope="col">Cost</th>
-								<th scope="col">Latency</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">Large VLA on Server</th>
-								<td>Low</td>
-								<td>High (&gt;20s)</td>
-							</tr>
-							<tr>
-								<th scope="row">Large VLA on Robot</th>
-								<td>High</td>
-								<td>Low</td>
-							</tr>
-							<tr class="approach-row-ours">
-								<th scope="row">Buildo's AI Model</th>
-								<td>Low</td>
-								<td>Low (&lt;600ms)</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				<figure class="solution-figure">
+					<img
+						src="/assets/architecture.jpg"
+						alt="Architecture diagram: a large base VLA and action head on the server route token projections to very small VLA models running on the robot, with continuous observation embeddings flowing from the robot back to the server."
+					/>
+				</figure>
 			</div>
 		</section>
 
-		<!-- SLIDE 5 - BUILDO KIT -->
+		<!-- SLIDE 6 - BUILDO KIT -->
 		<section class="slide" id="s6">
 			<div class="section-label anim-in anim-d1">Product</div>
 			<h2 class="headline anim-in anim-d2">
@@ -394,10 +408,9 @@
 					<div class="why-card-line"></div>
 					<div class="why-card-num">01</div>
 					<p class="why-card-body">
-						<strong>Buildo</strong> is designed for almost all
-						<strong>real-world use cases</strong> today.
+						<strong>Buildo</strong> robot is designed for majority of
+						<strong>real-world use cases</strong>.
 					</p>
-
 				</div>
 				<div class="why-card product-card-2">
 					<div class="why-card-line"></div>
@@ -419,20 +432,19 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 6 - CRITICAL PATH -->
+		<!-- SLIDE 7 - CRITICAL PATH -->
 		<section class="slide" id="s7">
 			<div class="critical-layout">
 				<div class="critical-copy">
-					<div class="section-label anim-in anim-d1">Advantage</div>
+					<div class="section-label anim-in anim-d1">Product</div>
 					<h2 class="headline anim-in anim-d2">
 						Solving the <span class="hl-gold">critical path</span><br />
 						in humanoid hardware
 					</h2>
 					<p class="critical-body anim-in anim-d3">
-						<strong>Vertically integrated</strong> major components which are responsible for
-						<strong>80% of the humanoid BOM</strong>. Buildo's actuators and 5 fingered hands are
-						<strong>made in the United States</strong>. This gives Starforge a clear advantage after
-						the latest FCC ban on mobile robots.
+						Humanoid product development follows a <strong>Pareto distribution</strong> - a few
+						components drive a significant proportion of a system's performance and cost. In a
+						humanoid, the <strong>actuator and dextrous hand</strong> are the critical path.
 					</p>
 				</div>
 				<div class="critical-photos anim-in anim-d3">
@@ -451,7 +463,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 7 - COMPUTE LAYER -->
+		<!-- SLIDE 8 - COMPUTE LAYER -->
 		<section class="slide" id="s8">
 			<div class="infra-layout">
 				<div class="infra-copy">
@@ -488,7 +500,52 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 8 - REVENUE -->
+		<!-- SLIDE 9 - DEVELOPER REWARDS -->
+		<section class="slide" id="s9">
+			<div class="infra-layout">
+				<div class="infra-copy">
+					<div class="section-label anim-in anim-d1">Ecosystem</div>
+					<h2 class="headline anim-in anim-d2">
+						Developers earn rewards for<br />
+						<span class="hl-gold">building and hosting models</span>
+					</h2>
+				</div>
+				<div class="eco-body anim-in anim-d3">
+					<div class="eco-bullets">
+						<div class="bullet-item">
+							<span class="bullet-icon">▸</span>
+							<p>
+								Developers who build and contribute robot AI models to the platform <strong
+									>earn direct rewards</strong
+								> - aligning incentives with model quality.
+							</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon">▸</span>
+							<p>
+								Hosting models on the StarForge compute layer generates ongoing revenue for
+								contributors, creating a <strong>self-reinforcing developer flywheel.</strong>
+							</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon">▸</span>
+							<p>
+								Strong developer base already in place - <strong>community-driven growth</strong> mirrors
+								the open-source software model applied to physical AI.
+							</p>
+						</div>
+					</div>
+					<figure class="infra-figure">
+						<img
+							src="/assets/dev-portal-skills.png"
+							alt="Starforge /dev skills marketplace"
+						/>
+					</figure>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 10 - REVENUE -->
 		<section class="slide" id="s10">
 			<div class="infra-layout">
 				<div class="infra-copy">
@@ -497,94 +554,56 @@
 						Revenue <span class="hl-gold">projection</span>
 					</h2>
 				</div>
-				<div class="rev-model anim-in anim-d3">
-					<div class="rev-stack">
-						<div class="rev-step rev-step-key">
-							<div class="rev-step-head">
-								<span class="rev-step-num">01</span>
-								<span class="rev-step-name">Sell the robot</span>
-								<span class="rev-step-val">($10K)</span>
-							</div>
+				<div class="infra-body anim-in anim-d3">
+					<div class="infra-cards">
+						<div class="solution-card">
+							<div class="solution-card-num">Hardware Sales Revenue</div>
 							<p>
-								One-time hardware revenue and a growing installed base.<a
+								Humanoid robot and training kit sales to researchers, developers, and enterprises
+								deploying physical AI in the real world. <strong
+									>Recurring hardware upgrade cycles</strong
+								> as models improve.<a
 									class="citation"
 									href="https://x.com/RoboStrategy/status/2087561451468681234"
-									target="_blank"
-									rel="noopener noreferrer">[1]</a
-								>
-							</p>
-						</div>
-						<div class="rev-arrow" aria-hidden="true">↓</div>
-						<div class="rev-step">
-							<div class="rev-step-head">
-								<span class="rev-step-num">02</span>
-								<span class="rev-step-name">Sell compute</span>
-								<span class="rev-step-val">($0.20 in / $4 out per M)</span>
-							</div>
-							<p>
-								Training, inference and hosting at <strong>$0.20 per million input</strong> and
-								<strong>$4 per million output</strong>. Demand runs from 25T tokens in 2026 to 2
-								quadrillion in 2028.<a
-									class="citation"
-									href="https://x.com/a16z/status/2091200032162857328/photo/1"
 									target="_blank"
 									rel="noopener noreferrer">[2]</a
 								>
 							</p>
 						</div>
+						<div class="solution-card">
+							<div class="solution-card-num">Compute Revenue</div>
+							<p>
+								Training and inference hosting on the StarForge compute layer. Compute demand for
+								physical intelligence will increase <strong>100× with increasing adoption</strong> - far
+								exceeding digital AI today.<a
+									class="citation"
+									href="https://x.com/a16z/status/2091200032162857328/photo/1"
+									target="_blank"
+									rel="noopener noreferrer">[3]</a
+								>
+							</p>
+						</div>
 					</div>
-					<div class="rev-ladder">
-						<table class="approach-table rev-table">
-							<thead>
-								<tr>
-									<th scope="col">Year</th>
-									<th scope="col">Robots</th>
-									<th scope="col">Tokens</th>
-									<th scope="col">Hardware</th>
-									<th scope="col">Recurring ARR</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">2026</th>
-									<td>1,000</td>
-									<td>25T</td>
-									<td>$10M</td>
-									<td>$14.5M</td>
-								</tr>
-								<tr>
-									<th scope="row">2027</th>
-									<td>10,000</td>
-									<td>500T</td>
-									<td>$100M</td>
-									<td>$290M</td>
-								</tr>
-								<tr class="approach-row-ours">
-									<th scope="row">2028</th>
-									<td>20,000</td>
-									<td>2Q</td>
-									<td>$200M</td>
-									<td>$1.16B</td>
-								</tr>
-							</tbody>
-						</table>
-						<p class="rev-assumption">
-							Token volumes are the inference curve from the forecast, split 90% input to 10%
-							output for a blended <strong>$0.58 per million</strong>. Hardware is one-time;
-							recurring ARR compounds on the installed base.
-						</p>
-					</div>
+					<figure class="rev-visuals">
+						<figcaption>
+							<span class="hl-gold">Robot Unit Sales, Mobility Mix & Token Usage</span>
+						</figcaption>
+						<img
+							src="/assets/robot-sales-token-forecast.png"
+							alt="Forecast of robot unit sales by mobility mix and token usage, 2025 to 2028"
+						/>
+					</figure>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 9 - COMPETITION -->
+		<!-- SLIDE 11 - COMPETITION -->
 		<section class="slide" id="s11">
 			<div class="comp-layout">
 				<div class="comp-copy">
 					<div class="section-label anim-in anim-d1">Competitive Position</div>
 					<h2 class="headline anim-in anim-d2">
-						How we stand <span class="hl-gold">better</span> than the competition
+						How we stand <span class="hl-gold">better</span> than competition
 					</h2>
 				</div>
 				<div class="comp-body-row anim-in anim-d3">
@@ -600,8 +619,8 @@
 									>
 								</div>
 								<p class="comp-body">
-									<strong>Costly</strong> - high barrier to entry for most researchers and developers,
-									limiting community growth and data collection scale.
+									<strong>Costly and open platform</strong> - high barrier to entry for most researchers
+									and developers, limiting community growth and data collection scale.
 								</p>
 							</div>
 						</div>
@@ -609,12 +628,27 @@
 							<div class="comp-num">02</div>
 							<div class="comp-content">
 								<div class="comp-title">
+									<a
+										href="https://www.figure.ai/"
+										target="_blank"
+										rel="noopener noreferrer">Figure O3</a
+									>
+								</div>
+								<p class="comp-body">
+									<strong>Costly and closed platform</strong> - vertically integrated approach restricts
+									the developer ecosystem needed to rapidly advance physical AI models.
+								</p>
+							</div>
+						</div>
+						<div class="comp-item">
+							<div class="comp-num">03</div>
+							<div class="comp-content">
+								<div class="comp-title">
 									<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer">Lumi</a>
 									and similar
 								</div>
 								<p class="comp-body">
-									Companies using Chinese robots as a wrapper will face
-									<strong>high costs and scalability issues</strong> due to FCC regulation.
+									Companies using Chinese robots as a wrapper are <strong>sinking ships</strong>.
 								</p>
 							</div>
 						</div>
@@ -625,7 +659,7 @@
 								class="citation"
 								href="https://arxiv.org/abs/2509.14139"
 								target="_blank"
-								rel="noopener noreferrer">[3]</a
+								rel="noopener noreferrer">[4]</a
 							>
 						</figcaption>
 						<img
@@ -637,9 +671,9 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 10 - WHY STARFORGE -->
+		<!-- SLIDE 12 - WHY STARFORGE -->
 		<section class="slide" id="s12">
-			<div class="section-label anim-in anim-d1">Key Takeaways</div>
+			<div class="section-label anim-in anim-d1">Competitive Advantage</div>
 			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">StarForge</span></h2>
 			<div class="why-grid anim-in anim-d3">
 				<div class="why-card">
@@ -671,13 +705,12 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 11 - TEAM -->
+		<!-- SLIDE 13 - TEAM -->
 		<section class="slide" id="s13">
 			<div class="section-label anim-in anim-d1">Founding Team</div>
 			<h2 class="headline anim-in anim-d2">Built by <span class="hl-gold">builders</span></h2>
 			<div class="team-grid anim-in anim-d3">
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/vipul.png" alt="Delhi Technological University" />
 					<div class="team-initials">VS</div>
 					<div class="team-name">
 						<LinkedInName
@@ -688,13 +721,13 @@
 					</div>
 					<div class="team-role">Founder · Chief Engineer</div>
 					<div class="team-bio">
-						Founded Cypherock and scaled the safest crypto hardware wallet to $600M AUM -
-						<strong>hardware shipped at scale</strong>. He has already taken a hardware product from
-						prototype to global production once.
+						Ambitious founder with a degree in electronics and communication engineering from Delhi
+						Technological University. Aiming for Kardashev Type 2 by 2040, he built Lockheed
+						Martin UAVs in college and food robotics at Posha (SF, $8M Accel). Founded Cypherock in 2019,
+						the safest crypto hardware wallet, leading it to $600M AUM.
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/rakshit.png" alt="Manipal Institute of Technology" />
 					<div class="team-initials">RJ</div>
 					<div class="team-name">
 						<LinkedInName
@@ -704,13 +737,13 @@
 					</div>
 					<div class="team-role">Senior Robotics Engineer</div>
 					<div class="team-bio">
-						Holds multiple patents and has put <strong>robotics and aerospace products into mass
-							manufacturing</strong> that sell commercially today. He turns a design into something a
-						factory can actually build.
+						With a background of automobile engineering and 5+ years of hands-on product development
+						experience across intelligent robotics, aerospace, electric mobility, and multiple patents in
+						his name, Rakshit has a strong foundation in turning ideas into mass-manufactured products
+						that are sold commercially today.
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/sarthak.png" alt="Amity University" />
 					<div class="team-initials">SS</div>
 					<div class="team-name">
 						<LinkedInName
@@ -720,13 +753,14 @@
 					</div>
 					<div class="team-role">Senior Software Engineer</div>
 					<div class="team-bio">
-						Built software-defined electric vehicles at Mazout Electric across low-latency
-						teleoperation, <strong>embedded systems</strong> and cloud. He owns the real-time link that
-						ties the robot to its operator.
+						Sarthak is a full-stack software engineer who handles backend architecture, mobile
+						applications, and the real-time communication layers that tie hardware to software. He
+						previously built software-defined electric vehicles at Mazout Electric, working across
+						low-latency teleoperation, embedded systems, and cloud infrastructure. He designs and
+						drives the software flow, from device to operator.
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/anay.png" alt="University of California, Irvine" />
 					<div class="team-initials">AN</div>
 					<div class="team-name">
 						<LinkedInName
@@ -736,13 +770,13 @@
 					</div>
 					<div class="team-role">Electrical Engineer</div>
 					<div class="team-bio">
-						Builds implantable-electronics pipelines at UC Irvine's Neuroelectronics Research Lab and
-						race-car firmware for FSAE Electric. <strong>Embedded software</strong>, firmware and
-						hardware integration are his craft.
+						Anay is a driven electrical engineer from UC Irvine with great skill in embedded
+						software and hardware integration. He builds implantable-electronics pipelines at the
+						Neuroelectronics Research Lab, codes F1-style race-car firmware for FSAE Electric Racing, and
+						designed embedded software and PCBs for a Level 1 rocket.
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/celia.png" alt="University of Miami" />
 					<div class="team-initials">CE</div>
 					<div class="team-name">
 						<LinkedInName
@@ -752,13 +786,12 @@
 					</div>
 					<div class="team-role">Aerospace Engineer</div>
 					<div class="team-bio">
-						An <strong>aerospace engineer</strong> from the University of Miami working in space
-						robotics, thermodynamics and composite manufacturing. She keeps Buildo's structures light,
-						strong and cheap to build.
+						A maths prodigy and an aerospace engineer from the University of Miami. Celia's experience
+						varies across composite material manufacturing, thermodynamics, and space robotics. Celia
+						also holds NAR Level 1 certification for high powered rocket development.
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/chirag.png" alt="Bharati Vidyapeeth" />
 					<div class="team-initials">CS</div>
 					<div class="team-name">
 						<LinkedInName
@@ -768,20 +801,74 @@
 					</div>
 					<div class="team-role">Software Engineer</div>
 					<div class="team-bio">
-						Has been writing <strong>transformer models</strong> for five years and shipped the
-						cryptography behind Cypherock's hardware wallet. He builds the AI that has to run inside
-						the robot.
+						With a background in electronics and communication engineering, Chirag has experience
+						solving the hardest engineering problems in the world, from complex cryptography to writing
+						transformer models since the past 5 years. Previously at Cypherock, the safest crypto
+						hardware wallet company.
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 12 - VISION / ASK -->
+		<!-- SLIDE 14 - TRACTION -->
+		<section class="slide" id="s14">
+			<div class="section-label anim-in anim-d1">Traction</div>
+			<h2 class="headline anim-in anim-d2">
+				Businesses and developers<br />
+				<span class="hl-gold">love our robots</span>
+			</h2>
+			<div class="comp-list anim-in anim-d3">
+				<div class="comp-item">
+					<div class="comp-num">01</div>
+					<div class="comp-content">
+						<div class="comp-title">
+							<a
+								href="https://zooty.mazoutelectric.com/"
+								target="_blank"
+								rel="noopener noreferrer">Mazout Electric</a
+							>
+						</div>
+						<p class="comp-body">
+							Building <strong>lithium ion batteries using robots</strong> - deploying StarForge humanoids
+							for real industrial manufacturing tasks.
+						</p>
+					</div>
+				</div>
+				<div class="comp-item">
+					<div class="comp-num">02</div>
+					<div class="comp-content">
+						<div class="comp-title">
+							<a
+								href="https://x.com/aryanmadhaverma"
+								target="_blank"
+								rel="noopener noreferrer">Aryan Madhav Verma</a
+							>
+						</div>
+						<p class="comp-body">
+							Building <strong>industrial warehouses</strong> on the StarForge platform - validating demand
+							for open, capable humanoid robots beyond research.
+						</p>
+					</div>
+				</div>
+				<div class="comp-item">
+					<div class="comp-num">03</div>
+					<div class="comp-content">
+						<div class="comp-title">Developer Ecosystem</div>
+						<p class="comp-body">
+							<strong>50+ developers</strong> are already using our compute platform - early signal of
+							the community-driven flywheel taking hold.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 15 - VISION / ASK -->
 		<section class="slide" id="s15">
 			<div class="section-label anim-in anim-d1">The Vision</div>
 			<h2 class="headline anim-in anim-d2">
-				Largest <span class="hl-gold">open compute</span> infrastructure<br />
-				for physical intelligence
+				Robotics <span class="hl-gold">AGI</span> in the next<br />
+				6 – 12 months
 			</h2>
 			<div class="vision-body anim-in anim-d3">
 				<p class="vision-text">
@@ -795,7 +882,7 @@
 						class="citation"
 						href="https://www.prnewswire.com/news-releases/the-space-economy-is-heading-for-1-8-trillion-the-bottleneck-nobody-talks-about-is-getting-there-302830042.html"
 						target="_blank"
-						rel="noopener noreferrer">[4]</a
+						rel="noopener noreferrer">[5]</a
 					>
 				</p>
 			</div>
@@ -1123,9 +1210,10 @@
 	}
 
 	/* Cover slide only. The network art is 16:9 and the stage is 16:9, so `cover`
-	   maps it edge to edge with nothing cropped. The white ramp is held heavy
-	   throughout: the graphic is now only a faint texture behind the headline and
-	   the Buildo render, both of which have to read cleanly over it. */
+	   maps it edge to edge with nothing cropped. The white ramp holds the left
+	   half solid - the cover title runs to roughly 49% of the stage - then
+	   releases across the right. It settles at 0.18 rather than 0 so the graphic
+	   stays a backdrop and never competes with the headline. */
 	.cover-bg {
 		position: absolute;
 		inset: 0;
@@ -1133,10 +1221,12 @@
 			linear-gradient(
 				90deg,
 				rgb(255, 255, 255) 0%,
-				rgb(255, 255, 255) 32%,
-				rgba(255, 255, 255, 0.95) 44%,
-				rgba(255, 255, 255, 0.9) 60%,
-				rgba(255, 255, 255, 0.88) 100%
+				rgb(255, 255, 255) 29%,
+				rgba(255, 255, 255, 0.82) 38%,
+				rgba(255, 255, 255, 0.5) 50%,
+				rgba(255, 255, 255, 0.24) 64%,
+				rgba(255, 255, 255, 0.18) 76%,
+				rgba(255, 255, 255, 0.18) 100%
 			),
 			radial-gradient(ellipse 70% 60% at 80% 50%, rgba(20, 18, 16, 0.03) 0%, transparent 70%),
 			radial-gradient(ellipse 40% 70% at 10% 80%, rgba(20, 18, 16, 0.015) 0%, transparent 60%),
@@ -1144,33 +1234,6 @@
 		background-size: auto, auto, auto, cover;
 		background-position: center;
 		background-repeat: no-repeat;
-	}
-
-	/* Sits between the backdrop and the copy, pinned to the right so the headline
-	   column is untouched. */
-	.cover-figure {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: clamp(56px, 11vw, 200px);
-		z-index: 1;
-		display: flex;
-		align-items: center;
-		justify-content: flex-end;
-		margin: 0;
-		pointer-events: none;
-	}
-
-	.cover-figure img {
-		display: block;
-		width: auto;
-		max-width: 42vw;
-		height: clamp(200px, 62vh, 500px);
-		object-fit: contain;
-		object-position: center;
-		/* The render is a crop that ends mid-torso, so it is faded out at the
-		   bottom rather than stopping on a hard edge. */
-		mask-image: linear-gradient(180deg, #000 0%, #000 82%, transparent 100%);
 	}
 
 	.cover-grid {
@@ -1309,23 +1372,17 @@
 		max-width: 900px;
 	}
 
-	/* Extra bottom padding against the centred block, which lifts the whole
-	   slide slightly rather than moving any one element. */
+	/* Slide 5 carries a much taller element than the rest of the deck. It sits
+	   lower than the trimmed 68px I first tried but still higher than the 96px
+	   the other slides use, and the bottom padding is trimmed hard so moving the
+	   title down costs the diagram no height. */
 	#s5 {
 		padding-top: clamp(48px, 10.6vh, 82px);
-		padding-bottom: clamp(40px, 7vh, 68px);
+		padding-bottom: clamp(8px, 1.6vh, 14px);
 	}
 
 	#s5 .section-label {
 		margin-bottom: clamp(6px, 1.4vh, 10px);
-	}
-
-	/* Shifted visually rather than through the flow: the card and table stay on
-	   the centred position the block resolves to, and only the header rises. */
-	#s5 .section-label,
-	#s5 .headline {
-		position: relative;
-		top: clamp(-56px, -6.4vh, -26px);
 	}
 
 	/* Slide 5: text left, diagram right. Columns are minmax(0, ...) so the image
@@ -1348,81 +1405,6 @@
 		justify-content: center;
 		min-width: 0;
 		margin: 0;
-	}
-
-	/* ── APPROACH COMPARISON TABLE ── */
-	.approach-table-wrap {
-		min-width: 0;
-	}
-
-	.approach-table {
-		width: 100%;
-		border-collapse: collapse;
-		font-family: 'Barlow', sans-serif;
-		background: #ffffff;
-		border: 2px solid rgba(20, 18, 16, 0.14);
-	}
-
-	.approach-table th,
-	.approach-table td {
-		padding: clamp(8px, 1.9vh, 18px) clamp(10px, 1.4vw, 22px);
-		border-bottom: 1px solid rgba(20, 18, 16, 0.1);
-		text-align: center;
-		font-size: clamp(11px, 1.95vmin, 16px);
-		font-weight: 500;
-		line-height: 1.35;
-		color: #3a3630;
-	}
-
-	.approach-table tbody tr:last-child th,
-	.approach-table tbody tr:last-child td {
-		border-bottom: 0;
-	}
-
-	/* Row labels read as the axis of the comparison, so they are left aligned
-	   while the values stay centred under their headings. */
-	.approach-table tbody th {
-		text-align: left;
-		color: #141210;
-		font-weight: 600;
-	}
-
-	.approach-table thead th {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		background: rgba(20, 18, 16, 0.044);
-		border-bottom: 2px solid rgba(20, 18, 16, 0.14);
-	}
-
-	.approach-table thead th:first-child {
-		text-align: left;
-	}
-
-	.approach-row-ours th,
-	.approach-row-ours td {
-		background: rgba(122, 94, 15, 0.09);
-		color: #141210;
-		font-weight: 700;
-	}
-
-	.approach-row-ours th {
-		position: relative;
-		color: #7a5e0f;
-	}
-
-	/* Gold edge marker, matching the accent rule used on the solution cards. */
-	.approach-row-ours th::before {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		width: 3px;
-		background: #7a5e0f;
 	}
 
 	.solution-figure img {
@@ -1486,8 +1468,9 @@
 		line-height: 1.65;
 	}
 
-	/* Slides 7–9 and 11: title sits above centre, stacked copy left, visuals right. */
+	/* Slide 8–10: title sits above centre, stacked copy left, visuals right. */
 	#s8,
+	#s9,
 	#s10,
 	#s11,
 	#s13 {
@@ -1497,6 +1480,7 @@
 	}
 
 	#s8 .section-label,
+	#s9 .section-label,
 	#s10 .section-label,
 	#s11 .section-label,
 	#s13 .section-label {
@@ -1569,121 +1553,62 @@
 		background: none;
 	}
 
-	/* Shifted visually rather than through the flow, so the stack and the ladder
-	   below stay where the centred block puts them. */
-	#s10 .section-label,
-	#s10 .headline {
-		position: relative;
-		top: clamp(88px, 17.6vh, 158px);
-	}
-
-	/* Slide 8: the revenue stack reads top-down on the left, and the ARR ladder
-	   it resolves to sits on the right. */
-	.rev-model {
+	/* Slide 9: bullets wrap in a narrower left column; the skills shot is
+	   pinned to the vertical centre of the second bullet. */
+	.eco-body {
 		display: grid;
-		grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-		column-gap: clamp(20px, 3.6vw, 52px);
-		align-items: center;
+		grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+		column-gap: clamp(16px, 3vw, 36px);
 		width: 100%;
-		flex: 1;
-		min-height: 0;
+		min-width: 0;
+		align-items: center;
 	}
 
-	.rev-stack {
+	.eco-bullets {
 		display: flex;
 		flex-direction: column;
+		gap: 3px;
 		min-width: 0;
 	}
 
-	.rev-step {
-		border-left: 3px solid rgba(20, 18, 16, 0.16);
-		padding: clamp(6px, 1.1vh, 10px) 0 clamp(6px, 1.1vh, 10px) clamp(10px, 1.1vw, 16px);
-		min-width: 0;
+	.eco-body .bullet-item p {
+		max-width: 44ch;
 	}
 
-	.rev-step-key {
-		border-left-color: #7a5e0f;
-	}
-
-	.rev-step-head {
+	.rev-visuals {
 		display: flex;
-		align-items: baseline;
-		flex-wrap: wrap;
-		gap: 0 clamp(6px, 0.8vw, 12px);
-	}
-
-	.rev-step-num {
-		font-family: 'Space Mono', monospace;
-		font-size: clamp(9px, 1.5vmin, 12px);
-		font-weight: 700;
-		letter-spacing: 0.16em;
-		color: #7a5e0f;
-	}
-
-	.rev-step-name {
-		font-family: 'Bebas Neue', sans-serif;
-		font-weight: 500;
-		font-size: clamp(16px, 2.7vmin, 26px);
-		letter-spacing: 0.03em;
-		color: #141210;
-	}
-
-	.rev-step-val {
-		font-family: 'Bebas Neue', sans-serif;
-		font-weight: 500;
-		font-size: clamp(16px, 2.7vmin, 26px);
-		letter-spacing: 0.03em;
-		color: #7a5e0f;
-		white-space: nowrap;
-	}
-
-	.rev-step p {
-		margin: 2px 0 0;
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(11px, 1.95vmin, 16px);
-		font-weight: 400;
-		line-height: 1.5;
-		color: #3a3630;
-		max-width: 46ch;
-	}
-
-	.rev-step p strong {
-		font-weight: 600;
-		color: #141210;
-	}
-
-	.rev-arrow {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2vmin, 17px);
-		line-height: 1;
-		color: rgba(20, 18, 16, 0.32);
-		padding: clamp(3px, 0.7vh, 7px) 0 clamp(3px, 0.7vh, 7px) clamp(4px, 0.4vw, 7px);
-	}
-
-	.rev-ladder {
-		position: relative;
-		left: clamp(-40px, -2.2vw, -14px);
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		min-width: 0;
+		min-height: 0;
+		margin: 0;
 	}
 
-	.rev-table td {
+	.rev-visuals figcaption {
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(15px, 2.5vmin, 24px);
-		letter-spacing: 0.03em;
+		font-weight: 500;
+		font-size: clamp(16px, 2.6vmin, 24px);
+		letter-spacing: 0.04em;
+		text-align: center;
+		line-height: 1.15;
+		margin: 0 0 clamp(8px, 1.4vh, 12px);
+		width: 100%;
 	}
 
-	.rev-assumption {
-		margin: clamp(8px, 1.4vh, 14px) 0 0;
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(9px, 1.55vmin, 13px);
-		font-weight: 400;
-		line-height: 1.45;
-		color: #6b665e;
+	.rev-visuals img {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: min(56vh, 460px);
+		object-fit: contain;
+		object-position: center;
+		background: #ffffff;
 	}
 
-	.rev-assumption strong {
-		font-weight: 600;
-		color: #7a5e0f;
+	#s10 .infra-body {
+		grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+		align-items: center;
 	}
 
 	/* Slide 6 carries two product columns. Content starts a little above
@@ -1917,7 +1842,6 @@
 	}
 
 	.team-card {
-		position: relative;
 		display: flex;
 		flex-direction: column;
 		min-width: 0;
@@ -1926,19 +1850,6 @@
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
 		border-top: 2px solid rgba(20, 18, 16, 0.15);
-	}
-
-	/* Logos vary between wordmarks and tall crests, so they are boxed to a
-	   common height and left to find their own width inside it. */
-	.team-uni {
-		position: absolute;
-		top: clamp(10px, 2.2vh, 20px);
-		right: clamp(12px, 1.8vw, 22px);
-		height: clamp(34px, 6.4vmin, 54px);
-		width: auto;
-		max-width: clamp(72px, 10vw, 120px);
-		object-fit: contain;
-		object-position: right top;
 	}
 
 	.team-initials {
@@ -1980,11 +1891,6 @@
 		font-weight: 500;
 		color: #5f584e;
 		line-height: 1.5;
-	}
-
-	.team-bio strong {
-		font-weight: 700;
-		color: #141210;
 	}
 
 	/* ── COMPETITION ── */

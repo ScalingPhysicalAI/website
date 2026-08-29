@@ -1,0 +1,818 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440" style="background-color: #FFFFFF; font-family: system-ui, -apple-system, 'SF Pro Display', 'Barlow', 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <!-- Background and UI Gradients -->
+    <linearGradient id="canvasBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#F4F0E8"/>
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A5E0F"/>
+      <stop offset="50%" stop-color="#A27F20"/>
+      <stop offset="100%" stop-color="#D4AA3B"/>
+    </linearGradient>
+
+    <linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A5E0F"/>
+      <stop offset="45%" stop-color="#7A5E0F"/>
+      <stop offset="85%" stop-color="#7A5E0F" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7A5E0F" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="goldBarRev" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#7A5E0F"/>
+      <stop offset="45%" stop-color="#7A5E0F"/>
+      <stop offset="85%" stop-color="#7A5E0F" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7A5E0F" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="panelBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FAF8F5"/>
+    </linearGradient>
+
+    <linearGradient id="innerStageBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F6F1"/>
+      <stop offset="100%" stop-color="#ECE6DC"/>
+    </linearGradient>
+
+    <linearGradient id="cloudGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#EBE4D5" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#DACFBE" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Robot Material & Shading Gradients -->
+    <linearGradient id="robotDarkMetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#322E2A"/>
+      <stop offset="50%" stop-color="#1E1C1A"/>
+      <stop offset="100%" stop-color="#12100E"/>
+    </linearGradient>
+
+    <linearGradient id="robotPlateLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#544E46"/>
+      <stop offset="50%" stop-color="#3C3731"/>
+      <stop offset="100%" stop-color="#24211D"/>
+    </linearGradient>
+
+    <linearGradient id="robotChassisArmor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2A2622"/>
+      <stop offset="30%" stop-color="#443E38"/>
+      <stop offset="70%" stop-color="#36312B"/>
+      <stop offset="100%" stop-color="#1E1B18"/>
+    </linearGradient>
+
+    <linearGradient id="robotGoldAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7A5E0F"/>
+      <stop offset="50%" stop-color="#C8A038"/>
+      <stop offset="100%" stop-color="#F2D67E"/>
+    </linearGradient>
+
+    <!-- Pipeline Streams -->
+    <linearGradient id="flowRight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A5E0F" stop-opacity="0.2"/>
+      <stop offset="40%" stop-color="#7A5E0F"/>
+      <stop offset="100%" stop-color="#D4AA3B"/>
+    </linearGradient>
+
+    <linearGradient id="flowLeft" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#7A5E0F" stop-opacity="0.2"/>
+      <stop offset="40%" stop-color="#7A5E0F"/>
+      <stop offset="100%" stop-color="#D4AA3B"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="panelShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#141210" flood-opacity="0.07"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#141210" flood-opacity="0.04"/>
+    </filter>
+
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#141210" flood-opacity="0.06"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#141210" flood-opacity="0.03"/>
+    </filter>
+
+    <filter id="glowGold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Patterns -->
+    <pattern id="gridSubtle" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#141210" stroke-width="1" stroke-opacity="0.035"/>
+      <circle cx="60" cy="0" r="1.5" fill="#7A5E0F" fill-opacity="0.15"/>
+    </pattern>
+
+    <pattern id="dotSubtle" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#141210" fill-opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Layers -->
+  <rect width="2560" height="1440" fill="url(#canvasBg)"/>
+  <rect width="2560" height="1440" fill="url(#gridSubtle)"/>
+
+  <!-- Ambient Glow Accents -->
+  <circle cx="530" cy="500" r="500" fill="#7A5E0F" fill-opacity="0.025"/>
+  <circle cx="2030" cy="500" r="500" fill="#7A5E0F" fill-opacity="0.025"/>
+
+
+  <!-- ==================================================================== -->
+  <!-- SLIDE HEADER (STARFORGE PITCH DECK FORMAT) -->
+  <!-- ==================================================================== -->
+  <g id="slideHeader" transform="translate(100, 75)">
+    <!-- Top Nav Elements -->
+    <g transform="translate(0, 0)">
+      <!-- StarForge Logo Wordmark -->
+      <text x="0" y="16" font-family="'SF Pro Display', system-ui, sans-serif" font-size="20" font-weight="900" letter-spacing="0.28em" fill="#141210">
+        STARFORGE
+      </text>
+      <path d="M -16 6 L -10 12 L -4 6 L -10 0 Z" fill="#7A5E0F"/>
+
+      <!-- Nav Dots in Center -->
+      <g transform="translate(1180, 8)">
+        <circle cx="-50" cy="0" r="2.5" fill="#DDD6C8"/>
+        <circle cx="-35" cy="0" r="2.5" fill="#DDD6C8"/>
+        <circle cx="-20" cy="0" r="2.5" fill="#DDD6C8"/>
+        <circle cx="-5" cy="0" r="2.5" fill="#DDD6C8"/>
+        <circle cx="10" cy="0" r="4.5" fill="#7A5E0F"/>
+        <circle cx="25" cy="0" r="2.5" fill="#DDD6C8"/>
+        <circle cx="40" cy="0" r="2.5" fill="#DDD6C8"/>
+        <circle cx="55" cy="0" r="2.5" fill="#DDD6C8"/>
+        <circle cx="70" cy="0" r="2.5" fill="#DDD6C8"/>
+        <text x="10" y="24" font-family="'SF Mono', 'Space Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.15em" fill="#5F584E" text-anchor="middle">
+          05 / 14
+        </text>
+      </g>
+
+      <!-- Right Export Button -->
+      <g transform="translate(2360, 4)">
+        <rect x="-130" y="-8" width="130" height="30" fill="transparent" stroke="#141210" stroke-opacity="0.16" stroke-width="1.5"/>
+        <text x="-65" y="12" font-family="'SF Mono', 'Space Mono', monospace" font-size="10" font-weight="700" letter-spacing="0.15em" fill="#7A5E0F" text-anchor="middle">
+          EXPORT PDF
+        </text>
+      </g>
+    </g>
+
+    <!-- Kicker & Main Headline -->
+    <g transform="translate(0, 68)">
+      <text x="0" y="0" font-family="'SF Mono', 'Space Mono', monospace" font-size="12" font-weight="700" letter-spacing="0.32em" fill="#7A5E0F">
+        OUR SOLUTION
+      </text>
+
+      <!-- Headline -->
+      <text x="0" y="44" font-family="'SF Pro Display', system-ui, sans-serif" font-size="46" font-weight="900" letter-spacing="-0.01em" fill="#141210">
+        DISTRIBUTED ARCHITECTURE: <tspan fill="#7A5E0F">ANY SIZED MODEL</tspan> ON HUMANOID ROBOTS
+      </text>
+    </g>
+  </g>
+
+
+  <!-- ==================================================================== -->
+  <!-- LEFT COLUMN: SERVER (CLOUD COMPUTE LAYER) -->
+  <!-- ==================================================================== -->
+  <g id="leftColumn" transform="translate(100, 235)">
+    <!-- Main Card Panel -->
+    <rect x="0" y="0" width="860" height="1065" rx="4" fill="url(#panelBg)" stroke="#141210" stroke-opacity="0.09" stroke-width="2" filter="url(#panelShadow)"/>
+    <rect x="0" y="0" width="860" height="4" fill="url(#goldBar)"/>
+
+    <!-- Panel Header -->
+    <g transform="translate(48, 44)">
+      <!-- Number Box -->
+      <rect x="0" y="0" width="42" height="24" rx="2" fill="#7A5E0F" fill-opacity="0.08" stroke="#7A5E0F" stroke-opacity="0.25" stroke-width="1"/>
+      <text x="21" y="16" font-family="'SF Mono', 'Space Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#7A5E0F" text-anchor="middle">01</text>
+
+      <!-- Main Title -->
+      <text x="0" y="62" font-family="'SF Pro Display', system-ui, sans-serif" font-size="44" font-weight="900" letter-spacing="0.02em" fill="#141210">
+        SERVER
+      </text>
+      <!-- Subtitle Tag -->
+      <rect x="190" y="32" width="225" height="30" rx="2" fill="#141210" fill-opacity="0.04" stroke="#141210" stroke-opacity="0.08" stroke-width="1"/>
+      <text x="302" y="52" font-family="'SF Mono', 'Space Mono', monospace" font-size="10.5" font-weight="700" letter-spacing="0.16em" fill="#5F584E" text-anchor="middle">
+        CLOUD COMPUTE INFRA
+      </text>
+    </g>
+
+    <!-- Visual Container: Server Rack + Cloud -->
+    <g id="serverVisual" transform="translate(48, 140)">
+      <rect x="0" y="0" width="764" height="540" rx="3" fill="url(#innerStageBg)" stroke="#141210" stroke-opacity="0.07" stroke-width="1.5"/>
+      <rect x="0" y="0" width="764" height="540" fill="url(#dotSubtle)"/>
+
+      <!-- Blueprint Corner Accents -->
+      <path d="M 0 20 L 0 0 L 20 0" fill="none" stroke="#7A5E0F" stroke-opacity="0.7" stroke-width="2.5"/>
+      <path d="M 744 0 L 764 0 L 764 20" fill="none" stroke="#7A5E0F" stroke-opacity="0.7" stroke-width="2.5"/>
+      <path d="M 0 520 L 0 540 L 20 540" fill="none" stroke="#7A5E0F" stroke-opacity="0.7" stroke-width="2.5"/>
+      <path d="M 744 540 L 764 540 L 764 520" fill="none" stroke="#7A5E0F" stroke-opacity="0.7" stroke-width="2.5"/>
+
+      <!-- Modern Stylized Cloud Backdrop -->
+      <g transform="translate(382, 120)">
+        <path d="M -210 145 
+                 C -280 145 -315 85 -285 25 
+                 C -305 -45 -245 -115 -165 -105 
+                 C -125 -190 5 -200 70 -130 
+                 C 135 -195 260 -155 280 -60 
+                 C 340 -35 355 50 315 110 
+                 C 345 145 295 145 230 145 Z" 
+              fill="url(#cloudGrad)" stroke="#7A5E0F" stroke-opacity="0.3" stroke-width="2"/>
+        
+        <!-- Synaptic Constellation Lines -->
+        <path d="M -180 50 L -100 -15 L 35 15 L 135 -55 L 235 25" fill="none" stroke="#7A5E0F" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="6 6"/>
+        <circle cx="-180" cy="50" r="5.5" fill="#7A5E0F" fill-opacity="0.6"/>
+        <circle cx="-100" cy="-15" r="5.5" fill="#7A5E0F" fill-opacity="0.7"/>
+        <circle cx="35" cy="15" r="8" fill="#7A5E0F"/>
+        <circle cx="135" cy="-55" r="5.5" fill="#7A5E0F" fill-opacity="0.7"/>
+        <circle cx="235" cy="25" r="5.5" fill="#7A5E0F" fill-opacity="0.6"/>
+      </g>
+
+      <!-- AI High-Density Server Rack Frame -->
+      <g id="aiServerRack" transform="translate(182, 45)" filter="url(#cardShadow)">
+        <!-- Chassis Body -->
+        <rect x="0" y="0" width="400" height="450" rx="8" fill="#1A1816" stroke="#3D3832" stroke-width="2.5"/>
+        <rect x="10" y="10" width="380" height="430" rx="4" fill="#12100E" stroke="#7A5E0F" stroke-opacity="0.4" stroke-width="1.5"/>
+
+        <!-- Rack Rails -->
+        <line x1="28" y1="14" x2="28" y2="436" stroke="#2C2824" stroke-width="2.5"/>
+        <line x1="372" y1="14" x2="372" y2="436" stroke="#2C2824" stroke-width="2.5"/>
+
+        <!-- Rail Screws -->
+        <circle cx="19" cy="42" r="3" fill="#544E46"/>
+        <circle cx="19" cy="122" r="3" fill="#544E46"/>
+        <circle cx="19" cy="202" r="3" fill="#544E46"/>
+        <circle cx="19" cy="282" r="3" fill="#544E46"/>
+        <circle cx="19" cy="362" r="3" fill="#544E46"/>
+        <circle cx="19" cy="418" r="3" fill="#544E46"/>
+        <circle cx="381" cy="42" r="3" fill="#544E46"/>
+        <circle cx="381" cy="122" r="3" fill="#544E46"/>
+        <circle cx="381" cy="202" r="3" fill="#544E46"/>
+        <circle cx="381" cy="282" r="3" fill="#544E46"/>
+        <circle cx="381" cy="362" r="3" fill="#544E46"/>
+        <circle cx="381" cy="418" r="3" fill="#544E46"/>
+
+        <!-- Blade 1: GPU Cluster Node 01 -->
+        <g transform="translate(38, 22)">
+          <rect x="0" y="0" width="324" height="70" rx="4" fill="#24211D" stroke="#4C453E" stroke-width="1.2"/>
+          <rect x="12" y="15" width="9" height="40" rx="1.5" fill="#141210"/>
+          <rect x="27" y="15" width="9" height="40" rx="1.5" fill="#141210"/>
+          <rect x="42" y="15" width="9" height="40" rx="1.5" fill="#141210"/>
+          <rect x="57" y="15" width="9" height="40" rx="1.5" fill="#141210"/>
+          <!-- Vents -->
+          <line x1="80" y1="26" x2="190" y2="26" stroke="#12100E" stroke-width="3" stroke-linecap="round"/>
+          <line x1="80" y1="36" x2="190" y2="36" stroke="#12100E" stroke-width="3" stroke-linecap="round"/>
+          <line x1="80" y1="46" x2="190" y2="46" stroke="#12100E" stroke-width="3" stroke-linecap="round"/>
+          <!-- LEDs -->
+          <circle cx="295" cy="24" r="4.5" fill="#52C41A" filter="url(#glowGreen)"/>
+          <circle cx="275" cy="24" r="4" fill="#D4AA3B"/>
+          <circle cx="255" cy="24" r="4" fill="#7A5E0F"/>
+          <text x="302" y="52" font-family="'SF Mono', 'Space Mono', monospace" font-size="10.5" font-weight="700" fill="#F0D478" letter-spacing="0.08em" text-anchor="end">
+            8x H100 GPU CLUSTER
+          </text>
+        </g>
+
+        <!-- Blade 2: VLA Model Core Node (StarForge) -->
+        <g transform="translate(38, 104)">
+          <rect x="0" y="0" width="324" height="76" rx="4" fill="#2C251C" stroke="#7A5E0F" stroke-width="2"/>
+          <rect x="12" y="12" width="150" height="52" rx="3" fill="#15120E" stroke="#7A5E0F" stroke-width="1.2"/>
+          <text x="87" y="34" font-family="'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="900" letter-spacing="0.16em" fill="#F5DC8C" text-anchor="middle">
+            STARFORGE VLA
+          </text>
+          <text x="87" y="51" font-family="'SF Mono', monospace" font-size="9" font-weight="700" fill="#A27F20" letter-spacing="0.1em" text-anchor="middle">
+            FOUNDATION ENGINE
+          </text>
+          <!-- Activity Spectrum -->
+          <line x1="178" y1="26" x2="295" y2="26" stroke="#7A5E0F" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="178" y1="38" x2="265" y2="38" stroke="#D4AA3B" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="178" y1="50" x2="285" y2="50" stroke="#52C41A" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+
+        <!-- Blade 3: Distributed Weights Memory Matrix -->
+        <g transform="translate(38, 192)">
+          <rect x="0" y="0" width="324" height="70" rx="4" fill="#24211D" stroke="#4C453E" stroke-width="1.2"/>
+          <rect x="14" y="15" width="30" height="40" rx="2" fill="#141210" stroke="#3D3730" stroke-width="1"/>
+          <rect x="50" y="15" width="30" height="40" rx="2" fill="#141210" stroke="#3D3730" stroke-width="1"/>
+          <rect x="86" y="15" width="30" height="40" rx="2" fill="#141210" stroke="#3D3730" stroke-width="1"/>
+          <rect x="122" y="15" width="30" height="40" rx="2" fill="#141210" stroke="#3D3730" stroke-width="1"/>
+          <circle cx="295" cy="24" r="4" fill="#52C41A"/>
+          <circle cx="275" cy="24" r="4" fill="#52C41A"/>
+          <circle cx="255" cy="24" r="4" fill="#D4AA3B"/>
+          <text x="302" y="50" font-family="'SF Mono', monospace" font-size="10.5" font-weight="700" fill="#F0D478" letter-spacing="0.08em" text-anchor="end">
+            DISTRIBUTED WEIGHTS
+          </text>
+        </g>
+
+        <!-- Blade 4: Optical Sync Gateway -->
+        <g transform="translate(38, 274)">
+          <rect x="0" y="0" width="324" height="70" rx="4" fill="#24211D" stroke="#4C453E" stroke-width="1.2"/>
+          <rect x="14" y="24" width="20" height="24" rx="2" fill="#100E0C" stroke="#7A5E0F" stroke-width="1.2"/>
+          <rect x="40" y="24" width="20" height="24" rx="2" fill="#100E0C" stroke="#7A5E0F" stroke-width="1.2"/>
+          <rect x="66" y="24" width="20" height="24" rx="2" fill="#100E0C" stroke="#7A5E0F" stroke-width="1.2"/>
+          <rect x="92" y="24" width="20" height="24" rx="2" fill="#100E0C" stroke="#7A5E0F" stroke-width="1.2"/>
+          <circle cx="24" cy="36" r="3.5" fill="#52C41A"/>
+          <circle cx="50" cy="36" r="3.5" fill="#52C41A"/>
+          <circle cx="76" cy="36" r="3.5" fill="#52C41A"/>
+          <circle cx="102" cy="36" r="3.5" fill="#52C41A"/>
+          <text x="302" y="44" font-family="'SF Mono', monospace" font-size="10.5" font-weight="700" fill="#A89F91" letter-spacing="0.08em" text-anchor="end">
+            400G FIBER GATEWAY
+          </text>
+        </g>
+
+        <!-- Blade 5: Power & Liquid Thermal Core -->
+        <g transform="translate(38, 356)">
+          <rect x="0" y="0" width="324" height="70" rx="4" fill="#24211D" stroke="#4C453E" stroke-width="1.2"/>
+          <circle cx="48" cy="35" r="21" fill="#100E0C" stroke="#3D3730" stroke-width="1.5"/>
+          <circle cx="122" cy="35" r="21" fill="#100E0C" stroke="#3D3730" stroke-width="1.5"/>
+          <circle cx="196" cy="35" r="21" fill="#100E0C" stroke="#3D3730" stroke-width="1.5"/>
+          <circle cx="48" cy="35" r="6" fill="#7A5E0F"/>
+          <circle cx="122" cy="35" r="6" fill="#7A5E0F"/>
+          <circle cx="196" cy="35" r="6" fill="#7A5E0F"/>
+          <text x="302" y="40" font-family="'SF Mono', monospace" font-size="10.5" font-weight="700" fill="#52C41A" letter-spacing="0.08em" text-anchor="end">
+            LIQUID COOLED
+          </text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Bottom Model Card: Large VLA Model -->
+    <g id="largeModelCard" transform="translate(48, 710)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="764" height="305" rx="3" fill="#FFFFFF" stroke="#141210" stroke-opacity="0.1" stroke-width="2"/>
+      <rect x="0" y="0" width="764" height="3.5" fill="url(#goldBar)"/>
+
+      <g transform="translate(36, 36)">
+        <text x="0" y="0" font-family="'SF Mono', 'Space Mono', monospace" font-size="11.5" font-weight="700" letter-spacing="0.25em" fill="#7A5E0F">
+          FOUNDATION MODEL
+        </text>
+
+        <!-- Large Title -->
+        <text x="0" y="44" font-family="'SF Pro Display', system-ui, sans-serif" font-size="40" font-weight="900" letter-spacing="-0.01em" fill="#141210">
+          Large VLA Model
+        </text>
+
+        <!-- Parameter Badge -->
+        <g transform="translate(460, 8)">
+          <rect x="0" y="0" width="230" height="36" rx="2" fill="#7A5E0F" fill-opacity="0.08" stroke="#7A5E0F" stroke-width="1.5"/>
+          <text x="115" y="23" font-family="'SF Mono', 'Space Mono', monospace" font-size="12" font-weight="700" letter-spacing="0.16em" fill="#7A5E0F" text-anchor="middle">
+            500B+ PARAMETERS
+          </text>
+        </g>
+      </g>
+
+      <!-- Divider -->
+      <line x1="36" y1="120" x2="728" y2="120" stroke="#141210" stroke-opacity="0.08" stroke-width="1"/>
+
+      <!-- Bullets matching the StarForge slide style -->
+      <g transform="translate(36, 150)">
+        <g transform="translate(0, 0)">
+          <text x="0" y="16" font-family="'SF Mono', monospace" font-size="15" font-weight="700" fill="#7A5E0F">▸</text>
+          <text x="24" y="16" font-family="'SF Pro Display', system-ui, sans-serif" font-size="16" font-weight="500" fill="#2E2A26">
+            <tspan font-weight="700" fill="#141210">Multi-Modal Foundation Reasoning:</tspan> Deep vision, language &amp; 3D spatial cognition.
+          </text>
+        </g>
+        <g transform="translate(0, 42)">
+          <text x="0" y="16" font-family="'SF Mono', monospace" font-size="15" font-weight="700" fill="#7A5E0F">▸</text>
+          <text x="24" y="16" font-family="'SF Pro Display', system-ui, sans-serif" font-size="16" font-weight="500" fill="#2E2A26">
+            <tspan font-weight="700" fill="#141210">Long-Horizon Task Synthesis:</tspan> Decomposes human goals into high-level policy tokens.
+          </text>
+        </g>
+        <g transform="translate(0, 84)">
+          <text x="0" y="16" font-family="'SF Mono', monospace" font-size="15" font-weight="700" fill="#7A5E0F">▸</text>
+          <text x="24" y="16" font-family="'SF Pro Display', system-ui, sans-serif" font-size="16" font-weight="500" fill="#2E2A26">
+            <tspan font-weight="700" fill="#141210">Infinite Compute Scaling:</tspan> Massive models execute in cloud without robot payload limits.
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+
+  <!-- ==================================================================== -->
+  <!-- CENTER COLUMN: BIDIRECTIONAL COMMUNICATION BRIDGE -->
+  <!-- ==================================================================== -->
+  <g id="centerBridge" transform="translate(980, 235)">
+    <g transform="translate(300, 500)">
+      
+      <!-- Top Stream: Server to Robot (Policies & Goals) -->
+      <g transform="translate(0, -96)">
+        <line x1="-250" y1="0" x2="250" y2="0" stroke="#7A5E0F" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="-250" y1="0" x2="250" y2="0" stroke="url(#flowRight)" stroke-width="10" stroke-opacity="0.3" stroke-linecap="round"/>
+        
+        <!-- Forward Arrow Head -->
+        <polygon points="254,0 224,-13 224,13" fill="#7A5E0F"/>
+
+        <!-- Flow Pulse Packets -->
+        <circle cx="-160" cy="0" r="5.5" fill="#D4AA3B" filter="url(#glowGold)"/>
+        <circle cx="-50" cy="0" r="6.5" fill="#D4AA3B" filter="url(#glowGold)"/>
+        <circle cx="60" cy="0" r="5.5" fill="#D4AA3B" filter="url(#glowGold)"/>
+        <circle cx="160" cy="0" r="6.5" fill="#D4AA3B" filter="url(#glowGold)"/>
+
+        <!-- Label Tag -->
+        <g transform="translate(0, -38)">
+          <rect x="-195" y="-16" width="390" height="32" rx="2" fill="#FFFFFF" stroke="#7A5E0F" stroke-opacity="0.5" stroke-width="1.5" filter="url(#cardShadow)"/>
+          <text x="0" y="5" font-family="'SF Mono', 'Space Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.16em" fill="#7A5E0F" text-anchor="middle">
+            VLA GOALS &amp; ACTION POLICIES →
+          </text>
+        </g>
+      </g>
+
+      <!-- Center Status Badge: Edge-Cloud Sync Engine -->
+      <g transform="translate(0, 0)">
+        <rect x="-180" y="-44" width="360" height="88" rx="3" fill="#FFFFFF" stroke="#141210" stroke-opacity="0.15" stroke-width="2" filter="url(#cardShadow)"/>
+        <rect x="-180" y="-44" width="360" height="3.5" fill="url(#goldGrad)"/>
+
+        <text x="0" y="-12" font-family="'SF Mono', 'Space Mono', monospace" font-size="10.5" font-weight="700" letter-spacing="0.25em" fill="#7A5E0F" text-anchor="middle">
+          BIDIRECTIONAL INTERCONNECT
+        </text>
+        <text x="0" y="15" font-family="'SF Pro Display', system-ui, sans-serif" font-size="19" font-weight="900" letter-spacing="0.04em" fill="#141210" text-anchor="middle">
+          REAL-TIME DUAL SYNC
+        </text>
+        <text x="0" y="32" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" letter-spacing="0.14em" fill="#5F584E" text-anchor="middle">
+          &lt; 15ms LATENCY // 500Hz TELEMETRY
+        </text>
+      </g>
+
+      <!-- Bottom Stream: Robot to Server (Telemetry & Perception) -->
+      <g transform="translate(0, 96)">
+        <line x1="250" y1="0" x2="-250" y2="0" stroke="#7A5E0F" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="250" y1="0" x2="-250" y2="0" stroke="url(#flowLeft)" stroke-width="10" stroke-opacity="0.3" stroke-linecap="round"/>
+
+        <!-- Reverse Arrow Head -->
+        <polygon points="-254,0 -224,-13 -224,13" fill="#7A5E0F"/>
+
+        <!-- Flow Pulse Packets -->
+        <circle cx="160" cy="0" r="5.5" fill="#7A5E0F" filter="url(#glowGold)"/>
+        <circle cx="50" cy="0" r="6.5" fill="#7A5E0F" filter="url(#glowGold)"/>
+        <circle cx="-60" cy="0" r="5.5" fill="#7A5E0F" filter="url(#glowGold)"/>
+        <circle cx="-160" cy="0" r="6.5" fill="#7A5E0F" filter="url(#glowGold)"/>
+
+        <!-- Label Tag -->
+        <g transform="translate(0, 38)">
+          <rect x="-195" y="-16" width="390" height="32" rx="2" fill="#FFFFFF" stroke="#7A5E0F" stroke-opacity="0.5" stroke-width="1.5" filter="url(#cardShadow)"/>
+          <text x="0" y="5" font-family="'SF Mono', 'Space Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.16em" fill="#7A5E0F" text-anchor="middle">
+            ← SENSORY PERCEPTION &amp; STATE VECTORS
+          </text>
+        </g>
+      </g>
+
+    </g>
+  </g>
+
+
+  <!-- ==================================================================== -->
+  <!-- RIGHT COLUMN: ROBOT (HUMANOID BIPEDAL ROBOT + EDGE ADAPTER) -->
+  <!-- ==================================================================== -->
+  <g id="rightColumn" transform="translate(1600, 235)">
+    <!-- Main Card Panel -->
+    <rect x="0" y="0" width="860" height="1065" rx="4" fill="url(#panelBg)" stroke="#141210" stroke-opacity="0.09" stroke-width="2" filter="url(#panelShadow)"/>
+    <rect x="0" y="0" width="860" height="4" fill="url(#goldBar)"/>
+
+    <!-- Panel Header -->
+    <g transform="translate(48, 44)">
+      <!-- Number Box -->
+      <rect x="0" y="0" width="42" height="24" rx="2" fill="#7A5E0F" fill-opacity="0.08" stroke="#7A5E0F" stroke-opacity="0.25" stroke-width="1"/>
+      <text x="21" y="16" font-family="'SF Mono', 'Space Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#7A5E0F" text-anchor="middle">02</text>
+
+      <!-- Main Title -->
+      <text x="0" y="62" font-family="'SF Pro Display', system-ui, sans-serif" font-size="44" font-weight="900" letter-spacing="0.02em" fill="#141210">
+        ROBOT
+      </text>
+      <!-- Subtitle Tag -->
+      <rect x="170" y="32" width="245" height="30" rx="2" fill="#141210" fill-opacity="0.04" stroke="#141210" stroke-opacity="0.08" stroke-width="1"/>
+      <text x="292" y="52" font-family="'SF Mono', 'Space Mono', monospace" font-size="10.5" font-weight="700" letter-spacing="0.16em" fill="#5F584E" text-anchor="middle">
+        HUMANOID EDGE PLATFORM
+      </text>
+    </g>
+
+    <!-- Edge Adapter Enclosure Container -->
+    <g id="edgeAdapterBox" transform="translate(48, 140)">
+      <rect x="0" y="0" width="764" height="540" rx="3" fill="url(#innerStageBg)" stroke="#7A5E0F" stroke-opacity="0.5" stroke-width="2"/>
+      <rect x="0" y="0" width="764" height="540" fill="url(#dotSubtle)"/>
+
+      <!-- Blueprint Technical Corner Brackets -->
+      <path d="M 0 32 L 0 0 L 32 0" fill="none" stroke="#7A5E0F" stroke-width="3"/>
+      <path d="M 732 0 L 764 0 L 764 32" fill="none" stroke="#7A5E0F" stroke-width="3"/>
+      <path d="M 0 508 L 0 540 L 32 540" fill="none" stroke="#7A5E0F" stroke-width="3"/>
+      <path d="M 732 540 L 764 540 L 764 508" fill="none" stroke="#7A5E0F" stroke-width="3"/>
+
+      <!-- Edge Adapter Top Banner -->
+      <g transform="translate(382, 36)">
+        <rect x="-170" y="-18" width="340" height="36" rx="3" fill="#FFFFFF" stroke="#7A5E0F" stroke-width="1.8" filter="url(#cardShadow)"/>
+        <circle cx="-142" cy="0" r="4.5" fill="#52C41A" filter="url(#glowGreen)"/>
+        <text x="0" y="6" font-family="'SF Mono', 'Space Mono', monospace" font-size="14.5" font-weight="700" letter-spacing="0.25em" fill="#7A5E0F" text-anchor="middle">
+          EDGE ADAPTER
+        </text>
+      </g>
+
+      <!-- ============================================================== -->
+      <!-- PROMINENT, SLEEK HUMANOID BIPEDAL ROBOT ARTWORK -->
+      <!-- ============================================================== -->
+      <g id="humanoidBipedalRobot" transform="translate(382, 68)" filter="url(#cardShadow)">
+        
+        <!-- Floor Shadows & Standing Grid -->
+        <ellipse cx="0" cy="420" rx="190" ry="18" fill="#141210" fill-opacity="0.12"/>
+        <ellipse cx="0" cy="420" rx="110" ry="9" fill="#141210" fill-opacity="0.22"/>
+        <line x1="-190" y1="420" x2="190" y2="420" stroke="#7A5E0F" stroke-opacity="0.35" stroke-width="1.5"/>
+        <line x1="-140" y1="426" x2="140" y2="426" stroke="#7A5E0F" stroke-opacity="0.18" stroke-width="1"/>
+
+        <!-- 1. HEAD AND OPTICAL SENSOR VISOR -->
+        <g id="headUnit" transform="translate(0, 18)">
+          <!-- Neck Pivot & Dual Actuators -->
+          <rect x="-15" y="38" width="30" height="20" rx="4" fill="#24201D" stroke="#443E38" stroke-width="1.5"/>
+          <circle cx="-7" cy="48" r="3.5" fill="#7A5E0F"/>
+          <circle cx="7" cy="48" r="3.5" fill="#7A5E0F"/>
+
+          <!-- Cranium Chassis -->
+          <path d="M -30 18 
+                   C -32 -14 -24 -32 0 -32 
+                   C 24 -32 32 -14 30 18 
+                   C 28 36 18 42 0 42 
+                   C -18 42 -28 36 -30 18 Z" 
+                fill="url(#robotDarkMetal)" stroke="#443E38" stroke-width="2"/>
+
+          <!-- Side Sensor Ear Pods -->
+          <rect x="-35" y="8" width="8" height="20" rx="2.5" fill="#181614" stroke="#7A5E0F" stroke-width="1.2"/>
+          <rect x="27" y="8" width="8" height="20" rx="2.5" fill="#181614" stroke="#7A5E0F" stroke-width="1.2"/>
+
+          <!-- Panoramic Optical Visor / LiDAR Strip -->
+          <path d="M -26 4 C -14 -4 14 -4 26 4 L 21 16 C 12 10 -12 10 -21 16 Z" fill="#0A0908" stroke="#7A5E0F" stroke-width="1.5"/>
+          <!-- Active Gold Sensor Strip Glow -->
+          <rect x="-19" y="6" width="38" height="6.5" rx="3" fill="#E5C058" filter="url(#glowGold)"/>
+          <circle cx="0" cy="9.2" r="3.5" fill="#FFFFFF"/>
+          
+          <!-- Top Telemetry Antennas -->
+          <line x1="-28" y1="-6" x2="-38" y2="-22" stroke="#7A5E0F" stroke-width="2"/>
+          <circle cx="-38" cy="-22" r="3" fill="#E5C058"/>
+          <line x1="28" y1="-6" x2="38" y2="-22" stroke="#7A5E0F" stroke-width="2"/>
+          <circle cx="38" cy="-22" r="3" fill="#E5C058"/>
+        </g>
+
+        <!-- 2. TORSO / CHEST WITH EDGE ADAPTER CORE -->
+        <g id="torsoUnit" transform="translate(0, 72)">
+          <!-- Core Chassis Frame -->
+          <rect x="-56" y="0" width="112" height="118" rx="12" fill="url(#robotDarkMetal)" stroke="#443E38" stroke-width="2.2"/>
+          
+          <!-- Ergonomic Chest Armor Plates -->
+          <path d="M -50 6 L -14 6 L -4 52 L -44 48 Z" fill="url(#robotPlateLight)" stroke="#5C544B" stroke-width="1.5"/>
+          <path d="M 50 6 L 14 6 L 4 52 L 44 48 Z" fill="url(#robotPlateLight)" stroke="#5C544B" stroke-width="1.5"/>
+          
+          <!-- StarForge Chest Reactor / Edge Compute Core -->
+          <rect x="-26" y="14" width="52" height="56" rx="6" fill="#100E0D" stroke="#7A5E0F" stroke-width="2"/>
+          <circle cx="0" cy="42" r="16" fill="#1E1B18" stroke="#D4AA3B" stroke-width="1.8"/>
+          <circle cx="0" cy="42" r="9" fill="#E5C058" filter="url(#glowGold)"/>
+          <circle cx="0" cy="42" r="4" fill="#FFFFFF"/>
+
+          <!-- Abdomen / Articulated Spinal Gyro Joints -->
+          <g transform="translate(0, 74)">
+            <rect x="-36" y="0" width="72" height="12" rx="3" fill="#282420" stroke="#443E38" stroke-width="1.2"/>
+            <rect x="-32" y="15" width="64" height="12" rx="3" fill="#282420" stroke="#443E38" stroke-width="1.2"/>
+            <rect x="-38" y="30" width="76" height="15" rx="3.5" fill="#1C1916" stroke="#7A5E0F" stroke-width="1.5"/>
+            <!-- 6-DOF Gyro Sensor Light -->
+            <circle cx="0" cy="37.5" r="4" fill="#52C41A" filter="url(#glowGreen)"/>
+          </g>
+        </g>
+
+        <!-- 3. PELVIS AND ROTARY HIP ACTUATORS -->
+        <g id="pelvisUnit" transform="translate(0, 190)">
+          <path d="M -52 0 L 52 0 L 38 32 L -38 32 Z" fill="url(#robotPlateLight)" stroke="#443E38" stroke-width="2"/>
+          
+          <!-- Left Hip Rotary Joint -->
+          <circle cx="-36" cy="22" r="17" fill="#1A1816" stroke="#7A5E0F" stroke-width="2.2"/>
+          <circle cx="-36" cy="22" r="7" fill="#443E38"/>
+          <circle cx="-36" cy="22" r="3" fill="#D4AA3B"/>
+
+          <!-- Right Hip Rotary Joint -->
+          <circle cx="36" cy="22" r="17" fill="#1A1816" stroke="#7A5E0F" stroke-width="2.2"/>
+          <circle cx="36" cy="22" r="7" fill="#443E38"/>
+          <circle cx="36" cy="22" r="3" fill="#D4AA3B"/>
+        </g>
+
+        <!-- 4. LEFT ARM AND DEXTEROUS ROBOTIC HAND -->
+        <g id="leftArmUnit" transform="translate(-58, 80)">
+          <!-- Shoulder Ball & Actuator -->
+          <circle cx="0" cy="0" r="19" fill="#1A1816" stroke="#7A5E0F" stroke-width="2.2"/>
+          <circle cx="0" cy="0" r="7" fill="#D4AA3B"/>
+
+          <!-- Upper Arm Casing -->
+          <rect x="-13" y="14" width="26" height="50" rx="6" fill="url(#robotPlateLight)" stroke="#443E38" stroke-width="1.5"/>
+          <line x1="0" y1="18" x2="0" y2="58" stroke="#7A5E0F" stroke-width="2"/>
+
+          <!-- Elbow Actuator Joint -->
+          <circle cx="0" cy="70" r="13" fill="#1A1816" stroke="#443E38" stroke-width="2"/>
+          <circle cx="0" cy="70" r="5" fill="#7A5E0F"/>
+
+          <!-- Forearm & Motor Drive -->
+          <path d="M -12 80 L 12 80 L 9 126 L -9 126 Z" fill="url(#robotPlateLight)" stroke="#443E38" stroke-width="1.5"/>
+          <line x1="0" y1="84" x2="0" y2="122" stroke="#7A5E0F" stroke-width="1.2"/>
+
+          <!-- Wrist Rotary Collar -->
+          <rect x="-10" y="128" width="20" height="9" rx="2.5" fill="#24201D" stroke="#7A5E0F" stroke-width="1.5"/>
+          
+          <!-- Dexterous Multi-Finger Hand (5-Finger Articulated) -->
+          <g transform="translate(0, 137)">
+            <!-- Palm Base -->
+            <path d="M -9 0 L 9 0 L 8 12 L -8 12 Z" fill="#1C1A18" stroke="#443E38" stroke-width="1.2"/>
+            <!-- Thumb -->
+            <line x1="-8" y1="4" x2="-16" y2="17" stroke="#7A5E0F" stroke-width="3" stroke-linecap="round"/>
+            <!-- Index -->
+            <line x1="-5" y1="12" x2="-7" y2="30" stroke="#544E46" stroke-width="3" stroke-linecap="round"/>
+            <!-- Middle -->
+            <line x1="-1" y1="12" x2="-1" y2="34" stroke="#544E46" stroke-width="3" stroke-linecap="round"/>
+            <!-- Ring -->
+            <line x1="3" y1="12" x2="4" y2="31" stroke="#544E46" stroke-width="3" stroke-linecap="round"/>
+            <!-- Pinky -->
+            <line x1="7" y1="12" x2="9" y2="26" stroke="#544E46" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+        </g>
+
+        <!-- 5. RIGHT ARM AND DEXTEROUS ROBOTIC HAND -->
+        <g id="rightArmUnit" transform="translate(58, 80)">
+          <!-- Shoulder Ball & Actuator -->
+          <circle cx="0" cy="0" r="19" fill="#1A1816" stroke="#7A5E0F" stroke-width="2.2"/>
+          <circle cx="0" cy="0" r="7" fill="#D4AA3B"/>
+
+          <!-- Upper Arm Casing -->
+          <rect x="-13" y="14" width="26" height="50" rx="6" fill="url(#robotPlateLight)" stroke="#443E38" stroke-width="1.5"/>
+          <line x1="0" y1="18" x2="0" y2="58" stroke="#7A5E0F" stroke-width="2"/>
+
+          <!-- Elbow Actuator Joint -->
+          <circle cx="0" cy="70" r="13" fill="#1A1816" stroke="#443E38" stroke-width="2"/>
+          <circle cx="0" cy="70" r="5" fill="#7A5E0F"/>
+
+          <!-- Forearm & Motor Drive -->
+          <path d="M -12 80 L 12 80 L 9 126 L -9 126 Z" fill="url(#robotPlateLight)" stroke="#443E38" stroke-width="1.5"/>
+          <line x1="0" y1="84" x2="0" y2="122" stroke="#7A5E0F" stroke-width="1.2"/>
+
+          <!-- Wrist Rotary Collar -->
+          <rect x="-10" y="128" width="20" height="9" rx="2.5" fill="#24201D" stroke="#7A5E0F" stroke-width="1.5"/>
+          
+          <!-- Dexterous Multi-Finger Hand (5-Finger Articulated) -->
+          <g transform="translate(0, 137)">
+            <!-- Palm Base -->
+            <path d="M -9 0 L 9 0 L 8 12 L -8 12 Z" fill="#1C1A18" stroke="#443E38" stroke-width="1.2"/>
+            <!-- Thumb -->
+            <line x1="8" y1="4" x2="16" y2="17" stroke="#7A5E0F" stroke-width="3" stroke-linecap="round"/>
+            <!-- Index -->
+            <line x1="5" y1="12" x2="7" y2="30" stroke="#544E46" stroke-width="3" stroke-linecap="round"/>
+            <!-- Middle -->
+            <line x1="1" y1="12" x2="1" y2="34" stroke="#544E46" stroke-width="3" stroke-linecap="round"/>
+            <!-- Ring -->
+            <line x1="-3" y1="12" x2="-4" y2="31" stroke="#544E46" stroke-width="3" stroke-linecap="round"/>
+            <!-- Pinky -->
+            <line x1="-7" y1="12" x2="-9" y2="26" stroke="#544E46" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+        </g>
+
+        <!-- 6. LEFT BIPEDAL LEG -->
+        <g id="leftBipedalLeg" transform="translate(-36, 218)">
+          <!-- Upper Thigh Armor -->
+          <path d="M -16 4 L 16 4 L 12 80 L -12 80 Z" fill="url(#robotPlateLight)" stroke="#443E38" stroke-width="2"/>
+          <line x1="0" y1="8" x2="0" y2="76" stroke="#7A5E0F" stroke-width="2"/>
+
+          <!-- Knee Rotary Joint & Linear Actuator -->
+          <g transform="translate(0, 88)">
+            <circle cx="0" cy="0" r="16" fill="#1A1816" stroke="#7A5E0F" stroke-width="2.2"/>
+            <circle cx="0" cy="0" r="6" fill="#D4AA3B"/>
+          </g>
+
+          <!-- Lower Leg / Shin Plate & Actuator Housing -->
+          <g transform="translate(0, 102)">
+            <path d="M -13 4 L 13 4 L 9 104 L -9 104 Z" fill="url(#robotDarkMetal)" stroke="#443E38" stroke-width="2"/>
+            <rect x="-8" y="14" width="16" height="72" rx="3.5" fill="#322E28" stroke="#5C544B" stroke-width="1.5"/>
+            <line x1="0" y1="18" x2="0" y2="82" stroke="#7A5E0F" stroke-width="1.5"/>
+          </g>
+
+          <!-- Ankle 2-DOF Joint & Bipedal Foot -->
+          <g transform="translate(0, 210)">
+            <circle cx="0" cy="0" r="10" fill="#1A1816" stroke="#7A5E0F" stroke-width="2"/>
+            <!-- Articulated Bipedal Foot Frame -->
+            <path d="M -18 6 L 18 6 L 25 28 L -25 28 Z" fill="url(#robotPlateLight)" stroke="#443E38" stroke-width="2"/>
+            <rect x="-25" y="28" width="50" height="6" rx="2" fill="#141210" stroke="#7A5E0F" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- 7. RIGHT BIPEDAL LEG -->
+        <g id="rightBipedalLeg" transform="translate(36, 218)">
+          <!-- Upper Thigh Armor -->
+          <path d="M -16 4 L 16 4 L 12 80 L -12 80 Z" fill="url(#robotPlateLight)" stroke="#443E38" stroke-width="2"/>
+          <line x1="0" y1="8" x2="0" y2="76" stroke="#7A5E0F" stroke-width="2"/>
+
+          <!-- Knee Rotary Joint & Linear Actuator -->
+          <g transform="translate(0, 88)">
+            <circle cx="0" cy="0" r="16" fill="#1A1816" stroke="#7A5E0F" stroke-width="2.2"/>
+            <circle cx="0" cy="0" r="6" fill="#D4AA3B"/>
+          </g>
+
+          <!-- Lower Leg / Shin Plate & Actuator Housing -->
+          <g transform="translate(0, 102)">
+            <path d="M -13 4 L 13 4 L 9 104 L -9 104 Z" fill="url(#robotDarkMetal)" stroke="#443E38" stroke-width="2"/>
+            <rect x="-8" y="14" width="16" height="72" rx="3.5" fill="#322E28" stroke="#5C544B" stroke-width="1.5"/>
+            <line x1="0" y1="18" x2="0" y2="82" stroke="#7A5E0F" stroke-width="1.5"/>
+          </g>
+
+          <!-- Ankle 2-DOF Joint & Bipedal Foot -->
+          <g transform="translate(0, 210)">
+            <circle cx="0" cy="0" r="10" fill="#1A1816" stroke="#7A5E0F" stroke-width="2"/>
+            <!-- Articulated Bipedal Foot Frame -->
+            <path d="M -18 6 L 18 6 L 25 28 L -25 28 Z" fill="url(#robotPlateLight)" stroke="#443E38" stroke-width="2"/>
+            <rect x="-25" y="28" width="50" height="6" rx="2" fill="#141210" stroke="#7A5E0F" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- Technical Annotation Callouts -->
+        <g transform="translate(170, 95)">
+          <line x1="0" y1="0" x2="40" y2="0" stroke="#7A5E0F" stroke-width="2"/>
+          <line x1="40" y1="0" x2="56" y2="-20" stroke="#7A5E0F" stroke-width="2"/>
+          <text x="64" y="-16" font-family="'SF Mono', 'Space Mono', monospace" font-size="10.5" font-weight="700" fill="#7A5E0F" letter-spacing="0.12em">EMBEDDED NPU ADAPTER</text>
+        </g>
+        <g transform="translate(-170, 300)">
+          <line x1="0" y1="0" x2="-40" y2="0" stroke="#7A5E0F" stroke-width="2"/>
+          <line x1="-40" y1="0" x2="-56" y2="20" stroke="#7A5E0F" stroke-width="2"/>
+          <text x="-64" y="25" font-family="'SF Mono', 'Space Mono', monospace" font-size="10.5" font-weight="700" fill="#7A5E0F" letter-spacing="0.12em" text-anchor="end">500Hz MOTOR BUS</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Bottom Model Card: Small VLA Models -->
+    <g id="smallModelCard" transform="translate(48, 710)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="764" height="305" rx="3" fill="#FFFFFF" stroke="#141210" stroke-opacity="0.1" stroke-width="2"/>
+      <rect x="0" y="0" width="764" height="3.5" fill="url(#goldBar)"/>
+
+      <g transform="translate(36, 36)">
+        <text x="0" y="0" font-family="'SF Mono', 'Space Mono', monospace" font-size="11.5" font-weight="700" letter-spacing="0.25em" fill="#7A5E0F">
+          ON-DEVICE RUNTIME
+        </text>
+
+        <!-- Large Title -->
+        <text x="0" y="44" font-family="'SF Pro Display', system-ui, sans-serif" font-size="40" font-weight="900" letter-spacing="-0.01em" fill="#141210">
+          Small VLA Models
+        </text>
+
+        <!-- Stacked Silicon Wafer Cards Graphic -->
+        <g transform="translate(510, -6)">
+          <!-- Card 3 -->
+          <rect x="28" y="0" width="150" height="46" rx="3" fill="#322E28" stroke="#7A5E0F" stroke-width="1.2"/>
+          <!-- Card 2 -->
+          <rect x="14" y="8" width="150" height="46" rx="3" fill="#24211D" stroke="#A27F20" stroke-width="1.5"/>
+          <!-- Card 1 (Front) -->
+          <rect x="0" y="16" width="150" height="46" rx="3" fill="#141210" stroke="#D4AA3B" stroke-width="2" filter="url(#cardShadow)"/>
+          <circle cx="18" cy="39" r="4.5" fill="#52C41A" filter="url(#glowGreen)"/>
+          <text x="36" y="43" font-family="'SF Mono', 'Space Mono', monospace" font-size="11" font-weight="700" fill="#F0D478" letter-spacing="0.12em">
+            LOCAL VLA
+          </text>
+        </g>
+      </g>
+
+      <!-- Divider -->
+      <line x1="36" y1="120" x2="728" y2="120" stroke="#141210" stroke-opacity="0.08" stroke-width="1"/>
+
+      <!-- Bullets matching the StarForge slide style -->
+      <g transform="translate(36, 150)">
+        <g transform="translate(0, 0)">
+          <text x="0" y="16" font-family="'SF Mono', monospace" font-size="15" font-weight="700" fill="#7A5E0F">▸</text>
+          <text x="24" y="16" font-family="'SF Pro Display', system-ui, sans-serif" font-size="16" font-weight="500" fill="#2E2A26">
+            <tspan font-weight="700" fill="#141210">Sub-10ms Control Loop:</tspan> Ultra-fast reactive policies and dynamic balance stabilization.
+          </text>
+        </g>
+        <g transform="translate(0, 42)">
+          <text x="0" y="16" font-family="'SF Mono', monospace" font-size="15" font-weight="700" fill="#7A5E0F">▸</text>
+          <text x="24" y="16" font-family="'SF Pro Display', system-ui, sans-serif" font-size="16" font-weight="500" fill="#2E2A26">
+            <tspan font-weight="700" fill="#141210">Specialized Distilled Policies:</tspan> Lightweight weights tuned for dextrous hands &amp; gait.
+          </text>
+        </g>
+        <g transform="translate(0, 84)">
+          <text x="0" y="16" font-family="'SF Mono', monospace" font-size="15" font-weight="700" fill="#7A5E0F">▸</text>
+          <text x="24" y="16" font-family="'SF Pro Display', system-ui, sans-serif" font-size="16" font-weight="500" fill="#2E2A26">
+            <tspan font-weight="700" fill="#141210">Autonomous Edge Resiliency:</tspan> Continuous physical safety even during network disconnects.
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+
+  <!-- ==================================================================== -->
+  <!-- SLIDE FOOTER -->
+  <!-- ==================================================================== -->
+  <g id="slideFooter" transform="translate(100, 1360)">
+    <line x1="0" y1="0" x2="2360" y2="0" stroke="#141210" stroke-opacity="0.08" stroke-width="1.5"/>
+    
+    <!-- Left Logo Wordmark -->
+    <text x="0" y="32" font-family="'SF Pro Display', system-ui, sans-serif" font-size="18" font-weight="900" letter-spacing="0.25em" fill="#141210">
+      STARFORGE ROBOTICS
+    </text>
+
+    <!-- Center Architecture Spec -->
+    <text x="1180" y="30" font-family="'SF Mono', 'Space Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.22em" fill="#7A5E0F" text-anchor="middle">
+      COMPUTE LAYER ARCHITECTURE // DISTRIBUTED VLA INFERENCE
+    </text>
+
+    <!-- Right Web Link -->
+    <text x="2360" y="30" font-family="'SF Mono', 'Space Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#5F584E" text-anchor="end">
+      starforgerobotics.com
+    </text>
+  </g>
+
+</svg>

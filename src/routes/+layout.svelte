@@ -12,6 +12,10 @@
 		page.url.pathname !== '/' ? page.url.pathname.replace(/\/$/, '') : page.url.pathname
 	);
 
+	// Every deck variant is a full-bleed slide stage, so it opts out of the site
+	// chrome the same way the original deck does.
+	const isDeck = $derived(normalizedPath === '/deck' || normalizedPath === '/deck-compute');
+
 	const bodyClass = $derived(normalizedPath === '/buildo' ? 'page-buildo' : '');
 	const rdkNotification = $derived(
 		normalizedPath === '/buildo' ? 'designed and assembled in New York City' : null
@@ -34,7 +38,7 @@
 
 <Analytics />
 
-{#if normalizedPath !== '/deck'}
+{#if !isDeck}
 	<SiteNav pathname={page.url.pathname} notification={rdkNotification} />
 {/if}
 
@@ -42,6 +46,6 @@
 	{@render children()}
 </main>
 
-{#if normalizedPath !== '/deck'}
+{#if !isDeck}
 	<SiteFooter />
 {/if}
