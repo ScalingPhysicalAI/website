@@ -20,19 +20,27 @@
 		x?: string;
 	};
 
-	const founder: Member = {
-		initials: 'VS',
-		name: 'Vipul Saini',
-		role: 'Founder · Chief Engineer',
-		bio: 'Founded Cypherock and scaled the safest crypto hardware wallet to $600M AUM - <strong>hardware shipped at scale</strong>. He has already taken a hardware product from prototype to global production once.',
-		uni: '/assets/uni/vipul.png',
-		uniAlt: 'Delhi Technological University',
-		linkedin: 'https://www.linkedin.com/in/vipul-saini-59a24156/',
-		x: 'https://x.com/vipulsaini594'
-	};
-
-	// Split rather than one array so the page reads 1 / 3 / 2 down the page.
-	const rowOfThree: Member[] = [
+	// Same order as the deck's team slide: three across, two rows.
+	const members: Member[] = [
+		{
+			initials: 'VS',
+			name: 'Vipul Saini',
+			role: 'Founder · Chief Engineer',
+			bio: 'Founded Cypherock and scaled the safest crypto hardware wallet to $600M AUM - <strong>hardware shipped at scale</strong>. He has already taken a hardware product from prototype to global production once.',
+			uni: '/assets/uni/vipul.png',
+			uniAlt: 'Delhi Technological University',
+			linkedin: 'https://www.linkedin.com/in/vipul-saini-59a24156/',
+			x: 'https://x.com/vipulsaini594'
+		},
+		{
+			initials: 'CM',
+			name: 'Chirag Madaan',
+			role: 'Senior Machine Learning Engineer',
+			bio: 'Shipped <strong>production grade machine learning</strong> capabilities at PayPal and built the cryptography securing 10,000+ Cypherock devices. He turns <strong>AI research into models</strong> that run in the real world.',
+			uni: '/assets/uni/chiragm.png',
+			uniAlt: 'Vellore Institute of Technology',
+			linkedin: 'https://www.linkedin.com/in/appleswiggy/'
+		},
 		{
 			initials: 'RJ',
 			name: 'Rakshit Jain',
@@ -55,22 +63,10 @@
 			initials: 'AS',
 			name: 'Anay Shiledar',
 			role: 'Electrical Engineer',
-			bio: "Builds implantable-electronics pipelines at UC Irvine's Neuroelectronics Research Lab and race-car firmware for FSAE Electric. <strong>Embedded software</strong>, firmware and hardware integration are his craft.",
+			bio: 'Designs implantable neural-interface electronics and firmware at the Neuroelectronics Research Lab. On Buildo he handles <strong>embedded software</strong>, board bring-up and hardware integration.',
 			uni: '/assets/uni/anay.png',
 			uniAlt: 'University of California, Irvine',
 			linkedin: 'https://www.linkedin.com/in/anay-shiledar-629036209/'
-		}
-	];
-
-	const rowOfTwo: Member[] = [
-		{
-			initials: 'CS',
-			name: 'Celia Sherman',
-			role: 'Aerospace Engineer',
-			bio: "An <strong>aerospace engineer</strong> from the University of Miami working in space robotics, thermodynamics and composite manufacturing. She keeps Buildo's structures light, strong and cheap to build.",
-			uni: '/assets/uni/celia.png',
-			uniAlt: 'University of Miami',
-			linkedin: 'https://www.linkedin.com/in/celia-sherman-a85967325/'
 		},
 		{
 			initials: 'CS',
@@ -99,35 +95,9 @@
 	     document outline and screen readers. -->
 	<h1 class="tm-sr-title">Team</h1>
 
-	<article class="tm-founder reveal">
-		<img class="tm-uni" src={founder.uni} alt={founder.uniAlt} />
-		<div class="tm-avatar tm-avatar--lg" aria-hidden="true">{founder.initials}</div>
-		<div class="tm-founder-text">
-			<h2 class="tm-name tm-name--lg">
-				<LinkedInName name={founder.name} linkedin={founder.linkedin} x={founder.x} />
-			</h2>
-			<div class="tm-role">{founder.role}</div>
-			<p class="tm-bio">{@html founder.bio}</p>
-		</div>
-	</article>
-
-	<div class="tm-row tm-row--three">
-		{#each rowOfThree as member, i (member.name)}
-			<article class="tm-card reveal" style="transition-delay:{0.06 * i}s">
-				<img class="tm-uni" src={member.uni} alt={member.uniAlt} />
-				<div class="tm-avatar" aria-hidden="true">{member.initials}</div>
-				<h2 class="tm-name">
-					<LinkedInName name={member.name} linkedin={member.linkedin} x={member.x} />
-				</h2>
-				<div class="tm-role">{member.role}</div>
-				<p class="tm-bio">{@html member.bio}</p>
-			</article>
-		{/each}
-	</div>
-
-	<div class="tm-row tm-row--two">
-		{#each rowOfTwo as member, i (member.name)}
-			<article class="tm-card reveal" style="transition-delay:{0.06 * i}s">
+	<div class="tm-grid">
+		{#each members as member, i (member.name)}
+			<article class="tm-card reveal" style="transition-delay:{0.06 * (i % 3)}s">
 				<img class="tm-uni" src={member.uni} alt={member.uniAlt} />
 				<div class="tm-avatar" aria-hidden="true">{member.initials}</div>
 				<h2 class="tm-name">
@@ -200,48 +170,18 @@
 		padding-top: calc(var(--header-height, 96px) + 56px);
 	}
 
-	/* ── FOUNDER ── */
-	.tm-founder {
-		position: relative;
-		display: flex;
-		align-items: flex-start;
-		gap: 32px;
-		padding: 40px;
-		padding-right: 160px;
-		border: 2px solid var(--border);
-		background: rgba(255, 255, 255, 0.72);
-	}
-
-	.tm-founder-text {
-		flex: 1;
-		min-width: 0;
-	}
-
-	/* ── ROWS ── */
-	.tm-row {
+	/* Three across, two rows - the same arrangement as the deck's team slide. */
+	.tm-grid {
 		display: grid;
-		gap: 24px;
-		margin-top: 24px;
-	}
-
-	.tm-row--three {
 		grid-template-columns: repeat(3, 1fr);
-	}
-
-	/* Two cards held to the width of two of the three columns above, centred,
-	   so the last row lines up with the grid instead of stretching. */
-	.tm-row--two {
-		grid-template-columns: repeat(2, 1fr);
-		max-width: calc((100% - 48px) / 3 * 2 + 24px);
-		margin-left: auto;
-		margin-right: auto;
+		gap: 24px;
 	}
 
 	.tm-card {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		padding: 32px 28px;
+		padding: 26px 24px;
 		border: 2px solid var(--border);
 		background: rgba(255, 255, 255, 0.72);
 		transition:
@@ -258,20 +198,13 @@
 	   common height and left to find their own width inside it. */
 	.tm-uni {
 		position: absolute;
-		top: 24px;
-		right: 24px;
-		height: 46px;
+		top: 20px;
+		right: 20px;
+		height: 40px;
 		width: auto;
-		max-width: 110px;
+		max-width: 96px;
 		object-fit: contain;
 		object-position: right top;
-	}
-
-	.tm-founder .tm-uni {
-		top: 32px;
-		right: 32px;
-		height: 62px;
-		max-width: 150px;
 	}
 
 	/* ── AVATAR ── */
@@ -280,36 +213,25 @@
 		align-items: center;
 		justify-content: center;
 		flex-shrink: 0;
-		width: 60px;
-		height: 60px;
-		margin-bottom: 22px;
+		width: 52px;
+		height: 52px;
+		margin-bottom: 18px;
 		border: 2px solid var(--border-strong);
 		border-radius: 50%;
 		font-family: 'Space Mono', monospace;
-		font-size: 15px;
+		font-size: 14px;
 		font-weight: 700;
 		letter-spacing: 0.08em;
 		color: var(--accent);
 	}
 
-	.tm-avatar--lg {
-		width: 84px;
-		height: 84px;
-		margin-bottom: 0;
-		font-size: 20px;
-	}
-
 	/* ── TEXT ── */
 	.tm-name {
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: 600;
 		line-height: 1.2;
 		color: var(--ink);
-		margin-bottom: 8px;
-	}
-
-	.tm-name--lg {
-		font-size: 28px;
+		margin-bottom: 7px;
 	}
 
 	.tm-role {
@@ -319,13 +241,13 @@
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: var(--accent);
-		margin-bottom: 16px;
+		margin-bottom: 14px;
 	}
 
 	.tm-bio {
-		font-size: 18px;
+		font-size: 16px;
 		font-weight: 500;
-		line-height: 1.65;
+		line-height: 1.6;
 		color: rgba(20, 18, 16, 0.82);
 	}
 
@@ -357,29 +279,13 @@
 			padding-top: calc(var(--header-height, 96px) + 32px);
 		}
 
-		.tm-founder {
-			flex-direction: column;
-			gap: 24px;
-			padding: 32px 24px;
-		}
-
-		.tm-founder .tm-uni {
-			top: 24px;
-			right: 24px;
-			height: 46px;
-			max-width: 110px;
-		}
-
-		.tm-row--three,
-		.tm-row--two {
+		.tm-grid {
 			grid-template-columns: repeat(2, 1fr);
-			max-width: none;
 		}
 	}
 
 	@media (max-width: 560px) {
-		.tm-row--three,
-		.tm-row--two {
+		.tm-grid {
 			grid-template-columns: 1fr;
 		}
 	}

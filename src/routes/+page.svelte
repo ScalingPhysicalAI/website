@@ -79,7 +79,7 @@
 		</h1>
 		<p class="hero-sub">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-			<a class="hero-sub-link" href="#{parts[0].id}">Buildo</a> is the most capable and affordable
+			<a class="hero-sub-link" href="#{parts[0].id}">Buildo</a> is a uniquely capable and affordable
 			robot made possible by our AI compute layer.
 		</p>
 		<div class="hero-ctas">
