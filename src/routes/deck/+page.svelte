@@ -252,7 +252,7 @@
 						target="_blank"
 						rel="noopener noreferrer"
 						>Buildo<span class="cover-sub-arrow" aria-hidden="true">↗</span></a
-					> is the most capable and affordable robot made possible by our AI compute layer.
+					> is a uniquely capable and affordable robot made possible by our AI compute layer.
 				</p>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a
@@ -271,32 +271,44 @@
 				Businesses and developers<br />
 				<span class="hl-gold">love our robots</span>
 			</h2>
-			<div class="comp-list anim-in anim-d3">
-				<div class="comp-item">
-					<div class="comp-num">01</div>
-					<div class="comp-content">
-						<div class="comp-title">
-							<a
-								href="https://zooty.mazoutelectric.com/"
-								target="_blank"
-								rel="noopener noreferrer">Mazout Electric</a
-							>
+			<div class="traction-layout anim-in anim-d3">
+				<div class="comp-list">
+					<div class="comp-item">
+						<div class="comp-num">01</div>
+						<div class="comp-content">
+							<div class="comp-title">
+								<a
+									href="https://zooty.mazoutelectric.com/"
+									target="_blank"
+									rel="noopener noreferrer">Mazout Electric</a
+								>
+							</div>
+							<p class="comp-body">
+								Building <strong>lithium ion batteries using robots</strong> - deploying StarForge humanoids
+								for real industrial manufacturing tasks.
+							</p>
 						</div>
-						<p class="comp-body">
-							Building <strong>lithium ion batteries using robots</strong> - deploying StarForge humanoids
-							for real industrial manufacturing tasks.
-						</p>
+					</div>
+					<div class="comp-item">
+						<div class="comp-num">02</div>
+						<div class="comp-content">
+							<div class="comp-title">Developer Ecosystem</div>
+							<p class="comp-body">
+								<strong>50+ developers</strong> are already using our compute platform - early signal of
+								the community-driven flywheel taking hold. Researchers and developers from
+								<strong>NYU, UC San Diego</strong> and more.
+							</p>
+						</div>
 					</div>
 				</div>
-				<div class="comp-item">
-					<div class="comp-num">02</div>
-					<div class="comp-content">
-						<div class="comp-title">Developer Ecosystem</div>
-						<p class="comp-body">
-							<strong>50+ developers</strong> are already using our compute platform - early signal of
-							the community-driven flywheel taking hold.
-						</p>
-					</div>
+				<figure class="traction-figure">
+					<img src="/assets/traction-bench.jpg" alt="Starforge arm on the bench beside test boards" />
+				</figure>
+				<div class="comp-unis">
+					<img class="uni-nyu" src="/assets/uni/nyu.png" alt="New York University" />
+					<img src="/assets/uni/ucsd.png" alt="University of California, San Diego" />
+					<img src="/assets/uni/uci.png" alt="University of California, Irvine" />
+					<img class="uni-purdue" src="/assets/uni/purdue.png" alt="Purdue University" />
 				</div>
 			</div>
 		</section>
@@ -364,7 +376,7 @@
 							<tr>
 								<th scope="row">Large VLA on Server</th>
 								<td>Low</td>
-								<td>High (&gt;20s)</td>
+								<td>High (&gt;2s)</td>
 							</tr>
 							<tr>
 								<th scope="row">Large VLA on Robot</th>
@@ -374,10 +386,25 @@
 							<tr class="approach-row-ours">
 								<th scope="row">Buildo's AI Model</th>
 								<td>Low</td>
-								<td>Low (&lt;600ms)</td>
+								<td>Low (~400ms)</td>
 							</tr>
 						</tbody>
 					</table>
+					<div class="demo-row">
+						<a
+							class="demo-btn"
+							href="https://www.youtube.com/watch?v=37OvBLDqzmw"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Demo <span class="demo-btn-arrow" aria-hidden="true">↗</span>
+						</a>
+						<p class="demo-note">
+							Ran an <strong>8.3B parameter model</strong> on a cloud server with a 76M parameter edge
+							adapter on an STM32 MP2, producing valid action chunks at
+							<strong>~400ms latency</strong>.
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -394,7 +421,7 @@
 					<div class="why-card-line"></div>
 					<div class="why-card-num">01</div>
 					<p class="why-card-body">
-						<strong>Buildo</strong> is designed for almost all
+						<strong>Buildo</strong> is designed for most
 						<strong>real-world use cases</strong> today.
 					</p>
 
@@ -434,6 +461,30 @@
 						<strong>made in the United States</strong>. This gives Starforge a clear advantage after
 						the latest FCC ban on mobile robots.
 					</p>
+					<table class="bom-table anim-in anim-d3">
+						<tbody>
+							<tr class="bom-row-key">
+								<th scope="row">Actuators + hands</th>
+								<td>80%</td>
+							</tr>
+							<tr>
+								<th scope="row">On board compute</th>
+								<td>8%</td>
+							</tr>
+							<tr>
+								<th scope="row">Structure</th>
+								<td>6%</td>
+							</tr>
+							<tr>
+								<th scope="row">Sensors</th>
+								<td>3%</td>
+							</tr>
+							<tr>
+								<th scope="row">Others</th>
+								<td>3%</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 				<div class="critical-photos anim-in anim-d3">
 					<figure class="critical-shot">
@@ -457,8 +508,8 @@
 				<div class="infra-copy">
 					<div class="section-label anim-in anim-d1">Platform</div>
 					<h2 class="headline anim-in anim-d2">
-						StarForge<br />
-						<span class="hl-gold">compute layer</span>
+						Compute Layer provides the<br />
+						<span class="hl-gold">API for Intelligence</span>
 					</h2>
 				</div>
 				<div class="infra-body">
@@ -473,8 +524,8 @@
 						<div class="solution-card">
 							<div class="solution-card-num">Compute Layer</div>
 							<p>
-								<strong>Train and host robot models</strong> for inference - from any size model to
-								production deployment.
+								<strong>Host robot models</strong> for inference - from any size model to production
+								deployment.
 							</p>
 						</div>
 					</div>
@@ -518,15 +569,15 @@
 						<div class="rev-step">
 							<div class="rev-step-head">
 								<span class="rev-step-num">02</span>
-								<span class="rev-step-name">Sell compute</span>
+								<span class="rev-step-name">Sell Intelligence API</span>
 								<span class="rev-step-val">($0.20 in / $4 out per M)</span>
 							</div>
 							<p>
 								Training, inference and hosting at <strong>$0.20 per million input</strong> and
-								<strong>$4 per million output</strong>. Demand runs from 25T tokens in 2026 to 2
+								<strong>$4 per million output</strong>. Demand runs from 2.5T tokens in 2026 to 2
 								quadrillion in 2028.<a
 									class="citation"
-									href="https://x.com/a16z/status/2091200032162857328/photo/1"
+									href="https://x.com/a16z/status/2091200032162857328"
 									target="_blank"
 									rel="noopener noreferrer">[2]</a
 								>
@@ -547,10 +598,10 @@
 							<tbody>
 								<tr>
 									<th scope="row">2026</th>
-									<td>1,000</td>
-									<td>25T</td>
-									<td>$10M</td>
-									<td>$14.5M</td>
+									<td>100</td>
+									<td>2.5T</td>
+									<td>$1M</td>
+									<td>$1.45M</td>
 								</tr>
 								<tr>
 									<th scope="row">2027</th>
@@ -600,8 +651,9 @@
 									>
 								</div>
 								<p class="comp-body">
-									<strong>Costly</strong> - high barrier to entry for most researchers and developers,
-									limiting community growth and data collection scale.
+									Their robots cost <strong>$20K</strong> which prices out many researchers and
+									developers. Bipedal robots are still considered
+									<strong>unsafe for home deployment</strong>.
 								</p>
 							</div>
 						</div>
@@ -609,12 +661,27 @@
 							<div class="comp-num">02</div>
 							<div class="comp-content">
 								<div class="comp-title">
+									<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
+										>Fauna</a
+									>
+								</div>
+								<p class="comp-body">
+									<strong>Costly ($50K)</strong> - high barrier to entry for most researchers and
+									developers, limiting community growth and data collection scale.
+								</p>
+							</div>
+						</div>
+						<div class="comp-item">
+							<div class="comp-num">03</div>
+							<div class="comp-content">
+								<div class="comp-title">
 									<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer">Lumi</a>
 									and similar
 								</div>
 								<p class="comp-body">
-									Companies using Chinese robots as a wrapper will face
-									<strong>high costs and scalability issues</strong> due to FCC regulation.
+									Lumi robots cost <strong>$40K</strong>. Additionally, companies using Chinese robots
+									as a wrapper will face <strong>high costs and scalability issues</strong> due to FCC
+									regulation.
 								</p>
 							</div>
 						</div>
@@ -694,6 +761,22 @@
 					</div>
 				</div>
 				<div class="team-card">
+					<img class="team-uni" src="/assets/uni/chiragm.png" alt="Vellore Institute of Technology" />
+					<div class="team-initials">CM</div>
+					<div class="team-name">
+						<LinkedInName
+							name="Chirag Madaan"
+							linkedin="https://www.linkedin.com/in/appleswiggy/"
+						/>
+					</div>
+					<div class="team-role">Senior Machine Learning Engineer</div>
+					<div class="team-bio">
+						Shipped <strong>production grade machine learning</strong> capabilities at PayPal and
+						built the cryptography securing 10,000+ Cypherock devices. He turns
+						<strong>AI research into models</strong> that run in the real world.
+					</div>
+				</div>
+				<div class="team-card">
 					<img class="team-uni" src="/assets/uni/rakshit.png" alt="Manipal Institute of Technology" />
 					<div class="team-initials">RJ</div>
 					<div class="team-name">
@@ -736,25 +819,9 @@
 					</div>
 					<div class="team-role">Electrical Engineer</div>
 					<div class="team-bio">
-						Builds implantable-electronics pipelines at UC Irvine's Neuroelectronics Research Lab and
-						race-car firmware for FSAE Electric. <strong>Embedded software</strong>, firmware and
-						hardware integration are his craft.
-					</div>
-				</div>
-				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/celia.png" alt="University of Miami" />
-					<div class="team-initials">CE</div>
-					<div class="team-name">
-						<LinkedInName
-							name="Celia Sherman"
-							linkedin="https://www.linkedin.com/in/celia-sherman-a85967325/"
-						/>
-					</div>
-					<div class="team-role">Aerospace Engineer</div>
-					<div class="team-bio">
-						An <strong>aerospace engineer</strong> from the University of Miami working in space
-						robotics, thermodynamics and composite manufacturing. She keeps Buildo's structures light,
-						strong and cheap to build.
+						Designs implantable neural-interface electronics and firmware at the Neuroelectronics
+						Research Lab. On Buildo he handles <strong>embedded software</strong>, board bring-up and hardware
+						integration.
 					</div>
 				</div>
 				<div class="team-card">
@@ -786,16 +853,16 @@
 			<div class="vision-body anim-in anim-d3">
 				<p class="vision-text">
 					Our thesis: ecosystem-driven acceleration could bring the industry substantially closer to <strong
-						>general purpose robotics AGI within the next year</strong
+						>general purpose robotics intelligence within the next year</strong
 						> - creating transformational productivity gains across multiple industries.
 				</p>
 				<p class="vision-text">
-					<strong>Compute demand for physical intelligence will increase 100× with adoption</strong
+					<strong>Demand for API as intelligence will increase 100× with adoption</strong
 					>, far exceeding digital AI today.<a
 						class="citation"
-						href="https://www.prnewswire.com/news-releases/the-space-economy-is-heading-for-1-8-trillion-the-bottleneck-nobody-talks-about-is-getting-there-302830042.html"
+						href="https://x.com/a16z/status/2091200032162857328"
 						target="_blank"
-						rel="noopener noreferrer">[4]</a
+						rel="noopener noreferrer">[2]</a
 					>
 				</p>
 			</div>
@@ -1353,6 +1420,66 @@
 	/* ── APPROACH COMPARISON TABLE ── */
 	.approach-table-wrap {
 		min-width: 0;
+		position: relative;
+	}
+
+	/* Hung below the wrapper rather than placed in it, so adding the row leaves
+	   the table centred exactly where it was. */
+	.demo-row {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		display: flex;
+		align-items: center;
+		gap: clamp(12px, 1.6vw, 20px);
+		margin-top: clamp(18px, 3.6vh, 34px);
+	}
+
+	.demo-note {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(10px, 1.7vmin, 13px);
+		font-weight: 500;
+		line-height: 1.5;
+		color: #5f584e;
+		min-width: 0;
+	}
+
+	.demo-note strong {
+		font-weight: 700;
+		color: #141210;
+	}
+
+	.demo-btn {
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: clamp(7px, 1.4vh, 11px) clamp(16px, 2.2vw, 26px);
+		border: 2px solid #7a5e0f;
+		font-family: 'Space Mono', monospace;
+		font-size: clamp(9px, 1.6vmin, 12px);
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: #7a5e0f;
+		text-decoration: none;
+		transition:
+			background 0.2s ease,
+			color 0.2s ease;
+	}
+
+	.demo-btn:hover {
+		background: #7a5e0f;
+		color: #ffffff;
+	}
+
+	.demo-btn-arrow {
+		transition: transform 0.2s ease;
+	}
+
+	.demo-btn:hover .demo-btn-arrow {
+		transform: translate(2px, -2px);
 	}
 
 	.approach-table {
@@ -1786,8 +1913,11 @@
 		min-height: 0;
 	}
 
+	/* Pinned to the top of the row so the BOM table can grow downwards without
+	   pushing the headline off centre. The photos stay centred. */
 	.critical-copy {
-		padding-top: clamp(8px, 2.4vh, 22px);
+		align-self: start;
+		padding-top: clamp(4px, 1.2vh, 12px);
 	}
 
 	.critical-copy .headline {
@@ -1808,6 +1938,50 @@
 	.critical-body strong {
 		color: #141210;
 		font-weight: 500;
+	}
+
+	.bom-table {
+		margin-top: clamp(14px, 3vh, 26px);
+		width: min(100%, 46ch);
+		border-collapse: collapse;
+		font-family: 'Barlow', sans-serif;
+		background: #ffffff;
+		border: 2px solid rgba(20, 18, 16, 0.14);
+	}
+
+	.bom-table th,
+	.bom-table td {
+		padding: clamp(5px, 1.2vh, 10px) clamp(10px, 1.4vw, 18px);
+		border-bottom: 1px solid rgba(20, 18, 16, 0.1);
+		font-size: clamp(11px, 1.9vmin, 14px);
+	}
+
+	.bom-table tr:last-child th,
+	.bom-table tr:last-child td {
+		border-bottom: none;
+	}
+
+	.bom-table th {
+		text-align: left;
+		font-weight: 500;
+		color: #3a3630;
+	}
+
+	.bom-table td {
+		text-align: right;
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		color: #141210;
+	}
+
+	.bom-table .bom-row-key {
+		background: rgba(122, 94, 15, 0.07);
+	}
+
+	.bom-table .bom-row-key th,
+	.bom-table .bom-row-key td {
+		color: #7a5e0f;
+		font-weight: 700;
 	}
 
 	.critical-photos {
@@ -2023,6 +2197,84 @@
 	#s11 .comp-list {
 		margin-top: 0;
 		max-width: none;
+	}
+
+	/* Traction runs the copy against a bench photo, so the list gives up the
+	   right half of the stage and the whole block rides higher to make room. */
+	#s14 .section-label,
+	#s14 .headline {
+		position: relative;
+		top: clamp(12px, 2.8vh, 28px);
+	}
+
+	/* The logo strip is its own row under the copy, so the photo centres against
+	   the two cards rather than against the cards plus the logos. */
+	.traction-layout {
+		display: grid;
+		grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+		grid-template-rows: auto auto;
+		column-gap: clamp(20px, 3.6vw, 44px);
+		align-items: center;
+		/* Rows stay content-sized and the block centres as a whole, so the gap
+		   under the cards is the logo margin and nothing else. */
+		align-content: center;
+		width: 100%;
+		flex: 1;
+		min-height: 0;
+		position: relative;
+		top: clamp(12px, 2.8vh, 28px);
+	}
+
+	.traction-layout .comp-list {
+		margin-top: 0;
+		max-width: none;
+	}
+
+	/* Wide wordmarks sit at one height; the stacked NYU torch and the Purdue
+	   monogram are much taller than they are wide, so they get their own. */
+	.comp-unis {
+		grid-column: 1;
+		grid-row: 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: clamp(12px, 1.8vw, 22px);
+		margin-top: clamp(12px, 2.4vh, 24px);
+	}
+
+	.comp-unis img {
+		height: clamp(15px, 2.7vmin, 22px);
+		width: auto;
+		object-fit: contain;
+	}
+
+	.comp-unis .uni-purdue {
+		height: clamp(24px, 4.4vmin, 36px);
+	}
+
+	/* The torch block is narrow, so it needs extra height to carry the same
+	   weight as the marks beside it. */
+	.comp-unis .uni-nyu {
+		height: clamp(34px, 6.4vmin, 54px);
+	}
+
+	.traction-figure {
+		grid-column: 2;
+		grid-row: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		min-width: 0;
+	}
+
+	.traction-figure img {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: clamp(200px, min(50vh, 30vw), 420px);
+		object-fit: cover;
+		border: 2px solid rgba(20, 18, 16, 0.12);
 	}
 
 	.comp-figure {
