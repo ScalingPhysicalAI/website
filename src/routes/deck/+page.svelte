@@ -357,10 +357,20 @@
 				<span class="hl-gold">any sized model</span> on humanoid robots
 			</h2>
 			<div class="solution-layout anim-in anim-d3">
-				<div class="solution-card">
-					<p>
-						This <strong>fundamentally changes the architecture and economics</strong> of intelligent
-						humanoid robots - models of any size can now run efficiently inside the robot.
+				<div class="solution-col">
+					<div class="solution-card">
+						<p>
+							This <strong>fundamentally changes the architecture and economics</strong> of intelligent
+							humanoid robots - models of any size can now run efficiently inside the robot.
+						</p>
+					</div>
+					<p class="solution-source">
+						Our breakthrough is derived from a heavily optimized implementation of <a
+							class="solution-source-link"
+							href="https://arxiv.org/abs/2602.13476"
+							target="_blank"
+							rel="noopener noreferrer">arXiv 2602.13476</a
+						>
 					</p>
 				</div>
 				<div class="approach-table-wrap">
@@ -1421,6 +1431,9 @@
 	.approach-table-wrap {
 		min-width: 0;
 		position: relative;
+		/* Both columns start at the row's top edge, so the card and the table
+		   line up whichever of the two happens to be taller. */
+		align-self: start;
 	}
 
 	/* Hung below the wrapper rather than placed in it, so adding the row leaves
@@ -1563,6 +1576,32 @@
 		max-height: clamp(200px, min(71vh, 40vw), 700px);
 		object-fit: contain;
 		background: #ffffff;
+	}
+
+	/* Pinned to the top of the row so the card's top edge lines up with the
+	   table's, with the source note hanging below it. */
+	.solution-col {
+		align-self: start;
+	}
+
+	.solution-source {
+		margin-top: clamp(8px, 1.6vh, 14px);
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(10px, 1.7vmin, 13px);
+		font-weight: 500;
+		color: #5f584e;
+	}
+
+	.solution-source-link {
+		color: #7a5e0f;
+		font-weight: 700;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-thickness: 1px;
+	}
+
+	.solution-source-link:hover {
+		color: #141210;
 	}
 
 	.solution-card {
