@@ -263,59 +263,25 @@
 		<section class="slide" id="s4">
 			<div class="section-label anim-in anim-d1">The Problem</div>
 			<h2 class="headline anim-in anim-d2">
-				No <span class="hl-gold">affordable open source</span> humanoid<br />
-				robots for developers and startups
+				500 billion parameters make human-level<br />
+				intelligence <span class="hl-gold">too expensive</span><br />
+				for current robots
 			</h2>
-			<div class="problem-layout anim-in anim-d3">
-				<div class="bullet-list">
-					<div class="bullet-item">
-						<span class="bullet-icon">▸</span>
-						<p>
-							<strong>Open source affordable robots are absent in the market</strong>. Developers and
-							researchers are frustrated that it isn't possible to build real-world use cases.
-						</p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">▸</span>
-						<p>
-							A robot foundation model approaching human-level generality could exceed <strong
-								>500 billion parameters</strong
-							> - making it extremely difficult and expensive to run on general purpose robots.
-						</p>
-					</div>
+			<div class="bullet-list anim-in anim-d3">
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>
+						A robot foundation model approaching human-level generality could exceed <strong
+							>500 billion parameters</strong
+						> - making it extremely difficult and expensive to run on general purpose robots.
+					</p>
 				</div>
-				<div class="quote-col">
-					<blockquote class="quote-card">
-						<p>
-							"An affordable, programmable, at least semi-reliable brainless humanoid body however,
-							is exactly what the research market demanded."<a
-								class="citation"
-								href="https://x.com/Rewkang/status/2090062397063254133"
-								target="_blank"
-								rel="noopener noreferrer">[1]</a
-							>
-						</p>
-						<footer>
-							<span class="quote-name">Andrew Kang</span>
-							<span class="quote-role">Investor at RoboStrategy</span>
-						</footer>
-					</blockquote>
-					<blockquote class="quote-card">
-						<p>
-							"The big humanoid companies now in the states are so fixated on B2B and B2C and forgot
-							about B2D (Developers). Opening up the API can be way more beneficial in the long run.
-							A huge missed opportunity by Figure or 1X."<a
-								class="citation"
-								href="https://x.com/thejerrycheng/status/2083004934962741566"
-								target="_blank"
-								rel="noopener noreferrer">[2]</a
-							>
-						</p>
-						<footer>
-							<span class="quote-name">Jerry Chéng</span>
-							<span class="quote-role">Robotics PhD, NYU</span>
-						</footer>
-					</blockquote>
+				<div class="bullet-item">
+					<span class="bullet-icon">▸</span>
+					<p>
+						<strong>Open source affordable robots are absent in the market</strong>. Developers and
+						researchers are frustrated that it isn't possible to build real-world use cases.
+					</p>
 				</div>
 			</div>
 		</section>
@@ -324,17 +290,11 @@
 		<section class="slide" id="s5">
 			<div class="section-label anim-in anim-d1">Our Solution</div>
 			<h2 class="headline anim-in anim-d2">
-				Our breakthrough makes robots<br />
-				<span class="hl-gold">affordable and capable</span>
+				Our breakthrough allows running<br />
+				<span class="hl-gold">any sized model</span> on humanoid robots
 			</h2>
 			<div class="solution-layout anim-in anim-d3">
-				<div class="solution-cards">
-					<div class="solution-card">
-						<p>
-							Our breakthrough allows for <strong>any sized model to run on humanoid robots</strong>.
-							This eliminates the need for high end GPUs inside the robot.
-						</p>
-					</div>
+				<div class="solution-col">
 					<div class="solution-card">
 						<p>
 							Ran an <strong>8.3B parameter model</strong> on a cloud server with a 76M parameter edge
@@ -342,6 +302,14 @@
 							<strong>~400ms latency</strong>.
 						</p>
 					</div>
+					<p class="solution-source">
+						Our breakthrough is derived from a heavily optimized implementation of <a
+							class="solution-source-link"
+							href="https://arxiv.org/abs/2602.13476"
+							target="_blank"
+							rel="noopener noreferrer">arXiv 2602.13476</a
+						>
+					</p>
 				</div>
 				<div class="approach-table-wrap">
 					<table class="approach-table">
@@ -381,14 +349,6 @@
 						</a>
 					</div>
 				</div>
-				<p class="solution-source">
-					Our breakthrough is derived from a heavily optimized implementation of <a
-						class="solution-source-link"
-						href="https://arxiv.org/abs/2602.13476"
-						target="_blank"
-						rel="noopener noreferrer">arXiv 2602.13476</a
-					>
-				</p>
 			</div>
 		</section>
 
@@ -396,8 +356,7 @@
 		<section class="slide" id="s6">
 			<div class="section-label anim-in anim-d1">Product</div>
 			<h2 class="headline anim-in anim-d2">
-				Buildo <span class="hl-gold">robot</span> and<br />
-				<span class="hl-gold">training kit</span>
+				Buildo <span class="hl-gold">robot</span> and <span class="hl-gold">training kit</span>
 			</h2>
 			<div class="product-pair anim-in anim-d3">
 				<div class="why-card product-card-1">
@@ -423,79 +382,28 @@
 				<figure class="product-shot product-shot-2">
 					<img src="/assets/buildo-kit.webp" alt="Buildo training kit" />
 				</figure>
-				<div class="product-specs">
-					<div class="product-spec">
-						<span class="product-spec-label">Payload</span>
-						<span class="product-spec-val">18 <em>lb</em></span>
-					</div>
-					<div class="product-spec">
-						<span class="product-spec-label">Height</span>
-						<span class="product-spec-val">4-5 <em>ft</em></span>
-					</div>
-					<div class="product-spec">
-						<span class="product-spec-label">Speed</span>
-						<span class="product-spec-val">1.4 <em>mph</em></span>
-					</div>
-					<div class="product-spec">
-						<span class="product-spec-label">Joint torque</span>
-						<span class="product-spec-val">15 <em>N·m</em></span>
-					</div>
+			</div>
+			<div class="product-specs anim-in anim-d3">
+				<div class="product-spec">
+					<span class="product-spec-label">Payload</span>
+					<span class="product-spec-val">18 <em>lb</em></span>
 				</div>
-				<div class="product-data">
-					<span class="product-data-label">Collects combined data on</span>
-					<div class="product-data-tags">
-						<span>Touch</span>
-						<span>Torque</span>
-						<span>Vision</span>
-						<span>Action</span>
-					</div>
+				<div class="product-spec">
+					<span class="product-spec-label">Height</span>
+					<span class="product-spec-val">4-5 <em>ft</em></span>
+				</div>
+				<div class="product-spec">
+					<span class="product-spec-label">Speed</span>
+					<span class="product-spec-val">1.4 <em>mph</em></span>
+				</div>
+				<div class="product-spec">
+					<span class="product-spec-label">Joint torque</span>
+					<span class="product-spec-val">15 <em>N·m</em></span>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 5 - COMPUTE LAYER -->
-		<section class="slide" id="s8">
-			<div class="infra-layout">
-				<div class="infra-copy">
-					<div class="section-label anim-in anim-d1">Platform</div>
-					<h2 class="headline anim-in anim-d2">
-						Providing the<br />
-						<span class="hl-gold">API for Intelligence</span>
-					</h2>
-				</div>
-				<div class="infra-body">
-					<div class="solution-card infra-card-1 anim-in anim-d3">
-						<div class="solution-card-num">Humanoid Platform</div>
-						<p>
-							Enable researchers and developers to <strong>collect real-world data</strong> and build
-							better physical AI models on an open, accessible platform.
-						</p>
-					</div>
-					<div class="solution-card infra-card-2 anim-in anim-d3">
-						<div class="solution-card-num">Intelligence Layer</div>
-						<p>
-							<strong>Host robot models</strong> for inference - from any size model to production
-							deployment.
-						</p>
-					</div>
-					<div class="infra-figure-col anim-in anim-d3">
-						<div class="infra-figure-anchor">
-							<figure class="infra-figure">
-								<img
-									src="/assets/dev-portal-skills.png"
-									alt="Starforge /dev robot skills marketplace"
-								/>
-								<figcaption>
-									Skills hosted on our server run directly on the robot
-								</figcaption>
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 6 - CRITICAL PATH -->
+		<!-- SLIDE 5 - CRITICAL PATH -->
 		<section class="slide" id="s7">
 			<div class="critical-layout">
 				<div class="critical-copy">
@@ -550,24 +458,69 @@
 			</div>
 		</section>
 
+		<!-- SLIDE 6 - COMPUTE LAYER -->
+		<section class="slide" id="s8">
+			<div class="infra-layout">
+				<div class="infra-copy">
+					<div class="section-label anim-in anim-d1">Platform</div>
+					<h2 class="headline anim-in anim-d2">
+						Providing the<br />
+						<span class="hl-gold">API for Intelligence</span>
+					</h2>
+				</div>
+				<div class="infra-body">
+					<div class="solution-card infra-card-1 anim-in anim-d3">
+						<div class="solution-card-num">Humanoid Platform</div>
+						<p>
+							Enable researchers and developers to <strong>collect real-world data</strong> and build
+							better physical AI models on an open, accessible platform.
+						</p>
+					</div>
+					<div class="solution-card infra-card-2 anim-in anim-d3">
+						<div class="solution-card-num">Intelligence Layer</div>
+						<p>
+							<strong>Host robot models</strong> for inference - from any size model to production
+							deployment.
+						</p>
+					</div>
+					<div class="infra-figure-col anim-in anim-d3">
+						<div class="infra-figure-anchor">
+							<figure class="infra-figure">
+								<img
+									src="/assets/dev-portal-skills.png"
+									alt="Starforge /dev robot skills marketplace"
+								/>
+								<figcaption>
+									Skills hosted on our server run directly on the robot
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- SLIDE 7 - DEMOS -->
 		<section class="slide" id="s16">
 			<div class="section-label anim-in anim-d1">Demos</div>
 			<h2 class="headline anim-in anim-d2">
-				Buildo <span class="hl-gold">in action</span>
+				Buildo is designed to do<br />
+				<span class="hl-gold">most real-world tasks</span>
 			</h2>
 			<div class="demo-grid anim-in anim-d3">
 				<figure class="demo-video">
 					<div class="demo-frame">
 						<!-- svelte-ignore a11y_media_has_caption -->
-						<video src="/assets/robot-demo.mp4" controls playsinline preload="metadata"></video>
+						<video src="/assets/robot-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
 					</div>
+					<figcaption>Buildo is wheel based and can adjust its height</figcaption>
 				</figure>
 				<figure class="demo-video">
 					<div class="demo-frame">
 						<!-- svelte-ignore a11y_media_has_caption -->
-						<video src="/assets/robot-hand-demo.mp4" controls playsinline preload="metadata"></video>
+						<video src="/assets/robot-hand-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
 					</div>
+					<figcaption>Buildo has 5 fingered dexterous hands with tactile sensors</figcaption>
 				</figure>
 			</div>
 		</section>
@@ -576,12 +529,27 @@
 		<section class="slide" id="s14">
 			<div class="section-label anim-in anim-d1">Traction</div>
 			<h2 class="headline anim-in anim-d2">
-				Developers and researchers<br />
+				Developers and startups<br />
 				<span class="hl-gold">love our robots</span>
 			</h2>
 			<div class="traction-layout anim-in anim-d3">
 				<div class="comp-list">
-					<div class="comp-item comp-item--solo">
+					<div class="comp-item">
+						<div class="comp-content">
+							<div class="comp-title">
+								<a
+									href="https://zooty.mazoutelectric.com/"
+									target="_blank"
+									rel="noopener noreferrer">Mazout Electric</a
+								>
+							</div>
+							<p class="comp-body">
+								Building <strong>lithium ion batteries using robots</strong> - deploying Starforge
+								humanoids for real industrial manufacturing tasks.
+							</p>
+						</div>
+					</div>
+					<div class="comp-item">
 						<div class="comp-content">
 							<div class="comp-title">Developer Ecosystem</div>
 							<p class="comp-body">
@@ -591,11 +559,17 @@
 						</div>
 					</div>
 					<div class="comp-unis">
-						<img src="/assets/uni/berkeley.png" alt="University of California, Berkeley" />
-						<img class="uni-nyu" src="/assets/uni/nyu.png" alt="New York University" />
-						<img src="/assets/uni/ucsd.png" alt="University of California, San Diego" />
-						<img src="/assets/uni/uci.png" alt="University of California, Irvine" />
-						<img class="uni-purdue" src="/assets/uni/purdue.png" alt="Purdue University" />
+						<div class="comp-uni-row">
+							<img src="/assets/uni/berkeley.png" alt="University of California, Berkeley" />
+							<img class="uni-nyu" src="/assets/uni/nyu.png" alt="New York University" />
+							<img src="/assets/uni/ucsd.png" alt="University of California, San Diego" />
+							<img src="/assets/uni/uci.png" alt="University of California, Irvine" />
+						</div>
+						<div class="comp-uni-row">
+							<img class="uni-purdue" src="/assets/uni/purdue.png" alt="Purdue University" />
+							<img class="uni-ucsc" src="/assets/uni/ucsc.png" alt="University of California, Santa Cruz" />
+							<img class="uni-umd" src="/assets/uni/umd.png" alt="University of Maryland" />
+						</div>
 					</div>
 				</div>
 				<figure class="traction-figure">
@@ -627,7 +601,7 @@
 									class="citation"
 									href="https://x.com/RoboStrategy/status/2087561451468681234"
 									target="_blank"
-									rel="noopener noreferrer">[3]</a
+									rel="noopener noreferrer">[1]</a
 								>
 							</p>
 						</div>
@@ -645,7 +619,7 @@
 									class="citation"
 									href="https://x.com/a16z/status/2091200032162857328"
 									target="_blank"
-									rel="noopener noreferrer">[4]</a
+									rel="noopener noreferrer">[2]</a
 								>
 							</p>
 						</div>
@@ -654,9 +628,9 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 10 - UPCOMING MILESTONES -->
+		<!-- SLIDE 10 - MILESTONES -->
 		<section class="slide" id="s18">
-			<div class="section-label anim-in anim-d1">Upcoming Milestones</div>
+			<div class="section-label anim-in anim-d1">Milestones</div>
 			<h2 class="headline anim-in anim-d2">
 				<span class="hl-gold">$1.16B ARR by 2028</span> driven by<br />
 				2 quadrillion token API demand
@@ -738,102 +712,11 @@
 			</p>
 		</section>
 
-		<!-- SLIDE 11 - COMPETITION -->
-		<section class="slide" id="s11">
-			<div class="comp-layout">
-				<div class="comp-copy">
-					<div class="section-label anim-in anim-d1">Competitive Position</div>
-					<h2 class="headline anim-in anim-d2">
-						Why <span class="hl-gold">Buildo wins</span>
-					</h2>
-				</div>
-				<div class="comp-body-row anim-in anim-d3">
-					<div class="comp-col">
-						<div class="comp-col-head">Competitors</div>
-						<div class="comp-list">
-							<div class="comp-item">
-								<div class="comp-num">01</div>
-								<div class="comp-content">
-									<div class="comp-title">
-										<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer"
-											>1X Neo</a
-										>
-									</div>
-									<p class="comp-body">
-										Their robots cost <strong>$20K</strong> which prices out many researchers and
-										developers. Bipedal robots are still considered
-										<strong>unsafe for home deployment</strong>.
-									</p>
-								</div>
-							</div>
-							<div class="comp-item">
-								<div class="comp-num">02</div>
-								<div class="comp-content">
-									<div class="comp-title">
-										<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
-											>Fauna</a
-										>
-									</div>
-									<p class="comp-body">
-										<strong>Costly ($50K)</strong> - high barrier to entry for most researchers and
-										developers, limiting community growth and data collection scale.
-									</p>
-								</div>
-							</div>
-							<div class="comp-item">
-								<div class="comp-num">03</div>
-								<div class="comp-content">
-									<div class="comp-title">
-										<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer"
-											>Lumi</a
-										> and similar
-									</div>
-									<p class="comp-body">
-										Lumi robots cost <strong>$40K</strong>. Additionally, companies using Chinese
-										robots as a wrapper will face
-										<strong>high costs and scalability issues</strong> due to FCC regulation.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="comp-col">
-						<div class="comp-col-head comp-col-head-sf">Starforge</div>
-						<aside class="comp-claim">
-							<p class="comp-claim-body">
-								<strong>80% lower hardware cost</strong> enables mass deployment and gives a clear
-								advantage to Starforge robots.
-							</p>
-						</aside>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 12 - FOOTPRINT -->
-		<section class="slide" id="s17">
-			<div class="section-label anim-in anim-d1">Footprint</div>
-			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">10x faster</span> iteration cycles and<br />
-				domestic support for customers
-			</h2>
-			<div class="office-grid anim-in anim-d3">
-				<figure class="office-shot">
-					<figcaption>R&amp;D space in New York City</figcaption>
-					<img src="/assets/office-nyc.jpg" alt="Starforge R&amp;D space in New York City" />
-				</figure>
-				<figure class="office-shot">
-					<figcaption>Domestic assembly line</figcaption>
-					<img src="/assets/office-la.png" alt="Starforge warehouse for robot assembly" />
-				</figure>
-			</div>
-		</section>
-
-		<!-- SLIDE 13 - TEAM -->
+		<!-- SLIDE 11 - TEAM -->
 		<section class="slide" id="s13">
 			<div class="section-label anim-in anim-d1">Founding Team</div>
 			<h2 class="headline anim-in anim-d2">
-				Built by engineers who have scaled<br /><span class="hl-gold">hardware to mass production</span> before
+				Builders who have scaled<br /><span class="hl-gold">hardware to mass production</span> before
 			</h2>
 			<div class="team-grid anim-in anim-d3">
 				<div class="team-card">
@@ -937,7 +820,79 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 14 - VISION / ASK -->
+		<!-- SLIDE 12 - COMPETITION -->
+		<section class="slide" id="s11">
+			<div class="comp-layout">
+				<div class="comp-copy">
+					<div class="section-label anim-in anim-d1">Competitive Position</div>
+					<h2 class="headline anim-in anim-d2">
+						Why <span class="hl-gold">Buildo wins</span>
+					</h2>
+				</div>
+				<div class="comp-body-row anim-in anim-d3">
+					<div class="comp-col">
+						<div class="comp-col-head">Competitors</div>
+						<div class="comp-list">
+							<div class="comp-item">
+								<div class="comp-num">01</div>
+								<div class="comp-content">
+									<div class="comp-title">
+										<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer"
+											>1X Neo</a
+										>
+									</div>
+									<p class="comp-body">
+										Their robots cost <strong>$20K</strong> which prices out many researchers and
+										developers. Bipedal robots are still considered
+										<strong>unsafe for home deployment</strong>.
+									</p>
+								</div>
+							</div>
+							<div class="comp-item">
+								<div class="comp-num">02</div>
+								<div class="comp-content">
+									<div class="comp-title">
+										<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
+											>Fauna</a
+										>
+									</div>
+									<p class="comp-body">
+										<strong>Costly ($50K)</strong> - high barrier to entry for most researchers and
+										developers, limiting community growth and data collection scale.
+									</p>
+								</div>
+							</div>
+							<div class="comp-item">
+								<div class="comp-num">03</div>
+								<div class="comp-content">
+									<div class="comp-title">
+										<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer"
+											>Lumi</a
+										> and similar
+									</div>
+									<p class="comp-body">
+										Lumi robots cost <strong>$40K</strong>. Additionally, companies using Chinese
+										robots as a wrapper will face
+										<strong>high costs and scalability issues</strong> due to FCC regulation.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="comp-col">
+						<div class="comp-col-head comp-col-head-sf">Starforge</div>
+						<aside class="comp-claim">
+							<p class="comp-claim-body">
+								<strong>80% lower hardware cost</strong> enables mass deployment and gives a clear
+								advantage to Buildo robots.
+							</p>
+						</aside>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 13 - VISION / ASK -->
 		<section class="slide" id="s15">
 			<div class="section-label anim-in anim-d1">The Vision</div>
 			<h2 class="headline anim-in anim-d2">
@@ -961,7 +916,7 @@
 							class="citation"
 							href="https://x.com/a16z/status/2091200032162857328"
 							target="_blank"
-							rel="noopener noreferrer">[5]</a
+							rel="noopener noreferrer">[3]</a
 						>
 					</p>
 				</div>
@@ -1203,13 +1158,6 @@
 		padding-bottom: clamp(80px, 16vh, 150px);
 	}
 
-	/* Only the title block lifts; the quotes and bullets stay put. */
-	#s4 .section-label,
-	#s4 .headline {
-		position: relative;
-		top: clamp(-46px, -5.2vh, -22px);
-	}
-
 	:global(.slide.active) {
 		opacity: 1;
 		transform: translateX(0);
@@ -1433,71 +1381,6 @@
 		flex-shrink: 0;
 	}
 
-	/* Problem slide: the two points sit left, the outside voice backing them up
-	   sits right. */
-	.problem-layout {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-		gap: clamp(18px, 3vw, 46px);
-		align-items: center;
-		width: 100%;
-		min-width: 0;
-	}
-
-	.problem-layout .bullet-list {
-		margin-top: 0;
-		max-width: none;
-	}
-
-	.quote-col {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(24px, 5.2vh, 54px);
-		min-width: 0;
-	}
-
-	.quote-card {
-		margin: 0;
-	}
-
-	/* Keeps the source marker off the closing quotation mark. */
-	.quote-card .citation {
-		margin-left: 4px;
-	}
-
-	.quote-card p {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.2vmin, 16px);
-		font-weight: 600;
-		font-style: italic;
-		line-height: 1.55;
-		color: #141210;
-	}
-
-	.quote-card footer {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: clamp(5px, 0.8vw, 10px);
-		margin-top: clamp(7px, 1.4vh, 12px);
-	}
-
-	.quote-name {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(11px, 1.9vmin, 14px);
-		font-weight: 700;
-		color: #141210;
-	}
-
-	.quote-role {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(7px, 1.3vmin, 10px);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-	}
-
 	.bullet-item p {
 		font-family: 'Barlow', sans-serif;
 		font-size: clamp(12px, 2.2vmin, 15px);
@@ -1543,27 +1426,15 @@
 	/* Slide 5: text left, diagram right. Columns are minmax(0, ...) so the image
 	   can shrink inside its track instead of forcing the grid wider than the
 	   slide. */
-	/* Two columns of equal height: the cards set the row, and the table column
-	   stretches to match so the demo button can sit on the same baseline as the
-	   bottom card. The source note hangs under the cards. */
 	.solution-layout {
 		margin-top: clamp(4px, 1vh, 12px);
 		display: grid;
 		grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-		grid-template-areas:
-			'cards table'
-			'source .';
-		column-gap: clamp(16px, 3vw, 44px);
-		align-items: stretch;
+		gap: clamp(16px, 3vw, 44px);
+		/* Centred against the diagram rather than pinned to the top, so the card
+		   sits at the diagram's midpoint instead of crowding the headline. */
+		align-items: center;
 		width: 100%;
-	}
-
-	.solution-cards {
-		grid-area: cards;
-		display: flex;
-		flex-direction: column;
-		gap: clamp(8px, 1.6vh, 16px);
-		min-width: 0;
 	}
 
 	.solution-figure {
@@ -1576,31 +1447,31 @@
 
 	/* ── APPROACH COMPARISON TABLE ── */
 	.approach-table-wrap {
-		grid-area: table;
 		min-width: 0;
-		display: flex;
-		flex-direction: column;
-	}
-
-	/* The table rides down with the button so the pair keeps its original
-	   spacing while the button stays level with the bottom card. */
-	.approach-table-wrap .approach-table {
-		margin-top: auto;
+		position: relative;
+		/* Both columns start at the row's top edge, so the card and the table
+		   line up whichever of the two happens to be taller. */
+		align-self: start;
 	}
 
 	/* Hung below the wrapper rather than placed in it, so adding the row leaves
 	   the table centred exactly where it was. */
-	/* Pushed to the foot of the stretched column so it lands level with the
-	   bottom edge of the lower card. */
 	.demo-row {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		gap: clamp(12px, 1.6vw, 20px);
 		margin-top: clamp(18px, 3.6vh, 34px);
 	}
 
-	/* Sized off viewport height so a 16:9 embed always clears the slide chrome. */
+	/* Sized off viewport height so a 16:9 embed always clears the slide chrome.
+	   Nudged up so the captions now hanging below it stay clear of the edge. */
 	.demo-grid {
+		position: relative;
+		top: clamp(16px, 3.8vh, 42px);
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -1619,12 +1490,12 @@
 		min-width: 0;
 	}
 
-	/* The frame hugs the video itself so the border stays an even hairline
-	   instead of letterboxing. */
+	/* The caption is wider than the clip, so the frame stretches past it; the
+	   video is centred inside so it lines up with the title above. */
 	.demo-frame {
 		display: flex;
+		justify-content: center;
 		max-width: 100%;
-		border: 2px solid #141210;
 	}
 
 	.demo-frame video {
@@ -1761,8 +1632,11 @@
 
 	/* Pinned to the top of the row so the card's top edge lines up with the
 	   table's, with the source note hanging below it. */
+	.solution-col {
+		align-self: start;
+	}
+
 	.solution-source {
-		grid-area: source;
 		margin-top: clamp(8px, 1.6vh, 14px);
 		font-family: 'Barlow', sans-serif;
 		font-size: clamp(10px, 1.7vmin, 13px);
@@ -1903,32 +1777,27 @@
 		min-width: 0;
 	}
 
-	/* Zero height so it cannot stretch the rows; the figure hangs off it and is
-	   pulled up by half its own height, centring it on the seam. */
+	/* Zero height so it cannot stretch the rows. Centring the figure in a
+	   zero-height flex box overflows it evenly above and below, which puts its
+	   midpoint on the seam - the same result a transform would give, but
+	   without one: Chrome loses text inside transformed boxes when it paginates
+	   for print. The 3px cancels the row gap, since the centre line we want is
+	   the bottom edge of the first card. */
 	.infra-figure-anchor {
 		grid-row: 2;
 		position: relative;
+		top: -3px;
 		height: 0;
 		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
-	/* The extra 3px cancels the row gap: the anchor starts below the seam, and
-	   the centre line we want is the bottom edge of the first card. */
-	.infra-figure-anchor .infra-figure {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		transform: translateY(calc(-50% - 3px));
-	}
-
-	/* Hung below the image so the caption's height stays out of the figure box,
-	   which is what the half-height offset above is measured against. */
+	/* The caption's height is cancelled out so the centring above measures the
+	   image alone. */
 	.infra-figure-anchor figcaption {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
+		margin-bottom: calc(-1 * (1lh + clamp(6px, 1.2vh, 10px)));
 	}
 
 	#s8 .infra-figure img {
@@ -1973,7 +1842,7 @@
 	#s10 .section-label,
 	#s10 .headline {
 		position: relative;
-		top: clamp(88px, 17.6vh, 158px);
+		top: clamp(70px, 14.2vh, 128px);
 	}
 
 	/* Slide 8: the revenue stack reads top-down on the left, and the ARR ladder
@@ -2081,12 +1950,11 @@
 		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
 		grid-template-areas:
 			'card1 . card2'
-			'shot1 price shot2'
-			'specs . data';
-		grid-template-rows: auto minmax(0, 1fr) auto;
+			'shot1 price shot2';
+		grid-template-rows: auto minmax(0, 1fr);
 		column-gap: clamp(8px, 1.4vw, 16px);
-		row-gap: clamp(10px, 2vh, 18px);
-		margin-top: clamp(12px, 3vh, 28px);
+		row-gap: clamp(6px, 1.2vh, 12px);
+		margin-top: clamp(10px, 2.2vh, 22px);
 		width: 100%;
 		flex: 1;
 		min-height: 0;
@@ -2113,8 +1981,19 @@
 		grid-area: shot1;
 	}
 
+	/* The robot is the hero of the slide, so it gets the taller cap. */
+	.product-pair .product-shot-1 img {
+		max-height: min(72vh, 640px, 100%);
+	}
+
 	.product-shot-2 {
 		grid-area: shot2;
+	}
+
+	/* The kit is a supporting shot, so it reads smaller than the robot. Scoped
+	   through the grid to beat the shared .product-shot img rule below. */
+	.product-pair .product-shot-2 img {
+		max-height: min(37vh, 320px, 100%);
 	}
 
 	.product-price {
@@ -2154,52 +2033,15 @@
 		background: #ffffff;
 	}
 
-	/* Each column closes with its own footer: hard numbers under the robot,
-	   the data it captures under the kit. */
+	/* Headline specs sit under the pair as a single strip. */
 	.product-specs {
-		grid-area: specs;
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: clamp(6px, 1.2vw, 18px);
-		padding-top: clamp(8px, 1.6vh, 14px);
+		gap: clamp(8px, 1.6vw, 24px);
+		flex-shrink: 0;
+		margin-top: clamp(12px, 2.6vh, 28px);
+		padding-top: clamp(10px, 2vh, 18px);
 		border-top: 2px solid rgba(20, 18, 16, 0.12);
-	}
-
-	.product-data {
-		grid-area: data;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: clamp(6px, 1.2vh, 10px);
-		padding-top: clamp(8px, 1.6vh, 14px);
-		border-top: 2px solid rgba(20, 18, 16, 0.12);
-	}
-
-	.product-data-label {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.3vmin, 10px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-	}
-
-	.product-data-tags {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: clamp(5px, 0.8vw, 10px);
-	}
-
-	.product-data-tags span {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(15px, 3vmin, 26px);
-		line-height: 1;
-		letter-spacing: 0.03em;
-		color: #141210;
-		padding: clamp(4px, 0.8vh, 8px) clamp(8px, 1.1vw, 14px);
-		background: rgba(20, 18, 16, 0.044);
-		border: 2px solid rgba(20, 18, 16, 0.05);
 	}
 
 	.product-spec {
@@ -2393,8 +2235,6 @@
 	/* ── WHY US ── */
 	.why-card {
 		padding: clamp(16px, 4vh, 40px) clamp(14px, 2.5vw, 28px);
-		background: rgba(20, 18, 16, 0.044);
-		border: 2px solid rgba(20, 18, 16, 0.05);
 		position: relative;
 	}
 
@@ -2559,9 +2399,9 @@
 
 	.comp-claim-body {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(14px, 2.9vmin, 24px);
+		font-size: clamp(17px, 3.6vmin, 30px);
 		font-weight: 500;
-		line-height: 1.55;
+		line-height: 1.5;
 		color: #3a3630;
 	}
 
@@ -2598,7 +2438,7 @@
 	#s14 .section-label,
 	#s14 .headline {
 		position: relative;
-		top: clamp(12px, 2.8vh, 28px);
+		top: clamp(-4px, -0.5vh, 0px);
 	}
 
 	.traction-layout {
@@ -2613,7 +2453,7 @@
 		flex: 1;
 		min-height: 0;
 		position: relative;
-		top: clamp(12px, 2.8vh, 28px);
+		top: clamp(-4px, -0.5vh, 0px);
 	}
 
 	.traction-layout .comp-list {
@@ -2631,21 +2471,36 @@
 		left: 0;
 		right: 0;
 		display: flex;
+		flex-direction: column;
+		gap: clamp(10px, 2vh, 20px);
+		margin-top: clamp(12px, 2.4vh, 24px);
+	}
+
+	.comp-uni-row {
+		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-wrap: nowrap;
-		gap: clamp(7px, 1.1vw, 15px);
-		margin-top: clamp(34px, 6.8vh, 66px);
+		gap: clamp(10px, 1.6vw, 22px);
 	}
 
-	/* Five marks share one row inside the copy column, so each is capped on
-	   width as well as height and allowed to shrink rather than push out. */
+	/* The marks share a row inside the copy column, so each is capped on width
+	   as well as height and allowed to shrink rather than push out. */
 	.comp-unis img {
 		height: clamp(19px, 3.4vmin, 29px);
 		width: auto;
 		max-width: 23%;
 		min-width: 0;
 		object-fit: contain;
+	}
+
+	.comp-unis .uni-ucsc {
+		height: clamp(17px, 3vmin, 26px);
+	}
+
+	.comp-unis .uni-umd {
+		height: clamp(24px, 4.4vmin, 38px);
+		max-width: 34%;
 	}
 
 	.comp-unis .uni-purdue {
@@ -2724,10 +2579,6 @@
 	}
 
 	/* Without a number beside it the content would sit in from the gold rule. */
-	.comp-item--solo {
-		gap: 0;
-	}
-
 	.comp-num {
 		font-family: 'Bebas Neue', sans-serif;
 		font-size: clamp(24px, 5.5vmin, 40px);
@@ -2912,45 +2763,6 @@
 	.ms-note strong {
 		font-weight: 600;
 		color: #7a5e0f;
-	}
-
-	/* ── OFFICES ── */
-	.office-grid {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: clamp(12px, 2vw, 28px);
-		align-content: center;
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-		margin-top: clamp(12px, 3vh, 28px);
-	}
-
-	.office-shot {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(6px, 1.2vh, 10px);
-		margin: 0;
-		min-width: 0;
-		min-height: 0;
-	}
-
-	.office-shot img {
-		display: block;
-		width: 100%;
-		height: clamp(180px, min(46vh, 28vw), 400px);
-		object-fit: cover;
-		border: 2px solid rgba(20, 18, 16, 0.12);
-	}
-
-	.office-shot figcaption {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		text-align: center;
 	}
 
 	/* ── VISION / ASK ── */
