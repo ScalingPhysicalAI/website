@@ -263,25 +263,59 @@
 		<section class="slide" id="s4">
 			<div class="section-label anim-in anim-d1">The Problem</div>
 			<h2 class="headline anim-in anim-d2">
-				500 billion parameters make human-level<br />
-				intelligence <span class="hl-gold">too expensive</span><br />
-				for current robots
+				No <span class="hl-gold">affordable open source</span> humanoid<br />
+				robots for developers and startups
 			</h2>
-			<div class="bullet-list anim-in anim-d3">
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>
-						<strong>Open source affordable robots are absent in the market</strong>. Developers and
-						researchers are frustrated that it isn't possible to build real-world use cases.
-					</p>
+			<div class="problem-layout anim-in anim-d3">
+				<div class="bullet-list">
+					<div class="bullet-item">
+						<span class="bullet-icon">▸</span>
+						<p>
+							<strong>Open source affordable robots are absent in the market</strong>. Developers and
+							researchers are frustrated that it isn't possible to build real-world use cases.
+						</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">▸</span>
+						<p>
+							A robot foundation model approaching human-level generality could exceed <strong
+								>500 billion parameters</strong
+							> - making it extremely difficult and expensive to run on general purpose robots.
+						</p>
+					</div>
 				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>
-						A robot foundation model approaching human-level generality could exceed <strong
-							>500 billion parameters</strong
-						> - making it extremely difficult and expensive to run on general purpose robots.
-					</p>
+				<div class="quote-col">
+					<blockquote class="quote-card">
+						<p>
+							"An affordable, programmable, at least semi-reliable brainless humanoid body however,
+							is exactly what the research market demanded."<a
+								class="citation"
+								href="https://x.com/Rewkang/status/2090062397063254133"
+								target="_blank"
+								rel="noopener noreferrer">[1]</a
+							>
+						</p>
+						<footer>
+							<span class="quote-name">Andrew Kang</span>
+							<span class="quote-role">Investor at RoboStrategy</span>
+						</footer>
+					</blockquote>
+					<blockquote class="quote-card">
+						<p>
+							"The big humanoid companies now in the states are so fixated on B2B and B2C and forgot
+							about B2D (Developers). Opening up the API can be way more beneficial in the long run.
+							A huge missed opportunity by Figure or 1X."<a
+								class="citation"
+								href="https://x.com/thejerrycheng/status/2083004934962741566"
+								target="_blank"
+								rel="noopener noreferrer">[2]</a
+							>
+						</p>
+						<footer>
+							<span class="quote-name">Jerry Chéng</span>
+							<span class="quote-role">Robotics PhD, NYU</span>
+						</footer>
+					</blockquote>
 				</div>
 			</div>
 		</section>
@@ -290,11 +324,17 @@
 		<section class="slide" id="s5">
 			<div class="section-label anim-in anim-d1">Our Solution</div>
 			<h2 class="headline anim-in anim-d2">
-				Our breakthrough allows running<br />
-				<span class="hl-gold">any sized model</span> on humanoid robots
+				Our breakthrough makes robots<br />
+				<span class="hl-gold">affordable and capable</span>
 			</h2>
 			<div class="solution-layout anim-in anim-d3">
-				<div class="solution-col">
+				<div class="solution-cards">
+					<div class="solution-card">
+						<p>
+							Our breakthrough allows for <strong>any sized model to run on humanoid robots</strong>.
+							This eliminates the need for high end GPUs inside the robot.
+						</p>
+					</div>
 					<div class="solution-card">
 						<p>
 							Ran an <strong>8.3B parameter model</strong> on a cloud server with a 76M parameter edge
@@ -302,14 +342,6 @@
 							<strong>~400ms latency</strong>.
 						</p>
 					</div>
-					<p class="solution-source">
-						Our breakthrough is derived from a heavily optimized implementation of <a
-							class="solution-source-link"
-							href="https://arxiv.org/abs/2602.13476"
-							target="_blank"
-							rel="noopener noreferrer">arXiv 2602.13476</a
-						>
-					</p>
 				</div>
 				<div class="approach-table-wrap">
 					<table class="approach-table">
@@ -349,6 +381,14 @@
 						</a>
 					</div>
 				</div>
+				<p class="solution-source">
+					Our breakthrough is derived from a heavily optimized implementation of <a
+						class="solution-source-link"
+						href="https://arxiv.org/abs/2602.13476"
+						target="_blank"
+						rel="noopener noreferrer">arXiv 2602.13476</a
+					>
+				</p>
 			</div>
 		</section>
 
@@ -383,28 +423,79 @@
 				<figure class="product-shot product-shot-2">
 					<img src="/assets/buildo-kit.webp" alt="Buildo training kit" />
 				</figure>
-			</div>
-			<div class="product-specs anim-in anim-d3">
-				<div class="product-spec">
-					<span class="product-spec-label">Payload</span>
-					<span class="product-spec-val">18 <em>lb</em></span>
+				<div class="product-specs">
+					<div class="product-spec">
+						<span class="product-spec-label">Payload</span>
+						<span class="product-spec-val">18 <em>lb</em></span>
+					</div>
+					<div class="product-spec">
+						<span class="product-spec-label">Height</span>
+						<span class="product-spec-val">4-5 <em>ft</em></span>
+					</div>
+					<div class="product-spec">
+						<span class="product-spec-label">Speed</span>
+						<span class="product-spec-val">1.4 <em>mph</em></span>
+					</div>
+					<div class="product-spec">
+						<span class="product-spec-label">Joint torque</span>
+						<span class="product-spec-val">15 <em>N·m</em></span>
+					</div>
 				</div>
-				<div class="product-spec">
-					<span class="product-spec-label">Height</span>
-					<span class="product-spec-val">4-5 <em>ft</em></span>
-				</div>
-				<div class="product-spec">
-					<span class="product-spec-label">Speed</span>
-					<span class="product-spec-val">1.4 <em>mph</em></span>
-				</div>
-				<div class="product-spec">
-					<span class="product-spec-label">Joint torque</span>
-					<span class="product-spec-val">15 <em>N·m</em></span>
+				<div class="product-data">
+					<span class="product-data-label">Collects combined data on</span>
+					<div class="product-data-tags">
+						<span>Touch</span>
+						<span>Torque</span>
+						<span>Vision</span>
+						<span>Action</span>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 5 - CRITICAL PATH -->
+		<!-- SLIDE 5 - COMPUTE LAYER -->
+		<section class="slide" id="s8">
+			<div class="infra-layout">
+				<div class="infra-copy">
+					<div class="section-label anim-in anim-d1">Platform</div>
+					<h2 class="headline anim-in anim-d2">
+						Providing the<br />
+						<span class="hl-gold">API for Intelligence</span>
+					</h2>
+				</div>
+				<div class="infra-body">
+					<div class="solution-card infra-card-1 anim-in anim-d3">
+						<div class="solution-card-num">Humanoid Platform</div>
+						<p>
+							Enable researchers and developers to <strong>collect real-world data</strong> and build
+							better physical AI models on an open, accessible platform.
+						</p>
+					</div>
+					<div class="solution-card infra-card-2 anim-in anim-d3">
+						<div class="solution-card-num">Intelligence Layer</div>
+						<p>
+							<strong>Host robot models</strong> for inference - from any size model to production
+							deployment.
+						</p>
+					</div>
+					<div class="infra-figure-col anim-in anim-d3">
+						<div class="infra-figure-anchor">
+							<figure class="infra-figure">
+								<img
+									src="/assets/dev-portal-skills.png"
+									alt="Starforge /dev robot skills marketplace"
+								/>
+								<figcaption>
+									Skills hosted on our server run directly on the robot
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 6 - CRITICAL PATH -->
 		<section class="slide" id="s7">
 			<div class="critical-layout">
 				<div class="critical-copy">
@@ -459,48 +550,6 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 6 - COMPUTE LAYER -->
-		<section class="slide" id="s8">
-			<div class="infra-layout">
-				<div class="infra-copy">
-					<div class="section-label anim-in anim-d1">Platform</div>
-					<h2 class="headline anim-in anim-d2">
-						Providing the<br />
-						<span class="hl-gold">API for Intelligence</span>
-					</h2>
-				</div>
-				<div class="infra-body">
-					<div class="solution-card infra-card-1 anim-in anim-d3">
-						<div class="solution-card-num">Humanoid Platform</div>
-						<p>
-							Enable researchers and developers to <strong>collect real-world data</strong> and build
-							better physical AI models on an open, accessible platform.
-						</p>
-					</div>
-					<div class="solution-card infra-card-2 anim-in anim-d3">
-						<div class="solution-card-num">Intelligence Layer</div>
-						<p>
-							<strong>Host robot models</strong> for inference - from any size model to production
-							deployment.
-						</p>
-					</div>
-					<div class="infra-figure-col anim-in anim-d3">
-						<div class="infra-figure-anchor">
-							<figure class="infra-figure">
-								<img
-									src="/assets/dev-portal-skills.png"
-									alt="Starforge /dev robot skills marketplace"
-								/>
-								<figcaption>
-									Skills hosted on our server run directly on the robot
-								</figcaption>
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
 		<!-- SLIDE 7 - DEMOS -->
 		<section class="slide" id="s16">
 			<div class="section-label anim-in anim-d1">Demos</div>
@@ -512,6 +561,12 @@
 					<div class="demo-frame">
 						<!-- svelte-ignore a11y_media_has_caption -->
 						<video src="/assets/robot-demo.mp4" controls playsinline preload="metadata"></video>
+					</div>
+				</figure>
+				<figure class="demo-video">
+					<div class="demo-frame">
+						<!-- svelte-ignore a11y_media_has_caption -->
+						<video src="/assets/robot-hand-demo.mp4" controls playsinline preload="metadata"></video>
 					</div>
 				</figure>
 			</div>
@@ -531,11 +586,12 @@
 							<div class="comp-title">Developer Ecosystem</div>
 							<p class="comp-body">
 								<strong>50+ developers</strong> are already using Buildo's physics simulator.
-								Researchers and developers from <strong>NYU, UC San Diego</strong> and more.
+								Researchers and developers from <strong>UC Berkeley, NYU</strong> and more.
 							</p>
 						</div>
 					</div>
 					<div class="comp-unis">
+						<img src="/assets/uni/berkeley.png" alt="University of California, Berkeley" />
 						<img class="uni-nyu" src="/assets/uni/nyu.png" alt="New York University" />
 						<img src="/assets/uni/ucsd.png" alt="University of California, San Diego" />
 						<img src="/assets/uni/uci.png" alt="University of California, Irvine" />
@@ -571,7 +627,7 @@
 									class="citation"
 									href="https://x.com/RoboStrategy/status/2087561451468681234"
 									target="_blank"
-									rel="noopener noreferrer">[1]</a
+									rel="noopener noreferrer">[3]</a
 								>
 							</p>
 						</div>
@@ -589,7 +645,7 @@
 									class="citation"
 									href="https://x.com/a16z/status/2091200032162857328"
 									target="_blank"
-									rel="noopener noreferrer">[2]</a
+									rel="noopener noreferrer">[4]</a
 								>
 							</p>
 						</div>
@@ -905,7 +961,7 @@
 							class="citation"
 							href="https://x.com/a16z/status/2091200032162857328"
 							target="_blank"
-							rel="noopener noreferrer">[3]</a
+							rel="noopener noreferrer">[5]</a
 						>
 					</p>
 				</div>
@@ -1147,6 +1203,13 @@
 		padding-bottom: clamp(80px, 16vh, 150px);
 	}
 
+	/* Only the title block lifts; the quotes and bullets stay put. */
+	#s4 .section-label,
+	#s4 .headline {
+		position: relative;
+		top: clamp(-46px, -5.2vh, -22px);
+	}
+
 	:global(.slide.active) {
 		opacity: 1;
 		transform: translateX(0);
@@ -1370,6 +1433,71 @@
 		flex-shrink: 0;
 	}
 
+	/* Problem slide: the two points sit left, the outside voice backing them up
+	   sits right. */
+	.problem-layout {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: clamp(18px, 3vw, 46px);
+		align-items: center;
+		width: 100%;
+		min-width: 0;
+	}
+
+	.problem-layout .bullet-list {
+		margin-top: 0;
+		max-width: none;
+	}
+
+	.quote-col {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(24px, 5.2vh, 54px);
+		min-width: 0;
+	}
+
+	.quote-card {
+		margin: 0;
+	}
+
+	/* Keeps the source marker off the closing quotation mark. */
+	.quote-card .citation {
+		margin-left: 4px;
+	}
+
+	.quote-card p {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(12px, 2.2vmin, 16px);
+		font-weight: 600;
+		font-style: italic;
+		line-height: 1.55;
+		color: #141210;
+	}
+
+	.quote-card footer {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: clamp(5px, 0.8vw, 10px);
+		margin-top: clamp(7px, 1.4vh, 12px);
+	}
+
+	.quote-name {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(11px, 1.9vmin, 14px);
+		font-weight: 700;
+		color: #141210;
+	}
+
+	.quote-role {
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(7px, 1.3vmin, 10px);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #7a5e0f;
+	}
+
 	.bullet-item p {
 		font-family: 'Barlow', sans-serif;
 		font-size: clamp(12px, 2.2vmin, 15px);
@@ -1415,15 +1543,27 @@
 	/* Slide 5: text left, diagram right. Columns are minmax(0, ...) so the image
 	   can shrink inside its track instead of forcing the grid wider than the
 	   slide. */
+	/* Two columns of equal height: the cards set the row, and the table column
+	   stretches to match so the demo button can sit on the same baseline as the
+	   bottom card. The source note hangs under the cards. */
 	.solution-layout {
 		margin-top: clamp(4px, 1vh, 12px);
 		display: grid;
 		grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-		gap: clamp(16px, 3vw, 44px);
-		/* Centred against the diagram rather than pinned to the top, so the card
-		   sits at the diagram's midpoint instead of crowding the headline. */
-		align-items: center;
+		grid-template-areas:
+			'cards table'
+			'source .';
+		column-gap: clamp(16px, 3vw, 44px);
+		align-items: stretch;
 		width: 100%;
+	}
+
+	.solution-cards {
+		grid-area: cards;
+		display: flex;
+		flex-direction: column;
+		gap: clamp(8px, 1.6vh, 16px);
+		min-width: 0;
 	}
 
 	.solution-figure {
@@ -1436,22 +1576,25 @@
 
 	/* ── APPROACH COMPARISON TABLE ── */
 	.approach-table-wrap {
+		grid-area: table;
 		min-width: 0;
-		position: relative;
-		/* Both columns start at the row's top edge, so the card and the table
-		   line up whichever of the two happens to be taller. */
-		align-self: start;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* The table rides down with the button so the pair keeps its original
+	   spacing while the button stays level with the bottom card. */
+	.approach-table-wrap .approach-table {
+		margin-top: auto;
 	}
 
 	/* Hung below the wrapper rather than placed in it, so adding the row leaves
 	   the table centred exactly where it was. */
+	/* Pushed to the foot of the stretched column so it lands level with the
+	   bottom edge of the lower card. */
 	.demo-row {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		gap: clamp(12px, 1.6vw, 20px);
 		margin-top: clamp(18px, 3.6vh, 34px);
 	}
@@ -1462,7 +1605,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		gap: clamp(16px, 3vw, 34px);
+		gap: clamp(52px, 11vw, 165px);
 		width: 100%;
 		flex: 1;
 		min-height: 0;
@@ -1618,11 +1761,8 @@
 
 	/* Pinned to the top of the row so the card's top edge lines up with the
 	   table's, with the source note hanging below it. */
-	.solution-col {
-		align-self: start;
-	}
-
 	.solution-source {
+		grid-area: source;
 		margin-top: clamp(8px, 1.6vh, 14px);
 		font-family: 'Barlow', sans-serif;
 		font-size: clamp(10px, 1.7vmin, 13px);
@@ -1643,7 +1783,7 @@
 	}
 
 	.solution-card {
-		padding: clamp(16px, 4vh, 36px) clamp(16px, 3vw, 32px);
+		padding: clamp(12px, 2.8vh, 26px) clamp(16px, 3vw, 32px);
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.06);
 		position: relative;
@@ -1941,8 +2081,9 @@
 		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
 		grid-template-areas:
 			'card1 . card2'
-			'shot1 price shot2';
-		grid-template-rows: auto minmax(0, 1fr);
+			'shot1 price shot2'
+			'specs . data';
+		grid-template-rows: auto minmax(0, 1fr) auto;
 		column-gap: clamp(8px, 1.4vw, 16px);
 		row-gap: clamp(10px, 2vh, 18px);
 		margin-top: clamp(12px, 3vh, 28px);
@@ -1957,6 +2098,15 @@
 
 	.product-card-2 {
 		grid-area: card2;
+	}
+
+	/* These two carry one line of copy each, so the generic card padding just
+	   costs the photos below them height. Scoped through the grid so it beats
+	   the later .why-card rule. */
+	.product-pair .product-card-1,
+	.product-pair .product-card-2 {
+		padding-top: clamp(9px, 1.7vh, 15px);
+		padding-bottom: clamp(9px, 1.7vh, 15px);
 	}
 
 	.product-shot-1 {
@@ -2004,15 +2154,52 @@
 		background: #ffffff;
 	}
 
-	/* Headline specs sit under the pair as a single strip. */
+	/* Each column closes with its own footer: hard numbers under the robot,
+	   the data it captures under the kit. */
 	.product-specs {
+		grid-area: specs;
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: clamp(8px, 1.6vw, 24px);
-		flex-shrink: 0;
-		margin-top: clamp(12px, 2.6vh, 28px);
-		padding-top: clamp(10px, 2vh, 18px);
+		gap: clamp(6px, 1.2vw, 18px);
+		padding-top: clamp(8px, 1.6vh, 14px);
 		border-top: 2px solid rgba(20, 18, 16, 0.12);
+	}
+
+	.product-data {
+		grid-area: data;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: clamp(6px, 1.2vh, 10px);
+		padding-top: clamp(8px, 1.6vh, 14px);
+		border-top: 2px solid rgba(20, 18, 16, 0.12);
+	}
+
+	.product-data-label {
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(8px, 1.3vmin, 10px);
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: #7a5e0f;
+	}
+
+	.product-data-tags {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: clamp(5px, 0.8vw, 10px);
+	}
+
+	.product-data-tags span {
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: clamp(15px, 3vmin, 26px);
+		line-height: 1;
+		letter-spacing: 0.03em;
+		color: #141210;
+		padding: clamp(4px, 0.8vh, 8px) clamp(8px, 1.1vw, 14px);
+		background: rgba(20, 18, 16, 0.044);
+		border: 2px solid rgba(20, 18, 16, 0.05);
 	}
 
 	.product-spec {
@@ -2035,7 +2222,7 @@
 
 	.product-spec-val {
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(22px, 4.6vmin, 40px);
+		font-size: clamp(18px, 3.6vmin, 32px);
 		line-height: 1;
 		letter-spacing: 0.02em;
 		color: #141210;
@@ -2058,7 +2245,7 @@
 		height: auto;
 		/* The 100% keeps the photo inside its grid row so it cannot run over
 		   the spec strip below. */
-		max-height: min(54vh, 420px, 100%);
+		max-height: min(62vh, 540px, 100%);
 		object-fit: contain;
 	}
 
@@ -2446,24 +2633,29 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: clamp(12px, 1.8vw, 22px);
+		flex-wrap: nowrap;
+		gap: clamp(7px, 1.1vw, 15px);
 		margin-top: clamp(34px, 6.8vh, 66px);
 	}
 
+	/* Five marks share one row inside the copy column, so each is capped on
+	   width as well as height and allowed to shrink rather than push out. */
 	.comp-unis img {
-		height: clamp(23px, 4.1vmin, 34px);
+		height: clamp(19px, 3.4vmin, 29px);
 		width: auto;
+		max-width: 23%;
+		min-width: 0;
 		object-fit: contain;
 	}
 
 	.comp-unis .uni-purdue {
-		height: clamp(36px, 6.6vmin, 54px);
+		height: clamp(29px, 5.4vmin, 45px);
 	}
 
 	/* The torch block is narrow, so it needs extra height to carry the same
 	   weight as the marks beside it. */
 	.comp-unis .uni-nyu {
-		height: clamp(50px, 9.6vmin, 80px);
+		height: clamp(40px, 7.7vmin, 65px);
 	}
 
 	.traction-figure {
