@@ -59,10 +59,10 @@
 </script>
 
 <svelte:head>
-	<title>STARFORGE - Building the compute layer for physical AI</title>
+	<title>STARFORGE - Building the intelligence layer for physical AI</title>
 	<meta
 		name="description"
-		content="Starforge is building the compute layer for physical AI - the intelligence that lets humanoid robots work in the real world."
+		content="Starforge is building the intelligence layer for physical AI - the models and API that let humanoid robots work in the real world."
 	/>
 </svelte:head>
 
@@ -80,7 +80,7 @@
 		<p class="hero-sub">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 			<a class="hero-sub-link" href="#{parts[0].id}">Buildo</a> is a uniquely capable and affordable
-			robot made possible by our AI compute layer.
+			robot made possible by our AI intelligence layer.
 		</p>
 		<div class="hero-ctas">
 			<a href={resolve('/buildo')} class="btn-primary">Preorder</a>

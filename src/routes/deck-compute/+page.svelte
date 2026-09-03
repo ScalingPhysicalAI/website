@@ -135,7 +135,7 @@
 </script>
 
 <svelte:head>
-	<title>StarForge Robotics - Compute Pitch Deck</title>
+	<title>Starforge Robotics - Compute Pitch Deck</title>
 	<meta name="robots" content="noindex" />
 	<!-- Unscoped so print engines honour page size and unstacked slides. -->
 	<style>
@@ -209,7 +209,7 @@
 				rel="noopener noreferrer"
 				aria-label="Starforge home"
 			>
-				<img src="/assets/logo-wordmark-dark.png" alt="StarForge" class="nav-logo-img" />
+				<img src="/assets/logo-wordmark-dark.png" alt="Starforge" class="nav-logo-img" />
 			</a>
 			<div class="nav-center">
 				<div class="nav-slides" id="navDots"></div>
@@ -469,7 +469,7 @@
 				<div class="infra-copy">
 					<div class="section-label anim-in anim-d1">Platform</div>
 					<h2 class="headline anim-in anim-d2">
-						StarForge<br />
+						Starforge<br />
 						<span class="hl-gold">compute layer</span>
 					</h2>
 				</div>
@@ -523,7 +523,7 @@
 						<div class="bullet-item">
 							<span class="bullet-icon">▸</span>
 							<p>
-								Hosting models on the StarForge compute layer generates ongoing revenue for
+								Hosting models on the Starforge compute layer generates ongoing revenue for
 								contributors, creating a <strong>self-reinforcing developer flywheel.</strong>
 							</p>
 						</div>
@@ -573,7 +573,7 @@
 						<div class="solution-card">
 							<div class="solution-card-num">Compute Revenue</div>
 							<p>
-								Training and inference hosting on the StarForge compute layer. Compute demand for
+								Training and inference hosting on the Starforge compute layer. Compute demand for
 								physical intelligence will increase <strong>100× with increasing adoption</strong> - far
 								exceeding digital AI today.<a
 									class="citation"
@@ -674,7 +674,7 @@
 		<!-- SLIDE 12 - WHY STARFORGE -->
 		<section class="slide" id="s12">
 			<div class="section-label anim-in anim-d1">Competitive Advantage</div>
-			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">StarForge</span></h2>
+			<h2 class="headline anim-in anim-d2">Why <span class="hl-gold">Starforge</span></h2>
 			<div class="why-grid anim-in anim-d3">
 				<div class="why-card">
 					<div class="why-card-line"></div>
@@ -829,7 +829,7 @@
 							>
 						</div>
 						<p class="comp-body">
-							Building <strong>lithium ion batteries using robots</strong> - deploying StarForge humanoids
+							Building <strong>lithium ion batteries using robots</strong> - deploying Starforge humanoids
 							for real industrial manufacturing tasks.
 						</p>
 					</div>
@@ -845,7 +845,7 @@
 							>
 						</div>
 						<p class="comp-body">
-							Building <strong>industrial warehouses</strong> on the StarForge platform - validating demand
+							Building <strong>industrial warehouses</strong> on the Starforge platform - validating demand
 							for open, capable humanoid robots beyond research.
 						</p>
 					</div>

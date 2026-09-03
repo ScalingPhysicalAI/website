@@ -9,11 +9,11 @@
 	});
 
 	type Member = {
-		initials: string;
 		name: string;
 		role: string;
 		/** Carries inline markup, so it is rendered with {@html}. */
 		bio: string;
+		photo: string;
 		uni: string;
 		uniAlt: string;
 		linkedin?: string;
@@ -23,56 +23,56 @@
 	// Same order as the deck's team slide: three across, two rows.
 	const members: Member[] = [
 		{
-			initials: 'VS',
+			photo: '/assets/team/vipul.jpg',
 			name: 'Vipul Saini',
 			role: 'Founder · Chief Engineer',
-			bio: 'Founded Cypherock and scaled the safest crypto hardware wallet to $600M AUM - <strong>hardware shipped at scale</strong>. He has already taken a hardware product from prototype to global production once.',
+			bio: 'Founded Cypherock and scaled the safest crypto hardware wallet to $600M AUM - <strong>hardware shipped at scale</strong>. The Delhi Technological University engineer has already taken hardware from prototype to global production once.',
 			uni: '/assets/uni/vipul.png',
 			uniAlt: 'Delhi Technological University',
 			linkedin: 'https://www.linkedin.com/in/vipul-saini-59a24156/',
 			x: 'https://x.com/vipulsaini594'
 		},
 		{
-			initials: 'CM',
+			photo: '/assets/team/chiragm.jpg',
 			name: 'Chirag Madaan',
 			role: 'Senior Machine Learning Engineer',
-			bio: 'Shipped <strong>production grade machine learning</strong> capabilities at PayPal and built the cryptography securing 10,000+ Cypherock devices. He turns <strong>AI research into models</strong> that run in the real world.',
+			bio: 'Shipped <strong>production grade machine learning</strong> at PayPal and built the cryptography securing 10,000+ Cypherock devices. He turns <strong>AI research into models</strong> that run in the real world, a craft he started at Vellore Institute of Technology.',
 			uni: '/assets/uni/chiragm.png',
 			uniAlt: 'Vellore Institute of Technology',
 			linkedin: 'https://www.linkedin.com/in/appleswiggy/'
 		},
 		{
-			initials: 'RJ',
+			photo: '/assets/team/rakshit.jpg',
 			name: 'Rakshit Jain',
 			role: 'Senior Robotics Engineer',
-			bio: 'Holds multiple patents and has put <strong>robotics and aerospace products into mass manufacturing</strong> that sell commercially today. He turns a design into something a factory can actually build.',
+			bio: 'Holds multiple patents and has put <strong>robotics and aerospace products into mass manufacturing</strong> that sell commercially today. A Manipal Institute of Technology engineer, he turns a design into something a factory can actually build.',
 			uni: '/assets/uni/rakshit.png',
 			uniAlt: 'Manipal Institute of Technology',
 			linkedin: 'https://www.linkedin.com/in/rakshitjain003/'
 		},
 		{
-			initials: 'SS',
+			photo: '/assets/team/sarthak.jpg',
 			name: 'Sarthak Mishra',
 			role: 'Senior Software Engineer',
-			bio: 'Built software-defined electric vehicles at Mazout Electric across low-latency teleoperation, <strong>embedded systems</strong> and cloud. He owns the real-time link that ties the robot to its operator.',
+			bio: 'Built software-defined electric vehicles at Mazout Electric across low-latency teleoperation, <strong>embedded systems</strong> and cloud. The Amity University graduate owns the real-time link that ties the robot to its operator.',
 			uni: '/assets/uni/sarthak.png',
 			uniAlt: 'Amity University',
 			linkedin: 'https://www.linkedin.com/in/sarthak-mishra-ba32501bb/'
 		},
 		{
-			initials: 'AS',
+			photo: '/assets/team/anay.jpg',
 			name: 'Anay Shiledar',
 			role: 'Electrical Engineer',
-			bio: 'Designs implantable neural-interface electronics and firmware at the Neuroelectronics Research Lab. On Buildo he handles <strong>embedded software</strong>, board bring-up and hardware integration.',
+			bio: 'Designs neural-interface electronics and firmware in the Neuroelectronics Research Lab at the University of California, Irvine. On Buildo, he handles <strong>embedded&nbsp;software</strong>, board bring-up, and hardware integration.',
 			uni: '/assets/uni/anay.png',
 			uniAlt: 'University of California, Irvine',
 			linkedin: 'https://www.linkedin.com/in/anay-shiledar-629036209/'
 		},
 		{
-			initials: 'CS',
+			photo: '/assets/team/chirag.jpg',
 			name: 'Chirag Singla',
 			role: 'Software Engineer',
-			bio: "Has been writing <strong>transformer models</strong> for five years and shipped the cryptography behind Cypherock's hardware wallet. He builds the AI that has to run inside the robot.",
+			bio: "A Bharati Vidyapeeth engineer who has been writing <strong>transformer models</strong> for five years and shipped the cryptography behind Cypherock's hardware wallet. He builds the AI that has to run inside the robot.",
 			uni: '/assets/uni/chirag.png',
 			uniAlt: 'Bharati Vidyapeeth',
 			linkedin: 'https://www.linkedin.com/in/chirag-droid/'
@@ -84,7 +84,7 @@
 	<title>Team - STARFORGE</title>
 	<meta
 		name="description"
-		content="The engineers building Starforge - the compute layer for physical AI, and Buildo, the humanoid it runs on."
+		content="The engineers building Starforge - the intelligence layer for physical AI, and Buildo, the humanoid it runs on."
 	/>
 </svelte:head>
 
@@ -99,7 +99,7 @@
 		{#each members as member, i (member.name)}
 			<article class="tm-card reveal" style="transition-delay:{0.06 * (i % 3)}s">
 				<img class="tm-uni" src={member.uni} alt={member.uniAlt} />
-				<div class="tm-avatar" aria-hidden="true">{member.initials}</div>
+				<img class="tm-avatar" src={member.photo} alt="" />
 				<h2 class="tm-name">
 					<LinkedInName name={member.name} linkedin={member.linkedin} x={member.x} />
 				</h2>
@@ -209,20 +209,13 @@
 
 	/* ── AVATAR ── */
 	.tm-avatar {
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		flex-shrink: 0;
-		width: 52px;
-		height: 52px;
+		width: 64px;
+		height: 64px;
 		margin-bottom: 18px;
 		border: 2px solid var(--border-strong);
 		border-radius: 50%;
-		font-family: 'Space Mono', monospace;
-		font-size: 14px;
-		font-weight: 700;
-		letter-spacing: 0.08em;
-		color: var(--accent);
+		object-fit: cover;
 	}
 
 	/* ── TEXT ── */

@@ -267,11 +267,11 @@
 <section class="bd-section">
 	<div class="bd-split">
 		<div class="reveal">
-			<span class="section-label">Compute</span>
+			<span class="section-label">Intelligence</span>
 			<h2 class="section-title">Any sized model,<br /><span>running on the robot</span></h2>
 			<p class="section-body">
 				The constraint on humanoid robotics has never been the chassis - it is what you can actually
-				run inside it. Buildo is built around a compute architecture that removes the model-size
+				run inside it. Buildo is built around an intelligence architecture that removes the model-size
 				ceiling, so capability is no longer traded away for latency.
 			</p>
 			<p class="section-body" style="margin-top:20px;">
