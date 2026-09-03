@@ -129,7 +129,7 @@
   <g id="slideHeader" transform="translate(100, 75)">
     <!-- Top Nav Elements -->
     <g transform="translate(0, 0)">
-      <!-- StarForge Logo Wordmark -->
+      <!-- Starforge Logo Wordmark -->
       <text x="0" y="16" font-family="'SF Pro Display', system-ui, sans-serif" font-size="20" font-weight="900" letter-spacing="0.28em" fill="#141210">
         STARFORGE
       </text>
@@ -274,7 +274,7 @@
           </text>
         </g>
 
-        <!-- Blade 2: VLA Model Core Node (StarForge) -->
+        <!-- Blade 2: VLA Model Core Node (Starforge) -->
         <g transform="translate(38, 104)">
           <rect x="0" y="0" width="324" height="76" rx="4" fill="#2C251C" stroke="#7A5E0F" stroke-width="2"/>
           <rect x="12" y="12" width="150" height="52" rx="3" fill="#15120E" stroke="#7A5E0F" stroke-width="1.2"/>
@@ -364,7 +364,7 @@
       <!-- Divider -->
       <line x1="36" y1="120" x2="728" y2="120" stroke="#141210" stroke-opacity="0.08" stroke-width="1"/>
 
-      <!-- Bullets matching the StarForge slide style -->
+      <!-- Bullets matching the Starforge slide style -->
       <g transform="translate(36, 150)">
         <g transform="translate(0, 0)">
           <text x="0" y="16" font-family="'SF Mono', monospace" font-size="15" font-weight="700" fill="#7A5E0F">▸</text>
@@ -558,7 +558,7 @@
           <path d="M -50 6 L -14 6 L -4 52 L -44 48 Z" fill="url(#robotPlateLight)" stroke="#5C544B" stroke-width="1.5"/>
           <path d="M 50 6 L 14 6 L 4 52 L 44 48 Z" fill="url(#robotPlateLight)" stroke="#5C544B" stroke-width="1.5"/>
           
-          <!-- StarForge Chest Reactor / Edge Compute Core -->
+          <!-- Starforge Chest Reactor / Edge Compute Core -->
           <rect x="-26" y="14" width="52" height="56" rx="6" fill="#100E0D" stroke="#7A5E0F" stroke-width="2"/>
           <circle cx="0" cy="42" r="16" fill="#1E1B18" stroke="#D4AA3B" stroke-width="1.8"/>
           <circle cx="0" cy="42" r="9" fill="#E5C058" filter="url(#glowGold)"/>
@@ -768,7 +768,7 @@
       <!-- Divider -->
       <line x1="36" y1="120" x2="728" y2="120" stroke="#141210" stroke-opacity="0.08" stroke-width="1"/>
 
-      <!-- Bullets matching the StarForge slide style -->
+      <!-- Bullets matching the Starforge slide style -->
       <g transform="translate(36, 150)">
         <g transform="translate(0, 0)">
           <text x="0" y="16" font-family="'SF Mono', monospace" font-size="15" font-weight="700" fill="#7A5E0F">▸</text>

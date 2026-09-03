@@ -36,8 +36,8 @@
 					</a>
 				</div>
 			</div>
-			<p class="footer-tagline">Building the compute layer for physical AI</p>
-			<p class="footer-location">Made with love in New York City</p>
+			<p class="footer-tagline">Building the intelligence layer for physical AI</p>
+			<p class="footer-location">Made with love in New York City - 500 7th Ave</p>
 			<a href="mailto:contact@starforgerobotics.com" class="footer-contact-link"
 				>contact@starforgerobotics.com</a
 			>
