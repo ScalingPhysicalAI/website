@@ -533,32 +533,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 7 - DEMOS -->
-		<section class="slide" id="s16">
-			<div class="section-label anim-in anim-d1">Demos</div>
-			<h2 class="headline anim-in anim-d2">
-				Buildo is designed to do<br />
-				<span class="hl-gold">most real-world tasks</span>
-			</h2>
-			<div class="demo-grid anim-in anim-d3">
-				<figure class="demo-video">
-					<div class="demo-frame">
-						<!-- svelte-ignore a11y_media_has_caption -->
-						<video src="/assets/robot-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
-					</div>
-					<figcaption>Buildo is wheel based and can adjust its height</figcaption>
-				</figure>
-				<figure class="demo-video">
-					<div class="demo-frame">
-						<!-- svelte-ignore a11y_media_has_caption -->
-						<video src="/assets/robot-hand-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
-					</div>
-					<figcaption>Buildo has 5 fingered dexterous hands with tactile sensors</figcaption>
-				</figure>
-			</div>
-		</section>
-
-		<!-- SLIDE 8 - COMPETITION -->
+		<!-- SLIDE 7 - COMPETITION -->
 		<section class="slide" id="s11">
 			<div class="comp-layout">
 				<div class="comp-copy">
@@ -627,6 +602,31 @@
 						</aside>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 8 - DEMOS -->
+		<section class="slide" id="s16">
+			<div class="section-label anim-in anim-d1">Demos</div>
+			<h2 class="headline anim-in anim-d2">
+				Buildo is designed to do<br />
+				<span class="hl-gold">most real-world tasks</span>
+			</h2>
+			<div class="demo-grid anim-in anim-d3">
+				<figure class="demo-video">
+					<div class="demo-frame">
+						<!-- svelte-ignore a11y_media_has_caption -->
+						<video src="/assets/robot-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
+					</div>
+					<figcaption>Buildo is wheel based and can adjust its height</figcaption>
+				</figure>
+				<figure class="demo-video">
+					<div class="demo-frame">
+						<!-- svelte-ignore a11y_media_has_caption -->
+						<video src="/assets/robot-hand-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
+					</div>
+					<figcaption>Buildo has 5 fingered dexterous hands with tactile sensors</figcaption>
+				</figure>
 			</div>
 		</section>
 
