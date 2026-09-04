@@ -335,7 +335,7 @@
 							<strong>~400ms latency</strong>.
 						</p>
 					</div>
-					<p class="solution-source">Reach out to understand the architecture more.</p>
+					<p class="solution-source">Reach out for more architecture details.</p>
 				</div>
 				<div class="approach-table-wrap">
 					<table class="approach-table">
