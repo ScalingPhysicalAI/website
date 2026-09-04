@@ -279,8 +279,8 @@
 					humanoid robot
 				</h1>
 				<p class="cover-sub anim-in anim-d3">
-					Buildo is a uniquely capable and affordable robot made possible by our AI intelligence
-					layer.
+					Buildo is a uniquely capable and affordable robot made possible by our breakthrough
+					intelligence platform.
 				</p>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a
@@ -306,13 +306,13 @@
 					<p>
 						A robot foundation model approaching human-level generality could exceed <strong
 							>500 billion parameters</strong
-						> - making it extremely difficult and expensive to run on general purpose robots.
+						> - making it extremely energy-intensive and expensive to run on general purpose robots.
 					</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong>Affordable robots are absent in the market</strong>. Developers and researchers
+						<strong>Affordable robots are absent in the market</strong>. Developers and startups
 						are frustrated that it isn't possible to build real-world use cases.
 					</p>
 				</div>
@@ -330,8 +330,9 @@
 				<div class="solution-col">
 					<div class="solution-card">
 						<p>
-							Ran an <strong>8.3B parameter model</strong> on a cloud server with a 76M parameter edge
-							adapter on an STM32 MP2, producing valid action chunks at
+							Ran an <strong>8.3B parameter model</strong> on a cloud server with a 76M parameter
+							<span class="hl-gold">edge adapter</span> on an STM32 MP2, producing valid action chunks
+							at
 							<strong>~400ms latency</strong>.
 						</p>
 					</div>
@@ -402,7 +403,7 @@
 				<div class="why-card product-card-2">
 					<div class="why-card-line"></div>
 					<p class="why-card-body">
-						Training kit enables <strong>teleoperation and real-world data collection</strong>.
+						Training kit enables <strong>real-world egocentric data collection</strong>.
 					</p>
 				</div>
 				<figure class="product-shot product-shot-1">
@@ -413,7 +414,7 @@
 					<span class="product-price-val">$10K</span>
 				</div>
 				<figure class="product-shot product-shot-2">
-					<img src="/assets/buildo-kit.webp" alt="Buildo training kit" />
+					<img src="/assets/buildo-kit-headstrap.png" alt="Buildo training kit" />
 				</figure>
 			</div>
 			<div class="product-specs anim-in anim-d3">
@@ -446,8 +447,8 @@
 						through in-house vertical integration
 					</h2>
 					<p class="critical-body anim-in anim-d3">
-						Buildo's actuators and 5 fingered hands are
-						<strong>made in the United States</strong>. This gives Starforge a clear advantage after
+						Buildo's actuators and hands are
+						<strong>made in the United States</strong>. This gives us a clear advantage after
 						the <strong class="hl-gold">latest FCC ban on mobile robots</strong>.
 					</p>
 					<table class="bom-table anim-in anim-d3">
@@ -481,7 +482,7 @@
 							src="/assets/critical-path-hands.webp"
 							alt="Five-fingered dexterous hands"
 						/>
-						<figcaption>5 fingered dexterous hands</figcaption>
+						<figcaption>5 fingered dexterous hands<br />with tactile sensors</figcaption>
 					</figure>
 					<figure class="critical-shot">
 						<img src="/assets/critical-path-actuators.webp" alt="Actuators" />
@@ -497,23 +498,23 @@
 				<div class="infra-copy">
 					<div class="section-label anim-in anim-d1">Platform</div>
 					<h2 class="headline anim-in anim-d2">
-						Providing the<br />
-						<span class="hl-gold">API for Intelligence</span>
+						An <span class="hl-gold">app store for robot skills</span><br />
+						that scales distribution
 					</h2>
 				</div>
 				<div class="infra-body">
 					<div class="solution-card infra-card-1 anim-in anim-d3">
 						<div class="solution-card-num">Humanoid Platform</div>
 						<p>
-							Enable researchers and developers to <strong>collect real-world data</strong> and build
-							better physical AI models on an open, accessible platform.
+							Enable researchers and startups to <strong>collect real-world data</strong> and build
+							better robot skill models on an open, accessible platform.
 						</p>
 					</div>
 					<div class="solution-card infra-card-2 anim-in anim-d3">
 						<div class="solution-card-num">Intelligence Layer</div>
 						<p>
-							<strong>Host robot models</strong> for inference - from any size model to production
-							deployment.
+							<strong>Host robot skill models</strong> for inference - from any sized model to
+							production deployment.
 						</p>
 					</div>
 					<div class="infra-figure-col anim-in anim-d3">
@@ -535,73 +536,64 @@
 
 		<!-- SLIDE 7 - COMPETITION -->
 		<section class="slide" id="s11">
-			<div class="comp-layout">
-				<div class="comp-copy">
-					<div class="section-label anim-in anim-d1">Competitive Position</div>
-					<h2 class="headline anim-in anim-d2">
-						Why <span class="hl-gold">Buildo wins</span>
-					</h2>
-				</div>
-				<div class="comp-body-row anim-in anim-d3">
-					<div class="comp-col">
-						<div class="comp-col-head">Competitors</div>
-						<div class="comp-list">
-							<div class="comp-item">
-								<div class="comp-num">01</div>
-								<div class="comp-content">
-									<div class="comp-title">
-										<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer"
-											>1X Neo</a
-										>
-									</div>
-									<p class="comp-body">
-										Their robots cost <strong>$20K</strong> which prices out many researchers and
-										developers. Bipedal robots are still considered
-										<strong>unsafe for home deployment</strong>.
-									</p>
-								</div>
-							</div>
-							<div class="comp-item">
-								<div class="comp-num">02</div>
-								<div class="comp-content">
-									<div class="comp-title">
-										<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
-											>Fauna</a
-										>
-									</div>
-									<p class="comp-body">
-										<strong>Costly ($50K)</strong> - high barrier to entry for most researchers and
-										developers, limiting community growth and data collection scale.
-									</p>
-								</div>
-							</div>
-							<div class="comp-item">
-								<div class="comp-num">03</div>
-								<div class="comp-content">
-									<div class="comp-title">
-										<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer"
-											>Lumi</a
-										> and similar
-									</div>
-									<p class="comp-body">
-										Lumi robots cost <strong>$40K</strong>. Additionally, companies using Unitree as a
-										wrapper will face
-										<strong>high costs and scalability issues</strong> due to FCC regulation.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="comp-col">
-						<div class="comp-col-head comp-col-head-sf">Starforge</div>
-						<aside class="comp-claim">
-							<p class="comp-claim-body">
-								<strong>80% lower hardware cost</strong> enables mass deployment and gives a clear
-								advantage to Buildo robots.
-							</p>
-						</aside>
-					</div>
-				</div>
+			<div class="section-label anim-in anim-d1">Competitive Position</div>
+			<h2 class="headline anim-in anim-d2">
+				Why <span class="hl-gold">Buildo wins</span>
+			</h2>
+			<div class="landscape-table-wrap anim-in anim-d3">
+				<table class="approach-table landscape-table">
+				<thead>
+					<tr>
+						<th scope="col">Robot</th>
+						<th scope="col">Cost</th>
+						<th scope="col">Model size (parameters)</th>
+						<th scope="col">Skills store</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">
+							<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
+								>Fauna Sprout</a
+							>
+						</th>
+						<td>$50K</td>
+						<td>3.3 billion</td>
+						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer">Figure 03</a>
+						</th>
+						<td>$30K&ndash;$150K</td>
+						<td>7 billion</td>
+						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer">Lumi</a>
+						</th>
+						<td>$40K</td>
+						<td>8 billion</td>
+						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer">1X Neo</a
+							>
+						</th>
+						<td>$20K</td>
+						<td>14 billion</td>
+						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+					</tr>
+					<tr class="approach-row-ours">
+						<th scope="row">Buildo</th>
+						<td>$10K</td>
+						<td>&gt;90 billion</td>
+						<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
+					</tr>
+					</tbody>
+				</table>
 			</div>
 		</section>
 
@@ -634,8 +626,8 @@
 		<section class="slide" id="s14">
 			<div class="section-label anim-in anim-d1">Traction</div>
 			<h2 class="headline anim-in anim-d2">
-				Developers and startups<br />
-				<span class="hl-gold">love our robots</span>
+				<span class="hl-gold">50+ developers and startups</span><br />
+				are using Buildo
 			</h2>
 			<div class="traction-layout anim-in anim-d3">
 				<div class="comp-list">
@@ -649,8 +641,8 @@
 								>
 							</div>
 							<p class="comp-body">
-								Building <strong>lithium ion batteries using robots</strong> - deploying Starforge
-								humanoids for real industrial manufacturing tasks.
+								<strong>Training robots to build lithium ion batteries</strong> - deploying skill
+								models on our platform.
 							</p>
 						</div>
 					</div>
@@ -710,23 +702,53 @@
 								>
 							</p>
 						</div>
-						<div class="rev-arrow" aria-hidden="true">→</div>
-						<div class="rev-step">
-							<div class="rev-step-head">
-								<span class="rev-step-num">02</span>
-								<span class="rev-step-name">Sell Intelligence API</span>
-								<span class="rev-step-val">($0.20 in / $4 out per M)</span>
-							</div>
-							<p>
-								Training, inference and hosting at <strong>$0.20 per million input</strong> and
-								<strong>$4 per million output</strong>. Demand runs from 2.5T tokens in 2026 to 2
-								quadrillion in 2028.<a
-									class="citation"
-									href="https://x.com/a16z/status/2091200032162857328"
-									target="_blank"
-									rel="noopener noreferrer">[2]</a
+						<svg class="rev-fork" viewBox="0 0 140 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+							<defs>
+								<marker
+									id="revForkHead"
+									viewBox="0 0 10 10"
+									refX="9"
+									refY="5"
+									markerWidth="5"
+									markerHeight="5"
+									orient="auto-start-reverse"
 								>
-							</p>
+									<path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(20, 18, 16, 0.42)" />
+								</marker>
+							</defs>
+							<path d="M 6 100 C 52 100, 78 58, 122 48" marker-end="url(#revForkHead)" />
+							<path d="M 6 100 C 52 100, 78 142, 122 152" marker-end="url(#revForkHead)" />
+						</svg>
+						<div class="rev-branch">
+							<div class="rev-step">
+								<div class="rev-step-head">
+									<span class="rev-step-num">02</span>
+									<span class="rev-step-name">Sell training compute</span>
+								</div>
+								<p>
+									Charging by the hour at <strong>~$2 for an H100 GPU</strong>,
+									<strong>~$1 for a A100 GPU</strong>, <strong>~$0.25 for an RTX 4090</strong>.
+								</p>
+							</div>
+							<div class="rev-step">
+								<div class="rev-step-head">
+									<span class="rev-step-num">03</span>
+									<span class="rev-step-name"
+										>Sell skill tokens<a
+											class="citation"
+											href="https://x.com/a16z/status/2091200032162857328"
+											target="_blank"
+											rel="noopener noreferrer">[2]</a
+										></span
+									>
+									<span class="rev-step-val">($0.20 in / $4 out per M)</span>
+								</div>
+								<p>
+									Skill usage at rate of <strong>$0.20 per million input</strong> and
+									<strong>$4 per million output</strong>. Split
+									<strong>30% to robot store, 70% to developer</strong>.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -737,7 +759,7 @@
 		<section class="slide" id="s18">
 			<div class="section-label anim-in anim-d1">Milestones</div>
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$1.16B ARR by 2028</span> driven by<br />
+				<span class="hl-gold">$565M revenue by 2028</span> driven by<br />
 				2 quadrillion token API demand
 			</h2>
 			<div class="ms-track anim-in anim-d3">
@@ -751,8 +773,12 @@
 							<dd>100</dd>
 						</div>
 						<div class="ms-stat">
-							<dt>Token spend</dt>
+							<dt>Skill tokens</dt>
 							<dd>2.5T</dd>
+						</div>
+						<div class="ms-stat">
+							<dt>Avg. training hours</dt>
+							<dd>9K</dd>
 						</div>
 					</dl>
 				</div>
@@ -769,8 +795,12 @@
 							<dd>2,500</dd>
 						</div>
 						<div class="ms-stat">
-							<dt>Token spend</dt>
+							<dt>Skill tokens</dt>
 							<dd>200T</dd>
+						</div>
+						<div class="ms-stat">
+							<dt>Avg. training hours</dt>
+							<dd>486K</dd>
 						</div>
 					</dl>
 				</div>
@@ -786,8 +816,12 @@
 							<dd>5,000</dd>
 						</div>
 						<div class="ms-stat">
-							<dt>Token spend</dt>
+							<dt>Skill tokens</dt>
 							<dd>300T</dd>
+						</div>
+						<div class="ms-stat">
+							<dt>Avg. training hours</dt>
+							<dd>1.8M</dd>
 						</div>
 					</dl>
 				</div>
@@ -795,8 +829,8 @@
 					<div class="ms-period">2028</div>
 					<div class="ms-title">Scale</div>
 					<p class="ms-body">
-						Production scaled to 50,000 units. Total revenue <strong>$1.46B</strong>: $1.16B from
-						token spend and $300M from hardware.
+						Production scaled to 50,000 units. Total revenue <strong>$565M</strong>: $348M from token
+						spend, $200M from hardware &amp; $17M from training compute.
 					</p>
 					<dl class="ms-stats">
 						<div class="ms-stat">
@@ -804,16 +838,20 @@
 							<dd>20,000</dd>
 						</div>
 						<div class="ms-stat">
-							<dt>Token spend</dt>
+							<dt>Skill tokens</dt>
 							<dd>2Q</dd>
+						</div>
+						<div class="ms-stat">
+							<dt>Avg. training hours</dt>
+							<dd>12.7M</dd>
 						</div>
 					</dl>
 				</div>
 			</div>
 			<p class="ms-note anim-in anim-d3">
 				Token volumes are the inference curve from the forecast, split 90% input to 10% output for a
-				blended <strong>$0.58 per million</strong>. Hardware is one-time; recurring ARR compounds on
-				the installed base.
+				blended <strong>$0.58 per million</strong>. Training compute assumes 100 GPU-hours per active
+				robot each month at a blended <strong>$1.30 per hour</strong>.
 			</p>
 		</section>
 
@@ -929,16 +967,17 @@
 		<section class="slide" id="s15">
 			<div class="section-label anim-in anim-d1">The Vision</div>
 			<h2 class="headline anim-in anim-d2">
-				Largest <span class="hl-gold">open intelligence</span> infrastructure<br />
-				for humanoid robots
+				Building the <span class="hl-gold">largest intelligence ecosystem</span><br />
+				for moving the physical world
 			</h2>
 			<div class="vision-body anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						Ecosystem-driven acceleration will bring the industry substantially closer to <strong
-							>general purpose robotics intelligence</strong
-						> - creating transformational productivity gains across multiple industries.
+						<strong
+							>Robotic AGI is a <span class="hl-gold">model size</span> problem that we have solved.</strong
+						> Ecosystem-driven
+						acceleration will create transformational productivity gains across multiple industries.
 					</p>
 				</div>
 				<div class="bullet-item">
@@ -1401,7 +1440,7 @@
 	.bullet-item {
 		display: flex;
 		gap: 16px;
-		padding: clamp(10px, 2.5vh, 18px) clamp(14px, 2.5vw, 24px);
+		padding: clamp(14px, 3.2vh, 26px) clamp(14px, 2.5vw, 24px);
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
 		border-left: 2px solid rgba(20, 18, 16, 0.2);
@@ -1502,9 +1541,16 @@
 
 	/* Sized off viewport height so a 16:9 embed always clears the slide chrome.
 	   Nudged up so the captions now hanging below it stay clear of the edge. */
+	/* Nudge only the demos label and headline, leaving the clips where they are. */
+	#s16 .section-label,
+	#s16 .headline {
+		position: relative;
+		top: clamp(-16px, -1.5vh, -6px);
+	}
+
 	.demo-grid {
 		position: relative;
-		top: clamp(16px, 3.8vh, 42px);
+		top: clamp(0px, 1.2vh, 14px);
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -1518,7 +1564,7 @@
 	.demo-video {
 		display: flex;
 		flex-direction: column;
-		gap: clamp(6px, 1.2vh, 10px);
+		gap: clamp(14px, 3vh, 30px);
 		margin: 0;
 		min-width: 0;
 	}
@@ -1650,6 +1696,57 @@
 		background: #7a5e0f;
 	}
 
+	/* Competitive landscape table, reusing the approach table's shell. */
+	.landscape-table-wrap {
+		margin-top: clamp(16px, 4vh, 40px);
+	}
+
+	/* Two classes so this beats the full-width rule on .approach-table. */
+	.landscape-table-wrap .landscape-table {
+		width: 84%;
+		margin-inline: auto;
+	}
+
+	.landscape-table-wrap .landscape-table tbody th,
+	.landscape-table-wrap .landscape-table tbody td {
+		padding-top: clamp(11px, 2.6vh, 26px);
+		padding-bottom: clamp(11px, 2.6vh, 26px);
+		font-size: clamp(15px, 2.9vmin, 25px);
+	}
+
+	.landscape-table-wrap .landscape-table thead th {
+		font-size: clamp(10px, 1.95vmin, 15px);
+	}
+
+	/* Scoped to this table so the highlighted row on the breakthrough slide
+	   keeps its normal casing. */
+	.landscape-table .approach-row-ours th,
+	.landscape-table .approach-row-ours td {
+		text-transform: uppercase;
+	}
+
+	.landscape-table tbody th a {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-thickness: 1px;
+		text-decoration-color: rgba(20, 18, 16, 0.28);
+	}
+
+	.landscape-table tbody th a:hover {
+		color: #7a5e0f;
+	}
+
+	.landscape-table .mark-no {
+		color: rgba(20, 18, 16, 0.38);
+		font-size: 1.15em;
+	}
+
+	.landscape-table .mark-yes {
+		color: #7a5e0f;
+		font-size: 1.15em;
+	}
+
 	.solution-figure img {
 		display: block;
 		width: 100%;
@@ -1737,10 +1834,9 @@
 		line-height: 1.65;
 	}
 
-	/* Slides 7–9 and 11: title sits above centre, stacked copy left, visuals right. */
+	/* Title sits above centre, stacked copy left, visuals right. */
 	#s8,
 	#s10,
-	#s11,
 	#s13 {
 		justify-content: flex-start;
 		padding-top: clamp(76px, 14vh, 108px);
@@ -1749,7 +1845,6 @@
 
 	#s8 .section-label,
 	#s10 .section-label,
-	#s11 .section-label,
 	#s13 .section-label {
 		margin-bottom: clamp(6px, 1.6vh, 12px);
 	}
@@ -1790,6 +1885,9 @@
 		grid-template-rows: auto auto;
 		row-gap: 3px;
 		align-items: start;
+		/* Drops the cards and figure without moving the headline above them. */
+		position: relative;
+		top: clamp(12px, 3vh, 30px);
 	}
 
 	.infra-card-1 {
@@ -1910,9 +2008,20 @@
 		min-width: 0;
 	}
 
+	.rev-branch > .rev-step {
+		flex: 1 1 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
 	.rev-step-key {
 		border-left-color: #7a5e0f;
 		background: rgba(122, 94, 15, 0.07);
+		/* Sized to its own copy rather than stretching to the taller branch. */
+		align-self: center;
+		padding-top: clamp(14px, 2.8vh, 30px);
+		padding-bottom: clamp(14px, 2.8vh, 30px);
 	}
 
 	.rev-step-head {
@@ -1939,6 +2048,10 @@
 		color: #141210;
 	}
 
+	.rev-step-name .citation {
+		margin-left: 0.16em;
+	}
+
 	.rev-step-val {
 		font-family: 'Bebas Neue', sans-serif;
 		font-weight: 500;
@@ -1963,12 +2076,41 @@
 		color: #141210;
 	}
 
-	.rev-arrow {
-		align-self: center;
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(18px, 4vmin, 40px);
-		line-height: 1;
-		color: rgba(20, 18, 16, 0.32);
+	/* Lifts the label and headline alone; the revenue stack below stays put. */
+	#s10 .infra-copy {
+		position: relative;
+		top: clamp(-88px, -8vh, -32px);
+	}
+
+	/* The hardware sale feeds two revenue lines, so the right-hand column splits
+	   into a stacked pair that together match the height of the step opposite. */
+	.rev-branch {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(18px, 3vh, 34px);
+		align-self: stretch;
+		min-width: 0;
+	}
+
+	.rev-branch .rev-step {
+		flex: 1;
+		padding-top: clamp(12px, 2.4vh, 26px);
+		padding-bottom: clamp(12px, 2.4vh, 26px);
+	}
+
+	/* One arrow per branch, angled so each points at the box it feeds. */
+	.rev-fork {
+		align-self: stretch;
+		flex: 0 0 auto;
+		width: clamp(56px, 7vw, 120px);
+		height: auto;
+	}
+
+	.rev-fork > path {
+		fill: none;
+		stroke: rgba(20, 18, 16, 0.42);
+		stroke-width: 2.4;
+		stroke-linecap: round;
 	}
 
 	/* Slide 6 carries two product columns. Content starts a little above
@@ -2026,7 +2168,7 @@
 	/* The kit is a supporting shot, so it reads smaller than the robot. Scoped
 	   through the grid to beat the shared .product-shot img rule below. */
 	.product-pair .product-shot-2 img {
-		max-height: min(37vh, 320px, 100%);
+		max-height: min(30vh, 250px, 100%);
 	}
 
 	.product-price {
@@ -2218,6 +2360,9 @@
 
 	.critical-photos {
 		display: flex;
+		/* Content-height columns, so a two-line caption under one photo cannot
+		   push that photo up out of line with its neighbour. */
+		align-items: flex-start;
 		gap: clamp(10px, 1.6vw, 22px);
 		width: 100%;
 		max-width: 100%;
@@ -2375,83 +2520,6 @@
 		color: #141210;
 	}
 
-	/* ── COMPETITION ── */
-	.comp-layout {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(12px, 2.8vh, 22px);
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-	}
-
-	.comp-copy .headline {
-		max-width: none;
-	}
-
-	.comp-body-row {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-		gap: clamp(16px, 3vw, 36px);
-		align-items: stretch;
-		width: 100%;
-		min-width: 0;
-		min-height: 0;
-	}
-
-	/* Equal fr rows in both columns so all six cards share the height of the
-	   longest one. */
-	.comp-col {
-		display: grid;
-		grid-template-rows: auto 1fr;
-		gap: clamp(6px, 1.4vh, 12px);
-		min-width: 0;
-	}
-
-	#s11 .comp-list {
-		display: grid;
-		grid-template-rows: repeat(3, minmax(0, 1fr));
-	}
-
-	.comp-col-head-sf {
-		color: #7a5e0f;
-	}
-
-	/* Sits opposite the competitor list as the single claim that answers it, and
-	   fills the same rows so its edges meet the first and last cards. */
-	.comp-claim {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding: clamp(20px, 4.5vh, 48px) clamp(18px, 2.6vw, 40px);
-		background: rgba(122, 94, 15, 0.07);
-		border: 2px solid rgba(122, 94, 15, 0.16);
-		border-left: 3px solid #7a5e0f;
-		min-width: 0;
-	}
-
-	.comp-claim-body {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(17px, 3.6vmin, 30px);
-		font-weight: 500;
-		line-height: 1.5;
-		color: #3a3630;
-	}
-
-	.comp-claim-body strong {
-		font-weight: 700;
-		color: #7a5e0f;
-	}
-
-	.comp-col-head {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(9px, 1.6vmin, 12px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #8a8177;
-	}
-
 	.comp-list {
 		margin-top: clamp(16px, 5vh, 48px);
 		display: flex;
@@ -2459,11 +2527,6 @@
 		gap: 3px;
 		max-width: 820px;
 		min-width: 0;
-	}
-
-	#s11 .comp-list {
-		margin-top: 0;
-		max-width: none;
 	}
 
 	/* Traction runs the copy against a bench photo, so the list gives up the
@@ -2611,15 +2674,6 @@
 		border-left: 3px solid #7a5e0f;
 	}
 
-	/* Without a number beside it the content would sit in from the gold rule. */
-	.comp-num {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(24px, 5.5vmin, 40px);
-		color: rgba(20, 18, 16, 0.82);
-		line-height: 1;
-		flex-shrink: 0;
-	}
-
 	.comp-title {
 		font-family: 'Barlow', sans-serif;
 		font-size: clamp(13px, 2.4vmin, 17px);
@@ -2628,7 +2682,6 @@
 		margin-bottom: clamp(5px, 1.2vh, 8px);
 	}
 
-	#s11 .comp-title a,
 	#s14 .comp-title a {
 		color: inherit;
 		font-weight: inherit;
@@ -2637,7 +2690,6 @@
 		text-decoration-thickness: 1px;
 	}
 
-	#s11 .comp-title a:hover,
 	#s14 .comp-title a:hover {
 		color: #7a5e0f;
 	}
@@ -2682,7 +2734,8 @@
 		display: flex;
 		flex-direction: column;
 		min-width: 0;
-		padding: clamp(14px, 2.6vh, 24px) clamp(12px, 1.5vw, 20px) clamp(10px, 2vh, 18px);
+		min-height: clamp(170px, 32vh, 330px);
+		padding: clamp(18px, 3.2vh, 30px) clamp(14px, 1.8vw, 24px) clamp(14px, 2.6vh, 24px);
 		background: rgba(20, 18, 16, 0.035);
 		border-top: 2px solid rgba(20, 18, 16, 0.16);
 	}
@@ -2712,7 +2765,7 @@
 	.ms-period {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
+		font-size: clamp(9px, 1.8vmin, 13px);
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: #7a5e0f;
@@ -2721,7 +2774,7 @@
 	.ms-title {
 		font-family: 'Bebas Neue', sans-serif;
 		font-weight: 500;
-		font-size: clamp(15px, 2.7vmin, 26px);
+		font-size: clamp(17px, 3.2vmin, 31px);
 		letter-spacing: 0.03em;
 		line-height: 1.05;
 		color: #141210;
@@ -2730,7 +2783,7 @@
 
 	.ms-body {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(10px, 1.75vmin, 14px);
+		font-size: clamp(11px, 2.05vmin, 17px);
 		font-weight: 500;
 		line-height: 1.5;
 		color: #3a3630;
@@ -2764,7 +2817,7 @@
 	.ms-stat dt {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(7px, 1.3vmin, 10px);
+		font-size: clamp(8px, 1.5vmin, 12px);
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: #6b665e;
@@ -2773,7 +2826,7 @@
 	.ms-stat dd {
 		margin: 0;
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(15px, 2.5vmin, 24px);
+		font-size: clamp(17px, 2.9vmin, 28px);
 		letter-spacing: 0.03em;
 		line-height: 1;
 		color: #141210;
@@ -2786,7 +2839,7 @@
 	.ms-note {
 		margin: clamp(10px, 2vh, 18px) 0 0;
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(9px, 1.55vmin, 13px);
+		font-size: clamp(10px, 1.8vmin, 15px);
 		font-weight: 400;
 		line-height: 1.45;
 		color: #6b665e;
@@ -2806,10 +2859,10 @@
 	}
 
 	.vision-body {
-		margin-top: clamp(10px, 3vh, 28px);
+		margin-top: clamp(20px, 5vh, 52px);
 		display: flex;
 		flex-direction: column;
-		gap: clamp(6px, 1.5vh, 12px);
+		gap: clamp(16px, 3.6vh, 36px);
 		max-width: 760px;
 	}
 
@@ -2843,16 +2896,24 @@
 		display: none !important;
 	}
 
+	#s15 .bullet-item p {
+		font-size: clamp(13px, 2.4vmin, 16.5px);
+	}
+
 	.vision-body strong {
 		color: #141210;
 		font-weight: 500;
+	}
+
+	.vision-body strong.hl-gold {
+		color: #7a5e0f;
 	}
 
 	.ask-row {
 		display: flex;
 		align-items: center;
 		gap: clamp(24px, 5vw, 48px);
-		margin-top: clamp(12px, 4vh, 40px);
+		margin-top: clamp(26px, 6.5vh, 72px);
 	}
 
 	.ask-amount {
@@ -2899,7 +2960,7 @@
 	}
 
 	.ask-footer {
-		margin-top: 32px;
+		margin-top: clamp(30px, 5.5vh, 60px);
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
 		font-size: clamp(10px, 1.8vmin, 12px);
@@ -3078,8 +3139,7 @@
 		.bullet-item p,
 		.comp-body,
 		.solution-card p,
-		.why-card-body,
-		.comp-claim-body {
+		.why-card-body {
 			font-size: 15px;
 		}
 
@@ -3088,7 +3148,6 @@
 		.infra-body,
 		#s8 .infra-body,
 		.critical-layout,
-		.comp-body-row,
 		.traction-layout,
 		.rev-stack,
 		.ms-track,
@@ -3161,8 +3220,10 @@
 			margin-left: 0;
 		}
 
-		/* The step arrow pointed across the two revenue columns. */
-		.rev-arrow {
+		/* The fork pointed across the two revenue columns. */
+		.rev-fork {
+			width: clamp(48px, 18vw, 90px);
+			align-self: center;
 			transform: rotate(90deg);
 		}
 
