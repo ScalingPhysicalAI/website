@@ -312,8 +312,8 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong>Open source affordable robots are absent in the market</strong>. Developers and
-						researchers are frustrated that it isn't possible to build real-world use cases.
+						<strong>Affordable robots are absent in the market</strong>. Developers and researchers
+						are frustrated that it isn't possible to build real-world use cases.
 					</p>
 				</div>
 			</div>
@@ -335,7 +335,14 @@
 							<strong>~400ms latency</strong>.
 						</p>
 					</div>
-					<p class="solution-source">Reach out for more architecture details.</p>
+					<p class="solution-source">
+						Our breakthrough is derived from a heavily optimized implementation of <a
+							class="solution-source-link"
+							href="https://arxiv.org/abs/2602.13476"
+							target="_blank"
+							rel="noopener noreferrer">arXiv 2602.13476</a
+						>
+					</p>
 				</div>
 				<div class="approach-table-wrap">
 					<table class="approach-table">
@@ -577,8 +584,8 @@
 										> and similar
 									</div>
 									<p class="comp-body">
-										Lumi robots cost <strong>$40K</strong>. Additionally, companies using Chinese
-										robots as a wrapper will face
+										Lumi robots cost <strong>$40K</strong>. Additionally, companies using Unitree as a
+										wrapper will face
 										<strong>high costs and scalability issues</strong> due to FCC regulation.
 									</p>
 								</div>
@@ -1668,6 +1675,18 @@
 		font-size: clamp(10px, 1.7vmin, 13px);
 		font-weight: 500;
 		color: #5f584e;
+	}
+
+	.solution-source-link {
+		color: #7a5e0f;
+		font-weight: 700;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-thickness: 1px;
+	}
+
+	.solution-source-link:hover {
+		color: #141210;
 	}
 
 	.solution-card {
