@@ -1287,9 +1287,13 @@ footer {
 	html {
 		scroll-padding-top: 80px;
 	}
+	/* The gradient works over the hero, but on a phone every section scrolls
+	   under a two-row nav, so the bar has to be opaque to stay legible. */
 	nav {
 		padding: 16px 20px;
 		row-gap: 10px;
+		background: var(--bg);
+		border-bottom: 1px solid rgba(20, 18, 16, 0.07);
 	}
 	.nav-logo {
 		font-size: 18px;
@@ -1401,6 +1405,21 @@ footer {
 		font-weight: 600;
 		letter-spacing: 0.06em;
 		padding: 6px 2px;
+	}
+
+	/* Wrapped onto their own lines, buttons sized to their labels look like a
+	   mistake, so they take the column width instead. */
+	.hero-ctas,
+	.part-ctas {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.hero-ctas .btn-primary,
+	.hero-ctas .btn-ghost,
+	.part-ctas .btn-primary,
+	.part-ctas .btn-ghost {
+		text-align: center;
 	}
 
 	.footer-nav {
