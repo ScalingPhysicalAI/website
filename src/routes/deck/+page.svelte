@@ -6,7 +6,26 @@
 	let currentSlide = 0;
 	const SLIDE_SELECTOR = '.slide:not(.slide-hidden)';
 
+	// Below this width a 16:9 stage is only a couple of hundred pixels tall, so
+	// the deck drops the carousel and becomes a plain vertical scroll of cards.
+	const STACKED_QUERY = '(max-width: 900px)';
+	let stacked = false;
+
+	function stackSlides() {
+		document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR).forEach((slide) => {
+			slide.classList.remove('active');
+			slide.style.transform = '';
+			slide.style.opacity = '';
+		});
+		document.body.style.overflow = '';
+	}
+
 	function renderSlides() {
+		if (stacked) {
+			stackSlides();
+			return;
+		}
+
 		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		nodes.forEach((slide, i) => {
 			const offset = i - currentSlide;
@@ -33,6 +52,7 @@
 	}
 
 	function goToSlide(index: number) {
+		if (stacked) return;
 		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		currentSlide = (index + nodes.length) % nodes.length;
 		renderSlides();
@@ -46,6 +66,7 @@
 	}
 
 	function handleKey(event: KeyboardEvent) {
+		if (stacked) return;
 		const t = event.target as HTMLElement | null;
 		if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
 		if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
@@ -82,7 +103,7 @@
 
 	function restorePrintLayout() {
 		document.body.classList.remove('deck-printing');
-		document.body.style.overflow = 'hidden';
+		document.body.style.overflow = stacked ? '' : 'hidden';
 		renderSlides();
 	}
 
@@ -110,7 +131,6 @@
 		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		if (!dotsContainer || nodes.length === 0) return;
 
-		document.body.style.overflow = 'hidden';
 		dotsContainer.replaceChildren();
 		nodes.forEach((_, i) => {
 			const dot = document.createElement('div');
@@ -125,10 +145,23 @@
 		// Advancing on any click made it impossible to select text or follow a
 		// link on a slide; navigation is via the arrows, dots and keyboard.
 		document.addEventListener('keydown', handleKey);
-		goToSlide(0);
+
+		const stackedQuery = window.matchMedia(STACKED_QUERY);
+		const syncMode = () => {
+			stacked = stackedQuery.matches;
+			if (stacked) {
+				stackSlides();
+			} else {
+				document.body.style.overflow = 'hidden';
+				goToSlide(currentSlide);
+			}
+		};
+		stackedQuery.addEventListener('change', syncMode);
+		syncMode();
 
 		return () => {
 			document.removeEventListener('keydown', handleKey);
+			stackedQuery.removeEventListener('change', syncMode);
 			document.body.style.overflow = '';
 		};
 	});
@@ -302,14 +335,7 @@
 							<strong>~400ms latency</strong>.
 						</p>
 					</div>
-					<p class="solution-source">
-						Our breakthrough is derived from a heavily optimized implementation of <a
-							class="solution-source-link"
-							href="https://arxiv.org/abs/2602.13476"
-							target="_blank"
-							rel="noopener noreferrer">arXiv 2602.13476</a
-						>
-					</p>
+					<p class="solution-source">Reach out for more architecture details.</p>
 				</div>
 				<div class="approach-table-wrap">
 					<table class="approach-table">
@@ -500,7 +526,79 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 7 - DEMOS -->
+		<!-- SLIDE 7 - COMPETITION -->
+		<section class="slide" id="s11">
+			<div class="comp-layout">
+				<div class="comp-copy">
+					<div class="section-label anim-in anim-d1">Competitive Position</div>
+					<h2 class="headline anim-in anim-d2">
+						Why <span class="hl-gold">Buildo wins</span>
+					</h2>
+				</div>
+				<div class="comp-body-row anim-in anim-d3">
+					<div class="comp-col">
+						<div class="comp-col-head">Competitors</div>
+						<div class="comp-list">
+							<div class="comp-item">
+								<div class="comp-num">01</div>
+								<div class="comp-content">
+									<div class="comp-title">
+										<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer"
+											>1X Neo</a
+										>
+									</div>
+									<p class="comp-body">
+										Their robots cost <strong>$20K</strong> which prices out many researchers and
+										developers. Bipedal robots are still considered
+										<strong>unsafe for home deployment</strong>.
+									</p>
+								</div>
+							</div>
+							<div class="comp-item">
+								<div class="comp-num">02</div>
+								<div class="comp-content">
+									<div class="comp-title">
+										<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
+											>Fauna</a
+										>
+									</div>
+									<p class="comp-body">
+										<strong>Costly ($50K)</strong> - high barrier to entry for most researchers and
+										developers, limiting community growth and data collection scale.
+									</p>
+								</div>
+							</div>
+							<div class="comp-item">
+								<div class="comp-num">03</div>
+								<div class="comp-content">
+									<div class="comp-title">
+										<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer"
+											>Lumi</a
+										> and similar
+									</div>
+									<p class="comp-body">
+										Lumi robots cost <strong>$40K</strong>. Additionally, companies using Chinese
+										robots as a wrapper will face
+										<strong>high costs and scalability issues</strong> due to FCC regulation.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="comp-col">
+						<div class="comp-col-head comp-col-head-sf">Starforge</div>
+						<aside class="comp-claim">
+							<p class="comp-claim-body">
+								<strong>80% lower hardware cost</strong> enables mass deployment and gives a clear
+								advantage to Buildo robots.
+							</p>
+						</aside>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SLIDE 8 - DEMOS -->
 		<section class="slide" id="s16">
 			<div class="section-label anim-in anim-d1">Demos</div>
 			<h2 class="headline anim-in anim-d2">
@@ -525,7 +623,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 8 - TRACTION -->
+		<!-- SLIDE 9 - TRACTION -->
 		<section class="slide" id="s14">
 			<div class="section-label anim-in anim-d1">Traction</div>
 			<h2 class="headline anim-in anim-d2">
@@ -578,7 +676,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 9 - REVENUE -->
+		<!-- SLIDE 10 - REVENUE -->
 		<section class="slide" id="s10">
 			<div class="infra-layout">
 				<div class="infra-copy">
@@ -628,7 +726,7 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 10 - MILESTONES -->
+		<!-- SLIDE 11 - MILESTONES -->
 		<section class="slide" id="s18">
 			<div class="section-label anim-in anim-d1">Milestones</div>
 			<h2 class="headline anim-in anim-d2">
@@ -712,7 +810,7 @@
 			</p>
 		</section>
 
-		<!-- SLIDE 11 - TEAM -->
+		<!-- SLIDE 12 - TEAM -->
 		<section class="slide" id="s13">
 			<div class="section-label anim-in anim-d1">Founding Team</div>
 			<h2 class="headline anim-in anim-d2">
@@ -815,78 +913,6 @@
 						A Bharati Vidyapeeth engineer who has been writing <strong>transformer models</strong> for
 						five years and shipped the cryptography behind Cypherock's hardware wallet. He builds the
 						AI that has to run inside the robot.
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 12 - COMPETITION -->
-		<section class="slide" id="s11">
-			<div class="comp-layout">
-				<div class="comp-copy">
-					<div class="section-label anim-in anim-d1">Competitive Position</div>
-					<h2 class="headline anim-in anim-d2">
-						Why <span class="hl-gold">Buildo wins</span>
-					</h2>
-				</div>
-				<div class="comp-body-row anim-in anim-d3">
-					<div class="comp-col">
-						<div class="comp-col-head">Competitors</div>
-						<div class="comp-list">
-							<div class="comp-item">
-								<div class="comp-num">01</div>
-								<div class="comp-content">
-									<div class="comp-title">
-										<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer"
-											>1X Neo</a
-										>
-									</div>
-									<p class="comp-body">
-										Their robots cost <strong>$20K</strong> which prices out many researchers and
-										developers. Bipedal robots are still considered
-										<strong>unsafe for home deployment</strong>.
-									</p>
-								</div>
-							</div>
-							<div class="comp-item">
-								<div class="comp-num">02</div>
-								<div class="comp-content">
-									<div class="comp-title">
-										<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
-											>Fauna</a
-										>
-									</div>
-									<p class="comp-body">
-										<strong>Costly ($50K)</strong> - high barrier to entry for most researchers and
-										developers, limiting community growth and data collection scale.
-									</p>
-								</div>
-							</div>
-							<div class="comp-item">
-								<div class="comp-num">03</div>
-								<div class="comp-content">
-									<div class="comp-title">
-										<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer"
-											>Lumi</a
-										> and similar
-									</div>
-									<p class="comp-body">
-										Lumi robots cost <strong>$40K</strong>. Additionally, companies using Chinese
-										robots as a wrapper will face
-										<strong>high costs and scalability issues</strong> due to FCC regulation.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="comp-col">
-						<div class="comp-col-head comp-col-head-sf">Starforge</div>
-						<aside class="comp-claim">
-							<p class="comp-claim-body">
-								<strong>80% lower hardware cost</strong> enables mass deployment and gives a clear
-								advantage to Buildo robots.
-							</p>
-						</aside>
 					</div>
 				</div>
 			</div>
@@ -1642,18 +1668,6 @@
 		font-size: clamp(10px, 1.7vmin, 13px);
 		font-weight: 500;
 		color: #5f584e;
-	}
-
-	.solution-source-link {
-		color: #7a5e0f;
-		font-weight: 700;
-		text-decoration: underline;
-		text-underline-offset: 3px;
-		text-decoration-thickness: 1px;
-	}
-
-	.solution-source-link:hover {
-		color: #141210;
 	}
 
 	.solution-card {
@@ -2947,6 +2961,202 @@
 	}
 
 	/* ── PRINT / PDF EXPORT ── */
+	/* ══ MOBILE ══
+	   A 16:9 stage inside a portrait phone is a ~220px tall letterbox, so below
+	   900px the deck stops being a carousel: the stage becomes a normal block,
+	   every slide is a full-width card of its own height, and the page scrolls.
+	   The carousel's inline transform/opacity are cleared by the script, but the
+	   !important here also covers the moment before it runs. */
+	/* Screen only: print keeps its own landscape layout, so a PDF exported
+	   from a narrow window is still the wide deck. */
+	@media screen and (max-width: 900px) {
+		.deck-viewport {
+			display: block;
+			width: 100%;
+			height: auto;
+			overflow: visible;
+			background: #ffffff;
+		}
+
+		.deck-stage {
+			width: 100%;
+			height: auto;
+			aspect-ratio: auto;
+			overflow: visible;
+			box-shadow: none;
+		}
+
+		/* Sticky would sit on top of every headline as you scroll past it. */
+		nav {
+			position: static;
+			padding: 12px 20px;
+		}
+
+		/* Dots and the slide counter only mean something in the carousel. */
+		.nav-center,
+		.arrow {
+			display: none;
+		}
+
+		.slide {
+			position: relative !important;
+			inset: auto !important;
+			height: auto;
+			min-height: 0;
+			opacity: 1 !important;
+			transform: none !important;
+			transition: none !important;
+			pointer-events: auto !important;
+			padding: 40px 20px 44px !important;
+			border-bottom: 1px solid rgba(20, 18, 16, 0.09);
+		}
+
+		:global(.slide .anim-in) {
+			opacity: 1 !important;
+			transform: none !important;
+			animation: none !important;
+		}
+
+		/* Every desktop nudge is measured against a 16:9 stage, so they all read
+		   as arbitrary offsets once the slides are stacked. */
+		#s5 .headline,
+		#s10 .headline,
+		#s10 .section-label,
+		#s14 .headline,
+		#s14 .section-label,
+		#s18 .headline,
+		#s18 .section-label,
+		.demo-grid,
+		.critical-photos,
+		.traction-layout {
+			top: 0;
+		}
+
+		/* ── Type scales off the card width instead of the short side of a phone ── */
+		.section-label {
+			font-size: 10px;
+		}
+
+		.headline {
+			font-size: clamp(26px, 7.4vw, 38px);
+		}
+
+		.cover-title {
+			font-size: clamp(30px, 9vw, 46px);
+		}
+
+		/* The line breaks are balanced for a wide stage and only make the column
+		   ragged at this width, so headlines wrap on their own. */
+		.headline br,
+		.cover-title br {
+			display: none;
+		}
+
+		.cover-sub {
+			font-size: 15px;
+		}
+
+		.bullet-item p,
+		.comp-body,
+		.solution-card p,
+		.why-card-body,
+		.comp-claim-body {
+			font-size: 15px;
+		}
+
+		/* ── Every two- and three-column layout becomes one column ── */
+		.solution-layout,
+		.infra-body,
+		#s8 .infra-body,
+		.critical-layout,
+		.comp-body-row,
+		.traction-layout,
+		.rev-stack,
+		.ms-track,
+		.team-grid {
+			display: flex;
+			flex-direction: column;
+			gap: clamp(14px, 4vw, 24px);
+		}
+
+		.team-grid {
+			gap: 3px;
+		}
+
+		.product-pair {
+			display: flex;
+			flex-direction: column;
+			gap: 18px;
+		}
+
+		.product-specs {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 14px;
+		}
+
+		.demo-grid {
+			flex-direction: column;
+			gap: 28px;
+			margin-top: 24px;
+		}
+
+		/* Full-width would make these portrait clips taller than the screen. */
+		.demo-frame video {
+			height: min(64vh, 520px);
+			width: auto;
+			max-width: 100%;
+		}
+
+		/* Blocks that hang off a zero-height anchor or the bottom of a column all
+		   rejoin the flow, since there is nothing to align them against now. */
+		.demo-row,
+		.comp-unis {
+			position: static;
+			margin-top: 16px;
+		}
+
+		.infra-figure-anchor {
+			height: auto;
+			top: 0;
+			display: block;
+		}
+
+		.infra-figure-anchor figcaption {
+			margin-bottom: 0;
+		}
+
+		/* The render is pinned beside the copy on a wide stage; stacked, it reads
+		   better as a header image above it. */
+		.cover-figure {
+			position: static;
+			justify-content: center;
+			margin: 0 0 20px;
+		}
+
+		.cover-figure img {
+			max-width: 78%;
+			height: auto;
+		}
+
+		.critical-photos {
+			margin-left: 0;
+		}
+
+		/* The step arrow pointed across the two revenue columns. */
+		.rev-arrow {
+			transform: rotate(90deg);
+		}
+
+		.ask-row {
+			flex-wrap: wrap;
+			gap: 16px 24px;
+		}
+
+		.ask-details {
+			gap: 20px;
+		}
+	}
+
 	@media print {
 		@page {
 			size: 13.333in 7.5in;

@@ -6,7 +6,25 @@
 	let currentSlide = 0;
 	const SLIDE_SELECTOR = '.slide:not(.slide-hidden)';
 
+	// Below this width a 16:9 stage is only a couple of hundred pixels tall, so
+	// the deck drops the carousel and becomes a plain vertical scroll of cards.
+	const STACKED_QUERY = '(max-width: 900px)';
+	let stacked = false;
+
+	function stackSlides() {
+		document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR).forEach((slide) => {
+			slide.classList.remove('active');
+			slide.style.transform = '';
+			slide.style.opacity = '';
+		});
+		document.body.style.overflow = '';
+	}
+
 	function renderSlides() {
+		if (stacked) {
+			stackSlides();
+			return;
+		}
 		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		nodes.forEach((slide, i) => {
 			const offset = i - currentSlide;
@@ -33,6 +51,7 @@
 	}
 
 	function goToSlide(index: number) {
+		if (stacked) return;
 		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		currentSlide = (index + nodes.length) % nodes.length;
 		renderSlides();
@@ -46,6 +65,7 @@
 	}
 
 	function handleKey(event: KeyboardEvent) {
+		if (stacked) return;
 		const t = event.target as HTMLElement | null;
 		if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
 		if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
@@ -82,7 +102,7 @@
 
 	function restorePrintLayout() {
 		document.body.classList.remove('deck-printing');
-		document.body.style.overflow = 'hidden';
+		document.body.style.overflow = stacked ? '' : 'hidden';
 		renderSlides();
 	}
 
@@ -110,7 +130,6 @@
 		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		if (!dotsContainer || nodes.length === 0) return;
 
-		document.body.style.overflow = 'hidden';
 		dotsContainer.replaceChildren();
 		nodes.forEach((_, i) => {
 			const dot = document.createElement('div');
@@ -125,10 +144,23 @@
 		// Advancing on any click made it impossible to select text or follow a
 		// link on a slide; navigation is via the arrows, dots and keyboard.
 		document.addEventListener('keydown', handleKey);
-		goToSlide(0);
+
+		const stackedQuery = window.matchMedia(STACKED_QUERY);
+		const syncMode = () => {
+			stacked = stackedQuery.matches;
+			if (stacked) {
+				stackSlides();
+			} else {
+				document.body.style.overflow = 'hidden';
+				goToSlide(currentSlide);
+			}
+		};
+		stackedQuery.addEventListener('change', syncMode);
+		syncMode();
 
 		return () => {
 			document.removeEventListener('keydown', handleKey);
+			stackedQuery.removeEventListener('change', syncMode);
 			document.body.style.overflow = '';
 		};
 	});
@@ -2205,6 +2237,123 @@
 	}
 
 	/* ── PRINT / PDF EXPORT ── */
+	/* ══ MOBILE ══
+	   Mirrors /deck: below 900px the 16:9 stage would be a ~220px letterbox, so
+	   the carousel gives way to a vertical scroll of full-width slide cards. */
+	/* Screen only: print keeps its own landscape layout, so a PDF exported
+	   from a narrow window is still the wide deck. */
+	@media screen and (max-width: 900px) {
+		.deck-viewport {
+			display: block;
+			width: 100%;
+			height: auto;
+			overflow: visible;
+			background: #ffffff;
+		}
+
+		.deck-stage {
+			width: 100%;
+			height: auto;
+			aspect-ratio: auto;
+			overflow: visible;
+			box-shadow: none;
+		}
+
+		/* Sticky would sit on top of every headline as you scroll past it. */
+		nav {
+			position: static;
+			padding: 12px 20px;
+		}
+
+		.nav-center,
+		.arrow {
+			display: none;
+		}
+
+		.slide {
+			position: relative !important;
+			inset: auto !important;
+			height: auto;
+			min-height: 0;
+			opacity: 1 !important;
+			transform: none !important;
+			transition: none !important;
+			pointer-events: auto !important;
+			padding: 40px 20px 44px !important;
+			border-bottom: 1px solid rgba(20, 18, 16, 0.09);
+		}
+
+		:global(.slide .anim-in) {
+			opacity: 1 !important;
+			transform: none !important;
+			animation: none !important;
+		}
+
+		.section-label {
+			font-size: 10px;
+		}
+
+		.headline {
+			font-size: clamp(26px, 7.4vw, 38px);
+		}
+
+		.cover-title {
+			font-size: clamp(30px, 9vw, 46px);
+		}
+
+		/* The line breaks are balanced for a wide stage and only make the column
+		   ragged at this width, so headlines wrap on their own. */
+		.headline br,
+		.cover-title br {
+			display: none;
+		}
+
+		.cover-sub {
+			font-size: 15px;
+		}
+
+		.bullet-item p,
+		.comp-body,
+		.why-card-body {
+			font-size: 15px;
+		}
+
+		/* ── Every multi-column layout becomes one column ── */
+		.unitree-layout,
+		.solution-layout,
+		.infra-body,
+		#s8 .infra-body,
+		#s10 .infra-body,
+		.eco-body,
+		.critical-layout,
+		.why-grid,
+		.comp-body-row,
+		.product-pair {
+			display: flex;
+			flex-direction: column;
+			gap: clamp(14px, 4vw, 24px);
+		}
+
+		.team-grid {
+			display: flex;
+			flex-direction: column;
+			gap: 3px;
+		}
+
+		.critical-photos {
+			margin-left: 0;
+		}
+
+		.ask-row {
+			flex-wrap: wrap;
+			gap: 16px 24px;
+		}
+
+		.ask-details {
+			gap: 20px;
+		}
+	}
+
 	@media print {
 		@page {
 			size: 13.333in 7.5in;

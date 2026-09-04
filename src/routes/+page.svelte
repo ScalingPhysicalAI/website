@@ -463,7 +463,13 @@
 	@media (max-width: 900px) {
 		.part {
 			min-height: 0;
-			padding: 72px 24px 0;
+			padding: 72px 24px 64px;
+		}
+
+		/* Clears the fixed two-row nav, which the copy would otherwise start
+		   underneath as soon as the section reaches the top of the screen. */
+		.part:first-of-type {
+			padding-top: 116px;
 		}
 
 		.hero-scroll {
