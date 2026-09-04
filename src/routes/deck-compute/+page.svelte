@@ -2240,7 +2240,9 @@
 	/* ══ MOBILE ══
 	   Mirrors /deck: below 900px the 16:9 stage would be a ~220px letterbox, so
 	   the carousel gives way to a vertical scroll of full-width slide cards. */
-	@media (max-width: 900px) {
+	/* Screen only: print keeps its own landscape layout, so a PDF exported
+	   from a narrow window is still the wide deck. */
+	@media screen and (max-width: 900px) {
 		.deck-viewport {
 			display: block;
 			width: 100%;

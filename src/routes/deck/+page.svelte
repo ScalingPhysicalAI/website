@@ -2986,7 +2986,9 @@
 	   every slide is a full-width card of its own height, and the page scrolls.
 	   The carousel's inline transform/opacity are cleared by the script, but the
 	   !important here also covers the moment before it runs. */
-	@media (max-width: 900px) {
+	/* Screen only: print keeps its own landscape layout, so a PDF exported
+	   from a narrow window is still the wide deck. */
+	@media screen and (max-width: 900px) {
 		.deck-viewport {
 			display: block;
 			width: 100%;
