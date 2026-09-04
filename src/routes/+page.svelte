@@ -80,7 +80,7 @@
 		<p class="hero-sub">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 			<a class="hero-sub-link" href="#{parts[0].id}">Buildo</a> is a uniquely capable and affordable
-			robot made possible by our AI intelligence layer.
+			robot made possible by our breakthrough intelligence platform.
 		</p>
 		<div class="hero-ctas">
 			<a href={resolve('/buildo')} class="btn-primary">Preorder</a>
