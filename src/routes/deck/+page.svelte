@@ -861,10 +861,9 @@
 					</dl>
 				</div>
 			</div>
-			<p class="ms-note anim-in anim-d3">
-				Token volumes are the inference curve from the forecast, split 90% input to 10% output for a
-				blended <strong>$0.58 per million</strong>. Training compute assumes 400 GPU-hours per active
-				robot each month at a blended <strong>$1.30 per hour</strong>.
+			<p class="ms-benchmark anim-in anim-d3">
+				Unitree has cumulatively shipped around <strong>11,000 G1 humanoid robots</strong> as of
+				mid-2026.
 			</p>
 		</section>
 
@@ -876,6 +875,7 @@
 			</h2>
 			<div class="team-grid anim-in anim-d3">
 				<div class="team-card">
+					<span class="team-loc">New York</span>
 					<img class="team-photo" src="/assets/team/vipul.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -892,6 +892,7 @@
 					</div>
 				</div>
 				<div class="team-card">
+					<span class="team-loc">New Delhi</span>
 					<img class="team-photo" src="/assets/team/chiragm.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -908,6 +909,7 @@
 					</div>
 				</div>
 				<div class="team-card">
+					<span class="team-loc">New Delhi</span>
 					<img class="team-photo" src="/assets/team/rakshit.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -923,6 +925,7 @@
 					</div>
 				</div>
 				<div class="team-card">
+					<span class="team-loc">New York</span>
 					<img class="team-photo" src="/assets/team/anay.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -938,6 +941,7 @@
 					</div>
 				</div>
 				<div class="team-card">
+					<span class="team-loc">New Delhi</span>
 					<img class="team-photo" src="/assets/team/chirag.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -956,6 +960,7 @@
 			<div class="advisor-label anim-in anim-d3">Research advisors</div>
 			<div class="advisor-grid anim-in anim-d3">
 				<div class="team-card">
+					<span class="team-loc">New York</span>
 					<img class="team-photo" src="/assets/team/rohan.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -971,6 +976,7 @@
 					</div>
 				</div>
 				<div class="team-card">
+					<span class="team-loc">New York</span>
 					<img class="team-photo" src="/assets/team/greta.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -2536,6 +2542,20 @@
 		border-top: 2px solid rgba(20, 18, 16, 0.15);
 	}
 
+	/* Sits in the corner the university crests used to occupy, so the city reads
+	   at a glance without pushing the bio down. */
+	.team-loc {
+		position: absolute;
+		top: clamp(12px, 2.05vh, 24px);
+		right: clamp(13px, 1.4vw, 22px);
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(7.5px, 1.2vh, 11.5px);
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: #8a837a;
+	}
+
 	.team-photo {
 		width: clamp(38px, 6.4vh, 68px);
 		height: clamp(38px, 6.4vh, 68px);
@@ -2898,18 +2918,21 @@
 		color: #7a5e0f;
 	}
 
-	.ms-note {
-		margin: clamp(10px, 2vh, 18px) 0 0;
+	/* Market benchmark for the unit numbers above, so it sits between the track
+	   and the smaller methodology footnote. */
+	.ms-benchmark {
+		/* The track stretches to fill the slide, so a negative top margin pulls
+		   the line back up near the cards it describes. */
+		margin: clamp(-70px, -7.4vh, -30px) 0 0;
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(10px, 1.8vmin, 15px);
-		font-weight: 400;
-		line-height: 1.45;
-		color: #6b665e;
-		max-width: 96ch;
+		font-size: clamp(13px, 2.4vmin, 20px);
+		font-weight: 500;
+		line-height: 1.4;
+		color: #4a453e;
 	}
 
-	.ms-note strong {
-		font-weight: 600;
+	.ms-benchmark strong {
+		font-weight: 700;
 		color: #7a5e0f;
 	}
 
