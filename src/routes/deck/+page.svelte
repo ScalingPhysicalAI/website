@@ -372,16 +372,6 @@
 							</tr>
 						</tbody>
 					</table>
-					<div class="demo-row">
-						<a
-							class="demo-btn"
-							href="https://www.youtube.com/watch?v=37OvBLDqzmw"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Demo <span class="demo-btn-arrow" aria-hidden="true">↗</span>
-						</a>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -403,7 +393,7 @@
 				<div class="why-card product-card-2">
 					<div class="why-card-line"></div>
 					<p class="why-card-body">
-						<strong>Collect egocentric force and tactile data</strong>.
+						<strong>Collect egocentric video and real-world tactile data</strong>.
 					</p>
 				</div>
 				<figure class="product-shot product-shot-1">
@@ -886,7 +876,6 @@
 			</h2>
 			<div class="team-grid anim-in anim-d3">
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/vipul.png" alt="Delhi Technological University" />
 					<img class="team-photo" src="/assets/team/vipul.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -903,7 +892,6 @@
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/chiragm.png" alt="Vellore Institute of Technology" />
 					<img class="team-photo" src="/assets/team/chiragm.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -920,7 +908,6 @@
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/rakshit.png" alt="Manipal Institute of Technology" />
 					<img class="team-photo" src="/assets/team/rakshit.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -936,7 +923,6 @@
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/anay.png" alt="University of California, Irvine" />
 					<img class="team-photo" src="/assets/team/anay.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -952,7 +938,6 @@
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/chirag.png" alt="Bharati Vidyapeeth" />
 					<img class="team-photo" src="/assets/team/chirag.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -1007,7 +992,7 @@
 		<section class="slide" id="s15">
 			<div class="section-label anim-in anim-d1">The Vision</div>
 			<h2 class="headline anim-in anim-d2">
-				Building the <span class="hl-gold">largest intelligence ecosystem</span><br />
+				The <span class="hl-gold">largest open intelligence ecosystem</span><br />
 				for moving the physical world
 			</h2>
 			<div class="vision-body anim-in anim-d3">
@@ -1023,7 +1008,10 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong>Demand for intelligence API will increase 100× with adoption</strong>, far
+						<strong
+							>Demand for
+							<span class="hl-gold">intelligence API will increase 100×</span> with adoption</strong
+						>, far
 						exceeding digital AI today.<a
 							class="citation"
 							href="https://x.com/a16z/status/2091200032162857328"
@@ -1566,19 +1554,6 @@
 		align-self: start;
 	}
 
-	/* Hung below the wrapper rather than placed in it, so adding the row leaves
-	   the table centred exactly where it was. */
-	.demo-row {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
-		display: flex;
-		align-items: center;
-		gap: clamp(12px, 1.6vw, 20px);
-		margin-top: clamp(18px, 3.6vh, 34px);
-	}
-
 	/* Sized off viewport height so a 16:9 embed always clears the slide chrome.
 	   Nudged up so the captions now hanging below it stay clear of the edge. */
 	/* Nudge only the demos label and headline, leaving the clips where they are. */
@@ -1639,38 +1614,6 @@
 		text-transform: uppercase;
 		color: #7a5e0f;
 		text-align: center;
-	}
-
-	.demo-btn {
-		flex-shrink: 0;
-		display: inline-flex;
-		align-items: center;
-		gap: 6px;
-		padding: clamp(7px, 1.4vh, 11px) clamp(16px, 2.2vw, 26px);
-		border: 2px solid #7a5e0f;
-		font-family: 'Space Mono', monospace;
-		font-size: clamp(9px, 1.6vmin, 12px);
-		font-weight: 700;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		text-decoration: none;
-		transition:
-			background 0.2s ease,
-			color 0.2s ease;
-	}
-
-	.demo-btn:hover {
-		background: #7a5e0f;
-		color: #ffffff;
-	}
-
-	.demo-btn-arrow {
-		transition: transform 0.2s ease;
-	}
-
-	.demo-btn:hover .demo-btn-arrow {
-		transform: translate(2px, -2px);
 	}
 
 	.approach-table {
@@ -1752,7 +1695,7 @@
 		width: 84%;
 		margin: clamp(12px, 2.4vh, 24px) auto 0;
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(10px, 1.7vmin, 15px);
+		font-size: clamp(13px, 2.2vmin, 19px);
 		font-weight: 400;
 		line-height: 1.45;
 		color: #6b665e;
@@ -2230,17 +2173,18 @@
 	/* The kit is a supporting shot, so it reads smaller than the robot. Scoped
 	   through the grid to beat the shared .product-shot img rule below. */
 	.product-pair .product-shot-2 img {
-		max-height: min(24vh, 200px, 100%);
+		max-height: min(26vh, 215px, 100%);
 	}
 
-	/* Headstrap and gloves share the kit cell, so they sit side by side and the
-	   gloves are capped a little shorter to read as the same physical scale. */
+	/* Headstrap sits above the gloves in the kit cell, so the pair stacks and
+	   each shot is capped to roughly half the cell. */
 	.product-shot-2 {
-		gap: clamp(10px, 1.6vw, 26px);
+		flex-direction: column;
+		gap: clamp(6px, 1.2vh, 16px);
 	}
 
 	.product-pair .product-shot-2 img.kit-gloves {
-		max-height: min(19vh, 160px, 100%);
+		max-height: min(21vh, 175px, 100%);
 	}
 
 	.product-price {
@@ -2590,19 +2534,6 @@
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
 		border-top: 2px solid rgba(20, 18, 16, 0.15);
-	}
-
-	/* Logos vary between wordmarks and tall crests, so they are boxed to a
-	   common height and left to find their own width inside it. */
-	.team-uni {
-		position: absolute;
-		top: clamp(10px, 2.2vh, 20px);
-		right: clamp(12px, 1.8vw, 22px);
-		height: clamp(30px, 5.4vh, 58px);
-		width: auto;
-		max-width: clamp(56px, 6vw, 100px);
-		object-fit: contain;
-		object-position: right top;
 	}
 
 	.team-photo {
@@ -3049,7 +2980,7 @@
 
 	.ask-amount {
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(28px, 8vmin, 64px);
+		font-size: clamp(24px, 6.4vmin, 51px);
 		letter-spacing: 0.04em;
 		color: #7a5e0f;
 		line-height: 0.9;
@@ -3320,7 +3251,6 @@
 
 		/* Blocks that hang off a zero-height anchor or the bottom of a column all
 		   rejoin the flow, since there is nothing to align them against now. */
-		.demo-row,
 		.comp-unis {
 			position: static;
 			margin-top: 16px;
