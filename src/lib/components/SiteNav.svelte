@@ -12,7 +12,6 @@
 
 	const normalizedPath = $derived(pathname !== '/' ? pathname.replace(/\/$/, '') : pathname);
 	const isBuildo = $derived(normalizedPath === '/buildo');
-	const isTeam = $derived(normalizedPath === '/team');
 
 	let headerEl: HTMLDivElement;
 
@@ -44,11 +43,6 @@
 					href={resolve('/buildo')}
 					class:active={isBuildo}
 					aria-current={isBuildo ? 'page' : undefined}>Buildo</a
-				>
-			</li>
-			<li>
-				<a href={resolve('/team')} class:active={isTeam} aria-current={isTeam ? 'page' : undefined}
-					>Team</a
 				>
 			</li>
 			<li>

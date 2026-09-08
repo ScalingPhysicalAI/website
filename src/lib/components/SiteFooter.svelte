@@ -52,13 +52,6 @@
 			</div>
 
 			<div class="footer-col">
-				<span class="footer-col-label">Company</span>
-				<ul>
-					<li><a href={resolve('/team')}>Team</a></li>
-				</ul>
-			</div>
-
-			<div class="footer-col">
 				<span class="footer-col-label">Developers</span>
 				<ul>
 					<li><a href="https://portal.starforgerobotics.com">Dev Portal</a></li>
