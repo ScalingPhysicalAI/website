@@ -306,7 +306,7 @@
 					<p>
 						A robot foundation model approaching human-level generality could exceed <strong
 							>500 billion parameters</strong
-						> - making it extremely energy-intensive and expensive to run on general purpose robots.
+						> - making it extremely expensive and energy-intensive to run on general purpose robots.
 					</p>
 				</div>
 				<div class="bullet-item">
@@ -403,7 +403,7 @@
 				<div class="why-card product-card-2">
 					<div class="why-card-line"></div>
 					<p class="why-card-body">
-						Training kit enables <strong>real-world egocentric data collection</strong>.
+						<strong>Collect egocentric force and tactile data</strong>.
 					</p>
 				</div>
 				<figure class="product-shot product-shot-1">
@@ -414,7 +414,12 @@
 					<span class="product-price-val">$10K</span>
 				</div>
 				<figure class="product-shot product-shot-2">
-					<img src="/assets/buildo-kit-headstrap.png" alt="Buildo training kit" />
+					<img src="/assets/buildo-kit-headstrap.png" alt="Buildo training kit headstrap" />
+					<img
+						class="kit-gloves"
+						src="/assets/buildo-kit-gloves.png"
+						alt="Buildo tactile gloves"
+					/>
 				</figure>
 			</div>
 			<div class="product-specs anim-in anim-d3">
@@ -506,7 +511,7 @@
 					<div class="solution-card infra-card-1 anim-in anim-d3">
 						<div class="solution-card-num">Humanoid Platform</div>
 						<p>
-							Enable researchers and startups to <strong>collect real-world data</strong> and build
+							Enable developers and startups to <strong>collect real-world data</strong> and build
 							better robot skill models on an open, accessible platform.
 						</p>
 					</div>
@@ -551,6 +556,12 @@
 					</tr>
 				</thead>
 				<tbody>
+					<tr class="approach-row-ours">
+						<th scope="row">Buildo</th>
+						<td>$10K</td>
+						<td>&gt;90 billion</td>
+						<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
+					</tr>
 					<tr>
 						<th scope="row">
 							<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
@@ -586,14 +597,12 @@
 						<td>14 billion</td>
 						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
 					</tr>
-					<tr class="approach-row-ours">
-						<th scope="row">Buildo</th>
-						<td>$10K</td>
-						<td>&gt;90 billion</td>
-						<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
-					</tr>
 					</tbody>
 				</table>
+				<p class="landscape-note">
+					Companies using Unitree as a wrapper will face high costs and scalability issues due to the
+					<strong>latest FCC ban on mobile robots</strong>.
+				</p>
 			</div>
 		</section>
 
@@ -619,6 +628,20 @@
 					</div>
 					<figcaption>Buildo has 5 fingered dexterous hands with tactile sensors</figcaption>
 				</figure>
+				<figure class="demo-video">
+					<div class="demo-frame">
+						<!-- svelte-ignore a11y_media_has_caption -->
+						<video
+							src="/assets/robot-flexibility-demo.mp4"
+							autoplay
+							loop
+							muted
+							playsinline
+							preload="auto"
+						></video>
+					</div>
+					<figcaption>Buildo has 31 degrees of freedom</figcaption>
+				</figure>
 			</div>
 		</section>
 
@@ -641,8 +664,8 @@
 								>
 							</div>
 							<p class="comp-body">
-								<strong>Training robots to build lithium ion batteries</strong> - deploying skill
-								models on our platform.
+								<strong>Collecting data and training robots to build lithium ion batteries</strong> -
+								deploying skill models on our platform.
 							</p>
 						</div>
 					</div>
@@ -746,7 +769,7 @@
 								<p>
 									Skill usage at rate of <strong>$0.20 per million input</strong> and
 									<strong>$4 per million output</strong>. Split
-									<strong>30% to robot store, 70% to developer</strong>.
+									<strong>30% to skills store, 70% to developer</strong>.
 								</p>
 							</div>
 						</div>
@@ -759,7 +782,7 @@
 		<section class="slide" id="s18">
 			<div class="section-label anim-in anim-d1">Milestones</div>
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$565M revenue by 2028</span> driven by<br />
+				<span class="hl-gold">$614M revenue by 2028</span> driven by<br />
 				2 quadrillion token API demand
 			</h2>
 			<div class="ms-track anim-in anim-d3">
@@ -778,13 +801,13 @@
 						</div>
 						<div class="ms-stat">
 							<dt>Avg. training hours</dt>
-							<dd>9K</dd>
+							<dd>36K</dd>
 						</div>
 					</dl>
 				</div>
 				<div class="ms-step">
 					<div class="ms-period">Q1 - Q2 2027</div>
-					<div class="ms-title">The research standard</div>
+					<div class="ms-title">The developer standard</div>
 					<p class="ms-body">
 						Go-to platform for university labs and physical AI startups, with production scaling to
 						5,000 units.
@@ -800,13 +823,13 @@
 						</div>
 						<div class="ms-stat">
 							<dt>Avg. training hours</dt>
-							<dd>486K</dd>
+							<dd>1.9M</dd>
 						</div>
 					</dl>
 				</div>
 				<div class="ms-step">
 					<div class="ms-period">Q3 - Q4 2027</div>
-					<div class="ms-title">Out of the lab</div>
+					<div class="ms-title">Deployment</div>
 					<p class="ms-body">
 						Factory and home deployment, with production scaled to 10,000 units.
 					</p>
@@ -821,7 +844,7 @@
 						</div>
 						<div class="ms-stat">
 							<dt>Avg. training hours</dt>
-							<dd>1.8M</dd>
+							<dd>7.3M</dd>
 						</div>
 					</dl>
 				</div>
@@ -829,8 +852,8 @@
 					<div class="ms-period">2028</div>
 					<div class="ms-title">Scale</div>
 					<p class="ms-body">
-						Production scaled to 50,000 units. Total revenue <strong>$565M</strong>: $348M from token
-						spend, $200M from hardware &amp; $17M from training compute.
+						Production scaled to 50,000 units. Total revenue <strong>$614M</strong>: $348M from token
+						spend, $200M from hardware &amp; $66M from training compute.
 					</p>
 					<dl class="ms-stats">
 						<div class="ms-stat">
@@ -843,14 +866,14 @@
 						</div>
 						<div class="ms-stat">
 							<dt>Avg. training hours</dt>
-							<dd>12.7M</dd>
+							<dd>50.7M</dd>
 						</div>
 					</dl>
 				</div>
 			</div>
 			<p class="ms-note anim-in anim-d3">
 				Token volumes are the inference curve from the forecast, split 90% input to 10% output for a
-				blended <strong>$0.58 per million</strong>. Training compute assumes 100 GPU-hours per active
+				blended <strong>$0.58 per million</strong>. Training compute assumes 400 GPU-hours per active
 				robot each month at a blended <strong>$1.30 per hour</strong>.
 			</p>
 		</section>
@@ -913,22 +936,6 @@
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-uni" src="/assets/uni/sarthak.png" alt="Amity University" />
-					<img class="team-photo" src="/assets/team/sarthak.jpg" alt="" />
-					<div class="team-name">
-						<LinkedInName
-							name="Sarthak Mishra"
-							linkedin="https://www.linkedin.com/in/sarthak-mishra-ba32501bb/"
-						/>
-					</div>
-					<div class="team-role">Senior Software Engineer</div>
-					<div class="team-bio">
-						Built software-defined electric vehicles at Mazout Electric across low-latency
-						teleoperation, <strong>embedded systems</strong> and cloud. The Amity University graduate
-						owns the real-time link that ties the robot to its operator.
-					</div>
-				</div>
-				<div class="team-card">
 					<img class="team-uni" src="/assets/uni/anay.png" alt="University of California, Irvine" />
 					<img class="team-photo" src="/assets/team/anay.jpg" alt="" />
 					<div class="team-name">
@@ -961,6 +968,39 @@
 					</div>
 				</div>
 			</div>
+			<div class="advisor-label anim-in anim-d3">Research advisors</div>
+			<div class="advisor-grid anim-in anim-d3">
+				<div class="team-card">
+					<img class="team-photo" src="/assets/team/rohan.jpg" alt="" />
+					<div class="team-name">
+						<LinkedInName
+							name="Rohan P. Singh"
+							linkedin="https://www.linkedin.com/in/rohanpsingh/"
+						/>
+					</div>
+					<div class="team-role">Research Scientist</div>
+					<div class="team-bio">
+						Research scientist at Fauna Robotics and co-author of the Fauna Sprout humanoid. A
+						University of Tsukuba PhD who spent seven years at the CNRS-AIST Joint Robotics Lab, he
+						advises on <strong>sim-to-real reinforcement learning</strong> for real hardware.
+					</div>
+				</div>
+				<div class="team-card">
+					<img class="team-photo" src="/assets/team/greta.jpg" alt="" />
+					<div class="team-name">
+						<LinkedInName
+							name="Greta Perez-Haiek"
+							linkedin="https://www.linkedin.com/in/greta-perez-haiek-7722bb211/"
+						/>
+					</div>
+					<div class="team-role">Research Scientist</div>
+					<div class="team-bio">
+						Research scientist at NYU's Center for Robotics and Embodied Intelligence, working on
+						<strong>high-dexterity manipulation</strong> with human-like hands. The NYU Tandon
+						roboticist has taken vision-language-action models out of the lab and into the field.
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<!-- SLIDE 13 - VISION / ASK -->
@@ -983,7 +1023,7 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong>Demand for API as intelligence will increase 100× with adoption</strong>, far
+						<strong>Demand for intelligence API will increase 100× with adoption</strong>, far
 						exceeding digital AI today.<a
 							class="citation"
 							href="https://x.com/a16z/status/2091200032162857328"
@@ -1552,10 +1592,12 @@
 		position: relative;
 		top: clamp(0px, 1.2vh, 14px);
 		display: flex;
-		flex-wrap: wrap;
+		/* Wrapping used to drop the third clip onto a clipped second row on
+		   narrower windows, so the columns share the width instead. */
+		flex-wrap: nowrap;
 		align-items: center;
 		justify-content: center;
-		gap: clamp(52px, 11vw, 165px);
+		gap: clamp(16px, 2.4vw, 56px);
 		width: 100%;
 		flex: 1;
 		min-height: 0;
@@ -1564,8 +1606,12 @@
 	.demo-video {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		gap: clamp(14px, 3vh, 30px);
 		margin: 0;
+		/* Equal columns keep the three clips evenly spaced regardless of how
+		   wide each caption happens to be. */
+		flex: 1 1 0;
 		min-width: 0;
 	}
 
@@ -1574,7 +1620,7 @@
 	.demo-frame {
 		display: flex;
 		justify-content: center;
-		max-width: 100%;
+		width: 100%;
 	}
 
 	.demo-frame video {
@@ -1585,6 +1631,7 @@
 	}
 
 	.demo-video figcaption {
+		max-width: 100%;
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
 		font-size: clamp(8px, 1.5vmin, 11px);
@@ -1699,6 +1746,21 @@
 	/* Competitive landscape table, reusing the approach table's shell. */
 	.landscape-table-wrap {
 		margin-top: clamp(16px, 4vh, 40px);
+	}
+
+	.landscape-note {
+		width: 84%;
+		margin: clamp(12px, 2.4vh, 24px) auto 0;
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(10px, 1.7vmin, 15px);
+		font-weight: 400;
+		line-height: 1.45;
+		color: #6b665e;
+	}
+
+	.landscape-note strong {
+		font-weight: 600;
+		color: #7a5e0f;
 	}
 
 	/* Two classes so this beats the full-width rule on .approach-table. */
@@ -2168,7 +2230,17 @@
 	/* The kit is a supporting shot, so it reads smaller than the robot. Scoped
 	   through the grid to beat the shared .product-shot img rule below. */
 	.product-pair .product-shot-2 img {
-		max-height: min(30vh, 250px, 100%);
+		max-height: min(24vh, 200px, 100%);
+	}
+
+	/* Headstrap and gloves share the kit cell, so they sit side by side and the
+	   gloves are capped a little shorter to read as the same physical scale. */
+	.product-shot-2 {
+		gap: clamp(10px, 1.6vw, 26px);
+	}
+
+	.product-pair .product-shot-2 img.kit-gloves {
+		max-height: min(19vh, 160px, 100%);
 	}
 
 	.product-price {
@@ -2439,14 +2511,73 @@
 	}
 
 	/* ── TEAM ── */
+	/* Rows are content-sized: forcing two equal 1fr rows made the cards overlap
+	   each other on shorter windows. */
 	.team-grid {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		grid-template-rows: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		grid-auto-rows: auto;
+		align-content: start;
 		gap: 3px;
-		margin-top: clamp(8px, 2vh, 16px);
-		flex: 1;
-		min-height: 0;
+		margin-top: clamp(8px, 1.9vh, 22px);
+		/* No shrink: the flex parent was squeezing the auto rows below their
+		   content height, which is what made the cards overlap. */
+		flex: 0 0 auto;
+	}
+
+	/* Six columns need the room; narrower desktop windows fall back to 3x2. */
+	@media screen and (min-width: 901px) and (max-width: 1240px) {
+		.team-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	.advisor-label {
+		margin-top: clamp(8px, 1.7vh, 20px);
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(9px, 1.5vh, 12.5px);
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: #7a5e0f;
+	}
+
+	/* Same column width as the founder grid so the cards line up under it. */
+	.advisor-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 3px;
+		margin-top: clamp(5px, 1.1vh, 12px);
+	}
+
+	/* Advisors sit beside their photo rather than under it, so the extra row
+	   costs about half the height of a founder card. */
+	.advisor-grid .team-card {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		grid-template-areas:
+			'photo name'
+			'photo role'
+			'photo bio';
+		column-gap: clamp(9px, 1vw, 14px);
+	}
+
+	.advisor-grid .team-photo {
+		grid-area: photo;
+		align-self: start;
+		margin-bottom: 0;
+	}
+
+	.advisor-grid .team-name {
+		grid-area: name;
+	}
+
+	.advisor-grid .team-role {
+		grid-area: role;
+	}
+
+	.advisor-grid .team-bio {
+		grid-area: bio;
 	}
 
 	.team-card {
@@ -2455,7 +2586,7 @@
 		flex-direction: column;
 		min-width: 0;
 		min-height: 0;
-		padding: clamp(10px, 2.2vh, 20px) clamp(12px, 1.8vw, 22px);
+		padding: clamp(11px, 1.9vh, 24px) clamp(13px, 1.4vw, 22px);
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
 		border-top: 2px solid rgba(20, 18, 16, 0.15);
@@ -2467,26 +2598,26 @@
 		position: absolute;
 		top: clamp(10px, 2.2vh, 20px);
 		right: clamp(12px, 1.8vw, 22px);
-		height: clamp(34px, 6.4vmin, 54px);
+		height: clamp(30px, 5.4vh, 58px);
 		width: auto;
-		max-width: clamp(72px, 10vw, 120px);
+		max-width: clamp(56px, 6vw, 100px);
 		object-fit: contain;
 		object-position: right top;
 	}
 
 	.team-photo {
-		width: clamp(34px, 6vmin, 52px);
-		height: clamp(34px, 6vmin, 52px);
+		width: clamp(38px, 6.4vh, 68px);
+		height: clamp(38px, 6.4vh, 68px);
 		flex-shrink: 0;
 		border: 2px solid rgba(20, 18, 16, 0.175);
 		border-radius: 50%;
 		object-fit: cover;
-		margin-bottom: clamp(8px, 2vh, 16px);
+		margin-bottom: clamp(7px, 1.4vh, 16px);
 	}
 
 	.team-name {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(13px, 2.2vmin, 17px);
+		font-size: clamp(14px, 2.3vh, 23px);
 		font-weight: 600;
 		color: #141210;
 	}
@@ -2494,19 +2625,19 @@
 	.team-role {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(8px, 1.4vmin, 10px);
-		letter-spacing: 0.1em;
+		font-size: clamp(8.5px, 1.4vh, 13.5px);
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: #7a5e0f;
-		margin-top: 3px;
-		margin-bottom: clamp(6px, 1.5vh, 12px);
+		margin-top: 4px;
+		margin-bottom: clamp(6px, 1.25vh, 13px);
 	}
 
 	/* Long compound words (Neuroelectronics, neural-interface) leave big ragged
 	   gaps in a narrow card, so hyphenation fills the lines out. */
 	.team-bio {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(11px, 1.75vmin, 14px);
+		font-size: clamp(10.5px, 1.78vh, 17.5px);
 		font-weight: 500;
 		color: #5f584e;
 		line-height: 1.5;
@@ -3151,13 +3282,15 @@
 		.traction-layout,
 		.rev-stack,
 		.ms-track,
-		.team-grid {
+		.team-grid,
+		.advisor-grid {
 			display: flex;
 			flex-direction: column;
 			gap: clamp(14px, 4vw, 24px);
 		}
 
-		.team-grid {
+		.team-grid,
+		.advisor-grid {
 			gap: 3px;
 		}
 
