@@ -75,7 +75,7 @@
 	// stiffness, so the spelling here is deliberate.
 	const specs: Array<{ label: string; value: string; unit: string; phrase?: boolean }> = [
 		{ label: 'Payload', value: '18', unit: 'LB' },
-		{ label: 'Height', value: '4–5', unit: 'FT' },
+		{ label: 'Height', value: '4–6', unit: 'FT' },
 		{ label: 'Speed', value: '1.4', unit: 'MPH' },
 		{ label: 'Joint torque', value: '15', unit: 'N·M' },
 		{ label: 'Hands', value: '5', unit: 'FINGER' },

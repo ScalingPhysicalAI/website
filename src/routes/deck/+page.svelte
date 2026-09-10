@@ -274,13 +274,13 @@
 			<div class="cover-content">
 				<div class="cover-tag anim-in anim-d1">Seed Round · 2026</div>
 				<h1 class="cover-title anim-in anim-d2">
-					Meet <span class="hl-gold">Buildo</span>, our<br />
-					$10k open source<br />
+					<span class="hl-gold">Buildo</span>: $10k<br />
+					open-source<br />
 					humanoid robot
 				</h1>
 				<p class="cover-sub anim-in anim-d3">
-					Buildo is a uniquely capable and affordable robot made possible by our breakthrough
-					intelligence platform.
+					Buildo is a uniquely capable and affordable robot powered by our breakthrough intelligence
+					platform.
 				</p>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a
@@ -294,26 +294,24 @@
 
 		<!-- SLIDE 2 - THE PROBLEM -->
 		<section class="slide" id="s4">
-			<div class="section-label anim-in anim-d1">The Problem</div>
 			<h2 class="headline anim-in anim-d2">
-				500 billion parameters make human-level<br />
-				intelligence <span class="hl-gold">too expensive</span><br />
-				for current robots
+				500 billion parameter models<br />
+				make human-level intelligence<br />
+				<span class="hl-gold">too expensive</span> for robots
 			</h2>
 			<div class="bullet-list anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						A robot foundation model approaching human-level generality could exceed <strong
-							>500 billion parameters</strong
-						> - making it extremely expensive and energy-intensive to run on general purpose robots.
+						Models with human-level generality are extremely compute-heavy which makes them
+						<strong>expensive and energy-intensive</strong> to deploy on robots.
 					</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong>Affordable robots are absent in the market</strong>. Developers and startups
-						are frustrated that it isn't possible to build real-world use cases.
+						Developers and startups are frustrated that
+						<strong>affordable &amp; capable humanoid robots simply do not exist.</strong>
 					</p>
 				</div>
 			</div>
@@ -321,23 +319,21 @@
 
 		<!-- SLIDE 3 - BREAKTHROUGH -->
 		<section class="slide" id="s5">
-			<div class="section-label anim-in anim-d1">Our Solution</div>
 			<h2 class="headline anim-in anim-d2">
 				Our breakthrough allows running<br />
-				<span class="hl-gold">any sized model</span> on humanoid robots
+				<span class="hl-gold">any sized model</span> without on-robot GPU<span class="small-caps-s">s</span>
 			</h2>
 			<div class="solution-layout anim-in anim-d3">
 				<div class="solution-col">
 					<div class="solution-card">
 						<p>
 							Ran an <strong>8.3B parameter model</strong> on a cloud server with a 76M parameter
-							<span class="hl-gold">edge adapter</span> on an STM32 MP2, producing valid action chunks
-							at
+							<span class="hl-gold">edge adapter</span>, producing valid action chunks at
 							<strong>~400ms latency</strong>.
 						</p>
 					</div>
 					<p class="solution-source">
-						Our breakthrough is derived from a heavily optimized implementation of <a
+						Derived from a heavily optimized implementation of <a
 							class="solution-source-link"
 							href="https://arxiv.org/abs/2602.13476"
 							target="_blank"
@@ -378,56 +374,39 @@
 
 		<!-- SLIDE 4 - BUILDO KIT -->
 		<section class="slide" id="s6">
-			<div class="section-label anim-in anim-d1">Product</div>
 			<h2 class="headline anim-in anim-d2">
-				Buildo <span class="hl-gold">robot</span> and <span class="hl-gold">training kit</span>
+				<span class="hl-gold">$10k hardware stack</span> replaces<br />
+				$100k industrial setups
 			</h2>
-			<div class="product-pair anim-in anim-d3">
-				<div class="why-card product-card-1">
-					<div class="why-card-line"></div>
-					<p class="why-card-body">
-						<strong>Buildo</strong> is designed for most
-						<strong>real-world use cases</strong> today.
-					</p>
+			<div class="kit-layout anim-in anim-d3">
+				<div class="bullet-list kit-points">
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Buildo can carry a <strong>payload of up to 18 lbs</strong></p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Height adjustable from <strong>4 to 6 feet</strong></p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Accessories for <strong>egocentric video and tactile data collection</strong></p>
+					</div>
 				</div>
-				<div class="why-card product-card-2">
-					<div class="why-card-line"></div>
-					<p class="why-card-body">
-						<strong>Collect egocentric video and real-world tactile data</strong>.
-					</p>
-				</div>
-				<figure class="product-shot product-shot-1">
-					<img src="/assets/buildo-product.webp" alt="Buildo robot" />
-				</figure>
-				<div class="product-price">
-					<span class="product-price-label">Retail price</span>
-					<span class="product-price-val">$10K</span>
-				</div>
-				<figure class="product-shot product-shot-2">
-					<img src="/assets/buildo-kit-headstrap.png" alt="Buildo training kit headstrap" />
-					<img
-						class="kit-gloves"
-						src="/assets/buildo-kit-gloves.png"
-						alt="Buildo tactile gloves"
-					/>
-				</figure>
-			</div>
-			<div class="product-specs anim-in anim-d3">
-				<div class="product-spec">
-					<span class="product-spec-label">Payload</span>
-					<span class="product-spec-val">18 <em>lb</em></span>
-				</div>
-				<div class="product-spec">
-					<span class="product-spec-label">Height</span>
-					<span class="product-spec-val">4-5 <em>ft</em></span>
-				</div>
-				<div class="product-spec">
-					<span class="product-spec-label">Speed</span>
-					<span class="product-spec-val">1.4 <em>mph</em></span>
-				</div>
-				<div class="product-spec">
-					<span class="product-spec-label">Joint torque</span>
-					<span class="product-spec-val">15 <em>N·m</em></span>
+				<div class="kit-shots">
+					<figure class="product-shot kit-robot">
+						<img src="/assets/buildo-product.webp" alt="Buildo robot" />
+						<figcaption>Buildo robot</figcaption>
+					</figure>
+					<figure class="product-shot kit-extras">
+						<img src="/assets/buildo-kit-headstrap.png" alt="Buildo training kit headstrap" />
+						<img
+							class="kit-gloves"
+							src="/assets/buildo-kit-gloves.png"
+							alt="Buildo tactile gloves"
+						/>
+						<figcaption>Accessories</figcaption>
+					</figure>
 				</div>
 			</div>
 		</section>
@@ -436,16 +415,24 @@
 		<section class="slide" id="s7">
 			<div class="critical-layout">
 				<div class="critical-copy">
-					<div class="section-label anim-in anim-d1">Advantage</div>
 					<h2 class="headline anim-in anim-d2">
 						More than <span class="hl-gold">80% BOM control</span><br />
 						through in-house vertical integration
 					</h2>
-					<p class="critical-body anim-in anim-d3">
-						Buildo's actuators and hands are
-						<strong>made in the United States</strong>. This gives us a clear advantage after
-						the <strong class="hl-gold">latest FCC ban on mobile robots</strong>.
-					</p>
+					<div class="bullet-list critical-points anim-in anim-d3">
+						<div class="bullet-item">
+							<span class="bullet-icon">&#9656;</span>
+							<p>
+								<strong class="hl-gold">FCC ban on mobile robots</strong> gives us a clear advantage.
+							</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon">&#9656;</span>
+							<p>
+								Buildo's actuators and hands are <strong>made in the United States</strong>.
+							</p>
+						</div>
+					</div>
 					<table class="bom-table anim-in anim-d3">
 						<tbody>
 							<tr class="bom-row-key">
@@ -477,7 +464,7 @@
 							src="/assets/critical-path-hands.webp"
 							alt="Five-fingered dexterous hands"
 						/>
-						<figcaption>5 fingered dexterous hands<br />with tactile sensors</figcaption>
+						<figcaption>5 fingered dexterous hands</figcaption>
 					</figure>
 					<figure class="critical-shot">
 						<img src="/assets/critical-path-actuators.webp" alt="Actuators" />
@@ -491,32 +478,35 @@
 		<section class="slide" id="s8">
 			<div class="infra-layout">
 				<div class="infra-copy">
-					<div class="section-label anim-in anim-d1">Platform</div>
 					<h2 class="headline anim-in anim-d2">
-						An <span class="hl-gold">app store for robot skills</span><br />
-						that scales distribution
+						<span class="hl-gold">Instant distribution</span> for robot models<br />
+						via a global skill marketplace
 					</h2>
 				</div>
 				<div class="infra-body">
-					<div class="solution-card infra-card-1 anim-in anim-d3">
-						<div class="solution-card-num">Humanoid Platform</div>
-						<p>
-							Enable developers and startups to <strong>collect real-world data</strong> and build
-							better robot skill models on an open, accessible platform.
-						</p>
-					</div>
-					<div class="solution-card infra-card-2 anim-in anim-d3">
-						<div class="solution-card-num">Intelligence Layer</div>
-						<p>
-							<strong>Host robot skill models</strong> for inference - from any sized model to
-							production deployment.
-						</p>
+					<div class="bullet-list infra-points anim-in anim-d3">
+						<div class="bullet-item">
+							<span class="bullet-icon">&#9656;</span>
+							<p>
+								<strong>Host robot skill models</strong> for
+								<span class="hl-gold">real-time inference</span> - from any sized model to production
+								deployment.
+							</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon">&#9656;</span>
+							<p>
+								Developers get
+								<span class="hl-gold">distribution and monetization</span> for hosting
+								models on our platform.
+							</p>
+						</div>
 					</div>
 					<div class="infra-figure-col anim-in anim-d3">
 						<div class="infra-figure-anchor">
 							<figure class="infra-figure">
 								<img
-									src="/assets/dev-portal-skills.png"
+									src="/assets/dev-portal-skills-v2.png"
 									alt="Starforge /dev robot skills marketplace"
 								/>
 								<figcaption>
@@ -531,9 +521,9 @@
 
 		<!-- SLIDE 7 - COMPETITION -->
 		<section class="slide" id="s11">
-			<div class="section-label anim-in anim-d1">Competitive Position</div>
 			<h2 class="headline anim-in anim-d2">
-				Why <span class="hl-gold">Buildo wins</span>
+				<span class="hl-gold">$10k unit cost and 90B+ parameters</span><br />
+				outperform all existing humanoid models
 			</h2>
 			<div class="landscape-table-wrap anim-in anim-d3">
 				<table class="approach-table landscape-table">
@@ -589,19 +579,20 @@
 					</tr>
 					</tbody>
 				</table>
-				<p class="landscape-note">
-					Companies using Unitree as a wrapper will face high costs and scalability issues due to the
-					<strong>latest FCC ban on mobile robots</strong>.
-				</p>
+				<aside class="landscape-callout">
+					<p>
+						Companies using <strong>Unitree as a wrapper</strong> face high costs and scalability
+						issues due to the latest FCC ban on mobile robots.
+					</p>
+				</aside>
 			</div>
 		</section>
 
 		<!-- SLIDE 8 - DEMOS -->
 		<section class="slide" id="s16">
-			<div class="section-label anim-in anim-d1">Demos</div>
 			<h2 class="headline anim-in anim-d2">
-				Buildo is designed to do<br />
-				<span class="hl-gold">most real-world tasks</span>
+				<span class="hl-gold">31 degrees of freedom</span><br />
+				delivers human-level dexterity
 			</h2>
 			<div class="demo-grid anim-in anim-d3">
 				<figure class="demo-video">
@@ -609,14 +600,12 @@
 						<!-- svelte-ignore a11y_media_has_caption -->
 						<video src="/assets/robot-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
 					</div>
-					<figcaption>Buildo is wheel based and can adjust its height</figcaption>
 				</figure>
 				<figure class="demo-video">
 					<div class="demo-frame">
 						<!-- svelte-ignore a11y_media_has_caption -->
 						<video src="/assets/robot-hand-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
 					</div>
-					<figcaption>Buildo has 5 fingered dexterous hands with tactile sensors</figcaption>
 				</figure>
 				<figure class="demo-video">
 					<div class="demo-frame">
@@ -630,21 +619,20 @@
 							preload="auto"
 						></video>
 					</div>
-					<figcaption>Buildo has 31 degrees of freedom</figcaption>
 				</figure>
 			</div>
 		</section>
 
 		<!-- SLIDE 9 - TRACTION -->
 		<section class="slide" id="s14">
-			<div class="section-label anim-in anim-d1">Traction</div>
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">50+ developers and startups</span><br />
-				are using Buildo
+				<span class="hl-gold">50+ developers</span> from top universities<br />
+				and startups are developing on top of Buildo
 			</h2>
 			<div class="traction-layout anim-in anim-d3">
 				<div class="comp-list">
 					<div class="comp-item">
+						<span class="bullet-icon">&#9656;</span>
 						<div class="comp-content">
 							<div class="comp-title">
 								<a
@@ -656,15 +644,6 @@
 							<p class="comp-body">
 								<strong>Collecting data and training robots to build lithium ion batteries</strong> -
 								deploying skill models on our platform.
-							</p>
-						</div>
-					</div>
-					<div class="comp-item">
-						<div class="comp-content">
-							<div class="comp-title">Developer Ecosystem</div>
-							<p class="comp-body">
-								<strong>50+ developers</strong> are already using Buildo's physics simulator.
-								Researchers and developers from <strong>UC Berkeley, NYU</strong> and more.
 							</p>
 						</div>
 					</div>
@@ -692,7 +671,6 @@
 		<section class="slide" id="s10">
 			<div class="infra-layout">
 				<div class="infra-copy">
-					<div class="section-label anim-in anim-d1">Business Model</div>
 					<h2 class="headline anim-in anim-d2">
 						Hardware as a trojan horse for<br />
 						<span class="hl-gold">high-margin API</span> Intelligence
@@ -770,7 +748,6 @@
 
 		<!-- SLIDE 11 - MILESTONES -->
 		<section class="slide" id="s18">
-			<div class="section-label anim-in anim-d1">Milestones</div>
 			<h2 class="headline anim-in anim-d2">
 				<span class="hl-gold">$614M revenue by 2028</span> driven by<br />
 				2 quadrillion token API demand
@@ -779,7 +756,7 @@
 				<div class="ms-step">
 					<div class="ms-period">Q4 2026</div>
 					<div class="ms-title">Hardware ready</div>
-					<p class="ms-body">Production line ready and production scaling to 500 units.</p>
+					<p class="ms-body">Production line ready.</p>
 					<dl class="ms-stats">
 						<div class="ms-stat">
 							<dt>Units sold</dt>
@@ -798,10 +775,7 @@
 				<div class="ms-step">
 					<div class="ms-period">Q1 - Q2 2027</div>
 					<div class="ms-title">The developer standard</div>
-					<p class="ms-body">
-						Go-to platform for university labs and physical AI startups, with production scaling to
-						5,000 units.
-					</p>
+					<p class="ms-body">Go-to platform for developers and physical AI startups.</p>
 					<dl class="ms-stats">
 						<div class="ms-stat">
 							<dt>Units sold</dt>
@@ -820,9 +794,7 @@
 				<div class="ms-step">
 					<div class="ms-period">Q3 - Q4 2027</div>
 					<div class="ms-title">Deployment</div>
-					<p class="ms-body">
-						Factory and home deployment, with production scaled to 10,000 units.
-					</p>
+					<p class="ms-body">Factory and home deployment.</p>
 					<dl class="ms-stats">
 						<div class="ms-stat">
 							<dt>Units sold</dt>
@@ -842,8 +814,8 @@
 					<div class="ms-period">2028</div>
 					<div class="ms-title">Scale</div>
 					<p class="ms-body">
-						Production scaled to 50,000 units. Total revenue <strong>$614M</strong>: $348M from token
-						spend, $200M from hardware &amp; $66M from training compute.
+						Revenue <strong>$614M</strong>: $348M token spend, $200M hardware &amp; $66M training
+						compute.
 					</p>
 					<dl class="ms-stats">
 						<div class="ms-stat">
@@ -861,21 +833,17 @@
 					</dl>
 				</div>
 			</div>
-			<p class="ms-benchmark anim-in anim-d3">
-				Unitree has cumulatively shipped around <strong>11,000 G1 humanoid robots</strong> as of
-				mid-2026.
-			</p>
 		</section>
 
 		<!-- SLIDE 12 - TEAM -->
 		<section class="slide" id="s13">
-			<div class="section-label anim-in anim-d1">Founding Team</div>
 			<h2 class="headline anim-in anim-d2">
-				Builders who have scaled<br /><span class="hl-gold">hardware to mass production</span> before
+				Builders who have scaled hardware<br />
+				<span class="hl-gold">to $600M AUM and mass production</span> before
 			</h2>
+			<div class="advisor-label team-label anim-in anim-d3">Founding team</div>
 			<div class="team-grid anim-in anim-d3">
 				<div class="team-card">
-					<span class="team-loc">New York</span>
 					<img class="team-photo" src="/assets/team/vipul.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -886,13 +854,11 @@
 					</div>
 					<div class="team-role">Founder · Chief Engineer</div>
 					<div class="team-bio">
-						Founded Cypherock and scaled the safest crypto hardware wallet to $600M AUM -
-						<strong>hardware shipped at scale</strong>. The Delhi Technological University engineer has
-						already taken hardware from prototype to global production once.
+						Founded Cypherock and scaled the safest crypto hardware wallet to
+						<strong>$600M AUM</strong>. Leads Buildo from prototype to mass production.
 					</div>
 				</div>
 				<div class="team-card">
-					<span class="team-loc">New Delhi</span>
 					<img class="team-photo" src="/assets/team/chiragm.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -902,14 +868,11 @@
 					</div>
 					<div class="team-role">Senior Machine Learning Engineer</div>
 					<div class="team-bio">
-						Shipped <strong>production grade machine learning</strong> at PayPal and built the
-						cryptography securing 10,000+ Cypherock devices. He turns
-						<strong>AI research into models</strong> that run in the real world, a craft he started at
-						Vellore Institute of Technology.
+						Shipped <strong>production grade machine learning</strong> at PayPal and the cryptography
+						securing 10,000+ Cypherock devices. Builds Buildo's skill models and training stack.
 					</div>
 				</div>
 				<div class="team-card">
-					<span class="team-loc">New Delhi</span>
 					<img class="team-photo" src="/assets/team/rakshit.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -920,12 +883,10 @@
 					<div class="team-role">Senior Robotics Engineer</div>
 					<div class="team-bio">
 						Holds multiple patents and has put <strong>robotics and aerospace products into mass
-							manufacturing</strong> that sell commercially today. A Manipal Institute of Technology
-						engineer, he turns a design into something a factory can actually build.
+							manufacturing</strong>. Owns Buildo's mechanical design and manufacturability.
 					</div>
 				</div>
 				<div class="team-card">
-					<span class="team-loc">New York</span>
 					<img class="team-photo" src="/assets/team/anay.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -935,13 +896,12 @@
 					</div>
 					<div class="team-role">Electrical Engineer</div>
 					<div class="team-bio">
-						Designs neural-interface electronics and firmware in the Neuroelectronics
-						Research Lab at the University of California, Irvine. On Buildo, he handles
-						<strong>embedded&nbsp;software</strong>, board bring-up, and hardware integration.
+						Designs neural-interface electronics and firmware at UC Irvine's Neuroelectronics Research
+						Lab. Handles Buildo's <strong>embedded&nbsp;software</strong>, board bring-up, and hardware
+						integration.
 					</div>
 				</div>
 				<div class="team-card">
-					<span class="team-loc">New Delhi</span>
 					<img class="team-photo" src="/assets/team/chirag.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -951,16 +911,14 @@
 					</div>
 					<div class="team-role">Software Engineer</div>
 					<div class="team-bio">
-						A Bharati Vidyapeeth engineer who has been writing <strong>transformer models</strong> for
-						five years and shipped the cryptography behind Cypherock's hardware wallet. He builds the
-						AI that has to run inside the robot.
+						Has been writing <strong>transformer models</strong> for five years and shipped the
+						cryptography behind Cypherock's hardware wallet. Builds the AI that runs inside the robot.
 					</div>
 				</div>
 			</div>
 			<div class="advisor-label anim-in anim-d3">Research advisors</div>
 			<div class="advisor-grid anim-in anim-d3">
 				<div class="team-card">
-					<span class="team-loc">New York</span>
 					<img class="team-photo" src="/assets/team/rohan.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -970,13 +928,11 @@
 					</div>
 					<div class="team-role">Research Scientist</div>
 					<div class="team-bio">
-						Research scientist at Fauna Robotics and co-author of the Fauna Sprout humanoid. A
-						University of Tsukuba PhD who spent seven years at the CNRS-AIST Joint Robotics Lab, he
-						advises on <strong>sim-to-real reinforcement learning</strong> for real hardware.
+						Research scientist at Fauna Robotics and co-author of the Fauna Sprout humanoid. Advises on
+						<strong>sim-to-real reinforcement learning</strong> for real hardware.
 					</div>
 				</div>
 				<div class="team-card">
-					<span class="team-loc">New York</span>
 					<img class="team-photo" src="/assets/team/greta.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
@@ -987,8 +943,8 @@
 					<div class="team-role">Research Scientist</div>
 					<div class="team-bio">
 						Research scientist at NYU's Center for Robotics and Embodied Intelligence, working on
-						<strong>high-dexterity manipulation</strong> with human-like hands. The NYU Tandon
-						roboticist has taken vision-language-action models out of the lab and into the field.
+						<strong>high-dexterity manipulation</strong> with human-like hands. Advises on taking
+						vision-language-action models out of the lab and into the field.
 					</div>
 				</div>
 			</div>
@@ -996,7 +952,7 @@
 
 		<!-- SLIDE 13 - VISION / ASK -->
 		<section class="slide" id="s15">
-			<div class="section-label anim-in anim-d1">The Vision</div>
+			<div class="section-label anim-in anim-d1">Vision</div>
 			<h2 class="headline anim-in anim-d2">
 				The <span class="hl-gold">largest open intelligence ecosystem</span><br />
 				for moving the physical world
@@ -1007,8 +963,7 @@
 					<p>
 						<strong
 							>Robotic AGI is a <span class="hl-gold">model size</span> problem that we have solved.</strong
-						> Ecosystem-driven
-						acceleration will create transformational productivity gains across multiple industries.
+						>
 					</p>
 				</div>
 				<div class="bullet-item">
@@ -1018,32 +973,15 @@
 							>Demand for
 							<span class="hl-gold">intelligence API will increase 100×</span> with adoption</strong
 						>, far
-						exceeding digital AI today.<a
-							class="citation"
-							href="https://x.com/a16z/status/2091200032162857328"
-							target="_blank"
-							rel="noopener noreferrer">[3]</a
+						exceeding <span class="nowrap"
+							>digital AI today.<a
+								class="citation"
+								href="https://x.com/a16z/status/2091200032162857328"
+								target="_blank"
+								rel="noopener noreferrer">[3]</a
+							></span
 						>
 					</p>
-				</div>
-			</div>
-			<div class="ask-row anim-in anim-d3">
-				<div class="ask-amount">Seed</div>
-				<div class="ask-details">
-					<div class="ask-item">
-						<div class="ask-val">Hardware</div>
-						<div class="ask-label">Revenue Stream 1</div>
-					</div>
-					<div class="ask-divider"></div>
-					<div class="ask-item">
-						<div class="ask-val">Intelligence</div>
-						<div class="ask-label">Revenue Stream 2</div>
-					</div>
-					<div class="ask-divider"></div>
-					<div class="ask-item">
-						<div class="ask-val">Physical AI</div>
-						<div class="ask-label">Category</div>
-					</div>
 				</div>
 			</div>
 			<div class="ask-footer anim-in anim-d3">
@@ -1051,8 +989,8 @@
 					>starforgerobotics.com</a
 				>
 				&nbsp;·&nbsp;
-				<a href="mailto:contact@starforgerobotics.com" target="_blank" rel="noopener noreferrer"
-					>contact@starforgerobotics.com</a
+				<a href="mailto:vipul@starforgerobotics.com" target="_blank" rel="noopener noreferrer"
+					>vipul@starforgerobotics.com</a
 				>
 			</div>
 		</section>
@@ -1317,6 +1255,11 @@
 		color: #7a5e0f;
 	}
 
+	/* Bebas has no lowercase, so a plural 's' is faked at a smaller size. */
+	.small-caps-s {
+		font-size: 0.72em;
+	}
+
 	/* ── SLIDE 1 COVER ── */
 	#s1 {
 		justify-content: center;
@@ -1387,12 +1330,13 @@
 	.cover-content {
 		position: relative;
 		z-index: 2;
+		top: clamp(-46px, -4.4vh, -20px);
 	}
 
 	.cover-tag {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(9px, 1.8vmin, 12px);
+		font-size: clamp(10px, 2vmin, 14px);
 		letter-spacing: 0.3em;
 		color: #7a5e0f;
 		text-transform: uppercase;
@@ -1401,12 +1345,12 @@
 
 	.cover-title {
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(26px, 6.5vmin, 72px);
+		font-size: clamp(30px, 7.4vmin, 82px);
 		font-weight: 500;
 		line-height: 0.95;
 		letter-spacing: 0.04em;
 		color: #141210;
-		max-width: 600px;
+		max-width: 680px;
 	}
 
 	.cover-divider {
@@ -1419,7 +1363,7 @@
 	.cover-url {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(10px, 1.8vmin, 13px);
+		font-size: clamp(11px, 2vmin, 15px);
 		color: #5f584e;
 		letter-spacing: 0.08em;
 	}
@@ -1429,7 +1373,7 @@
 	   stage rather than the browser window. */
 	.cover-sub {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(11px, 1.9vmin, 19px);
+		font-size: clamp(12px, 2.2vmin, 22px);
 		font-weight: 500;
 		line-height: 1.55;
 		color: rgba(20, 18, 16, 0.82);
@@ -1498,6 +1442,29 @@
 	.bullet-item p strong {
 		color: #141210;
 		font-weight: 500;
+	}
+
+	/* The problem slide carries only these two lines, so they run as plain
+	   statements at a larger size instead of boxed cards. */
+	#s4 .bullet-item {
+		padding: clamp(6px, 1.4vh, 12px) 0;
+		background: none;
+		border: 0;
+	}
+
+	#s4 .bullet-list {
+		gap: clamp(10px, 2.4vh, 22px);
+		max-width: 720px;
+	}
+
+	#s4 .bullet-item p {
+		font-size: clamp(14px, 2.6vmin, 21px);
+		line-height: 1.5;
+	}
+
+	#s4 .bullet-icon {
+		font-size: 16px;
+		padding-top: 6px;
 	}
 
 	/* ── SOLUTION CARDS ── */
@@ -1697,6 +1664,37 @@
 		margin-top: clamp(16px, 4vh, 40px);
 	}
 
+	#s11 .headline {
+		position: relative;
+		top: clamp(-16px, -1.7vh, -7px);
+	}
+
+	/* Pulled out of the footnote slot: this is a competitive point, so it reads
+	   as a call-out rather than fine print. */
+	.landscape-callout {
+		display: flex;
+		align-items: baseline;
+		gap: clamp(9px, 1.4vw, 18px);
+		width: 80%;
+		margin: clamp(14px, 3vh, 30px) auto 0;
+		padding: clamp(10px, 2vh, 18px) clamp(14px, 2vw, 24px);
+		background: rgba(122, 94, 15, 0.07);
+		border-left: 3px solid #7a5e0f;
+	}
+
+	.landscape-callout p {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(12px, 2.1vmin, 18px);
+		font-weight: 400;
+		line-height: 1.45;
+		color: #3a3630;
+	}
+
+	.landscape-callout p strong {
+		color: #141210;
+		font-weight: 600;
+	}
+
 	.landscape-note {
 		width: 84%;
 		margin: clamp(12px, 2.4vh, 24px) auto 0;
@@ -1714,19 +1712,19 @@
 
 	/* Two classes so this beats the full-width rule on .approach-table. */
 	.landscape-table-wrap .landscape-table {
-		width: 84%;
+		width: 80%;
 		margin-inline: auto;
 	}
 
 	.landscape-table-wrap .landscape-table tbody th,
 	.landscape-table-wrap .landscape-table tbody td {
-		padding-top: clamp(11px, 2.6vh, 26px);
-		padding-bottom: clamp(11px, 2.6vh, 26px);
-		font-size: clamp(15px, 2.9vmin, 25px);
+		padding-top: clamp(10px, 2.4vh, 24px);
+		padding-bottom: clamp(10px, 2.4vh, 24px);
+		font-size: clamp(14px, 2.7vmin, 23px);
 	}
 
 	.landscape-table-wrap .landscape-table thead th {
-		font-size: clamp(10px, 1.95vmin, 15px);
+		font-size: clamp(10px, 1.85vmin, 14px);
 	}
 
 	/* Scoped to this table so the highlighted row on the breakthrough slide
@@ -1774,13 +1772,13 @@
 	/* Pinned to the top of the row so the card's top edge lines up with the
 	   table's, with the source note hanging below it. */
 	.solution-col {
-		align-self: start;
+		align-self: center;
 	}
 
 	.solution-source {
 		margin-top: clamp(8px, 1.6vh, 14px);
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(10px, 1.7vmin, 13px);
+		font-size: clamp(11px, 1.9vmin, 14.5px);
 		font-weight: 500;
 		color: #5f584e;
 	}
@@ -1892,23 +1890,50 @@
 	/* The cards are laid out as two rows of the body grid so the figure column
 	   can borrow those rows and hang the screenshot off the seam between them. */
 	#s8 .infra-body {
-		grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
-		grid-template-rows: auto auto;
+		grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+		column-gap: clamp(12px, 2vw, 26px);
+		/* Two equal rows keep the figure anchored to the body's midline, which is
+		   where it sat when two cards filled this column. */
+		grid-template-rows: 1fr 1fr;
+		min-height: clamp(230px, 44vh, 400px);
 		row-gap: 3px;
 		align-items: start;
 		/* Drops the cards and figure without moving the headline above them. */
 		position: relative;
-		top: clamp(12px, 3vh, 30px);
+		top: clamp(24px, 5.4vh, 56px);
 	}
 
-	.infra-card-1 {
+	.infra-points {
 		grid-column: 1;
-		grid-row: 1;
+		grid-row: 1 / 3;
+		align-self: center;
+		margin-top: 0;
+		max-width: none;
 	}
 
-	.infra-card-2 {
-		grid-column: 1;
-		grid-row: 2;
+	#s8 .infra-copy {
+		position: relative;
+		top: clamp(12px, 3vh, 32px);
+	}
+
+	#s8 .bullet-item {
+		padding: 0;
+		background: none;
+		border: 0;
+	}
+
+	#s8 .bullet-list {
+		gap: clamp(24px, 5.6vh, 52px);
+	}
+
+	#s8 .bullet-item p {
+		font-size: clamp(14px, 2.6vmin, 21px);
+		line-height: 1.5;
+	}
+
+	#s8 .bullet-icon {
+		font-size: 16px;
+		padding-top: 6px;
 	}
 
 	.infra-figure-col {
@@ -1928,7 +1953,7 @@
 	.infra-figure-anchor {
 		grid-row: 2;
 		position: relative;
-		top: -3px;
+		top: clamp(12px, 2.6vh, 28px);
 		height: 0;
 		min-width: 0;
 		display: flex;
@@ -1944,9 +1969,12 @@
 
 	#s8 .infra-figure img {
 		display: block;
-		width: 100%;
+		/* Held short of the track width so the caption, which centres on the
+		   track, still lines up with the image's midpoint. */
+		width: 92%;
+		margin-inline: auto;
 		height: auto;
-		max-height: min(58vh, 480px);
+		max-height: min(61vh, 520px);
 		object-fit: contain;
 		object-position: center;
 	}
@@ -2220,6 +2248,107 @@
 		color: #7a5e0f;
 	}
 
+	/* Slide 4: three plain statements on the left, the robot plus the two kit
+	   shots on the right. The kit column centres on the robot's midline. */
+	.kit-layout {
+		display: grid;
+		grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+		gap: clamp(16px, 3vw, 48px);
+		align-items: center;
+		width: 100%;
+		flex: 1;
+		min-height: 0;
+		margin-top: clamp(10px, 2.2vh, 22px);
+	}
+
+	.kit-points {
+		margin-top: 0;
+	}
+
+	#s6 .headline {
+		position: relative;
+		top: clamp(32px, 7.4vh, 78px);
+	}
+
+	#s6 .bullet-item {
+		padding: clamp(6px, 1.4vh, 12px) 0;
+		background: none;
+		border: 0;
+	}
+
+	#s6 .bullet-list {
+		gap: clamp(10px, 2.4vh, 22px);
+		max-width: 620px;
+	}
+
+	#s6 .bullet-item p {
+		font-size: clamp(14px, 2.6vmin, 21px);
+		line-height: 1.5;
+	}
+
+	#s6 .bullet-icon {
+		font-size: 16px;
+		padding-top: 6px;
+	}
+
+	.kit-shots {
+		position: relative;
+		top: clamp(-58px, -6vh, -24px);
+		display: flex;
+		/* Bottom aligned so the gloves finish level with the robot's feet. */
+		align-items: flex-end;
+		justify-content: center;
+		gap: clamp(20px, 3.6vw, 60px);
+		min-width: 0;
+		min-height: 0;
+	}
+
+	.kit-shots figure {
+		flex-direction: column;
+	}
+
+	.kit-shots figcaption {
+		margin-top: clamp(8px, 1.4vh, 14px);
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(8px, 1.5vmin, 11px);
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: #7a5e0f;
+		text-align: center;
+	}
+
+	/* The robot sits slightly right of centre inside its own render, so the
+	   caption is nudged back to line up with the robot rather than the file. */
+	.kit-robot figcaption {
+		position: relative;
+		right: clamp(5px, 0.8vw, 11px);
+	}
+
+	.kit-extras {
+		flex-direction: column;
+		gap: clamp(8px, 1.8vh, 20px);
+	}
+
+	.kit-robot {
+		flex: 0 1 auto;
+	}
+
+	.kit-shots .kit-robot img {
+		/* No 100% term here: the flex figure has an indefinite height, so a
+		   percentage max-height resolves to none and drops the whole min(). */
+		max-height: min(70vh, 620px);
+	}
+
+	.kit-extras {
+		flex: 0 0 auto;
+		width: clamp(100px, 13vw, 180px);
+	}
+
+	.kit-shots .kit-extras img {
+		max-height: min(15vh, 118px);
+	}
+
 	.product-shot {
 		display: flex;
 		align-items: center;
@@ -2294,6 +2423,11 @@
 		justify-content: center;
 	}
 
+	#s7 .critical-layout {
+		position: relative;
+		top: clamp(14px, 3.4vh, 36px);
+	}
+
 	.critical-layout {
 		display: grid;
 		grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -2334,6 +2468,33 @@
 	.critical-body strong.hl-gold {
 		color: #7a5e0f;
 		font-weight: 700;
+	}
+
+	#s7 .bullet-item {
+		padding: clamp(5px, 1.2vh, 10px) 0;
+		background: none;
+		border: 0;
+	}
+
+	#s7 .bullet-list {
+		margin-top: clamp(12px, 3vh, 26px);
+		gap: clamp(6px, 1.6vh, 14px);
+		max-width: 48ch;
+	}
+
+	#s7 .bullet-item p {
+		font-size: clamp(14px, 2.5vmin, 20px);
+		line-height: 1.45;
+	}
+
+	#s7 .bullet-item p strong.hl-gold {
+		color: #7a5e0f;
+		font-weight: 700;
+	}
+
+	#s7 .bullet-icon {
+		font-size: 15px;
+		padding-top: 5px;
 	}
 
 	.bom-table {
@@ -2417,13 +2578,16 @@
 		object-fit: cover;
 		object-position: center;
 		background: #ffffff;
+		/* The photos are cut out on white, so a light rule keeps them from
+		   bleeding into the slide. */
+		border: 1px solid rgba(20, 18, 16, 0.14);
 	}
 
 	.critical-shot figcaption {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 10px);
-		letter-spacing: 0.16em;
+		font-size: clamp(10px, 1.9vmin, 14px);
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		color: #7a5e0f;
 		margin-top: 8px;
@@ -2469,7 +2633,7 @@
 		grid-auto-rows: auto;
 		align-content: start;
 		gap: 3px;
-		margin-top: clamp(8px, 1.9vh, 22px);
+		margin-top: clamp(6px, 1.4vh, 14px);
 		/* No shrink: the flex parent was squeezing the auto rows below their
 		   content height, which is what made the cards overlap. */
 		flex: 0 0 auto;
@@ -2490,6 +2654,12 @@
 		letter-spacing: 0.22em;
 		text-transform: uppercase;
 		color: #7a5e0f;
+	}
+
+	/* Same treatment as the advisors label, but it opens the slide so it needs
+	   clearance from the headline. Declared after so this margin wins. */
+	.team-label {
+		margin-top: clamp(20px, 5vh, 54px);
 	}
 
 	/* Same column width as the founder grid so the cards line up under it. */
@@ -2540,20 +2710,6 @@
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
 		border-top: 2px solid rgba(20, 18, 16, 0.15);
-	}
-
-	/* Sits in the corner the university crests used to occupy, so the city reads
-	   at a glance without pushing the bio down. */
-	.team-loc {
-		position: absolute;
-		top: clamp(12px, 2.05vh, 24px);
-		right: clamp(13px, 1.4vw, 22px);
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(7.5px, 1.2vh, 11.5px);
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		color: #8a837a;
 	}
 
 	.team-photo {
@@ -2616,7 +2772,7 @@
 	#s14 .section-label,
 	#s14 .headline {
 		position: relative;
-		top: clamp(-4px, -0.5vh, 0px);
+		top: clamp(10px, 2.4vh, 26px);
 	}
 
 	.traction-layout {
@@ -2651,7 +2807,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: clamp(10px, 2vh, 20px);
-		margin-top: clamp(12px, 2.4vh, 24px);
+		margin-top: clamp(42px, 8.4vh, 90px);
 	}
 
 	.comp-uni-row {
@@ -2699,7 +2855,8 @@
 		min-width: 0;
 	}
 
-	.traction-figure img {
+	.traction-figure img,
+	.traction-figure video {
 		display: block;
 		width: 100%;
 		max-width: 100%;
@@ -2754,6 +2911,23 @@
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
 		border-left: 3px solid #7a5e0f;
+	}
+
+	/* Traction runs this as a plain pointed statement, matching the bullets on
+	   the other slides rather than a card. */
+	#s14 .comp-item {
+		gap: 16px;
+		padding: clamp(6px, 1.4vh, 12px) 0;
+		background: none;
+		border: 0;
+	}
+
+	/* Centred on the company name by matching its line box, the same way the
+	   pointers sit on the other slides. */
+	#s14 .bullet-icon {
+		font-size: 16px;
+		padding-top: 0;
+		line-height: 1.25;
 	}
 
 	.comp-title {
@@ -2816,8 +2990,8 @@
 		display: flex;
 		flex-direction: column;
 		min-width: 0;
-		min-height: clamp(170px, 32vh, 330px);
-		padding: clamp(18px, 3.2vh, 30px) clamp(14px, 1.8vw, 24px) clamp(14px, 2.6vh, 24px);
+		min-height: clamp(200px, 40vh, 410px);
+		padding: clamp(20px, 3.8vh, 36px) clamp(15px, 2vw, 26px) clamp(16px, 3vh, 28px);
 		background: rgba(20, 18, 16, 0.035);
 		border-top: 2px solid rgba(20, 18, 16, 0.16);
 	}
@@ -2856,7 +3030,7 @@
 	.ms-title {
 		font-family: 'Bebas Neue', sans-serif;
 		font-weight: 500;
-		font-size: clamp(17px, 3.2vmin, 31px);
+		font-size: clamp(19px, 3.5vmin, 34px);
 		letter-spacing: 0.03em;
 		line-height: 1.05;
 		color: #141210;
@@ -2865,11 +3039,16 @@
 
 	.ms-body {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(11px, 2.05vmin, 17px);
+		font-size: clamp(12px, 2.25vmin, 19px);
 		font-weight: 500;
 		line-height: 1.5;
 		color: #3a3630;
 		margin-top: clamp(5px, 1.2vh, 10px);
+		/* Reserve the tallest card's copy block in every card so the rule above
+		   the stats lands on the same line across the track, and keep breathing
+		   room before that rule even when the copy fills the block. */
+		min-height: 4.5em;
+		margin-bottom: clamp(12px, 2.4vh, 22px);
 	}
 
 	.ms-body strong {
@@ -2887,6 +3066,7 @@
 		flex-direction: column;
 		gap: clamp(3px, 0.8vh, 7px);
 		margin-top: auto;
+		flex-shrink: 0;
 	}
 
 	.ms-stat {
@@ -2899,8 +3079,11 @@
 	.ms-stat dt {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 12px);
-		letter-spacing: 0.12em;
+		font-size: clamp(9px, 1.65vmin, 13px);
+		/* One line per label: a wrapped label would push this card's rows out of
+		   step with the other three. */
+		white-space: nowrap;
+		letter-spacing: 0.09em;
 		text-transform: uppercase;
 		color: #6b665e;
 	}
@@ -2908,7 +3091,7 @@
 	.ms-stat dd {
 		margin: 0;
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(17px, 2.9vmin, 28px);
+		font-size: clamp(19px, 3.15vmin, 31px);
 		letter-spacing: 0.03em;
 		line-height: 1;
 		color: #141210;
@@ -2918,21 +3101,18 @@
 		color: #7a5e0f;
 	}
 
-	/* Market benchmark for the unit numbers above, so it sits between the track
-	   and the smaller methodology footnote. */
-	.ms-benchmark {
-		/* The track stretches to fill the slide, so a negative top margin pulls
-		   the line back up near the cards it describes. */
-		margin: clamp(-70px, -7.4vh, -30px) 0 0;
+	.ms-note {
+		margin: clamp(10px, 2vh, 18px) 0 0;
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(13px, 2.4vmin, 20px);
-		font-weight: 500;
-		line-height: 1.4;
-		color: #4a453e;
+		font-size: clamp(10px, 1.8vmin, 15px);
+		font-weight: 400;
+		line-height: 1.45;
+		color: #6b665e;
+		max-width: 96ch;
 	}
 
-	.ms-benchmark strong {
-		font-weight: 700;
+	.ms-note strong {
+		font-weight: 600;
 		color: #7a5e0f;
 	}
 
@@ -2948,7 +3128,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: clamp(16px, 3.6vh, 36px);
-		max-width: 760px;
+		max-width: 820px;
+	}
+
+	.nowrap {
+		white-space: nowrap;
 	}
 
 	/* Same marker as the problem slide, but the copy runs plain here. */
@@ -2956,6 +3140,12 @@
 		padding: 0;
 		background: none;
 		border: 0;
+	}
+
+	/* Matches the marker treatment on the problem and platform slides. */
+	.vision-body .bullet-icon {
+		font-size: 16px;
+		padding-top: 3px;
 	}
 
 	/* Source markers. Ported from the teammate's deck; recoloured from the old
@@ -2982,7 +3172,8 @@
 	}
 
 	#s15 .bullet-item p {
-		font-size: clamp(13px, 2.4vmin, 16.5px);
+		font-size: clamp(16px, 3.1vmin, 22px);
+		line-height: 1.5;
 	}
 
 	.vision-body strong {
@@ -2994,61 +3185,20 @@
 		color: #7a5e0f;
 	}
 
-	.ask-row {
-		display: flex;
-		align-items: center;
-		gap: clamp(24px, 5vw, 48px);
-		margin-top: clamp(26px, 6.5vh, 72px);
-	}
+	/* The ask sits under the metrics rather than beside them, which also lets
+	   the metrics start at the left edge of the slide. */
 
-	.ask-amount {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(24px, 6.4vmin, 51px);
-		letter-spacing: 0.04em;
-		color: #7a5e0f;
-		line-height: 0.9;
-		flex-shrink: 0;
-	}
 
-	.ask-details {
-		display: flex;
-		align-items: center;
-		gap: 32px;
-	}
 
-	.ask-item {
-		text-align: center;
-	}
 
-	.ask-val {
-		font-family: 'Space Mono', monospace;
-		font-size: clamp(13px, 2.8vmin, 18px);
-		font-weight: 700;
-		color: #141210;
-		letter-spacing: 0.06em;
-	}
 
-	.ask-label {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: 10px;
-		color: #5f584e;
-		letter-spacing: 0.15em;
-		text-transform: uppercase;
-		margin-top: 4px;
-	}
 
-	.ask-divider {
-		width: 1px;
-		height: 36px;
-		background: rgba(20, 18, 16, 0.1);
-	}
 
 	.ask-footer {
 		margin-top: clamp(30px, 5.5vh, 60px);
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(10px, 1.8vmin, 12px);
+		font-size: clamp(10.5px, 1.95vmin, 13px);
 		color: #5f584e;
 		letter-spacing: 0.08em;
 	}
@@ -3313,14 +3463,6 @@
 			transform: rotate(90deg);
 		}
 
-		.ask-row {
-			flex-wrap: wrap;
-			gap: 16px 24px;
-		}
-
-		.ask-details {
-			gap: 20px;
-		}
 	}
 
 	@media print {
