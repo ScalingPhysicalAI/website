@@ -222,6 +222,11 @@
 				page-break-after: auto !important;
 				break-after: auto !important;
 			}
+			/* The blanket .slide display above would otherwise resurrect parked
+			   slides in the export. */
+			.slide-hidden {
+				display: none !important;
+			}
 			.slide .anim-in {
 				opacity: 1 !important;
 				transform: none !important;
@@ -372,6 +377,60 @@
 			</div>
 		</section>
 
+		<!-- MARKET -->
+		<section class="slide" id="s20">
+			<h2 class="headline anim-in anim-d2">
+				A <span class="hl-gold">$2.8B developer market</span> for humanoids,<br />
+				growing more than 50% a year
+			</h2>
+			<div class="market-tiers anim-in anim-d3">
+				<div class="market-tier market-tier-tam">
+					<div class="market-tier-figure">
+						<span class="market-tier-label">TAM</span>
+						<span class="market-tier-val">$6.2 Bn</span>
+					</div>
+					<p class="market-tier-body">
+						<strong>50,000+ humanoids</strong> shipped in 2026 &middot;
+						<strong>$6.2Bn</strong> of global humanoid revenue<a
+							class="citation"
+							href="https://www.fortunebusinessinsights.com/humanoid-robots-market-110188"
+							target="_blank"
+							rel="noopener noreferrer">[1]</a
+						>
+					</p>
+				</div>
+				<div class="market-tier market-tier-sam">
+					<div class="market-tier-figure">
+						<span class="market-tier-label">SAM</span>
+						<span class="market-tier-val">$2.8 Bn</span>
+					</div>
+					<p class="market-tier-body">
+						<strong>45% of that revenue</strong> is research and developer platforms<a
+							class="citation"
+							href="https://newmarketpitch.com/blogs/news/humanoid-robotics-market-size"
+							target="_blank"
+							rel="noopener noreferrer">[2]</a
+						>, and <strong>60% of shipments</strong> go to research and data production<a
+							class="citation"
+							href="https://counterpointresearch.com/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026"
+							target="_blank"
+							rel="noopener noreferrer">[3]</a
+						>
+					</p>
+				</div>
+				<div class="market-tier market-tier-som">
+					<div class="market-tier-figure">
+						<span class="market-tier-label">SOM</span>
+						<span class="market-tier-val">$280 Mn</span>
+					</div>
+					<p class="market-tier-body">
+						<strong>10% of the developer segment</strong>, the share reachable through university
+						labs and physical AI startups buying outside China
+					</p>
+				</div>
+			</div>
+		</section>
+
 		<!-- SLIDE 4 - BUILDO KIT -->
 		<section class="slide" id="s6">
 			<h2 class="headline anim-in anim-d2">
@@ -475,12 +534,12 @@
 		</section>
 
 		<!-- SLIDE 6 - COMPUTE LAYER -->
-		<section class="slide" id="s8">
+		<section class="slide slide-hidden" id="s8">
 			<div class="infra-layout">
 				<div class="infra-copy">
 					<h2 class="headline anim-in anim-d2">
-						<span class="hl-gold">Instant distribution</span> for robot models<br />
-						via a global skill marketplace
+						<span class="hl-gold">Global skill marketplace</span> enables<br />
+						instant robot model deployment
 					</h2>
 				</div>
 				<div class="infra-body">
@@ -504,14 +563,48 @@
 					</div>
 					<div class="infra-figure-col anim-in anim-d3">
 						<div class="infra-figure-anchor">
-							<figure class="infra-figure">
-								<img
-									src="/assets/dev-portal-skills-v2.png"
-									alt="Starforge /dev robot skills marketplace"
-								/>
-								<figcaption>
-									Skills hosted on our server run directly on the robot
-								</figcaption>
+							<figure class="infra-figure skills-figure">
+								<div class="store-cloud">
+									<div class="store-hero">
+										<img src="/assets/logo.png" alt="" />
+									</div>
+									<div class="store-row store-row-1">
+										<div class="store-tile">
+											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 20V11a2 2 0 0 1 4 0v-1a2 2 0 0 1 4 0v1a2 2 0 0 1 4 0v6a6 6 0 0 1-6 6h-2a4 4 0 0 1-4-4z"/><path d="M8 14 5 11"/></svg>
+											<span>Pick &amp; place</span>
+										</div>
+										<div class="store-tile">
+											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 6 24l10-5 10 5z"/></svg>
+											<span>Indoor navigation</span>
+										</div>
+										<div class="store-tile">
+											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 14 16 5l11 9"/><path d="M8 13v12h16V13"/></svg>
+											<span>Cooking assistant</span>
+										</div>
+										<div class="store-tile">
+											<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="15" width="10" height="10"/><rect x="17" y="15" width="10" height="10"/><rect x="11" y="5" width="10" height="9"/></svg>
+											<span>Warehouse sorting</span>
+										</div>
+									</div>
+									<div class="store-row store-row-2">
+										<div class="store-tile">
+											<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="4" width="16" height="24"/><circle cx="19" cy="16" r="1.6"/></svg>
+											<span>Door &amp; handle ops</span>
+										</div>
+										<div class="store-tile">
+											<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="9" r="4"/><path d="M7 27a9 9 0 0 1 18 0"/></svg>
+											<span>Human following</span>
+										</div>
+										<div class="store-tile">
+											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 20 12"/><path d="M18 6a5 5 0 0 0 6 6l3 3-5 5-3-3a5 5 0 0 0-6-6z"/></svg>
+											<span>Assembly</span>
+										</div>
+										<div class="store-tile">
+											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16z"/><circle cx="16" cy="16" r="3.4"/></svg>
+											<span>Visual inspection</span>
+										</div>
+									</div>
+								</div>
 							</figure>
 						</div>
 					</div>
@@ -522,8 +615,8 @@
 		<!-- SLIDE 7 - COMPETITION -->
 		<section class="slide" id="s11">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$10k unit cost and 90B+ parameters</span><br />
-				outperform all existing humanoid models
+				<span class="hl-gold">$10k unit cost and 90B+ parameters</span> enables skill<br />
+				store that outperforms all existing humanoids
 			</h2>
 			<div class="landscape-table-wrap anim-in anim-d3">
 				<table class="approach-table landscape-table">
@@ -533,6 +626,7 @@
 						<th scope="col">Cost</th>
 						<th scope="col">Model size (parameters)</th>
 						<th scope="col">Skills store</th>
+						<th scope="col">Egocentric data collection</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -540,6 +634,7 @@
 						<th scope="row">Buildo</th>
 						<td>$10K</td>
 						<td>&gt;90 billion</td>
+						<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
 						<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
 					</tr>
 					<tr>
@@ -551,6 +646,7 @@
 						<td>$50K</td>
 						<td>3.3 billion</td>
 						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
 					</tr>
 					<tr>
 						<th scope="row">
@@ -559,6 +655,7 @@
 						<td>$30K&ndash;$150K</td>
 						<td>7 billion</td>
 						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
 					</tr>
 					<tr>
 						<th scope="row">
@@ -566,6 +663,7 @@
 						</th>
 						<td>$40K</td>
 						<td>8 billion</td>
+						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
 						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
 					</tr>
 					<tr>
@@ -575,6 +673,7 @@
 						</th>
 						<td>$20K</td>
 						<td>14 billion</td>
+						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
 						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
 					</tr>
 					</tbody>
@@ -685,12 +784,7 @@
 								<span class="rev-step-val">($10K)</span>
 							</div>
 							<p>
-								One-time hardware revenue and a growing installed base.<a
-									class="citation"
-									href="https://x.com/RoboStrategy/status/2087561451468681234"
-									target="_blank"
-									rel="noopener noreferrer">[1]</a
-								>
+									One-time hardware revenue and a growing installed base.
 							</p>
 						</div>
 						<svg class="rev-fork" viewBox="0 0 140 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
@@ -729,7 +823,7 @@
 											class="citation"
 											href="https://x.com/a16z/status/2091200032162857328"
 											target="_blank"
-											rel="noopener noreferrer">[2]</a
+											rel="noopener noreferrer">[4]</a
 										></span
 									>
 									<span class="rev-step-val">($0.20 in / $4 out per M)</span>
@@ -902,7 +996,7 @@
 					</div>
 				</div>
 				<div class="team-card">
-					<img class="team-photo" src="/assets/team/chirag.jpg" alt="" />
+					<img class="team-photo" src="/assets/team/chirag-v4.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName
 							name="Chirag Singla"
@@ -978,7 +1072,7 @@
 								class="citation"
 								href="https://x.com/a16z/status/2091200032162857328"
 								target="_blank"
-								rel="noopener noreferrer">[3]</a
+								rel="noopener noreferrer">[4]</a
 							></span
 						>
 					</p>
@@ -993,6 +1087,82 @@
 					>vipul@starforgerobotics.com</a
 				>
 			</div>
+		</section>
+
+		<!-- APPENDIX -->
+		<section class="slide" id="s19">
+			<h2 class="headline anim-in anim-d2">Appendix</h2>
+			<div class="bullet-list appendix-points anim-in anim-d3">
+				<div class="bullet-item">
+					<span class="bullet-icon">&#9656;</span>
+					<p>
+						We keep <strong>30% of every skill token</strong> sold, so the money we move for
+						developers is roughly three times our recognised revenue.
+					</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">&#9656;</span>
+					<p>
+						Unitree sold <strong>5,511 humanoids in 2025</strong> on &yen;868M of revenue, so demand at a
+						low price point is already proven.<a
+							class="citation"
+							href="https://shop.unitree.com/blogs/news/clarification-regarding-unitrees-2025-sales-data"
+							target="_blank"
+							rel="noopener noreferrer">[5]</a
+						>
+					</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">&#9656;</span>
+					<p>
+						We have a <strong>distributed team in New York City and Delhi</strong>. Our team in
+						Delhi handles data collection and firmware development.
+					</p>
+				</div>
+			</div>
+			<div class="appendix-head anim-in anim-d3">Sources</div>
+			<ol class="appendix-sources anim-in anim-d3">
+				<li>
+					<a
+						href="https://www.fortunebusinessinsights.com/humanoid-robots-market-110188"
+						target="_blank"
+						rel="noopener noreferrer">Fortune Business Insights</a
+					> &mdash; $6.24Bn humanoid robot market in 2026, growing 50.6% a year.
+				</li>
+				<li>
+					<a
+						href="https://newmarketpitch.com/blogs/news/humanoid-robotics-market-size"
+						target="_blank"
+						rel="noopener noreferrer">New Market Pitch</a
+					> &mdash; research and developer platforms are 45% of 2026 humanoid revenue.
+				</li>
+				<li>
+					<a
+						href="https://counterpointresearch.com/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026"
+						target="_blank"
+						rel="noopener noreferrer">Counterpoint Research</a
+					> &mdash; 50,000+ humanoid shipments in 2026, 60%+ to research and data production.
+				</li>
+				<li>
+					<a
+						href="https://x.com/a16z/status/2091200032162857328"
+						target="_blank"
+						rel="noopener noreferrer">a16z</a
+					> &mdash; robotics token demand and the 100&times; growth in intelligence API usage.
+				</li>
+				<li>
+					<a
+						href="https://shop.unitree.com/blogs/news/clarification-regarding-unitrees-2025-sales-data"
+						target="_blank"
+						rel="noopener noreferrer">Unitree</a
+					> &mdash; 2025 humanoid shipment and sales figures.
+				</li>
+				<li>
+					<a href="https://arxiv.org/abs/2602.13476" target="_blank" rel="noopener noreferrer"
+						>arXiv 2602.13476</a
+					> &mdash; the split inference work our edge adapter is derived from.
+				</li>
+			</ol>
 		</section>
 	</main>
 
@@ -1259,6 +1429,7 @@
 	.small-caps-s {
 		font-size: 0.72em;
 	}
+
 
 	/* ── SLIDE 1 COVER ── */
 	#s1 {
@@ -1666,7 +1837,7 @@
 
 	#s11 .headline {
 		position: relative;
-		top: clamp(-16px, -1.7vh, -7px);
+		top: clamp(6px, 1.4vh, 16px);
 	}
 
 	/* Pulled out of the footnote slot: this is a competitive point, so it reads
@@ -1779,6 +1950,9 @@
 		margin-top: clamp(8px, 1.6vh, 14px);
 		font-family: 'Barlow', sans-serif;
 		font-size: clamp(11px, 1.9vmin, 14.5px);
+		/* The citation reads as one unit, so the line is kept unbroken rather
+		   than left to wrap between the label and the arXiv id. */
+		white-space: nowrap;
 		font-weight: 500;
 		color: #5f584e;
 	}
@@ -1953,7 +2127,8 @@
 	.infra-figure-anchor {
 		grid-row: 2;
 		position: relative;
-		top: clamp(12px, 2.6vh, 28px);
+		top: clamp(-44px, -5.2vh, -20px);
+		left: clamp(10px, 1.6vw, 26px);
 		height: 0;
 		min-width: 0;
 		display: flex;
@@ -3188,12 +3363,6 @@
 	/* The ask sits under the metrics rather than beside them, which also lets
 	   the metrics start at the left edge of the slide. */
 
-
-
-
-
-
-
 	.ask-footer {
 		margin-top: clamp(30px, 5.5vh, 60px);
 		font-family: 'Space Mono', monospace;
@@ -3201,6 +3370,219 @@
 		font-size: clamp(10.5px, 1.95vmin, 13px);
 		color: #5f584e;
 		letter-spacing: 0.08em;
+	}
+
+	/* ── APPENDIX ── */
+	.appendix-points {
+		margin-top: clamp(14px, 3vh, 30px);
+		max-width: none;
+		gap: clamp(6px, 1.4vh, 14px);
+	}
+
+	#s19 .bullet-item {
+		padding: clamp(4px, 1vh, 9px) 0;
+		background: none;
+		border: 0;
+	}
+
+	#s19 .bullet-item p {
+		font-size: clamp(12px, 2.2vmin, 17px);
+		line-height: 1.5;
+	}
+
+	#s19 .bullet-icon {
+		font-size: 15px;
+		padding-top: 5px;
+	}
+
+	/* Two columns so the reference list stays on one screen under the points. */
+	.appendix-sources {
+		columns: 2;
+		column-gap: clamp(20px, 3.4vw, 52px);
+	}
+
+	.appendix-head {
+		margin-top: clamp(12px, 2.6vh, 26px);
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(8px, 1.5vmin, 11px);
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: #7a5e0f;
+		margin-bottom: clamp(6px, 1.2vh, 10px);
+	}
+
+	.appendix-head:not(:first-child) {
+		margin-top: clamp(12px, 2.4vh, 22px);
+	}
+
+	.appendix-sources {
+		margin: 0;
+		padding-left: 1.2em;
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(9.5px, 1.65vmin, 13px);
+		font-weight: 500;
+		line-height: 1.5;
+		color: #5f584e;
+	}
+
+	.appendix-sources a {
+		color: #7a5e0f;
+		font-weight: 700;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.appendix-sources a:hover {
+		color: #141210;
+	}
+
+	/* ── MARKET TIERS ── */
+	/* Only the headline rises; the bands keep the position the centred block
+	   gives them. */
+	#s20 .headline {
+		position: relative;
+		top: clamp(-46px, -5.4vh, -20px);
+	}
+
+	/* Each tier is narrower than the one above it, so the funnel reads without
+	   any chart. */
+	.market-tiers {
+		margin-top: clamp(18px, 4vh, 44px);
+		display: flex;
+		flex-direction: column;
+		gap: clamp(10px, 2.4vh, 24px);
+		width: 100%;
+	}
+
+	.market-tier {
+		display: flex;
+		align-items: center;
+		gap: clamp(18px, 3.4vw, 52px);
+		padding: clamp(12px, 2.6vh, 24px) 0;
+		border-top: 3px solid #7a5e0f;
+	}
+
+	/* All three bands share a right edge; the figures alone carry the funnel. */
+	.market-tier-tam,
+	.market-tier-sam,
+	.market-tier-som {
+		width: 100%;
+	}
+
+	.market-tier-figure {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		flex-shrink: 0;
+		min-width: clamp(90px, 12vw, 168px);
+	}
+
+	.market-tier-label {
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(9px, 1.7vmin, 13px);
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: #7a5e0f;
+	}
+
+	.market-tier-val {
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: clamp(26px, 5.6vmin, 56px);
+		line-height: 1;
+		letter-spacing: 0.02em;
+		color: #141210;
+	}
+
+	.market-tier-body {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(13px, 2.5vmin, 19.5px);
+		font-weight: 500;
+		line-height: 1.55;
+		color: #3a3630;
+		min-width: 0;
+	}
+
+	.market-tier-body strong {
+		color: #7a5e0f;
+		font-weight: 700;
+	}
+
+	/* ── SKILLS MARKETPLACE DIAGRAM ── */
+	/* An app-store constellation rather than a screenshot: the store mark on
+	   top, the catalogue fanning out underneath it. */
+	.store-cloud {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: clamp(12px, 2.4vh, 26px);
+		width: 100%;
+	}
+
+	.store-hero {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: clamp(78px, 15vh, 150px);
+		height: clamp(78px, 15vh, 150px);
+		border-radius: 24%;
+		background: #141210;
+	}
+
+	.store-hero img {
+		width: 62%;
+		height: auto;
+	}
+
+	.store-row {
+		display: flex;
+		justify-content: center;
+		gap: clamp(8px, 1.4vw, 20px);
+	}
+
+	.store-row-2 {
+		margin-top: clamp(6px, 1.2vh, 12px);
+	}
+
+	.store-tile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: clamp(5px, 0.9vh, 9px);
+		width: clamp(80px, 11.6vw, 150px);
+	}
+
+	.store-tile svg {
+		width: clamp(64px, 9.2vw, 118px);
+		height: clamp(64px, 9.2vw, 118px);
+		padding: 22%;
+		border-radius: 24%;
+		background: rgba(20, 18, 16, 0.05);
+		border: 1px solid rgba(20, 18, 16, 0.1);
+		fill: none;
+		stroke: #7a5e0f;
+		stroke-width: 1.8;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	/* Alternating fills keep the grid from reading as a spreadsheet. */
+	.store-row-1 .store-tile:nth-child(2n) svg,
+	.store-row-2 .store-tile:nth-child(2n + 1) svg {
+		background: rgba(122, 94, 15, 0.13);
+		border-color: rgba(122, 94, 15, 0.26);
+	}
+
+	.store-tile span {
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(9.5px, 1.85vmin, 15px);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 1.3;
+		color: #3a3630;
 	}
 
 	/* ── LINKS ── */
@@ -3456,6 +3838,13 @@
 			margin-left: 0;
 		}
 
+		.market-tier {
+			width: 100%;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 8px;
+		}
+
 		/* The fork pointed across the two revenue columns. */
 		.rev-fork {
 			width: clamp(48px, 18vw, 90px);
@@ -3530,6 +3919,12 @@
 		.slide:last-of-type {
 			page-break-after: auto;
 			break-after: auto;
+		}
+
+		/* Scoped, so it outranks the scoped .slide rule above; the unscoped
+		   :global(.slide-hidden) loses that match and the slide comes back. */
+		.slide.slide-hidden {
+			display: none !important;
 		}
 
 		:global(.slide .anim-in),
