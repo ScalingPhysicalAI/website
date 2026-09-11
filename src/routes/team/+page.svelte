@@ -69,7 +69,7 @@
 			linkedin: 'https://www.linkedin.com/in/anay-shiledar-629036209/'
 		},
 		{
-			photo: '/assets/team/chirag.jpg',
+			photo: '/assets/team/chirag-v4.jpg',
 			name: 'Chirag Singla',
 			role: 'Software Engineer',
 			bio: "A Bharati Vidyapeeth engineer who has been writing <strong>transformer models</strong> for five years and shipped the cryptography behind Cypherock's hardware wallet. He builds the AI that has to run inside the robot.",
