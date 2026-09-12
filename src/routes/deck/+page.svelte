@@ -326,7 +326,9 @@
 		<section class="slide" id="s5">
 			<h2 class="headline anim-in anim-d2">
 				Our breakthrough allows running<br />
-				<span class="hl-gold">any sized model</span> without on-robot GPU<span class="small-caps-s">s</span>
+				<span class="hl-gold">any sized model</span> without on-robot GPU<span class="small-caps-s"
+					>s</span
+				>
 			</h2>
 			<div class="solution-layout anim-in anim-d3">
 				<div class="solution-col">
@@ -519,10 +521,7 @@
 				</div>
 				<div class="critical-photos anim-in anim-d3">
 					<figure class="critical-shot">
-						<img
-							src="/assets/critical-path-hands.webp"
-							alt="Five-fingered dexterous hands"
-						/>
+						<img src="/assets/critical-path-hands.webp" alt="Five-fingered dexterous hands" />
 						<figcaption>5 fingered dexterous hands</figcaption>
 					</figure>
 					<figure class="critical-shot">
@@ -556,8 +555,7 @@
 							<span class="bullet-icon">&#9656;</span>
 							<p>
 								Developers get
-								<span class="hl-gold">distribution and monetization</span> for hosting
-								models on our platform.
+								<span class="hl-gold">distribution and monetization</span> for hosting models on our platform.
 							</p>
 						</div>
 					</div>
@@ -570,37 +568,70 @@
 									</div>
 									<div class="store-row store-row-1">
 										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 20V11a2 2 0 0 1 4 0v-1a2 2 0 0 1 4 0v1a2 2 0 0 1 4 0v6a6 6 0 0 1-6 6h-2a4 4 0 0 1-4-4z"/><path d="M8 14 5 11"/></svg>
+											<svg viewBox="0 0 32 32" aria-hidden="true"
+												><path
+													d="M8 20V11a2 2 0 0 1 4 0v-1a2 2 0 0 1 4 0v1a2 2 0 0 1 4 0v6a6 6 0 0 1-6 6h-2a4 4 0 0 1-4-4z"
+												/><path d="M8 14 5 11" /></svg
+											>
 											<span>Pick &amp; place</span>
 										</div>
 										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 6 24l10-5 10 5z"/></svg>
+											<svg viewBox="0 0 32 32" aria-hidden="true"
+												><path d="M16 4 6 24l10-5 10 5z" /></svg
+											>
 											<span>Indoor navigation</span>
 										</div>
 										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 14 16 5l11 9"/><path d="M8 13v12h16V13"/></svg>
+											<svg viewBox="0 0 32 32" aria-hidden="true"
+												><path d="M5 14 16 5l11 9" /><path d="M8 13v12h16V13" /></svg
+											>
 											<span>Cooking assistant</span>
 										</div>
 										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="15" width="10" height="10"/><rect x="17" y="15" width="10" height="10"/><rect x="11" y="5" width="10" height="9"/></svg>
+											<svg viewBox="0 0 32 32" aria-hidden="true"
+												><rect x="5" y="15" width="10" height="10" /><rect
+													x="17"
+													y="15"
+													width="10"
+													height="10"
+												/><rect x="11" y="5" width="10" height="9" /></svg
+											>
 											<span>Warehouse sorting</span>
 										</div>
 									</div>
 									<div class="store-row store-row-2">
 										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="4" width="16" height="24"/><circle cx="19" cy="16" r="1.6"/></svg>
+											<svg viewBox="0 0 32 32" aria-hidden="true"
+												><rect x="8" y="4" width="16" height="24" /><circle
+													cx="19"
+													cy="16"
+													r="1.6"
+												/></svg
+											>
 											<span>Door &amp; handle ops</span>
 										</div>
 										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="9" r="4"/><path d="M7 27a9 9 0 0 1 18 0"/></svg>
+											<svg viewBox="0 0 32 32" aria-hidden="true"
+												><circle cx="16" cy="9" r="4" /><path d="M7 27a9 9 0 0 1 18 0" /></svg
+											>
 											<span>Human following</span>
 										</div>
 										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 20 12"/><path d="M18 6a5 5 0 0 0 6 6l3 3-5 5-3-3a5 5 0 0 0-6-6z"/></svg>
+											<svg viewBox="0 0 32 32" aria-hidden="true"
+												><path d="M6 26 20 12" /><path
+													d="M18 6a5 5 0 0 0 6 6l3 3-5 5-3-3a5 5 0 0 0-6-6z"
+												/></svg
+											>
 											<span>Assembly</span>
 										</div>
 										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16z"/><circle cx="16" cy="16" r="3.4"/></svg>
+											<svg viewBox="0 0 32 32" aria-hidden="true"
+												><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16z" /><circle
+													cx="16"
+													cy="16"
+													r="3.4"
+												/></svg
+											>
 											<span>Visual inspection</span>
 										</div>
 									</div>
@@ -620,68 +651,71 @@
 			</h2>
 			<div class="landscape-table-wrap anim-in anim-d3">
 				<table class="approach-table landscape-table">
-				<thead>
-					<tr>
-						<th scope="col">Robot</th>
-						<th scope="col">Cost</th>
-						<th scope="col">Model size (parameters)</th>
-						<th scope="col">Skills store</th>
-						<th scope="col">Egocentric data collection</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="approach-row-ours">
-						<th scope="row">Buildo</th>
-						<td>$10K</td>
-						<td>&gt;90 billion</td>
-						<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
-						<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
-					</tr>
-					<tr>
-						<th scope="row">
-							<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
-								>Fauna Sprout</a
-							>
-						</th>
-						<td>$50K</td>
-						<td>3.3 billion</td>
-						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-					</tr>
-					<tr>
-						<th scope="row">
-							<a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer">Figure 03</a>
-						</th>
-						<td>$30K&ndash;$150K</td>
-						<td>7 billion</td>
-						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
-					</tr>
-					<tr>
-						<th scope="row">
-							<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer">Lumi</a>
-						</th>
-						<td>$40K</td>
-						<td>8 billion</td>
-						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-					</tr>
-					<tr>
-						<th scope="row">
-							<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer">1X Neo</a
-							>
-						</th>
-						<td>$20K</td>
-						<td>14 billion</td>
-						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-					</tr>
+					<thead>
+						<tr>
+							<th scope="col">Robot</th>
+							<th scope="col">Cost</th>
+							<th scope="col">Model size (parameters)</th>
+							<th scope="col">Skills store</th>
+							<th scope="col">Egocentric data collection</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="approach-row-ours">
+							<th scope="row">Buildo</th>
+							<td>$10K</td>
+							<td>&gt;90 billion</td>
+							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
+							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
+									>Fauna Sprout</a
+								>
+							</th>
+							<td>$50K</td>
+							<td>3.3 billion</td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer"
+									>Figure 03</a
+								>
+							</th>
+							<td>$30K&ndash;$150K</td>
+							<td>7 billion</td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer">Lumi</a>
+							</th>
+							<td>$40K</td>
+							<td>8 billion</td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer"
+									>1X Neo</a
+								>
+							</th>
+							<td>$20K</td>
+							<td>14 billion</td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						</tr>
 					</tbody>
 				</table>
 				<aside class="landscape-callout">
 					<p>
-						Companies using <strong>Unitree as a wrapper</strong> face high costs and scalability
-						issues due to the latest FCC ban on mobile robots.
+						Companies using <strong>Unitree as a wrapper</strong> face high costs and scalability issues
+						due to the latest FCC ban on mobile robots.
 					</p>
 				</aside>
 			</div>
@@ -697,13 +731,15 @@
 				<figure class="demo-video">
 					<div class="demo-frame">
 						<!-- svelte-ignore a11y_media_has_caption -->
-						<video src="/assets/robot-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
+						<video src="/assets/robot-demo.mp4" autoplay loop muted playsinline preload="auto"
+						></video>
 					</div>
 				</figure>
 				<figure class="demo-video">
 					<div class="demo-frame">
 						<!-- svelte-ignore a11y_media_has_caption -->
-						<video src="/assets/robot-hand-demo.mp4" autoplay loop muted playsinline preload="auto"></video>
+						<video src="/assets/robot-hand-demo.mp4" autoplay loop muted playsinline preload="auto"
+						></video>
 					</div>
 				</figure>
 				<figure class="demo-video">
@@ -755,13 +791,20 @@
 						</div>
 						<div class="comp-uni-row">
 							<img class="uni-purdue" src="/assets/uni/purdue.png" alt="Purdue University" />
-							<img class="uni-ucsc" src="/assets/uni/ucsc.png" alt="University of California, Santa Cruz" />
+							<img
+								class="uni-ucsc"
+								src="/assets/uni/ucsc.png"
+								alt="University of California, Santa Cruz"
+							/>
 							<img class="uni-umd" src="/assets/uni/umd.png" alt="University of Maryland" />
 						</div>
 					</div>
 				</div>
 				<figure class="traction-figure">
-					<img src="/assets/traction-bench.jpg" alt="Starforge arm on the bench beside test boards" />
+					<img
+						src="/assets/traction-bench.jpg"
+						alt="Starforge arm on the bench beside test boards"
+					/>
 				</figure>
 			</div>
 		</section>
@@ -783,11 +826,14 @@
 								<span class="rev-step-name">Sell the robot</span>
 								<span class="rev-step-val">($10K)</span>
 							</div>
-							<p>
-									One-time hardware revenue and a growing installed base.
-							</p>
+							<p>One-time hardware revenue and a growing installed base.</p>
 						</div>
-						<svg class="rev-fork" viewBox="0 0 140 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+						<svg
+							class="rev-fork"
+							viewBox="0 0 140 200"
+							preserveAspectRatio="xMidYMid meet"
+							aria-hidden="true"
+						>
 							<defs>
 								<marker
 									id="revForkHead"
@@ -826,7 +872,6 @@
 											rel="noopener noreferrer">[4]</a
 										></span
 									>
-									<span class="rev-step-val">($0.20 in / $4 out per M)</span>
 								</div>
 								<p>
 									Skill usage at rate of <strong>$0.20 per million input</strong> and
@@ -976,8 +1021,9 @@
 					</div>
 					<div class="team-role">Senior Robotics Engineer</div>
 					<div class="team-bio">
-						Holds multiple patents and has put <strong>robotics and aerospace products into mass
-							manufacturing</strong>. Owns Buildo's mechanical design and manufacturability.
+						Holds multiple patents and has put <strong
+							>robotics and aerospace products into mass manufacturing</strong
+						>. Owns Buildo's mechanical design and manufacturability.
 					</div>
 				</div>
 				<div class="team-card">
@@ -990,9 +1036,9 @@
 					</div>
 					<div class="team-role">Electrical Engineer</div>
 					<div class="team-bio">
-						Designs neural-interface electronics and firmware at UC Irvine's Neuroelectronics Research
-						Lab. Handles Buildo's <strong>embedded&nbsp;software</strong>, board bring-up, and hardware
-						integration.
+						Designs neural-interface electronics and firmware at UC Irvine's Neuroelectronics
+						Research Lab. Handles Buildo's <strong>embedded&nbsp;software</strong>, board bring-up,
+						and hardware integration.
 					</div>
 				</div>
 				<div class="team-card">
@@ -1005,8 +1051,8 @@
 					</div>
 					<div class="team-role">Software Engineer</div>
 					<div class="team-bio">
-						Has been writing <strong>transformer models</strong> for five years and shipped the
-						cryptography behind Cypherock's hardware wallet. Builds the AI that runs inside the robot.
+						Has been writing <strong>transformer models</strong> for five years and shipped the cryptography
+						behind Cypherock's hardware wallet. Builds the AI that runs inside the robot.
 					</div>
 				</div>
 			</div>
@@ -1022,7 +1068,8 @@
 					</div>
 					<div class="team-role">Research Scientist</div>
 					<div class="team-bio">
-						Research scientist at Fauna Robotics and co-author of the Fauna Sprout humanoid. Advises on
+						Research scientist at Fauna Robotics and co-author of the Fauna Sprout humanoid. Advises
+						on
 						<strong>sim-to-real reinforcement learning</strong> for real hardware.
 					</div>
 				</div>
@@ -1037,8 +1084,8 @@
 					<div class="team-role">Research Scientist</div>
 					<div class="team-bio">
 						Research scientist at NYU's Center for Robotics and Embodied Intelligence, working on
-						<strong>high-dexterity manipulation</strong> with human-like hands. Advises on taking
-						vision-language-action models out of the lab and into the field.
+						<strong>high-dexterity manipulation</strong> with human-like hands. Advises on taking vision-language-action
+						models out of the lab and into the field.
 					</div>
 				</div>
 			</div>
@@ -1066,8 +1113,8 @@
 						<strong
 							>Demand for
 							<span class="hl-gold">intelligence API will increase 100×</span> with adoption</strong
-						>, far
-						exceeding <span class="nowrap"
+						>, far exceeding
+						<span class="nowrap"
 							>digital AI today.<a
 								class="citation"
 								href="https://x.com/a16z/status/2091200032162857328"
@@ -1096,15 +1143,15 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">&#9656;</span>
 					<p>
-						We keep <strong>30% of every skill token</strong> sold, so the money we move for
-						developers is roughly three times our recognised revenue.
+						We keep <strong>30% of every skill token</strong> sold, so the money we move for developers
+						is roughly three times our recognised revenue.
 					</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">&#9656;</span>
 					<p>
-						Unitree sold <strong>5,511 humanoids in 2025</strong> on &yen;868M of revenue, so demand at a
-						low price point is already proven.<a
+						Unitree sold <strong>5,511 humanoids in 2025</strong> on &yen;868M of revenue, so demand
+						at a low price point is already proven.<a
 							class="citation"
 							href="https://shop.unitree.com/blogs/news/clarification-regarding-unitrees-2025-sales-data"
 							target="_blank"
@@ -1115,8 +1162,8 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">&#9656;</span>
 					<p>
-						We have a <strong>distributed team in New York City and Delhi</strong>. Our team in
-						Delhi handles data collection and firmware development.
+						We have a <strong>distributed team in New York City and New Delhi</strong>. Our team in
+						New Delhi handles data collection and firmware development.
 					</p>
 				</div>
 			</div>
@@ -1429,7 +1476,6 @@
 	.small-caps-s {
 		font-size: 0.72em;
 	}
-
 
 	/* ── SLIDE 1 COVER ── */
 	#s1 {
@@ -3463,11 +3509,13 @@
 		border-top: 3px solid #7a5e0f;
 	}
 
-	/* All three bands share a right edge; the figures alone carry the funnel. */
+	/* All three bands share a right edge; the figures alone carry the funnel.
+	   Held short of the slide's gutter: the longest line of copy ends well
+	   before it, and a rule running the full width just underlines empty space. */
 	.market-tier-tam,
 	.market-tier-sam,
 	.market-tier-som {
-		width: 100%;
+		width: 76%;
 	}
 
 	.market-tier-figure {
@@ -3715,18 +3763,22 @@
 		}
 
 		/* Every desktop nudge is measured against a 16:9 stage, so they all read
-		   as arbitrary offsets once the slides are stacked. */
-		#s5 .headline,
-		#s10 .headline,
-		#s10 .section-label,
-		#s14 .headline,
-		#s14 .section-label,
-		#s18 .headline,
-		#s18 .section-label,
+		   as arbitrary offsets once the slides are stacked. Cleared by element
+		   rather than by slide so a new nudge upstream cannot reintroduce one. */
+		.section-label,
+		.headline,
+		.cover-content,
+		.infra-copy,
+		.infra-points,
 		.demo-grid,
 		.critical-photos,
-		.traction-layout {
-			top: 0;
+		.traction-layout,
+		.market-tiers,
+		.solution-col,
+		.kit-shots,
+		.critical-layout {
+			top: 0 !important;
+			left: 0 !important;
 		}
 
 		/* ── Type scales off the card width instead of the short side of a phone ── */
@@ -3766,6 +3818,7 @@
 		#s8 .infra-body,
 		.critical-layout,
 		.traction-layout,
+		.kit-layout,
 		.rev-stack,
 		.ms-track,
 		.team-grid,
@@ -3780,10 +3833,46 @@
 			gap: 3px;
 		}
 
+		/* Kept on one line under the card on a wide stage; on a small phone that
+		   single line is wider than the screen. */
+		.solution-source {
+			white-space: normal;
+		}
+
+		/* Two columns this narrow break entries across the gutter mid-sentence. */
+		.appendix-sources {
+			columns: 1;
+			font-size: 12px;
+		}
+
+		/* Reserved space that lined the milestone cards up across a four-column
+		   row. Stacked, it is just a hole in the middle of each card. */
+		.ms-step {
+			min-height: 0;
+		}
+
+		.ms-body {
+			min-height: 0;
+		}
+
 		.product-pair {
 			display: flex;
 			flex-direction: column;
 			gap: 18px;
+		}
+
+		/* The renders are sized against a landscape stage, where 70vh is roughly
+		   half the slide. On a portrait phone that is most of the screen. */
+		.kit-shots {
+			gap: 16px;
+		}
+
+		.kit-shots .kit-robot img {
+			max-height: 38vh;
+		}
+
+		.kit-extras {
+			width: 36%;
 		}
 
 		.product-specs {
@@ -3852,6 +3941,37 @@
 			transform: rotate(90deg);
 		}
 
+		/* ── Comparison tables ──
+		   Five columns of letter-spaced caps have a min-content width wider than
+		   a phone, which was stretching the whole page past the viewport and
+		   leaving every slide horizontally scrollable. The cells are tightened
+		   and long single words are allowed to break so the tables fit. */
+		.approach-table th,
+		.approach-table td,
+		.landscape-table-wrap .landscape-table tbody th,
+		.landscape-table-wrap .landscape-table tbody td {
+			padding: 9px 5px;
+			font-size: 12px;
+			overflow-wrap: anywhere;
+		}
+
+		.approach-table thead th,
+		.landscape-table-wrap .landscape-table thead th {
+			font-size: 8px;
+			letter-spacing: 0.07em;
+			padding: 8px 5px;
+		}
+
+		/* The 80% inset only makes sense beside a wide stage's whitespace. */
+		.landscape-table-wrap .landscape-table {
+			width: 100%;
+		}
+
+		/* Top-aligned against the copy column on desktop; as a stacked flex item
+		   that same rule shrinks it to its content width. */
+		.approach-table-wrap {
+			align-self: stretch;
+		}
 	}
 
 	@media print {

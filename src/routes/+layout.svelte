@@ -2,6 +2,7 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import Analytics from '$lib/components/Analytics.svelte';
@@ -19,6 +20,17 @@
 	const bodyClass = $derived(normalizedPath === '/buildo' ? 'page-buildo' : '');
 	const rdkNotification = $derived(
 		normalizedPath === '/buildo' ? 'designed and assembled in New York City' : null
+	);
+
+	// Home only: the announcement is a landing moment, not permanent chrome, and
+	// the deeper pages already have their own bar.
+	const announcement = $derived(
+		normalizedPath === '/'
+			? {
+					text: 'Starforge Robotics has raised a $500,000 pre-seed round to scale Buildo',
+					href: resolve('/blog/pre-seed')
+				}
+			: null
 	);
 
 	$effect(() => {
@@ -39,7 +51,7 @@
 <Analytics />
 
 {#if !isDeck}
-	<SiteNav pathname={page.url.pathname} notification={rdkNotification} />
+	<SiteNav pathname={page.url.pathname} notification={rdkNotification} {announcement} />
 {/if}
 
 <main id="main">
