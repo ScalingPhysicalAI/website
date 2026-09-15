@@ -440,10 +440,10 @@
 				<div class="market-tier market-tier-som">
 					<div class="market-tier-figure">
 						<span class="market-tier-label">SOM</span>
-						<span class="market-tier-val">$64 Bn</span>
+						<span class="market-tier-val">$210 Bn</span>
 					</div>
 					<p class="market-tier-body">
-						<strong>3% of SAM</strong> in hardware and intelligence spend, the share a
+						<strong>10% of SAM</strong> in hardware and intelligence spend, the share a
 						<strong>$10K robot</strong> and our skills store can serve by 2030
 					</p>
 				</div>
