@@ -279,14 +279,10 @@
 			<div class="cover-content">
 				<div class="cover-tag anim-in anim-d1">Seed Round · 2026</div>
 				<h1 class="cover-title anim-in anim-d2">
-					<span class="hl-gold">Buildo</span>: $10k<br />
-					open-source<br />
-					humanoid robot
+					Meet <span class="hl-gold">Buildo</span>: our $10K<br />
+					humanoid robot with<br />
+					<span class="hl-gold">unlimited intelligence</span>
 				</h1>
-				<p class="cover-sub anim-in anim-d3">
-					Buildo is a uniquely capable and affordable robot powered by our breakthrough intelligence
-					platform.
-				</p>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a
 					href="https://starforgerobotics.com"
@@ -300,24 +296,45 @@
 		<!-- SLIDE 2 - THE PROBLEM -->
 		<section class="slide" id="s4">
 			<h2 class="headline anim-in anim-d2">
-				500 billion parameter models<br />
-				make human-level intelligence<br />
-				<span class="hl-gold">too expensive</span> for robots
+				Current robots are not<br />
+				intelligent enough for even<br />
+				<span class="hl-gold">1% productivity boost</span>
 			</h2>
-			<div class="bullet-list anim-in anim-d3">
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>
-						Models with human-level generality are extremely compute-heavy which makes them
-						<strong>expensive and energy-intensive</strong> to deploy on robots.
-					</p>
+			<div class="problem-layout anim-in anim-d3">
+				<div class="bullet-list">
+					<div class="bullet-item">
+						<span class="bullet-icon">▸</span>
+						<p>
+							Robots with human-level generality are extremely GPU-heavy which makes them
+							<strong>expensive and energy-intensive</strong> to be deployed in the real world.
+						</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">▸</span>
+						<p>
+							Developers are frustrated that
+							<strong>affordable &amp; capable humanoid robots simply do not exist.</strong>
+						</p>
+					</div>
 				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>
-						Developers and startups are frustrated that
-						<strong>affordable &amp; capable humanoid robots simply do not exist.</strong>
-					</p>
+				<div class="quote-col">
+					<img
+						class="tweet-shot"
+						src="/assets/quotes/tweet-yunze.webp"
+						alt="Yunze Man (@yunzeman): to run policies onboard, brutal compromises are made on model size, complexity, and context length."
+					/>
+					<div class="tweet-stack">
+						<img
+							class="tweet-shot"
+							src="/assets/quotes/tweet-cix.webp"
+							alt="CIX (@cixliv): the issue with generalist humanoids pitches is that humanoids are very expensive, complex, (some) dangerous and easy to break."
+						/>
+						<img
+							class="tweet-shot"
+							src="/assets/quotes/tweet-amv.webp"
+							alt="amv (@aryanmadhaverma): talked to a local distributor thinking of buying one, and they quoted $27K"
+						/>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -325,28 +342,26 @@
 		<!-- SLIDE 3 - BREAKTHROUGH -->
 		<section class="slide" id="s5">
 			<h2 class="headline anim-in anim-d2">
-				Our breakthrough allows running<br />
-				<span class="hl-gold">any sized model</span> without on-robot GPU<span class="small-caps-s"
-					>s</span
-				>
+				Our breakthrough enables<br />
+				<span class="hl-gold">unlimited intelligence</span> on robots<br />
+				without on-board GPU<span class="small-caps-s">s</span>
 			</h2>
 			<div class="solution-layout anim-in anim-d3">
 				<div class="solution-col">
-					<div class="solution-card">
-						<p>
-							Ran an <strong>8.3B parameter model</strong> on a cloud server with a 76M parameter
-							<span class="hl-gold">edge adapter</span>, producing valid action chunks at
-							<strong>~400ms latency</strong>.
-						</p>
+					<div class="bullet-list">
+						<div class="bullet-item">
+							<span class="bullet-icon">&#9656;</span>
+							<p>We removed the <strong>bottleneck of model size</strong>.</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon">&#9656;</span>
+							<p>
+								Our structural improvements divide the model into an
+								<span class="hl-gold">edge adapter</span> and a
+								<span class="hl-gold">base model</span> running on the server.
+							</p>
+						</div>
 					</div>
-					<p class="solution-source">
-						Derived from a heavily optimized implementation of <a
-							class="solution-source-link"
-							href="https://arxiv.org/abs/2602.13476"
-							target="_blank"
-							rel="noopener noreferrer">arXiv 2602.13476</a
-						>
-					</p>
 				</div>
 				<div class="approach-table-wrap">
 					<table class="approach-table">
@@ -375,6 +390,14 @@
 							</tr>
 						</tbody>
 					</table>
+					<p class="solution-source">
+						Derived from a heavily optimized implementation of <a
+							class="solution-source-link"
+							href="https://arxiv.org/pdf/2603.12263"
+							target="_blank"
+							rel="noopener noreferrer">arXiv 2603.12263</a
+						>
+					</p>
 				</div>
 			</div>
 		</section>
@@ -382,52 +405,46 @@
 		<!-- MARKET -->
 		<section class="slide" id="s20">
 			<h2 class="headline anim-in anim-d2">
-				A <span class="hl-gold">$2.8B developer market</span> for humanoids,<br />
-				growing more than 50% a year
+				Labor redefined by 2030:<br />
+				a <span class="hl-gold">$3.8Tn</span> US market
 			</h2>
+			<!-- The order we enter the market in, which is also the order each
+			     category becomes solvable. -->
 			<div class="market-tiers anim-in anim-d3">
 				<div class="market-tier market-tier-tam">
 					<div class="market-tier-figure">
 						<span class="market-tier-label">TAM</span>
-						<span class="market-tier-val">$6.2 Bn</span>
+						<span class="market-tier-val">$3.8 Tn</span>
 					</div>
 					<p class="market-tier-body">
-						<strong>50,000+ humanoids</strong> shipped in 2026 &middot;
-						<strong>$6.2Bn</strong> of global humanoid revenue<a
+						<strong>65M US workers</strong> in physical labor &mdash; production, material moving,
+						construction, maintenance, cleaning, food, farm and care &middot;
+						<strong>$3.1Tn</strong> of wages in 2025<a
 							class="citation"
-							href="https://www.fortunebusinessinsights.com/humanoid-robots-market-110188"
+							href="https://www.bls.gov/oes/current/oes_nat.htm"
 							target="_blank"
-							rel="noopener noreferrer">[1]</a
+							rel="noopener noreferrer">[6]</a
 						>
 					</p>
 				</div>
 				<div class="market-tier market-tier-sam">
 					<div class="market-tier-figure">
 						<span class="market-tier-label">SAM</span>
-						<span class="market-tier-val">$2.8 Bn</span>
+						<span class="market-tier-val">$2.1 Tn</span>
 					</div>
 					<p class="market-tier-body">
-						<strong>45% of that revenue</strong> is research and developer platforms<a
-							class="citation"
-							href="https://newmarketpitch.com/blogs/news/humanoid-robotics-market-size"
-							target="_blank"
-							rel="noopener noreferrer">[2]</a
-						>, and <strong>60% of shipments</strong> go to research and data production<a
-							class="citation"
-							href="https://counterpointresearch.com/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026"
-							target="_blank"
-							rel="noopener noreferrer">[3]</a
-						>
+						<strong>38M of those workers</strong> do the tasks Buildo does today &mdash; factory, warehouse,
+						home and office service, and care support
 					</p>
 				</div>
 				<div class="market-tier market-tier-som">
 					<div class="market-tier-figure">
 						<span class="market-tier-label">SOM</span>
-						<span class="market-tier-val">$280 Mn</span>
+						<span class="market-tier-val">$64 Bn</span>
 					</div>
 					<p class="market-tier-body">
-						<strong>10% of the developer segment</strong>, the share reachable through university
-						labs and physical AI startups buying outside China
+						<strong>3% of SAM</strong> in hardware and intelligence spend, the share a
+						<strong>$10K robot</strong> and our skills store can serve by 2030
 					</p>
 				</div>
 			</div>
@@ -460,13 +477,13 @@
 						<figcaption>Buildo robot</figcaption>
 					</figure>
 					<figure class="product-shot kit-extras">
-						<img src="/assets/buildo-kit-headstrap.png" alt="Buildo training kit headstrap" />
+						<img src="/assets/buildo-kit-glasses.png" alt="Buildo egocentric camera glasses" />
 						<img
 							class="kit-gloves"
 							src="/assets/buildo-kit-gloves.png"
 							alt="Buildo tactile gloves"
 						/>
-						<figcaption>Accessories</figcaption>
+						<figcaption>Developer accessories</figcaption>
 					</figure>
 				</div>
 			</div>
@@ -490,34 +507,11 @@
 						<div class="bullet-item">
 							<span class="bullet-icon">&#9656;</span>
 							<p>
-								Buildo's actuators and hands are <strong>made in the United States</strong>.
+								Buildo's actuators and hands are <strong>made in the United States</strong>, which
+								comprise <strong>80% of the total BOM</strong>.
 							</p>
 						</div>
 					</div>
-					<table class="bom-table anim-in anim-d3">
-						<tbody>
-							<tr class="bom-row-key">
-								<th scope="row">Actuators + hands</th>
-								<td>80%</td>
-							</tr>
-							<tr>
-								<th scope="row">On board compute</th>
-								<td>8%</td>
-							</tr>
-							<tr>
-								<th scope="row">Structure</th>
-								<td>6%</td>
-							</tr>
-							<tr>
-								<th scope="row">Sensors</th>
-								<td>3%</td>
-							</tr>
-							<tr>
-								<th scope="row">Others</th>
-								<td>3%</td>
-							</tr>
-						</tbody>
-					</table>
 				</div>
 				<div class="critical-photos anim-in anim-d3">
 					<figure class="critical-shot">
@@ -657,7 +651,7 @@
 							<th scope="col">Cost</th>
 							<th scope="col">Model size (parameters)</th>
 							<th scope="col">Skills store</th>
-							<th scope="col">Egocentric data collection</th>
+							<th scope="col">Open developer ecosystem</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -688,7 +682,7 @@
 							<td>$30K&ndash;$150K</td>
 							<td>7 billion</td>
 							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
 						</tr>
 						<tr>
 							<th scope="row">
@@ -761,8 +755,9 @@
 		<!-- SLIDE 9 - TRACTION -->
 		<section class="slide" id="s14">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">50+ developers</span> from top universities<br />
-				and startups are developing on top of Buildo
+				<span class="hl-gold">50+ developers</span> from top universities and<br />
+				startups are collecting data and contributing<br />
+				models to the skills store
 			</h2>
 			<div class="traction-layout anim-in anim-d3">
 				<div class="comp-list">
@@ -1095,15 +1090,15 @@
 		<section class="slide" id="s15">
 			<div class="section-label anim-in anim-d1">Vision</div>
 			<h2 class="headline anim-in anim-d2">
-				The <span class="hl-gold">largest open intelligence ecosystem</span><br />
-				for moving the physical world
+				Fundamentally <span class="hl-gold">redefine the meaning of labour</span>:<br />
+				what it is, who performs it, and what human time is worth
 			</h2>
 			<div class="vision-body anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
 						<strong
-							>Robotic AGI is a <span class="hl-gold">model size</span> problem that we have solved.</strong
+							>Robot intelligence is a <span class="hl-gold">model size</span> problem that we have solved.</strong
 						>
 					</p>
 				</div>
@@ -1111,17 +1106,9 @@
 					<span class="bullet-icon">▸</span>
 					<p>
 						<strong
-							>Demand for
-							<span class="hl-gold">intelligence API will increase 100×</span> with adoption</strong
-						>, far exceeding
-						<span class="nowrap"
-							>digital AI today.<a
-								class="citation"
-								href="https://x.com/a16z/status/2091200032162857328"
-								target="_blank"
-								rel="noopener noreferrer">[4]</a
-							></span
-						>
+							>Our greatest moat is the <span class="hl-gold">open developer ecosystem</span
+							></strong
+						> that is incentivized to contribute to build better robot models.
 					</p>
 				</div>
 			</div>
@@ -1205,8 +1192,16 @@
 					> &mdash; 2025 humanoid shipment and sales figures.
 				</li>
 				<li>
-					<a href="https://arxiv.org/abs/2602.13476" target="_blank" rel="noopener noreferrer"
-						>arXiv 2602.13476</a
+					<a
+						href="https://www.bls.gov/oes/current/oes_nat.htm"
+						target="_blank"
+						rel="noopener noreferrer">U.S. Bureau of Labor Statistics</a
+					> &mdash; May 2025 occupational employment and wages; 65M workers and $3.1Tn of wages in the
+					physical labor groups, the base for our 2030 figure.
+				</li>
+				<li>
+					<a href="https://arxiv.org/pdf/2603.12263" target="_blank" rel="noopener noreferrer"
+						>arXiv 2603.12263</a
 					> &mdash; the split inference work our edge adapter is derived from.
 				</li>
 			</ol>
@@ -1416,7 +1411,14 @@
 
 	/* Nudges the centred block up so the three-line headline is not sitting low. */
 	#s4 {
-		padding-bottom: clamp(80px, 16vh, 150px);
+		/* The tweet column runs nearly the full height of the stage, so this
+		   slide keeps less reserve at the foot than the others. */
+		padding-bottom: clamp(40px, 7vh, 72px);
+	}
+
+	#s4 .headline {
+		position: relative;
+		top: clamp(16px, 4.2vh, 46px);
 	}
 
 	:global(.slide.active) {
@@ -1564,7 +1566,7 @@
 		font-family: 'Bebas Neue', sans-serif;
 		font-size: clamp(30px, 7.4vmin, 82px);
 		font-weight: 500;
-		line-height: 0.95;
+		line-height: 1.08;
 		letter-spacing: 0.04em;
 		color: #141210;
 		max-width: 680px;
@@ -1588,41 +1590,6 @@
 	/* Sits under the title, deliberately well below it in scale so the headline
 	   still carries the slide. Sized in vmin like the title so it tracks the
 	   stage rather than the browser window. */
-	.cover-sub {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.2vmin, 22px);
-		font-weight: 500;
-		line-height: 1.55;
-		color: rgba(20, 18, 16, 0.82);
-		max-width: 46ch;
-		margin-top: clamp(14px, 2.4vmin, 26px);
-	}
-
-	.cover-sub-link {
-		color: var(--deck-accent, #7a5e0f);
-		font-weight: 600;
-		text-decoration: underline;
-		text-underline-offset: 3px;
-		text-decoration-thickness: 1px;
-		white-space: nowrap;
-		transition: color 0.2s ease;
-	}
-
-	.cover-sub-link:hover {
-		color: #5c460b;
-	}
-
-	/* inline-block stops the link's underline being drawn through the arrow. */
-	.cover-sub-arrow {
-		display: inline-block;
-		margin-left: 3px;
-		transition: transform 0.2s ease;
-	}
-
-	.cover-sub-link:hover .cover-sub-arrow {
-		transform: translate(2px, -2px);
-	}
-
 	/* ── BULLET LIST ── */
 	.bullet-list {
 		margin-top: clamp(16px, 5vh, 36px);
@@ -1648,6 +1615,47 @@
 		flex-shrink: 0;
 	}
 
+	/* Problem slide: the two points sit left, the outside voices backing them up
+	   sit right. */
+	.problem-layout {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+		gap: clamp(14px, 1.5vw, 26px);
+		align-items: center;
+		width: 100%;
+		min-width: 0;
+		margin-top: clamp(16px, 5vh, 36px);
+	}
+
+	.problem-layout .bullet-list {
+		margin-top: 0;
+	}
+
+	/* All three posts run down one column beside the copy, which lets the copy
+	   keep a full measure instead of wrapping after a few words. */
+	.quote-col {
+		display: flex;
+		flex-direction: column;
+		/* The headline only occupies the left of the stage, so the column is
+		   lifted into the empty space beside it and can run taller. */
+		margin-top: clamp(-170px, -16vh, -70px);
+		gap: clamp(6px, 1.2vh, 14px);
+		align-items: stretch;
+		min-width: 0;
+	}
+
+	.tweet-stack {
+		display: contents;
+	}
+
+	.tweet-shot {
+		display: block;
+		width: 100%;
+		height: auto;
+		border: 1px solid rgba(20, 18, 16, 0.12);
+		border-radius: 12px;
+	}
+
 	.bullet-item p {
 		font-family: 'Barlow', sans-serif;
 		font-size: clamp(12px, 2.2vmin, 15px);
@@ -1671,7 +1679,7 @@
 
 	#s4 .bullet-list {
 		gap: clamp(10px, 2.4vh, 22px);
-		max-width: 720px;
+		max-width: 540px;
 	}
 
 	#s4 .bullet-item p {
@@ -1878,12 +1886,12 @@
 
 	/* Competitive landscape table, reusing the approach table's shell. */
 	.landscape-table-wrap {
-		margin-top: clamp(16px, 4vh, 40px);
+		margin-top: clamp(24px, 6vh, 64px);
 	}
 
 	#s11 .headline {
 		position: relative;
-		top: clamp(6px, 1.4vh, 16px);
+		top: clamp(-16px, -1.8vh, -6px);
 	}
 
 	/* Pulled out of the footnote slot: this is a competitive point, so it reads
@@ -1929,15 +1937,40 @@
 
 	/* Two classes so this beats the full-width rule on .approach-table. */
 	.landscape-table-wrap .landscape-table {
-		width: 80%;
+		width: 86%;
 		margin-inline: auto;
+		/* Fixed widths: the name and cost columns get enough room to stay on one
+		   line, and the two mark columns are held narrow since a tick needs no
+		   more than its own width. */
+		table-layout: fixed;
+	}
+
+	.landscape-table-wrap .landscape-table th:nth-child(1) {
+		width: 22%;
+	}
+
+	.landscape-table-wrap .landscape-table th:nth-child(2) {
+		width: 18%;
+	}
+
+	.landscape-table-wrap .landscape-table th:nth-child(3) {
+		width: 26%;
+	}
+
+	.landscape-table-wrap .landscape-table th:nth-child(4) {
+		width: 15%;
+	}
+
+	.landscape-table-wrap .landscape-table th:nth-child(5) {
+		width: 19%;
 	}
 
 	.landscape-table-wrap .landscape-table tbody th,
 	.landscape-table-wrap .landscape-table tbody td {
-		padding-top: clamp(10px, 2.4vh, 24px);
-		padding-bottom: clamp(10px, 2.4vh, 24px);
+		padding-top: clamp(7px, 1.5vh, 15px);
+		padding-bottom: clamp(7px, 1.5vh, 15px);
 		font-size: clamp(14px, 2.7vmin, 23px);
+		white-space: nowrap;
 	}
 
 	.landscape-table-wrap .landscape-table thead th {
@@ -1993,9 +2026,9 @@
 	}
 
 	.solution-source {
-		margin-top: clamp(8px, 1.6vh, 14px);
+		margin-top: clamp(7px, 1.3vh, 12px);
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(11px, 1.9vmin, 14.5px);
+		font-size: clamp(12px, 2.2vmin, 17px);
 		/* The citation reads as one unit, so the line is kept unbroken rather
 		   than left to wrap between the label and the arXiv id. */
 		white-space: nowrap;
@@ -2015,52 +2048,38 @@
 		color: #141210;
 	}
 
-	.solution-card {
-		padding: clamp(12px, 2.8vh, 26px) clamp(16px, 3vw, 32px);
-		background: rgba(20, 18, 16, 0.044);
-		border: 2px solid rgba(20, 18, 16, 0.06);
+	/* The two points run as plain statements beside the table, the same way the
+	   problem slide sets them. */
+	#s5 .bullet-list {
+		margin-top: 0;
+		gap: clamp(10px, 2.4vh, 22px);
+	}
+
+	#s5 .bullet-item {
+		padding: clamp(6px, 1.4vh, 12px) 0;
+		background: none;
+		border: 0;
+		gap: 12px;
+	}
+
+	#s5 .bullet-item p {
+		font-size: clamp(13px, 2.4vmin, 18px);
+		line-height: 1.5;
+	}
+
+	/* Matching the paragraph's first-line box puts the marker's centre on the
+	   centre of the opening letter instead of its baseline. */
+	#s5 .bullet-icon {
+		font-size: clamp(9px, 1.7vmin, 13px);
+		line-height: calc(clamp(13px, 2.4vmin, 18px) * 1.5);
+		padding-top: 0;
+	}
+
+	/* The points sit slightly above the table's midpoint so they read with the
+	   headline rather than with the bottom rows. */
+	#s5 .solution-col {
 		position: relative;
-		overflow: hidden;
-	}
-
-	.solution-card::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 2px;
-		background: linear-gradient(90deg, #7a5e0f, transparent);
-	}
-
-	.solution-card-num {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.6vmin, 10px);
-		color: #7a5e0f;
-		letter-spacing: 0.2em;
-		margin-bottom: clamp(8px, 2vh, 16px);
-	}
-
-	.solution-card p {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.2vmin, 15px);
-		font-weight: 500;
-		color: #3a3630;
-		line-height: 1.7;
-	}
-
-	.solution-card p strong {
-		color: #141210;
-		font-weight: 500;
-	}
-
-	/* Slide 5 only. With the number removed the card has room, and it sits
-	   beside a large diagram, so the copy is set larger than the shared
-	   .solution-card used on slides 8 and 10. */
-	.solution-layout .solution-card p {
-		font-size: clamp(13px, 2.4vmin, 17px);
-		line-height: 1.65;
+		top: clamp(-30px, -3vh, -12px);
 	}
 
 	/* Title sits above centre, stacked copy left, visuals right. */
@@ -2110,7 +2129,7 @@
 	/* The cards are laid out as two rows of the body grid so the figure column
 	   can borrow those rows and hang the screenshot off the seam between them. */
 	#s8 .infra-body {
-		grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+		grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
 		column-gap: clamp(12px, 2vw, 26px);
 		/* Two equal rows keep the figure anchored to the body's midline, which is
 		   where it sat when two cards filled this column. */
@@ -2697,8 +2716,10 @@
 		border: 0;
 	}
 
+	/* With the BOM table gone the points drop towards the foot of the column,
+	   so they sit against the photos rather than hanging off the headline. */
 	#s7 .bullet-list {
-		margin-top: clamp(12px, 3vh, 26px);
+		margin-top: clamp(60px, 18vh, 190px);
 		gap: clamp(6px, 1.6vh, 14px);
 		max-width: 48ch;
 	}
@@ -2716,50 +2737,6 @@
 	#s7 .bullet-icon {
 		font-size: 15px;
 		padding-top: 5px;
-	}
-
-	.bom-table {
-		margin-top: clamp(14px, 3vh, 26px);
-		width: min(100%, 46ch);
-		border-collapse: collapse;
-		font-family: 'Barlow', sans-serif;
-		background: #ffffff;
-		border: 2px solid rgba(20, 18, 16, 0.14);
-	}
-
-	.bom-table th,
-	.bom-table td {
-		padding: clamp(5px, 1.2vh, 10px) clamp(10px, 1.4vw, 18px);
-		border-bottom: 1px solid rgba(20, 18, 16, 0.1);
-		font-size: clamp(11px, 1.9vmin, 14px);
-	}
-
-	.bom-table tr:last-child th,
-	.bom-table tr:last-child td {
-		border-bottom: none;
-	}
-
-	.bom-table th {
-		text-align: left;
-		font-weight: 500;
-		color: #3a3630;
-	}
-
-	.bom-table td {
-		text-align: right;
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		color: #141210;
-	}
-
-	.bom-table .bom-row-key {
-		background: rgba(122, 94, 15, 0.07);
-	}
-
-	.bom-table .bom-row-key th,
-	.bom-table .bom-row-key td {
-		color: #7a5e0f;
-		font-weight: 700;
 	}
 
 	.critical-photos {
@@ -3028,7 +3005,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: clamp(10px, 2vh, 20px);
-		margin-top: clamp(42px, 8.4vh, 90px);
+		margin-top: clamp(54px, 10.4vh, 112px);
 	}
 
 	.comp-uni-row {
@@ -3171,6 +3148,16 @@
 		color: #7a5e0f;
 	}
 
+	/* The only point on the slide, so it carries more weight than the stacked
+	   lists this type scale was set for. */
+	#s14 .comp-title {
+		font-size: clamp(15px, 2.9vmin, 21px);
+	}
+
+	#s14 .comp-body {
+		font-size: clamp(14px, 2.6vmin, 18px);
+	}
+
 	.comp-body {
 		font-family: 'Barlow', sans-serif;
 		font-size: clamp(12px, 2.2vmin, 15px);
@@ -3211,8 +3198,8 @@
 		display: flex;
 		flex-direction: column;
 		min-width: 0;
-		min-height: clamp(200px, 40vh, 410px);
-		padding: clamp(20px, 3.8vh, 36px) clamp(15px, 2vw, 26px) clamp(16px, 3vh, 28px);
+		min-height: clamp(240px, 50vh, 500px);
+		padding: clamp(24px, 4.6vh, 44px) clamp(15px, 2vw, 26px) clamp(20px, 3.8vh, 36px);
 		background: rgba(20, 18, 16, 0.035);
 		border-top: 2px solid rgba(20, 18, 16, 0.16);
 	}
@@ -3256,6 +3243,10 @@
 		line-height: 1.05;
 		color: #141210;
 		margin-top: clamp(4px, 1vh, 8px);
+		/* Two lines reserved in every card: now that the stats grow upward from
+		   the copy rather than hanging off the foot, a title that wraps in one
+		   card would knock its rows out of step with the other three. */
+		min-height: 2.1em;
 	}
 
 	.ms-body {
@@ -3277,17 +3268,18 @@
 		color: #7a5e0f;
 	}
 
-	/* Pushed to the foot of the card so the figures line up across the row even
-	   when the copy above runs to different lengths. */
+	/* The copy block above is a fixed height in every card, so letting the stats
+	   claim all the space that is left and spacing the three rows evenly keeps
+	   them on the same lines across the track instead of bunched at the foot. */
 	.ms-stats {
 		margin: clamp(10px, 2vh, 18px) 0 0;
 		padding-top: clamp(8px, 1.6vh, 14px);
 		border-top: 1px solid rgba(20, 18, 16, 0.12);
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 		gap: clamp(3px, 0.8vh, 7px);
-		margin-top: auto;
-		flex-shrink: 0;
+		flex: 1 1 auto;
 	}
 
 	.ms-stat {
@@ -3338,6 +3330,12 @@
 	}
 
 	/* ── VISION / ASK ── */
+	/* The second line is a single clause and reads badly broken in half, so this
+	   headline is allowed past the standard measure. */
+	#s15 .headline {
+		max-width: none;
+	}
+
 	#s15 {
 		background:
 			radial-gradient(ellipse 60% 80% at 90% 50%, rgba(20, 18, 16, 0.025) 0%, transparent 60%),
@@ -3801,13 +3799,8 @@
 			display: none;
 		}
 
-		.cover-sub {
-			font-size: 15px;
-		}
-
 		.bullet-item p,
 		.comp-body,
-		.solution-card p,
 		.why-card-body {
 			font-size: 15px;
 		}
@@ -3816,6 +3809,8 @@
 		.solution-layout,
 		.infra-body,
 		#s8 .infra-body,
+		.problem-layout,
+		.quote-col,
 		.critical-layout,
 		.traction-layout,
 		.kit-layout,
@@ -3953,6 +3948,7 @@
 			padding: 9px 5px;
 			font-size: 12px;
 			overflow-wrap: anywhere;
+			white-space: normal;
 		}
 
 		.approach-table thead th,
@@ -3962,9 +3958,19 @@
 			padding: 8px 5px;
 		}
 
-		/* The 80% inset only makes sense beside a wide stage's whitespace. */
+		/* The inset only makes sense beside a wide stage's whitespace, and the
+		   desktop column ratios are too rigid once everything is this narrow. */
 		.landscape-table-wrap .landscape-table {
 			width: 100%;
+			table-layout: auto;
+		}
+
+		.landscape-table-wrap .landscape-table th:nth-child(1),
+		.landscape-table-wrap .landscape-table th:nth-child(2),
+		.landscape-table-wrap .landscape-table th:nth-child(3),
+		.landscape-table-wrap .landscape-table th:nth-child(4),
+		.landscape-table-wrap .landscape-table th:nth-child(5) {
+			width: auto;
 		}
 
 		/* Top-aligned against the copy column on desktop; as a stacked flex item
