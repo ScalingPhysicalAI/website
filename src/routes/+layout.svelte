@@ -27,7 +27,7 @@
 	const announcement = $derived(
 		normalizedPath === '/'
 			? {
-					text: 'Starforge Robotics has raised a $500,000 pre-seed round to scale Buildo',
+					text: 'Starforge Robotics raises $500,000 pre-seed to build affordable, intelligent humanoid robots',
 					href: resolve('/blog/pre-seed')
 				}
 			: null
