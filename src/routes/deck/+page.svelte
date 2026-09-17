@@ -3779,6 +3779,13 @@
 			left: 0 !important;
 		}
 
+		/* On a wide stage the posts are lifted into the empty space beside the
+		   headline. Stacked under the copy that same lift drags them over the
+		   bullets. */
+		.quote-col {
+			margin-top: 0;
+		}
+
 		/* ── Type scales off the card width instead of the short side of a phone ── */
 		.section-label {
 			font-size: 10px;
