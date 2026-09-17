@@ -12,6 +12,13 @@ export type Post = {
 
 export const posts: Post[] = [
 	{
+		slug: 'egocentric-data',
+		title: "Robots don't have egocentric interaction data. That's the real bottleneck.",
+		dek: 'LLMs got trained on everything humans have written for decades. Robots got almost nothing.',
+		date: '2026-09-13',
+		category: 'Perspective'
+	},
+	{
 		slug: 'pre-seed',
 		title:
 			'Starforge Robotics raises $500,000 pre-seed to build affordable, intelligent humanoid robots',
