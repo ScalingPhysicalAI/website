@@ -402,6 +402,45 @@
 			</div>
 		</section>
 
+		<!-- SLIDE 4 - BUILDO KIT -->
+		<section class="slide" id="s6">
+			<h2 class="headline anim-in anim-d2">
+				<span class="hl-gold">$10k hardware stack</span> replaces<br />
+				$100k industrial setups
+			</h2>
+			<div class="kit-layout anim-in anim-d3">
+				<div class="bullet-list kit-points">
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Buildo can carry a <strong>payload of up to 18 lbs</strong></p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Height adjustable from <strong>4 to 6 feet</strong></p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Accessories for <strong>egocentric video and tactile data collection</strong></p>
+					</div>
+				</div>
+				<div class="kit-shots">
+					<figure class="product-shot kit-robot">
+						<img src="/assets/buildo-product.webp" alt="Buildo robot" />
+						<figcaption>Buildo robot</figcaption>
+					</figure>
+					<figure class="product-shot kit-extras">
+						<img src="/assets/buildo-kit-glasses.png" alt="Buildo egocentric camera glasses" />
+						<img
+							class="kit-gloves"
+							src="/assets/buildo-kit-gloves.png"
+							alt="Buildo tactile gloves"
+						/>
+						<figcaption>Developer accessories</figcaption>
+					</figure>
+				</div>
+			</div>
+		</section>
+
 		<!-- MARKET -->
 		<section class="slide" id="s20">
 			<h2 class="headline anim-in anim-d2">
@@ -446,45 +485,6 @@
 						<strong>10% of SAM</strong> in hardware and intelligence spend, the share a
 						<strong>$10K robot</strong> and our skills store can serve by 2030
 					</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 4 - BUILDO KIT -->
-		<section class="slide" id="s6">
-			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$10k hardware stack</span> replaces<br />
-				$100k industrial setups
-			</h2>
-			<div class="kit-layout anim-in anim-d3">
-				<div class="bullet-list kit-points">
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>Buildo can carry a <strong>payload of up to 18 lbs</strong></p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>Height adjustable from <strong>4 to 6 feet</strong></p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>Accessories for <strong>egocentric video and tactile data collection</strong></p>
-					</div>
-				</div>
-				<div class="kit-shots">
-					<figure class="product-shot kit-robot">
-						<img src="/assets/buildo-product.webp" alt="Buildo robot" />
-						<figcaption>Buildo robot</figcaption>
-					</figure>
-					<figure class="product-shot kit-extras">
-						<img src="/assets/buildo-kit-glasses.png" alt="Buildo egocentric camera glasses" />
-						<img
-							class="kit-gloves"
-							src="/assets/buildo-kit-gloves.png"
-							alt="Buildo tactile gloves"
-						/>
-						<figcaption>Developer accessories</figcaption>
-					</figure>
 				</div>
 			</div>
 		</section>
@@ -634,84 +634,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 7 - COMPETITION -->
-		<section class="slide" id="s11">
-			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$10k unit cost and 90B+ parameters</span> enables skill<br />
-				store that outperforms all existing humanoids
-			</h2>
-			<div class="landscape-table-wrap anim-in anim-d3">
-				<table class="approach-table landscape-table">
-					<thead>
-						<tr>
-							<th scope="col">Robot</th>
-							<th scope="col">Cost</th>
-							<th scope="col">Model size (parameters)</th>
-							<th scope="col">Skills store</th>
-							<th scope="col">Open developer ecosystem</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="approach-row-ours">
-							<th scope="row">Buildo</th>
-							<td>$10K</td>
-							<td>&gt;90 billion</td>
-							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
-							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
-									>Fauna Sprout</a
-								>
-							</th>
-							<td>$50K</td>
-							<td>3.3 billion</td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer"
-									>Figure 03</a
-								>
-							</th>
-							<td>$30K&ndash;$150K</td>
-							<td>7 billion</td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer">Lumi</a>
-							</th>
-							<td>$40K</td>
-							<td>8 billion</td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer"
-									>1X Neo</a
-								>
-							</th>
-							<td>$20K</td>
-							<td>14 billion</td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						</tr>
-					</tbody>
-				</table>
-				<aside class="landscape-callout">
-					<p>
-						Companies using <strong>Unitree as a wrapper</strong> face high costs and scalability issues
-						due to the latest FCC ban on mobile robots.
-					</p>
-				</aside>
 			</div>
 		</section>
 
@@ -969,6 +891,84 @@
 			</div>
 		</section>
 
+		<!-- SLIDE 7 - COMPETITION -->
+		<section class="slide" id="s11">
+			<h2 class="headline anim-in anim-d2">
+				<span class="hl-gold">$10k unit cost and 90B+ parameters</span> enables skill<br />
+				store that outperforms all existing humanoids
+			</h2>
+			<div class="landscape-table-wrap anim-in anim-d3">
+				<table class="approach-table landscape-table">
+					<thead>
+						<tr>
+							<th scope="col">Robot</th>
+							<th scope="col">Cost</th>
+							<th scope="col">Model size (parameters)</th>
+							<th scope="col">Skills store</th>
+							<th scope="col">Open developer ecosystem</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="approach-row-ours">
+							<th scope="row">Buildo</th>
+							<td>$10K</td>
+							<td>&gt;90 billion</td>
+							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
+							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
+									>Fauna Sprout</a
+								>
+							</th>
+							<td>$50K</td>
+							<td>3.3 billion</td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer"
+									>Figure 03</a
+								>
+							</th>
+							<td>$30K&ndash;$150K</td>
+							<td>7 billion</td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer">Lumi</a>
+							</th>
+							<td>$40K</td>
+							<td>8 billion</td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer"
+									>1X Neo</a
+								>
+							</th>
+							<td>$20K</td>
+							<td>14 billion</td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<aside class="landscape-callout">
+					<p>
+						Companies using <strong>Unitree as a wrapper</strong> face high costs and scalability issues
+						due to the latest FCC ban on mobile robots.
+					</p>
+				</aside>
+			</div>
+		</section>
+
 		<!-- SLIDE 12 - TEAM -->
 		<section class="slide" id="s13">
 			<h2 class="headline anim-in anim-d2">
@@ -1097,18 +1097,14 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong
-							>Robot intelligence is a <span class="hl-gold">model size</span> problem that we have solved.</strong
-						>
+						Robot intelligence is a <span class="hl-gold">model size</span> problem that we have solved.
 					</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						<strong
-							>Our greatest moat is the <span class="hl-gold">open developer ecosystem</span
-							></strong
-						> that is incentivized to contribute to build better robot models.
+						We envision by 2030, labor shortage becomes an outdated concept. Only robots will be
+						employed for constructing factories and ultimately future cities.
 					</p>
 				</div>
 			</div>
