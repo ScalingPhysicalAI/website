@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
 
 	onMount(() => {
@@ -42,8 +43,9 @@
 		</p>
 
 		<p>
-			We are trying to change that. Soon, anyone with a cheap pair of gloves and glasses should be
-			able to:
+			We are trying to change that. Soon, anyone with a cheap pair of
+			<a class="post-kit-link" href={resolve('/buildo-development-kit')}>gloves and glasses</a>
+			should be able to:
 		</p>
 
 		<ol class="post-loop reveal">
@@ -174,6 +176,18 @@
 	.post-lead {
 		font-size: clamp(17px, 1.8vw, 20px) !important;
 		line-height: 1.7 !important;
+	}
+
+	.post-kit-link {
+		color: var(--accent);
+		font-weight: 700;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-thickness: 1px;
+	}
+
+	.post-kit-link:hover {
+		color: var(--ink);
 	}
 
 	/* ── FIGURE ── */

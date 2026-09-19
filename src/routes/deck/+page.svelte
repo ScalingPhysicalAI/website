@@ -719,8 +719,8 @@
 				</div>
 				<figure class="traction-figure">
 					<img
-						src="/assets/traction-bench.jpg"
-						alt="Starforge arm on the bench beside test boards"
+						src="/assets/traction-simulator.jpg"
+						alt="Buildo in the Starforge simulator, driven through a kitchen scene"
 					/>
 				</figure>
 			</div>
@@ -731,7 +731,7 @@
 			<div class="infra-layout">
 				<div class="infra-copy">
 					<h2 class="headline anim-in anim-d2">
-						Hardware as a trojan horse for<br />
+						Hardware as a platform for<br />
 						<span class="hl-gold">high-margin API</span> Intelligence
 					</h2>
 				</div>
@@ -1103,8 +1103,8 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						We envision by 2030, labor shortage becomes an outdated concept. Only robots will be
-						employed for constructing factories and ultimately future cities.
+						By 2030, labor shortage becomes an outdated concept. Only robots will be employed at
+						factories and ultimately constructing future cities.
 					</p>
 				</div>
 			</div>
@@ -2971,7 +2971,9 @@
 
 	.traction-layout {
 		display: grid;
-		grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+		/* The capture carries the slide, so the copy column gives up width to it
+		   and wraps earlier. */
+		grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
 		column-gap: clamp(20px, 3.6vw, 44px);
 		/* The row is content-sized and centred as a whole, so the photo keeps the
 		   position it had and the card top-aligns to it. */
@@ -3001,7 +3003,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: clamp(10px, 2vh, 20px);
-		margin-top: clamp(54px, 10.4vh, 112px);
+		margin-top: clamp(18px, 3.6vh, 40px);
 	}
 
 	.comp-uni-row {
@@ -3015,30 +3017,30 @@
 	/* The marks share a row inside the copy column, so each is capped on width
 	   as well as height and allowed to shrink rather than push out. */
 	.comp-unis img {
-		height: clamp(19px, 3.4vmin, 29px);
+		height: clamp(32px, 5.8vmin, 50px);
 		width: auto;
-		max-width: 23%;
+		max-width: 29%;
 		min-width: 0;
 		object-fit: contain;
 	}
 
 	.comp-unis .uni-ucsc {
-		height: clamp(17px, 3vmin, 26px);
+		height: clamp(28px, 5vmin, 44px);
 	}
 
 	.comp-unis .uni-umd {
-		height: clamp(24px, 4.4vmin, 38px);
-		max-width: 34%;
+		height: clamp(41px, 7.4vmin, 64px);
+		max-width: 42%;
 	}
 
 	.comp-unis .uni-purdue {
-		height: clamp(29px, 5.4vmin, 45px);
+		height: clamp(49px, 9.1vmin, 76px);
 	}
 
 	/* The torch block is narrow, so it needs extra height to carry the same
 	   weight as the marks beside it. */
 	.comp-unis .uni-nyu {
-		height: clamp(40px, 7.7vmin, 65px);
+		height: clamp(68px, 12.9vmin, 109px);
 	}
 
 	.traction-figure {
@@ -3057,6 +3059,14 @@
 		height: clamp(200px, min(50vh, 30vw), 420px);
 		object-fit: cover;
 		border: 2px solid rgba(20, 18, 16, 0.12);
+	}
+
+	/* The simulator shot is a UI capture: cropping it would cut the control
+	   panel off the right edge, so it is fitted rather than filled. */
+	.traction-figure img[src*='traction-simulator'] {
+		height: auto;
+		max-height: clamp(220px, min(56vh, 36vw), 540px);
+		object-fit: contain;
 	}
 
 	.comp-figure {
@@ -3111,6 +3121,7 @@
 	   the other slides rather than a card. */
 	#s14 .comp-item {
 		gap: 16px;
+		margin-top: clamp(26px, 6vh, 64px);
 		padding: clamp(6px, 1.4vh, 12px) 0;
 		background: none;
 		border: 0;
@@ -3147,11 +3158,17 @@
 	/* The only point on the slide, so it carries more weight than the stacked
 	   lists this type scale was set for. */
 	#s14 .comp-title {
-		font-size: clamp(15px, 2.9vmin, 21px);
+		font-size: clamp(14px, 2.65vmin, 20px);
 	}
 
 	#s14 .comp-body {
-		font-size: clamp(14px, 2.6vmin, 18px);
+		font-size: clamp(13px, 2.42vmin, 16.5px);
+	}
+
+	/* The type came up a notch, so the measure comes in by the same amount and
+	   the lines keep breaking where they did. */
+	#s14 .comp-content {
+		max-width: 91%;
 	}
 
 	.comp-body {
