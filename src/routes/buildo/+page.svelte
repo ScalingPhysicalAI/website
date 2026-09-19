@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
 
 	let { data } = $props();
@@ -191,7 +192,8 @@
 				<div class="rdk-ctas">
 					<a
 						class="btn-primary rdk-btn-buy"
-						href="mailto:contact@starforgerobotics.com?subject=Buildo%20Preorder">Preorder by email</a
+						href="mailto:contact@starforgerobotics.com?subject=Buildo%20Preorder"
+						>Preorder by email</a
 					>
 					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Simulate Buildo</a>
 				</div>
@@ -201,6 +203,12 @@
 			     a separate one, so this jumps rather than navigates. -->
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 			<a class="rdk-specs-link" href="#specs">↓ Full specifications and features</a>
+
+			<!-- The kit is bought alongside the robot rather than instead of it, so it
+			     hangs off this block instead of taking a slot in the nav. -->
+			<a class="rdk-specs-link rdk-kit-link" href={resolve('/buildo-development-kit')}
+				>→ Buildo development kit: gloves and glasses</a
+			>
 
 			<div class="rdk-divider-line"></div>
 
@@ -271,8 +279,8 @@
 			<h2 class="section-title">Any sized model,<br /><span>running on the robot</span></h2>
 			<p class="section-body">
 				The constraint on humanoid robotics has never been the chassis - it is what you can actually
-				run inside it. Buildo is built around an intelligence architecture that removes the model-size
-				ceiling, so capability is no longer traded away for latency.
+				run inside it. Buildo is built around an intelligence architecture that removes the
+				model-size ceiling, so capability is no longer traded away for latency.
 			</p>
 			<p class="section-body" style="margin-top:20px;">
 				That changes the economics of deployment. Models that previously required a server can run
@@ -344,13 +352,14 @@
 		<span class="section-label">Get Started</span>
 		<h2 class="section-title">Put Buildo<br /><span>to work</span></h2>
 		<p class="section-body">
-			Reserve a unit, or run it in simulation first through the developer portal. Tell us the use
+			Reserve a unit, or run it in simulation first through the simulator. Tell us the use
 			case and the manipulation tasks involved and we will get you the right configuration.
 		</p>
 		<div class="bd-hero-ctas" style="margin-top:36px;">
 			<!-- Ordering happens at the top of this page now, so this returns there. -->
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 			<a class="btn-primary" href="#preorder">Preorder</a>
+			<a class="btn-ghost" href={resolve('/buildo-development-kit')}>Dev Kit</a>
 			<a class="btn-ghost" href="https://portal.starforgerobotics.com">Simulate Buildo</a>
 		</div>
 	</div>
@@ -395,6 +404,13 @@
 		transition:
 			color 0.2s ease,
 			border-color 0.2s ease;
+	}
+
+	/* Sits directly under the specs jump, so it needs less air above it than
+	   that link carries on its own. */
+	.rdk-kit-link {
+		display: block;
+		margin-top: 8px;
 	}
 
 	.rdk-specs-link:hover {

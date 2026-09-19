@@ -48,13 +48,14 @@
 				<span class="footer-col-label">Product</span>
 				<ul>
 					<li><a href={resolve('/buildo')}>Buildo</a></li>
+					<li><a href={resolve('/buildo-development-kit')}>Dev Kit</a></li>
 				</ul>
 			</div>
 
 			<div class="footer-col">
 				<span class="footer-col-label">Developers</span>
 				<ul>
-					<li><a href="https://portal.starforgerobotics.com">Dev Portal</a></li>
+					<li><a href="https://portal.starforgerobotics.com">Simulator</a></li>
 				</ul>
 			</div>
 
