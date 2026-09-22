@@ -84,7 +84,7 @@
 		</p>
 		<div class="hero-ctas">
 			<a href={resolve('/buildo')} class="btn-primary">Preorder</a>
-			<a href="https://portal.starforgerobotics.com" class="btn-ghost">Simulate Buildo</a>
+			<a href="https://portal.starforgerobotics.com" class="btn-ghost">Skills Store</a>
 		</div>
 	</div>
 
@@ -117,7 +117,7 @@
 			{#if part.closing}
 				<div class="part-ctas">
 					<a class="btn-ghost" href="https://portal.starforgerobotics.com"
-						>Simulate Buildo<span class="cta-arrow" aria-hidden="true">↗</span></a
+						>Skills Store<span class="cta-arrow" aria-hidden="true">↗</span></a
 					>
 					<a class="btn-primary" href={resolve('/buildo')}>Preorder</a>
 				</div>

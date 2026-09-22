@@ -179,7 +179,7 @@
 							>{isPreorder ? 'Preorder' : 'Order Now'}</a
 						>
 					{/if}
-					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Simulate Buildo</a>
+					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Skills Store</a>
 				</div>
 			{:else}
 				<p class="rdk-origin">
@@ -195,7 +195,7 @@
 						href="mailto:contact@starforgerobotics.com?subject=Buildo%20Preorder"
 						>Preorder by email</a
 					>
-					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Simulate Buildo</a>
+					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Skills Store</a>
 				</div>
 			{/if}
 
@@ -352,15 +352,15 @@
 		<span class="section-label">Get Started</span>
 		<h2 class="section-title">Put Buildo<br /><span>to work</span></h2>
 		<p class="section-body">
-			Reserve a unit, or run it in simulation first through the simulator. Tell us the use
-			case and the manipulation tasks involved and we will get you the right configuration.
+			Reserve a unit, or explore the skills store first. Tell us the use case and the manipulation
+			tasks involved and we will get you the right configuration.
 		</p>
 		<div class="bd-hero-ctas" style="margin-top:36px;">
 			<!-- Ordering happens at the top of this page now, so this returns there. -->
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 			<a class="btn-primary" href="#preorder">Preorder</a>
 			<a class="btn-ghost" href={resolve('/buildo-development-kit')}>Dev Kit</a>
-			<a class="btn-ghost" href="https://portal.starforgerobotics.com">Simulate Buildo</a>
+			<a class="btn-ghost" href="https://portal.starforgerobotics.com">Skills Store</a>
 		</div>
 	</div>
 </section>
