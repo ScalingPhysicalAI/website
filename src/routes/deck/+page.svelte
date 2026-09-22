@@ -279,10 +279,13 @@
 			<div class="cover-content">
 				<div class="cover-tag anim-in anim-d1">Seed Round · 2026</div>
 				<h1 class="cover-title anim-in anim-d2">
-					Meet <span class="hl-gold">Buildo</span>: our $10K<br />
-					humanoid robot with<br />
-					<span class="hl-gold">unlimited intelligence</span>
+					Building the <span class="hl-gold">Open<br />Intelligence</span> platform<br />
+					for the physical world
 				</h1>
+				<p class="cover-sub anim-in anim-d3">
+					<span class="hl-gold">Buildo</span> is our first humanoid robot powered by intelligence streamed
+					directly from our cloud platform.
+				</p>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a
 					href="https://starforgerobotics.com"
@@ -296,43 +299,33 @@
 		<!-- SLIDE 2 - THE PROBLEM -->
 		<section class="slide" id="s4">
 			<h2 class="headline anim-in anim-d2">
-				Current robots are not<br />
-				intelligent enough for even<br />
-				<span class="hl-gold">1% productivity boost</span>
+				Current robots are not intelligent<br />
+				enough for even <span class="hl-gold">1% productivity boost</span>
 			</h2>
 			<div class="problem-layout anim-in anim-d3">
-				<div class="bullet-list">
-					<div class="bullet-item">
-						<span class="bullet-icon">▸</span>
-						<p>
-							Robots with human-level generality are extremely GPU-heavy which makes them
-							<strong>expensive and energy-intensive</strong> to be deployed in the real world.
-						</p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">▸</span>
-						<p>
-							Developers are frustrated that
-							<strong>affordable &amp; capable humanoid robots simply do not exist.</strong>
-						</p>
+				<div class="problem-copy">
+					<div class="bullet-list">
+						<div class="bullet-item">
+							<span class="bullet-icon">▸</span>
+							<p>
+								Robots with human-level generality are
+								<strong class="hl-gold">extremely GPU-heavy</strong> which makes them
+								<strong>expensive and energy-intensive</strong> to be deployed in the real world.
+							</p>
+						</div>
 					</div>
 				</div>
 				<div class="quote-col">
-					<img
-						class="tweet-shot"
-						src="/assets/quotes/tweet-yunze.webp"
-						alt="Yunze Man (@yunzeman): to run policies onboard, brutal compromises are made on model size, complexity, and context length."
-					/>
 					<div class="tweet-stack">
+						<img
+							class="tweet-shot"
+							src="/assets/quotes/tweet-yunze.webp"
+							alt="Yunze Man (@yunzeman): to run policies onboard, brutal compromises are made on model size, complexity, and context length."
+						/>
 						<img
 							class="tweet-shot"
 							src="/assets/quotes/tweet-cix.webp"
 							alt="CIX (@cixliv): the issue with generalist humanoids pitches is that humanoids are very expensive, complex, (some) dangerous and easy to break."
-						/>
-						<img
-							class="tweet-shot"
-							src="/assets/quotes/tweet-amv.webp"
-							alt="amv (@aryanmadhaverma): talked to a local distributor thinking of buying one, and they quoted $27K"
 						/>
 					</div>
 				</div>
@@ -437,54 +430,6 @@
 						/>
 						<figcaption>Developer accessories</figcaption>
 					</figure>
-				</div>
-			</div>
-		</section>
-
-		<!-- MARKET -->
-		<section class="slide" id="s20">
-			<h2 class="headline anim-in anim-d2">
-				Labor redefined by 2030:<br />
-				a <span class="hl-gold">$3.8Tn</span> US market
-			</h2>
-			<!-- The order we enter the market in, which is also the order each
-			     category becomes solvable. -->
-			<div class="market-tiers anim-in anim-d3">
-				<div class="market-tier market-tier-tam">
-					<div class="market-tier-figure">
-						<span class="market-tier-label">TAM</span>
-						<span class="market-tier-val">$3.8 Tn</span>
-					</div>
-					<p class="market-tier-body">
-						<strong>65M US workers</strong> in physical labor &mdash; production, material moving,
-						construction, maintenance, cleaning, food, farm and care &middot;
-						<strong>$3.1Tn</strong> of wages in 2025<a
-							class="citation"
-							href="https://www.bls.gov/oes/current/oes_nat.htm"
-							target="_blank"
-							rel="noopener noreferrer">[6]</a
-						>
-					</p>
-				</div>
-				<div class="market-tier market-tier-sam">
-					<div class="market-tier-figure">
-						<span class="market-tier-label">SAM</span>
-						<span class="market-tier-val">$2.1 Tn</span>
-					</div>
-					<p class="market-tier-body">
-						<strong>38M of those workers</strong> do the tasks Buildo does today &mdash; factory, warehouse,
-						home and office service, and care support
-					</p>
-				</div>
-				<div class="market-tier market-tier-som">
-					<div class="market-tier-figure">
-						<span class="market-tier-label">SOM</span>
-						<span class="market-tier-val">$210 Bn</span>
-					</div>
-					<p class="market-tier-body">
-						<strong>10% of SAM</strong> in hardware and intelligence spend, the share a
-						<strong>$10K robot</strong> and our skills store can serve by 2030
-					</p>
 				</div>
 			</div>
 		</section>
@@ -688,7 +633,7 @@
 						<div class="comp-content">
 							<div class="comp-title">
 								<a
-									href="https://zooty.mazoutelectric.com/"
+									href="https://mazoutelectric.com/battery-manufacturing-autopilot"
 									target="_blank"
 									rel="noopener noreferrer">Mazout Electric</a
 								>
@@ -726,13 +671,60 @@
 			</div>
 		</section>
 
+		<!-- MARKET -->
+		<section class="slide" id="s20">
+			<h2 class="headline anim-in anim-d2">
+				Labor redefined by 2030: a <span class="hl-gold">$3.8Tn</span> US market
+			</h2>
+			<!-- The order we enter the market in, which is also the order each
+			     category becomes solvable. -->
+			<div class="market-tiers anim-in anim-d3">
+				<div class="market-tier market-tier-tam">
+					<div class="market-tier-figure">
+						<span class="market-tier-label">TAM</span>
+						<span class="market-tier-val">$3.8 Tn</span>
+					</div>
+					<p class="market-tier-body">
+						<strong>65M US workers</strong> in physical labor &mdash; production, material moving,
+						construction, maintenance, cleaning, food, farm and care &middot;
+						<strong>$3.1Tn</strong> of wages in 2025<a
+							class="citation"
+							href="https://www.bls.gov/oes/current/oes_nat.htm"
+							target="_blank"
+							rel="noopener noreferrer">[1]</a
+						>
+					</p>
+				</div>
+				<div class="market-tier market-tier-sam">
+					<div class="market-tier-figure">
+						<span class="market-tier-label">SAM</span>
+						<span class="market-tier-val">$2.1 Tn</span>
+					</div>
+					<p class="market-tier-body">
+						<strong>38M of those workers</strong> do the tasks Buildo does today &mdash; factory, warehouse,
+						home and office service, and care support
+					</p>
+				</div>
+				<div class="market-tier market-tier-som">
+					<div class="market-tier-figure">
+						<span class="market-tier-label">SOM</span>
+						<span class="market-tier-val">$210 Bn</span>
+					</div>
+					<p class="market-tier-body">
+						<strong>10% of SAM</strong> in hardware and intelligence spend, the share a
+						<strong>$10K robot</strong> and our skills store can serve by 2030
+					</p>
+				</div>
+			</div>
+		</section>
+
 		<!-- SLIDE 10 - REVENUE -->
 		<section class="slide" id="s10">
 			<div class="infra-layout">
 				<div class="infra-copy">
 					<h2 class="headline anim-in anim-d2">
 						Hardware as a platform for<br />
-						<span class="hl-gold">high-margin API</span> Intelligence
+						<span class="hl-gold">high-margin intelligence API</span>
 					</h2>
 				</div>
 				<div class="rev-model anim-in anim-d3">
@@ -786,7 +778,7 @@
 											class="citation"
 											href="https://x.com/a16z/status/2091200032162857328"
 											target="_blank"
-											rel="noopener noreferrer">[4]</a
+											rel="noopener noreferrer">[2]</a
 										></span
 									>
 								</div>
@@ -905,14 +897,14 @@
 							<th scope="col">Cost</th>
 							<th scope="col">Model size (parameters)</th>
 							<th scope="col">Skills store</th>
-							<th scope="col">Open developer ecosystem</th>
+							<th scope="col">Cloud intelligence</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr class="approach-row-ours">
 							<th scope="row">Buildo</th>
 							<td>$10K</td>
-							<td>&gt;90 billion</td>
+							<td>&gt;27 billion</td>
 							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
 							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
 						</tr>
@@ -1090,21 +1082,20 @@
 		<section class="slide" id="s15">
 			<div class="section-label anim-in anim-d1">Vision</div>
 			<h2 class="headline anim-in anim-d2">
-				Fundamentally <span class="hl-gold">redefine the meaning of labour</span>:<br />
-				what it is, who performs it, and what human time is worth
+				The next Open AI for the <span class="hl-gold">physical world</span>
 			</h2>
 			<div class="vision-body anim-in anim-d3">
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						Robot intelligence is a <span class="hl-gold">model size</span> problem that we have solved.
+						Robot intelligence is a <strong class="hl-gold">model size</strong> problem that we have solved.
 					</p>
 				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						By 2030, labor shortage becomes an outdated concept. Only robots will be employed at
-						factories and ultimately constructing future cities.
+						We envision robots cognition becoming as good as humans when intelligence is streamed
+						from the <strong class="hl-gold">smartest models</strong> on the cloud.
 					</p>
 				</div>
 			</div>
@@ -1133,12 +1124,12 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">&#9656;</span>
 					<p>
-						Unitree sold <strong>5,511 humanoids in 2025</strong> on &yen;868M of revenue, so demand
-						at a low price point is already proven.<a
+						Unitree sold <strong>5,511 humanoids in 2025</strong> on $122M of revenue, so demand at
+						a low price point is already proven.<a
 							class="citation"
 							href="https://shop.unitree.com/blogs/news/clarification-regarding-unitrees-2025-sales-data"
 							target="_blank"
-							rel="noopener noreferrer">[5]</a
+							rel="noopener noreferrer">[3]</a
 						>
 					</p>
 				</div>
@@ -1152,6 +1143,33 @@
 			</div>
 			<div class="appendix-head anim-in anim-d3">Sources</div>
 			<ol class="appendix-sources anim-in anim-d3">
+				<li>
+					<a
+						href="https://www.bls.gov/oes/current/oes_nat.htm"
+						target="_blank"
+						rel="noopener noreferrer">U.S. Bureau of Labor Statistics</a
+					> &mdash; May 2025 occupational employment and wages; 65M workers and $3.1Tn of wages in the
+					physical labor groups, the base for our 2030 figure.
+				</li>
+				<li>
+					<a
+						href="https://x.com/a16z/status/2091200032162857328"
+						target="_blank"
+						rel="noopener noreferrer">a16z</a
+					> &mdash; robotics token demand and the 100&times; growth in intelligence API usage.
+				</li>
+				<li>
+					<a
+						href="https://shop.unitree.com/blogs/news/clarification-regarding-unitrees-2025-sales-data"
+						target="_blank"
+						rel="noopener noreferrer">Unitree</a
+					> &mdash; 2025 humanoid shipment and sales figures.
+				</li>
+				<li>
+					<a href="https://arxiv.org/pdf/2603.12263" target="_blank" rel="noopener noreferrer"
+						>arXiv 2603.12263</a
+					> &mdash; the split inference work our edge adapter is derived from.
+				</li>
 				<li>
 					<a
 						href="https://www.fortunebusinessinsights.com/humanoid-robots-market-110188"
@@ -1172,33 +1190,6 @@
 						target="_blank"
 						rel="noopener noreferrer">Counterpoint Research</a
 					> &mdash; 50,000+ humanoid shipments in 2026, 60%+ to research and data production.
-				</li>
-				<li>
-					<a
-						href="https://x.com/a16z/status/2091200032162857328"
-						target="_blank"
-						rel="noopener noreferrer">a16z</a
-					> &mdash; robotics token demand and the 100&times; growth in intelligence API usage.
-				</li>
-				<li>
-					<a
-						href="https://shop.unitree.com/blogs/news/clarification-regarding-unitrees-2025-sales-data"
-						target="_blank"
-						rel="noopener noreferrer">Unitree</a
-					> &mdash; 2025 humanoid shipment and sales figures.
-				</li>
-				<li>
-					<a
-						href="https://www.bls.gov/oes/current/oes_nat.htm"
-						target="_blank"
-						rel="noopener noreferrer">U.S. Bureau of Labor Statistics</a
-					> &mdash; May 2025 occupational employment and wages; 65M workers and $3.1Tn of wages in the
-					physical labor groups, the base for our 2030 figure.
-				</li>
-				<li>
-					<a href="https://arxiv.org/pdf/2603.12263" target="_blank" rel="noopener noreferrer"
-						>arXiv 2603.12263</a
-					> &mdash; the split inference work our edge adapter is derived from.
 				</li>
 			</ol>
 		</section>
@@ -1413,8 +1404,9 @@
 	}
 
 	#s4 .headline {
+		max-width: none;
 		position: relative;
-		top: clamp(16px, 4.2vh, 46px);
+		top: clamp(-38px, -4.2vh, -16px);
 	}
 
 	:global(.slide.active) {
@@ -1511,7 +1503,7 @@
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		right: clamp(56px, 11vw, 200px);
+		right: clamp(28px, 6.5vw, 118px);
 		z-index: 1;
 		display: flex;
 		align-items: center;
@@ -1565,7 +1557,7 @@
 		line-height: 1.08;
 		letter-spacing: 0.04em;
 		color: #141210;
-		max-width: 680px;
+		max-width: none;
 	}
 
 	.cover-divider {
@@ -1586,6 +1578,20 @@
 	/* Sits under the title, deliberately well below it in scale so the headline
 	   still carries the slide. Sized in vmin like the title so it tracks the
 	   stage rather than the browser window. */
+	.cover-sub {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(14px, 2.8vmin, 28px);
+		font-weight: 500;
+		line-height: 1.55;
+		color: rgba(20, 18, 16, 0.82);
+		max-width: 46ch;
+		margin-top: clamp(14px, 2.4vmin, 26px);
+	}
+
+	.cover-sub .hl-gold {
+		font-weight: 700;
+	}
+
 	/* ── BULLET LIST ── */
 	.bullet-list {
 		margin-top: clamp(16px, 5vh, 36px);
@@ -1620,11 +1626,19 @@
 		align-items: center;
 		width: 100%;
 		min-width: 0;
-		margin-top: clamp(16px, 5vh, 36px);
+		margin-top: clamp(4px, 2vh, 16px);
 	}
 
 	.problem-layout .bullet-list {
 		margin-top: 0;
+	}
+
+	/* The point and the post below it move as one block against the pair of
+	   posts in the other column. */
+	.problem-copy {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
 	}
 
 	/* All three posts run down one column beside the copy, which lets the copy
@@ -1632,16 +1646,20 @@
 	.quote-col {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		/* The headline only occupies the left of the stage, so the column is
 		   lifted into the empty space beside it and can run taller. */
-		margin-top: clamp(-170px, -16vh, -70px);
-		gap: clamp(6px, 1.2vh, 14px);
+		margin-top: clamp(-62px, -5.6vh, -26px);
 		align-items: stretch;
 		min-width: 0;
 	}
 
+	/* The two short posts read as a pair and sit centred against the copy. */
 	.tweet-stack {
-		display: contents;
+		display: flex;
+		flex-direction: column;
+		gap: clamp(6px, 1.2vh, 14px);
+		min-width: 0;
 	}
 
 	.tweet-shot {
@@ -1663,6 +1681,12 @@
 	.bullet-item p strong {
 		color: #141210;
 		font-weight: 500;
+	}
+
+	#s4 .bullet-item p strong.hl-gold,
+	#s15 .bullet-item p strong.hl-gold {
+		color: #7a5e0f;
+		font-weight: 700;
 	}
 
 	/* The problem slide carries only these two lines, so they run as plain
@@ -3065,8 +3089,9 @@
 	   panel off the right edge, so it is fitted rather than filled. */
 	.traction-figure img[src*='traction-simulator'] {
 		height: auto;
-		max-height: clamp(220px, min(56vh, 36vw), 540px);
+		max-height: clamp(210px, min(53vh, 34vw), 510px);
 		object-fit: contain;
+		border-radius: 12px;
 	}
 
 	.comp-figure {
@@ -3498,6 +3523,7 @@
 	/* Only the headline rises; the bands keep the position the centred block
 	   gives them. */
 	#s20 .headline {
+		max-width: none;
 		position: relative;
 		top: clamp(-46px, -5.4vh, -20px);
 	}
@@ -3505,7 +3531,7 @@
 	/* Each tier is narrower than the one above it, so the funnel reads without
 	   any chart. */
 	.market-tiers {
-		margin-top: clamp(18px, 4vh, 44px);
+		margin-top: clamp(10px, 2.2vh, 26px);
 		display: flex;
 		flex-direction: column;
 		gap: clamp(10px, 2.4vh, 24px);

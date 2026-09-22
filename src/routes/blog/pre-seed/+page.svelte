@@ -240,7 +240,7 @@
 		<div class="post-foot-ctas">
 			<a class="btn-primary" href={resolve('/buildo')}>Preorder Buildo</a>
 			<a class="btn-ghost" href="https://portal.starforgerobotics.com"
-				>Simulator<span class="post-cta-arrow" aria-hidden="true">↗</span></a
+				>Skills Store<span class="post-cta-arrow" aria-hidden="true">↗</span></a
 			>
 		</div>
 	</footer>

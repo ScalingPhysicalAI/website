@@ -55,7 +55,7 @@
 			<div class="footer-col">
 				<span class="footer-col-label">Developers</span>
 				<ul>
-					<li><a href="https://portal.starforgerobotics.com">Simulator</a></li>
+					<li><a href="https://portal.starforgerobotics.com">Skills Store</a></li>
 				</ul>
 			</div>
 

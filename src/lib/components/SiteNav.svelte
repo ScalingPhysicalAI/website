@@ -80,7 +80,7 @@
 				>
 			</li>
 			<li>
-				<a href="https://portal.starforgerobotics.com">Simulator</a>
+				<a href="https://portal.starforgerobotics.com">Skills Store</a>
 			</li>
 			<li>
 				<a href={resolve('/blog')} class:active={isBlog} aria-current={isBlog ? 'page' : undefined}
