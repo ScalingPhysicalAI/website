@@ -886,7 +886,7 @@
 		<!-- SLIDE 7 - COMPETITION -->
 		<section class="slide" id="s11">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$10k unit cost and 90B+ parameters</span> enables skill<br />
+				<span class="hl-gold">$10k unit cost and 27B+ parameters</span> enables skill<br />
 				store that outperforms all existing humanoids
 			</h2>
 			<div class="landscape-table-wrap anim-in anim-d3">
