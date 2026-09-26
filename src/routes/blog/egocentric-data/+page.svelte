@@ -10,7 +10,7 @@
 	const loop = [
 		{ step: '01', title: 'Record', body: 'a real-world skill.' },
 		{ step: '02', title: 'Train', body: 'robot models on that data.' },
-		{ step: '03', title: 'Publish', body: 'the model to a skill store.' },
+		{ step: '03', title: 'Publish', body: 'the model to a robot app store.' },
 		{ step: '04', title: 'Earn', body: 'every time a robot uses it.' }
 	];
 </script>

@@ -344,8 +344,8 @@
 		<span class="section-label">Get Started</span>
 		<h2 class="section-title">Start collecting<br /><span>training data</span></h2>
 		<p class="section-body">
-			Order the kit, plug it into your Buildo, and run your first demonstration session the same day.
-			Every recording feeds directly into the skills store training pipeline.
+			Order the kit, plug it into your Buildo, and run your first demonstration session the same
+			day. Every recording feeds directly into the robot app store training pipeline.
 		</p>
 		<div class="bd-hero-ctas" style="margin-top:36px;">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->

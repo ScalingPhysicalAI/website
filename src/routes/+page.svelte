@@ -79,12 +79,12 @@
 		</h1>
 		<p class="hero-sub">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-			<a class="hero-sub-link" href="#{parts[0].id}">Buildo</a> is a uniquely capable and affordable robot
-			made possible by our breakthrough intelligence platform.
+			<a class="hero-sub-link" href="#{parts[0].id}">Buildo</a>, our humanoid robot powered by our
+			intelligence platform, delivers exceptional capabilities at an unmatched price point.
 		</p>
 		<div class="hero-ctas">
 			<a href={resolve('/buildo')} class="btn-primary">Preorder</a>
-			<a href="https://portal.starforgerobotics.com" class="btn-ghost">Skills Store</a>
+			<a href="https://portal.starforgerobotics.com" class="btn-ghost">Robot App Store</a>
 		</div>
 	</div>
 
@@ -117,7 +117,7 @@
 			{#if part.closing}
 				<div class="part-ctas">
 					<a class="btn-ghost" href="https://portal.starforgerobotics.com"
-						>Skills Store<span class="cta-arrow" aria-hidden="true">↗</span></a
+						>Robot App Store<span class="cta-arrow" aria-hidden="true">↗</span></a
 					>
 					<a class="btn-primary" href={resolve('/buildo')}>Preorder</a>
 				</div>

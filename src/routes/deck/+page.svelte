@@ -277,14 +277,14 @@
 				<img src="/assets/buildo-head.webp" alt="Buildo humanoid robot" />
 			</figure>
 			<div class="cover-content">
-				<div class="cover-tag anim-in anim-d1">Seed Round · 2026</div>
+				<div class="cover-tag anim-in anim-d1">Pre-Seed Round · 2026</div>
 				<h1 class="cover-title anim-in anim-d2">
 					Building the <span class="hl-gold">Open<br />Intelligence</span> platform<br />
 					for the physical world
 				</h1>
 				<p class="cover-sub anim-in anim-d3">
-					<span class="hl-gold">Buildo</span> is our first humanoid robot powered by intelligence streamed
-					directly from our cloud platform.
+					<span class="hl-gold">Buildo</span>, our first humanoid robot powered by our intelligence
+					platform, delivers exceptional capability at an unmatched price point.
 				</p>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a
@@ -300,7 +300,7 @@
 		<section class="slide" id="s4">
 			<h2 class="headline anim-in anim-d2">
 				Current robots are not intelligent<br />
-				enough for even <span class="hl-gold">1% productivity boost</span>
+				enough for <span class="hl-gold">real-world deployments</span>
 			</h2>
 			<div class="problem-layout anim-in anim-d3">
 				<div class="problem-copy">
@@ -309,8 +309,9 @@
 							<span class="bullet-icon">▸</span>
 							<p>
 								Robots with human-level generality are
-								<strong class="hl-gold">extremely GPU-heavy</strong> which makes them
-								<strong>expensive and energy-intensive</strong> to be deployed in the real world.
+								<strong class="hl-gold">extremely parameter-rich</strong> which requires high-end
+								GPUs making them <strong>expensive and energy-intensive</strong> to be deployed in the
+								real world.
 							</p>
 						</div>
 					</div>
@@ -324,8 +325,8 @@
 						/>
 						<img
 							class="tweet-shot"
-							src="/assets/quotes/tweet-cix.webp"
-							alt="CIX (@cixliv): the issue with generalist humanoids pitches is that humanoids are very expensive, complex, (some) dangerous and easy to break."
+							src="/assets/quotes/tweet-mts.webp"
+							alt="MTS (@MTSlive): SemiAnalysis asks where a robot's brain should live, weighing on-device compute limits against off-device network latency."
 						/>
 					</div>
 				</div>
@@ -335,17 +336,12 @@
 		<!-- SLIDE 3 - BREAKTHROUGH -->
 		<section class="slide" id="s5">
 			<h2 class="headline anim-in anim-d2">
-				Our breakthrough enables<br />
-				<span class="hl-gold">unlimited intelligence</span> on robots<br />
-				without on-board GPU<span class="small-caps-s">s</span>
+				Our breakthrough enables <span class="hl-gold">largest models</span><br />
+				on robots without on-board GPU<span class="small-caps-s">s</span>
 			</h2>
 			<div class="solution-layout anim-in anim-d3">
 				<div class="solution-col">
 					<div class="bullet-list">
-						<div class="bullet-item">
-							<span class="bullet-icon">&#9656;</span>
-							<p>We removed the <strong>bottleneck of model size</strong>.</p>
-						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon">&#9656;</span>
 							<p>
@@ -405,7 +401,7 @@
 				<div class="bullet-list kit-points">
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Buildo can carry a <strong>payload of up to 18 lbs</strong></p>
+						<p>Buildo can carry a <strong>payload of up to 11 lbs (5kg)</strong></p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
@@ -413,7 +409,9 @@
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Accessories for <strong>egocentric video and tactile data collection</strong></p>
+						<p>
+							<strong>Patent pending glove design</strong> used for tactile egocentric data collection
+						</p>
 					</div>
 				</div>
 				<div class="kit-shots">
@@ -429,43 +427,6 @@
 							alt="Buildo tactile gloves"
 						/>
 						<figcaption>Developer accessories</figcaption>
-					</figure>
-				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 5 - CRITICAL PATH -->
-		<section class="slide" id="s7">
-			<div class="critical-layout">
-				<div class="critical-copy">
-					<h2 class="headline anim-in anim-d2">
-						More than <span class="hl-gold">80% BOM control</span><br />
-						through in-house vertical integration
-					</h2>
-					<div class="bullet-list critical-points anim-in anim-d3">
-						<div class="bullet-item">
-							<span class="bullet-icon">&#9656;</span>
-							<p>
-								<strong class="hl-gold">FCC ban on mobile robots</strong> gives us a clear advantage.
-							</p>
-						</div>
-						<div class="bullet-item">
-							<span class="bullet-icon">&#9656;</span>
-							<p>
-								Buildo's actuators and hands are <strong>made in the United States</strong>, which
-								comprise <strong>80% of the total BOM</strong>.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="critical-photos anim-in anim-d3">
-					<figure class="critical-shot">
-						<img src="/assets/critical-path-hands.webp" alt="Five-fingered dexterous hands" />
-						<figcaption>5 fingered dexterous hands</figcaption>
-					</figure>
-					<figure class="critical-shot">
-						<img src="/assets/critical-path-actuators.webp" alt="Actuators" />
-						<figcaption>15 N·m Actuators</figcaption>
 					</figure>
 				</div>
 			</div>
@@ -607,7 +568,7 @@
 					<div class="demo-frame">
 						<!-- svelte-ignore a11y_media_has_caption -->
 						<video
-							src="/assets/robot-flexibility-demo.mp4"
+							src="/assets/robot-coffee-demo.mp4"
 							autoplay
 							loop
 							muted
@@ -622,37 +583,26 @@
 		<!-- SLIDE 9 - TRACTION -->
 		<section class="slide" id="s14">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">50+ developers</span> from top universities and<br />
-				startups are collecting data and contributing<br />
-				models to the skills store
+				<span class="hl-gold">50+ developers</span> from top universities and startups<br />
+				are contributing models to the robot app store
 			</h2>
 			<div class="traction-layout anim-in anim-d3">
 				<div class="comp-list">
-					<div class="comp-item">
-						<span class="bullet-icon">&#9656;</span>
-						<div class="comp-content">
-							<div class="comp-title">
-								<a
-									href="https://mazoutelectric.com/battery-manufacturing-autopilot"
-									target="_blank"
-									rel="noopener noreferrer">Mazout Electric</a
-								>
-							</div>
-							<p class="comp-body">
-								<strong>Collecting data and training robots to build lithium ion batteries</strong> -
-								deploying skill models on our platform.
-							</p>
-						</div>
-					</div>
 					<div class="comp-unis">
 						<div class="comp-uni-row">
 							<img src="/assets/uni/berkeley.png" alt="University of California, Berkeley" />
 							<img class="uni-nyu" src="/assets/uni/nyu.png" alt="New York University" />
-							<img src="/assets/uni/ucsd.png" alt="University of California, San Diego" />
-							<img src="/assets/uni/uci.png" alt="University of California, Irvine" />
 						</div>
 						<div class="comp-uni-row">
-							<img class="uni-purdue" src="/assets/uni/purdue.png" alt="Purdue University" />
+							<img src="/assets/uni/ucsd.png" alt="University of California, San Diego" />
+							<img src="/assets/uni/uci.png" alt="University of California, Irvine" />
+							<img
+								class="uni-purdue"
+								src="/assets/uni/purdue-trimmed.png"
+								alt="Purdue University"
+							/>
+						</div>
+						<div class="comp-uni-row">
 							<img
 								class="uni-ucsc"
 								src="/assets/uni/ucsc.png"
@@ -712,7 +662,7 @@
 					</div>
 					<p class="market-tier-body">
 						<strong>10% of SAM</strong> in hardware and intelligence spend, the share a
-						<strong>$10K robot</strong> and our skills store can serve by 2030
+						<strong>$10K robot</strong> and our robot app store can serve by 2030
 					</p>
 				</div>
 			</div>
@@ -723,8 +673,8 @@
 			<div class="infra-layout">
 				<div class="infra-copy">
 					<h2 class="headline anim-in anim-d2">
-						Hardware as a platform for<br />
-						<span class="hl-gold">high-margin intelligence API</span>
+						Buildo enables a high-margin<br />
+						<span class="hl-gold">intelligence business model</span>
 					</h2>
 				</div>
 				<div class="rev-model anim-in anim-d3">
@@ -785,7 +735,7 @@
 								<p>
 									Skill usage at rate of <strong>$0.20 per million input</strong> and
 									<strong>$4 per million output</strong>. Split
-									<strong>30% to skills store, 70% to developer</strong>.
+									<strong>30% to robot app store, 70% to developer</strong>.
 								</p>
 							</div>
 						</div>
@@ -896,7 +846,7 @@
 							<th scope="col">Robot</th>
 							<th scope="col">Cost</th>
 							<th scope="col">Model size (parameters)</th>
-							<th scope="col">Skills store</th>
+							<th scope="col">Robot app store</th>
 							<th scope="col">Cloud intelligence</th>
 						</tr>
 					</thead>
@@ -936,6 +886,15 @@
 							</th>
 							<td>$40K</td>
 							<td>8 billion</td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<a href="https://feather.dev/" target="_blank" rel="noopener noreferrer">Feather</a>
+							</th>
+							<td>$30K</td>
+							<td>7 billion</td>
 							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
 							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
 						</tr>
@@ -1088,7 +1047,8 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">▸</span>
 					<p>
-						Robot intelligence is a <strong class="hl-gold">model size</strong> problem that we have solved.
+						Robots with human-level generality is a <strong class="hl-gold">model size</strong> problem
+						that we have solved.
 					</p>
 				</div>
 				<div class="bullet-item">
@@ -1131,6 +1091,14 @@
 							target="_blank"
 							rel="noopener noreferrer">[3]</a
 						>
+					</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">&#9656;</span>
+					<p>
+						We have <strong>more than 80% BOM control through in-house vertical integration</strong
+						>. For mass production, Buildo's actuators and hands will be manufactured in the United
+						States.
 					</p>
 				</div>
 				<div class="bullet-item">
@@ -1406,7 +1374,7 @@
 	#s4 .headline {
 		max-width: none;
 		position: relative;
-		top: clamp(-38px, -4.2vh, -16px);
+		top: clamp(-14px, -1.5vh, -6px);
 	}
 
 	:global(.slide.active) {
@@ -1647,6 +1615,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		/* Nudged in from the right gutter without narrowing the column. */
+		position: relative;
+		left: clamp(-64px, -3.4vw, -26px);
 		/* The headline only occupies the left of the stage, so the column is
 		   lifted into the empty space beside it and can run taller. */
 		margin-top: clamp(-62px, -5.6vh, -26px);
@@ -1911,7 +1882,7 @@
 
 	#s11 .headline {
 		position: relative;
-		top: clamp(-16px, -1.8vh, -6px);
+		top: clamp(6px, 1.4vh, 18px);
 	}
 
 	/* Pulled out of the footnote slot: this is a competitive point, so it reads
@@ -2099,7 +2070,7 @@
 	   headline rather than with the bottom rows. */
 	#s5 .solution-col {
 		position: relative;
-		top: clamp(-30px, -3vh, -12px);
+		top: clamp(-8px, -0.8vh, -3px);
 	}
 
 	/* Title sits above centre, stacked copy left, visuals right. */
@@ -2677,143 +2648,6 @@
 		object-fit: contain;
 	}
 
-	/* Slide 7: copy left, two labelled photos stacked on the right. The
-	   inner grid fills the stage so the title block sits at mid-height. */
-	#s7 {
-		justify-content: center;
-	}
-
-	#s7 .critical-layout {
-		position: relative;
-		top: clamp(14px, 3.4vh, 36px);
-	}
-
-	.critical-layout {
-		display: grid;
-		grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-		gap: clamp(4px, 1vw, 12px);
-		align-items: center;
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-	}
-
-	/* Pinned to the top of the row so the BOM table can grow downwards without
-	   pushing the headline off centre. The photos stay centred. */
-	.critical-copy {
-		align-self: start;
-		padding-top: clamp(4px, 1.2vh, 12px);
-	}
-
-	.critical-copy .headline {
-		max-width: none;
-	}
-
-	.critical-body {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(13px, 2.4vmin, 17px);
-		font-weight: 500;
-		line-height: 1.65;
-		color: #3a3630;
-		max-width: 46ch;
-		margin-top: clamp(16px, 3.6vh, 28px);
-		margin-left: 0;
-	}
-
-	.critical-body strong {
-		color: #141210;
-		font-weight: 500;
-	}
-
-	.critical-body strong.hl-gold {
-		color: #7a5e0f;
-		font-weight: 700;
-	}
-
-	#s7 .bullet-item {
-		padding: clamp(5px, 1.2vh, 10px) 0;
-		background: none;
-		border: 0;
-	}
-
-	/* With the BOM table gone the points drop towards the foot of the column,
-	   so they sit against the photos rather than hanging off the headline. */
-	#s7 .bullet-list {
-		margin-top: clamp(60px, 18vh, 190px);
-		gap: clamp(6px, 1.6vh, 14px);
-		max-width: 48ch;
-	}
-
-	#s7 .bullet-item p {
-		font-size: clamp(14px, 2.5vmin, 20px);
-		line-height: 1.45;
-	}
-
-	#s7 .bullet-item p strong.hl-gold {
-		color: #7a5e0f;
-		font-weight: 700;
-	}
-
-	#s7 .bullet-icon {
-		font-size: 15px;
-		padding-top: 5px;
-	}
-
-	.critical-photos {
-		display: flex;
-		/* Content-height columns, so a two-line caption under one photo cannot
-		   push that photo up out of line with its neighbour. */
-		align-items: flex-start;
-		gap: clamp(10px, 1.6vw, 22px);
-		width: 100%;
-		max-width: 100%;
-		min-width: 0;
-		max-height: 100%;
-		margin-left: clamp(-24px, -1.2vw, -8px);
-		align-self: center;
-		position: relative;
-		top: clamp(10px, 2.4vh, 24px);
-	}
-
-	/* The two photos are different shapes, so each column centres its own
-	   contents and the images meet on a shared midline. */
-	.critical-shot {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		margin: 0;
-		flex: 1;
-		min-width: 0;
-	}
-
-	/* Both photos fill an identical box and are cropped to fit, so the pair
-	   reads as a matched set despite their different aspect ratios. */
-	.critical-shot img {
-		display: block;
-		width: 100%;
-		height: clamp(150px, min(34vh, 21vw), 300px);
-		object-fit: cover;
-		object-position: center;
-		background: #ffffff;
-		/* The photos are cut out on white, so a light rule keeps them from
-		   bleeding into the slide. */
-		border: 1px solid rgba(20, 18, 16, 0.14);
-	}
-
-	.critical-shot figcaption {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(10px, 1.9vmin, 14px);
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		margin-top: 8px;
-		flex-shrink: 0;
-		text-align: center;
-		width: 100%;
-	}
-
 	/* ── WHY US ── */
 	.why-card {
 		padding: clamp(16px, 4vh, 40px) clamp(14px, 2.5vw, 28px);
@@ -2985,10 +2819,10 @@
 		min-width: 0;
 	}
 
-	/* Traction runs the copy against a bench photo, so the list gives up the
+	/* Traction runs the copy against the capture, so the list gives up the
 	   right half of the stage and the whole block rides higher to make room. */
-	#s14 .section-label,
 	#s14 .headline {
+		max-width: none;
 		position: relative;
 		top: clamp(10px, 2.4vh, 26px);
 	}
@@ -3012,22 +2846,20 @@
 
 	.traction-layout .comp-list {
 		position: relative;
-		align-self: start;
+		align-self: center;
 		margin-top: 0;
 		max-width: none;
 	}
 
 	/* Hung under the card rather than sitting in flow, so the card alone centres
 	   against the photo. */
+	/* The customer point is gone, so these are the whole column: they sit in
+	   flow and centre against the capture instead of hanging below copy. */
 	.comp-unis {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
 		display: flex;
 		flex-direction: column;
-		gap: clamp(10px, 2vh, 20px);
-		margin-top: clamp(18px, 3.6vh, 40px);
+		justify-content: center;
+		gap: clamp(16px, 3.4vh, 38px);
 	}
 
 	.comp-uni-row {
@@ -3038,33 +2870,39 @@
 		gap: clamp(10px, 1.6vw, 22px);
 	}
 
+	/* Two marks share this row, so they can stand a little further apart than
+	   the tighter rows below. */
+	.comp-uni-row:first-child {
+		gap: clamp(18px, 2.6vw, 36px);
+	}
+
 	/* The marks share a row inside the copy column, so each is capped on width
 	   as well as height and allowed to shrink rather than push out. */
 	.comp-unis img {
-		height: clamp(32px, 5.8vmin, 50px);
+		height: clamp(39px, 7vmin, 60px);
 		width: auto;
-		max-width: 29%;
+		max-width: 40%;
 		min-width: 0;
 		object-fit: contain;
 	}
 
 	.comp-unis .uni-ucsc {
-		height: clamp(28px, 5vmin, 44px);
+		height: clamp(34px, 6vmin, 53px);
 	}
 
 	.comp-unis .uni-umd {
-		height: clamp(41px, 7.4vmin, 64px);
-		max-width: 42%;
+		height: clamp(49px, 8.9vmin, 77px);
+		max-width: 52%;
 	}
 
 	.comp-unis .uni-purdue {
-		height: clamp(49px, 9.1vmin, 76px);
+		height: clamp(39px, 7vmin, 60px);
 	}
 
 	/* The torch block is narrow, so it needs extra height to carry the same
 	   weight as the marks beside it. */
 	.comp-unis .uni-nyu {
-		height: clamp(68px, 12.9vmin, 109px);
+		height: clamp(82px, 15.5vmin, 131px);
 	}
 
 	.traction-figure {
@@ -3808,12 +3646,10 @@
 		.infra-copy,
 		.infra-points,
 		.demo-grid,
-		.critical-photos,
 		.traction-layout,
 		.market-tiers,
 		.solution-col,
-		.kit-shots,
-		.critical-layout {
+		.kit-shots {
 			top: 0 !important;
 			left: 0 !important;
 		}
@@ -3823,6 +3659,7 @@
 		   bullets. */
 		.quote-col {
 			margin-top: 0;
+			left: 0;
 		}
 
 		/* ── Type scales off the card width instead of the short side of a phone ── */
@@ -3857,7 +3694,6 @@
 		#s8 .infra-body,
 		.problem-layout,
 		.quote-col,
-		.critical-layout,
 		.traction-layout,
 		.kit-layout,
 		.rev-stack,
@@ -3962,10 +3798,6 @@
 		.cover-figure img {
 			max-width: 78%;
 			height: auto;
-		}
-
-		.critical-photos {
-			margin-left: 0;
 		}
 
 		.market-tier {
