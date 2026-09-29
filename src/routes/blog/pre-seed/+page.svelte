@@ -2,10 +2,13 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
+	import { posts, formatPostDate } from '$lib/data/posts';
 
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.15 });
 	});
+
+	const post = posts.find((entry) => entry.slug === 'pre-seed');
 
 	const specs = [
 		{ val: '18 lb', label: 'Payload' },
@@ -35,6 +38,13 @@
 			Funding will accelerate the development and deployment of Buildo, Starforge Robotics' $10,000
 			open-source humanoid robot and physical intelligence platform.
 		</p>
+		{#if post}
+			<p class="post-byline">
+				{post.author}
+				<span aria-hidden="true">·</span>
+				<time datetime={post.date}>{formatPostDate(post.date)}</time>
+			</p>
+		{/if}
 	</header>
 
 	<div class="post-body">
@@ -238,7 +248,7 @@
 
 	<footer class="post-foot reveal">
 		<div class="post-foot-ctas">
-			<a class="btn-primary" href={resolve('/buildo')}>Preorder Buildo</a>
+			<a class="btn-primary" href={resolve('/buildo')}>Order</a>
 			<a class="btn-ghost" href="https://portal.starforgerobotics.com"
 				>Robot App Store<span class="post-cta-arrow" aria-hidden="true">↗</span></a
 			>
@@ -289,12 +299,26 @@
 	   the body by the rule below it rather than by size alone. */
 	.post-dek {
 		margin-top: 24px;
-		padding-bottom: 36px;
-		border-bottom: 1px solid var(--border);
 		font-size: clamp(17px, 2.2vw, 20px);
 		font-weight: 600;
 		line-height: 1.55;
 		color: var(--ink);
+	}
+
+	.post-byline {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 10px;
+		margin-top: 20px;
+		padding-bottom: 32px;
+		border-bottom: 1px solid var(--border);
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: 11px;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--text-muted);
 	}
 
 	/* ── BODY ── */

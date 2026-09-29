@@ -24,14 +24,6 @@
 
 	const variant = product?.variants.nodes[0];
 	const available = variant?.availableForSale ?? true;
-	const origin = product?.origin?.value?.replace(/August/gi, 'September') ?? null;
-	// Matches a tag on the Shopify product, so it has to keep accepting the
-	// original 'prebook' spelling: the store still carries that tag even though
-	// the site now says preorder everywhere.
-	const isPreorder = (product?.tags ?? []).some((tag: string) => {
-		const t = tag.toLowerCase();
-		return t === 'preorder' || t === 'prebook';
-	});
 
 	let selectedImage = $state(0);
 	let quantity = $state(1);
@@ -96,10 +88,10 @@
 </script>
 
 <svelte:head>
-	<title>Buildo - Preorder the Humanoid for Physical AI | STARFORGE</title>
+	<title>Buildo - Order the Humanoid for Physical AI | STARFORGE</title>
 	<meta
 		name="description"
-		content="Preorder Buildo, a general-purpose humanoid built for physical AI development. Three-layer on-board intelligence, five-fingered dexterous hands, and a data collection platform that trains itself."
+		content="Order Buildo, a general-purpose humanoid built for physical AI development. Three-layer on-board intelligence, five-fingered dexterous hands, and a data collection platform that trains itself."
 	/>
 </svelte:head>
 
@@ -152,10 +144,6 @@
 					</span>
 				</div>
 
-				{#if origin}
-					<p class="rdk-origin">{origin}</p>
-				{/if}
-
 				<div class="rdk-divider-line"></div>
 
 				<div class="rdk-quantity-block">
@@ -175,9 +163,7 @@
 				<div class="rdk-ctas">
 					{#if cartUrl && available}
 						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-						<a class="btn-primary rdk-btn-buy" href={cartUrl}
-							>{isPreorder ? 'Preorder' : 'Order Now'}</a
-						>
+						<a class="btn-primary rdk-btn-buy" href={cartUrl}>Order now</a>
 					{/if}
 					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Robot App Store</a>
 				</div>
@@ -192,8 +178,8 @@
 				<div class="rdk-ctas">
 					<a
 						class="btn-primary rdk-btn-buy"
-						href="mailto:contact@starforgerobotics.com?subject=Buildo%20Preorder"
-						>Preorder by email</a
+						href="mailto:contact@starforgerobotics.com?subject=Buildo%20order"
+						>Order by email</a
 					>
 					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Robot App Store</a>
 				</div>
@@ -358,7 +344,7 @@
 		<div class="bd-hero-ctas" style="margin-top:36px;">
 			<!-- Ordering happens at the top of this page now, so this returns there. -->
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-			<a class="btn-primary" href="#preorder">Preorder</a>
+			<a class="btn-primary" href="#preorder">Order now</a>
 			<a class="btn-ghost" href={resolve('/buildo-development-kit')}>Dev Kit</a>
 			<a class="btn-ghost" href="https://portal.starforgerobotics.com">Robot App Store</a>
 		</div>

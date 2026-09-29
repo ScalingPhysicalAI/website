@@ -34,6 +34,7 @@
 				<article>
 					<div class="blog-meta">
 						<span class="blog-category">{post.category}</span>
+						<span>{post.author}</span>
 						<time datetime={post.date}>{formatPostDate(post.date)}</time>
 					</div>
 					<h2 class="blog-post-title">

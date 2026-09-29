@@ -8,6 +8,7 @@ export type Post = {
 	/** ISO date, used for both sorting and the displayed dateline. */
 	date: string;
 	category: string;
+	author: string;
 };
 
 export const posts: Post[] = [
@@ -16,7 +17,8 @@ export const posts: Post[] = [
 		title: "Robots don't have egocentric interaction data. That's the real bottleneck.",
 		dek: 'LLMs got trained on everything humans have written for decades. Robots got almost nothing.',
 		date: '2026-09-13',
-		category: 'Perspective'
+		category: 'Perspective',
+		author: 'Vipul Saini'
 	},
 	{
 		slug: 'pre-seed',
@@ -24,7 +26,8 @@ export const posts: Post[] = [
 			'Starforge Robotics raises $500,000 pre-seed to build affordable, intelligent humanoid robots',
 		dek: "Funding will accelerate the development and deployment of Buildo, Starforge Robotics' $10,000 open-source humanoid robot and physical intelligence platform.",
 		date: '2026-09-11',
-		category: 'Announcement'
+		category: 'Announcement',
+		author: 'Vipul Saini'
 	}
 ];
 

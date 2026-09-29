@@ -83,7 +83,7 @@
 			intelligence platform, delivers exceptional capabilities at an unmatched price point.
 		</p>
 		<div class="hero-ctas">
-			<a href={resolve('/buildo')} class="btn-primary">Preorder</a>
+			<a href={resolve('/buildo')} class="btn-primary">Order</a>
 			<a href="https://portal.starforgerobotics.com" class="btn-ghost">Robot App Store</a>
 		</div>
 	</div>
@@ -119,7 +119,7 @@
 					<a class="btn-ghost" href="https://portal.starforgerobotics.com"
 						>Robot App Store<span class="cta-arrow" aria-hidden="true">↗</span></a
 					>
-					<a class="btn-primary" href={resolve('/buildo')}>Preorder</a>
+					<a class="btn-primary" href={resolve('/buildo')}>Order</a>
 				</div>
 			{/if}
 		</div>
