@@ -308,10 +308,8 @@
 						<div class="bullet-item">
 							<span class="bullet-icon">▸</span>
 							<p>
-								Robots with human-level generality are
-								<strong class="hl-gold">extremely parameter-rich</strong> which requires high-end
-								GPUs making them <strong>expensive and energy-intensive</strong> to be deployed in the
-								real world.
+								Human-level robot intelligence requires massive models and high-end GPUs,
+								making onboard deployment expensive and power-hungry.
 							</p>
 						</div>
 					</div>
@@ -325,7 +323,7 @@
 						/>
 						<img
 							class="tweet-shot"
-							src="/assets/quotes/tweet-mts.webp"
+							src="/assets/quotes/tweet-mts-user.webp"
 							alt="MTS (@MTSlive): SemiAnalysis asks where a robot's brain should live, weighing on-device compute limits against off-device network latency."
 						/>
 					</div>
@@ -351,44 +349,47 @@
 							</p>
 						</div>
 					</div>
-				</div>
-				<div class="approach-table-wrap">
-					<table class="approach-table">
-						<thead>
-							<tr>
-								<th scope="col">Approach</th>
-								<th scope="col">Robot cost</th>
-								<th scope="col">Latency</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">Large VLA on Server</th>
-								<td>Low</td>
-								<td>High (&gt;2s)</td>
-							</tr>
-							<tr>
-								<th scope="row">Large VLA on Robot</th>
-								<td>High</td>
-								<td>Low</td>
-							</tr>
-							<tr class="approach-row-ours">
-								<th scope="row">Buildo's AI Model</th>
-								<td>Low</td>
-								<td>Low (~400ms)</td>
-							</tr>
-						</tbody>
-					</table>
-					<p class="solution-source">
-						Derived from a heavily optimized implementation of <a
-							class="solution-source-link"
-							href="https://arxiv.org/pdf/2603.12263"
-							target="_blank"
-							rel="noopener noreferrer">arXiv 2603.12263</a
-						>
-					</p>
+					<div class="approach-table-wrap">
+						<table class="approach-table">
+							<thead>
+								<tr>
+									<th scope="col">Approach</th>
+									<th scope="col">Robot cost</th>
+									<th scope="col">Latency</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">Large VLA on Server</th>
+									<td>Low</td>
+									<td>High (&gt;2s)</td>
+								</tr>
+								<tr>
+									<th scope="row">Large VLA on Robot</th>
+									<td>High</td>
+									<td>Low</td>
+								</tr>
+								<tr class="approach-row-ours">
+									<th scope="row">Buildo's AI Model</th>
+									<td>Low</td>
+									<td>Low (~400ms)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
+			<figure class="solution-video">
+				<!-- svelte-ignore a11y_media_has_caption -->
+				<video
+					src="/assets/robot-coffee-demo.mp4"
+					autoplay
+					loop
+					muted
+					playsinline
+					preload="auto"
+				></video>
+			</figure>
 		</section>
 
 		<!-- SLIDE 4 - BUILDO KIT -->
@@ -401,7 +402,7 @@
 				<div class="bullet-list kit-points">
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Buildo can carry a <strong>payload of up to 11 lbs (5kg)</strong></p>
+						<p>Buildo can carry a <strong>payload of up to 13.2 lbs (6kg)</strong></p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
@@ -410,7 +411,7 @@
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
 						<p>
-							<strong>Patent pending glove design</strong> used for tactile egocentric data collection
+							<strong>Patent pending glove and glasses</strong> for tactile egocentric data collection
 						</p>
 					</div>
 				</div>
@@ -543,43 +544,6 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 8 - DEMOS -->
-		<section class="slide" id="s16">
-			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">31 degrees of freedom</span><br />
-				delivers human-level dexterity
-			</h2>
-			<div class="demo-grid anim-in anim-d3">
-				<figure class="demo-video">
-					<div class="demo-frame">
-						<!-- svelte-ignore a11y_media_has_caption -->
-						<video src="/assets/robot-demo.mp4" autoplay loop muted playsinline preload="auto"
-						></video>
-					</div>
-				</figure>
-				<figure class="demo-video">
-					<div class="demo-frame">
-						<!-- svelte-ignore a11y_media_has_caption -->
-						<video src="/assets/robot-hand-demo.mp4" autoplay loop muted playsinline preload="auto"
-						></video>
-					</div>
-				</figure>
-				<figure class="demo-video">
-					<div class="demo-frame">
-						<!-- svelte-ignore a11y_media_has_caption -->
-						<video
-							src="/assets/robot-coffee-demo.mp4"
-							autoplay
-							loop
-							muted
-							playsinline
-							preload="auto"
-						></video>
-					</div>
-				</figure>
-			</div>
-		</section>
-
 		<!-- SLIDE 9 - TRACTION -->
 		<section class="slide" id="s14">
 			<h2 class="headline anim-in anim-d2">
@@ -612,13 +576,18 @@
 						</div>
 					</div>
 				</div>
-				<figure class="traction-figure">
-					<img
-						src="/assets/traction-simulator.jpg"
-						alt="Buildo in the Starforge simulator, driven through a kitchen scene"
-					/>
-				</figure>
 			</div>
+			<figure class="traction-figure">
+				<!-- svelte-ignore a11y_media_has_caption -->
+				<video
+					src="/assets/robot-hand-demo.mp4"
+					autoplay
+					loop
+					muted
+					playsinline
+					preload="auto"
+				></video>
+			</figure>
 		</section>
 
 		<!-- MARKET -->
@@ -1041,24 +1010,13 @@
 		<section class="slide" id="s15">
 			<div class="section-label anim-in anim-d1">Vision</div>
 			<h2 class="headline anim-in anim-d2">
-				The next Open AI for the <span class="hl-gold">physical world</span>
+				The next Android for the <span class="hl-gold">physical world</span>
 			</h2>
-			<div class="vision-body anim-in anim-d3">
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>
-						Robots with human-level generality is a <strong class="hl-gold">model size</strong> problem
-						that we have solved.
-					</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">▸</span>
-					<p>
-						We envision robots cognition becoming as good as humans when intelligence is streamed
-						from the <strong class="hl-gold">smartest models</strong> on the cloud.
-					</p>
-				</div>
-			</div>
+			<p class="vision-sub anim-in anim-d2">
+				Buildo is creating an <strong>App Store for the physical world</strong>, where developers
+				can turn real-world demonstrations into robot apps, validate them in simulation, and deploy
+				them globally across Buildo robots.
+			</p>
 			<div class="ask-footer anim-in anim-d3">
 				<a href="https://starforgerobotics.com" target="_blank" rel="noopener noreferrer"
 					>starforgerobotics.com</a
@@ -1654,8 +1612,7 @@
 		font-weight: 500;
 	}
 
-	#s4 .bullet-item p strong.hl-gold,
-	#s15 .bullet-item p strong.hl-gold {
+	#s4 .bullet-item p strong.hl-gold {
 		color: #7a5e0f;
 		font-weight: 700;
 	}
@@ -1693,37 +1650,29 @@
 		max-width: 900px;
 	}
 
-	/* Extra bottom padding against the centred block, which lifts the whole
-	   slide slightly rather than moving any one element. */
+	/* Title sits below the nav; the copy and clip share the rest of the stage. */
 	#s5 {
-		padding-top: clamp(48px, 10.6vh, 82px);
-		padding-bottom: clamp(40px, 7vh, 68px);
+		justify-content: flex-start;
+		padding-top: clamp(128px, 14vh, 156px);
+		padding-bottom: clamp(28px, 4vh, 48px);
 	}
 
-	#s5 .section-label {
-		margin-bottom: clamp(6px, 1.4vh, 10px);
-	}
-
-	/* Shifted visually rather than through the flow: the card and table stay on
-	   the centred position the block resolves to, and only the header rises. */
-	#s5 .section-label,
 	#s5 .headline {
+		max-width: none;
 		position: relative;
-		top: clamp(-56px, -6.4vh, -26px);
+		top: 0;
 	}
 
-	/* Slide 5: text left, diagram right. Columns are minmax(0, ...) so the image
-	   can shrink inside its track instead of forcing the grid wider than the
-	   slide. */
+	/* Text and table stacked on the left, coffee clip on the right. */
 	.solution-layout {
-		margin-top: clamp(4px, 1vh, 12px);
+		margin-top: 0;
 		display: grid;
-		grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-		gap: clamp(16px, 3vw, 44px);
-		/* Centred against the diagram rather than pinned to the top, so the card
-		   sits at the diagram's midpoint instead of crowding the headline. */
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: clamp(28px, 4vw, 64px);
 		align-items: center;
 		width: 100%;
+		flex: 1;
+		min-height: 0;
 	}
 
 	.solution-figure {
@@ -1738,71 +1687,31 @@
 	.approach-table-wrap {
 		min-width: 0;
 		position: relative;
-		/* Both columns start at the row's top edge, so the card and the table
-		   line up whichever of the two happens to be taller. */
 		align-self: start;
-	}
-
-	/* Sized off viewport height so a 16:9 embed always clears the slide chrome.
-	   Nudged up so the captions now hanging below it stay clear of the edge. */
-	/* Nudge only the demos label and headline, leaving the clips where they are. */
-	#s16 .section-label,
-	#s16 .headline {
-		position: relative;
-		top: clamp(-16px, -1.5vh, -6px);
-	}
-
-	.demo-grid {
-		position: relative;
-		top: clamp(0px, 1.2vh, 14px);
-		display: flex;
-		/* Wrapping used to drop the third clip onto a clipped second row on
-		   narrower windows, so the columns share the width instead. */
-		flex-wrap: nowrap;
-		align-items: center;
-		justify-content: center;
-		gap: clamp(16px, 2.4vw, 56px);
 		width: 100%;
-		flex: 1;
-		min-height: 0;
+		margin-top: clamp(16px, 2.8vh, 32px);
 	}
 
-	.demo-video {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: clamp(14px, 3vh, 30px);
+	/* Same portrait frame as the demos slide, scaled to the stage height and
+	   pinned to the right. Width follows 9:16, so it cannot crop into a square. */
+	#s5 .solution-video {
+		position: absolute;
+		top: 50%;
+		right: clamp(160px, 12vw, 240px);
+		transform: translateY(calc(-50% + 28px));
+		width: auto;
+		height: auto;
 		margin: 0;
-		/* Equal columns keep the three clips evenly spaced regardless of how
-		   wide each caption happens to be. */
-		flex: 1 1 0;
-		min-width: 0;
-	}
-
-	/* The caption is wider than the clip, so the frame stretches past it; the
-	   video is centred inside so it lines up with the title above. */
-	.demo-frame {
 		display: flex;
-		justify-content: center;
-		width: 100%;
+		justify-content: flex-end;
 	}
 
-	.demo-frame video {
+	#s5 .solution-video video {
 		display: block;
-		height: min(58vh, 620px);
-		max-width: 100%;
+		height: calc(min(100vh, 100vw * 9 / 16) * 0.72);
+		width: auto;
+		aspect-ratio: 9 / 16;
 		object-fit: contain;
-	}
-
-	.demo-video figcaption {
-		max-width: 100%;
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		text-align: center;
 	}
 
 	.approach-table {
@@ -2010,39 +1919,18 @@
 		background: #ffffff;
 	}
 
-	/* Pinned to the top of the row so the card's top edge lines up with the
-	   table's, with the source note hanging below it. */
 	.solution-col {
 		align-self: center;
-	}
-
-	.solution-source {
-		margin-top: clamp(7px, 1.3vh, 12px);
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.2vmin, 17px);
-		/* The citation reads as one unit, so the line is kept unbroken rather
-		   than left to wrap between the label and the arXiv id. */
-		white-space: nowrap;
-		font-weight: 500;
-		color: #5f584e;
-	}
-
-	.solution-source-link {
-		color: #7a5e0f;
-		font-weight: 700;
-		text-decoration: underline;
-		text-underline-offset: 3px;
-		text-decoration-thickness: 1px;
-	}
-
-	.solution-source-link:hover {
-		color: #141210;
+		min-width: 0;
+		width: min(100%, 620px);
 	}
 
 	/* The two points run as plain statements beside the table, the same way the
 	   problem slide sets them. */
 	#s5 .bullet-list {
 		margin-top: 0;
+		max-width: none;
+		width: 100%;
 		gap: clamp(10px, 2.4vh, 22px);
 	}
 
@@ -2066,11 +1954,9 @@
 		padding-top: 0;
 	}
 
-	/* The points sit slightly above the table's midpoint so they read with the
-	   headline rather than with the bottom rows. */
 	#s5 .solution-col {
 		position: relative;
-		top: clamp(-8px, -0.8vh, -3px);
+		top: clamp(-92px, -7.5vh, -44px);
 	}
 
 	/* Title sits above centre, stacked copy left, visuals right. */
@@ -2849,6 +2735,7 @@
 		align-self: center;
 		margin-top: 0;
 		max-width: none;
+		left: 36px;
 	}
 
 	/* Hung under the card rather than sitting in flow, so the card alone centres
@@ -2859,7 +2746,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		gap: clamp(16px, 3.4vh, 38px);
+		gap: clamp(28px, 5.6vh, 64px);
 	}
 
 	.comp-uni-row {
@@ -2867,13 +2754,13 @@
 		align-items: center;
 		justify-content: center;
 		flex-wrap: nowrap;
-		gap: clamp(10px, 1.6vw, 22px);
+		gap: clamp(22px, 3.4vw, 48px);
 	}
 
 	/* Two marks share this row, so they can stand a little further apart than
 	   the tighter rows below. */
 	.comp-uni-row:first-child {
-		gap: clamp(18px, 2.6vw, 36px);
+		gap: clamp(36px, 5vw, 72px);
 	}
 
 	/* The marks share a row inside the copy column, so each is capped on width
@@ -2923,11 +2810,22 @@
 		border: 2px solid rgba(20, 18, 16, 0.12);
 	}
 
-	/* The simulator shot is a UI capture: cropping it would cut the control
-	   panel off the right edge, so it is fitted rather than filled. */
-	.traction-figure img[src*='traction-simulator'] {
+	/* Same height as the coffee clip on the breakthrough slide, pinned to the right. */
+	#s14 .traction-figure {
+		position: absolute;
+		top: 50%;
+		right: clamp(200px, 14vw, 280px);
+		transform: translateY(calc(-50% + 48px));
+		margin: 0;
+		width: auto;
 		height: auto;
-		max-height: clamp(210px, min(53vh, 34vw), 510px);
+	}
+
+	#s14 .traction-figure video {
+		width: auto;
+		height: calc(min(100vh, 100vw * 9 / 16) * 0.72);
+		max-height: none;
+		max-width: none;
 		object-fit: contain;
 		border-radius: 12px;
 	}
@@ -3218,12 +3116,38 @@
 			#f1efeb;
 	}
 
-	.vision-body {
-		margin-top: clamp(20px, 5vh, 52px);
-		display: flex;
-		flex-direction: column;
-		gap: clamp(16px, 3.6vh, 36px);
-		max-width: 820px;
+	/* The slide carries a title and one paragraph, so both run larger than the
+	   deck's defaults and the pair sits above centre. */
+	#s15 .section-label,
+	#s15 .headline {
+		position: relative;
+		top: clamp(-56px, -5.4vh, -24px);
+	}
+
+	/* Held where it sat before the block was raised, so the paragraph keeps its
+	   distance from the title rather than following it up. */
+	.vision-sub {
+		position: relative;
+		top: clamp(-24px, -2.2vh, -10px);
+	}
+
+	#s15 .headline {
+		font-size: clamp(26px, 6vmin, 68px);
+	}
+
+	.vision-sub {
+		margin-top: clamp(16px, 3vh, 32px);
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(15px, 2.9vmin, 24px);
+		font-weight: 500;
+		line-height: 1.55;
+		color: #3a3630;
+		max-width: 900px;
+	}
+
+	.vision-sub strong {
+		font-weight: 700;
+		color: #141210;
 	}
 
 	.nowrap {
@@ -3231,18 +3155,6 @@
 	}
 
 	/* Same marker as the problem slide, but the copy runs plain here. */
-	.vision-body .bullet-item {
-		padding: 0;
-		background: none;
-		border: 0;
-	}
-
-	/* Matches the marker treatment on the problem and platform slides. */
-	.vision-body .bullet-icon {
-		font-size: 16px;
-		padding-top: 3px;
-	}
-
 	/* Source markers. Ported from the teammate's deck; recoloured from the old
 	   #b89c72 gold to the current accent, which that revision predates. */
 	.citation {
@@ -3264,20 +3176,6 @@
 	   Svelte does not strip it as unused before anything applies the class. */
 	:global(.slide-hidden) {
 		display: none !important;
-	}
-
-	#s15 .bullet-item p {
-		font-size: clamp(16px, 3.1vmin, 22px);
-		line-height: 1.5;
-	}
-
-	.vision-body strong {
-		color: #141210;
-		font-weight: 500;
-	}
-
-	.vision-body strong.hl-gold {
-		color: #7a5e0f;
 	}
 
 	/* The ask sits under the metrics rather than beside them, which also lets
@@ -3645,7 +3543,6 @@
 		.cover-content,
 		.infra-copy,
 		.infra-points,
-		.demo-grid,
 		.traction-layout,
 		.market-tiers,
 		.solution-col,
@@ -3710,10 +3607,47 @@
 			gap: 3px;
 		}
 
-		/* Kept on one line under the card on a wide stage; on a small phone that
-		   single line is wider than the screen. */
-		.solution-source {
-			white-space: normal;
+		.traction-layout .comp-list {
+			left: 0;
+		}
+
+		#s14 .traction-figure {
+			position: static;
+			top: auto;
+			right: auto;
+			transform: none;
+		}
+
+		#s14 .traction-figure video {
+			height: auto;
+			max-height: min(52vh, 420px);
+			max-width: 100%;
+		}
+
+		.traction-figure video {
+			max-height: min(52vh, 420px);
+		}
+
+		#s5 .solution-video {
+			position: static;
+			top: auto;
+			bottom: auto;
+			right: auto;
+			width: auto;
+			transform: none;
+			justify-content: center;
+			margin-right: 0;
+		}
+
+		#s5 .solution-video video {
+			height: min(52vh, 420px);
+			width: auto;
+			max-width: 100%;
+			object-fit: contain;
+		}
+
+		.approach-table-wrap {
+			width: 100%;
 		}
 
 		/* Two columns this narrow break entries across the gutter mid-sentence. */
@@ -3755,19 +3689,6 @@
 		.product-specs {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 			gap: 14px;
-		}
-
-		.demo-grid {
-			flex-direction: column;
-			gap: 28px;
-			margin-top: 24px;
-		}
-
-		/* Full-width would make these portrait clips taller than the screen. */
-		.demo-frame video {
-			height: min(64vh, 520px);
-			width: auto;
-			max-width: 100%;
 		}
 
 		/* Blocks that hang off a zero-height anchor or the bottom of a column all
