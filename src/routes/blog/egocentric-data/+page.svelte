@@ -2,10 +2,13 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
+	import { posts, formatPostDate } from '$lib/data/posts';
 
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.15 });
 	});
+
+	const post = posts.find((entry) => entry.slug === 'egocentric-data');
 
 	const loop = [
 		{ step: '01', title: 'Record', body: 'a real-world skill.' },
@@ -34,6 +37,13 @@
 		<p class="post-dek">
 			LLMs got trained on everything humans have written for decades. Robots got almost nothing.
 		</p>
+		{#if post}
+			<p class="post-byline">
+				{post.author}
+				<span aria-hidden="true">·</span>
+				<time datetime={post.date}>{formatPostDate(post.date)}</time>
+			</p>
+		{/if}
 	</header>
 
 	<div class="post-body">
@@ -91,6 +101,45 @@
 			Labs with 20 researchers will never generate enough diversity to teach robots everything
 			humans know how to do. Millions of people can.
 		</p>
+
+		<h2>Build for robots. Deploy to the world.</h2>
+
+		<p>
+			Robots are creating a new class of developers, much like Android created mobile app
+			developers, but for the physical world.
+		</p>
+
+		<p>
+			With Buildo, developers can collect real-world demonstrations using
+			<a class="post-kit-link" href={resolve('/buildo-development-kit')}>gloves and smart glasses</a>,
+			train task-specific AI models, validate those skills in simulation, and publish them as robot
+			apps on the <strong>Buildo App Store</strong>.
+		</p>
+
+		<p>
+			A developer could build a <strong>Home App</strong> that enables Buildo to make coffee, do
+			laundry, clean, and perform everyday household tasks.
+		</p>
+
+		<p>
+			Because Buildo robots can be deployed anywhere in the world, developers can build once and
+			distribute globally. Robot owners can review an app's supported tasks, tested environments,
+			appliance compatibility, workspace requirements, and simulation conditions before connecting
+			it to their robot.
+		</p>
+
+		<p>
+			Once installed, the app runs through Buildo's intelligence platform. Developers earn based on
+			the inference their apps generate, creating recurring revenue as their skills are used across
+			the growing fleet of deployed robots.
+		</p>
+
+		<p>
+			<strong
+				>Collect data. Train intelligence. Validate in simulation. Publish once. Deploy globally.
+				Earn as robots work.</strong
+			>
+		</p>
 	</div>
 
 	<footer class="post-foot reveal">
@@ -144,12 +193,26 @@
 
 	.post-dek {
 		margin-top: 24px;
-		padding-bottom: 36px;
-		border-bottom: 1px solid var(--border);
 		font-size: clamp(17px, 2.2vw, 20px);
 		font-weight: 600;
 		line-height: 1.55;
 		color: var(--ink);
+	}
+
+	.post-byline {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 10px;
+		margin-top: 20px;
+		padding-bottom: 32px;
+		border-bottom: 1px solid var(--border);
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: 11px;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--text-muted);
 	}
 
 	/* ── BODY ── */
@@ -170,6 +233,16 @@
 
 	.post-body :global(strong) {
 		font-weight: 700;
+		color: var(--ink);
+	}
+
+	.post-body :global(h2) {
+		margin: 48px 0 20px;
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: clamp(28px, 3.6vw, 40px);
+		font-weight: 400;
+		letter-spacing: 0.04em;
+		line-height: 1.05;
 		color: var(--ink);
 	}
 
