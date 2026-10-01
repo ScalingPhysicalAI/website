@@ -74,7 +74,7 @@
 	<div class="hero-content">
 		<h1 class="hero-title">
 			Meet <span>Buildo</span>, our<br />
-			$10k open source<br />
+			$8k open source<br />
 			humanoid robot
 		</h1>
 		<p class="hero-sub">
