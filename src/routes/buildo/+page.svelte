@@ -15,13 +15,6 @@
 				: []
 		: [];
 
-	const price = product
-		? new Intl.NumberFormat('en-US', {
-				style: 'currency',
-				currency: product.priceRange.minVariantPrice.currencyCode
-			}).format(Number(product.priceRange.minVariantPrice.amount))
-		: null;
-
 	const variant = product?.variants.nodes[0];
 	const available = variant?.availableForSale ?? true;
 
@@ -136,14 +129,16 @@
 			<span class="hero-tag">humanoid robot + dev kit</span>
 			<h1 class="rdk-product-title">{product?.title ?? 'Buildo'}</h1>
 
-			{#if product}
-				<div class="rdk-price-row">
-					<span class="rdk-price">{price}</span>
+			<div class="rdk-price-row">
+				<span class="rdk-price">$8,000</span>
+				{#if product}
 					<span class="rdk-badge" class:rdk-badge--out={!available}>
 						{available ? 'Available' : 'Sold Out'}
 					</span>
-				</div>
+				{/if}
+			</div>
 
+			{#if product}
 				<div class="rdk-divider-line"></div>
 
 				<div class="rdk-quantity-block">

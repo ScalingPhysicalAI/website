@@ -395,7 +395,7 @@
 		<!-- SLIDE 4 - BUILDO KIT -->
 		<section class="slide" id="s6">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$10k hardware stack</span> replaces<br />
+				<span class="hl-gold">$8k hardware stack</span> replaces<br />
 				$100k industrial setups
 			</h2>
 			<div class="kit-layout anim-in anim-d3">
@@ -631,7 +631,7 @@
 					</div>
 					<p class="market-tier-body">
 						<strong>10% of SAM</strong> in hardware and intelligence spend, the share a
-						<strong>$10K robot</strong> and our robot app store can serve by 2030
+						<strong>$8K robot</strong> and our robot app store can serve by 2030
 					</p>
 				</div>
 			</div>
@@ -652,7 +652,7 @@
 							<div class="rev-step-head">
 								<span class="rev-step-num">01</span>
 								<span class="rev-step-name">Sell the robot</span>
-								<span class="rev-step-val">($10K)</span>
+								<span class="rev-step-val">($8K)</span>
 							</div>
 							<p>One-time hardware revenue and a growing installed base.</p>
 						</div>
@@ -805,7 +805,7 @@
 		<!-- SLIDE 7 - COMPETITION -->
 		<section class="slide" id="s11">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$10k unit cost and 27B+ parameters</span> enables skill<br />
+				<span class="hl-gold">$8k unit cost and 27B+ parameters</span> enables skill<br />
 				store that outperforms all existing humanoids
 			</h2>
 			<div class="landscape-table-wrap anim-in anim-d3">
@@ -822,7 +822,7 @@
 					<tbody>
 						<tr class="approach-row-ours">
 							<th scope="row">Buildo</th>
-							<td>$10K</td>
+							<td>$8K</td>
 							<td>&gt;27 billion</td>
 							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
 							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>

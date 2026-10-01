@@ -456,7 +456,7 @@
 				</figure>
 				<div class="product-price">
 					<span class="product-price-label">Retail price</span>
-					<span class="product-price-val">$10K</span>
+					<span class="product-price-val">$8K</span>
 				</div>
 				<figure class="product-shot product-shot-2">
 					<img src="/assets/buildo-kit.webp" alt="Buildo training kit" />
