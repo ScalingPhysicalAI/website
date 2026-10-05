@@ -703,8 +703,8 @@
 								</div>
 								<p>
 									Skill usage at rate of <strong>$0.20 per million input</strong> and
-									<strong>$4 per million output</strong>. Split
-									<strong>30% to robot app store, 70% to developer</strong>.
+									<strong>$4 per million output</strong>. Split to reach
+									<strong>30% to robot app store, 70% to developer</strong> over time.
 								</p>
 							</div>
 						</div>
@@ -1035,8 +1035,19 @@
 				<div class="bullet-item">
 					<span class="bullet-icon">&#9656;</span>
 					<p>
-						We keep <strong>30% of every skill token</strong> sold, so the money we move for developers
-						is roughly three times our recognised revenue.
+						Skill-token take is <strong>5% through Q2 2027</strong>,
+						<strong>15% through Q4 2027</strong>, and <strong>30% from 2028</strong>. Developers keep
+						the rest.
+					</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">&#9656;</span>
+					<p>
+						Gross spend is <strong>$0.58 per million</strong> tokens (90% input at $0.20, 10% output
+						at $4). Recognised token revenue is <strong>$5.87M</strong> through Q2 2027,
+						<strong>$26.1M</strong> in the second half of 2027, and <strong>$348M</strong> in 2028.
+						2028 revenue is <strong>$614M</strong>: $348M tokens, $200M hardware, and $66M training
+						compute.
 					</p>
 				</div>
 				<div class="bullet-item">
