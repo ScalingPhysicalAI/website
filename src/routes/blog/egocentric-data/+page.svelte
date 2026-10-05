@@ -34,16 +34,20 @@
 		<h1 class="post-title">
 			Robots don't have <span>egocentric interaction data</span>. That's the real bottleneck.
 		</h1>
+		{#if post}
+			<div class="post-author">
+				<img src="/assets/team/vipul-thesis.jpg" alt={post.author} />
+				<div>
+					<p class="post-author-name">{post.author}</p>
+					<p class="post-author-date">
+						<time datetime={post.date}>{formatPostDate(post.date)}</time>
+					</p>
+				</div>
+			</div>
+		{/if}
 		<p class="post-dek">
 			LLMs got trained on everything humans have written for decades. Robots got almost nothing.
 		</p>
-		{#if post}
-			<p class="post-byline">
-				{post.author}
-				<span aria-hidden="true">·</span>
-				<time datetime={post.date}>{formatPostDate(post.date)}</time>
-			</p>
-		{/if}
 	</header>
 
 	<div class="post-body">
@@ -199,20 +203,47 @@
 		color: var(--ink);
 	}
 
-	.post-byline {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 10px;
-		margin-top: 20px;
+	.post-head {
 		padding-bottom: 32px;
 		border-bottom: 1px solid var(--border);
+	}
+
+	.post-author {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-top: 18px;
+	}
+
+	.post-author img {
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+	.post-author-name,
+	.post-author-date {
+		margin: 0;
+	}
+
+	.post-author-name {
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: 22px;
+		letter-spacing: 0.04em;
+		line-height: 1;
+		color: var(--ink);
+	}
+
+	.post-author-date {
+		margin-top: 6px;
 		font-family: 'Space Mono', monospace;
-		font-weight: 700;
 		font-size: 11px;
+		font-weight: 700;
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
-		color: var(--text-muted);
+		color: var(--accent);
 	}
 
 	/* ── BODY ── */
