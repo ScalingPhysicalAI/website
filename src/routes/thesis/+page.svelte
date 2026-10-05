@@ -1,9 +1,4 @@
 <script lang="ts">
-	const flywheel = [
-		['Human expertise', 'Wearable demonstrations', 'Better training data', 'Better robot models'],
-		['Cloud robot apps', 'Inference usage', 'Developer revenue', 'Better data and apps']
-	];
-
 	const businesses = [
 		{
 			who: 'A carpenter',
@@ -22,15 +17,6 @@
 			what: 'could train picking and handling workflows and run a robotic fulfillment operation.'
 		}
 	];
-
-	const closing = [
-		'The robot is the hardware platform.',
-		'The cloud model is the app.',
-		'Inference is the transaction.',
-		'Human expertise is the training data.',
-		'Robots become the labor leverage.',
-		'And the app store becomes the economic flywheel.'
-	];
 </script>
 
 <svelte:head>
@@ -47,12 +33,16 @@
 	<header class="head">
 		<span class="section-label">Founder thesis</span>
 		<h1>The intelligence economy for <span>physical AI</span></h1>
+		<div class="founder">
+			<img src="/assets/team/vipul-thesis.jpg" alt="Vipul Saini" />
+			<div>
+				<p class="founder-name">Vipul Saini</p>
+				<p class="founder-role">Founder</p>
+			</div>
+		</div>
 		<p class="dek">
 			Why dual-brain robots, cloud-hosted robot apps, wearable demonstrations, and usage-based
 			incentives can turn human expertise into scalable robotic businesses.
-		</p>
-		<p class="pull">
-			The robot is the hardware platform. The cloud model is the app. Inference is the transaction.
 		</p>
 	</header>
 
@@ -185,6 +175,12 @@
 			skill app, and deploy the app to a fleet of robots that becomes the labor force of their own
 			company.
 		</blockquote>
+		<figure class="worker">
+			<img
+				src="/assets/thesis-skilled-worker.jpg"
+				alt="A skilled worker in a hard hat, safety glasses, and gloves operating machinery"
+			/>
+		</figure>
 		<p>
 			The worker can then deploy that app to their own robots. The robots provide scalable physical
 			execution, while cloud AI contributes construction reasoning, design assistance, quantity
@@ -227,10 +223,14 @@
 		</ul>
 		<p>
 			The worker is no longer limited by the number of hours they can personally work or the number of
-			employees they can afford to hire. Their expertise can be multiplied across machines. Digital
-			AI-linked roles have accounted for more than 750,000 new jobs created in the US since 2023,
-			according to LinkedIn estimates. This happened with digital AI and will happen with physical AI
-			too.
+			employees they can afford to hire. Their expertise can be multiplied across machines. This
+			happened with digital AI<a
+				class="cite"
+				href="https://x.com/KobeissiLetter/status/2106777112552390986"
+				target="_blank"
+				rel="noopener noreferrer">[2]</a
+			>
+			and will happen with physical AI too.
 		</p>
 		<p>
 			That can create a new class of small businesses: one skilled human, a portfolio of robot skill
@@ -241,18 +241,6 @@
 
 	<section>
 		<h2>The flywheel</h2>
-		<div class="wheel">
-			{#each flywheel as row, i (i)}
-				<ol>
-					{#each row as step, j (step)}
-						<li>
-							{#if j > 0}<span class="arrow" aria-hidden="true">→</span>{/if}
-							{step}
-						</li>
-					{/each}
-				</ol>
-			{/each}
-		</div>
 		<p>That creates a marketplace not merely for software, but for physical intelligence.</p>
 		<p>
 			A great electrician could help create an electrical-installation model. A great welder could
@@ -279,11 +267,6 @@
 
 	<section>
 		<h2>A platform that compounds across three dimensions</h2>
-		<ol class="dims">
-			<li>Robots</li>
-			<li>Developers</li>
-			<li>Data</li>
-		</ol>
 		<p>
 			More robots create more inference demand. More inference demand attracts more developers. More
 			developers create more skills. More useful skills increase the value of owning a robot. More
@@ -310,11 +293,6 @@
 			intelligence can become cloud apps, developers can earn when those apps are used, and individual
 			humans can command levels of productive capacity that once required entire organizations.
 		</p>
-		<ul class="close">
-			{#each closing as line (line)}
-				<li>{line}</li>
-			{/each}
-		</ul>
 	</section>
 
 	<footer id="sources">
@@ -386,15 +364,53 @@
 		color: rgba(20, 18, 16, 0.86);
 	}
 
-	.pull {
-		margin: 28px 0 0;
-		padding-top: 22px;
-		border-top: 1px solid var(--border-strong);
+	.founder {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-top: 18px;
+	}
+
+	.founder img {
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+	.founder-name,
+	.founder-role {
+		margin: 0;
+	}
+
+	.founder-name {
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(22px, 3vw, 30px);
-		letter-spacing: 0.03em;
-		line-height: 1.15;
+		font-size: 22px;
+		letter-spacing: 0.04em;
+		line-height: 1;
 		color: var(--ink);
+	}
+
+	.founder-role {
+		margin-top: 6px;
+		font-family: 'Space Mono', monospace;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+
+	.worker {
+		margin: 4px 0 26px;
+	}
+
+	.worker img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 2px;
 	}
 
 	section {
@@ -474,7 +490,6 @@
 	}
 
 	.trades,
-	.close,
 	footer ol {
 		margin: 0 0 18px;
 		padding: 0;
@@ -494,83 +509,6 @@
 	}
 
 	.trades strong {
-		color: var(--ink);
-	}
-
-	.wheel {
-		display: grid;
-		gap: 10px;
-		margin: 4px 0 22px;
-	}
-
-	.wheel ol {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 8px 0;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	.wheel li {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		font-family: 'Space Mono', monospace;
-		font-size: 11px;
-		font-weight: 700;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-		color: var(--ink);
-	}
-
-	.arrow {
-		color: var(--accent);
-	}
-
-	.dims {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-		margin: 0 0 20px;
-		padding: 0;
-		list-style: none;
-		counter-reset: dim;
-	}
-
-	.dims li {
-		counter-increment: dim;
-		padding: 12px 16px;
-		border: 1px solid var(--border-strong);
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: 28px;
-		letter-spacing: 0.04em;
-		line-height: 1;
-	}
-
-	.dims li::before {
-		content: counter(dim, decimal-leading-zero);
-		display: block;
-		margin-bottom: 6px;
-		font-family: 'Space Mono', monospace;
-		font-size: 10px;
-		font-weight: 700;
-		letter-spacing: 0.16em;
-		color: var(--accent);
-	}
-
-	.close {
-		margin-top: 8px;
-		padding-top: 8px;
-		border-top: 1px solid var(--border-strong);
-	}
-
-	.close li {
-		padding: 8px 0;
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(22px, 2.8vw, 28px);
-		letter-spacing: 0.03em;
-		line-height: 1.1;
 		color: var(--ink);
 	}
 
