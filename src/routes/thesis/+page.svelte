@@ -58,7 +58,7 @@
 
 	<section>
 		<h2>Robots will work in two worlds</h2>
-		<p>Robots will not just do physical work. They will do digital work too.</p>
+		<p>We believe robots will not just do physical work. They will do digital work too.</p>
 		<p>
 			A warehouse robot shouldn't only pick a box. It should understand what it picked, update the
 			inventory database, reconcile stock levels, trigger a replenishment workflow, flag anomalies, and
@@ -227,7 +227,10 @@
 		</ul>
 		<p>
 			The worker is no longer limited by the number of hours they can personally work or the number of
-			employees they can afford to hire. Their expertise can be multiplied across machines.
+			employees they can afford to hire. Their expertise can be multiplied across machines. Digital
+			AI-linked roles have accounted for more than 750,000 new jobs created in the US since 2023,
+			according to LinkedIn estimates. This happened with digital AI and will happen with physical AI
+			too.
 		</p>
 		<p>
 			That can create a new class of small businesses: one skilled human, a portfolio of robot skill
@@ -288,8 +291,7 @@
 		</p>
 		<p>
 			And because app developers make money from usage, they are economically incentivized to
-			continuously create better demonstrations, better datasets, better models, and entirely new
-			capabilities.
+			continuously create better datasets, better models, and entirely new capabilities.
 		</p>
 		<p>
 			Meanwhile, the dual-brain architecture means those models can keep getting larger and more capable
@@ -315,7 +317,7 @@
 		</ul>
 	</section>
 
-	<footer>
+	<footer id="sources">
 		<p class="sources-label">Sources</p>
 		<ol>
 			<li>
@@ -325,6 +327,14 @@
 					target="_blank"
 					rel="noopener noreferrer">Apple Newsroom ecosystem report</a
 				>.
+			</li>
+			<li>
+				LinkedIn estimates, via
+				<a
+					href="https://x.com/KobeissiLetter/status/2106777112552390986"
+					target="_blank"
+					rel="noopener noreferrer">The Kobeissi Letter</a
+				> — digital AI-linked roles have accounted for more than 750,000 new jobs in the US since 2023.
 			</li>
 		</ol>
 	</footer>
