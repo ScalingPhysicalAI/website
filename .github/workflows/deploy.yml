@@ -28,6 +28,7 @@ jobs:
       PUBLIC_ANALYTICS_PROVIDER: ${{ secrets.PUBLIC_ANALYTICS_PROVIDER }}
       PUBLIC_ANALYTICS_SITE_ID: ${{ secrets.PUBLIC_ANALYTICS_SITE_ID }}
       PUBLIC_ANALYTICS_HOST: ${{ secrets.PUBLIC_ANALYTICS_HOST }}
+      PUBLIC_GOAFFPRO_SHOP_KEY: ${{ secrets.PUBLIC_GOAFFPRO_SHOP_KEY }}
 
     steps:
       - name: Checkout
