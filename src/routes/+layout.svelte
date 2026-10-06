@@ -6,6 +6,8 @@
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import Analytics from '$lib/components/Analytics.svelte';
+	import Affiliate from '$lib/components/Affiliate.svelte';
+	import { captureReferral } from '$lib/goaffpro';
 
 	let { children } = $props();
 
@@ -36,6 +38,10 @@
 	$effect(() => {
 		document.body.className = bodyClass;
 	});
+
+	$effect(() => {
+		captureReferral(page.url);
+	});
 </script>
 
 <svelte:head>
@@ -49,6 +55,7 @@
 </svelte:head>
 
 <Analytics />
+<Affiliate />
 
 {#if !isDeck}
 	<SiteNav pathname={page.url.pathname} notification={rdkNotification} {announcement} />

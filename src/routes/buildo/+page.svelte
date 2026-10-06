@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
+	import { withReferral } from '$lib/goaffpro';
 
 	let { data } = $props();
 
@@ -29,7 +30,9 @@
 	}
 
 	const cartUrl = $derived(
-		data.variantId ? `https://${data.storeDomain}/cart/${data.variantId}:${quantity}` : null
+		data.variantId
+			? withReferral(`https://${data.storeDomain}/cart/${data.variantId}:${quantity}`)
+			: null
 	);
 
 	onMount(() => {
@@ -173,8 +176,7 @@
 				<div class="rdk-ctas">
 					<a
 						class="btn-primary rdk-btn-buy"
-						href="mailto:contact@starforgerobotics.com?subject=Buildo%20order"
-						>Order by email</a
+						href="mailto:contact@starforgerobotics.com?subject=Buildo%20order">Order by email</a
 					>
 					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Robot App Store</a>
 				</div>

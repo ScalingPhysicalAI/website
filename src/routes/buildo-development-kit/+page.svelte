@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { setupRevealObserver } from '$lib/utils/reveal';
+	import { withReferral } from '$lib/goaffpro';
 
 	let { data } = $props();
 
@@ -40,7 +41,9 @@
 	}
 
 	const cartUrl = $derived(
-		data.variantId ? `https://${data.storeDomain}/cart/${data.variantId}:${quantity}` : null
+		data.variantId
+			? withReferral(`https://${data.storeDomain}/cart/${data.variantId}:${quantity}`)
+			: null
 	);
 
 	onMount(() => {
