@@ -232,6 +232,12 @@
 			>
 			and will happen with physical AI too.
 		</p>
+		<figure class="worker">
+			<img
+				src="/assets/thesis-robot-fleet.jpg"
+				alt="Humanoid robots assembling large components on a factory floor"
+			/>
+		</figure>
 		<p>
 			That can create a new class of small businesses: one skilled human, a portfolio of robot skill
 			apps, cloud intelligence, and a fleet of robots producing at a scale that previously required a
