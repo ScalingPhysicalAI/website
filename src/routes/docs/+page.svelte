@@ -24,47 +24,6 @@
 
 <div class="docs-layout">
 	<div class="docs-content">
-		<h2 id="specs">Hardware at a glance</h2>
-		<p>
-			Buildo is a general-purpose humanoid: dual dexterous arms and five-fingered hands on a wheeled
-			mobile base, built to run physical-AI models from a reflex loop up to full task planning.
-		</p>
-
-		<div class="docs-specs" aria-label="Buildo specifications">
-			<div>
-				<div class="docs-spec-label">Payload</div>
-				<div class="docs-spec-value">18<span>LB</span></div>
-			</div>
-			<div>
-				<div class="docs-spec-label">Height</div>
-				<div class="docs-spec-value">4&ndash;6<span>FT</span></div>
-			</div>
-			<div>
-				<div class="docs-spec-label">Drive speed</div>
-				<div class="docs-spec-value">1.4<span>MPH</span></div>
-			</div>
-			<div>
-				<div class="docs-spec-label">Joint torque</div>
-				<div class="docs-spec-value">15<span>N&middot;M</span></div>
-			</div>
-			<div>
-				<div class="docs-spec-label">Hands</div>
-				<div class="docs-spec-value">5<span>FINGER</span></div>
-			</div>
-			<div>
-				<div class="docs-spec-label">Battery</div>
-				<div class="docs-spec-value" style="font-size:20px;">Hot-swap</div>
-			</div>
-			<div>
-				<div class="docs-spec-label">Display</div>
-				<div class="docs-spec-value">5<span>IN HDMI</span></div>
-			</div>
-			<div>
-				<div class="docs-spec-label">Depth camera</div>
-				<div class="docs-spec-value" style="font-size:20px;">8MP<span>BINOCULAR</span></div>
-			</div>
-		</div>
-
 		<h2 id="sections">Documentation</h2>
 		<p>
 			New to Buildo? Start with Quickstart &mdash; it gets a command you wrote running in under ten
@@ -155,7 +114,6 @@ ros2 node list | grep buildo</code
 
 	<nav class="docs-toc" aria-label="On this page">
 		<span class="docs-toc-label">On this page</span>
-		<a href="#specs">Hardware at a glance</a>
 		<a href="#sections">Documentation</a>
 		<a href="#start">Getting started</a>
 	</nav>

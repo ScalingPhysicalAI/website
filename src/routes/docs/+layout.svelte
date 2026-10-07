@@ -61,13 +61,6 @@
 		{ kind: 'page', title: 'Overview', base: '/docs' },
 		{
 			kind: 'section',
-			title: 'Hardware at a glance',
-			base: '/docs',
-			anchor: 'specs',
-			pageTitle: 'Overview'
-		},
-		{
-			kind: 'section',
 			title: 'Documentation',
 			base: '/docs',
 			anchor: 'sections',

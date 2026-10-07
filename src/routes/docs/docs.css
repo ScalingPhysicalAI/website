@@ -612,42 +612,6 @@
 	color: rgba(20, 18, 16, 0.78);
 }
 
-.docs-specs {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 22px 18px;
-	margin: 32px 0 8px;
-	padding: 28px;
-	border: 2px solid var(--border);
-	background: rgba(20, 18, 16, 0.022);
-}
-
-.docs-spec-label {
-	font-family: 'Space Mono', monospace;
-	font-size: 9px;
-	font-weight: 700;
-	letter-spacing: 0.18em;
-	text-transform: uppercase;
-	color: var(--accent);
-	margin-bottom: 7px;
-}
-
-.docs-spec-value {
-	font-family: 'Bebas Neue', sans-serif;
-	font-size: clamp(22px, 2vw, 28px);
-	line-height: 1;
-	color: var(--ink);
-}
-
-.docs-spec-value span {
-	font-family: 'Space Mono', monospace;
-	font-size: 10px;
-	font-weight: 700;
-	letter-spacing: 0.1em;
-	color: var(--text-muted);
-	margin-left: 5px;
-}
-
 /* Right-hand "on this page" toc has room to float past the content measure
    down to 1100px; below that it competes with the left nav for space. */
 @media (max-width: 1100px) {
@@ -775,9 +739,5 @@
 
 	.docs-cards {
 		grid-template-columns: 1fr;
-	}
-
-	.docs-specs {
-		grid-template-columns: repeat(2, 1fr);
 	}
 }
