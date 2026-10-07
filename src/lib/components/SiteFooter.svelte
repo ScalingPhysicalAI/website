@@ -55,6 +55,7 @@
 			<div class="footer-col">
 				<span class="footer-col-label">Developers</span>
 				<ul>
+					<li><a href={resolve('/docs')}>Documentation</a></li>
 					<li><a href="https://portal.starforgerobotics.com">Robot App Store</a></li>
 				</ul>
 			</div>

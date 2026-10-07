@@ -10,6 +10,10 @@
    where it is actually used. The gold from the logo star is intentionally not
    reused as a UI colour - it cannot hold contrast on white at text sizes. */
 :root {
+	/* The site has no dark theme of its own, so tell the browser not to
+	   synthesize one (Chrome/Safari "auto dark mode" otherwise repaints
+	   text elements with ad-hoc backgrounds when the OS is in dark mode). */
+	color-scheme: light;
 	--bg: #ffffff;
 	--ink: #141210;
 	--accent: #7a5e0f;
