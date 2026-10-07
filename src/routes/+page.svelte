@@ -84,7 +84,7 @@
 		</p>
 		<div class="hero-ctas">
 			<a href={resolve('/buildo')} class="btn-primary">Order</a>
-			<a href="https://portal.starforgerobotics.com" class="btn-ghost">Robot App Store</a>
+			<a href={resolve('/plan')} class="btn-ghost">Master Plan</a>
 		</div>
 	</div>
 
@@ -116,9 +116,7 @@
 
 			{#if part.closing}
 				<div class="part-ctas">
-					<a class="btn-ghost" href="https://portal.starforgerobotics.com"
-						>Robot App Store<span class="cta-arrow" aria-hidden="true">↗</span></a
-					>
+					<a class="btn-ghost" href={resolve('/plan')}>Master Plan</a>
 					<a class="btn-primary" href={resolve('/buildo')}>Order</a>
 				</div>
 			{/if}
@@ -369,23 +367,6 @@
 		flex-wrap: wrap;
 		gap: 16px;
 		margin-top: clamp(48px, 8vh, 88px);
-	}
-
-	/* inline-block stops the arrow being dragged along by the letter-spacing on
-	   the label, and lets it shift on hover independently. Sized in em so it
-	   scales with the label, and given a flat line-height so the taller glyph
-	   cannot stretch the button. */
-	.cta-arrow {
-		display: inline-block;
-		margin-left: 4px;
-		font-size: 1.45em;
-		line-height: 1;
-		vertical-align: -0.08em;
-		transition: transform 0.2s ease;
-	}
-
-	.part-ctas a:hover .cta-arrow {
-		transform: translate(2px, -2px);
 	}
 
 	/* ── RESPONSIVE ── */
