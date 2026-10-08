@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>Founder Thesis — The Intelligence Economy for Physical AI - Starforge</title>
+	<title>Master Plan — The Intelligence Economy for Physical AI - Starforge</title>
 	<meta
 		name="description"
 		content="Why dual-brain robots, cloud-hosted robot apps, wearable demonstrations, and usage-based incentives can turn human expertise into scalable robotic businesses."
@@ -31,7 +31,7 @@
 
 <article class="thesis">
 	<header class="head">
-		<span class="section-label">Founder thesis</span>
+		<span class="section-label">Master plan</span>
 		<h1>The intelligence economy for <span>physical AI</span></h1>
 		<div class="founder">
 			<img src="/assets/team/vipul-thesis.jpg" alt="Vipul Saini" />
