@@ -31,7 +31,7 @@
 	<header class="post-head">
 		<span class="section-label">Announcement</span>
 		<h1 class="post-title">
-			Starforge Robotics raises <span>$500,000</span> pre-seed to build affordable, intelligent humanoid
+			Starforge Robotics raises <span>$500,000</span> pre-seed to build dual brain architecture humanoid
 			robots
 		</h1>
 		{#if post}

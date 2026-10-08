@@ -23,7 +23,7 @@ export const posts: Post[] = [
 	{
 		slug: 'pre-seed',
 		title:
-			'Starforge Robotics raises $500,000 pre-seed to build affordable, intelligent humanoid robots',
+			'Starforge Robotics raises $500,000 pre-seed to build dual brain architecture humanoid robots',
 		dek: "Funding will accelerate the development and deployment of Buildo, Starforge Robotics' $8,000 open-source humanoid robot and physical intelligence platform.",
 		date: '2026-09-11',
 		category: 'Announcement',
