@@ -15,7 +15,6 @@
 	const normalizedPath = $derived(pathname !== '/' ? pathname.replace(/\/$/, '') : pathname);
 	const isBuildo = $derived(normalizedPath === '/buildo');
 	const isKit = $derived(normalizedPath === '/buildo-development-kit');
-	const isDocs = $derived(normalizedPath === '/docs' || normalizedPath.startsWith('/docs/'));
 	// Individual posts live under /blog/<slug>, so the section stays marked as
 	// current while you are reading one.
 	const isBlog = $derived(normalizedPath === '/blog' || normalizedPath.startsWith('/blog/'));
@@ -78,11 +77,6 @@
 					href={resolve('/buildo-development-kit')}
 					class:active={isKit}
 					aria-current={isKit ? 'page' : undefined}>Dev Kit</a
-				>
-			</li>
-			<li>
-				<a href={resolve('/docs')} class:active={isDocs} aria-current={isDocs ? 'page' : undefined}
-					>Docs</a
 				>
 			</li>
 			<li>
