@@ -84,7 +84,7 @@
 		</p>
 		<div class="hero-ctas">
 			<a href={resolve('/buildo')} class="btn-primary">Order</a>
-			<a href={resolve('/plan')} class="btn-ghost">Master Plan</a>
+			<a href={resolve('/docs')} class="btn-ghost">Docs</a>
 		</div>
 	</div>
 
