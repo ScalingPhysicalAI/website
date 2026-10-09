@@ -116,7 +116,7 @@
 
 			{#if part.closing}
 				<div class="part-ctas">
-					<a class="btn-ghost" href={resolve('/plan')}>Master Plan</a>
+					<a class="btn-ghost" href={resolve('/docs')}>Docs</a>
 					<a class="btn-primary" href={resolve('/buildo')}>Order</a>
 				</div>
 			{/if}
