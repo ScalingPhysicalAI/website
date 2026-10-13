@@ -387,7 +387,7 @@
 <section class="bd-section">
 	<div class="bd-section-head reveal">
 		<span class="section-label">App Categories</span>
-		<h2 class="section-title">Five categories.<br /><span>Endless apps.</span></h2>
+		<h2 class="section-title"><span>Endless apps.</span></h2>
 		<p class="section-body">
 			Pick a category, build its skills, ship your app. Each category lists the skills a complete
 			Buildo app needs for that setting — finish them all and your app is ready to publish.
