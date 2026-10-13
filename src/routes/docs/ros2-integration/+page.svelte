@@ -322,7 +322,7 @@ base_controller:
 			</li>
 			<li>
 				<strong>Controller:</strong>
-				<code>nav2_regulated_pure_pursuit_controller</code>, tuned for the 1.4 mph top speed and
+				<code>nav2_regulated_pure_pursuit_controller</code>, tuned for the 1.5 m/s top speed and
 				two-wheel differential drive.
 			</li>
 		</ul>

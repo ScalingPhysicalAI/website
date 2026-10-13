@@ -402,7 +402,7 @@
 				<div class="bullet-list kit-points">
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Buildo can carry a <strong>payload of up to 13.2 lbs (6kg)</strong></p>
+						<p>Buildo can carry a <strong>payload of up to 12.5 lbs (5.69 kg)</strong></p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>

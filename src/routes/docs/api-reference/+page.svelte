@@ -128,13 +128,13 @@
 						<td><code>sensor_msgs/Image</code></td>
 						<td>Pub</td>
 						<td>30 fps</td>
-						<td>Head camera, depth stream (8MP binocular)</td>
+						<td>Head camera, depth stream (RealSense D435i)</td>
 					</tr>
 					<tr>
 						<td><code>/buildo/left_hand/state</code>, <code>/buildo/right_hand/state</code></td>
 						<td><code>buildo_msgs/msg/HandState</code></td>
 						<td>Pub</td>
-						<td>100 Hz</td>
+						<td>200 Hz</td>
 						<td>Per-finger position, velocity, and fingertip force</td>
 					</tr>
 					<tr>

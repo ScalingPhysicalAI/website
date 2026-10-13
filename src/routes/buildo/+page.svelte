@@ -60,17 +60,15 @@
 		}
 	];
 
-	// Torque is quoted per joint. Newton-metres (N·m) is the torque unit; N/m is
-	// stiffness, so the spelling here is deliberate.
 	const specs: Array<{ label: string; value: string; unit: string; phrase?: boolean }> = [
-		{ label: 'Payload', value: '18', unit: 'LB' },
+		{ label: 'Payload', value: '3.42', unit: 'KG / ARM' },
 		{ label: 'Height', value: '4–6', unit: 'FT' },
-		{ label: 'Speed', value: '1.4', unit: 'MPH' },
-		{ label: 'Joint torque', value: '15', unit: 'N·M' },
-		{ label: 'Hands', value: '5', unit: 'FINGER' },
+		{ label: 'Speed', value: '1.2', unit: 'M/S' },
+		{ label: 'Body DoF', value: '19', unit: 'ARTICULATED' },
+		{ label: 'Hands', value: '5', unit: 'FINGER TACTILE' },
 		{ label: 'Battery', value: 'Hot Swappable', unit: '', phrase: true },
-		{ label: 'Display', value: '5', unit: 'INCH HDMI' },
-		{ label: 'Depth Camera', value: '8MP', unit: 'BINOCULAR USB CAMERA' }
+		{ label: 'Depth Camera', value: 'D435i', unit: 'REALSENSE STEREO + IMU' },
+		{ label: 'Compute', value: 'BCM2712', unit: 'EDGE CHIPSET' }
 	];
 
 	const applications = [
