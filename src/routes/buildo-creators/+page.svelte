@@ -62,9 +62,9 @@
 			n: '02',
 			label: 'Build it skill by skill',
 			title: 'Train every<br /><span>skill</span>',
-			body: 'Each app is a short checklist of real tasks — deliver a meal tray, restock a supply cart, sanitise a surface. Put on the Creator Kit and record each one. Complete the list, and your app is ready to create.',
+			body: 'Each app is a short checklist of real tasks — scan and palletize a box, pick an item for an order, load a package at the dock. Put on the Creator Kit and record each one. Complete the list, and your app is ready to create.',
 			img: '/assets/creators-app-skills.webp',
-			alt: 'Buildo Creators app screen showing the four skills needed for a Hospitals app'
+			alt: 'Buildo Creators app screen showing the four skills needed for a Warehouses app'
 		},
 		{
 			n: '03',
@@ -311,7 +311,7 @@
 		{#each screens as sc, i (sc.n)}
 			<article class="bc-screen" class:flip={i % 2 === 1}>
 				<div class="bc-phone reveal">
-					<img src={sc.img} alt={sc.alt} loading="lazy" width="720" height="1490" />
+					<img src={sc.img} alt={sc.alt} loading="lazy" width="720" height="1560" />
 				</div>
 				<div class="bc-screen-copy reveal" style="transition-delay:0.12s">
 					<span class="bc-screen-n">{sc.n}</span>
