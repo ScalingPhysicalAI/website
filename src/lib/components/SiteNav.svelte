@@ -15,6 +15,7 @@
 	const normalizedPath = $derived(pathname !== '/' ? pathname.replace(/\/$/, '') : pathname);
 	const isBuildo = $derived(normalizedPath === '/buildo');
 	const isKit = $derived(normalizedPath === '/buildo-development-kit');
+	const isCreators = $derived(normalizedPath === '/buildo-creators');
 	// Individual posts live under /blog/<slug>, so the section stays marked as
 	// current while you are reading one.
 	const isBlog = $derived(normalizedPath === '/blog' || normalizedPath.startsWith('/blog/'));
@@ -80,7 +81,11 @@
 				>
 			</li>
 			<li>
-				<a href="https://portal.starforgerobotics.com">Robot App Store</a>
+				<a
+					href={resolve('/buildo-creators')}
+					class:active={isCreators}
+					aria-current={isCreators ? 'page' : undefined}>Buildo Creators</a
+				>
 			</li>
 			<li>
 				<a href={resolve('/blog')} class:active={isBlog} aria-current={isBlog ? 'page' : undefined}
