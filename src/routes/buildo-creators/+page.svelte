@@ -17,50 +17,53 @@
 		{ store: 'Google Play', label: 'Get it on', href: null }
 	];
 
+	// The example listing in the hero. Illustrative only: it shows what a
+	// Creator's app looks like on the store, not a real app.
+	const sampleApp = {
+		name: 'Home Helper',
+		category: 'Home',
+		skills: ['Load the dishwasher', 'Fold laundry', 'Water plants', 'Tidy the living room']
+	};
+
 	const steps = [
 		{
 			n: '01',
-			title: 'Get the kit',
-			body: 'Sign up as a Creator and order the Creator Kit — capture glasses and haptic gloves — straight from your in-app wallet.'
+			title: 'Get your dev kit',
+			body: 'Every platform has one. Yours is the Creator Kit — capture glasses and haptic gloves — ordered straight from your in-app wallet.'
 		},
 		{
 			n: '02',
 			title: 'Record skills',
-			body: 'Pick a use case, put on the kit and follow the on-screen guide while you do the task. Upload when you’re done.'
+			body: 'Skills are your app’s features. Pick a use case, put on the kit and demonstrate each task while the app guides you.'
 		},
 		{
 			n: '03',
-			title: 'Build an app',
-			body: 'Once every skill for a use case is recorded, bundle them into a named Buildo app — say, “Home Helper.”'
+			title: 'Build & ship',
+			body: 'Bundle your skills into a named app — say, “Home Helper” — and submit it. Automated testing certifies it for release.'
 		},
 		{
 			n: '04',
-			title: 'Earn forever',
-			body: 'Your app passes certification and goes live on the Buildo App Store. Every install pays you again.'
+			title: 'Earn as it’s used',
+			body: 'Your app goes live on the Buildo App Store. Every time robot owners use it to train their Buildo, you get paid.'
 		}
 	];
 
 	const earnings = [
 		{
-			tag: 'Recurring',
-			title: 'Per-install earnings',
-			body: 'Every time a robot owner installs your app on their Buildo, you earn. It repeats for every future install — income from work you did once.',
+			tag: 'Recurring revenue',
+			title: 'Earn every time your app is used',
+			body: 'When robot owners use your app to train their Buildo, you earn — again and again. Ship it once, and it keeps paying for as long as robots keep learning from it.',
 			lead: true
-		},
-		{
-			tag: 'One-time',
-			title: 'Per-skill reward',
-			body: 'Get paid for each skill you record and upload, before your app ever reaches the store.'
 		},
 		{
 			tag: 'Welcome',
 			title: 'Signup bonus',
-			body: 'New Creators get a bonus for joining, credited to the in-app wallet.'
+			body: 'Join as a Creator and start with a bonus in your wallet — a head start before your first app ships.'
 		},
 		{
 			tag: 'Referral',
-			title: 'Bring a friend',
-			body: 'Refer someone who becomes a Creator and you earn a reward — they get a discount toward their own Buildo robot.'
+			title: 'Refer a robot buyer',
+			body: 'Know someone who needs a Buildo? Refer them. When they buy a robot, you earn a reward — and they get a discount on their purchase.'
 		}
 	];
 
@@ -130,37 +133,37 @@
 
 	const faqs = [
 		{
-			q: 'Do I need any robotics or technical background?',
-			a: 'No. If you can do everyday tasks like cleaning, cooking or organising, you can be a Creator. The app walks you through every recording step by step.'
+			q: 'Do I need to know how to code?',
+			a: 'No. Creators build apps by demonstration, not programming. If you can do everyday tasks like cleaning, cooking or organising, you can build for Buildo — the app guides you through every step.'
 		},
 		{
 			q: 'Do I have to buy the Creator Kit?',
-			a: 'Yes — the glasses and gloves are what capture the data, so you need the kit before you can record a skill. It’s a one-time purchase made from your in-app wallet, with a buy-now, pay-later option.'
+			a: 'Yes. The glasses and gloves are your development hardware — they capture the skills your app is built from. It’s a one-time purchase from your in-app wallet, with a buy-now, pay-later option.'
 		},
 		{
-			q: 'How much can I earn?',
-			a: 'You earn a reward for each skill you upload, and then again every time a robot owner installs an app you trained. All earnings — skill rewards, install income, the signup bonus and referral rewards — are paid in US dollars. Current rates are shown in the app.'
+			q: 'How do I earn?',
+			a: 'Three ways: rewards every time robot owners use your app to train their Buildo, a signup bonus when you join, and referral rewards when someone you refer buys a robot. Everything is paid in US dollars, and current rates are shown in the app.'
 		},
 		{
-			q: 'What kinds of tasks will I record?',
-			a: 'Real tasks from five settings: homes, shops, offices, warehouses and hospitals. Each use case lists the skills a robot needs for that setting — loading a dishwasher, restocking a shelf, packing a box.'
+			q: 'How does the referral program work?',
+			a: 'Refer anyone who wants a Buildo robot. When they buy one, you earn a reward and they get a discount on their purchase.'
 		},
 		{
-			q: 'What happens after I upload my skills?',
-			a: 'Your recordings train Buildo to do the task. When a use case is complete you bundle the skills into an app, it runs through an automated testing and certification window, and then it goes live on the Buildo App Store.'
+			q: 'What happens when I submit my app?',
+			a: 'It goes through an automated testing and certification window. Once it passes, it’s published on the Buildo App Store, where robot owners can find it and start using it.'
 		},
 		{
-			q: 'Who installs the apps I build?',
-			a: 'Owners of Buildo robots. They browse the same App Store you see in Buildo Creators and install apps straight onto their robot — and each install earns the Creator who trained it.'
+			q: 'Who uses the apps I build?',
+			a: 'Owners of Buildo robots. They browse the Buildo App Store and use Creator apps to train their robots for new tasks — and every time they do, the Creator behind the app earns.'
 		}
 	];
 </script>
 
 <svelte:head>
-	<title>Buildo Creators - Get Paid to Teach a Robot | STARFORGE</title>
+	<title>Buildo Creators - Build Apps for Robots | STARFORGE</title>
 	<meta
 		name="description"
-		content="Buildo Creators lets anyone earn by teaching robots real-world tasks. Put on the Creator Kit, record everyday skills, publish an app to the Buildo App Store, and earn every time it's installed."
+		content="Buildo Creators is the app platform for robots. Record real-world skills with the Creator Kit, ship your app to the Buildo App Store, and earn every time robot owners use it. No code required."
 	/>
 </svelte:head>
 
@@ -170,33 +173,43 @@
 	<div class="hero-scan-lines" aria-hidden="true"></div>
 	<div class="bc-hero-layout">
 		<div class="bc-hero-copy">
-			<span class="hero-tag">The Buildo Creators app</span>
-			<h1 class="bc-hero-title">Get paid to<br /><span>teach a robot</span></h1>
+			<span class="hero-tag">Buildo Creators · The app platform for robots</span>
+			<h1 class="bc-hero-title">Build the apps<br /><span>robots run on</span></h1>
 			<p class="bc-hero-sub">
-				Put on the Creator Kit, do the everyday tasks you already know how to do, and earn every
-				time a Buildo robot learns from you. No robotics, AI or coding experience needed.
+				It’s like building for iOS or Android — except your app runs on a real robot. Record the
+				skills, ship to the Buildo App Store, and earn every time robot owners put your app to work.
+				No code required.
 			</p>
 			<div class="bc-ctas">
-				<a class="btn-primary" href={signupHref}>Become a Creator</a>
+				<a class="btn-primary" href={signupHref}>Start building</a>
 				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 				<a class="btn-ghost" href="#how-it-works">How it works</a>
 			</div>
-			<p class="bc-hero-note">iOS &amp; Android · Coming soon</p>
+			<p class="bc-hero-note">Buildo Creators for iOS &amp; Android · Coming soon</p>
 		</div>
 
 		<div class="bc-hero-visual" aria-hidden="true">
-			<div class="bc-hero-kit">
-				<figure class="bc-hero-fig">
-					<img src="/assets/buildo-kit-glasses.png" alt="" />
-					<figcaption>Your view</figcaption>
-				</figure>
-				<figure class="bc-hero-fig">
-					<img src="/assets/buildo-kit-gloves.png" alt="" />
-					<figcaption>Your hands</figcaption>
-				</figure>
+			<div class="bc-listing">
+				<div class="bc-listing-head">
+					<span class="bc-listing-icon">{sampleApp.name.charAt(0)}</span>
+					<div class="bc-listing-meta">
+						<span class="bc-listing-name">{sampleApp.name}</span>
+						<span class="bc-listing-by">by You · {sampleApp.category}</span>
+					</div>
+				</div>
+				<span class="bc-listing-label">Skills</span>
+				<ul class="bc-listing-skills">
+					{#each sampleApp.skills as skill (skill)}
+						<li>{skill}</li>
+					{/each}
+				</ul>
+				<div class="bc-listing-foot">
+					<span class="bc-listing-status">Live · Certified</span>
+					<span>Buildo App Store</span>
+				</div>
 			</div>
 			<div class="bc-hero-arrow">
-				<span>teaches</span>
+				<span>runs on</span>
 				<i></i>
 			</div>
 			<figure class="bc-hero-fig bc-hero-robot">
@@ -211,24 +224,24 @@
 	<div class="bd-split">
 		<div class="reveal">
 			<span class="section-label">What is Buildo Creators</span>
-			<h2 class="section-title">Real people train<br /><span>real robots</span></h2>
+			<h2 class="section-title">An app store for<br /><span>the physical world</span></h2>
 			<p class="section-body">
-				Buildo is a general-purpose robot for homes, shops, offices, warehouses and hospitals. To do
-				real work it has to learn from people who already do that work — thousands of hours of human
-				demonstration.
+				Phones became indispensable when developers started building apps for them. Robots are next.
+				Buildo is a general-purpose robot for homes, shops, offices, warehouses and hospitals — and
+				every new thing it can do is an app, built by a Creator.
 			</p>
 			<p class="section-body" style="margin-top:20px;">
-				Buildo Creators is how that happens. You wear the capture kit, perform a task the way you
-				normally would, and get paid for teaching it. It’s a new kind of flexible work: your hands
-				are the training data.
+				Buildo Creators is your developer studio. Instead of writing code, you build by
+				demonstration: put on the Creator Kit, perform the task, and your recordings become a robot
+				app that ships to the Buildo App Store.
 			</p>
 		</div>
 		<div class="bd-card reveal" style="transition-delay:0.12s">
-			<div class="bd-card-title">Made for everyone</div>
+			<div class="bd-card-title">Built for every creator</div>
 			<ul class="bd-bullets">
-				<li><strong>No technical skills</strong> - no robotics, AI or coding knowledge</li>
-				<li><strong>Flexible</strong> - record when it suits you, as side income</li>
-				<li><strong>Everyday tasks</strong> - cleaning, cooking, organising, handling</li>
+				<li><strong>No code</strong> - build by demonstration, not programming</li>
+				<li><strong>Ship from your phone</strong> - record, bundle and publish in the app</li>
+				<li><strong>Recurring revenue</strong> - earn whenever your app is used</li>
 				<li><strong>Paid in USD</strong> - every reward is paid in US dollars</li>
 			</ul>
 		</div>
@@ -240,7 +253,7 @@
 <section class="bd-section" id="how-it-works">
 	<div class="bd-section-head reveal">
 		<span class="section-label">How It Works</span>
-		<h2 class="section-title">Teach once,<br /><span>earn on every install</span></h2>
+		<h2 class="section-title">From idea<br /><span>to App Store</span></h2>
 	</div>
 
 	<ol class="bc-steps">
@@ -259,10 +272,10 @@
 <section class="bd-section">
 	<div class="bd-section-head reveal">
 		<span class="section-label">Earning Potential</span>
-		<h2 class="section-title">Four ways<br /><span>to earn</span></h2>
+		<h2 class="section-title">Three ways<br /><span>to earn</span></h2>
 		<p class="section-body">
-			Get paid up front for each skill you record, then keep earning for as long as robots keep
-			installing the app you trained.
+			Ship once, get paid for as long as robots keep learning from your app — plus rewards for
+			joining and for bringing new robot owners to Buildo.
 		</p>
 	</div>
 
@@ -282,10 +295,11 @@
 <section class="bd-section">
 	<div class="bd-section-head reveal">
 		<span class="section-label">The Creator Kit</span>
-		<h2 class="section-title">Everything you need<br /><span>to record a skill</span></h2>
+		<h2 class="section-title">Your developer<br /><span>hardware</span></h2>
 		<p class="section-body">
-			The kit is a one-time purchase, paid from your in-app wallet with a buy-now, pay-later option.
-			You need it before you can record your first skill.
+			Every platform has its dev kit — this is Buildo’s. Capture glasses and haptic gloves turn your
+			demonstrations into robot-ready skills. One-time purchase from your in-app wallet, with
+			buy-now, pay-later.
 		</p>
 	</div>
 
@@ -313,11 +327,11 @@
 
 <section class="bd-section">
 	<div class="bd-section-head reveal">
-		<span class="section-label">Use Cases</span>
-		<h2 class="section-title">Five places<br /><span>robots need you</span></h2>
+		<span class="section-label">App Categories</span>
+		<h2 class="section-title">Five categories.<br /><span>Endless apps.</span></h2>
 		<p class="section-body">
-			Each use case lists the skills that make up a complete Buildo app for that setting. Record
-			them all and the app is yours to publish.
+			Pick a category, build its skills, ship your app. Each category lists the skills a complete
+			Buildo app needs for that setting — finish them all and your app is ready to publish.
 		</p>
 	</div>
 
@@ -342,13 +356,13 @@
 	<div class="bd-split">
 		<div class="reveal">
 			<span class="section-label">The Buildo App Store</span>
-			<h2 class="section-title">A real marketplace<br /><span>for your work</span></h2>
+			<h2 class="section-title">Ship to the<br /><span>Buildo App Store</span></h2>
 			<p class="section-body">
-				Every live Creator-made app is listed publicly on the Buildo App Store — the same
-				marketplace robot owners use to browse and install apps on their own Buildo.
+				Every certified Creator app is listed publicly on the Buildo App Store — the marketplace
+				robot owners use to find new skills for their Buildo.
 			</p>
 			<p class="section-body" style="margin-top:20px;">
-				Apps built by Creators are already live across all five use cases. Yours joins them once it
+				Creator apps are already live across all five categories. Yours joins them the moment it
 				clears certification.
 			</p>
 			<div class="bc-ctas" style="margin-top:36px;">
@@ -358,15 +372,15 @@
 		<ol class="bd-card bc-flow reveal" style="transition-delay:0.12s">
 			<li>
 				<span class="bd-component-tag">Creator</span>
-				<strong>Records skills</strong> and bundles them into an app
+				<strong>Builds the app</strong> from recorded skills and submits it
 			</li>
 			<li>
 				<span class="bd-component-tag">App Store</span>
-				<strong>Tests and certifies</strong> the app, then lists it publicly
+				<strong>Tests and certifies</strong> the app, then publishes it
 			</li>
 			<li>
 				<span class="bd-component-tag">Robot owner</span>
-				<strong>Installs the app</strong> on their Buildo — and the Creator gets paid
+				<strong>Uses the app</strong> to train their Buildo — and the Creator gets paid
 			</li>
 		</ol>
 	</div>
@@ -377,10 +391,10 @@
 <section class="bd-section">
 	<div class="bd-section-head reveal">
 		<span class="section-label">Global Reach</span>
-		<h2 class="section-title">Join a growing<br /><span>global network</span></h2>
+		<h2 class="section-title">Your users are<br /><span>everywhere</span></h2>
 		<p class="section-body">
-			Buildo robots are already at work around the world, with the biggest concentrations in the
-			United States, the United Kingdom and India. The live map in the app shows every deployment.
+			Buildo robots are working around the world, with the biggest fleets in the United States, the
+			United Kingdom and India — every one of them a potential user of your app.
 		</p>
 	</div>
 
@@ -410,13 +424,13 @@
 <section class="bd-section bd-closing" id="download">
 	<div class="bd-closing-inner reveal">
 		<span class="section-label">Become a Creator</span>
-		<h2 class="section-title">Your skills,<br /><span>Buildo’s next app</span></h2>
+		<h2 class="section-title">Start building<br /><span>for robots</span></h2>
 		<p class="section-body">
-			Buildo Creators is coming to iOS and Android. Get in touch now and we’ll reserve your place —
-			and let you know the moment the app is live.
+			Buildo Creators is launching on iOS and Android. Get in touch now for early access — and be
+			one of the first Creators to ship an app to the Buildo App Store.
 		</p>
 		<div class="bc-ctas" style="margin-top:36px;">
-			<a class="btn-primary" href={signupHref}>Become a Creator</a>
+			<a class="btn-primary" href={signupHref}>Get early access</a>
 		</div>
 		<div class="bc-badges">
 			{#each downloads as d (d.store)}
@@ -537,7 +551,7 @@
 
 	.bc-hero-visual {
 		display: grid;
-		grid-template-columns: 1fr auto 1fr;
+		grid-template-columns: minmax(0, 1fr) auto auto;
 		align-items: center;
 		gap: 20px;
 		padding: 32px;
@@ -547,10 +561,126 @@
 		animation: fadeUp 1s 0.8s forwards;
 	}
 
-	.bc-hero-kit {
+	/* A mock store listing: the point of the hero is "you ship an app", so it
+	   borrows the shape of an iOS/Android store card rather than a product shot. */
+	.bc-listing {
+		padding: 22px 22px 18px;
+		border: 2px solid var(--border-strong);
+		background: #fff;
+		box-shadow: 0 18px 40px -24px rgba(20, 18, 16, 0.35);
+	}
+
+	.bc-listing-head {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+		gap: 14px;
+		padding-bottom: 18px;
+		margin-bottom: 16px;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.bc-listing-icon {
+		display: grid;
+		place-items: center;
+		width: 52px;
+		height: 52px;
+		border-radius: 12px;
+		background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+		color: #fdfaf3;
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: 30px;
+		line-height: 1;
+	}
+
+	.bc-listing-meta {
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
+		gap: 4px;
+		min-width: 0;
+	}
+
+	.bc-listing-name,
+	.bc-listing-by {
+		white-space: nowrap;
+	}
+
+	.bc-listing-name {
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: 26px;
+		letter-spacing: 0.04em;
+		line-height: 1;
+		color: var(--ink);
+	}
+
+	.bc-listing-by,
+	.bc-listing-label,
+	.bc-listing-foot {
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: 9px;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+	}
+
+	.bc-listing-status {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		color: var(--accent);
+	}
+
+	.bc-listing-status::before {
+		content: '';
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: var(--accent);
+	}
+
+	.bc-listing-label {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.bc-listing-skills {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 9px;
+		margin-bottom: 18px;
+	}
+
+	.bc-listing-skills li {
+		position: relative;
+		padding-left: 24px;
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--ink);
+	}
+
+	/* Drawn tick, so each skill reads as "recorded" without an icon font. */
+	.bc-listing-skills li::before {
+		content: '';
+		position: absolute;
+		left: 2px;
+		top: 3px;
+		width: 5px;
+		height: 10px;
+		border-right: 2px solid var(--accent);
+		border-bottom: 2px solid var(--accent);
+		transform: rotate(45deg);
+	}
+
+	.bc-listing-foot {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 6px 12px;
+		padding-top: 14px;
+		border-top: 1px solid var(--border);
 	}
 
 	.bc-hero-fig {
@@ -569,7 +699,8 @@
 	}
 
 	.bc-hero-robot img {
-		max-height: 340px;
+		width: 120px;
+		max-height: none;
 	}
 
 	.bc-hero-fig figcaption {
@@ -831,7 +962,7 @@
 	/* ── EARNINGS ── */
 	.bc-earn {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: 24px;
 	}
 
@@ -846,7 +977,7 @@
 		border-color: var(--border-strong);
 	}
 
-	/* Recurring install income is the headline incentive, so it spans the row
+	/* Recurring usage income is the headline incentive, so it spans the row
 	   and carries the accent rather than sitting as one card among equals. */
 	.bc-earn-card.lead {
 		grid-column: 1 / -1;
@@ -1188,17 +1319,26 @@
 			grid-template-columns: 1fr;
 		}
 
+		/* Too narrow for card and robot side by side, so the flow turns
+		   vertical: listing, then "runs on", then the robot. */
 		.bc-hero-visual {
+			grid-template-columns: 1fr;
 			padding: 20px 16px;
-			gap: 12px;
+			gap: 16px;
+		}
+
+		.bc-hero-arrow {
+			flex-direction: row;
+			justify-content: center;
 		}
 
 		.bc-hero-arrow i {
 			width: 32px;
+			transform: rotate(90deg);
 		}
 
 		.bc-hero-robot img {
-			max-height: 240px;
+			width: 90px;
 		}
 
 		.bc-marker {
