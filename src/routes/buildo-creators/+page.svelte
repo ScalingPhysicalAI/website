@@ -48,6 +48,34 @@
 		}
 	];
 
+	// Real screens from the Buildo Creators app, walked through in order.
+	const screens = [
+		{
+			n: '01',
+			label: 'Choose what to build',
+			title: 'Pick the<br /><span>robot app</span>',
+			body: 'Start with the app you want to create — for homes, shops, offices, warehouses or hospitals. Every category shows exactly which skills it takes to finish, so you always know how close you are to shipping.',
+			img: '/assets/creators-app-pick.webp',
+			alt: 'Buildo Creators app screen listing robot apps to build: Home, Shops, Offices, Warehouses and Hospitals'
+		},
+		{
+			n: '02',
+			label: 'Build it skill by skill',
+			title: 'Train every<br /><span>skill</span>',
+			body: 'Each app is a short checklist of real tasks — deliver a meal tray, restock a supply cart, sanitise a surface. Put on the Creator Kit and record each one. Complete the list, and your app is ready to create.',
+			img: '/assets/creators-app-skills.webp',
+			alt: 'Buildo Creators app screen showing the four skills needed for a Hospitals app'
+		},
+		{
+			n: '03',
+			label: 'Ship to the App Store',
+			title: 'Watch your apps<br /><span>go live</span>',
+			body: 'Your finished apps live in one place, each marked Live once it clears certification on the Buildo App Store. Right above them, a live map shows Buildo robots deployed around the world — the robots your apps run on.',
+			img: '/assets/creators-app-apps.webp',
+			alt: 'Buildo Creators app screen showing the Creator’s live apps and a map of Buildo robots worldwide'
+		}
+	];
+
 	const earnings = [
 		{
 			tag: 'Recurring revenue',
@@ -265,6 +293,37 @@
 			</li>
 		{/each}
 	</ol>
+</section>
+
+<div class="hr-line"></div>
+
+<section class="bd-section bc-screens-section">
+	<div class="bd-section-head reveal">
+		<span class="section-label">Inside the App</span>
+		<h2 class="section-title">Your studio,<br /><span>in your pocket</span></h2>
+		<p class="section-body">
+			Everything a Creator does happens in the Buildo Creators app — from choosing what to build to
+			watching it go live.
+		</p>
+	</div>
+
+	<div class="bc-screens">
+		{#each screens as sc, i (sc.n)}
+			<article class="bc-screen" class:flip={i % 2 === 1}>
+				<div class="bc-phone reveal">
+					<img src={sc.img} alt={sc.alt} loading="lazy" width="720" height="1490" />
+				</div>
+				<div class="bc-screen-copy reveal" style="transition-delay:0.12s">
+					<span class="bc-screen-n">{sc.n}</span>
+					<span class="section-label">{sc.label}</span>
+					<!-- Static copy defined above, not user input. -->
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+					<h3 class="section-title">{@html sc.title}</h3>
+					<p class="section-body">{sc.body}</p>
+				</div>
+			</article>
+		{/each}
+	</div>
 </section>
 
 <div class="hr-line"></div>
@@ -959,6 +1018,69 @@
 		color: rgba(20, 18, 16, 0.82);
 	}
 
+	/* ── INSIDE THE APP ── */
+	.bc-screens {
+		display: flex;
+		flex-direction: column;
+		gap: 120px;
+	}
+
+	.bc-screen {
+		display: grid;
+		grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+		gap: 96px;
+		align-items: center;
+	}
+
+	/* Alternate sides down the page so the three screens read as a sequence
+	   rather than a stack. */
+	.bc-screen.flip .bc-phone {
+		order: 2;
+	}
+
+	.bc-phone {
+		position: relative;
+		justify-self: center;
+		width: 100%;
+		max-width: 300px;
+		padding: 10px;
+		border-radius: 44px;
+		background: #141210;
+		box-shadow:
+			0 40px 80px -40px rgba(20, 18, 16, 0.55),
+			0 0 0 2px rgba(20, 18, 16, 0.08);
+	}
+
+	/* A soft accent glow behind the handset ties it to the page palette. */
+	.bc-phone::before {
+		content: '';
+		position: absolute;
+		inset: 12% -18%;
+		z-index: -1;
+		background: radial-gradient(circle, rgba(122, 94, 15, 0.16) 0%, transparent 70%);
+	}
+
+	.bc-phone img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 34px;
+	}
+
+	.bc-screen-n {
+		display: block;
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: clamp(72px, 8vw, 120px);
+		line-height: 0.85;
+		color: transparent;
+		-webkit-text-stroke: 1.5px var(--accent);
+		margin-bottom: 20px;
+	}
+
+	.bc-screen-copy .section-title {
+		font-size: clamp(36px, 4.4vw, 64px);
+	}
+
 	/* ── EARNINGS ── */
 	.bc-earn {
 		display: grid;
@@ -1309,6 +1431,25 @@
 		.bd-components,
 		.bc-earn {
 			grid-template-columns: 1fr;
+		}
+
+		.bc-screens {
+			gap: 88px;
+		}
+
+		.bc-screen {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+
+		/* Stacked, the copy leads and the phone follows on every row. */
+		.bc-screen .bc-phone,
+		.bc-screen.flip .bc-phone {
+			order: 2;
+		}
+
+		.bc-phone {
+			max-width: 260px;
 		}
 	}
 
