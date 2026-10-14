@@ -73,9 +73,10 @@
 
 	<div class="hero-content">
 		<h1 class="hero-title">
-			Meet <span>Buildo</span>, our<br />
-			$8k open source<br />
-			humanoid robot
+			Meet <span>Buildo</span> —<br />
+			our open-source<br />
+			humanoid robot,<br />
+			available for <span>$600/month</span>.
 		</h1>
 		<p class="hero-sub">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
@@ -125,6 +126,13 @@
 {/each}
 
 <style>
+	/* The headline runs to four lines, so it's set a step smaller than the
+	   shared hero title and also scales with viewport height, keeping the
+	   block clear of the header on short laptop screens. */
+	.hero-title {
+		font-size: clamp(34px, min(5vw, 8vh), 80px);
+	}
+
 	.hero-sub-link {
 		color: var(--accent);
 		font-weight: 600;
