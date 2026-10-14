@@ -73,8 +73,13 @@ export type BuildoSellingPlan = {
 	id: string;
 	name: string;
 	description: string | null;
+	// Steady-state recurring price (e.g. the $600/mo from the 2nd order onward).
 	price: Money;
 	compareAtPrice: Money | null;
+	// Set only when the first order is priced differently from the recurring
+	// price - e.g. Appstle bundles a one-time $1,000 security fee into the
+	// first month's charge, so order 1 is $1,600 while every order after is $600.
+	firstOrderPrice: Money | null;
 };
 
 // Preorder leads the Buildo page and is the primary conversion path across the site,
@@ -104,15 +109,27 @@ export const load: PageLoad = async () => {
 
 		// Appstle creates these as native Shopify selling plans, so the monthly
 		// subscription option - and its price - comes straight from the
-		// Storefront API rather than being hand-maintained here.
+		// Storefront API rather than being hand-maintained here. Appstle returns
+		// one priceAdjustments entry per order count: the first order bundles in
+		// a one-time $1,000 security fee, every order after is the plain
+		// recurring price - so the *last* entry is the steady-state "/mo" price.
 		const sellingPlans: BuildoSellingPlan[] = (variant?.sellingPlanAllocations.nodes ?? []).map(
-			(allocation) => ({
-				id: allocation.sellingPlan.id.split('/').pop() ?? allocation.sellingPlan.id,
-				name: allocation.sellingPlan.name,
-				description: allocation.sellingPlan.description,
-				price: allocation.priceAdjustments[0]?.price ?? variant.price,
-				compareAtPrice: allocation.priceAdjustments[0]?.compareAtPrice ?? null
-			})
+			(allocation) => {
+				const adjustments = allocation.priceAdjustments;
+				const recurring = adjustments[adjustments.length - 1] ?? null;
+				const firstOrder = adjustments.length > 1 ? adjustments[0] : null;
+				return {
+					id: allocation.sellingPlan.id.split('/').pop() ?? allocation.sellingPlan.id,
+					name: allocation.sellingPlan.name,
+					description: allocation.sellingPlan.description,
+					price: recurring?.price ?? variant.price,
+					compareAtPrice: recurring?.compareAtPrice ?? null,
+					firstOrderPrice:
+						firstOrder && firstOrder.price.amount !== recurring?.price.amount
+							? firstOrder.price
+							: null
+				};
+			}
 		);
 
 		return {

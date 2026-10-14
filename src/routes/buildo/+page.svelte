@@ -193,7 +193,14 @@
 								aria-checked={selectedPlanId === plan.id}
 								onclick={() => (selectedPlanId = plan.id)}
 							>
-								<span class="rdk-po-name">{plan.name}</span>
+								<span class="rdk-po-name">
+									{plan.name}
+									{#if plan.firstOrderPrice}
+										<span class="rdk-po-fee"
+											>First order {formatMoney(plan.firstOrderPrice)} (incl. one-time security fee)</span
+										>
+									{/if}
+								</span>
 								<span class="rdk-po-price">
 									{planPrice}<span class="rdk-po-interval">/mo</span>
 									{#if discount}<span class="rdk-po-save">Save {discount}%</span>{/if}
