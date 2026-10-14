@@ -349,6 +349,12 @@ main#main {
 	transform: translateY(-2px);
 }
 
+.btn-primary:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+	transform: none;
+}
+
 .btn-ghost {
 	font-family: 'Space Mono', monospace;
 	font-weight: 700;
@@ -1687,6 +1693,15 @@ body.page-buildo {
 	line-height: 1.6;
 	letter-spacing: 0.01em;
 	color: var(--ink);
+}
+
+.rdk-checkout-error {
+	margin: 12px 0 0;
+	font-family: 'Space Mono', monospace;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #b3261e;
 }
 
 .rdk-po-price {

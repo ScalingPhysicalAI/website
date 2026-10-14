@@ -3,6 +3,12 @@
 	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
 	import { withReferral } from '$lib/goaffpro';
+	import { shopifyStorefrontFetch } from '$lib/shopify/storefront';
+	import {
+		PUBLIC_SHOPIFY_STORE_DOMAIN,
+		PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+		PUBLIC_SHOPIFY_API_VERSION
+	} from '$env/static/public';
 
 	let { data } = $props();
 
@@ -60,14 +66,65 @@
 		quantity = Math.max(quantity - 1, 1);
 	}
 
+	// One-time purchases go through Shopify's plain cart permalink. Subscriptions
+	// can't use that permalink: tested directly against the store, a
+	// `?selling_plan=` query param is silently dropped and checkout falls back to
+	// charging the full one-time price. The Storefront Cart API's `cartCreate`
+	// mutation applies the selling plan correctly, so subscriptions are started
+	// through startSubscriptionCheckout() below instead of a plain link.
 	const cartUrl = $derived.by(() => {
 		if (!data.variantId) return null;
-		const base = `https://${data.storeDomain}/cart/${data.variantId}:${quantity}`;
-		if (!selectedPlanId) return withReferral(base);
-		const url = new URL(base);
-		url.searchParams.set('selling_plan', selectedPlanId);
-		return withReferral(url.toString());
+		return withReferral(`https://${data.storeDomain}/cart/${data.variantId}:${quantity}`);
 	});
+
+	let checkingOut = $state(false);
+	let checkoutError = $state<string | null>(null);
+
+	const CART_CREATE_MUTATION = `
+		mutation CartCreate($lines: [CartLineInput!]!) {
+			cartCreate(input: { lines: $lines }) {
+				cart { checkoutUrl }
+				userErrors { message }
+			}
+		}
+	`;
+
+	async function startSubscriptionCheckout() {
+		if (!data.variantId || !selectedPlanId || checkingOut) return;
+		checkingOut = true;
+		checkoutError = null;
+		try {
+			const result = await shopifyStorefrontFetch<{
+				cartCreate: {
+					cart: { checkoutUrl: string } | null;
+					userErrors: { message: string }[];
+				};
+			}>({
+				storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN,
+				accessToken: PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+				apiVersion: PUBLIC_SHOPIFY_API_VERSION,
+				query: CART_CREATE_MUTATION,
+				variables: {
+					lines: [
+						{
+							quantity,
+							merchandiseId: `gid://shopify/ProductVariant/${data.variantId}`,
+							sellingPlanId: `gid://shopify/SellingPlan/${selectedPlanId}`
+						}
+					]
+				}
+			});
+			const { cart, userErrors } = result.cartCreate;
+			if (!cart || userErrors.length > 0) {
+				throw new Error(userErrors.map((e) => e.message).join('; ') || 'No checkout URL returned');
+			}
+			window.location.href = withReferral(cart.checkoutUrl);
+		} catch (err) {
+			console.error('[buildo] subscription checkout failed:', err);
+			checkoutError = 'Could not start checkout. Please try again or email us.';
+			checkingOut = false;
+		}
+	}
 
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.12 });
@@ -211,9 +268,7 @@
 									{plan.name}
 									{#if plan.firstOrderPrice && securityDeposit}
 										<span class="rdk-po-fee"
-											>{planPrice}/mo + {securityDeposit} one-time security deposit — first charge {formatMoney(
-												plan.firstOrderPrice
-											)}</span
+											>{formatMoney(plan.firstOrderPrice)} due today, then {planPrice}/mo</span
 										>
 									{/if}
 								</span>
@@ -228,10 +283,12 @@
 
 				{#if selectedPlan?.firstOrderPrice && selectedSecurityDeposit}
 					<p class="rdk-checkout-note">
-						Checkout today: {formatMoney(selectedPlan.firstOrderPrice)} — {formatMoney(
+						{formatMoney(selectedPlan.firstOrderPrice)} due today — {formatMoney(
 							selectedPlan.price
-						)}/mo subscription + {selectedSecurityDeposit} one-time security deposit.
-						{formatMoney(selectedPlan.price)}/mo billed thereafter.
+						)}
+						first month plus a {selectedSecurityDeposit} one-time deposit. {formatMoney(
+							selectedPlan.price
+						)}/mo after that.
 					</p>
 				{/if}
 
@@ -252,12 +309,26 @@
 				</div>
 
 				<div class="rdk-ctas">
-					{#if cartUrl && available}
-						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-						<a class="btn-primary rdk-btn-buy" href={cartUrl}>Order now</a>
+					{#if available}
+						{#if selectedPlanId}
+							<button
+								type="button"
+								class="btn-primary rdk-btn-buy"
+								onclick={startSubscriptionCheckout}
+								disabled={checkingOut}
+							>
+								{checkingOut ? 'Starting checkout…' : 'Order now'}
+							</button>
+						{:else if cartUrl}
+							<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+							<a class="btn-primary rdk-btn-buy" href={cartUrl}>Order now</a>
+						{/if}
 					{/if}
 					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Robot App Store</a>
 				</div>
+				{#if checkoutError}
+					<p class="rdk-checkout-error">{checkoutError}</p>
+				{/if}
 			{:else}
 				<p class="rdk-origin">
 					Online reservations are temporarily unavailable. Email us and we will hold your place in
