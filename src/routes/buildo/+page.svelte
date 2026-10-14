@@ -40,6 +40,19 @@
 		selectedPlan ? formatMoney(selectedPlan.price) : (oneTimePrice ?? '$8,000')
 	);
 
+	function securityDepositOf(plan: {
+		price: { amount: string; currencyCode: string };
+		firstOrderPrice: { amount: string; currencyCode: string } | null;
+	}) {
+		if (!plan.firstOrderPrice) return null;
+		return formatMoney({
+			amount: String(Number(plan.firstOrderPrice.amount) - Number(plan.price.amount)),
+			currencyCode: plan.firstOrderPrice.currencyCode
+		});
+	}
+
+	const selectedSecurityDeposit = $derived(selectedPlan ? securityDepositOf(selectedPlan) : null);
+
 	function increment() {
 		quantity = Math.min(quantity + 1, 99);
 	}
@@ -178,6 +191,7 @@
 						</button>
 						{#each sellingPlans as plan (plan.id)}
 							{@const planPrice = formatMoney(plan.price)}
+							{@const securityDeposit = securityDepositOf(plan)}
 							{@const discount =
 								plan.compareAtPrice &&
 								Number(plan.compareAtPrice.amount) > Number(plan.price.amount)
@@ -195,9 +209,11 @@
 							>
 								<span class="rdk-po-name">
 									{plan.name}
-									{#if plan.firstOrderPrice}
+									{#if plan.firstOrderPrice && securityDeposit}
 										<span class="rdk-po-fee"
-											>First order {formatMoney(plan.firstOrderPrice)} (incl. one-time security fee)</span
+											>{planPrice}/mo + {securityDeposit} one-time security deposit — first charge {formatMoney(
+												plan.firstOrderPrice
+											)}</span
 										>
 									{/if}
 								</span>
@@ -208,6 +224,15 @@
 							</button>
 						{/each}
 					</div>
+				{/if}
+
+				{#if selectedPlan?.firstOrderPrice && selectedSecurityDeposit}
+					<p class="rdk-checkout-note">
+						Checkout today: {formatMoney(selectedPlan.firstOrderPrice)} — {formatMoney(
+							selectedPlan.price
+						)}/mo subscription + {selectedSecurityDeposit} one-time security deposit.
+						{formatMoney(selectedPlan.price)}/mo billed thereafter.
+					</p>
 				{/if}
 
 				<div class="rdk-divider-line"></div>

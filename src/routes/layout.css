@@ -1669,11 +1669,24 @@ body.page-buildo {
 }
 
 .rdk-po-fee {
-	font-weight: 400;
-	font-size: 10px;
-	letter-spacing: 0.04em;
+	font-weight: 500;
+	font-size: 11px;
+	letter-spacing: 0.02em;
 	text-transform: none;
-	color: var(--text-muted);
+	color: var(--ink);
+}
+
+.rdk-checkout-note {
+	margin: 0 0 20px;
+	padding: 12px 14px;
+	border: 1px solid var(--border-strong);
+	background: rgba(20, 18, 16, 0.043);
+	font-family: 'Space Mono', monospace;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+	color: var(--ink);
 }
 
 .rdk-po-price {
