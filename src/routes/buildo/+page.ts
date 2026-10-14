@@ -22,12 +22,27 @@ const QUERY = `
           id
           availableForSale
           price { amount currencyCode }
+          sellingPlanAllocations(first: 5) {
+            nodes {
+              sellingPlan {
+                id
+                name
+                description
+              }
+              priceAdjustments {
+                price { amount currencyCode }
+                compareAtPrice { amount currencyCode }
+              }
+            }
+          }
         }
       }
       origin: metafield(namespace: "custom", key: "origin") { value }
     }
   }
 `;
+
+type Money = { amount: string; currencyCode: string };
 
 type ProductQueryData = {
 	product: {
@@ -36,16 +51,30 @@ type ProductQueryData = {
 		tags: string[];
 		featuredImage: { url: string; altText: string | null } | null;
 		images: { nodes: Array<{ url: string; altText: string | null }> };
-		priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
+		priceRange: { minVariantPrice: Money };
 		variants: {
 			nodes: Array<{
 				id: string;
 				availableForSale: boolean;
-				price: { amount: string; currencyCode: string };
+				price: Money;
+				sellingPlanAllocations: {
+					nodes: Array<{
+						sellingPlan: { id: string; name: string; description: string | null };
+						priceAdjustments: Array<{ price: Money; compareAtPrice: Money }>;
+					}>;
+				};
 			}>;
 		};
 		origin: { value: string } | null;
 	};
+};
+
+export type BuildoSellingPlan = {
+	id: string;
+	name: string;
+	description: string | null;
+	price: Money;
+	compareAtPrice: Money | null;
 };
 
 // Preorder leads the Buildo page and is the primary conversion path across the site,
@@ -62,18 +91,43 @@ export const load: PageLoad = async () => {
 
 		const { product } = data;
 		if (!product) {
-			return { product: null, variantId: null, storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN };
+			return {
+				product: null,
+				variantId: null,
+				sellingPlans: [] as BuildoSellingPlan[],
+				storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN
+			};
 		}
 
-		const variantId = product.variants.nodes[0]?.id.split('/').pop() ?? null;
+		const variant = product.variants.nodes[0];
+		const variantId = variant?.id.split('/').pop() ?? null;
+
+		// Appstle creates these as native Shopify selling plans, so the monthly
+		// subscription option - and its price - comes straight from the
+		// Storefront API rather than being hand-maintained here.
+		const sellingPlans: BuildoSellingPlan[] = (variant?.sellingPlanAllocations.nodes ?? []).map(
+			(allocation) => ({
+				id: allocation.sellingPlan.id.split('/').pop() ?? allocation.sellingPlan.id,
+				name: allocation.sellingPlan.name,
+				description: allocation.sellingPlan.description,
+				price: allocation.priceAdjustments[0]?.price ?? variant.price,
+				compareAtPrice: allocation.priceAdjustments[0]?.compareAtPrice ?? null
+			})
+		);
 
 		return {
 			product,
 			variantId,
+			sellingPlans,
 			storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN
 		};
 	} catch (err) {
 		console.error('[buildo] Shopify load failed, rendering fallback:', err);
-		return { product: null, variantId: null, storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN };
+		return {
+			product: null,
+			variantId: null,
+			sellingPlans: [] as BuildoSellingPlan[],
+			storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN
+		};
 	}
 };

@@ -7,6 +7,7 @@
 	let { data } = $props();
 
 	const product = data.product;
+	const sellingPlans = data.sellingPlans ?? [];
 
 	const images = product
 		? product.images.nodes.length > 0
@@ -19,8 +20,25 @@
 	const variant = product?.variants.nodes[0];
 	const available = variant?.availableForSale ?? true;
 
+	function formatMoney(money: { amount: string; currencyCode: string }) {
+		return new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: money.currencyCode
+		}).format(Number(money.amount));
+	}
+
+	const oneTimePrice = variant ? formatMoney(variant.price) : null;
+
 	let selectedImage = $state(0);
 	let quantity = $state(1);
+	// null = one-time purchase; otherwise the id of the selected subscription selling plan.
+	let selectedPlanId = $state<string | null>(null);
+
+	const selectedPlan = $derived(sellingPlans.find((plan) => plan.id === selectedPlanId) ?? null);
+
+	const displayPrice = $derived(
+		selectedPlan ? formatMoney(selectedPlan.price) : (oneTimePrice ?? '$8,000')
+	);
 
 	function increment() {
 		quantity = Math.min(quantity + 1, 99);
@@ -29,11 +47,14 @@
 		quantity = Math.max(quantity - 1, 1);
 	}
 
-	const cartUrl = $derived(
-		data.variantId
-			? withReferral(`https://${data.storeDomain}/cart/${data.variantId}:${quantity}`)
-			: null
-	);
+	const cartUrl = $derived.by(() => {
+		if (!data.variantId) return null;
+		const base = `https://${data.storeDomain}/cart/${data.variantId}:${quantity}`;
+		if (!selectedPlanId) return withReferral(base);
+		const url = new URL(base);
+		url.searchParams.set('selling_plan', selectedPlanId);
+		return withReferral(url.toString());
+	});
 
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.12 });
@@ -131,7 +152,9 @@
 			<h1 class="rdk-product-title">{product?.title ?? 'Buildo'}</h1>
 
 			<div class="rdk-price-row">
-				<span class="rdk-price">$8,000</span>
+				<span class="rdk-price"
+					>{displayPrice}{#if selectedPlan}<span class="rdk-price-interval">/mo</span>{/if}</span
+				>
 				{#if product}
 					<span class="rdk-badge" class:rdk-badge--out={!available}>
 						{available ? 'Available' : 'Sold Out'}
@@ -140,6 +163,46 @@
 			</div>
 
 			{#if product}
+				{#if sellingPlans.length > 0}
+					<div class="rdk-purchase-options" role="radiogroup" aria-label="Purchase option">
+						<button
+							type="button"
+							class="rdk-purchase-option"
+							class:active={selectedPlanId === null}
+							role="radio"
+							aria-checked={selectedPlanId === null}
+							onclick={() => (selectedPlanId = null)}
+						>
+							<span class="rdk-po-name">One-time purchase</span>
+							<span class="rdk-po-price">{oneTimePrice}</span>
+						</button>
+						{#each sellingPlans as plan (plan.id)}
+							{@const planPrice = formatMoney(plan.price)}
+							{@const discount =
+								plan.compareAtPrice &&
+								Number(plan.compareAtPrice.amount) > Number(plan.price.amount)
+									? Math.round(
+											(1 - Number(plan.price.amount) / Number(plan.compareAtPrice.amount)) * 100
+										)
+									: null}
+							<button
+								type="button"
+								class="rdk-purchase-option"
+								class:active={selectedPlanId === plan.id}
+								role="radio"
+								aria-checked={selectedPlanId === plan.id}
+								onclick={() => (selectedPlanId = plan.id)}
+							>
+								<span class="rdk-po-name">{plan.name}</span>
+								<span class="rdk-po-price">
+									{planPrice}<span class="rdk-po-interval">/mo</span>
+									{#if discount}<span class="rdk-po-save">Save {discount}%</span>{/if}
+								</span>
+							</button>
+						{/each}
+					</div>
+				{/if}
+
 				<div class="rdk-divider-line"></div>
 
 				<div class="rdk-quantity-block">
