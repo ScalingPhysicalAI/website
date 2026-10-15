@@ -37,8 +37,10 @@
 
 	let selectedImage = $state(0);
 	let quantity = $state(1);
-	// null = one-time purchase; otherwise the id of the selected subscription selling plan.
-	let selectedPlanId = $state<string | null>(null);
+	// One-time purchase has been removed; subscription is the only path to checkout.
+	// Falls back to null (and the one-time cart link) only if Shopify has no selling
+	// plans configured for this variant - see the load() comment in +page.ts.
+	let selectedPlanId = $state<string | null>(sellingPlans[0]?.id ?? null);
 
 	const selectedPlan = $derived(sellingPlans.find((plan) => plan.id === selectedPlanId) ?? null);
 
@@ -235,17 +237,6 @@
 			{#if product}
 				{#if sellingPlans.length > 0}
 					<div class="rdk-purchase-options" role="radiogroup" aria-label="Purchase option">
-						<button
-							type="button"
-							class="rdk-purchase-option"
-							class:active={selectedPlanId === null}
-							role="radio"
-							aria-checked={selectedPlanId === null}
-							onclick={() => (selectedPlanId = null)}
-						>
-							<span class="rdk-po-name">One-time purchase</span>
-							<span class="rdk-po-price">{oneTimePrice}</span>
-						</button>
 						{#each sellingPlans as plan (plan.id)}
 							{@const planPrice = formatMoney(plan.price)}
 							{@const securityDeposit = securityDepositOf(plan)}
