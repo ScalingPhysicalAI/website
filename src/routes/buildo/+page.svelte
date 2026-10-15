@@ -44,11 +44,17 @@
 
 	const selectedPlan = $derived(sellingPlans.find((plan) => plan.id === selectedPlanId) ?? null);
 
-	// Effective monthly rate for a plan billed every N months, e.g. $1,800 every
-	// 3 months -> $600/mo. The upfront charge itself is shown alongside it.
-	function monthlyPriceOf(plan: { price: { amount: string; currencyCode: string }; intervalMonths: number }) {
+	// Appstle's recurring priceAdjustments.price is already the steady-state
+	// monthly rate (e.g. $600/mo), not a full billing-cycle total.
+	function monthlyPriceOf(plan: { price: { amount: string; currencyCode: string } }) {
+		return formatMoney(plan.price);
+	}
+
+	// Full amount actually charged at each billing event, e.g. $600/mo billed
+	// every 3 months -> $1,800.
+	function cycleTotalOf(plan: { price: { amount: string; currencyCode: string }; intervalMonths: number }) {
 		return formatMoney({
-			amount: String(Number(plan.price.amount) / plan.intervalMonths),
+			amount: String(Number(plan.price.amount) * plan.intervalMonths),
 			currencyCode: plan.price.currencyCode
 		});
 	}
@@ -248,7 +254,7 @@
 					<div class="rdk-purchase-options" role="radiogroup" aria-label="Purchase option">
 						{#each sellingPlans as plan (plan.id)}
 							{@const monthlyPrice = monthlyPriceOf(plan)}
-							{@const upfrontPrice = formatMoney(plan.price)}
+							{@const upfrontPrice = cycleTotalOf(plan)}
 							{@const securityDeposit = securityDepositOf(plan)}
 							{@const discount =
 								plan.compareAtPrice &&

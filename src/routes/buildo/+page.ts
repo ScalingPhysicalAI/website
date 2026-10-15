@@ -84,7 +84,8 @@ export type BuildoSellingPlan = {
 	id: string;
 	name: string;
 	description: string | null;
-	// Steady-state recurring charge for one billing cycle (e.g. $1,800 every 3 months).
+	// Steady-state recurring price, already expressed per month (e.g. $600/mo
+	// for a plan actually billed $1,800 every 3 months).
 	price: Money;
 	compareAtPrice: Money | null;
 	// Set only when the first order is priced differently from the recurring
@@ -92,7 +93,7 @@ export type BuildoSellingPlan = {
 	// first month's charge, so order 1 is $1,600 while every order after is $600.
 	firstOrderPrice: Money | null;
 	// Number of months in one billing cycle (e.g. 3 for "every 3 months", 12 for yearly).
-	// Used to derive the effective monthly rate shown alongside the upfront charge.
+	// Used to derive the actual cycle total charged: price * intervalMonths.
 	intervalMonths: number;
 	// Human label for the billing cadence, e.g. "every 3 months", "yearly".
 	billingLabel: string;
@@ -128,7 +129,8 @@ export const load: PageLoad = async () => {
 		// than being hand-maintained here. Appstle returns one priceAdjustments entry
 		// per order count: the first order bundles in a one-time security fee, every
 		// order after is the plain recurring charge - so the *last* entry is the
-		// steady-state price for one full billing cycle (e.g. $1,800 every 3 months).
+		// steady-state "/mo" price, even for plans actually billed every N months
+		// (the real cycle total charged is price * intervalMonths).
 		const sellingPlans: BuildoSellingPlan[] = (variant?.sellingPlanAllocations.nodes ?? []).map(
 			(allocation) => {
 				const adjustments = allocation.priceAdjustments;
