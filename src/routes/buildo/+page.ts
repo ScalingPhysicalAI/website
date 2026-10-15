@@ -129,8 +129,12 @@ export const load: PageLoad = async () => {
 		// than being hand-maintained here. Appstle returns one priceAdjustments entry
 		// per order count: the first order bundles in a one-time security fee, every
 		// order after is the plain recurring charge - so the *last* entry is the
-		// steady-state "/mo" price, even for plans actually billed every N months
-		// (the real cycle total charged is price * intervalMonths).
+		// override price. But the *units* of that override differ from the no-override
+		// fallback: when Appstle sets an adjustment, Shopify prices it for the whole
+		// billing cycle (e.g. $3,240 billed every 6 months); when there's no adjustment,
+		// the plan falls back to the variant's own price, which is already a monthly
+		// rate (e.g. $600/mo, billed every 3 months as 600 x 3 = $1,800). Normalize both
+		// down to a monthly rate here so the rest of the app only ever deals in "/mo".
 		const sellingPlans: BuildoSellingPlan[] = (variant?.sellingPlanAllocations.nodes ?? []).map(
 			(allocation) => {
 				const adjustments = allocation.priceAdjustments;
@@ -150,16 +154,27 @@ export const load: PageLoad = async () => {
 						? 'yearly'
 						: `every ${intervalCount} ${(policy?.interval ?? 'MONTH').toLowerCase()}${intervalCount > 1 ? 's' : ''}`;
 
+				// Only an explicit adjustment is priced per full cycle - the variant
+				// price fallback is already monthly, so leave it alone.
+				const toMonthly = (money: Money): Money =>
+					recurring
+						? { amount: String(Number(money.amount) / intervalMonths), currencyCode: money.currencyCode }
+						: money;
+
+				const price = toMonthly(recurring?.price ?? variant.price);
+				const compareAtPrice = recurring?.compareAtPrice ? toMonthly(recurring.compareAtPrice) : null;
+				const firstOrderPrice =
+					firstOrder && firstOrder.price.amount !== recurring?.price.amount
+						? toMonthly(firstOrder.price)
+						: null;
+
 				return {
 					id: allocation.sellingPlan.id.split('/').pop() ?? allocation.sellingPlan.id,
 					name: allocation.sellingPlan.name,
 					description: allocation.sellingPlan.description,
-					price: recurring?.price ?? variant.price,
-					compareAtPrice: recurring?.compareAtPrice ?? null,
-					firstOrderPrice:
-						firstOrder && firstOrder.price.amount !== recurring?.price.amount
-							? firstOrder.price
-							: null,
+					price,
+					compareAtPrice,
+					firstOrderPrice,
 					intervalMonths,
 					billingLabel
 				};
