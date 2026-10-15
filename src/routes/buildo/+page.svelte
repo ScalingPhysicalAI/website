@@ -44,8 +44,17 @@
 
 	const selectedPlan = $derived(sellingPlans.find((plan) => plan.id === selectedPlanId) ?? null);
 
+	// Effective monthly rate for a plan billed every N months, e.g. $1,800 every
+	// 3 months -> $600/mo. The upfront charge itself is shown alongside it.
+	function monthlyPriceOf(plan: { price: { amount: string; currencyCode: string }; intervalMonths: number }) {
+		return formatMoney({
+			amount: String(Number(plan.price.amount) / plan.intervalMonths),
+			currencyCode: plan.price.currencyCode
+		});
+	}
+
 	const displayPrice = $derived(
-		selectedPlan ? formatMoney(selectedPlan.price) : (oneTimePrice ?? '$8,000')
+		selectedPlan ? monthlyPriceOf(selectedPlan) : (oneTimePrice ?? '$8,000')
 	);
 
 	function securityDepositOf(plan: {
@@ -238,7 +247,8 @@
 				{#if sellingPlans.length > 0}
 					<div class="rdk-purchase-options" role="radiogroup" aria-label="Purchase option">
 						{#each sellingPlans as plan (plan.id)}
-							{@const planPrice = formatMoney(plan.price)}
+							{@const monthlyPrice = monthlyPriceOf(plan)}
+							{@const upfrontPrice = formatMoney(plan.price)}
 							{@const securityDeposit = securityDepositOf(plan)}
 							{@const discount =
 								plan.compareAtPrice &&
@@ -259,13 +269,18 @@
 									{plan.name}
 									{#if plan.firstOrderPrice && securityDeposit}
 										<span class="rdk-po-fee"
-											>{formatMoney(plan.firstOrderPrice)} due today, then {planPrice}/mo</span
+											>{formatMoney(plan.firstOrderPrice)} due today, then {monthlyPrice}/mo</span
 										>
 									{/if}
 								</span>
-								<span class="rdk-po-price">
-									{planPrice}<span class="rdk-po-interval">/mo</span>
-									{#if discount}<span class="rdk-po-save">Save {discount}%</span>{/if}
+								<span class="rdk-po-price-group">
+									<span class="rdk-po-price">
+										{monthlyPrice}<span class="rdk-po-interval">/mo</span>
+										{#if discount}<span class="rdk-po-save">Save {discount}%</span>{/if}
+									</span>
+									{#if plan.intervalMonths > 1}
+										<span class="rdk-po-upfront">{upfrontPrice} billed {plan.billingLabel}</span>
+									{/if}
 								</span>
 							</button>
 						{/each}
@@ -274,11 +289,9 @@
 
 				{#if selectedPlan?.firstOrderPrice && selectedSecurityDeposit}
 					<p class="rdk-checkout-note">
-						{formatMoney(selectedPlan.firstOrderPrice)} due today — {formatMoney(
-							selectedPlan.price
-						)}
-						first month plus a {selectedSecurityDeposit} one-time deposit. {formatMoney(
-							selectedPlan.price
+						{formatMoney(selectedPlan.firstOrderPrice)} due today — {monthlyPriceOf(selectedPlan)}
+						first month plus a {selectedSecurityDeposit} one-time deposit. {monthlyPriceOf(
+							selectedPlan
 						)}/mo after that.
 					</p>
 				{/if}
