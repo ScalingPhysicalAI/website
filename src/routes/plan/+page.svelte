@@ -1,29 +1,8 @@
-<script lang="ts">
-	const businesses = [
-		{
-			who: 'A carpenter',
-			what: 'could train framing and installation skills and run a construction fleet.'
-		},
-		{
-			who: 'A mover',
-			what: 'could train loading and material-handling apps and operate a robotic moving company.'
-		},
-		{
-			who: 'A mechanic',
-			what: 'could train maintenance skills and supervise fleets of service robots.'
-		},
-		{
-			who: 'A warehouse operator',
-			what: 'could train picking and handling workflows and run a robotic fulfillment operation.'
-		}
-	];
-</script>
-
 <svelte:head>
 	<title>Master Plan — The Intelligence Economy for Physical AI - Starforge</title>
 	<meta
 		name="description"
-		content="Why dual-brain robots, cloud-hosted robot apps, wearable demonstrations, and usage-based incentives can turn human expertise into scalable robotic businesses."
+		content="Why general-purpose humanoid robots have stayed out of reach, how a dual-brain architecture and a patent-pending data pipeline close the gap, and how Starforge turns ownership into a Robot as a Service economy."
 	/>
 </svelte:head>
 
@@ -41,362 +20,204 @@
 			</div>
 		</div>
 		<p class="dek">
-			Why dual-brain robots, cloud-hosted robot apps, wearable demonstrations, and usage-based
-			incentives can turn human expertise into scalable robotic businesses.
+			Why general-purpose humanoid robots have stayed out of reach, how we closed the cost and data
+			gaps, and how we're turning ownership into a Robot as a Service economy.
 		</p>
 	</header>
 
 	<section>
 		<h2>Robots will work in two worlds</h2>
-		<p>We believe robots will not just do physical work. They will do digital work too.</p>
 		<p>
-			A warehouse robot shouldn't only pick a box. It should understand what it picked, update the
-			inventory database, reconcile stock levels, trigger a replenishment workflow, flag anomalies, and
-			coordinate with the software that runs the warehouse. A construction robot shouldn't only drill,
-			lift, or install. It should understand the drawings, track progress against the plan, calculate
-			material requirements, document what was completed, and coordinate the next task.
+			Computers and machines enabled us to transform energy into massive productive output.
+			General-purpose humanoid robots will take this a step further: they will combine both
+			physical and digital intelligence to convert energy into productive output at an entirely new
+			scale.
 		</p>
 		<p>
-			That means the robot of the future is not simply a machine with arms. It is a computer capable of
-			acting in both the physical and digital worlds.
+			Factories, warehouses, and construction sites operating fully autonomously will be a common
+			thing. Humans will never need to do labor work again. Even tasks at home, like laundry and
+			cleaning, will be taken over by home robots. Harnessing energy will be the only constraint in
+			that era.
+		</p>
+		<p>
+			At Starforge, we are building this future by developing humanoid robots that work in two
+			worlds.
+		</p>
+		<p>
+			A warehouse robot wouldn't just pick a box. It would understand what it picked, update the
+			inventory database, reconcile stock levels, trigger a replenishment workflow, flag anomalies,
+			and coordinate with the software that runs the warehouse.
+		</p>
+		<p>
+			A construction robot wouldn't only drill, lift, or install. It would understand the drawings,
+			track progress against the plan, calculate material requirements, document what was
+			completed, and coordinate the next task.
 		</p>
 	</section>
 
 	<section>
-		<h2>The dual-brain architecture</h2>
-		<p>We believe that requires a dual-brain architecture.</p>
+		<h2>An ultra human, working around the clock</h2>
+		<p>
+			A Starforge humanoid robot is the equivalent of an ultra human with an almost infinite
+			context size. Picture a manager who earns $10,000 a month and also performs hands-on work
+			across warehouses and factories, except this ultra human doesn't stop after 8 hours. It can
+			remain operational for all 24.
+		</p>
+		<p class="emphasis">
+			We see Starforge robots producing 10x the output at the cost of a $3,000-a-month worker.
+		</p>
+	</section>
+
+	<section>
+		<h2>Why this hasn't been solved — and how we solved it</h2>
+		<p>General-purpose humanoid robots have stayed out of reach for two reasons: cost and data.</p>
+
+		<h3>1. The bill of materials is too high</h3>
+		<p>
+			Through unique design and manufacturing techniques, we've built the lowest-cost
+			general-purpose humanoid robot in the industry.
+		</p>
+		<p>
+			We've eliminated the need for high-end GPUs inside the robot by dividing intelligence into
+			edge and cloud models.
+		</p>
 		<div class="brains">
 			<div>
 				<span class="kicker">Edge</span>
-				<h3>Small and fast</h3>
+				<h3>What must happen locally</h3>
 				<p>
-					It handles what cannot tolerate latency: motion execution, kinematics, actuator control,
-					safety, sensor processing, and contact response.
+					Motion correction, inverse kinematics, sensor processing, actuator control, and other
+					latency-sensitive functions.
 				</p>
 			</div>
 			<div>
 				<span class="kicker">Cloud</span>
-				<h3>As large as the task</h3>
+				<h3>What benefits from scale</h3>
 				<p>
-					It handles perception, reasoning, planning, memory, engineering knowledge, enterprise
-					software, and increasingly capable multimodal foundation models.
+					Visual understanding, reasoning, planning, memory, domain expertise,
+					enterprise-software interaction, and task-level intelligence.
 				</p>
 			</div>
 		</div>
 		<p>
-			This separation changes the economics of robotics. The intelligence of a robot no longer has to
-			be constrained by the compute physically installed inside it. A robot shipped today should be
-			able to become dramatically more capable three years from now without replacing its onboard
-			hardware.
+			That split is where the robotics industry is heading. Physical Intelligence has hinted at
+			moving up an order of magnitude in model size, toward high double-digit billions of
+			parameters. They haven't quite gotten there yet, but we see early evidence in their latest
+			π0.7 VLA, which uses a 14-billion-parameter world model for subgoal image prediction. Model
+			size is converging on an escape velocity, past which it is out of reach for on-board compute
+			and cloud inference becomes the only feasible choice.
 		</p>
-		<p class="emphasis">
-			Once the intelligence lives in the cloud, the cloud model becomes the robot app.
+		<p>
+			On top of that, we design our own actuators, so we can build for any torque and size
+			requirement. The actuation system is normally the biggest cost center, often representing
+			roughly 40–55% of total hardware cost. A useful public benchmark is Unitree's G1: about
+			23–43 joint motors, roughly 35 kg, a depth camera and 3D LiDAR, starting at $13,500 retail.
+			That strongly suggests aggressively vertically integrated manufacturers can drive the
+			underlying BOM well below the traditional $20,000–$50,000 range.
 		</p>
-	</section>
 
-	<section>
-		<h2>Why this hasn't been solved yet</h2>
-		<p>
-			Two things have kept general-purpose humanoid robots out of reach: cost and data. We built
-			Starforge around solving both.
-		</p>
-		<p>
-			Actuation is usually the single biggest line item in a humanoid robot's bill of materials,
-			often 40 to 55 percent of total hardware cost. A useful public benchmark is Unitree's G1:
-			roughly 23 to 43 joint motors, about 35 kg, a depth camera and 3D lidar, starting at $13,500
-			retail. That's a strong signal that an aggressively vertically integrated manufacturer can
-			push the underlying bill of materials well below the industry's usual $20,000 to $50,000
-			range.
-		</p>
-		<p>
-			We design and build our own actuators in-house, so torque and size are chosen for each joint
-			rather than bought off a shelf built for someone else's robot. We build our own hands too.
-			And we don't depend on any single supplier, or any one country, for the parts a robot is made
-			of.
-		</p>
-		<p>
-			The dual-brain split removes the other major line item: we don't need a high-end GPU on board
-			at all. That split also happens to be where the field is heading. Physical Intelligence's
-			latest π0.7 VLA already uses a 14-billion-parameter world model for subgoal prediction, an
-			order of magnitude past where most on-robot compute lives today. Model size is converging on
-			an escape velocity, past which cloud inference stops being a design choice and becomes the
-			only option.
-		</p>
-		<p>
-			Most of the industry hasn't made that bet yet. Figure's intelligence stack is designed to run
-			entirely onboard the robot, which caps how large its models can grow. Physical Intelligence
-			and Google Gemini Robotics are moving toward cloud-hosted VLA models, but their publicly
-			described systems don't address high-frequency tactile and force control the way a dual-brain
-			architecture needs to. Our patent-pending edge model handles tactile, force, slip, and contact
-			response locally at roughly 200 Hz, while the cloud model runs reasoning and perception at a
-			much lower frequency, so we get the benefit of both.
-		</p>
-	</section>
-
-	<section>
-		<h2>From robots to an app economy</h2>
-		<p>
-			A developer could build a model for drywall installation, warehouse picking, hotel room service,
-			machine tending, coffee preparation, inventory auditing, agricultural harvesting, or thousands of
-			other tasks. That model can live in the cloud and be called by deployed robots through inference.
-		</p>
-		<p>
-			The robot becomes the hardware endpoint. The model becomes the application. Inference becomes the
-			transaction.
-		</p>
-		<p>
-			We have already seen how powerful this economic model can become in traditional computing. Apple
-			says the global App Store ecosystem facilitated nearly $1.3 trillion in developer billings and
-			sales in 2024. The App Store now attracts more than 850 million visitors each week, and Apple says
-			developers selling digital goods and services have earned more than $550 billion since 2008.<a
-				class="cite"
-				href="https://www.apple.com/newsroom/pdfs/2024-Apple-Global-Ecosystem-Report-June2025.pdf"
-				target="_blank"
-				rel="noopener noreferrer">[1]</a
-			>
-		</p>
-		<p>The lesson is not that robots need a literal copy of the App Store.</p>
-		<p>
-			The lesson is that when hardware becomes a distribution platform for third-party software, the
-			economic activity created on top of the hardware can become enormous.
-		</p>
-		<p>We think physical AI creates the next version of that opportunity.</p>
-	</section>
-
-	<section>
-		<h2>The next bottleneck is physical data</h2>
-		<p>But to make this happen, robotics has another fundamental bottleneck to solve: data.</p>
-		<p>
-			You cannot give millions of people expensive robotic arms and ask them to collect demonstrations.
-			Robot hardware is too expensive, too scarce, too difficult to distribute, and too cumbersome to
-			operate at data-collection scale.
-		</p>
-		<p>But you can distribute relatively inexpensive sensor gloves and smart glasses.</p>
-		<p>
-			Humans already perform the tasks we want robots to learn. Every day, billions of hands operate
-			tools, prepare food, assemble objects, repair machines, open doors, stock shelves, use appliances,
-			and perform specialized trades.
-		</p>
-		<p>
-			Instead of waiting for robot fleets to slowly rediscover those behaviors through expensive
-			robot-native demonstrations, we can capture human demonstrations directly.
-		</p>
-		<p>Glasses provide the egocentric view of the task.</p>
-		<p>Gloves provide hand motion, finger state, contact, pressure, and interaction data.</p>
-		<p>Together, they can turn human work into structured physical-intelligence data.</p>
-		<p>
-			We're already running this at scale. We have 40 full-time creators today, and a growing
-			network across India, collecting skill data with our patent-pending egocentric glasses and
-			tactile gloves. The patent covers keeping camera and glove data synchronized, which is what
-			makes the demonstrations usable for training, and it cuts data-collection time for a given
-			skill by roughly 10x.
-		</p>
-		<p>
-			This means the robotics data network does not have to scale at the same speed as robot
-			manufacturing.
-		</p>
-		<p class="emphasis">
-			You might have 10,000 robots but 1 million people capable of contributing demonstrations.
-		</p>
-		<p>That asymmetry can be incredibly powerful.</p>
-	</section>
-
-	<section>
-		<h2>A worker can turn expertise into a robot company</h2>
-		<p>
-			A construction worker already knows how to frame a wall, install drywall, operate tools, sequence
-			a job, and recover when something goes wrong.
-		</p>
-		<p>
-			Instead of requiring a robotics company to recreate that knowledge from scratch, the worker can
-			wear inexpensive sensor gloves and smart glasses while doing the job normally. Those
-			demonstrations become training data for a construction skill model.
-		</p>
-		<p>
-			The training data becomes a robot skill app. The app becomes the cloud intelligence used by a
-			fleet of construction robots.
-		</p>
-		<blockquote>
-			A skilled worker can demonstrate a task with gloves and glasses, turn that expertise into a robot
-			skill app, and deploy the app to a fleet of robots that becomes the labor force of their own
-			company.
-		</blockquote>
-		<figure class="worker">
+		<figure class="figure">
 			<img
-				src="/assets/thesis-skilled-worker.jpg"
-				alt="A skilled worker in a hard hat, safety glasses, and gloves operating machinery"
+				src="/assets/bom-cost-breakdown.png"
+				alt="Sankey diagram of an indicative ~$21,900 bill of materials for a full-size industrial humanoid with onboard compute for an 8B-parameter model, breaking the cost down into actuators and drivetrain (41%), onboard compute, mechanical structure, hands and end effectors, battery and power, sensors and perception, control electronics, wiring, thermal management, and assembly."
 			/>
+			<figcaption>
+				Indicative BOM breakdown for a full-size industrial humanoid, 1K–10K units/year.
+			</figcaption>
 		</figure>
-		<p>
-			The worker can then deploy that app to their own robots. The robots provide scalable physical
-			execution, while cloud AI contributes construction reasoning, design assistance, quantity
-			estimation, scheduling, procurement, documentation, and planning.
-		</p>
-		<p>
-			The same cloud intelligence that tells a robot how to install a component can read the drawing,
-			calculate material requirements, update the project schedule, document progress, flag a
-			discrepancy, and issue the next physical task.
-		</p>
-		<p>
-			The person who once sold physical labor by the hour can become the trainer, app owner, robot fleet
-			operator, and business owner.
-		</p>
-	</section>
 
-	<section>
-		<h2>What a Starforge robot replaces</h2>
 		<p>
-			Think of a Starforge robot as the equivalent of a manager who costs $10,000 a month and also
-			does the hands-on work, except it doesn't stop after 8 hours. It can stay operational for all
-			24.
+			We don't depend on Chinese suppliers, or any single supplier, for our robot. The hands are
+			developed in-house too.
+		</p>
+		<p>
+			We see Robot as a Service as the business model that aligns with how human labor is already
+			priced, by the hour. We've designed our robots specifically to solve the ownership, security,
+			tracking, and asset-protection challenges that come with deploying them at scale under rental
+			and RaaS models, which gives us an advantage in enabling distributed RaaS infrastructure.
+		</p>
+
+		<h3>2. The absence of real-world physical contact data</h3>
+		<p>
+			Frontier foundation models like the Qwen vision-language models are open source and
+			increasingly commoditized. In robotics, the real scaling advantage now comes from
+			contact-based physical skill data, the data used to post-train the flow-based action expert
+			layered on top of these vision-language models. The internet has no such skill data.
 		</p>
 		<p class="emphasis">
-			We expect Starforge robots to produce 10x the output of a $3,000-a-month worker, at a fraction
-			of the ongoing cost.
+			As a result, general-purpose robotics has become a labor-arbitrage problem: whoever can
+			collect high-quality physical-world skill data at scale can train larger robot capabilities,
+			and therefore scale deployments.
 		</p>
 	</section>
 
 	<section>
-		<h2>The economic unit changes</h2>
-		<div class="units">
-			<div>
-				<span class="kicker">Traditional company</span>
-				<p>One skilled worker, hired crews, and support staff. Scale tied to headcount.</p>
-			</div>
-			<div>
-				<span class="kicker">Robot-native company</span>
-				<p>
-					One skilled worker, a skill app, cloud intelligence, and a robot fleet. Company-scale
-					productive capacity.
-				</p>
-			</div>
-		</div>
-		<p class="emphasis">This is why we see robotics as labor leverage, not only labor replacement.</p>
-		<ul class="trades">
-			{#each businesses as item (item.who)}
-				<li>
-					<strong>{item.who}</strong>
-					{item.what}
-				</li>
-			{/each}
-		</ul>
+		<h2>How we'll win the industry</h2>
+
+		<h3>1. Scale skill data collection in India</h3>
 		<p>
-			The worker is no longer limited by the number of hours they can personally work or the number of
-			employees they can afford to hire. Their expertise can be multiplied across machines. This
-			happened with digital AI<a
-				class="cite"
-				href="https://x.com/KobeissiLetter/status/2106777112552390986"
-				target="_blank"
-				rel="noopener noreferrer">[2]</a
-			>
-			and will happen with physical AI too.
+			We currently have 40 full-time creators internally, and a growing network of creators across
+			India, collecting high-quality skill data using our patent-pending egocentric video glasses
+			and tactile gloves. That cuts the data-collection hours for a given skill by roughly 10x.
+			This data is used to build the robot intelligence models we host and serve through our cloud
+			infrastructure.
 		</p>
-		<figure class="worker">
-			<img
-				src="/assets/thesis-robot-fleet.jpg"
-				alt="Humanoid robots assembling large components on a factory floor"
-			/>
-		</figure>
 		<p>
-			That can create a new class of small businesses: one skilled human, a portfolio of robot skill
-			apps, cloud intelligence, and a fleet of robots producing at a scale that previously required a
-			much larger organization.
+			Our gloves-and-glasses patent specifies synchronized data collection: you can't pair a
+			random stereo camera with random sensor gloves, the glove and stereo-vision data have to be
+			in sync. The combination lets us scale data collection in regions like India, keeping the
+			cost of model development to a minimum.
+		</p>
+
+		<h3>2. Patents that make robots 10x more intelligent</h3>
+		<p>
+			Another patent-pending technology addresses a critical challenge in the cloud-edge robotics
+			model: enabling high-frequency tactile and force responses locally while preserving the
+			intelligence of large cloud models.
+		</p>
+		<p>
+			General-purpose humanoid robots have to learn to manipulate an enormous variety of objects,
+			which makes tactile intelligence difficult to scale entirely on-device. Our architecture
+			keeps the large multimodal model in the cloud and sends a compressed scene identifier to the
+			robot. The edge model combines that context with live tactile and force feedback to
+			recursively generate actions and make trajectory corrections in real time. That lets the edge
+			model run at a much higher frequency, around 200 Hz, while the cloud model runs at a
+			significantly lower frequency, combining cloud-scale intelligence with fast local physical
+			response.
+		</p>
+		<p>
+			Key players like Figure and Tesla haven't emphasized cloud-based robot intelligence as a core
+			part of their architectures. Figure uses a multi-system approach, but its entire intelligence
+			stack is designed to run locally on the robot, a scaling limitation, since increasingly large
+			foundation models are more practical to scale in the cloud than onboard each robot.
+		</p>
+		<p>
+			Platforms like Physical Intelligence and Google Gemini Robotics are moving toward
+			cloud-hosted VLA models with API-based access, but their publicly described systems don't
+			address the high-frequency tactile and force-control problem the same way. Our
+			patent-pending architecture bridges that gap by combining cloud-scale intelligence with an
+			edge model that handles tactile, force, slip, and contact responses locally.
 		</p>
 	</section>
 
 	<section>
-		<h2>The flywheel</h2>
-		<p>That creates a marketplace not merely for software, but for physical intelligence.</p>
+		<h2>About the founder</h2>
 		<p>
-			A great electrician could help create an electrical-installation model. A great welder could
-			contribute data to a welding model. A skilled technician could create a machine-maintenance
-			model. A developer could combine those datasets with a powerful foundation model, package the
-			intelligence into a cloud application, and distribute it to robots around the world.
-		</p>
-		<p>
-			The person creating the intelligence no longer needs to manufacture the robot. The person
-			operating the business no longer needs to build the AI. And the company manufacturing the robot
-			no longer needs to develop every skill its customers could ever need.
-		</p>
-		<p>That division of labor is what made previous computing platforms explode.</p>
-		<p>
-			Apple did not build every iPhone application. Microsoft did not write every Windows program.
-			Amazon did not manufacture every product sold through its marketplace.
-		</p>
-		<p>
-			Platforms became powerful when they created the infrastructure and economic incentives for other
-			people to create value on top of them.
-		</p>
-		<p>Robotics needs the same transition.</p>
-	</section>
-
-	<section>
-		<h2>A platform that compounds across three dimensions</h2>
-		<p>
-			More robots create more inference demand. More inference demand attracts more developers. More
-			developers create more skills. More useful skills increase the value of owning a robot. More
-			deployed robots create a larger market for those apps.
-		</p>
-		<p>
-			And because app developers make money from usage, they are economically incentivized to
-			continuously create better datasets, better models, and entirely new capabilities.
-		</p>
-		<p>
-			Meanwhile, the dual-brain architecture means those models can keep getting larger and more capable
-			without forcing every robot to carry more GPUs onboard.
-		</p>
-		<p>The cloud becomes an effectively expanding brain shared across a distributed physical workforce.</p>
-	</section>
-
-	<section>
-		<h2>Ownership that scales with deployment</h2>
-		<p>
-			We're deploying this as Robot as a Service, with ownership transferred and tracked on a public
-			record. That lets anyone own a robot and earn from it without having to operate it themselves.
-		</p>
-		<p>
-			A robot's owner earns 30 percent of the inference revenue it generates, which is what makes it
-			worthwhile for owners, operators, and capital to keep deploying robots at scale.
-		</p>
-		<p>
-			We designed the robot itself around this model: the ownership, security, tracking, and
-			asset-protection systems a fleet needs when it's deployed and rented out at scale under RaaS.
+			Vipul built the Cypherock hardware wallet, which currently secures more than $600M in crypto
+			assets globally. Cypherock is the highest-rated hardware wallet by Coin Bureau. Ex-Cypherock
+			team members on Starforge come from IIIT Delhi and PayPal.
 		</p>
 	</section>
 
 	<section>
-		<h2>The opportunity</h2>
-		<p>That is why the opportunity is bigger than building another humanoid robot.</p>
-		<p>It is bigger than building another VLA.</p>
+		<h2>Where we are today</h2>
+		<p>Starforge is raising a seed round to scale our team and deployments.</p>
 		<p>
-			The opportunity is to build the economic and intelligence layer for physical AI: a system where
-			human expertise can become training data, training data can become robot intelligence,
-			intelligence can become cloud apps, developers can earn when those apps are used, and individual
-			humans can command levels of productive capacity that once required entire organizations.
+			We've built a novel distributed Robot as a Service model where robot ownership can be
+			transferred and tracked on a public record. In our model, the robot owner gets 30% of the
+			inference revenue, which incentivizes anyone to deploy a robot.
 		</p>
 	</section>
-
-	<footer id="sources">
-		<p class="sources-label">Sources</p>
-		<ol>
-			<li>
-				Apple, “The App Store ecosystem in 2024.”
-				<a
-					href="https://www.apple.com/newsroom/pdfs/2024-Apple-Global-Ecosystem-Report-June2025.pdf"
-					target="_blank"
-					rel="noopener noreferrer">Apple Newsroom ecosystem report</a
-				>.
-			</li>
-			<li>
-				LinkedIn estimates, via
-				<a
-					href="https://x.com/KobeissiLetter/status/2106777112552390986"
-					target="_blank"
-					rel="noopener noreferrer">The Kobeissi Letter</a
-				> — digital AI-linked roles have accounted for more than 750,000 new jobs in the US since 2023.
-			</li>
-		</ol>
-	</footer>
 </article>
 
 <style>
@@ -483,15 +304,26 @@
 		color: var(--accent);
 	}
 
-	.worker {
+	.figure {
 		margin: 4px 0 26px;
 	}
 
-	.worker img {
+	.figure img {
 		display: block;
 		width: 100%;
 		height: auto;
+		border: 1px solid var(--border);
 		border-radius: 2px;
+	}
+
+	.figure figcaption {
+		margin-top: 10px;
+		font-family: 'Space Mono', monospace;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--text-muted);
 	}
 
 	section {
@@ -521,22 +353,14 @@
 		color: var(--ink);
 	}
 
-	.cite {
-		color: var(--accent);
-		font-weight: 700;
-		text-decoration: none;
-	}
-
-	.brains,
-	.units {
+	.brains {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 14px;
 		margin: 8px 0 22px;
 	}
 
-	.brains > div,
-	.units > div {
+	.brains > div {
 		padding: 18px 18px 8px;
 		border: 1px solid var(--border-strong);
 		background: rgba(255, 255, 255, 0.55);
@@ -552,71 +376,17 @@
 	}
 
 	h3 {
-		margin: 8px 0 8px;
+		margin: 24px 0 8px;
 		font-family: 'Bebas Neue', sans-serif;
 		font-size: 26px;
 		font-weight: 400;
 		letter-spacing: 0.04em;
 		line-height: 1;
-	}
-
-	blockquote {
-		margin: 8px 0 22px;
-		padding: 4px 0 4px 18px;
-		border-left: 2px solid var(--accent);
-		font-size: clamp(17px, 1.8vw, 20px);
-		font-weight: 600;
-		line-height: 1.5;
 		color: var(--ink);
 	}
 
-	.trades,
-	footer ol {
-		margin: 0 0 18px;
-		padding: 0;
-		list-style: none;
-	}
-
-	.trades li {
-		padding: 12px 0;
-		border-top: 1px solid var(--border);
-		font-size: clamp(16px, 1.5vw, 18px);
-		line-height: 1.55;
-		color: rgba(20, 18, 16, 0.86);
-	}
-
-	.trades li:last-child {
-		border-bottom: 1px solid var(--border);
-	}
-
-	.trades strong {
-		color: var(--ink);
-	}
-
-	footer {
-		margin-top: 36px;
-		padding-top: 18px;
-		border-top: 1px solid var(--border);
-	}
-
-	.sources-label {
-		margin-bottom: 8px;
-		font-family: 'Space Mono', monospace;
-		font-size: 10px;
-		font-weight: 700;
-		letter-spacing: 0.2em;
-		text-transform: uppercase;
-		color: var(--text-muted);
-	}
-
-	footer li {
-		font-size: 14px;
-		line-height: 1.5;
-		color: rgba(20, 18, 16, 0.78);
-	}
-
-	footer a {
-		color: var(--accent);
+	.brains h3 {
+		margin: 8px 0 8px;
 	}
 
 	@media (max-width: 720px) {
@@ -624,8 +394,7 @@
 			padding: calc(var(--header-height, 88px) + 32px) 20px 64px;
 		}
 
-		.brains,
-		.units {
+		.brains {
 			grid-template-columns: 1fr;
 		}
 
