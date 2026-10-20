@@ -95,6 +95,45 @@
 	</section>
 
 	<section>
+		<h2>Why this hasn't been solved yet</h2>
+		<p>
+			Two things have kept general-purpose humanoid robots out of reach: cost and data. We built
+			Starforge around solving both.
+		</p>
+		<p>
+			Actuation is usually the single biggest line item in a humanoid robot's bill of materials,
+			often 40 to 55 percent of total hardware cost. A useful public benchmark is Unitree's G1:
+			roughly 23 to 43 joint motors, about 35 kg, a depth camera and 3D lidar, starting at $13,500
+			retail. That's a strong signal that an aggressively vertically integrated manufacturer can
+			push the underlying bill of materials well below the industry's usual $20,000 to $50,000
+			range.
+		</p>
+		<p>
+			We design and build our own actuators in-house, so torque and size are chosen for each joint
+			rather than bought off a shelf built for someone else's robot. We build our own hands too.
+			And we don't depend on any single supplier, or any one country, for the parts a robot is made
+			of.
+		</p>
+		<p>
+			The dual-brain split removes the other major line item: we don't need a high-end GPU on board
+			at all. That split also happens to be where the field is heading. Physical Intelligence's
+			latest π0.7 VLA already uses a 14-billion-parameter world model for subgoal prediction, an
+			order of magnitude past where most on-robot compute lives today. Model size is converging on
+			an escape velocity, past which cloud inference stops being a design choice and becomes the
+			only option.
+		</p>
+		<p>
+			Most of the industry hasn't made that bet yet. Figure's intelligence stack is designed to run
+			entirely onboard the robot, which caps how large its models can grow. Physical Intelligence
+			and Google Gemini Robotics are moving toward cloud-hosted VLA models, but their publicly
+			described systems don't address high-frequency tactile and force control the way a dual-brain
+			architecture needs to. Our patent-pending edge model handles tactile, force, slip, and contact
+			response locally at roughly 200 Hz, while the cloud model runs reasoning and perception at a
+			much lower frequency, so we get the benefit of both.
+		</p>
+	</section>
+
+	<section>
 		<h2>From robots to an app economy</h2>
 		<p>
 			A developer could build a model for drywall installation, warehouse picking, hotel room service,
@@ -146,6 +185,13 @@
 		<p>Gloves provide hand motion, finger state, contact, pressure, and interaction data.</p>
 		<p>Together, they can turn human work into structured physical-intelligence data.</p>
 		<p>
+			We're already running this at scale. We have 40 full-time creators today, and a growing
+			network across India, collecting skill data with our patent-pending egocentric glasses and
+			tactile gloves. The patent covers keeping camera and glove data synchronized, which is what
+			makes the demonstrations usable for training, and it cuts data-collection time for a given
+			skill by roughly 10x.
+		</p>
+		<p>
 			This means the robotics data network does not have to scale at the same speed as robot
 			manufacturing.
 		</p>
@@ -194,6 +240,19 @@
 		<p>
 			The person who once sold physical labor by the hour can become the trainer, app owner, robot fleet
 			operator, and business owner.
+		</p>
+	</section>
+
+	<section>
+		<h2>What a Starforge robot replaces</h2>
+		<p>
+			Think of a Starforge robot as the equivalent of a manager who costs $10,000 a month and also
+			does the hands-on work, except it doesn't stop after 8 hours. It can stay operational for all
+			24.
+		</p>
+		<p class="emphasis">
+			We expect Starforge robots to produce 10x the output of a $3,000-a-month worker, at a fraction
+			of the ongoing cost.
 		</p>
 	</section>
 
@@ -287,6 +346,22 @@
 			without forcing every robot to carry more GPUs onboard.
 		</p>
 		<p>The cloud becomes an effectively expanding brain shared across a distributed physical workforce.</p>
+	</section>
+
+	<section>
+		<h2>Ownership that scales with deployment</h2>
+		<p>
+			We're deploying this as Robot as a Service, with ownership transferred and tracked on a public
+			record. That lets anyone own a robot and earn from it without having to operate it themselves.
+		</p>
+		<p>
+			A robot's owner earns 30 percent of the inference revenue it generates, which is what makes it
+			worthwhile for owners, operators, and capital to keep deploying robots at scale.
+		</p>
+		<p>
+			We designed the robot itself around this model: the ownership, security, tracking, and
+			asset-protection systems a fleet needs when it's deployed and rented out at scale under RaaS.
+		</p>
 	</section>
 
 	<section>
