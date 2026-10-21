@@ -77,7 +77,7 @@
 				<a
 					href={resolve('/buildo-development-kit')}
 					class:active={isKit}
-					aria-current={isKit ? 'page' : undefined}>Dev Kit</a
+					aria-current={isKit ? 'page' : undefined}>Creators Gadget</a
 				>
 			</li>
 			<li>

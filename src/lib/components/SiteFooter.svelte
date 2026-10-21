@@ -61,7 +61,7 @@
 				<span class="footer-col-label">Product</span>
 				<ul>
 					<li><a href={resolve('/buildo')}>Buildo</a></li>
-					<li><a href={resolve('/buildo-development-kit')}>Dev Kit</a></li>
+					<li><a href={resolve('/buildo-development-kit')}>Creators Gadget</a></li>
 				</ul>
 			</div>
 
