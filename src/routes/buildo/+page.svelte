@@ -111,6 +111,21 @@
 		checkingOut = true;
 		checkoutError = null;
 		try {
+			const lines: Array<{ quantity: number; merchandiseId: string; sellingPlanId?: string }> = [
+				{
+					quantity,
+					merchandiseId: `gid://shopify/ProductVariant/${data.variantId}`,
+					sellingPlanId: `gid://shopify/SellingPlan/${selectedPlanId}`
+				}
+			];
+			// The $1,000 Security Fees product is a one-time charge added alongside
+			// every subscription, separate from Appstle's own selling-plan pricing.
+			if (data.securityFeeVariantId) {
+				lines.push({
+					quantity: 1,
+					merchandiseId: `gid://shopify/ProductVariant/${data.securityFeeVariantId}`
+				});
+			}
 			const result = await shopifyStorefrontFetch<{
 				cartCreate: {
 					cart: { checkoutUrl: string } | null;
@@ -121,15 +136,7 @@
 				accessToken: PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN,
 				apiVersion: PUBLIC_SHOPIFY_API_VERSION,
 				query: CART_CREATE_MUTATION,
-				variables: {
-					lines: [
-						{
-							quantity,
-							merchandiseId: `gid://shopify/ProductVariant/${data.variantId}`,
-							sellingPlanId: `gid://shopify/SellingPlan/${selectedPlanId}`
-						}
-					]
-				}
+				variables: { lines }
 			});
 			const { cart, userErrors } = result.cartCreate;
 			if (!cart || userErrors.length > 0) {
@@ -302,6 +309,12 @@
 					</p>
 				{/if}
 
+				{#if data.securityFeeVariantId && selectedPlanId}
+					<p class="rdk-checkout-note">
+						Plus a one-time $1,000 security fee, added to your cart alongside the subscription.
+					</p>
+				{/if}
+
 				<div class="rdk-divider-line"></div>
 
 				<div class="rdk-quantity-block">
@@ -334,7 +347,6 @@
 							<a class="btn-primary rdk-btn-buy" href={cartUrl}>Order now</a>
 						{/if}
 					{/if}
-					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Robot App Store</a>
 				</div>
 				{#if checkoutError}
 					<p class="rdk-checkout-error">{checkoutError}</p>
@@ -352,7 +364,6 @@
 						class="btn-primary rdk-btn-buy"
 						href="mailto:contact@starforgerobotics.com?subject=Buildo%20order">Order by email</a
 					>
-					<a class="btn-ghost" href="https://portal.starforgerobotics.com">Robot App Store</a>
 				</div>
 			{/if}
 

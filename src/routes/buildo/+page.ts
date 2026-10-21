@@ -8,6 +8,11 @@ import {
 
 const QUERY = `
   query {
+    securityFeeProduct: product(handle: "security-fees") {
+      variants(first: 1) {
+        nodes { id }
+      }
+    }
     product(handle: "robot-dev-kit") {
       id
       title
@@ -51,6 +56,9 @@ const QUERY = `
 type Money = { amount: string; currencyCode: string };
 
 type ProductQueryData = {
+	securityFeeProduct: {
+		variants: { nodes: Array<{ id: string }> };
+	} | null;
 	product: {
 		id: string;
 		title: string;
@@ -111,12 +119,15 @@ export const load: PageLoad = async () => {
 			query: QUERY
 		});
 
-		const { product } = data;
+		const { product, securityFeeProduct } = data;
+		const securityFeeVariantId =
+			securityFeeProduct?.variants.nodes[0]?.id.split('/').pop() ?? null;
 		if (!product) {
 			return {
 				product: null,
 				variantId: null,
 				sellingPlans: [] as BuildoSellingPlan[],
+				securityFeeVariantId,
 				storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN
 			};
 		}
@@ -185,6 +196,7 @@ export const load: PageLoad = async () => {
 			product,
 			variantId,
 			sellingPlans,
+			securityFeeVariantId,
 			storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN
 		};
 	} catch (err) {
@@ -193,6 +205,7 @@ export const load: PageLoad = async () => {
 			product: null,
 			variantId: null,
 			sellingPlans: [] as BuildoSellingPlan[],
+			securityFeeVariantId: null,
 			storeDomain: PUBLIC_SHOPIFY_STORE_DOMAIN
 		};
 	}
