@@ -50,8 +50,9 @@ You can preview the production build with `npm run preview`.
 The site can report visits to a hosted analytics provider. It is **off unless
 configured**, so local builds and forks never write into the production numbers.
 
-Set three variables (see `.env.example`). In production they are GitHub
-repository secrets, read by `.github/workflows/deploy.yml` at build time:
+Set three variables (see `.env.example`). In production they are
+[Vercel project environment variables](https://vercel.com/docs/environment-variables),
+read at build time:
 
 | Variable                    | Meaning                                                     |
 | --------------------------- | ----------------------------------------------------------- |
@@ -59,18 +60,18 @@ repository secrets, read by `.github/workflows/deploy.yml` at build time:
 | `PUBLIC_ANALYTICS_SITE_ID`  | Website ID (Umami), registered domain (Plausible), or token |
 | `PUBLIC_ANALYTICS_HOST`     | Only for self-hosting; blank uses the vendor's cloud        |
 
-To add or change one, go to **Settings → Secrets and variables → Actions** on
-the repository, set the values, then re-run the deploy workflow. Nothing in the
-source needs to change to switch providers.
+To add or change one, go to the project's **Settings → Environment Variables**
+on Vercel, set the values, then redeploy. Nothing in the source needs to change
+to switch providers.
 
 ### Setting up Umami (free tier)
 
 1. Create an account at [cloud.umami.is](https://cloud.umami.is) and add
    `starforgerobotics.com` as a website.
 2. Copy the **Website ID** it gives you (a UUID).
-3. Add repository secrets `PUBLIC_ANALYTICS_PROVIDER=umami` and
+3. Add Vercel environment variables `PUBLIC_ANALYTICS_PROVIDER=umami` and
    `PUBLIC_ANALYTICS_SITE_ID=<the UUID>`.
-4. Re-run the deploy workflow, then load the site and check the Umami dashboard.
+4. Redeploy, then load the site and check the Umami dashboard.
 
 ### Notes
 
@@ -82,3 +83,14 @@ source needs to change to switch providers.
 - Both ignore `localhost` by default, so `npm run preview` will not register.
 - Ad blockers block these endpoints, so expect real numbers to run somewhat
   below reality. Every provider has this problem; it is not a misconfiguration.
+
+## Partner agreement e-signing
+
+The Buildo Creators page (`/buildo-creators`) leads with the signing form:
+company name, signer details, and a drawn signature, filled into the two
+legal templates under `src/lib/server/partner-agreement/templates/` and
+emailed as completed PDFs via [Resend](https://resend.com). See
+`.env.example` for the required `RESEND_API_KEY` and `PARTNER_NOTIFY_EMAIL`
+variables (set as Vercel environment variables, not committed). The company's
+own signature blocks are left blank for StarForge to countersign after
+review. The API route runs on Vercel's Edge runtime.
