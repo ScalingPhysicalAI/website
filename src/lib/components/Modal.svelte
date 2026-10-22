@@ -1,14 +1,16 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	let {
 		open = $bindable(false),
 		title,
-		src,
-		onClose
+		onClose,
+		children
 	}: {
 		open?: boolean;
 		title: string;
-		src: string;
 		onClose?: () => void;
+		children: Snippet;
 	} = $props();
 
 	let dialogEl: HTMLDivElement | undefined = $state();
@@ -43,39 +45,33 @@
 <svelte:window onkeydown={open ? onKeydown : undefined} />
 
 {#if open}
-	<div class="doc-modal-backdrop" onclick={onBackdropClick} role="presentation">
+	<div class="modal-backdrop" onclick={onBackdropClick} role="presentation">
 		<div
-			class="doc-modal"
+			class="modal"
 			bind:this={dialogEl}
 			role="dialog"
 			aria-modal="true"
 			aria-label={title}
 			tabindex="-1"
 		>
-			<div class="doc-modal-bar">
-				<span class="doc-modal-handle" aria-hidden="true"></span>
-				<div class="doc-modal-head">
-					<span class="doc-modal-title">{title}</span>
-					<div class="doc-modal-actions">
-						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-						<a href={src} target="_blank" rel="noopener noreferrer" class="doc-modal-open"
-							>Open in new tab ↗</a
-						>
-						<button type="button" class="doc-modal-close" onclick={close} aria-label="Close">
-							&times;
-						</button>
-					</div>
+			<div class="modal-bar">
+				<span class="modal-handle" aria-hidden="true"></span>
+				<div class="modal-head">
+					<span class="modal-title">{title}</span>
+					<button type="button" class="modal-close" onclick={close} aria-label="Close">
+						&times;
+					</button>
 				</div>
 			</div>
-			<div class="doc-modal-body">
-				<iframe title={`${title} preview`} src={`${src}#view=FitH`}></iframe>
+			<div class="modal-body">
+				{@render children()}
 			</div>
 		</div>
 	</div>
 {/if}
 
 <style>
-	.doc-modal-backdrop {
+	.modal-backdrop {
 		position: fixed;
 		inset: 0;
 		z-index: 200;
@@ -85,10 +81,10 @@
 		padding: 32px;
 		background: rgba(20, 18, 16, 0.55);
 		backdrop-filter: blur(2px);
-		animation: docFade 0.18s ease;
+		animation: modalFade 0.18s ease;
 	}
 
-	.doc-modal {
+	.modal {
 		display: flex;
 		flex-direction: column;
 		width: min(820px, 100%);
@@ -97,19 +93,19 @@
 		border: 2px solid var(--border-strong, rgba(20, 18, 16, 0.25));
 		box-shadow: 0 32px 64px -24px rgba(20, 18, 16, 0.45);
 		outline: none;
-		animation: docPop 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+		animation: modalPop 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
-	.doc-modal-handle {
+	.modal-handle {
 		display: none;
 	}
 
-	.doc-modal-bar {
+	.modal-bar {
 		flex-shrink: 0;
 		border-bottom: 2px solid var(--border, rgba(20, 18, 16, 0.13));
 	}
 
-	.doc-modal-head {
+	.modal-head {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -117,36 +113,14 @@
 		padding: 18px 20px;
 	}
 
-	.doc-modal-title {
+	.modal-title {
 		font-family: 'Bebas Neue', sans-serif;
 		font-size: 22px;
 		letter-spacing: 0.03em;
 		color: var(--ink, #141210);
 	}
 
-	.doc-modal-actions {
-		display: flex;
-		align-items: center;
-		gap: 16px;
-	}
-
-	.doc-modal-open {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: 10px;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		color: var(--accent, #7a5e0f);
-		text-decoration: none;
-		white-space: nowrap;
-		border-bottom: 1px solid currentColor;
-	}
-
-	.doc-modal-open:hover {
-		color: var(--accent-strong, #5c460b);
-	}
-
-	.doc-modal-close {
+	.modal-close {
 		display: grid;
 		place-items: center;
 		width: 32px;
@@ -163,25 +137,18 @@
 			color 0.2s ease;
 	}
 
-	.doc-modal-close:hover {
+	.modal-close:hover {
 		border-color: var(--accent, #7a5e0f);
 		color: var(--accent, #7a5e0f);
 	}
 
-	.doc-modal-body {
+	.modal-body {
 		flex: 1;
 		min-height: 0;
-		background: #525659;
+		overflow-y: auto;
 	}
 
-	.doc-modal-body iframe {
-		display: block;
-		width: 100%;
-		height: 100%;
-		border: 0;
-	}
-
-	@keyframes docFade {
+	@keyframes modalFade {
 		from {
 			opacity: 0;
 		}
@@ -190,7 +157,7 @@
 		}
 	}
 
-	@keyframes docPop {
+	@keyframes modalPop {
 		from {
 			opacity: 0;
 			transform: scale(0.97) translateY(6px);
@@ -205,22 +172,22 @@
 	   width, anchored to the bottom edge, with a drag-handle affordance - the
 	   pattern users already expect on a phone instead of a floating card. */
 	@media (max-width: 640px) {
-		.doc-modal-backdrop {
+		.modal-backdrop {
 			align-items: flex-end;
 			padding: 0;
 		}
 
-		.doc-modal {
+		.modal {
 			width: 100%;
 			height: 88vh;
 			border-left: none;
 			border-right: none;
 			border-bottom: none;
 			border-radius: 18px 18px 0 0;
-			animation: docSheetUp 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+			animation: modalSheetUp 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 
-		.doc-modal-handle {
+		.modal-handle {
 			display: block;
 			width: 40px;
 			height: 4px;
@@ -229,15 +196,15 @@
 			background: var(--border-strong, rgba(20, 18, 16, 0.25));
 		}
 
-		.doc-modal-head {
+		.modal-head {
 			padding: 12px 16px 14px;
 		}
 
-		.doc-modal-title {
+		.modal-title {
 			font-size: 19px;
 		}
 
-		@keyframes docSheetUp {
+		@keyframes modalSheetUp {
 			from {
 				transform: translateY(100%);
 			}

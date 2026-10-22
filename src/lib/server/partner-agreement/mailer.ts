@@ -22,6 +22,7 @@ export async function sendPartnerPackage(pkg: PartnerPackage) {
 	const { error } = await resend.emails.send({
 		from: RESEND_FROM || 'Buildo Creators <onboarding@resend.dev>',
 		to: PARTNER_NOTIFY_EMAIL,
+		cc: pkg.signerEmail,
 		replyTo: pkg.signerEmail,
 		subject: `Buildo Creators partner signed: ${pkg.companyName}`,
 		text: [

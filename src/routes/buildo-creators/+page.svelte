@@ -2,13 +2,12 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
-	import DocumentModal from '$lib/components/DocumentModal.svelte';
+	import Modal from '$lib/components/Modal.svelte';
 
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.12 });
 	});
 
-	const signupHref = '#sign';
 	const appStoreHref = 'https://portal.starforgerobotics.com';
 
 	// ── Partner agreement + LOI preview ──
@@ -30,6 +29,9 @@
 		activeDoc = key;
 		docModalOpen = true;
 	}
+
+	// ── Sign-up modal (opened from the hero CTA, or the document buttons' "Sign" entry point) ──
+	let signModalOpen = $state(false);
 
 	// ── Sign-and-send partner form ──
 	let companyName = $state('');
@@ -332,124 +334,144 @@
 				No code required.
 			</p>
 			<div class="bc-ctas">
-				<a class="btn-primary" href={signupHref}>Start building</a>
+				<button type="button" class="btn-primary" onclick={() => (signModalOpen = true)}
+					>Start building</button
+				>
 				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 				<a class="btn-ghost" href="#how-it-works">How it works</a>
 			</div>
 			<p class="bc-hero-note">Buildo Creators for iOS &amp; Android · Coming soon</p>
 		</div>
 
-		<div class="bc-sign" id="sign">
-			<div class="bc-sign-top">
-				<span class="section-label">Buildo Creators · Partnership</span>
-				<h2 class="bc-sign-title">Sign &amp;<br /><span>become a partner</span></h2>
-				<p class="bc-sign-sub">
-					Sign the Robotics Skill Data Collection and Revenue Sharing Agreement and the Strategic
-					Deployment Partner LOI below. We'll countersign and follow up by email once our team has
-					reviewed your submission.
-				</p>
-				<div class="bc-sign-docs">
-					<button type="button" class="bc-doc-link" onclick={() => openDoc('agreement')}>
-						<span>Revenue Sharing Agreement</span><span class="bc-doc-arrow">Read ↗</span>
-					</button>
-					<button type="button" class="bc-doc-link" onclick={() => openDoc('loi')}>
-						<span>Deployment Partner LOI</span><span class="bc-doc-arrow">Read ↗</span>
-					</button>
-				</div>
+		<div class="bc-sign">
+			<span class="section-label">Buildo Creators · Partnership</span>
+			<h2 class="bc-sign-title">Sign &amp;<br /><span>become a partner</span></h2>
+			<p class="bc-sign-sub">
+				Sign the Robotics Skill Data Collection and Revenue Sharing Agreement and the Strategic
+				Deployment Partner LOI. We'll countersign and follow up by email once our team has reviewed
+				your submission.
+			</p>
+			<div class="bc-sign-docs">
+				<button type="button" class="bc-doc-link" onclick={() => openDoc('agreement')}>
+					<span>Revenue Sharing Agreement</span><span class="bc-doc-arrow">Read ↗</span>
+				</button>
+				<button type="button" class="bc-doc-link" onclick={() => openDoc('loi')}>
+					<span>Deployment Partner LOI</span><span class="bc-doc-arrow">Read ↗</span>
+				</button>
 			</div>
-
-			{#if signStatus === 'success'}
-				<div class="bc-sign-success">
-					<div class="bc-sign-success-icon" aria-hidden="true">✓</div>
-					<div class="bc-sign-success-title">Signed and sent</div>
-					<p class="bc-sign-success-body">
-						Thanks, {signerName}. Your signed copies are on their way to our team. We'll be in touch
-						at {signerEmail} once StarForge has countersigned.
-					</p>
-				</div>
-			{:else}
-				<form class="bc-sign-form" onsubmit={handleSignupSubmit}>
-					<div class="bc-sign-field">
-						<label for="bc-company">Company / legal name</label>
-						<input
-							id="bc-company"
-							type="text"
-							bind:value={companyName}
-							autocomplete="organization"
-							required
-						/>
-					</div>
-					<div class="bc-sign-row">
-						<div class="bc-sign-field">
-							<label for="bc-signer-name">Your full name</label>
-							<input
-								id="bc-signer-name"
-								type="text"
-								bind:value={signerName}
-								autocomplete="name"
-								required
-							/>
-						</div>
-						<div class="bc-sign-field">
-							<label for="bc-signer-title">Your title</label>
-							<input
-								id="bc-signer-title"
-								type="text"
-								bind:value={signerTitle}
-								autocomplete="organization-title"
-								required
-							/>
-						</div>
-					</div>
-					<div class="bc-sign-field">
-						<label for="bc-signer-email">Email</label>
-						<input
-							id="bc-signer-email"
-							type="email"
-							bind:value={signerEmail}
-							autocomplete="email"
-							required
-						/>
-					</div>
-
-					<div class="bc-sign-field">
-						<span class="bc-sign-label">Signature</span>
-						<div class="bc-sign-pad">
-							<canvas
-								use:setupSignatureCanvas
-								onpointerdown={startSignature}
-								onpointermove={drawSignature}
-								onpointerup={stopSignature}
-								onpointerleave={stopSignature}
-								aria-label="Draw your signature"
-							></canvas>
-							{#if !hasSignature}
-								<span class="bc-sign-placeholder">Sign here</span>
-							{/if}
-						</div>
-						<button type="button" class="btn-ghost bc-sign-clear" onclick={clearSignature}
-							>Clear</button
-						>
-					</div>
-
-					{#if signStatus === 'error'}
-						<p class="bc-sign-error">{signError}</p>
-					{/if}
-
-					<button type="submit" class="btn-primary" disabled={!canSubmitSignup}>
-						{signStatus === 'submitting' ? 'Sending…' : 'Sign and send'}
-					</button>
-					<p class="bc-sign-note">
-						StarForge's own signature is left blank on both documents for us to countersign after
-						review.
-					</p>
-				</form>
-			{/if}
+			<button type="button" class="btn-primary bc-sign-cta" onclick={() => (signModalOpen = true)}
+				>Sign and send</button
+			>
+			<p class="bc-sign-note">
+				StarForge's own signature is left blank on both documents for us to countersign after
+				review.
+			</p>
 		</div>
 	</div>
 </header>
 
-<DocumentModal bind:open={docModalOpen} title={docs[activeDoc].title} src={docs[activeDoc].src} />
+<Modal bind:open={docModalOpen} title={docs[activeDoc].title}>
+	<div class="doc-modal-pane">
+		<div class="doc-modal-toolbar">
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+			<a href={docs[activeDoc].src} target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+		</div>
+		<iframe title={`${docs[activeDoc].title} preview`} src={`${docs[activeDoc].src}#view=FitH`}
+		></iframe>
+	</div>
+</Modal>
+
+<Modal bind:open={signModalOpen} title="Sign & become a partner">
+	<div class="bc-sign-modal-body">
+		{#if signStatus === 'success'}
+			<div class="bc-sign-success">
+				<div class="bc-sign-success-icon" aria-hidden="true">✓</div>
+				<div class="bc-sign-success-title">Signed and sent</div>
+				<p class="bc-sign-success-body">
+					Thanks, {signerName}. Your signed copies are on their way to our team. We'll be in touch
+					at {signerEmail} once StarForge has countersigned.
+				</p>
+			</div>
+		{:else}
+			<form class="bc-sign-form" onsubmit={handleSignupSubmit}>
+				<div class="bc-sign-field">
+					<label for="bc-company">Company / legal name</label>
+					<input
+						id="bc-company"
+						type="text"
+						bind:value={companyName}
+						autocomplete="organization"
+						required
+					/>
+				</div>
+				<div class="bc-sign-row">
+					<div class="bc-sign-field">
+						<label for="bc-signer-name">Your full name</label>
+						<input
+							id="bc-signer-name"
+							type="text"
+							bind:value={signerName}
+							autocomplete="name"
+							required
+						/>
+					</div>
+					<div class="bc-sign-field">
+						<label for="bc-signer-title">Your title</label>
+						<input
+							id="bc-signer-title"
+							type="text"
+							bind:value={signerTitle}
+							autocomplete="organization-title"
+							required
+						/>
+					</div>
+				</div>
+				<div class="bc-sign-field">
+					<label for="bc-signer-email">Email</label>
+					<input
+						id="bc-signer-email"
+						type="email"
+						bind:value={signerEmail}
+						autocomplete="email"
+						required
+					/>
+				</div>
+
+				<div class="bc-sign-field">
+					<span class="bc-sign-label">Signature</span>
+					<div class="bc-sign-pad">
+						<canvas
+							use:setupSignatureCanvas
+							onpointerdown={startSignature}
+							onpointermove={drawSignature}
+							onpointerup={stopSignature}
+							onpointerleave={stopSignature}
+							aria-label="Draw your signature"
+						></canvas>
+						{#if !hasSignature}
+							<span class="bc-sign-placeholder">Sign here</span>
+						{/if}
+					</div>
+					<button type="button" class="btn-ghost bc-sign-clear" onclick={clearSignature}
+						>Clear</button
+					>
+				</div>
+
+				{#if signStatus === 'error'}
+					<p class="bc-sign-error">{signError}</p>
+				{/if}
+
+				<button type="submit" class="btn-primary" disabled={!canSubmitSignup}>
+					{signStatus === 'submitting' ? 'Sending…' : 'Sign and send'}
+				</button>
+				<p class="bc-sign-note">
+					StarForge's own signature is left blank on both documents for us to countersign after
+					review.
+				</p>
+			</form>
+		{/if}
+	</div>
+</Modal>
 
 <section class="bd-section">
 	<div class="bd-split">
@@ -692,7 +714,9 @@
 			one of the first Creators to ship an app to the Buildo App Store.
 		</p>
 		<div class="bc-ctas" style="margin-top:36px;">
-			<a class="btn-primary" href={signupHref}>Get early access</a>
+			<button type="button" class="btn-primary" onclick={() => (signModalOpen = true)}
+				>Get early access</button
+			>
 		</div>
 		<div class="bc-badges">
 			{#each downloads as d (d.store)}
@@ -811,11 +835,8 @@
 		color: var(--text-muted);
 	}
 
-	/* ── SIGN-UP CARD (hero) ── */
+	/* ── SIGN-UP TEASER CARD (hero) ── */
 	.bc-sign {
-		display: flex;
-		flex-direction: column;
-		gap: 28px;
 		padding: 36px;
 		border: 2px solid var(--border);
 		background: rgba(255, 255, 255, 0.72);
@@ -883,12 +904,59 @@
 		white-space: nowrap;
 	}
 
+	.bc-sign-cta {
+		margin-top: 24px;
+		align-self: flex-start;
+	}
+
+	/* ── DOCUMENT MODAL CONTENT ── */
+	.doc-modal-pane {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.doc-modal-toolbar {
+		display: flex;
+		justify-content: flex-end;
+		flex-shrink: 0;
+		padding: 10px 16px;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.doc-modal-toolbar a {
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: 10px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--accent);
+		text-decoration: none;
+		border-bottom: 1px solid currentColor;
+	}
+
+	.doc-modal-toolbar a:hover {
+		color: var(--accent-strong);
+	}
+
+	.doc-modal-pane iframe {
+		display: block;
+		flex: 1;
+		min-height: 0;
+		width: 100%;
+		border: 0;
+		background: #525659;
+	}
+
+	/* ── SIGN-UP MODAL CONTENT ── */
+	.bc-sign-modal-body {
+		padding: 28px;
+	}
+
 	.bc-sign-form {
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
-		padding-top: 28px;
-		border-top: 1px solid var(--border);
 	}
 
 	.bc-sign-row {
@@ -969,14 +1037,10 @@
 	}
 
 	.bc-sign-note {
+		margin-top: 16px;
 		font-size: 12px;
 		color: var(--text-muted);
 		line-height: 1.6;
-	}
-
-	.bc-sign-success {
-		padding-top: 28px;
-		border-top: 1px solid var(--border);
 	}
 
 	.bc-sign-success-icon {
