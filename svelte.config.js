@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-vercel';
 import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -10,7 +10,7 @@ const config = {
 		runes: ({ filename }) => (filename.split(/[/\\]/).includes('node_modules') ? undefined : true)
 	},
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({ runtime: 'edge' }),
 		prerender: {
 			handleHttpError: 'warn'
 		}

@@ -2,13 +2,146 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { setupRevealObserver } from '$lib/utils/reveal';
+	import Modal from '$lib/components/Modal.svelte';
 
 	onMount(() => {
 		return setupRevealObserver({ threshold: 0.12 });
 	});
 
-	const signupHref = 'mailto:contact@starforgerobotics.com?subject=Become%20a%20Buildo%20Creator';
 	const appStoreHref = 'https://portal.starforgerobotics.com';
+
+	// ── Partner agreement + LOI preview ──
+	const docs = {
+		agreement: {
+			title: 'Revenue Sharing Agreement',
+			src: '/documents/buildo-creators-partner-agreement.pdf'
+		},
+		loi: {
+			title: 'Deployment Partner LOI',
+			src: '/documents/buildo-creators-partner-loi.pdf'
+		}
+	} satisfies Record<string, { title: string; src: string }>;
+
+	let docModalOpen = $state(false);
+	let activeDoc = $state<keyof typeof docs>('agreement');
+
+	function openDoc(key: keyof typeof docs) {
+		activeDoc = key;
+		docModalOpen = true;
+	}
+
+	// ── Sign-up modal (opened from the hero CTA, or the document buttons' "Sign" entry point) ──
+	let signModalOpen = $state(false);
+
+	// ── Sign-and-send partner form ──
+	let companyName = $state('');
+	let signerName = $state('');
+	let signerTitle = $state('');
+	let signerEmail = $state('');
+
+	let signCanvas: HTMLCanvasElement;
+	let signCtx: CanvasRenderingContext2D | null = null;
+	let hasSignature = $state(false);
+	let drawingSignature = false;
+
+	let signStatus = $state<'idle' | 'submitting' | 'success' | 'error'>('idle');
+	let signError = $state('');
+
+	function setupSignatureCanvas(node: HTMLCanvasElement) {
+		signCanvas = node;
+		const context = node.getContext('2d');
+		if (!context) return;
+		signCtx = context;
+		const resize = () => {
+			const rect = node.getBoundingClientRect();
+			const ratio = window.devicePixelRatio || 1;
+			const prev = hasSignature ? node.toDataURL('image/png') : null;
+			node.width = rect.width * ratio;
+			node.height = rect.height * ratio;
+			context.scale(ratio, ratio);
+			context.lineWidth = 2;
+			context.lineCap = 'round';
+			context.strokeStyle = '#141210';
+			if (prev) {
+				const img = new Image();
+				img.onload = () => context.drawImage(img, 0, 0, rect.width, rect.height);
+				img.src = prev;
+			}
+		};
+		resize();
+		window.addEventListener('resize', resize);
+		return {
+			destroy() {
+				window.removeEventListener('resize', resize);
+			}
+		};
+	}
+
+	function signaturePointerPos(e: PointerEvent) {
+		const rect = signCanvas.getBoundingClientRect();
+		return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+	}
+
+	function startSignature(e: PointerEvent) {
+		if (!signCtx) return;
+		drawingSignature = true;
+		hasSignature = true;
+		const { x, y } = signaturePointerPos(e);
+		signCtx.beginPath();
+		signCtx.moveTo(x, y);
+	}
+
+	function drawSignature(e: PointerEvent) {
+		if (!drawingSignature || !signCtx) return;
+		const { x, y } = signaturePointerPos(e);
+		signCtx.lineTo(x, y);
+		signCtx.stroke();
+	}
+
+	function stopSignature() {
+		drawingSignature = false;
+	}
+
+	function clearSignature() {
+		if (!signCtx || !signCanvas) return;
+		signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height);
+		hasSignature = false;
+	}
+
+	const canSubmitSignup = $derived(
+		companyName.trim() &&
+			signerName.trim() &&
+			signerTitle.trim() &&
+			signerEmail.trim() &&
+			hasSignature &&
+			signStatus !== 'submitting'
+	);
+
+	async function handleSignupSubmit(e: SubmitEvent) {
+		e.preventDefault();
+		if (!canSubmitSignup || !signCanvas) return;
+		signStatus = 'submitting';
+		signError = '';
+		try {
+			const res = await fetch('/api/partner-agreement', {
+				method: 'POST',
+				headers: { 'content-type': 'application/json' },
+				body: JSON.stringify({
+					companyName: companyName.trim(),
+					signerName: signerName.trim(),
+					signerTitle: signerTitle.trim(),
+					email: signerEmail.trim(),
+					signatureDataUrl: signCanvas.toDataURL('image/png')
+				})
+			});
+			const result = await res.json();
+			if (!res.ok) throw new Error(result.error || 'Submission failed.');
+			signStatus = 'success';
+		} catch (err) {
+			signStatus = 'error';
+			signError = err instanceof Error ? err.message : 'Submission failed.';
+		}
+	}
 
 	// Store listings aren't public yet. Drop the URLs in here when they are and
 	// the badges turn into links; until then they read as "coming soon".
@@ -16,14 +149,6 @@
 		{ store: 'App Store', label: 'Download on the', href: null },
 		{ store: 'Google Play', label: 'Get it on', href: null }
 	];
-
-	// The example listing in the hero. Illustrative only: it shows what a
-	// Creator's app looks like on the store, not a real app.
-	const sampleApp = {
-		name: 'Home Helper',
-		category: 'Home',
-		skills: ['Load the dishwasher', 'Fold laundry', 'Water plants', 'Tidy the living room']
-	};
 
 	const steps = [
 		{
@@ -209,44 +334,144 @@
 				No code required.
 			</p>
 			<div class="bc-ctas">
-				<a class="btn-primary" href={signupHref}>Start building</a>
+				<button type="button" class="btn-primary" onclick={() => (signModalOpen = true)}
+					>Start building</button
+				>
 				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 				<a class="btn-ghost" href="#how-it-works">How it works</a>
 			</div>
 			<p class="bc-hero-note">Buildo Creators for iOS &amp; Android · Coming soon</p>
 		</div>
 
-		<div class="bc-hero-visual" aria-hidden="true">
-			<div class="bc-listing">
-				<div class="bc-listing-head">
-					<span class="bc-listing-icon">{sampleApp.name.charAt(0)}</span>
-					<div class="bc-listing-meta">
-						<span class="bc-listing-name">{sampleApp.name}</span>
-						<span class="bc-listing-by">by You · {sampleApp.category}</span>
-					</div>
-				</div>
-				<span class="bc-listing-label">Skills</span>
-				<ul class="bc-listing-skills">
-					{#each sampleApp.skills as skill (skill)}
-						<li>{skill}</li>
-					{/each}
-				</ul>
-				<div class="bc-listing-foot">
-					<span class="bc-listing-status">Live · Certified</span>
-					<span>Buildo App Store</span>
-				</div>
+		<div class="bc-sign">
+			<span class="section-label">Buildo Creators · Partnership</span>
+			<h2 class="bc-sign-title">Sign &amp;<br /><span>become a partner</span></h2>
+			<p class="bc-sign-sub">
+				Sign the Robotics Skill Data Collection and Revenue Sharing Agreement and the Strategic
+				Deployment Partner LOI. We'll countersign and follow up by email once our team has reviewed
+				your submission.
+			</p>
+			<div class="bc-sign-docs">
+				<button type="button" class="bc-doc-link" onclick={() => openDoc('agreement')}>
+					<span>Revenue Sharing Agreement</span><span class="bc-doc-arrow">Read ↗</span>
+				</button>
+				<button type="button" class="bc-doc-link" onclick={() => openDoc('loi')}>
+					<span>Deployment Partner LOI</span><span class="bc-doc-arrow">Read ↗</span>
+				</button>
 			</div>
-			<div class="bc-hero-arrow">
-				<span>runs on</span>
-				<i></i>
-			</div>
-			<figure class="bc-hero-fig bc-hero-robot">
-				<img src="/assets/buildo-product.webp" alt="" />
-				<figcaption>Buildo</figcaption>
-			</figure>
+			<button type="button" class="btn-primary bc-sign-cta" onclick={() => (signModalOpen = true)}
+				>Sign and send</button
+			>
+			<p class="bc-sign-note">
+				StarForge's own signature is left blank on both documents for us to countersign after
+				review.
+			</p>
 		</div>
 	</div>
 </header>
+
+<Modal bind:open={docModalOpen} title={docs[activeDoc].title}>
+	<div class="doc-modal-pane">
+		<div class="doc-modal-toolbar">
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+			<a href={docs[activeDoc].src} target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+		</div>
+		<iframe title={`${docs[activeDoc].title} preview`} src={`${docs[activeDoc].src}#view=FitH`}
+		></iframe>
+	</div>
+</Modal>
+
+<Modal bind:open={signModalOpen} title="Sign & become a partner">
+	<div class="bc-sign-modal-body">
+		{#if signStatus === 'success'}
+			<div class="bc-sign-success">
+				<div class="bc-sign-success-icon" aria-hidden="true">✓</div>
+				<div class="bc-sign-success-title">Signed and sent</div>
+				<p class="bc-sign-success-body">
+					Thanks, {signerName}. Your signed copies are on their way to our team. We'll be in touch
+					at {signerEmail} once StarForge has countersigned.
+				</p>
+			</div>
+		{:else}
+			<form class="bc-sign-form" onsubmit={handleSignupSubmit}>
+				<div class="bc-sign-field">
+					<label for="bc-company">Company / legal name</label>
+					<input
+						id="bc-company"
+						type="text"
+						bind:value={companyName}
+						autocomplete="organization"
+						required
+					/>
+				</div>
+				<div class="bc-sign-row">
+					<div class="bc-sign-field">
+						<label for="bc-signer-name">Your full name</label>
+						<input
+							id="bc-signer-name"
+							type="text"
+							bind:value={signerName}
+							autocomplete="name"
+							required
+						/>
+					</div>
+					<div class="bc-sign-field">
+						<label for="bc-signer-title">Your title</label>
+						<input
+							id="bc-signer-title"
+							type="text"
+							bind:value={signerTitle}
+							autocomplete="organization-title"
+							required
+						/>
+					</div>
+				</div>
+				<div class="bc-sign-field">
+					<label for="bc-signer-email">Email</label>
+					<input
+						id="bc-signer-email"
+						type="email"
+						bind:value={signerEmail}
+						autocomplete="email"
+						required
+					/>
+				</div>
+
+				<div class="bc-sign-field">
+					<span class="bc-sign-label">Signature</span>
+					<div class="bc-sign-pad">
+						<canvas
+							use:setupSignatureCanvas
+							onpointerdown={startSignature}
+							onpointermove={drawSignature}
+							onpointerup={stopSignature}
+							onpointerleave={stopSignature}
+							aria-label="Draw your signature"
+						></canvas>
+						{#if !hasSignature}
+							<span class="bc-sign-placeholder">Sign here</span>
+						{/if}
+					</div>
+					<button type="button" class="btn-ghost bc-sign-clear" onclick={clearSignature}
+						>Clear</button
+					>
+				</div>
+
+				{#if signStatus === 'error'}
+					<p class="bc-sign-error">{signError}</p>
+				{/if}
+
+				<button type="submit" class="btn-primary" disabled={!canSubmitSignup}>
+					{signStatus === 'submitting' ? 'Sending…' : 'Sign and send'}
+				</button>
+				<p class="bc-sign-note">
+					StarForge's own signature is left blank on both documents for us to countersign after
+					review.
+				</p>
+			</form>
+		{/if}
+	</div>
+</Modal>
 
 <section class="bd-section">
 	<div class="bd-split">
@@ -489,7 +714,9 @@
 			one of the first Creators to ship an app to the Buildo App Store.
 		</p>
 		<div class="bc-ctas" style="margin-top:36px;">
-			<a class="btn-primary" href={signupHref}>Get early access</a>
+			<button type="button" class="btn-primary" onclick={() => (signModalOpen = true)}
+				>Get early access</button
+			>
 		</div>
 		<div class="bc-badges">
 			{#each downloads as d (d.store)}
@@ -608,200 +835,238 @@
 		color: var(--text-muted);
 	}
 
-	.bc-hero-visual {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) auto auto;
-		align-items: center;
-		gap: 20px;
-		padding: 32px;
+	/* ── SIGN-UP TEASER CARD (hero) ── */
+	.bc-sign {
+		padding: 36px;
 		border: 2px solid var(--border);
-		background: rgba(255, 255, 255, 0.55);
+		background: rgba(255, 255, 255, 0.72);
+		box-shadow: 0 24px 60px -32px rgba(20, 18, 16, 0.4);
 		opacity: 0;
 		animation: fadeUp 1s 0.8s forwards;
 	}
 
-	/* A mock store listing: the point of the hero is "you ship an app", so it
-	   borrows the shape of an iOS/Android store card rather than a product shot. */
-	.bc-listing {
-		padding: 22px 22px 18px;
-		border: 2px solid var(--border-strong);
-		background: #fff;
-		box-shadow: 0 18px 40px -24px rgba(20, 18, 16, 0.35);
-	}
-
-	.bc-listing-head {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		align-items: center;
-		gap: 14px;
-		padding-bottom: 18px;
-		margin-bottom: 16px;
-		border-bottom: 1px solid var(--border);
-	}
-
-	.bc-listing-icon {
-		display: grid;
-		place-items: center;
-		width: 52px;
-		height: 52px;
-		border-radius: 12px;
-		background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
-		color: #fdfaf3;
+	.bc-sign-title {
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: 30px;
+		font-size: clamp(32px, 3.4vw, 44px);
 		line-height: 1;
-	}
-
-	.bc-listing-meta {
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-		min-width: 0;
-	}
-
-	.bc-listing-name,
-	.bc-listing-by {
-		white-space: nowrap;
-	}
-
-	.bc-listing-name {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: 26px;
-		letter-spacing: 0.04em;
-		line-height: 1;
+		letter-spacing: 0.02em;
 		color: var(--ink);
+		margin: 12px 0 14px;
 	}
 
-	.bc-listing-by,
-	.bc-listing-label,
-	.bc-listing-foot {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: 9px;
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: var(--text-muted);
-	}
-
-	.bc-listing-status {
-		display: inline-flex;
-		align-items: center;
-		gap: 6px;
+	.bc-sign-title span {
 		color: var(--accent);
 	}
 
-	.bc-listing-status::before {
-		content: '';
-		width: 6px;
-		height: 6px;
-		border-radius: 50%;
-		background: var(--accent);
-	}
-
-	.bc-listing-label {
-		display: block;
-		margin-bottom: 10px;
-	}
-
-	.bc-listing-skills {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		gap: 9px;
-		margin-bottom: 18px;
-	}
-
-	.bc-listing-skills li {
-		position: relative;
-		padding-left: 24px;
+	.bc-sign-sub {
 		font-size: 14px;
-		font-weight: 500;
-		color: var(--ink);
+		line-height: 1.7;
+		color: rgba(20, 18, 16, 0.82);
 	}
 
-	/* Drawn tick, so each skill reads as "recorded" without an icon font. */
-	.bc-listing-skills li::before {
-		content: '';
-		position: absolute;
-		left: 2px;
-		top: 3px;
-		width: 5px;
-		height: 10px;
-		border-right: 2px solid var(--accent);
-		border-bottom: 2px solid var(--accent);
-		transform: rotate(45deg);
-	}
-
-	.bc-listing-foot {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
-		gap: 6px 12px;
-		padding-top: 14px;
-		border-top: 1px solid var(--border);
-	}
-
-	.bc-hero-fig {
+	.bc-sign-docs {
 		display: flex;
 		flex-direction: column;
+		gap: 2px;
+		margin-top: 20px;
+		border: 1px solid var(--border);
+	}
+
+	.bc-doc-link {
+		display: flex;
 		align-items: center;
-		gap: 10px;
-		margin: 0;
+		justify-content: space-between;
+		gap: 12px;
+		padding: 13px 16px;
+		font-family: 'Barlow', sans-serif;
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--ink);
+		background: rgba(20, 18, 16, 0.022);
+		border: none;
+		text-align: left;
+		cursor: pointer;
+		transition: background 0.2s ease;
 	}
 
-	.bc-hero-fig img {
-		display: block;
-		width: 100%;
-		max-height: 130px;
-		object-fit: contain;
+	.bc-doc-link:hover,
+	.bc-doc-link:focus-visible {
+		background: rgba(122, 94, 15, 0.1);
 	}
 
-	.bc-hero-robot img {
-		width: 120px;
-		max-height: none;
-	}
-
-	.bc-hero-fig figcaption {
+	.bc-doc-arrow {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
 		font-size: 10px;
-		letter-spacing: 0.18em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--accent);
+		white-space: nowrap;
 	}
 
-	.bc-hero-arrow {
+	.bc-sign-cta {
+		margin-top: 24px;
+		align-self: flex-start;
+	}
+
+	/* ── DOCUMENT MODAL CONTENT ── */
+	.doc-modal-pane {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		gap: 10px;
+		height: 100%;
+	}
+
+	.doc-modal-toolbar {
+		display: flex;
+		justify-content: flex-end;
+		flex-shrink: 0;
+		padding: 10px 16px;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.doc-modal-toolbar a {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: 9px;
+		font-size: 10px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--accent);
+		text-decoration: none;
+		border-bottom: 1px solid currentColor;
+	}
+
+	.doc-modal-toolbar a:hover {
+		color: var(--accent-strong);
+	}
+
+	.doc-modal-pane iframe {
+		display: block;
+		flex: 1;
+		min-height: 0;
+		width: 100%;
+		border: 0;
+		background: #525659;
+	}
+
+	/* ── SIGN-UP MODAL CONTENT ── */
+	.bc-sign-modal-body {
+		padding: 28px;
+	}
+
+	.bc-sign-form {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.bc-sign-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+	.bc-sign-field {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.bc-sign-field label,
+	.bc-sign-label {
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: 10px;
 		letter-spacing: 0.2em;
 		text-transform: uppercase;
 		color: var(--text-muted);
 	}
 
-	.bc-hero-arrow i {
-		position: relative;
-		display: block;
-		width: 56px;
-		height: 1px;
-		background: var(--accent);
+	.bc-sign-field input {
+		font-family: 'Barlow', sans-serif;
+		font-size: 15px;
+		font-weight: 500;
+		color: var(--ink);
+		background: var(--bg);
+		border: 2px solid var(--border);
+		padding: 12px 14px;
 	}
 
-	.bc-hero-arrow i::after {
-		content: '';
+	.bc-sign-field input:focus {
+		outline: none;
+		border-color: var(--accent);
+	}
+
+	.bc-sign-pad {
+		position: relative;
+		border: 2px solid var(--border-strong);
+		background: var(--bg);
+		height: 140px;
+		touch-action: none;
+	}
+
+	.bc-sign-pad canvas {
+		width: 100%;
+		height: 100%;
+		display: block;
+		cursor: crosshair;
+	}
+
+	.bc-sign-placeholder {
 		position: absolute;
-		right: 0;
-		top: -4px;
-		width: 8px;
-		height: 8px;
-		border-top: 1px solid var(--accent);
-		border-right: 1px solid var(--accent);
-		transform: rotate(45deg);
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'Space Mono', monospace;
+		font-size: 12px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+		pointer-events: none;
+	}
+
+	.bc-sign-clear {
+		align-self: flex-start;
+		padding: 8px 16px;
+	}
+
+	.bc-sign-error {
+		font-family: 'Space Mono', monospace;
+		font-size: 12px;
+		color: #b3261e;
+	}
+
+	.bc-sign-note {
+		margin-top: 16px;
+		font-size: 12px;
+		color: var(--text-muted);
+		line-height: 1.6;
+	}
+
+	.bc-sign-success-icon {
+		display: grid;
+		place-items: center;
+		width: 44px;
+		height: 44px;
+		margin-bottom: 16px;
+		border-radius: 50%;
+		background: var(--accent);
+		color: #fdfaf3;
+		font-size: 20px;
+	}
+
+	.bc-sign-success-title {
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: 28px;
+		letter-spacing: 0.04em;
+		color: var(--ink);
+		margin-bottom: 12px;
+	}
+
+	.bc-sign-success-body {
+		font-size: 14px;
+		line-height: 1.7;
+		color: rgba(20, 18, 16, 0.82);
 	}
 
 	.bc-ctas {
@@ -1460,26 +1725,14 @@
 			grid-template-columns: 1fr;
 		}
 
-		/* Too narrow for card and robot side by side, so the flow turns
-		   vertical: listing, then "runs on", then the robot. */
-		.bc-hero-visual {
+		.bc-sign {
+			padding: 24px 18px;
+			gap: 20px;
+		}
+
+		.bc-sign-row {
 			grid-template-columns: 1fr;
-			padding: 20px 16px;
-			gap: 16px;
-		}
-
-		.bc-hero-arrow {
-			flex-direction: row;
-			justify-content: center;
-		}
-
-		.bc-hero-arrow i {
-			width: 32px;
-			transform: rotate(90deg);
-		}
-
-		.bc-hero-robot img {
-			width: 90px;
+			gap: 20px;
 		}
 
 		.bc-marker {
