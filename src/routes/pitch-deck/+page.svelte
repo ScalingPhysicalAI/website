@@ -334,24 +334,24 @@
 			<h2 class="headline anim-in anim-d2">
 				Humanoid robots are the <span class="hl-gold">next frontier</span>
 			</h2>
-			<div class="frontier-pyramid anim-in anim-d3">
-				<div class="tier tier-1">
-					<span class="tier-num">01</span>
-					<span class="tier-title">Autonomous Factories</span>
+			<div class="frontier-grid anim-in anim-d3">
+				<div class="frontier-card">
+					<span class="card-num">01</span>
+					<span class="card-title">Autonomous Factories</span>
 				</div>
-				<div class="tier tier-2">
-					<span class="tier-num">02</span>
-					<span class="tier-title">Build new Cities</span>
+				<div class="frontier-card">
+					<span class="card-num">02</span>
+					<span class="card-title">Build new Cities</span>
 				</div>
-				<div class="tier tier-3">
-					<span class="tier-num">03</span>
-					<span class="tier-title">Labour meaning redefined</span>
+				<div class="frontier-card">
+					<span class="card-num">03</span>
+					<span class="card-title">Labour meaning redefined</span>
 				</div>
 			</div>
 			<p class="statement anim-in anim-d3">
 				Moving atoms is the <span class="hl-gold">biggest constraint</span> for civilisation level
 				progress,<br />
-				<strong>Humanoid solves it</strong>
+				<strong>Humanoids solve it</strong>
 			</p>
 		</section>
 
@@ -386,7 +386,7 @@
 		<!-- 5 · HOW OTHERS SOLVE IT -->
 		<section class="slide" id="p5">
 			<h2 class="headline anim-in anim-d2">
-				How others are <span class="hl-gold">solving it</span>?
+				How are frontier labs <span class="hl-gold">solving it</span>?
 			</h2>
 			<div class="split anim-in anim-d3">
 				<div>
@@ -582,6 +582,13 @@
 					allowfullscreen
 				></iframe>
 			</div>
+			<div class="video-link anim-in anim-d3">
+				<a
+					href="https://www.youtube.com/watch?v=o9j_a-makyA"
+					target="_blank"
+					rel="noopener noreferrer">Watch the demo on YouTube</a
+				>
+			</div>
 		</section>
 
 		<!-- 10 · TEAM -->
@@ -674,8 +681,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="advisor-label anim-in anim-d3">Research advisor</div>
-			<div class="advisor-grid anim-in anim-d3">
+			<div class="advisor-label advisor-label-center anim-in anim-d3">Research advisor</div>
+			<div class="advisor-grid advisor-grid-center anim-in anim-d3">
 				<div class="team-card">
 					<img class="team-photo" src="/assets/team/rohan.jpg" alt="" />
 					<div class="team-name">
@@ -1365,64 +1372,21 @@
 	}
 
 	/* ── FRONTIER ── */
-	/* Each tier's bottom inset is 13.33% of the full pyramid width, rescaled to
-	   that tier's own width, so the three slanted edges line up into one. */
-	.frontier-pyramid {
+	.frontier-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 3px;
+		margin-top: clamp(20px, 5vh, 48px);
+	}
+
+	.frontier-card {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		gap: clamp(4px, 0.8vh, 8px);
-		width: min(100%, 1100px);
-		margin: clamp(18px, 4.4vh, 44px) auto 0;
-	}
-
-	.tier {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: clamp(10px, 1.4vw, 18px);
-		height: clamp(62px, 12vh, 116px);
-		text-align: center;
-	}
-
-	.tier-1 {
-		width: 100%;
-		clip-path: polygon(0 0, 100% 0, 86.667% 100%, 13.333% 100%);
-		background: #141210;
-		color: #f1efeb;
-	}
-
-	.tier-2 {
-		width: 73.333%;
-		clip-path: polygon(0 0, 100% 0, 81.818% 100%, 18.182% 100%);
-		background: #7a5e0f;
-		color: #f1efeb;
-	}
-
-	.tier-3 {
-		width: 46.667%;
-		clip-path: polygon(0 0, 100% 0, 71.429% 100%, 28.571% 100%);
-		background: #ddd5c2;
-		color: #141210;
-	}
-
-	.tier-num {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(9px, 1.6vmin, 13px);
-		letter-spacing: 0.18em;
-		opacity: 0.7;
-	}
-
-	.tier-title {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(20px, 4.4vmin, 44px);
-		line-height: 1;
-		letter-spacing: 0.02em;
-	}
-
-	.tier-3 .tier-title {
-		font-size: clamp(16px, 3.2vmin, 32px);
+		gap: clamp(8px, 2vh, 18px);
+		padding: clamp(18px, 4.4vh, 40px) clamp(16px, 2.2vw, 30px);
+		background: rgba(20, 18, 16, 0.044);
+		border: 2px solid rgba(20, 18, 16, 0.05);
+		border-top: 2px solid #7a5e0f;
 	}
 
 	.statement {
@@ -1603,7 +1567,7 @@
 	}
 
 	.video-frame {
-		width: min(100%, calc((min(100vh, 100vw * 9 / 16) - 170px) * 16 / 9));
+		width: min(100%, calc((min(100vh, 100vw * 9 / 16) - 260px) * 16 / 9));
 		aspect-ratio: 16 / 9;
 		background: #141210;
 	}
@@ -1613,6 +1577,25 @@
 		width: 100%;
 		height: 100%;
 		border: 0;
+	}
+
+	.video-link {
+		margin-top: clamp(10px, 2vh, 20px);
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(10.5px, 1.95vmin, 14px);
+		letter-spacing: 0.08em;
+	}
+
+	.video-link a {
+		color: #7a5e0f;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-color: rgba(20, 18, 16, 0.82);
+	}
+
+	.video-link a:hover {
+		text-decoration-color: #7a5e0f;
 	}
 
 	/* ── TEAM ── */
@@ -1629,7 +1612,13 @@
 		margin-top: clamp(8px, 2vh, 20px);
 	}
 
+	.team-group {
+		display: flex;
+		flex-direction: column;
+	}
+
 	.team-group .team-grid {
+		flex: 1;
 		margin-top: clamp(5px, 1.1vh, 12px);
 	}
 
@@ -1667,6 +1656,16 @@
 		grid-template-columns: minmax(0, 0.5fr);
 		gap: 3px;
 		margin-top: clamp(5px, 1.1vh, 12px);
+	}
+
+	.advisor-label-center {
+		width: 100%;
+		text-align: center;
+	}
+
+	.advisor-grid-center {
+		width: 100%;
+		justify-content: center;
 	}
 
 	.advisor-grid .team-card {
@@ -1840,7 +1839,7 @@
 	.ledger-row dd {
 		margin: 0;
 		font-family: 'Space Mono', monospace;
-		font-weight: 700;
+		font-weight: 400;
 		font-size: clamp(15px, 3vmin, 26px);
 		letter-spacing: 0.02em;
 		color: #141210;
@@ -2063,22 +2062,6 @@
 			width: 100%;
 		}
 
-		/* A true taper leaves the bottom tier too narrow for its label at phone
-		   widths, so the tiers step in as plain bars instead. */
-		.tier {
-			height: auto;
-			padding: 14px 16px;
-			clip-path: none;
-		}
-
-		.tier-2 {
-			width: 88%;
-		}
-
-		.tier-3 {
-			width: 76%;
-		}
-
 		:global(.slide .anim-in) {
 			opacity: 1 !important;
 			transform: none !important;
@@ -2117,6 +2100,7 @@
 		}
 
 		.split,
+		.frontier-grid,
 		.team-groups,
 		.raise-grid {
 			display: flex;
