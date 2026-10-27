@@ -593,7 +593,10 @@
 
 		<!-- 10 · TEAM -->
 		<section class="slide" id="p10">
-			<h2 class="headline anim-in anim-d2"><span class="hl-gold">Team</span></h2>
+			<h2 class="headline anim-in anim-d2">
+				Builders who have scaled hardware<br />
+				<span class="hl-gold">to $600M AUM and mass production</span> before
+			</h2>
 			<div class="team-groups anim-in anim-d3">
 				<div class="team-group team-group-us">
 					<div class="advisor-label">US team</div>
