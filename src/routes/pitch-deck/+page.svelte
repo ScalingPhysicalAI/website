@@ -302,8 +302,7 @@
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
 						<p>
-							Vipul started building <strong class="hl-gold">Cypherock</strong>, straight out from the
-							College
+							Vipul started building <strong class="hl-gold">Cypherock</strong>, straight out from university (DTU)
 						</p>
 					</div>
 					<div class="bullet-item">
@@ -312,15 +311,15 @@
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p><strong>Highest rated hardware wallet</strong> in the industry today</p>
+						<p>Highest rated hardware wallet in the industry today</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Currently secure <strong class="hl-gold">$600 Million</strong> in crypto assets</p>
+						<p>Currently secure <strong class="hl-gold">$2.2 Billion</strong> in crypto assets</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p><strong>Multiple Patents</strong></p>
+						<p>Multiple Patents</p>
 					</div>
 				</div>
 				<figure class="split-figure">
@@ -332,7 +331,7 @@
 		<!-- 3 · NEXT FRONTIER -->
 		<section class="slide" id="p3">
 			<h2 class="headline anim-in anim-d2">
-				Humanoid robots are the <span class="hl-gold">next frontier</span>
+				AI changed the digital world <span class="hl-gold">Intelligent Robots</span> will change the physical world
 			</h2>
 			<div class="frontier-grid anim-in anim-d3">
 				<div class="frontier-card">
@@ -351,7 +350,7 @@
 			<p class="statement anim-in anim-d3">
 				Moving atoms is the <span class="hl-gold">biggest constraint</span> for civilisation level
 				progress,<br />
-				<strong>Humanoids solve it</strong>
+				Humanoids solve it
 			</p>
 		</section>
 
@@ -362,15 +361,18 @@
 			</h2>
 			<div class="split anim-in anim-d3">
 				<div class="bullet-list plain-list">
+                    <div class="bullet-item">
+                        <span class="bullet-icon">&#9656;</span>
+						<p>We have seen robots dancing and sprinting but not doing any useful work.</p>
+					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Algorithms are solved, hardware is solved</p>
+						<p>Algorithms are solved, hardware is solved but robots are still not intelligent</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
 						<p>
-							But to build intelligence <strong class="hl-gold">tactile data is missing</strong>, hence
-							intelligence
+							To build intelligent robot, <strong class="hl-gold">tactile data is missing</strong>
 						</p>
 					</div>
 				</div>
@@ -405,13 +407,13 @@
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon mark-no">&#10007;</span>
-							<p>Cannot collect tactile data for more than <strong>2 hours straight</strong></p>
+							<p>Cannot collect data for more than <strong>4 hours straight</strong></p>
 						</div>
 					</div>
 				</div>
 				<div class="stat-card">
-					<span class="stat-val">2 hrs</span>
-					<span class="stat-label">Max tactile data collection, straight</span>
+					<span class="stat-val">$30k</span>
+					<span class="stat-label">Training data cost for a single robot skill</span>
 				</div>
 			</div>
 		</section>
@@ -424,13 +426,14 @@
 			<div class="split anim-in anim-d3">
 				<div>
 					<p class="lead">
-						<strong class="hl-gold">Stereo vision glasses</strong> and
-						<strong class="hl-gold">tactile gloves</strong>
+                    We replaced the robot with
+						<span class="hl-gold">stereo vision glasses</span> and
+						<span class="hl-gold">tactile gloves</span>
 					</p>
 					<div class="bullet-list plain-list compact-list">
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>Highly scalable</p>
+							<p>Full robot synchronized data collection</p>
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
@@ -438,15 +441,15 @@
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>Person can collect data straight <strong>8+ hours</strong></p>
+							<p>Person can collect data straight 8+ hours</p>
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>Highly <strong class="hl-gold">scalable in India</strong></p>
+							<p>Highly scalable in India</p>
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p><strong>Patent pending technology</strong></p>
+							<p>Patent pending technology</p>
 						</div>
 					</div>
 				</div>
@@ -476,58 +479,35 @@
 			</div>
 		</section>
 
-		<!-- 7 · IN-HOUSE ROBOT -->
 		<section class="slide" id="p7">
 			<h2 class="headline anim-in anim-d2">
-				We have developed full humanoid robot <span class="hl-gold">in-house</span>
+            Industry is spending billions to build the <span class="hl-gold">GPT equivalent robotic intelligence<span>.
+            <br/>
+			Starforge will do it in $4 million
 			</h2>
 			<div class="split anim-in anim-d3">
-				<div class="bullet-list">
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p><strong class="hl-gold">No Chinese supplier dependency</strong></p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>In house <strong>actuators</strong></p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>In house <strong>5 fingered dexterous hands</strong></p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>Moved <strong>high end GPUs to cloud</strong></p>
-					</div>
-				</div>
-				<figure class="split-figure robot-figure">
-					<img src="/assets/pitch/buildo-no-base.webp" alt="Buildo humanoid robot" />
-				</figure>
-			</div>
-		</section>
-
-		<!-- 8 · CLOUD MODELS -->
-		<section class="slide" id="p8">
-			<h2 class="headline anim-in anim-d2">
-				Cloud hosted models makes robot <span class="hl-gold">10x capable</span>
-			</h2>
-			<div class="split anim-in anim-d3">
-				<div class="bullet-list">
+				<div class="bullet-list compact-list plain-list">
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
 						<p>
-							Robots work in both <strong class="hl-gold">digital and physical worlds</strong>
+                        Cloud hosted intelligence enables robots to operate across both
+							<strong class="hl-gold">digital and physical worlds</strong>
 						</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Consumes <strong>less power</strong></p>
+						<p>Consumes less power</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
 						<p>
-							Smaller edge model handles <strong>inverse kinematics</strong> and
-							<strong>real time feedback</strong>
+							Smaller edge model handles action chunking and real-time feedback
+						</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>
+							Patent pending technology
 						</p>
 					</div>
 				</div>
@@ -563,15 +543,50 @@
 						<div class="brain-text">
 							<span class="card-num">Edge</span>
 							<span class="card-title">Smaller model</span>
-							<p>Inverse kinematics and real time feedback</p>
+							<p>Action chunking and real time feedback</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
+		<!-- 7 · IN-HOUSE ROBOT -->
+		<section class="slide" id="p8">
+			<h2 class="headline anim-in anim-d2">
+				We have developed the <span class="hl-gold">lowest BOM cost</span> humanoid in the industry
+			</h2>
+			<div class="split anim-in anim-d3">
+				<div class="bullet-list plain-list compact-list">
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p><strong class="hl-gold">No Chinese supplier dependency</strong></p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>In house actuators</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>In house 5 fingered dexterous hands</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Moved high end GPUs to cloud</p>
+					</div>
+				</div>
+				<figure class="split-figure robot-figure">
+					<img src="/assets/pitch/buildo-no-base.webp" alt="Buildo humanoid robot" />
+				</figure>
+			</div>
+		</section>
+
+		<!-- 8 · CLOUD MODELS -->
+
 		<!-- 9 · VIDEO (to come) -->
 		<section class="slide" id="p9">
+			<h2 class="headline anim-in anim-d2">
+            The industry's first <span class="hl-gold">cloud-hosted VTLA model</span> controlling a full humanoid robot
+			</h2>
 			<div class="video-frame anim-in anim-d2">
 				<iframe
 					bind:this={videoFrame}
@@ -593,9 +608,9 @@
 
 		<!-- 10 · TEAM -->
 		<section class="slide" id="p10">
-			<h2 class="headline anim-in anim-d2">
-				Builders who have scaled hardware<br />
-				<span class="hl-gold">to $600M AUM and mass production</span> before
+			<h2 class="headline headline-nowrap anim-in anim-d2">
+				Builders who have scaled hardware
+				<span class="hl-gold">to $2.2B AUM and mass production</span> before
 			</h2>
 			<div class="team-groups anim-in anim-d3">
 				<div class="team-group team-group-us">
@@ -613,7 +628,7 @@
 							<div class="team-role">Founder · Chief Engineer</div>
 							<div class="team-bio">
 								Founded Cypherock and scaled the safest crypto hardware wallet to
-								<strong>$600M AUM</strong>. Leads Buildo from prototype to mass production.
+								<strong>$2.2B AUM</strong>. Leads Buildo from prototype to mass production.
 							</div>
 						</div>
 						<div class="team-card">
@@ -717,14 +732,14 @@
 				</div>
 				<span class="price-op" aria-hidden="true">+</span>
 				<div class="price-card">
-					<span class="card-num">Cloud model usage cost</span>
-					<span class="price-val">$2,400</span>
+					<span class="card-num">Cloud model inference cost</span>
+					<span class="price-val">$1,900</span>
 					<span class="price-unit">per month</span>
 				</div>
 				<span class="price-op" aria-hidden="true">=</span>
 				<div class="price-card price-card-key">
 					<span class="card-num">Total robot as service cost</span>
-					<span class="price-val">$3,000</span>
+					<span class="price-val">$2,500</span>
 					<span class="price-unit">per month</span>
 				</div>
 			</div>
@@ -750,7 +765,7 @@
 		<!-- 12 · 2028 PROFITS -->
 		<section class="slide" id="p12">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$120 million</span> annual recurring profits in 2028
+				<span class="hl-gold">$150 million</span> annual recurring revenue in 2028
 			</h2>
 			<dl class="ledger anim-in anim-d3">
 				<div class="ledger-row">
@@ -759,7 +774,7 @@
 				</div>
 				<div class="ledger-row">
 					<dt>Total revenue per robot per month from 14th Month</dt>
-					<dd>$3,000</dd>
+					<dd>$2,500</dd>
 				</div>
 				<div class="ledger-row">
 					<dt>Server cost for A100 80 GB per robot</dt>
@@ -770,8 +785,8 @@
 					<dd>$8,000 x 5000 = $40 M</dd>
 				</div>
 				<div class="ledger-row">
-					<dt>Monthly profits for 5000 robots</dt>
-					<dd>$10 M</dd>
+					<dt>Monthly revenue for 5000 robots</dt>
+					<dd>$12.5 M</dd>
 				</div>
 			</dl>
 		</section>
@@ -1040,14 +1055,18 @@
 		right: 8px;
 	}
 
-	/* ── SLIDES ── */
+	/* ── SLIDES ──
+	   Every content slide is top-anchored so its headline sits at the same
+	   position regardless of how much body content follows it. The cover
+	   (#p1) and closing/ask (#p13) slides are bookend designs and opt back
+	   into vertical centering below. */
 	.slide {
 		position: absolute;
 		inset: 0;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		padding: clamp(56px, 14vh, 96px) clamp(36px, 5vw, 72px) clamp(24px, 6vh, 56px);
+		justify-content: flex-start;
+		padding: clamp(72px, 17vh, 118px) clamp(36px, 5vw, 72px) clamp(24px, 6vh, 56px);
 		opacity: 0;
 		transform: translateX(100%);
 		pointer-events: none;
@@ -1094,6 +1113,11 @@
 		letter-spacing: 0.02em;
 		color: #141210;
 		max-width: none;
+		margin-bottom: clamp(10px, 2.6vh, 26px);
+	}
+
+	.headline-nowrap {
+		white-space: nowrap;
 	}
 
 	.hl-gold {
@@ -1120,6 +1144,7 @@
 
 	/* ── COVER ── */
 	#p1 {
+		justify-content: center;
 		background: #f1efeb;
 	}
 
@@ -1347,6 +1372,21 @@
 	}
 
 	.headline + .split {
+		margin-top: auto;
+	}
+
+	/* Centers a lone .split block (no element after it) in the space below
+	   the headline; when another block follows (e.g. #p6), that block picks
+	   up its own margin-bottom: auto instead. */
+	.split:last-child {
+		margin-bottom: auto;
+	}
+
+	/* These two are lighter on content, so instead of centering, keep them
+	   anchored just under the headline (like #p6) and let the leftover
+	   space collect below. */
+	#p4 .split,
+	#p5 .split {
 		margin-top: clamp(16px, 4vh, 40px);
 	}
 
@@ -1379,7 +1419,7 @@
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 3px;
-		margin-top: clamp(20px, 5vh, 48px);
+		margin-top: auto;
 	}
 
 	.frontier-card {
@@ -1394,6 +1434,7 @@
 
 	.statement {
 		margin-top: clamp(22px, 5.4vh, 54px);
+		margin-bottom: auto;
 		font-family: 'Barlow', sans-serif;
 		font-size: clamp(15px, 3vmin, 25px);
 		font-weight: 500;
@@ -1436,8 +1477,7 @@
 
 	/* ── DATA KIT ── */
 	#p6 {
-		padding-top: clamp(80px, 14vh, 112px);
-		padding-bottom: clamp(16px, 3.6vh, 36px);
+		padding-bottom: clamp(10px, 2.4vh, 24px);
 	}
 
 	#p6 .lead {
@@ -1463,11 +1503,11 @@
 	}
 
 	.kit-glove {
-		max-height: min(48vh, 420px);
+		max-height: min(42vh, 370px);
 	}
 
 	.kit-glasses {
-		max-height: min(18vh, 150px);
+		max-height: min(26vh, 220px);
 	}
 
 	.partners {
@@ -1475,8 +1515,9 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: clamp(16px, 3vw, 40px);
-		margin-top: clamp(10px, 2.4vh, 24px);
-		padding-top: clamp(10px, 2.2vh, 20px);
+		margin-top: clamp(6px, 1.6vh, 16px);
+		margin-bottom: auto;
+		padding-top: clamp(6px, 1.6vh, 14px);
 		border-top: 1px solid rgba(20, 18, 16, 0.1);
 	}
 
@@ -1565,13 +1606,10 @@
 	}
 
 	/* ── VIDEO ── */
-	#p9 {
-		align-items: center;
-	}
-
 	.video-frame {
 		width: min(100%, calc((min(100vh, 100vw * 9 / 16) - 260px) * 16 / 9));
 		aspect-ratio: 16 / 9;
+		margin: auto auto 0;
 		background: #141210;
 	}
 
@@ -1584,6 +1622,8 @@
 
 	.video-link {
 		margin-top: clamp(10px, 2vh, 20px);
+		margin-bottom: auto;
+		text-align: center;
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
 		font-size: clamp(10.5px, 1.95vmin, 14px);
@@ -1603,8 +1643,6 @@
 
 	/* ── TEAM ── */
 	#p10 {
-		justify-content: flex-start;
-		padding-top: clamp(76px, 13vh, 104px);
 		padding-bottom: clamp(16px, 3.4vh, 32px);
 	}
 
@@ -1612,7 +1650,7 @@
 		display: grid;
 		grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
 		gap: clamp(10px, 1.4vw, 20px);
-		margin-top: clamp(8px, 2vh, 20px);
+		margin-top: auto;
 	}
 
 	.team-group {
@@ -1669,6 +1707,7 @@
 	.advisor-grid-center {
 		width: 100%;
 		justify-content: center;
+		margin-bottom: auto;
 	}
 
 	.advisor-grid .team-card {
@@ -1761,7 +1800,7 @@
 		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
 		align-items: center;
 		gap: clamp(8px, 1.4vw, 20px);
-		margin-top: clamp(20px, 5vh, 48px);
+		margin-top: auto;
 	}
 
 	.price-card {
@@ -1806,6 +1845,7 @@
 	.econ-notes {
 		max-width: none;
 		margin-top: clamp(14px, 3.4vh, 34px);
+		margin-bottom: auto;
 		gap: clamp(2px, 0.8vh, 8px);
 	}
 
@@ -1815,7 +1855,7 @@
 
 	/* ── 2028 PROFITS ── */
 	.ledger {
-		margin: clamp(18px, 4.6vh, 44px) 0 0;
+		margin: auto 0;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -1851,6 +1891,7 @@
 
 	/* ── ASK ── */
 	#p13 {
+		justify-content: center;
 		background:
 			radial-gradient(ellipse 60% 80% at 90% 50%, rgba(20, 18, 16, 0.025) 0%, transparent 60%),
 			#f1efeb;
@@ -1934,7 +1975,7 @@
 
 	/* ── APPENDIX ── */
 	.appendix-head {
-		margin-top: clamp(12px, 2.6vh, 26px);
+		margin-top: auto;
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
 		font-size: clamp(8px, 1.5vmin, 11px);
@@ -1945,6 +1986,7 @@
 
 	.appendix-points {
 		margin-top: clamp(8px, 1.8vh, 18px);
+		margin-bottom: auto;
 		max-width: none;
 		gap: clamp(6px, 1.4vh, 14px);
 	}
