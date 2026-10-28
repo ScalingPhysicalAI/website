@@ -569,7 +569,7 @@
 		<!-- 7 · IN-HOUSE ROBOT -->
 		<section class="slide" id="p8">
 			<h2 class="headline anim-in anim-d2">
-				Our <span class="hl-gold">ultra-low-BOM</span> humanoid is designed to automate both <span class="hl-gold">physical and digital work</span> across any factory environment
+				Our <span class="hl-gold">ultra-low-BOM</span> humanoid is designed to automate both <span class="hl-gold">physical and digital work</span> across factory environments
 			</h2>
 			<div class="split anim-in anim-d3">
 				<div class="bullet-list plain-list compact-list">
