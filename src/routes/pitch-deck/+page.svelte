@@ -136,6 +136,20 @@
 	}
 
 	onMount(() => {
+		const tryHideZoho = () => {
+			const floatbutton = (window as any).$zoho?.salesiq?.floatbutton;
+			if (!floatbutton) return false;
+			floatbutton.visible('hide');
+			return true;
+		};
+		let zohoPoll: ReturnType<typeof setInterval> | undefined;
+		if (!tryHideZoho()) {
+			zohoPoll = setInterval(() => {
+				if (tryHideZoho() && zohoPoll) clearInterval(zohoPoll);
+			}, 300);
+			setTimeout(() => zohoPoll && clearInterval(zohoPoll), 15000);
+		}
+
 		const dotsContainer = document.getElementById('navDots');
 		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		if (!dotsContainer || nodes.length === 0) return;
@@ -170,6 +184,8 @@
 			document.removeEventListener('keydown', handleKey);
 			stackedQuery.removeEventListener('change', syncMode);
 			document.body.style.overflow = '';
+			if (zohoPoll) clearInterval(zohoPoll);
+			(window as any).$zoho?.salesiq?.floatbutton?.visible?.('show');
 		};
 	});
 </script>
