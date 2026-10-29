@@ -812,7 +812,7 @@
 			<div class="raise-grid anim-in anim-d2">
 				<div class="raise-card raise-card-key">
 					<span class="raise-val">$4 million <span class="hl-gold">seed</span></span>
-					<p>Scaling team, Build intelligence and Initial deployments</p>
+					<p>Scaling team and build intelligence</p>
 				</div>
 				<div class="raise-card">
 					<span class="raise-val">$50 million <span class="hl-gold">series A</span></span>
