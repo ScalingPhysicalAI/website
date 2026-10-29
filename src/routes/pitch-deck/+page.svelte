@@ -812,7 +812,7 @@
 			<div class="raise-grid anim-in anim-d2">
 				<div class="raise-card raise-card-key">
 					<span class="raise-val">$4 million <span class="hl-gold">seed</span></span>
-					<p>Scaling team and build intelligence</p>
+					<p>Scaling team and build the best intelligence model</p>
 				</div>
 				<div class="raise-card">
 					<span class="raise-val">$50 million <span class="hl-gold">series A</span></span>
@@ -831,44 +831,8 @@
 		<!-- APPENDIX -->
 		<section class="slide" id="p14">
 			<h2 class="headline anim-in anim-d2">Appendix</h2>
-			<div class="appendix-head anim-in anim-d3">Revenue math</div>
+			<div class="appendix-head anim-in anim-d3">Manufacturing &amp; team</div>
 			<div class="bullet-list appendix-points anim-in anim-d3">
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						Each robot is offered as a service at <strong>$3,000 per month</strong>: $600 robot rental
-						plus $2,400 cloud model usage. Inference revenue is split
-						<strong>70% to Data Collection Partners</strong> and <strong>30% to Model Store</strong>.
-					</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						The first <strong>12 to 14 months</strong> are the data collection phase. Full rental
-						profits start from the 14th month.
-					</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						Server cost for an A100 80 GB is <strong>~$1,000 per robot per month</strong>, leaving
-						<strong>$2,000 per robot per month</strong> ($3,000 − $1,000).
-					</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						Across <strong>5,000 robots</strong> that is $2,000 × 5,000 = <strong>$10M per month</strong>,
-						and $10M × 12 = <strong class="hl-gold">$120M annual recurring profits in 2028</strong>.
-					</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						Building the fleet costs $8,000 × 5,000 = <strong>$40M</strong>. The $50M Series A in Q1
-						2027 scales deployments to at least 5,000 robots.
-					</p>
-				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">&#9656;</span>
 					<p>
