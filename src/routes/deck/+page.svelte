@@ -10,6 +10,14 @@
 	// the deck drops the carousel and becomes a plain vertical scroll of cards.
 	const STACKED_QUERY = '(max-width: 900px)';
 	let stacked = false;
+	let videoFrame: HTMLIFrameElement | undefined;
+
+	function pauseVideo() {
+		videoFrame?.contentWindow?.postMessage(
+			JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
+			'*'
+		);
+	}
 
 	function stackSlides() {
 		document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR).forEach((slide) => {
@@ -29,6 +37,7 @@
 		const nodes = Array.from(document.querySelectorAll<HTMLElement>(SLIDE_SELECTOR));
 		nodes.forEach((slide, i) => {
 			const offset = i - currentSlide;
+			if (offset !== 0 && slide.contains(videoFrame ?? null)) pauseVideo();
 			slide.classList.toggle('active', offset === 0);
 			slide.style.transform = `translateX(${offset * 100}%)`;
 			slide.style.opacity = offset === 0 ? '1' : '0';
@@ -142,8 +151,6 @@
 			dotsContainer.appendChild(dot);
 		});
 
-		// Advancing on any click made it impossible to select text or follow a
-		// link on a slide; navigation is via the arrows, dots and keyboard.
 		document.addEventListener('keydown', handleKey);
 
 		const stackedQuery = window.matchMedia(STACKED_QUERY);
@@ -168,7 +175,7 @@
 </script>
 
 <svelte:head>
-	<title>Starforge Robotics - Pitch Deck</title>
+	<title>Starforge Robotics - Seed Round</title>
 	<meta name="robots" content="noindex" />
 	<!-- Unscoped so print engines honour page size and unstacked slides. -->
 	<style>
@@ -222,11 +229,6 @@
 				page-break-after: auto !important;
 				break-after: auto !important;
 			}
-			/* The blanket .slide display above would otherwise resurrect parked
-			   slides in the export. */
-			.slide-hidden {
-				display: none !important;
-			}
 			.slide .anim-in {
 				opacity: 1 !important;
 				transform: none !important;
@@ -238,7 +240,6 @@
 
 <div class="deck-viewport">
 	<main class="deck-stage" id="deckStage">
-		<!-- NAV -->
 		<nav>
 			<a
 				href={resolve('/')}
@@ -251,7 +252,7 @@
 			</a>
 			<div class="nav-center">
 				<div class="nav-slides" id="navDots"></div>
-				<span class="slide-counter" id="slideCounter">01 / 15</span>
+				<span class="slide-counter" id="slideCounter">01 / 14</span>
 			</div>
 			<button class="print-btn" type="button" onclick={printDeck}>
 				<svg
@@ -269,23 +270,20 @@
 			</button>
 		</nav>
 
-		<!-- SLIDE 1 - COVER -->
-		<section class="slide" id="s1">
+		<!-- 1 · COVER -->
+		<section class="slide" id="p1">
 			<div class="cover-bg"></div>
 			<div class="cover-grid"></div>
 			<figure class="cover-figure anim-in anim-d2">
 				<img src="/assets/buildo-head.webp" alt="Buildo humanoid robot" />
 			</figure>
 			<div class="cover-content">
-				<div class="cover-tag anim-in anim-d1">Pre-Seed Round · 2026</div>
+				<div class="cover-tag anim-in anim-d1">Seed Round · 2026</div>
 				<h1 class="cover-title anim-in anim-d2">
-					Building the <span class="hl-gold">Open<br />Intelligence</span> platform<br />
-					for the physical world
+					Building <span class="hl-gold">Humanoid Robots</span><br />
+					for <span class="hl-gold">Autonomous Factories</span>
 				</h1>
-				<p class="cover-sub anim-in anim-d3">
-					<span class="hl-gold">Buildo</span>, our first humanoid robot powered by our intelligence
-					platform, delivers exceptional capability at an unmatched price point.
-				</p>
+				<p class="cover-sub anim-in anim-d3">StarForge Robotics</p>
 				<div class="cover-divider anim-in anim-d3"></div>
 				<a
 					href="https://starforgerobotics.com"
@@ -296,772 +294,529 @@
 			</div>
 		</section>
 
-		<!-- SLIDE 2 - THE PROBLEM -->
-		<section class="slide" id="s4">
-			<h2 class="headline anim-in anim-d2">
-				Current robots are not intelligent<br />
-				enough for <span class="hl-gold">real-world deployments</span>
-			</h2>
-			<div class="problem-layout anim-in anim-d3">
-				<div class="problem-copy">
-					<div class="bullet-list">
-						<div class="bullet-item">
-							<span class="bullet-icon">▸</span>
-							<p>
-								Human-level robot intelligence requires massive models and high-end GPUs,
-								making onboard deployment expensive and power-hungry.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="quote-col">
-					<div class="tweet-stack">
-						<img
-							class="tweet-shot"
-							src="/assets/quotes/tweet-yunze.webp"
-							alt="Yunze Man (@yunzeman): to run policies onboard, brutal compromises are made on model size, complexity, and context length."
-						/>
-						<img
-							class="tweet-shot"
-							src="/assets/quotes/tweet-mts-user.webp"
-							alt="MTS (@MTSlive): SemiAnalysis asks where a robot's brain should live, weighing on-device compute limits against off-device network latency."
-						/>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 3 - BREAKTHROUGH -->
-		<section class="slide" id="s5">
-			<h2 class="headline anim-in anim-d2">
-				Our breakthrough enables <span class="hl-gold">largest models</span><br />
-				on robots without on-board GPU<span class="small-caps-s">s</span>
-			</h2>
-			<div class="solution-layout anim-in anim-d3">
-				<div class="solution-col">
-					<div class="bullet-list">
-						<div class="bullet-item">
-							<span class="bullet-icon">&#9656;</span>
-							<p>
-								Our structural improvements divide the model into an
-								<span class="hl-gold">edge adapter</span> and a
-								<span class="hl-gold">base model</span> running on the server.
-							</p>
-						</div>
-					</div>
-					<div class="approach-table-wrap">
-						<table class="approach-table">
-							<thead>
-								<tr>
-									<th scope="col">Approach</th>
-									<th scope="col">Robot cost</th>
-									<th scope="col">Latency</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">Large VLA on Server</th>
-									<td>Low</td>
-									<td>High (&gt;2s)</td>
-								</tr>
-								<tr>
-									<th scope="row">Large VLA on Robot</th>
-									<td>High</td>
-									<td>Low</td>
-								</tr>
-								<tr class="approach-row-ours">
-									<th scope="row">Buildo's AI Model</th>
-									<td>Low</td>
-									<td>Low (~400ms)</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<figure class="solution-video">
-				<!-- svelte-ignore a11y_media_has_caption -->
-				<video
-					src="/assets/robot-coffee-demo.mp4"
-					autoplay
-					loop
-					muted
-					playsinline
-					preload="auto"
-				></video>
-			</figure>
-		</section>
-
-		<!-- SLIDE 4 - BUILDO KIT -->
-		<section class="slide" id="s6">
-			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$8k hardware stack</span> replaces<br />
-				$100k industrial setups
-			</h2>
-			<div class="kit-layout anim-in anim-d3">
-				<div class="bullet-list kit-points">
+		<!-- 2 · ABOUT FOUNDER -->
+		<section class="slide" id="p2">
+			<h2 class="headline anim-in anim-d2">About <span class="hl-gold">Founder</span></h2>
+			<div class="split anim-in anim-d3">
+				<div class="bullet-list plain-list">
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Buildo can carry a <strong>payload of up to 12.5 lbs (5.69 kg)</strong></p>
+						<p>
+							Vipul started building <strong class="hl-gold">Cypherock</strong>, straight out from university (DTU)
+						</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Height adjustable from <strong>4 to 6 feet</strong></p>
+						<p>Raised <strong class="hl-gold">$1.5 Million</strong> back in 2021</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Highest rated hardware wallet in the industry today</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Currently secure <strong class="hl-gold">$2.2 Billion</strong> in crypto assets</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Multiple Patents</p>
+					</div>
+				</div>
+				<figure class="split-figure">
+					<img src="/assets/pitch/cypherock-wallet.webp" alt="Cypherock hardware wallet" />
+				</figure>
+			</div>
+		</section>
+
+		<!-- 3 · NEXT FRONTIER -->
+		<section class="slide" id="p3">
+			<h2 class="headline anim-in anim-d2">
+				AI changed the digital world <span class="hl-gold">Intelligent Robots</span> will change the physical world
+			</h2>
+			<div class="frontier-grid anim-in anim-d3">
+				<div class="frontier-card">
+					<span class="card-num">01</span>
+					<span class="card-title">Autonomous Factories</span>
+				</div>
+				<div class="frontier-card">
+					<span class="card-num">02</span>
+					<span class="card-title">Build new Cities</span>
+				</div>
+				<div class="frontier-card">
+					<span class="card-num">03</span>
+					<span class="card-title">Labour meaning redefined</span>
+				</div>
+			</div>
+			<p class="statement anim-in anim-d3">
+				Moving atoms is the <span class="hl-gold">biggest constraint</span> for civilisation level
+				progress,<br />
+				Humanoids solve it
+			</p>
+		</section>
+
+		<!-- 4 · MISSING PIECE -->
+		<section class="slide" id="p4">
+			<h2 class="headline anim-in anim-d2">
+				But what's the <span class="hl-gold">missing piece</span>?
+			</h2>
+			<div class="split anim-in anim-d3">
+				<div class="bullet-list plain-list">
+                    <div class="bullet-item">
+                        <span class="bullet-icon">&#9656;</span>
+						<p>We have seen robots dancing and sprinting but not doing any useful work.</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Algorithms are solved, hardware is solved but robots are still not intelligent</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
 						<p>
-							<strong>Patent pending glove and glasses</strong> for tactile egocentric data collection
+							To build intelligent robot, <strong class="hl-gold">tactile data is missing</strong>
 						</p>
 					</div>
 				</div>
-				<div class="kit-shots">
-					<figure class="product-shot kit-robot">
-						<img src="/assets/buildo-product.webp" alt="Buildo robot" />
-						<figcaption>Buildo robot</figcaption>
-					</figure>
-					<figure class="product-shot kit-extras">
-						<img src="/assets/buildo-kit-glasses.png" alt="Buildo egocentric camera glasses" />
-						<img
-							class="kit-gloves"
-							src="/assets/buildo-kit-gloves.png"
-							alt="Buildo tactile gloves"
-						/>
-						<figcaption>Developer accessories</figcaption>
-					</figure>
-				</div>
+				<figure class="split-figure split-figure-wide">
+					<img
+						src="/assets/pitch/tactile-latent-space.webp"
+						alt="Embedding space with sparse points, showing where tactile data is missing"
+					/>
+				</figure>
 			</div>
 		</section>
 
-		<!-- SLIDE 6 - COMPUTE LAYER -->
-		<section class="slide slide-hidden" id="s8">
-			<div class="infra-layout">
-				<div class="infra-copy">
-					<h2 class="headline anim-in anim-d2">
-						<span class="hl-gold">Global skill marketplace</span> enables<br />
-						instant robot model deployment
-					</h2>
-				</div>
-				<div class="infra-body">
-					<div class="bullet-list infra-points anim-in anim-d3">
+		<!-- 5 · HOW OTHERS SOLVE IT -->
+		<section class="slide" id="p5">
+			<h2 class="headline anim-in anim-d2">
+				How are frontier labs <span class="hl-gold">solving it</span>?
+			</h2>
+			<div class="split anim-in anim-d3">
+				<div>
+					<p class="lead">
+						Person wearing <strong>full teleoperation kit</strong> and teleoperating
+						<strong>one full robot</strong>
+					</p>
+					<div class="bullet-list plain-list">
 						<div class="bullet-item">
-							<span class="bullet-icon">&#9656;</span>
-							<p>
-								<strong>Host robot skill models</strong> for
-								<span class="hl-gold">real-time inference</span> - from any sized model to production
-								deployment.
-							</p>
+							<span class="bullet-icon mark-no">&#10007;</span>
+							<p>Not scalable</p>
 						</div>
 						<div class="bullet-item">
-							<span class="bullet-icon">&#9656;</span>
-							<p>
-								Developers get
-								<span class="hl-gold">distribution and monetization</span> for hosting models on our platform.
-							</p>
+							<span class="bullet-icon mark-no">&#10007;</span>
+							<p>Very costly</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon mark-no">&#10007;</span>
+							<p>Cannot collect data for more than <strong>4 hours straight</strong></p>
 						</div>
 					</div>
-					<div class="infra-figure-col anim-in anim-d3">
-						<div class="infra-figure-anchor">
-							<figure class="infra-figure skills-figure">
-								<div class="store-cloud">
-									<div class="store-hero">
-										<img src="/assets/logo.png" alt="" />
-									</div>
-									<div class="store-row store-row-1">
-										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"
-												><path
-													d="M8 20V11a2 2 0 0 1 4 0v-1a2 2 0 0 1 4 0v1a2 2 0 0 1 4 0v6a6 6 0 0 1-6 6h-2a4 4 0 0 1-4-4z"
-												/><path d="M8 14 5 11" /></svg
-											>
-											<span>Pick &amp; place</span>
-										</div>
-										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"
-												><path d="M16 4 6 24l10-5 10 5z" /></svg
-											>
-											<span>Indoor navigation</span>
-										</div>
-										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"
-												><path d="M5 14 16 5l11 9" /><path d="M8 13v12h16V13" /></svg
-											>
-											<span>Cooking assistant</span>
-										</div>
-										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"
-												><rect x="5" y="15" width="10" height="10" /><rect
-													x="17"
-													y="15"
-													width="10"
-													height="10"
-												/><rect x="11" y="5" width="10" height="9" /></svg
-											>
-											<span>Warehouse sorting</span>
-										</div>
-									</div>
-									<div class="store-row store-row-2">
-										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"
-												><rect x="8" y="4" width="16" height="24" /><circle
-													cx="19"
-													cy="16"
-													r="1.6"
-												/></svg
-											>
-											<span>Door &amp; handle ops</span>
-										</div>
-										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"
-												><circle cx="16" cy="9" r="4" /><path d="M7 27a9 9 0 0 1 18 0" /></svg
-											>
-											<span>Human following</span>
-										</div>
-										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"
-												><path d="M6 26 20 12" /><path
-													d="M18 6a5 5 0 0 0 6 6l3 3-5 5-3-3a5 5 0 0 0-6-6z"
-												/></svg
-											>
-											<span>Assembly</span>
-										</div>
-										<div class="store-tile">
-											<svg viewBox="0 0 32 32" aria-hidden="true"
-												><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16z" /><circle
-													cx="16"
-													cy="16"
-													r="3.4"
-												/></svg
-											>
-											<span>Visual inspection</span>
-										</div>
-									</div>
-								</div>
-							</figure>
-						</div>
-					</div>
+				</div>
+				<div class="stat-card">
+					<span class="stat-val">$30k</span>
+					<span class="stat-label">Training data cost for a single robot skill</span>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 9 - TRACTION -->
-		<section class="slide" id="s14">
+		<!-- 6 · HOW WE SOLVE IT -->
+		<section class="slide" id="p6">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">50+ developers</span> from top universities and startups<br />
-				are contributing models to the robot app store
+				How we are <span class="hl-gold">solving it</span>?
 			</h2>
-			<div class="traction-layout anim-in anim-d3">
-				<div class="comp-list">
-					<div class="comp-unis">
-						<div class="comp-uni-row">
-							<img src="/assets/uni/berkeley.png" alt="University of California, Berkeley" />
-							<img class="uni-nyu" src="/assets/uni/nyu.png" alt="New York University" />
+			<div class="split anim-in anim-d3">
+				<div>
+					<p class="lead">
+                    We replaced the robot with
+						<span class="hl-gold">stereo vision glasses</span> and
+						<span class="hl-gold">tactile gloves</span>
+					</p>
+					<div class="bullet-list plain-list compact-list">
+						<div class="bullet-item">
+							<span class="bullet-icon mark-yes">&#10003;</span>
+							<p>Full robot synchronized data collection</p>
 						</div>
-						<div class="comp-uni-row">
-							<img src="/assets/uni/ucsd.png" alt="University of California, San Diego" />
-							<img src="/assets/uni/uci.png" alt="University of California, Irvine" />
-							<img
-								class="uni-purdue"
-								src="/assets/uni/purdue-trimmed.png"
-								alt="Purdue University"
-							/>
+						<div class="bullet-item">
+							<span class="bullet-icon mark-yes">&#10003;</span>
+							<p>Cheap</p>
 						</div>
-						<div class="comp-uni-row">
-							<img
-								class="uni-ucsc"
-								src="/assets/uni/ucsc.png"
-								alt="University of California, Santa Cruz"
-							/>
-							<img class="uni-umd" src="/assets/uni/umd.png" alt="University of Maryland" />
+						<div class="bullet-item">
+							<span class="bullet-icon mark-yes">&#10003;</span>
+							<p>Person can collect data straight 8+ hours</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon mark-yes">&#10003;</span>
+							<p>Highly scalable in India</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon mark-yes">&#10003;</span>
+							<p>Patent pending technology</p>
 						</div>
 					</div>
 				</div>
+				<figure class="kit-pair">
+					<img
+						class="kit-glove"
+						src="/assets/pitch/tactile-glove.webp"
+						alt="Tactile data collection glove"
+					/>
+					<img
+						class="kit-glasses"
+						src="/assets/pitch/stereo-glasses.webp"
+						alt="Stereo vision glasses"
+					/>
+				</figure>
 			</div>
-			<figure class="traction-figure">
-				<!-- svelte-ignore a11y_media_has_caption -->
-				<video
-					src="/assets/robot-hand-demo.mp4"
-					autoplay
-					loop
-					muted
-					playsinline
-					preload="auto"
-				></video>
-			</figure>
+			<div class="partners anim-in anim-d3">
+				<p>
+					In partnership with <strong class="hl-gold">20+ data collection companies</strong> across
+					India
+				</p>
+				<div class="partner-logos">
+					<img src="/assets/pitch/partner-humyn-labs.webp" alt="humyn labs" />
+					<img src="/assets/pitch/partner-m.webp" alt="Data collection partner" />
+					<img src="/assets/pitch/partner-wiingy.webp" alt="Wiingy" />
+				</div>
+			</div>
 		</section>
 
-		<!-- MARKET -->
-		<section class="slide" id="s20">
+		<section class="slide" id="p7">
 			<h2 class="headline anim-in anim-d2">
-				Labor redefined by 2030: a <span class="hl-gold">$3.8Tn</span> US market
+            Industry is spending billions to build the <span class="hl-gold">GPT equivalent robotic intelligence<span>.
+            <br/>
+			Starforge will do it in $4 million
 			</h2>
-			<!-- The order we enter the market in, which is also the order each
-			     category becomes solvable. -->
-			<div class="market-tiers anim-in anim-d3">
-				<div class="market-tier market-tier-tam">
-					<div class="market-tier-figure">
-						<span class="market-tier-label">TAM</span>
-						<span class="market-tier-val">$3.8 Tn</span>
+			<div class="split anim-in anim-d3">
+				<div class="bullet-list compact-list plain-list">
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>
+                        Cloud hosted intelligence enables robots to operate across both
+							<strong class="hl-gold">digital and physical worlds</strong>
+						</p>
 					</div>
-					<p class="market-tier-body">
-						<strong>65M US workers</strong> in physical labor &mdash; production, material moving,
-						construction, maintenance, cleaning, food, farm and care &middot;
-						<strong>$3.1Tn</strong> of wages in 2025<a
-							class="citation"
-							href="https://www.bls.gov/oes/current/oes_nat.htm"
-							target="_blank"
-							rel="noopener noreferrer">[1]</a
-						>
-					</p>
-				</div>
-				<div class="market-tier market-tier-sam">
-					<div class="market-tier-figure">
-						<span class="market-tier-label">SAM</span>
-						<span class="market-tier-val">$2.1 Tn</span>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Consumes less power</p>
 					</div>
-					<p class="market-tier-body">
-						<strong>38M of those workers</strong> do the tasks Buildo does today &mdash; factory, warehouse,
-						home and office service, and care support
-					</p>
-				</div>
-				<div class="market-tier market-tier-som">
-					<div class="market-tier-figure">
-						<span class="market-tier-label">SOM</span>
-						<span class="market-tier-val">$210 Bn</span>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>
+							Smaller edge model handles action chunking and real-time feedback
+						</p>
 					</div>
-					<p class="market-tier-body">
-						<strong>10% of SAM</strong> in hardware and intelligence spend, the share a
-						<strong>$8K robot</strong> and our robot app store can serve by 2030
-					</p>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>
+							Patent pending technology
+						</p>
+					</div>
 				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 10 - REVENUE -->
-		<section class="slide" id="s10">
-			<div class="infra-layout">
-				<div class="infra-copy">
-					<h2 class="headline anim-in anim-d2">
-						Buildo enables a high-margin<br />
-						<span class="hl-gold">intelligence business model</span>
-					</h2>
-				</div>
-				<div class="rev-model anim-in anim-d3">
-					<div class="rev-stack">
-						<div class="rev-step rev-step-key">
-							<div class="rev-step-head">
-								<span class="rev-step-num">01</span>
-								<span class="rev-step-name">Sell the robot</span>
-								<span class="rev-step-val">($8K)</span>
-							</div>
-							<p>One-time hardware revenue and a growing installed base.</p>
-						</div>
-						<svg
-							class="rev-fork"
-							viewBox="0 0 140 200"
-							preserveAspectRatio="xMidYMid meet"
-							aria-hidden="true"
-						>
-							<defs>
-								<marker
-									id="revForkHead"
-									viewBox="0 0 10 10"
-									refX="9"
-									refY="5"
-									markerWidth="5"
-									markerHeight="5"
-									orient="auto-start-reverse"
-								>
-									<path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(20, 18, 16, 0.42)" />
-								</marker>
-							</defs>
-							<path d="M 6 100 C 52 100, 78 58, 122 48" marker-end="url(#revForkHead)" />
-							<path d="M 6 100 C 52 100, 78 142, 122 152" marker-end="url(#revForkHead)" />
+				<div class="brain-stack">
+					<div class="brain-item brain-item-key">
+						<svg class="brain-icon" viewBox="0 0 48 48" aria-hidden="true">
+							<path
+								d="M14 36h22a9 9 0 0 0 1.2-17.9A12 12 0 0 0 14.4 15 10.5 10.5 0 0 0 14 36Z"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2.4"
+								stroke-linejoin="round"
+							/>
 						</svg>
-						<div class="rev-branch">
-							<div class="rev-step">
-								<div class="rev-step-head">
-									<span class="rev-step-num">02</span>
-									<span class="rev-step-name">Sell training compute</span>
-								</div>
-								<p>
-									Charging by the hour at <strong>~$2 for an H100 GPU</strong>,
-									<strong>~$1 for a A100 GPU</strong>, <strong>~$0.25 for an RTX 4090</strong>.
-								</p>
+						<div class="brain-text">
+							<span class="card-num">Cloud</span>
+							<span class="card-title">Large model</span>
+							<p>Digital and physical work</p>
+						</div>
+					</div>
+					<div class="brain-link" aria-hidden="true"></div>
+					<div class="brain-item">
+						<svg class="brain-icon" viewBox="0 0 48 48" aria-hidden="true">
+							<g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round">
+								<rect x="13" y="13" width="22" height="22" rx="2" />
+								<rect x="19" y="19" width="10" height="10" />
+								<path
+									d="M19 13V7M29 13V7M19 41v-6M29 41v-6M13 19H7M13 29H7M41 19h-6M41 29h-6"
+									stroke-linecap="round"
+								/>
+							</g>
+						</svg>
+						<div class="brain-text">
+							<span class="card-num">Edge</span>
+							<span class="card-title">Smaller model</span>
+							<p>Action chunking and real time feedback</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 7 · IN-HOUSE ROBOT -->
+		<section class="slide" id="p8">
+			<h2 class="headline anim-in anim-d2">
+				Our <span class="hl-gold">ultra-low-BOM</span> humanoid is designed to automate both <span class="hl-gold">physical and digital work</span> across factory environments
+			</h2>
+			<div class="split anim-in anim-d3">
+				<div class="bullet-list plain-list compact-list">
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p><strong class="hl-gold">No Chinese supplier dependency</strong></p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>In house actuators</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>In house 5 fingered dexterous hands</p>
+					</div>
+					<div class="bullet-item">
+						<span class="bullet-icon">&#9656;</span>
+						<p>Moved high end GPUs to cloud</p>
+					</div>
+				</div>
+				<figure class="split-figure robot-figure">
+					<img src="/assets/pitch/buildo-no-base.webp" alt="Buildo humanoid robot" />
+				</figure>
+			</div>
+		</section>
+
+		<!-- 8 · CLOUD MODELS -->
+
+		<!-- 9 · VIDEO (to come) -->
+		<section class="slide" id="p9">
+			<h2 class="headline anim-in anim-d2">
+            The industry's first <span class="hl-gold">cloud-hosted VTLA model</span> controlling a full humanoid robot
+			</h2>
+			<div class="video-frame anim-in anim-d2">
+				<iframe
+					bind:this={videoFrame}
+					src="https://www.youtube-nocookie.com/embed/o9j_a-makyA?enablejsapi=1&rel=0&modestbranding=1"
+					title="Starforge Robotics video"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+				></iframe>
+			</div>
+			<div class="video-link anim-in anim-d3">
+				<a
+					href="https://www.youtube.com/watch?v=o9j_a-makyA"
+					target="_blank"
+					rel="noopener noreferrer">Watch the demo on YouTube</a
+				>
+			</div>
+		</section>
+
+		<!-- 10 · TEAM -->
+		<section class="slide" id="p10">
+			<h2 class="headline headline-nowrap anim-in anim-d2">
+				Builders who have scaled hardware
+				<span class="hl-gold">to $2.2B AUM and mass production</span> before
+			</h2>
+			<div class="team-groups anim-in anim-d3">
+				<div class="team-group team-group-us">
+					<div class="advisor-label">US team</div>
+					<div class="team-grid">
+						<div class="team-card">
+							<img class="team-photo" src="/assets/team/vipul.jpg" alt="" />
+							<div class="team-name">
+								<LinkedInName
+									name="Vipul Saini"
+									linkedin="https://www.linkedin.com/in/vipul-saini-59a24156/"
+									x="https://x.com/vipulsaini594"
+								/>
 							</div>
-							<div class="rev-step">
-								<div class="rev-step-head">
-									<span class="rev-step-num">03</span>
-									<span class="rev-step-name"
-										>Sell skill tokens<a
-											class="citation"
-											href="https://x.com/a16z/status/2091200032162857328"
-											target="_blank"
-											rel="noopener noreferrer">[2]</a
-										></span
-									>
-								</div>
-								<p>
-									Skill usage at rate of <strong>$0.20 per million input</strong> and
-									<strong>$4 per million output</strong>. Split to reach
-									<strong>30% to robot app store, 70% to developer</strong> over time.
-								</p>
+							<div class="team-role">Founder · Chief Engineer</div>
+							<div class="team-bio">
+								Founded Cypherock and scaled the safest crypto hardware wallet to
+								<strong>$2.2B AUM</strong>. Leads Buildo from prototype to mass production.
+							</div>
+						</div>
+						<div class="team-card">
+							<img class="team-photo" src="/assets/team/chiragm.jpg" alt="" />
+							<div class="team-name">
+								<LinkedInName
+									name="Chirag Madaan"
+									linkedin="https://www.linkedin.com/in/appleswiggy/"
+								/>
+							</div>
+							<div class="team-role">Senior Machine Learning Engineer</div>
+							<div class="team-bio">
+								Pursuing a <strong>master's in robotics at UC San Diego</strong>. Shipped production
+								grade machine learning at PayPal and the cryptography securing 10,000+ Cypherock
+								devices.
+							</div>
+						</div>
+						<div class="team-card">
+							<img class="team-photo" src="/assets/team/anay.jpg" alt="" />
+							<div class="team-name">
+								<LinkedInName
+									name="Anay Shiledar"
+									linkedin="https://www.linkedin.com/in/anay-shiledar-629036209/"
+								/>
+							</div>
+							<div class="team-role">Electrical Engineer</div>
+							<div class="team-bio">
+								Designs neural-interface electronics and firmware at UC Irvine's Neuroelectronics
+								Research Lab. Handles Buildo's <strong>embedded&nbsp;software</strong>, board
+								bring-up, and hardware integration.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="team-group team-group-in">
+					<div class="advisor-label">India team</div>
+					<div class="team-grid">
+						<div class="team-card">
+							<img class="team-photo" src="/assets/team/rakshit.jpg" alt="" />
+							<div class="team-name">
+								<LinkedInName
+									name="Rakshit Jain"
+									linkedin="https://www.linkedin.com/in/rakshitjain003/"
+								/>
+							</div>
+							<div class="team-role">Senior Robotics Engineer</div>
+							<div class="team-bio">
+								Holds multiple patents and has put <strong
+									>robotics and aerospace products into mass manufacturing</strong
+								>. Owns Buildo's mechanical design and manufacturability.
+							</div>
+						</div>
+						<div class="team-card">
+							<img class="team-photo" src="/assets/team/chirag-v4.jpg" alt="" />
+							<div class="team-name">
+								<LinkedInName
+									name="Chirag Singla"
+									linkedin="https://www.linkedin.com/in/chirag-droid/"
+								/>
+							</div>
+							<div class="team-role">Software Engineer</div>
+							<div class="team-bio">
+								Has been writing <strong>transformer models</strong> for five years and shipped the
+								cryptography behind Cypherock's hardware wallet. Builds the AI that runs inside the
+								robot.
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-
-		<!-- SLIDE 11 - MILESTONES -->
-		<section class="slide" id="s18">
-			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$614M revenue by 2028</span> driven by<br />
-				2 quadrillion token API demand
-			</h2>
-			<div class="ms-track anim-in anim-d3">
-				<div class="ms-step">
-					<div class="ms-period">Q4 2026</div>
-					<div class="ms-title">Hardware ready</div>
-					<p class="ms-body">Production line ready.</p>
-					<dl class="ms-stats">
-						<div class="ms-stat">
-							<dt>Units sold</dt>
-							<dd>100</dd>
-						</div>
-						<div class="ms-stat">
-							<dt>Skill tokens</dt>
-							<dd>2.5T</dd>
-						</div>
-						<div class="ms-stat">
-							<dt>Avg. training hours</dt>
-							<dd>36K</dd>
-						</div>
-					</dl>
-				</div>
-				<div class="ms-step">
-					<div class="ms-period">Q1 - Q2 2027</div>
-					<div class="ms-title">The developer standard</div>
-					<p class="ms-body">Go-to platform for developers and physical AI startups.</p>
-					<dl class="ms-stats">
-						<div class="ms-stat">
-							<dt>Units sold</dt>
-							<dd>2,500</dd>
-						</div>
-						<div class="ms-stat">
-							<dt>Skill tokens</dt>
-							<dd>200T</dd>
-						</div>
-						<div class="ms-stat">
-							<dt>Avg. training hours</dt>
-							<dd>1.9M</dd>
-						</div>
-					</dl>
-				</div>
-				<div class="ms-step">
-					<div class="ms-period">Q3 - Q4 2027</div>
-					<div class="ms-title">Deployment</div>
-					<p class="ms-body">Factory and home deployment.</p>
-					<dl class="ms-stats">
-						<div class="ms-stat">
-							<dt>Units sold</dt>
-							<dd>5,000</dd>
-						</div>
-						<div class="ms-stat">
-							<dt>Skill tokens</dt>
-							<dd>300T</dd>
-						</div>
-						<div class="ms-stat">
-							<dt>Avg. training hours</dt>
-							<dd>7.3M</dd>
-						</div>
-					</dl>
-				</div>
-				<div class="ms-step ms-step-key">
-					<div class="ms-period">2028</div>
-					<div class="ms-title">Scale</div>
-					<p class="ms-body">
-						Revenue <strong>$614M</strong>: $348M token spend, $200M hardware &amp; $66M training
-						compute.
-					</p>
-					<dl class="ms-stats">
-						<div class="ms-stat">
-							<dt>Units sold</dt>
-							<dd>20,000</dd>
-						</div>
-						<div class="ms-stat">
-							<dt>Skill tokens</dt>
-							<dd>2Q</dd>
-						</div>
-						<div class="ms-stat">
-							<dt>Avg. training hours</dt>
-							<dd>50.7M</dd>
-						</div>
-					</dl>
-				</div>
-			</div>
-		</section>
-
-		<!-- SLIDE 7 - COMPETITION -->
-		<section class="slide" id="s11">
-			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$8k unit cost and 27B+ parameters</span> enables skill<br />
-				store that outperforms all existing humanoids
-			</h2>
-			<div class="landscape-table-wrap anim-in anim-d3">
-				<table class="approach-table landscape-table">
-					<thead>
-						<tr>
-							<th scope="col">Robot</th>
-							<th scope="col">Cost</th>
-							<th scope="col">Model size (parameters)</th>
-							<th scope="col">Robot app store</th>
-							<th scope="col">Cloud intelligence</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="approach-row-ours">
-							<th scope="row">Buildo</th>
-							<td>$8K</td>
-							<td>&gt;27 billion</td>
-							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
-							<td><span class="mark-yes" aria-label="Yes">&#10003;</span></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<a href="https://faunarobotics.com/" target="_blank" rel="noopener noreferrer"
-									>Fauna Sprout</a
-								>
-							</th>
-							<td>$50K</td>
-							<td>3.3 billion</td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer"
-									>Figure 03</a
-								>
-							</th>
-							<td>$30K&ndash;$150K</td>
-							<td>7 billion</td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<a href="https://lightberry.com/" target="_blank" rel="noopener noreferrer">Lumi</a>
-							</th>
-							<td>$40K</td>
-							<td>8 billion</td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<a href="https://feather.dev/" target="_blank" rel="noopener noreferrer">Feather</a>
-							</th>
-							<td>$30K</td>
-							<td>7 billion</td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<a href="https://www.1x.tech/neo" target="_blank" rel="noopener noreferrer"
-									>1X Neo</a
-								>
-							</th>
-							<td>$20K</td>
-							<td>14 billion</td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-							<td><span class="mark-no" aria-label="No">&#10007;</span></td>
-						</tr>
-					</tbody>
-				</table>
-				<aside class="landscape-callout">
-					<p>
-						Companies using <strong>Unitree as a wrapper</strong> face high costs and scalability issues
-						due to the latest FCC ban on mobile robots.
-					</p>
-				</aside>
-			</div>
-		</section>
-
-		<!-- SLIDE 12 - TEAM -->
-		<section class="slide" id="s13">
-			<h2 class="headline anim-in anim-d2">
-				Builders who have scaled hardware<br />
-				<span class="hl-gold">to $600M AUM and mass production</span> before
-			</h2>
-			<div class="advisor-label team-label anim-in anim-d3">Founding team</div>
-			<div class="team-grid anim-in anim-d3">
-				<div class="team-card">
-					<img class="team-photo" src="/assets/team/vipul.jpg" alt="" />
-					<div class="team-name">
-						<LinkedInName
-							name="Vipul Saini"
-							linkedin="https://www.linkedin.com/in/vipul-saini-59a24156/"
-							x="https://x.com/vipulsaini594"
-						/>
-					</div>
-					<div class="team-role">Founder · Chief Engineer</div>
-					<div class="team-bio">
-						Founded Cypherock and scaled the safest crypto hardware wallet to
-						<strong>$600M AUM</strong>. Leads Buildo from prototype to mass production.
-					</div>
-				</div>
-				<div class="team-card">
-					<img class="team-photo" src="/assets/team/chiragm.jpg" alt="" />
-					<div class="team-name">
-						<LinkedInName
-							name="Chirag Madaan"
-							linkedin="https://www.linkedin.com/in/appleswiggy/"
-						/>
-					</div>
-					<div class="team-role">Senior Machine Learning Engineer</div>
-					<div class="team-bio">
-						Shipped <strong>production grade machine learning</strong> at PayPal and the cryptography
-						securing 10,000+ Cypherock devices. Builds Buildo's skill models and training stack.
-					</div>
-				</div>
-				<div class="team-card">
-					<img class="team-photo" src="/assets/team/rakshit.jpg" alt="" />
-					<div class="team-name">
-						<LinkedInName
-							name="Rakshit Jain"
-							linkedin="https://www.linkedin.com/in/rakshitjain003/"
-						/>
-					</div>
-					<div class="team-role">Senior Robotics Engineer</div>
-					<div class="team-bio">
-						Holds multiple patents and has put <strong
-							>robotics and aerospace products into mass manufacturing</strong
-						>. Owns Buildo's mechanical design and manufacturability.
-					</div>
-				</div>
-				<div class="team-card">
-					<img class="team-photo" src="/assets/team/anay.jpg" alt="" />
-					<div class="team-name">
-						<LinkedInName
-							name="Anay Shiledar"
-							linkedin="https://www.linkedin.com/in/anay-shiledar-629036209/"
-						/>
-					</div>
-					<div class="team-role">Electrical Engineer</div>
-					<div class="team-bio">
-						Designs neural-interface electronics and firmware at UC Irvine's Neuroelectronics
-						Research Lab. Handles Buildo's <strong>embedded&nbsp;software</strong>, board bring-up,
-						and hardware integration.
-					</div>
-				</div>
-				<div class="team-card">
-					<img class="team-photo" src="/assets/team/chirag-v4.jpg" alt="" />
-					<div class="team-name">
-						<LinkedInName
-							name="Chirag Singla"
-							linkedin="https://www.linkedin.com/in/chirag-droid/"
-						/>
-					</div>
-					<div class="team-role">Software Engineer</div>
-					<div class="team-bio">
-						Has been writing <strong>transformer models</strong> for five years and shipped the cryptography
-						behind Cypherock's hardware wallet. Builds the AI that runs inside the robot.
-					</div>
-				</div>
-			</div>
-			<div class="advisor-label anim-in anim-d3">Research advisors</div>
-			<div class="advisor-grid anim-in anim-d3">
+			<div class="advisor-label advisor-label-center anim-in anim-d3">Research advisor</div>
+			<div class="advisor-grid advisor-grid-center anim-in anim-d3">
 				<div class="team-card">
 					<img class="team-photo" src="/assets/team/rohan.jpg" alt="" />
 					<div class="team-name">
-						<LinkedInName
-							name="Rohan P. Singh"
-							linkedin="https://www.linkedin.com/in/rohanpsingh/"
-						/>
+						<LinkedInName name="Rohan P. Singh" linkedin="https://www.linkedin.com/in/rohanpsingh/" />
 					</div>
 					<div class="team-role">Research Scientist</div>
 					<div class="team-bio">
-						Research scientist at Fauna Robotics and co-author of the Fauna Sprout humanoid. Advises
-						on
+						Research scientist at Fauna Robotics and co-author of the Fauna Sprout humanoid. Earned
+						his <strong>PhD from the University of Tsukuba</strong> and spent over seven years at the
+						<strong>CNRS-AIST Joint Robotics Lab</strong> in Japan, building reinforcement learning
+						controllers that walk the full-size HRP-5P humanoid over compliant and uneven terrain.
+						Published at IEEE Humanoids, ICRA and IEEE Access. Advises on
 						<strong>sim-to-real reinforcement learning</strong> for real hardware.
-					</div>
-				</div>
-				<div class="team-card">
-					<img class="team-photo" src="/assets/team/greta.jpg" alt="" />
-					<div class="team-name">
-						<LinkedInName
-							name="Greta Perez-Haiek"
-							linkedin="https://www.linkedin.com/in/greta-perez-haiek-7722bb211/"
-						/>
-					</div>
-					<div class="team-role">Research Scientist</div>
-					<div class="team-bio">
-						Research scientist at NYU's Center for Robotics and Embodied Intelligence, working on
-						<strong>high-dexterity manipulation</strong> with human-like hands. Advises on taking vision-language-action
-						models out of the lab and into the field.
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SLIDE 13 - VISION / ASK -->
-		<section class="slide" id="s15">
-			<div class="section-label anim-in anim-d1">Vision</div>
+		<!-- 11 · UNIT ECONOMICS -->
+		<section class="slide" id="p11">
 			<h2 class="headline anim-in anim-d2">
-				The next Android for the <span class="hl-gold">physical world</span>
+				24 hours of <span class="hl-gold">Physical &amp; Digital intelligence</span> = 10x Output
 			</h2>
-			<p class="vision-sub anim-in anim-d2">
-				Buildo is creating an <strong>App Store for the physical world</strong>, where developers
-				can turn real-world demonstrations into robot apps, validate them in simulation, and deploy
-				them globally across Buildo robots.
-			</p>
+			<div class="price-row anim-in anim-d3">
+				<div class="price-card">
+					<span class="card-num">Robot rental cost</span>
+					<span class="price-val">$600</span>
+					<span class="price-unit">per month</span>
+				</div>
+				<span class="price-op" aria-hidden="true">+</span>
+				<div class="price-card">
+					<span class="card-num">Cloud model inference cost</span>
+					<span class="price-val">$1,900</span>
+					<span class="price-unit">per month</span>
+				</div>
+				<span class="price-op" aria-hidden="true">=</span>
+				<div class="price-card price-card-key">
+					<span class="card-num">Total robot as service cost</span>
+					<span class="price-val">$2,500</span>
+					<span class="price-unit">per month</span>
+				</div>
+			</div>
+			<div class="bullet-list plain-list econ-notes anim-in anim-d3">
+				<div class="bullet-item">
+					<span class="bullet-icon">&#9656;</span>
+					<p>
+						Inference revenue goes <strong class="hl-gold">70% to Data Collection Partners</strong> and
+						<strong class="hl-gold">30% to Model Store</strong>
+					</p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">&#9656;</span>
+					<p>Manufacturing cost of robot = <strong>$8,000</strong></p>
+				</div>
+				<div class="bullet-item">
+					<span class="bullet-icon">&#9656;</span>
+					<p>Full rental profits starts from <strong>14th month</strong></p>
+				</div>
+			</div>
+		</section>
+
+		<!-- 12 · 2028 PROFITS -->
+		<section class="slide" id="p12">
+			<h2 class="headline anim-in anim-d2">
+				<span class="hl-gold">$150 million</span> annual recurring revenue in 2028
+			</h2>
+			<dl class="ledger anim-in anim-d3">
+				<div class="ledger-row">
+					<dt>Data collection phase</dt>
+					<dd>12 - 14 months</dd>
+				</div>
+				<div class="ledger-row">
+					<dt>Total revenue per robot per month from 14th Month</dt>
+					<dd>$2,500</dd>
+				</div>
+				<div class="ledger-row">
+					<dt>Server cost for A100 80 GB per robot</dt>
+					<dd>~ $1,000</dd>
+				</div>
+				<div class="ledger-row">
+					<dt>Cost of 5000 robots to company</dt>
+					<dd>$8,000 x 5000 = $40 M</dd>
+				</div>
+				<div class="ledger-row">
+					<dt>Monthly revenue for 5000 robots</dt>
+					<dd>$12.5 M</dd>
+				</div>
+			</dl>
+		</section>
+
+		<!-- 13 · ASK -->
+		<section class="slide" id="p13">
+			<div class="raise-grid anim-in anim-d2">
+				<div class="raise-card raise-card-key">
+					<span class="raise-val">$4 million <span class="hl-gold">seed</span></span>
+					<p>Scaling team and build the best intelligence model</p>
+				</div>
+				<div class="raise-card">
+					<span class="raise-val">$50 million <span class="hl-gold">series A</span></span>
+					<span class="raise-when">Q1 2027</span>
+					<p>Scale deployments to <strong>5000 robots</strong> at least</p>
+				</div>
+			</div>
+			<h2 class="headline thanks anim-in anim-d3">Thank you</h2>
 			<div class="ask-footer anim-in anim-d3">
 				<a href="https://starforgerobotics.com" target="_blank" rel="noopener noreferrer"
 					>starforgerobotics.com</a
-				>
-				&nbsp;·&nbsp;
-				<a href="mailto:vipul@starforgerobotics.com" target="_blank" rel="noopener noreferrer"
-					>vipul@starforgerobotics.com</a
 				>
 			</div>
 		</section>
 
 		<!-- APPENDIX -->
-		<section class="slide" id="s19">
+		<section class="slide" id="p14">
 			<h2 class="headline anim-in anim-d2">Appendix</h2>
+			<div class="appendix-head anim-in anim-d3">Manufacturing &amp; team</div>
 			<div class="bullet-list appendix-points anim-in anim-d3">
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						Skill-token take is <strong>5% through Q2 2027</strong>,
-						<strong>15% through Q4 2027</strong>, and <strong>30% from 2028</strong>. Developers keep
-						the rest.
-					</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						Gross spend is <strong>$0.58 per million</strong> tokens (90% input at $0.20, 10% output
-						at $4). Recognised token revenue is <strong>$5.87M</strong> through Q2 2027,
-						<strong>$26.1M</strong> in the second half of 2027, and <strong>$348M</strong> in 2028.
-						2028 revenue is <strong>$614M</strong>: $348M tokens, $200M hardware, and $66M training
-						compute.
-					</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						Unitree sold <strong>5,511 humanoids in 2025</strong> on $122M of revenue, so demand at
-						a low price point is already proven.<a
-							class="citation"
-							href="https://shop.unitree.com/blogs/news/clarification-regarding-unitrees-2025-sales-data"
-							target="_blank"
-							rel="noopener noreferrer">[3]</a
-						>
-					</p>
-				</div>
 				<div class="bullet-item">
 					<span class="bullet-icon">&#9656;</span>
 					<p>
@@ -1078,61 +833,9 @@
 					</p>
 				</div>
 			</div>
-			<div class="appendix-head anim-in anim-d3">Sources</div>
-			<ol class="appendix-sources anim-in anim-d3">
-				<li>
-					<a
-						href="https://www.bls.gov/oes/current/oes_nat.htm"
-						target="_blank"
-						rel="noopener noreferrer">U.S. Bureau of Labor Statistics</a
-					> &mdash; May 2025 occupational employment and wages; 65M workers and $3.1Tn of wages in the
-					physical labor groups, the base for our 2030 figure.
-				</li>
-				<li>
-					<a
-						href="https://x.com/a16z/status/2091200032162857328"
-						target="_blank"
-						rel="noopener noreferrer">a16z</a
-					> &mdash; robotics token demand and the 100&times; growth in intelligence API usage.
-				</li>
-				<li>
-					<a
-						href="https://shop.unitree.com/blogs/news/clarification-regarding-unitrees-2025-sales-data"
-						target="_blank"
-						rel="noopener noreferrer">Unitree</a
-					> &mdash; 2025 humanoid shipment and sales figures.
-				</li>
-				<li>
-					<a href="https://arxiv.org/pdf/2603.12263" target="_blank" rel="noopener noreferrer"
-						>arXiv 2603.12263</a
-					> &mdash; the split inference work our edge adapter is derived from.
-				</li>
-				<li>
-					<a
-						href="https://www.fortunebusinessinsights.com/humanoid-robots-market-110188"
-						target="_blank"
-						rel="noopener noreferrer">Fortune Business Insights</a
-					> &mdash; $6.24Bn humanoid robot market in 2026, growing 50.6% a year.
-				</li>
-				<li>
-					<a
-						href="https://newmarketpitch.com/blogs/news/humanoid-robotics-market-size"
-						target="_blank"
-						rel="noopener noreferrer">New Market Pitch</a
-					> &mdash; research and developer platforms are 45% of 2026 humanoid revenue.
-				</li>
-				<li>
-					<a
-						href="https://counterpointresearch.com/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026"
-						target="_blank"
-						rel="noopener noreferrer">Counterpoint Research</a
-					> &mdash; 50,000+ humanoid shipments in 2026, 60%+ to research and data production.
-				</li>
-			</ol>
 		</section>
 	</main>
 
-	<!-- ARROW CONTROLS -->
 	<button class="arrow arrow-prev" onclick={prevSlide} aria-label="Previous slide">
 		<svg
 			width="20"
@@ -1316,14 +1019,18 @@
 		right: 8px;
 	}
 
-	/* ── SLIDES ── */
+	/* ── SLIDES ──
+	   Every content slide is top-anchored so its headline sits at the same
+	   position regardless of how much body content follows it. The cover
+	   (#p1) and closing/ask (#p13) slides are bookend designs and opt back
+	   into vertical centering below. */
 	.slide {
 		position: absolute;
 		inset: 0;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		padding: clamp(56px, 14vh, 96px) clamp(36px, 5vw, 72px) clamp(24px, 6vh, 56px);
+		justify-content: flex-start;
+		padding: clamp(72px, 17vh, 118px) clamp(36px, 5vw, 72px) clamp(24px, 6vh, 56px);
 		opacity: 0;
 		transform: translateX(100%);
 		pointer-events: none;
@@ -1331,19 +1038,6 @@
 			opacity 0.5s ease,
 			transform 0.5s ease;
 		background: #ffffff;
-	}
-
-	/* Nudges the centred block up so the three-line headline is not sitting low. */
-	#s4 {
-		/* The tweet column runs nearly the full height of the stage, so this
-		   slide keeps less reserve at the foot than the others. */
-		padding-bottom: clamp(40px, 7vh, 72px);
-	}
-
-	#s4 .headline {
-		max-width: none;
-		position: relative;
-		top: clamp(-14px, -1.5vh, -6px);
 	}
 
 	:global(.slide.active) {
@@ -1375,16 +1069,6 @@
 	}
 
 	/* ── TYPOGRAPHY ── */
-	.section-label {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.6vmin, 11px);
-		letter-spacing: 0.3em;
-		color: #7a5e0f;
-		text-transform: uppercase;
-		margin-bottom: clamp(8px, 2.5vh, 18px);
-	}
-
 	.headline {
 		font-family: 'Bebas Neue', sans-serif;
 		font-size: clamp(22px, 5vmin, 56px);
@@ -1392,28 +1076,42 @@
 		line-height: 1.05;
 		letter-spacing: 0.02em;
 		color: #141210;
-		max-width: 820px;
+		max-width: none;
+		margin-bottom: clamp(10px, 2.6vh, 26px);
+	}
+
+	.headline-nowrap {
+		white-space: nowrap;
 	}
 
 	.hl-gold {
 		color: #7a5e0f;
 	}
 
-	/* Bebas has no lowercase, so a plural 's' is faked at a smaller size. */
-	.small-caps-s {
-		font-size: 0.72em;
+	/* Small Space Mono kicker shared by every card on the deck. */
+	.card-num {
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(8px, 1.5vmin, 11px);
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: #7a5e0f;
 	}
 
-	/* ── SLIDE 1 COVER ── */
-	#s1 {
+	.card-title {
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: clamp(20px, 4.2vmin, 40px);
+		letter-spacing: 0.03em;
+		line-height: 1.02;
+		color: #141210;
+	}
+
+	/* ── COVER ── */
+	#p1 {
 		justify-content: center;
 		background: #f1efeb;
 	}
 
-	/* Cover slide only. The network art is 16:9 and the stage is 16:9, so `cover`
-	   maps it edge to edge with nothing cropped. The white ramp is held heavy
-	   throughout: the graphic is now only a faint texture behind the headline and
-	   the Buildo render, both of which have to read cleanly over it. */
 	.cover-bg {
 		position: absolute;
 		inset: 0;
@@ -1434,8 +1132,6 @@
 		background-repeat: no-repeat;
 	}
 
-	/* Sits between the backdrop and the copy, pinned to the right so the headline
-	   column is untouched. */
 	.cover-figure {
 		position: absolute;
 		top: 0;
@@ -1455,9 +1151,6 @@
 		max-width: 42vw;
 		height: clamp(200px, 62vh, 500px);
 		object-fit: contain;
-		object-position: center;
-		/* The render is a crop that ends mid-torso, so it is faded out at the
-		   bottom rather than stopping on a hard edge. */
 		mask-image: linear-gradient(180deg, #000 0%, #000 82%, transparent 100%);
 	}
 
@@ -1494,7 +1187,15 @@
 		line-height: 1.08;
 		letter-spacing: 0.04em;
 		color: #141210;
-		max-width: none;
+	}
+
+	.cover-sub {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(14px, 2.8vmin, 28px);
+		font-weight: 600;
+		line-height: 1.55;
+		color: rgba(20, 18, 16, 0.82);
+		margin-top: clamp(14px, 2.4vmin, 26px);
 	}
 
 	.cover-divider {
@@ -1504,32 +1205,20 @@
 		margin: clamp(12px, 3vh, 28px) 0 clamp(8px, 2vh, 16px);
 	}
 
-	.cover-url {
+	a.cover-url {
+		display: inline-block;
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
 		font-size: clamp(11px, 2vmin, 15px);
 		color: #5f584e;
 		letter-spacing: 0.08em;
+		text-decoration: none;
+	}
+	a.cover-url:hover {
+		color: #7a5e0f;
 	}
 
-	/* Sits under the title, deliberately well below it in scale so the headline
-	   still carries the slide. Sized in vmin like the title so it tracks the
-	   stage rather than the browser window. */
-	.cover-sub {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(14px, 2.8vmin, 28px);
-		font-weight: 500;
-		line-height: 1.55;
-		color: rgba(20, 18, 16, 0.82);
-		max-width: 46ch;
-		margin-top: clamp(14px, 2.4vmin, 26px);
-	}
-
-	.cover-sub .hl-gold {
-		font-weight: 700;
-	}
-
-	/* ── BULLET LIST ── */
+	/* ── BULLETS ── */
 	.bullet-list {
 		margin-top: clamp(16px, 5vh, 36px);
 		display: flex;
@@ -1540,6 +1229,7 @@
 
 	.bullet-item {
 		display: flex;
+		align-items: baseline;
 		gap: 16px;
 		padding: clamp(14px, 3.2vh, 26px) clamp(14px, 2.5vw, 24px);
 		background: rgba(20, 18, 16, 0.044);
@@ -1550,69 +1240,12 @@
 	.bullet-icon {
 		color: #7a5e0f;
 		font-size: 12px;
-		padding-top: 2px;
 		flex-shrink: 0;
-	}
-
-	/* Problem slide: the two points sit left, the outside voices backing them up
-	   sit right. */
-	.problem-layout {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
-		gap: clamp(14px, 1.5vw, 26px);
-		align-items: center;
-		width: 100%;
-		min-width: 0;
-		margin-top: clamp(4px, 2vh, 16px);
-	}
-
-	.problem-layout .bullet-list {
-		margin-top: 0;
-	}
-
-	/* The point and the post below it move as one block against the pair of
-	   posts in the other column. */
-	.problem-copy {
-		display: flex;
-		flex-direction: column;
-		min-width: 0;
-	}
-
-	/* All three posts run down one column beside the copy, which lets the copy
-	   keep a full measure instead of wrapping after a few words. */
-	.quote-col {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		/* Nudged in from the right gutter without narrowing the column. */
-		position: relative;
-		left: clamp(-64px, -3.4vw, -26px);
-		/* The headline only occupies the left of the stage, so the column is
-		   lifted into the empty space beside it and can run taller. */
-		margin-top: clamp(-62px, -5.6vh, -26px);
-		align-items: stretch;
-		min-width: 0;
-	}
-
-	/* The two short posts read as a pair and sit centred against the copy. */
-	.tweet-stack {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(6px, 1.2vh, 14px);
-		min-width: 0;
-	}
-
-	.tweet-shot {
-		display: block;
-		width: 100%;
-		height: auto;
-		border: 1px solid rgba(20, 18, 16, 0.12);
-		border-radius: 12px;
 	}
 
 	.bullet-item p {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.2vmin, 15px);
+		font-size: clamp(13px, 2.6vmin, 20px);
 		font-weight: 500;
 		color: #3a3630;
 		line-height: 1.6;
@@ -1620,979 +1253,391 @@
 
 	.bullet-item p strong {
 		color: #141210;
-		font-weight: 500;
-	}
-
-	#s4 .bullet-item p strong.hl-gold {
-		color: #7a5e0f;
 		font-weight: 700;
 	}
 
-	/* The problem slide carries only these two lines, so they run as plain
-	   statements at a larger size instead of boxed cards. */
-	#s4 .bullet-item {
-		padding: clamp(6px, 1.4vh, 12px) 0;
+	.bullet-item p strong.hl-gold {
+		color: #7a5e0f;
+	}
+
+	/* Short single-line points read better as plain statements than as boxed
+	   cards, the same treatment as the problem slide on the old deck. */
+	.plain-list {
+		gap: clamp(8px, 2vh, 20px);
+	}
+
+	.plain-list .bullet-item {
+		padding: clamp(4px, 1vh, 10px) 0;
 		background: none;
 		border: 0;
 	}
 
-	#s4 .bullet-list {
-		gap: clamp(10px, 2.4vh, 22px);
-		max-width: 540px;
-	}
-
-	#s4 .bullet-item p {
-		font-size: clamp(14px, 2.6vmin, 21px);
-		line-height: 1.5;
-	}
-
-	#s4 .bullet-icon {
-		font-size: 16px;
-		padding-top: 6px;
-	}
-
-	/* ── SOLUTION CARDS ── */
-	/* Used by slides 8 (stacked) and 10 (side by side). */
-	.solution-cards {
-		margin-top: clamp(16px, 5vh, 40px);
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 3px;
-		max-width: 900px;
-	}
-
-	/* Title sits below the nav; the copy and clip share the rest of the stage. */
-	#s5 {
-		justify-content: flex-start;
-		padding-top: clamp(128px, 14vh, 156px);
-		padding-bottom: clamp(28px, 4vh, 48px);
-	}
-
-	#s5 .headline {
-		max-width: none;
-		position: relative;
-		top: 0;
-	}
-
-	/* Text and table stacked on the left, coffee clip on the right. */
-	.solution-layout {
-		margin-top: 0;
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) auto;
-		gap: clamp(28px, 4vw, 64px);
-		align-items: center;
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-	}
-
-	.solution-figure {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 0;
-		margin: 0;
-	}
-
-	/* ── APPROACH COMPARISON TABLE ── */
-	.approach-table-wrap {
-		min-width: 0;
-		position: relative;
-		align-self: start;
-		width: 100%;
-		margin-top: clamp(16px, 2.8vh, 32px);
-	}
-
-	/* Same portrait frame as the demos slide, scaled to the stage height and
-	   pinned to the right. Width follows 9:16, so it cannot crop into a square. */
-	#s5 .solution-video {
-		position: absolute;
-		top: 50%;
-		right: clamp(160px, 12vw, 240px);
-		transform: translateY(calc(-50% + 28px));
-		width: auto;
-		height: auto;
-		margin: 0;
-		display: flex;
-		justify-content: flex-end;
-	}
-
-	#s5 .solution-video video {
-		display: block;
-		height: calc(min(100vh, 100vw * 9 / 16) * 0.72);
-		width: auto;
-		aspect-ratio: 9 / 16;
-		object-fit: contain;
-	}
-
-	.approach-table {
-		width: 100%;
-		border-collapse: collapse;
-		font-family: 'Barlow', sans-serif;
-		background: #ffffff;
-		border: 2px solid rgba(20, 18, 16, 0.14);
-	}
-
-	.approach-table th,
-	.approach-table td {
-		padding: clamp(8px, 1.9vh, 18px) clamp(10px, 1.4vw, 22px);
-		border-bottom: 1px solid rgba(20, 18, 16, 0.1);
-		text-align: center;
-		font-size: clamp(11px, 1.95vmin, 16px);
-		font-weight: 500;
-		line-height: 1.35;
-		color: #3a3630;
-	}
-
-	.approach-table tbody tr:last-child th,
-	.approach-table tbody tr:last-child td {
-		border-bottom: 0;
-	}
-
-	/* Row labels read as the axis of the comparison, so they are left aligned
-	   while the values stay centred under their headings. */
-	.approach-table tbody th {
-		text-align: left;
-		color: #141210;
-		font-weight: 600;
-	}
-
-	.approach-table thead th {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		background: rgba(20, 18, 16, 0.044);
-		border-bottom: 2px solid rgba(20, 18, 16, 0.14);
-	}
-
-	.approach-table thead th:first-child {
-		text-align: left;
-	}
-
-	.approach-row-ours th,
-	.approach-row-ours td {
-		background: rgba(122, 94, 15, 0.09);
-		color: #141210;
-		font-weight: 700;
-	}
-
-	.approach-row-ours th {
-		position: relative;
-		color: #7a5e0f;
-	}
-
-	/* Gold edge marker, matching the accent rule used on the solution cards. */
-	.approach-row-ours th::before {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		width: 3px;
-		background: #7a5e0f;
-	}
-
-	/* Competitive landscape table, reusing the approach table's shell. */
-	.landscape-table-wrap {
-		margin-top: clamp(24px, 6vh, 64px);
-	}
-
-	#s11 .headline {
-		position: relative;
-		top: clamp(6px, 1.4vh, 18px);
-	}
-
-	/* Pulled out of the footnote slot: this is a competitive point, so it reads
-	   as a call-out rather than fine print. */
-	.landscape-callout {
-		display: flex;
-		align-items: baseline;
-		gap: clamp(9px, 1.4vw, 18px);
-		width: 80%;
-		margin: clamp(14px, 3vh, 30px) auto 0;
-		padding: clamp(10px, 2vh, 18px) clamp(14px, 2vw, 24px);
-		background: rgba(122, 94, 15, 0.07);
-		border-left: 3px solid #7a5e0f;
-	}
-
-	.landscape-callout p {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.1vmin, 18px);
-		font-weight: 400;
+	.plain-list .bullet-item p {
+		font-size: clamp(14px, 2.7vmin, 22px);
 		line-height: 1.45;
-		color: #3a3630;
 	}
 
-	.landscape-callout p strong {
-		color: #141210;
-		font-weight: 600;
+	.plain-list .bullet-icon {
+		font-size: clamp(13px, 2.2vmin, 18px);
+		width: 1.1em;
 	}
 
-	.landscape-note {
-		width: 84%;
-		margin: clamp(12px, 2.4vh, 24px) auto 0;
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(13px, 2.2vmin, 19px);
-		font-weight: 400;
-		line-height: 1.45;
-		color: #6b665e;
+	.compact-list {
+		gap: clamp(2px, 0.8vh, 8px);
+		margin-top: clamp(8px, 2vh, 18px);
 	}
 
-	.landscape-note strong {
-		font-weight: 600;
+	.compact-list .bullet-item p {
+		font-size: clamp(15px, 3vmin, 25px);
+	}
+
+	.mark-yes {
 		color: #7a5e0f;
 	}
 
-	/* Two classes so this beats the full-width rule on .approach-table. */
-	.landscape-table-wrap .landscape-table {
-		width: 86%;
-		margin-inline: auto;
-		/* Fixed widths: the name and cost columns get enough room to stay on one
-		   line, and the two mark columns are held narrow since a tick needs no
-		   more than its own width. */
-		table-layout: fixed;
-	}
-
-	.landscape-table-wrap .landscape-table th:nth-child(1) {
-		width: 22%;
-	}
-
-	.landscape-table-wrap .landscape-table th:nth-child(2) {
-		width: 18%;
-	}
-
-	.landscape-table-wrap .landscape-table th:nth-child(3) {
-		width: 26%;
-	}
-
-	.landscape-table-wrap .landscape-table th:nth-child(4) {
-		width: 15%;
-	}
-
-	.landscape-table-wrap .landscape-table th:nth-child(5) {
-		width: 19%;
-	}
-
-	.landscape-table-wrap .landscape-table tbody th,
-	.landscape-table-wrap .landscape-table tbody td {
-		padding-top: clamp(7px, 1.5vh, 15px);
-		padding-bottom: clamp(7px, 1.5vh, 15px);
-		font-size: clamp(14px, 2.7vmin, 23px);
-		white-space: nowrap;
-	}
-
-	.landscape-table-wrap .landscape-table thead th {
-		font-size: clamp(10px, 1.85vmin, 14px);
-	}
-
-	/* Scoped to this table so the highlighted row on the breakthrough slide
-	   keeps its normal casing. */
-	.landscape-table .approach-row-ours th,
-	.landscape-table .approach-row-ours td {
-		text-transform: uppercase;
-	}
-
-	.landscape-table tbody th a {
-		color: inherit;
-		text-decoration: underline;
-		text-underline-offset: 3px;
-		text-decoration-thickness: 1px;
-		text-decoration-color: rgba(20, 18, 16, 0.28);
-	}
-
-	.landscape-table tbody th a:hover {
-		color: #7a5e0f;
-	}
-
-	.landscape-table .mark-no {
+	.mark-no {
 		color: rgba(20, 18, 16, 0.38);
-		font-size: 1.15em;
 	}
 
-	.landscape-table .mark-yes {
+	.lead {
+		margin-top: clamp(12px, 3vh, 28px);
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(15px, 3vmin, 25px);
+		font-weight: 500;
+		line-height: 1.45;
+		color: #3a3630;
+		max-width: 34ch;
+	}
+
+	.lead strong {
+		font-weight: 700;
+		color: #141210;
+	}
+
+	.lead strong.hl-gold {
 		color: #7a5e0f;
-		font-size: 1.15em;
 	}
 
-	.solution-figure img {
-		display: block;
-		width: 100%;
-		height: auto;
-		/* The diagram is bound by slide height, not column width, so this cap is
-		   what actually sizes it. The stage is min(100vh, 56.25vw), so the cap
-		   has to track both: on a window wider than 16:9 the stage is shorter
-		   than the viewport and a plain vh value overflows it. */
-		max-height: clamp(200px, min(71vh, 40vw), 700px);
-		object-fit: contain;
-		background: #ffffff;
+	.lead + .bullet-list {
+		margin-top: clamp(10px, 2.4vh, 24px);
 	}
 
-	.solution-col {
-		align-self: center;
-		min-width: 0;
-		width: min(100%, 620px);
-	}
-
-	/* The two points run as plain statements beside the table, the same way the
-	   problem slide sets them. */
-	#s5 .bullet-list {
-		margin-top: 0;
-		max-width: none;
-		width: 100%;
-		gap: clamp(10px, 2.4vh, 22px);
-	}
-
-	#s5 .bullet-item {
-		padding: clamp(6px, 1.4vh, 12px) 0;
-		background: none;
-		border: 0;
-		gap: 12px;
-	}
-
-	#s5 .bullet-item p {
-		font-size: clamp(13px, 2.4vmin, 18px);
-		line-height: 1.5;
-	}
-
-	/* Matching the paragraph's first-line box puts the marker's centre on the
-	   centre of the opening letter instead of its baseline. */
-	#s5 .bullet-icon {
-		font-size: clamp(9px, 1.7vmin, 13px);
-		line-height: calc(clamp(13px, 2.4vmin, 18px) * 1.5);
-		padding-top: 0;
-	}
-
-	#s5 .solution-col {
-		position: relative;
-		top: clamp(-92px, -7.5vh, -44px);
-	}
-
-	/* Title sits above centre, stacked copy left, visuals right. */
-	#s8,
-	#s10,
-	#s13 {
-		justify-content: flex-start;
-		padding-top: clamp(76px, 14vh, 108px);
-		padding-bottom: clamp(16px, 3vh, 28px);
-	}
-
-	#s8 .section-label,
-	#s10 .section-label,
-	#s13 .section-label {
-		margin-bottom: clamp(6px, 1.6vh, 12px);
-	}
-
-	.infra-layout {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(12px, 2.8vh, 22px);
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-	}
-
-	.infra-copy {
-		display: flex;
-		flex-direction: column;
-		min-width: 0;
-	}
-
-	.infra-copy .headline {
-		max-width: none;
-	}
-
-	.infra-body {
+	/* ── COPY BESIDE A FIGURE ── */
+	.split {
 		display: grid;
-		grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-		gap: clamp(16px, 3vw, 36px);
+		grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+		gap: clamp(20px, 4vw, 64px);
 		align-items: center;
 		width: 100%;
-		min-width: 0;
-		min-height: 0;
 	}
 
-	/* The cards are laid out as two rows of the body grid so the figure column
-	   can borrow those rows and hang the screenshot off the seam between them. */
-	#s8 .infra-body {
-		grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
-		column-gap: clamp(12px, 2vw, 26px);
-		/* Two equal rows keep the figure anchored to the body's midline, which is
-		   where it sat when two cards filled this column. */
-		grid-template-rows: 1fr 1fr;
-		min-height: clamp(230px, 44vh, 400px);
-		row-gap: 3px;
-		align-items: start;
-		/* Drops the cards and figure without moving the headline above them. */
-		position: relative;
-		top: clamp(24px, 5.4vh, 56px);
-	}
-
-	.infra-points {
-		grid-column: 1;
-		grid-row: 1 / 3;
-		align-self: center;
+	.split > .bullet-list {
 		margin-top: 0;
-		max-width: none;
 	}
 
-	#s8 .infra-copy {
-		position: relative;
-		top: clamp(12px, 3vh, 32px);
+	.headline + .split {
+		margin-top: auto;
 	}
 
-	#s8 .bullet-item {
-		padding: 0;
-		background: none;
-		border: 0;
+	/* Centers a lone .split block (no element after it) in the space below
+	   the headline; when another block follows (e.g. #p6), that block picks
+	   up its own margin-bottom: auto instead. */
+	.split:last-child {
+		margin-bottom: auto;
 	}
 
-	#s8 .bullet-list {
-		gap: clamp(24px, 5.6vh, 52px);
+	/* These two are lighter on content, so instead of centering, keep them
+	   anchored just under the headline (like #p6) and let the leftover
+	   space collect below. */
+	#p4 .split,
+	#p5 .split {
+		margin-top: clamp(16px, 4vh, 40px);
 	}
 
-	#s8 .bullet-item p {
-		font-size: clamp(14px, 2.6vmin, 21px);
-		line-height: 1.5;
-	}
-
-	#s8 .bullet-icon {
-		font-size: 16px;
-		padding-top: 6px;
-	}
-
-	.infra-figure-col {
-		grid-column: 2;
-		grid-row: 1 / 3;
-		display: grid;
-		grid-template-rows: subgrid;
-		min-width: 0;
-	}
-
-	/* Zero height so it cannot stretch the rows. Centring the figure in a
-	   zero-height flex box overflows it evenly above and below, which puts its
-	   midpoint on the seam - the same result a transform would give, but
-	   without one: Chrome loses text inside transformed boxes when it paginates
-	   for print. The 3px cancels the row gap, since the centre line we want is
-	   the bottom edge of the first card. */
-	.infra-figure-anchor {
-		grid-row: 2;
-		position: relative;
-		top: clamp(-44px, -5.2vh, -20px);
-		left: clamp(10px, 1.6vw, 26px);
-		height: 0;
-		min-width: 0;
+	.split-figure {
 		display: flex;
-		flex-direction: column;
+		align-items: center;
 		justify-content: center;
-	}
-
-	/* The caption's height is cancelled out so the centring above measures the
-	   image alone. */
-	.infra-figure-anchor figcaption {
-		margin-bottom: calc(-1 * (1lh + clamp(6px, 1.2vh, 10px)));
-	}
-
-	#s8 .infra-figure img {
-		display: block;
-		/* Held short of the track width so the caption, which centres on the
-		   track, still lines up with the image's midpoint. */
-		width: 92%;
-		margin-inline: auto;
-		height: auto;
-		max-height: min(61vh, 520px);
-		object-fit: contain;
-		object-position: center;
-	}
-
-	.infra-figure {
-		display: block;
 		margin: 0;
 		min-width: 0;
-		background: none;
-		border: 0;
 	}
 
-	.infra-figure img {
+	.split-figure img {
 		display: block;
-		width: 100%;
-		height: auto;
+		width: auto;
+		max-width: 100%;
+		max-height: min(58vh, 460px);
 		object-fit: contain;
-		background: none;
 	}
 
-	.infra-figure figcaption {
-		margin-top: clamp(6px, 1.2vh, 10px);
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		text-align: center;
+	.split-figure-wide img {
+		max-height: min(56vh, 460px);
 	}
 
-	/* Shifted visually rather than through the flow, so the stack and the ladder
-	   below stay where the centred block puts them. */
-
-	#s10 .section-label,
-	#s10 .headline {
-		position: relative;
-		top: clamp(70px, 14.2vh, 128px);
+	.robot-figure img {
+		max-height: min(72vh, 740px);
 	}
 
-	/* Slide 8: the revenue stack reads top-down on the left, and the ARR ladder
-	   it resolves to sits on the right. */
-	.rev-model {
+	/* ── FRONTIER ── */
+	.frontier-grid {
 		display: grid;
-		align-content: center;
-		width: 100%;
-		flex: 1;
-		min-height: 0;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 3px;
+		margin-top: auto;
 	}
 
-	/* Two steps of one model, so they run side by side across the stage with the
-	   arrow carrying the reader from the hardware sale to the recurring API. */
-	.rev-stack {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-		gap: clamp(12px, 2.2vw, 32px);
-		align-items: stretch;
-		height: 100%;
-		min-width: 0;
-	}
-
-	.rev-step {
+	.frontier-card {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		gap: clamp(8px, 2vh, 18px);
+		padding: clamp(18px, 4.4vh, 40px) clamp(16px, 2.2vw, 30px);
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
-		border-left: 3px solid rgba(20, 18, 16, 0.16);
-		padding: clamp(18px, 4vh, 44px) clamp(16px, 2.4vw, 36px);
-		min-width: 0;
+		border-top: 2px solid #7a5e0f;
 	}
 
-	.rev-branch > .rev-step {
-		flex: 1 1 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.rev-step-key {
-		border-left-color: #7a5e0f;
-		background: rgba(122, 94, 15, 0.07);
-		/* Sized to its own copy rather than stretching to the taller branch. */
-		align-self: center;
-		padding-top: clamp(14px, 2.8vh, 30px);
-		padding-bottom: clamp(14px, 2.8vh, 30px);
-	}
-
-	.rev-step-head {
-		display: flex;
-		align-items: baseline;
-		flex-wrap: wrap;
-		gap: 0 clamp(6px, 0.8vw, 12px);
-		margin-bottom: clamp(4px, 1vh, 10px);
-	}
-
-	.rev-step-num {
-		font-family: 'Space Mono', monospace;
-		font-size: clamp(9px, 1.5vmin, 12px);
-		font-weight: 700;
-		letter-spacing: 0.16em;
-		color: #7a5e0f;
-	}
-
-	.rev-step-name {
-		font-family: 'Bebas Neue', sans-serif;
-		font-weight: 500;
-		font-size: clamp(18px, 3.2vmin, 34px);
-		letter-spacing: 0.03em;
-		color: #141210;
-	}
-
-	.rev-step-name .citation {
-		margin-left: 0.16em;
-	}
-
-	.rev-step-val {
-		font-family: 'Bebas Neue', sans-serif;
-		font-weight: 500;
-		font-size: clamp(18px, 3.2vmin, 34px);
-		letter-spacing: 0.03em;
-		color: #7a5e0f;
-		white-space: nowrap;
-	}
-
-	.rev-step p {
-		margin: 2px 0 0;
+	.statement {
+		margin-top: clamp(22px, 5.4vh, 54px);
+		margin-bottom: auto;
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.2vmin, 18px);
-		font-weight: 400;
-		line-height: 1.55;
-		color: #3a3630;
-		max-width: 46ch;
-	}
-
-	.rev-step p strong {
-		font-weight: 600;
-		color: #141210;
-	}
-
-	/* Lifts the label and headline alone; the revenue stack below stays put. */
-	#s10 .infra-copy {
-		position: relative;
-		top: clamp(-88px, -8vh, -32px);
-	}
-
-	/* The hardware sale feeds two revenue lines, so the right-hand column splits
-	   into a stacked pair that together match the height of the step opposite. */
-	.rev-branch {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(18px, 3vh, 34px);
-		align-self: stretch;
-		min-width: 0;
-	}
-
-	.rev-branch .rev-step {
-		flex: 1;
-		padding-top: clamp(12px, 2.4vh, 26px);
-		padding-bottom: clamp(12px, 2.4vh, 26px);
-	}
-
-	/* One arrow per branch, angled so each points at the box it feeds. */
-	.rev-fork {
-		align-self: stretch;
-		flex: 0 0 auto;
-		width: clamp(56px, 7vw, 120px);
-		height: auto;
-	}
-
-	.rev-fork > path {
-		fill: none;
-		stroke: rgba(20, 18, 16, 0.42);
-		stroke-width: 2.4;
-		stroke-linecap: round;
-	}
-
-	/* Slide 6 carries two product columns. Content starts a little above
-	   vertical centre so the photos under the cards still clear the stage. */
-	#s6 {
-		justify-content: flex-start;
-		padding-top: clamp(52px, 11vh, 80px);
-	}
-
-	.product-pair {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-		grid-template-areas:
-			'card1 . card2'
-			'shot1 price shot2';
-		grid-template-rows: auto minmax(0, 1fr);
-		column-gap: clamp(8px, 1.4vw, 16px);
-		row-gap: clamp(6px, 1.2vh, 12px);
-		margin-top: clamp(10px, 2.2vh, 22px);
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-	}
-
-	.product-card-1 {
-		grid-area: card1;
-	}
-
-	.product-card-2 {
-		grid-area: card2;
-	}
-
-	/* These two carry one line of copy each, so the generic card padding just
-	   costs the photos below them height. Scoped through the grid so it beats
-	   the later .why-card rule. */
-	.product-pair .product-card-1,
-	.product-pair .product-card-2 {
-		padding-top: clamp(9px, 1.7vh, 15px);
-		padding-bottom: clamp(9px, 1.7vh, 15px);
-	}
-
-	.product-shot-1 {
-		grid-area: shot1;
-	}
-
-	/* The robot is the hero of the slide, so it gets the taller cap. */
-	.product-pair .product-shot-1 img {
-		max-height: min(72vh, 640px, 100%);
-	}
-
-	.product-shot-2 {
-		grid-area: shot2;
-	}
-
-	/* The kit is a supporting shot, so it reads smaller than the robot. Scoped
-	   through the grid to beat the shared .product-shot img rule below. */
-	.product-pair .product-shot-2 img {
-		max-height: min(26vh, 215px, 100%);
-	}
-
-	/* Headstrap sits above the gloves in the kit cell, so the pair stacks and
-	   each shot is capped to roughly half the cell. */
-	.product-shot-2 {
-		flex-direction: column;
-		gap: clamp(6px, 1.2vh, 16px);
-	}
-
-	.product-pair .product-shot-2 img.kit-gloves {
-		max-height: min(21vh, 175px, 100%);
-	}
-
-	.product-price {
-		grid-area: price;
-		align-self: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 4px;
-		padding: 0 clamp(8px, 1.2vw, 16px);
-		text-align: center;
-	}
-
-	.product-price-label {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.4vmin, 10px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-	}
-
-	.product-price-val {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(28px, 5.5vmin, 42px);
-		line-height: 1;
-		color: #7a5e0f;
-	}
-
-	/* Slide 4: three plain statements on the left, the robot plus the two kit
-	   shots on the right. The kit column centres on the robot's midline. */
-	.kit-layout {
-		display: grid;
-		grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-		gap: clamp(16px, 3vw, 48px);
-		align-items: center;
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-		margin-top: clamp(10px, 2.2vh, 22px);
-	}
-
-	.kit-points {
-		margin-top: 0;
-	}
-
-	#s6 .headline {
-		position: relative;
-		top: clamp(32px, 7.4vh, 78px);
-	}
-
-	#s6 .bullet-item {
-		padding: clamp(6px, 1.4vh, 12px) 0;
-		background: none;
-		border: 0;
-	}
-
-	#s6 .bullet-list {
-		gap: clamp(10px, 2.4vh, 22px);
-		max-width: 620px;
-	}
-
-	#s6 .bullet-item p {
-		font-size: clamp(14px, 2.6vmin, 21px);
+		font-size: clamp(15px, 3vmin, 25px);
+		font-weight: 500;
 		line-height: 1.5;
+		color: #3a3630;
 	}
 
-	#s6 .bullet-icon {
-		font-size: 16px;
-		padding-top: 6px;
-	}
-
-	.kit-shots {
-		position: relative;
-		top: clamp(-58px, -6vh, -24px);
-		display: flex;
-		/* Bottom aligned so the gloves finish level with the robot's feet. */
-		align-items: flex-end;
-		justify-content: center;
-		gap: clamp(20px, 3.6vw, 60px);
-		min-width: 0;
-		min-height: 0;
-	}
-
-	.kit-shots figure {
-		flex-direction: column;
-	}
-
-	.kit-shots figcaption {
-		margin-top: clamp(8px, 1.4vh, 14px);
-		font-family: 'Space Mono', monospace;
+	.statement strong {
 		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		text-align: center;
-	}
-
-	/* The robot sits slightly right of centre inside its own render, so the
-	   caption is nudged back to line up with the robot rather than the file. */
-	.kit-robot figcaption {
-		position: relative;
-		right: clamp(5px, 0.8vw, 11px);
-	}
-
-	.kit-extras {
-		flex-direction: column;
-		gap: clamp(8px, 1.8vh, 20px);
-	}
-
-	.kit-robot {
-		flex: 0 1 auto;
-	}
-
-	.kit-shots .kit-robot img {
-		/* No 100% term here: the flex figure has an indefinite height, so a
-		   percentage max-height resolves to none and drops the whole min(). */
-		max-height: min(70vh, 620px);
-	}
-
-	.kit-extras {
-		flex: 0 0 auto;
-		width: clamp(100px, 13vw, 180px);
-	}
-
-	.kit-shots .kit-extras img {
-		max-height: min(15vh, 118px);
-	}
-
-	.product-shot {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 0;
-		min-height: 0;
-		margin: 0;
-		background: #ffffff;
-	}
-
-	/* Headline specs sit under the pair as a single strip. */
-	.product-specs {
-		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: clamp(8px, 1.6vw, 24px);
-		flex-shrink: 0;
-		margin-top: clamp(12px, 2.6vh, 28px);
-		padding-top: clamp(10px, 2vh, 18px);
-		border-top: 2px solid rgba(20, 18, 16, 0.12);
-	}
-
-	.product-spec {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 4px;
-		min-width: 0;
-		text-align: center;
-	}
-
-	.product-spec-label {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.3vmin, 10px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-	}
-
-	.product-spec-val {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(18px, 3.6vmin, 32px);
-		line-height: 1;
-		letter-spacing: 0.02em;
 		color: #141210;
 	}
 
-	.product-spec-val em {
+	/* ── STAT CARD ── */
+	.stat-card {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: clamp(6px, 1.4vh, 12px);
+		padding: clamp(20px, 5vh, 48px) clamp(18px, 2.6vw, 36px);
+		background: rgba(20, 18, 16, 0.044);
+		border: 2px solid rgba(20, 18, 16, 0.05);
+		border-top: 2px solid rgba(20, 18, 16, 0.2);
+	}
+
+	.stat-val {
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: clamp(54px, 15vmin, 150px);
+		line-height: 0.9;
+		color: #141210;
+	}
+
+	.stat-label {
 		font-family: 'Space Mono', monospace;
-		font-style: normal;
 		font-weight: 700;
-		font-size: clamp(9px, 1.5vmin, 12px);
-		letter-spacing: 0.1em;
+		font-size: clamp(8.5px, 1.6vmin, 12px);
+		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: #5f584e;
 	}
 
-	.product-shot img {
+	/* ── DATA KIT ── */
+	#p6 {
+		padding-bottom: clamp(10px, 2.4vh, 24px);
+	}
+
+	#p6 .lead {
+		margin-top: clamp(4px, 1.4vh, 14px);
+		font-size: clamp(17px, 3.4vmin, 30px);
+	}
+
+	.kit-pair {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: clamp(4px, 1vh, 10px);
+		margin: 0;
+		min-width: 0;
+	}
+
+	.kit-pair img {
 		display: block;
 		width: auto;
 		max-width: 100%;
-		height: auto;
-		/* The 100% keeps the photo inside its grid row so it cannot run over
-		   the spec strip below. */
-		max-height: min(62vh, 540px, 100%);
 		object-fit: contain;
 	}
 
-	/* ── WHY US ── */
-	.why-card {
-		padding: clamp(16px, 4vh, 40px) clamp(14px, 2.5vw, 28px);
-		position: relative;
+	.kit-glove {
+		max-height: min(42vh, 370px);
 	}
 
-	.why-card-line {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 2px;
-		background: linear-gradient(90deg, #7a5e0f, transparent);
+	.kit-glasses {
+		max-height: min(26vh, 220px);
 	}
 
-	.why-card-body {
+	.partners {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: clamp(16px, 3vw, 40px);
+		margin-top: clamp(6px, 1.6vh, 16px);
+		margin-bottom: auto;
+		padding-top: clamp(6px, 1.6vh, 14px);
+		border-top: 1px solid rgba(20, 18, 16, 0.1);
+	}
+
+	.partners p {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.2vmin, 15px);
+		font-size: clamp(13px, 2.5vmin, 20px);
 		font-weight: 500;
 		color: #3a3630;
-		line-height: 1.65;
 	}
 
-	.why-card-body strong {
-		color: #141210;
+	.partners strong {
+		font-weight: 700;
+	}
+
+	.partner-logos {
+		display: flex;
+		align-items: center;
+		gap: clamp(12px, 2vw, 28px);
+		flex-shrink: 0;
+	}
+
+	.partner-logos img {
+		display: block;
+		height: clamp(30px, 7vmin, 64px);
+		width: auto;
+		object-fit: contain;
+	}
+
+	/* ── DUAL BRAIN ── */
+	.brain-stack {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		min-width: 0;
+	}
+
+	#p8 .bullet-item p {
+		font-size: clamp(15px, 3vmin, 26px);
+	}
+
+	.brain-item {
+		display: flex;
+		align-items: center;
+		gap: clamp(14px, 2vw, 28px);
+		color: rgba(20, 18, 16, 0.55);
+	}
+
+	.brain-item-key {
+		color: #7a5e0f;
+	}
+
+	.brain-icon {
+		flex-shrink: 0;
+		width: clamp(52px, 11vmin, 112px);
+		height: clamp(52px, 11vmin, 112px);
+	}
+
+	.brain-text {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(4px, 1vh, 10px);
+	}
+
+	.brain-text .card-title {
+		font-size: clamp(24px, 5.4vmin, 54px);
+	}
+
+	.brain-text p {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(14px, 2.7vmin, 22px);
 		font-weight: 500;
+		color: #5f584e;
+	}
+
+	.brain-link {
+		margin-left: calc(clamp(52px, 11vmin, 112px) / 2 - 1px);
+		width: 2px;
+		height: clamp(28px, 8vh, 80px);
+		margin-top: clamp(6px, 1.4vh, 14px);
+		margin-bottom: clamp(6px, 1.4vh, 14px);
+		background: repeating-linear-gradient(
+			180deg,
+			#7a5e0f 0 5px,
+			transparent 5px 10px
+		);
+	}
+
+	/* ── VIDEO ── */
+	.video-frame {
+		width: min(100%, calc((min(100vh, 100vw * 9 / 16) - 260px) * 16 / 9));
+		aspect-ratio: 16 / 9;
+		margin: auto auto 0;
+		background: #141210;
+	}
+
+	.video-frame iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	.video-link {
+		margin-top: clamp(10px, 2vh, 20px);
+		margin-bottom: auto;
+		text-align: center;
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(10.5px, 1.95vmin, 14px);
+		letter-spacing: 0.08em;
+	}
+
+	.video-link a {
+		color: #7a5e0f;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-color: rgba(20, 18, 16, 0.82);
+	}
+
+	.video-link a:hover {
+		text-decoration-color: #7a5e0f;
 	}
 
 	/* ── TEAM ── */
-	/* Rows are content-sized: forcing two equal 1fr rows made the cards overlap
-	   each other on shorter windows. */
-	.team-grid {
-		display: grid;
-		grid-template-columns: repeat(5, minmax(0, 1fr));
-		grid-auto-rows: auto;
-		align-content: start;
-		gap: 3px;
-		margin-top: clamp(6px, 1.4vh, 14px);
-		/* No shrink: the flex parent was squeezing the auto rows below their
-		   content height, which is what made the cards overlap. */
-		flex: 0 0 auto;
+	#p10 {
+		padding-bottom: clamp(16px, 3.4vh, 32px);
 	}
 
-	/* Six columns need the room; narrower desktop windows fall back to 3x2. */
-	@media screen and (min-width: 901px) and (max-width: 1240px) {
-		.team-grid {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
-		}
+	.team-groups {
+		display: grid;
+		grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+		gap: clamp(10px, 1.4vw, 20px);
+		margin-top: auto;
+	}
+
+	.team-group {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.team-group .team-grid {
+		flex: 1;
+		margin-top: clamp(5px, 1.1vh, 12px);
+	}
+
+	.team-group-us .team-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.team-group-in .team-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.team-grid {
+		display: grid;
+		gap: 3px;
 	}
 
 	.advisor-label {
@@ -2605,22 +1650,30 @@
 		color: #7a5e0f;
 	}
 
-	/* Same treatment as the advisors label, but it opens the slide so it needs
-	   clearance from the headline. Declared after so this margin wins. */
-	.team-label {
-		margin-top: clamp(20px, 5vh, 54px);
+	.team-group .advisor-label {
+		margin-top: 0;
 	}
 
-	/* Same column width as the founder grid so the cards line up under it. */
+	/* One advisor, held to the width of a single US card pair so the row does
+	   not stretch across the whole stage. */
 	.advisor-grid {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: minmax(0, 0.5fr);
 		gap: 3px;
 		margin-top: clamp(5px, 1.1vh, 12px);
 	}
 
-	/* Advisors sit beside their photo rather than under it, so the extra row
-	   costs about half the height of a founder card. */
+	.advisor-label-center {
+		width: 100%;
+		text-align: center;
+	}
+
+	.advisor-grid-center {
+		width: 100%;
+		justify-content: center;
+		margin-bottom: auto;
+	}
+
 	.advisor-grid .team-card {
 		display: grid;
 		grid-template-columns: auto minmax(0, 1fr);
@@ -2655,25 +1708,25 @@
 		flex-direction: column;
 		min-width: 0;
 		min-height: 0;
-		padding: clamp(11px, 1.9vh, 24px) clamp(13px, 1.4vw, 22px);
+		padding: clamp(10px, 1.7vh, 22px) clamp(12px, 1.3vw, 20px);
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
 		border-top: 2px solid rgba(20, 18, 16, 0.15);
 	}
 
 	.team-photo {
-		width: clamp(38px, 6.4vh, 68px);
-		height: clamp(38px, 6.4vh, 68px);
+		width: clamp(36px, 6vh, 64px);
+		height: clamp(36px, 6vh, 64px);
 		flex-shrink: 0;
 		border: 2px solid rgba(20, 18, 16, 0.175);
 		border-radius: 50%;
 		object-fit: cover;
-		margin-bottom: clamp(7px, 1.4vh, 16px);
+		margin-bottom: clamp(6px, 1.2vh, 14px);
 	}
 
 	.team-name {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(14px, 2.3vh, 23px);
+		font-size: clamp(14px, 2.2vh, 22px);
 		font-weight: 600;
 		color: #141210;
 	}
@@ -2681,22 +1734,20 @@
 	.team-role {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(8.5px, 1.4vh, 13.5px);
+		font-size: clamp(8.5px, 1.35vh, 13px);
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: #7a5e0f;
 		margin-top: 4px;
-		margin-bottom: clamp(6px, 1.25vh, 13px);
+		margin-bottom: clamp(5px, 1.1vh, 12px);
 	}
 
-	/* Long compound words (Neuroelectronics, neural-interface) leave big ragged
-	   gaps in a narrow card, so hyphenation fills the lines out. */
 	.team-bio {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(10.5px, 1.78vh, 17.5px);
+		font-size: clamp(10.5px, 1.72vh, 17px);
 		font-weight: 500;
 		color: #5f584e;
-		line-height: 1.5;
+		line-height: 1.45;
 		hyphens: auto;
 		-webkit-hyphens: auto;
 		text-wrap: pretty;
@@ -2707,724 +1758,173 @@
 		color: #141210;
 	}
 
-	.comp-list {
-		margin-top: clamp(16px, 5vh, 48px);
-		display: flex;
-		flex-direction: column;
-		gap: 3px;
-		max-width: 820px;
-		min-width: 0;
-	}
-
-	/* Traction runs the copy against the capture, so the list gives up the
-	   right half of the stage and the whole block rides higher to make room. */
-	#s14 .headline {
-		max-width: none;
-		position: relative;
-		top: clamp(10px, 2.4vh, 26px);
-	}
-
-	.traction-layout {
+	/* ── UNIT ECONOMICS ── */
+	.price-row {
 		display: grid;
-		/* The capture carries the slide, so the copy column gives up width to it
-		   and wraps earlier. */
-		grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-		column-gap: clamp(20px, 3.6vw, 44px);
-		/* The row is content-sized and centred as a whole, so the photo keeps the
-		   position it had and the card top-aligns to it. */
-		align-items: start;
-		align-content: center;
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-		position: relative;
-		top: clamp(-4px, -0.5vh, 0px);
+		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+		align-items: center;
+		gap: clamp(8px, 1.4vw, 20px);
+		margin-top: auto;
 	}
 
-	.traction-layout .comp-list {
-		position: relative;
-		align-self: center;
-		margin-top: 0;
-		max-width: none;
-		left: 36px;
-	}
-
-	/* Hung under the card rather than sitting in flow, so the card alone centres
-	   against the photo. */
-	/* The customer point is gone, so these are the whole column: they sit in
-	   flow and centre against the capture instead of hanging below copy. */
-	.comp-unis {
+	.price-card {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		gap: clamp(28px, 5.6vh, 64px);
-	}
-
-	.comp-uni-row {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-wrap: nowrap;
-		gap: clamp(22px, 3.4vw, 48px);
-	}
-
-	/* Two marks share this row, so they can stand a little further apart than
-	   the tighter rows below. */
-	.comp-uni-row:first-child {
-		gap: clamp(36px, 5vw, 72px);
-	}
-
-	/* The marks share a row inside the copy column, so each is capped on width
-	   as well as height and allowed to shrink rather than push out. */
-	.comp-unis img {
-		height: clamp(39px, 7vmin, 60px);
-		width: auto;
-		max-width: 40%;
-		min-width: 0;
-		object-fit: contain;
-	}
-
-	.comp-unis .uni-ucsc {
-		height: clamp(34px, 6vmin, 53px);
-	}
-
-	.comp-unis .uni-umd {
-		height: clamp(49px, 8.9vmin, 77px);
-		max-width: 52%;
-	}
-
-	.comp-unis .uni-purdue {
-		height: clamp(39px, 7vmin, 60px);
-	}
-
-	/* The torch block is narrow, so it needs extra height to carry the same
-	   weight as the marks beside it. */
-	.comp-unis .uni-nyu {
-		height: clamp(82px, 15.5vmin, 131px);
-	}
-
-	.traction-figure {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin: 0;
-		min-width: 0;
-	}
-
-	.traction-figure img,
-	.traction-figure video {
-		display: block;
-		width: 100%;
-		max-width: 100%;
-		height: clamp(200px, min(50vh, 30vw), 420px);
-		object-fit: cover;
-		border: 2px solid rgba(20, 18, 16, 0.12);
-	}
-
-	/* Same height as the coffee clip on the breakthrough slide, pinned to the right. */
-	#s14 .traction-figure {
-		position: absolute;
-		top: 50%;
-		right: clamp(200px, 14vw, 280px);
-		transform: translateY(calc(-50% + 48px));
-		margin: 0;
-		width: auto;
-		height: auto;
-	}
-
-	#s14 .traction-figure video {
-		width: auto;
-		height: calc(min(100vh, 100vw * 9 / 16) * 0.72);
-		max-height: none;
-		max-width: none;
-		object-fit: contain;
-		border-radius: 12px;
-	}
-
-	.comp-figure {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 0;
-		min-width: 0;
-	}
-
-	.comp-figure figcaption {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		text-align: center;
-		line-height: 1.35;
-		margin: 0 0 8px;
-		width: 100%;
-	}
-
-	.comp-year {
-		color: #7a5e0f;
-		font-size: 1.35em;
-		letter-spacing: 0.18em;
-		border-bottom: 2px solid #7a5e0f;
-		padding-bottom: 1px;
-	}
-
-	.comp-figure img {
-		display: block;
-		width: 100%;
-		height: auto;
-		max-height: min(48vh, 420px);
-		object-fit: contain;
-		object-position: center;
-		background: #ffffff;
-	}
-
-	.comp-item {
-		display: flex;
-		gap: clamp(16px, 3vw, 32px);
-		padding: clamp(16px, 4vh, 32px) clamp(18px, 3.5vw, 36px);
+		gap: clamp(2px, 0.6vh, 6px);
+		padding: clamp(8px, 1.8vh, 18px) clamp(14px, 2vw, 28px);
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
-		border-left: 3px solid #7a5e0f;
+		border-top: 2px solid rgba(20, 18, 16, 0.2);
 	}
 
-	/* Traction runs this as a plain pointed statement, matching the bullets on
-	   the other slides rather than a card. */
-	#s14 .comp-item {
-		gap: 16px;
-		margin-top: clamp(26px, 6vh, 64px);
-		padding: clamp(6px, 1.4vh, 12px) 0;
-		background: none;
-		border: 0;
-	}
-
-	/* Centred on the company name by matching its line box, the same way the
-	   pointers sit on the other slides. */
-	#s14 .bullet-icon {
-		font-size: 16px;
-		padding-top: 0;
-		line-height: 1.25;
-	}
-
-	.comp-title {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(13px, 2.4vmin, 17px);
-		font-weight: 600;
-		color: #141210;
-		margin-bottom: clamp(5px, 1.2vh, 8px);
-	}
-
-	#s14 .comp-title a {
-		color: inherit;
-		font-weight: inherit;
-		text-decoration: underline;
-		text-underline-offset: 3px;
-		text-decoration-thickness: 1px;
-	}
-
-	#s14 .comp-title a:hover {
-		color: #7a5e0f;
-	}
-
-	/* The only point on the slide, so it carries more weight than the stacked
-	   lists this type scale was set for. */
-	#s14 .comp-title {
-		font-size: clamp(14px, 2.65vmin, 20px);
-	}
-
-	#s14 .comp-body {
-		font-size: clamp(13px, 2.42vmin, 16.5px);
-	}
-
-	/* The type came up a notch, so the measure comes in by the same amount and
-	   the lines keep breaking where they did. */
-	#s14 .comp-content {
-		max-width: 91%;
-	}
-
-	.comp-body {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.2vmin, 15px);
-		font-weight: 500;
-		color: #3a3630;
-		line-height: 1.65;
-	}
-
-	.comp-body strong {
-		color: #141210;
-		font-weight: 500;
-	}
-
-	/* ── MILESTONES ── */
-	/* Shifted visually rather than through the flow, so the timeline below keeps
-	   the position the centred block gives it. */
-	#s18 .section-label,
-	#s18 .headline {
-		position: relative;
-		top: clamp(16px, 3.6vh, 36px);
-	}
-
-	/* Four columns reading left to right along a shared rail, with a marker on
-	   the rail above each step. */
-	.ms-track {
-		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: clamp(10px, 1.6vw, 24px);
-		align-content: center;
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-		margin-top: clamp(14px, 3.2vh, 32px);
-	}
-
-	.ms-step {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		min-width: 0;
-		min-height: clamp(240px, 50vh, 500px);
-		padding: clamp(24px, 4.6vh, 44px) clamp(15px, 2vw, 26px) clamp(20px, 3.8vh, 36px);
-		background: rgba(20, 18, 16, 0.035);
-		border-top: 2px solid rgba(20, 18, 16, 0.16);
-	}
-
-	.ms-step::before {
-		content: '';
-		position: absolute;
-		top: -6px;
-		left: clamp(12px, 1.5vw, 20px);
-		width: 10px;
-		height: 10px;
-		background: #f1efeb;
-		border: 2px solid rgba(20, 18, 16, 0.28);
-		border-radius: 50%;
-	}
-
-	.ms-step-key {
-		background: rgba(122, 94, 15, 0.08);
+	.price-card-key {
 		border-top-color: #7a5e0f;
+		background: rgba(122, 94, 15, 0.07);
 	}
 
-	.ms-step-key::before {
-		background: #7a5e0f;
-		border-color: #7a5e0f;
-	}
-
-	.ms-period {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(9px, 1.8vmin, 13px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-	}
-
-	.ms-title {
+	.price-val {
 		font-family: 'Bebas Neue', sans-serif;
-		font-weight: 500;
-		font-size: clamp(19px, 3.5vmin, 34px);
-		letter-spacing: 0.03em;
-		line-height: 1.05;
+		font-size: clamp(34px, 9vmin, 92px);
+		line-height: 0.95;
 		color: #141210;
-		margin-top: clamp(4px, 1vh, 8px);
-		/* Two lines reserved in every card: now that the stats grow upward from
-		   the copy rather than hanging off the foot, a title that wraps in one
-		   card would knock its rows out of step with the other three. */
-		min-height: 2.1em;
 	}
 
-	.ms-body {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(12px, 2.25vmin, 19px);
-		font-weight: 500;
-		line-height: 1.5;
-		color: #3a3630;
-		margin-top: clamp(5px, 1.2vh, 10px);
-		/* Reserve the tallest card's copy block in every card so the rule above
-		   the stats lands on the same line across the track, and keep breathing
-		   room before that rule even when the copy fills the block. */
-		min-height: 4.5em;
-		margin-bottom: clamp(12px, 2.4vh, 22px);
-	}
-
-	.ms-body strong {
-		font-weight: 700;
+	.price-card-key .price-val {
 		color: #7a5e0f;
 	}
 
-	/* The copy block above is a fixed height in every card, so letting the stats
-	   claim all the space that is left and spacing the three rows evenly keeps
-	   them on the same lines across the track instead of bunched at the foot. */
-	.ms-stats {
-		margin: clamp(10px, 2vh, 18px) 0 0;
-		padding-top: clamp(8px, 1.6vh, 14px);
-		border-top: 1px solid rgba(20, 18, 16, 0.12);
+	.price-unit {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(12px, 2.1vmin, 16px);
+		font-weight: 500;
+		color: #5f584e;
+	}
+
+	.price-op {
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: clamp(28px, 6vmin, 60px);
+		color: rgba(20, 18, 16, 0.4);
+	}
+
+	.econ-notes {
+		max-width: none;
+		margin-top: clamp(14px, 3.4vh, 34px);
+		margin-bottom: auto;
+		gap: clamp(2px, 0.8vh, 8px);
+	}
+
+	.econ-notes .bullet-item p {
+		font-size: clamp(15px, 3vmin, 26px);
+	}
+
+	/* ── 2028 PROFITS ── */
+	.ledger {
+		margin: auto 0;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		gap: clamp(3px, 0.8vh, 7px);
-		flex: 1 1 auto;
+		width: 100%;
+		max-width: 1320px;
+		border-top: 2px solid rgba(20, 18, 16, 0.2);
 	}
 
-	.ms-stat {
+	.ledger-row {
 		display: flex;
 		align-items: baseline;
 		justify-content: space-between;
-		gap: 8px;
+		gap: clamp(16px, 3vw, 48px);
+		padding: clamp(12px, 2.8vh, 26px) 0;
+		border-bottom: 1px solid rgba(20, 18, 16, 0.1);
 	}
 
-	.ms-stat dt {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(9px, 1.65vmin, 13px);
-		/* One line per label: a wrapped label would push this card's rows out of
-		   step with the other three. */
-		white-space: nowrap;
-		letter-spacing: 0.09em;
-		text-transform: uppercase;
-		color: #6b665e;
-	}
-
-	.ms-stat dd {
-		margin: 0;
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(19px, 3.15vmin, 31px);
-		letter-spacing: 0.03em;
-		line-height: 1;
-		color: #141210;
-	}
-
-	.ms-step-key .ms-stat dd {
-		color: #7a5e0f;
-	}
-
-	.ms-note {
-		margin: clamp(10px, 2vh, 18px) 0 0;
+	.ledger-row dt {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(10px, 1.8vmin, 15px);
+		font-size: clamp(16px, 3.2vmin, 28px);
+		font-weight: 500;
+		color: #3a3630;
+	}
+
+	.ledger-row dd {
+		margin: 0;
+		font-family: 'Space Mono', monospace;
 		font-weight: 400;
-		line-height: 1.45;
-		color: #6b665e;
-		max-width: 96ch;
+		font-size: clamp(15px, 3vmin, 26px);
+		letter-spacing: 0.02em;
+		color: #141210;
+		white-space: nowrap;
 	}
 
-	.ms-note strong {
-		font-weight: 600;
-		color: #7a5e0f;
-	}
-
-	/* ── VISION / ASK ── */
-	/* The second line is a single clause and reads badly broken in half, so this
-	   headline is allowed past the standard measure. */
-	#s15 .headline {
-		max-width: none;
-	}
-
-	#s15 {
+	/* ── ASK ── */
+	#p13 {
+		justify-content: center;
 		background:
 			radial-gradient(ellipse 60% 80% at 90% 50%, rgba(20, 18, 16, 0.025) 0%, transparent 60%),
 			#f1efeb;
 	}
 
-	/* The slide carries a title and one paragraph, so both run larger than the
-	   deck's defaults and the pair sits above centre. */
-	#s15 .section-label,
-	#s15 .headline {
-		position: relative;
-		top: clamp(-56px, -5.4vh, -24px);
-	}
-
-	/* Held where it sat before the block was raised, so the paragraph keeps its
-	   distance from the title rather than following it up. */
-	.vision-sub {
-		position: relative;
-		top: clamp(-24px, -2.2vh, -10px);
-	}
-
-	#s15 .headline {
-		font-size: clamp(26px, 6vmin, 68px);
-	}
-
-	.vision-sub {
-		margin-top: clamp(16px, 3vh, 32px);
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(15px, 2.9vmin, 24px);
-		font-weight: 500;
-		line-height: 1.55;
-		color: #3a3630;
-		max-width: 900px;
-	}
-
-	.vision-sub strong {
-		font-weight: 700;
-		color: #141210;
-	}
-
-	.nowrap {
-		white-space: nowrap;
-	}
-
-	/* Same marker as the problem slide, but the copy runs plain here. */
-	/* Source markers. Ported from the teammate's deck; recoloured from the old
-	   #b89c72 gold to the current accent, which that revision predates. */
-	.citation {
-		color: var(--deck-accent, #7a5e0f);
-		text-decoration: none;
-		font-size: 0.7em;
-		vertical-align: super;
-		line-height: 0;
-		margin-left: 1px;
-		cursor: pointer;
-	}
-
-	.citation:hover {
-		text-decoration: underline;
-	}
-
-	/* Utility for parking a slide without breaking the counter, which now reads
-	   the live slide count rather than a hardcoded total. Declared :global so
-	   Svelte does not strip it as unused before anything applies the class. */
-	:global(.slide-hidden) {
-		display: none !important;
-	}
-
-	/* The ask sits under the metrics rather than beside them, which also lets
-	   the metrics start at the left edge of the slide. */
-
-	.ask-footer {
-		margin-top: clamp(30px, 5.5vh, 60px);
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(10.5px, 1.95vmin, 13px);
-		color: #5f584e;
-		letter-spacing: 0.08em;
-	}
-
-	/* ── APPENDIX ── */
-	.appendix-points {
-		margin-top: clamp(14px, 3vh, 30px);
-		max-width: none;
-		gap: clamp(6px, 1.4vh, 14px);
-	}
-
-	#s19 .bullet-item {
-		padding: clamp(4px, 1vh, 9px) 0;
-		background: none;
-		border: 0;
-	}
-
-	#s19 .bullet-item p {
-		font-size: clamp(12px, 2.2vmin, 17px);
-		line-height: 1.5;
-	}
-
-	#s19 .bullet-icon {
-		font-size: 15px;
-		padding-top: 5px;
-	}
-
-	/* Two columns so the reference list stays on one screen under the points. */
-	.appendix-sources {
-		columns: 2;
-		column-gap: clamp(20px, 3.4vw, 52px);
-	}
-
-	.appendix-head {
-		margin-top: clamp(12px, 2.6vh, 26px);
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8px, 1.5vmin, 11px);
-		letter-spacing: 0.22em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-		margin-bottom: clamp(6px, 1.2vh, 10px);
-	}
-
-	.appendix-head:not(:first-child) {
-		margin-top: clamp(12px, 2.4vh, 22px);
-	}
-
-	.appendix-sources {
-		margin: 0;
-		padding-left: 1.2em;
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(9.5px, 1.65vmin, 13px);
-		font-weight: 500;
-		line-height: 1.5;
-		color: #5f584e;
-	}
-
-	.appendix-sources a {
-		color: #7a5e0f;
-		font-weight: 700;
-		text-decoration: underline;
-		text-underline-offset: 2px;
-	}
-
-	.appendix-sources a:hover {
-		color: #141210;
-	}
-
-	/* ── MARKET TIERS ── */
-	/* Only the headline rises; the bands keep the position the centred block
-	   gives them. */
-	#s20 .headline {
-		max-width: none;
-		position: relative;
-		top: clamp(-46px, -5.4vh, -20px);
-	}
-
-	/* Each tier is narrower than the one above it, so the funnel reads without
-	   any chart. */
-	.market-tiers {
-		margin-top: clamp(10px, 2.2vh, 26px);
-		display: flex;
-		flex-direction: column;
-		gap: clamp(10px, 2.4vh, 24px);
+	.raise-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 3px;
 		width: 100%;
+		max-width: 1320px;
 	}
 
-	.market-tier {
-		display: flex;
-		align-items: center;
-		gap: clamp(18px, 3.4vw, 52px);
-		padding: clamp(12px, 2.6vh, 24px) 0;
-		border-top: 3px solid #7a5e0f;
-	}
-
-	/* All three bands share a right edge; the figures alone carry the funnel.
-	   Held short of the slide's gutter: the longest line of copy ends well
-	   before it, and a rule running the full width just underlines empty space. */
-	.market-tier-tam,
-	.market-tier-sam,
-	.market-tier-som {
-		width: 76%;
-	}
-
-	.market-tier-figure {
+	.raise-card {
 		display: flex;
 		flex-direction: column;
-		gap: 2px;
-		flex-shrink: 0;
-		min-width: clamp(90px, 12vw, 168px);
+		gap: clamp(6px, 1.4vh, 14px);
+		padding: clamp(18px, 4.4vh, 42px) clamp(18px, 2.4vw, 34px);
+		background: rgba(255, 255, 255, 0.7);
+		border: 2px solid rgba(20, 18, 16, 0.05);
+		border-top: 2px solid rgba(20, 18, 16, 0.2);
 	}
 
-	.market-tier-label {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(9px, 1.7vmin, 13px);
-		letter-spacing: 0.22em;
-		text-transform: uppercase;
-		color: #7a5e0f;
+	.raise-card-key {
+		border-top-color: #7a5e0f;
 	}
 
-	.market-tier-val {
+	.raise-val {
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(26px, 5.6vmin, 56px);
+		font-size: clamp(30px, 7.4vmin, 76px);
 		line-height: 1;
 		letter-spacing: 0.02em;
 		color: #141210;
 	}
 
-	.market-tier-body {
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(13px, 2.5vmin, 19.5px);
-		font-weight: 500;
-		line-height: 1.55;
-		color: #3a3630;
-		min-width: 0;
-	}
-
-	.market-tier-body strong {
-		color: #7a5e0f;
-		font-weight: 700;
-	}
-
-	/* ── SKILLS MARKETPLACE DIAGRAM ── */
-	/* An app-store constellation rather than a screenshot: the store mark on
-	   top, the catalogue fanning out underneath it. */
-	.store-cloud {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: clamp(12px, 2.4vh, 26px);
-		width: 100%;
-	}
-
-	.store-hero {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: clamp(78px, 15vh, 150px);
-		height: clamp(78px, 15vh, 150px);
-		border-radius: 24%;
-		background: #141210;
-	}
-
-	.store-hero img {
-		width: 62%;
-		height: auto;
-	}
-
-	.store-row {
-		display: flex;
-		justify-content: center;
-		gap: clamp(8px, 1.4vw, 20px);
-	}
-
-	.store-row-2 {
-		margin-top: clamp(6px, 1.2vh, 12px);
-	}
-
-	.store-tile {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: clamp(5px, 0.9vh, 9px);
-		width: clamp(80px, 11.6vw, 150px);
-	}
-
-	.store-tile svg {
-		width: clamp(64px, 9.2vw, 118px);
-		height: clamp(64px, 9.2vw, 118px);
-		padding: 22%;
-		border-radius: 24%;
-		background: rgba(20, 18, 16, 0.05);
-		border: 1px solid rgba(20, 18, 16, 0.1);
-		fill: none;
-		stroke: #7a5e0f;
-		stroke-width: 1.8;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-	}
-
-	/* Alternating fills keep the grid from reading as a spreadsheet. */
-	.store-row-1 .store-tile:nth-child(2n) svg,
-	.store-row-2 .store-tile:nth-child(2n + 1) svg {
-		background: rgba(122, 94, 15, 0.13);
-		border-color: rgba(122, 94, 15, 0.26);
-	}
-
-	.store-tile span {
+	.raise-when {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
-		font-size: clamp(9.5px, 1.85vmin, 15px);
-		letter-spacing: 0.08em;
+		font-size: clamp(9px, 1.7vmin, 13px);
+		letter-spacing: 0.2em;
 		text-transform: uppercase;
-		text-align: center;
-		line-height: 1.3;
+		color: #7a5e0f;
+	}
+
+	.raise-card p {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(14px, 2.7vmin, 22px);
+		font-weight: 500;
+		line-height: 1.45;
 		color: #3a3630;
 	}
 
-	/* ── LINKS ── */
-	a.cover-url {
-		display: inline-block;
-		text-decoration: none;
-		color: #5f584e;
+	.raise-card p strong {
+		font-weight: 700;
+		color: #141210;
 	}
-	a.cover-url:hover {
-		color: #7a5e0f;
+
+	.thanks {
+		margin-top: clamp(26px, 6.4vh, 64px);
+		font-size: clamp(30px, 7vmin, 72px);
+	}
+
+	.ask-footer {
+		margin-top: clamp(6px, 1.4vh, 14px);
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(10.5px, 1.95vmin, 13px);
+		color: #5f584e;
+		letter-spacing: 0.08em;
 	}
 
 	.ask-footer a {
@@ -3437,6 +1937,41 @@
 		text-decoration-color: #7a5e0f;
 	}
 
+	/* ── APPENDIX ── */
+	.appendix-head {
+		margin-top: auto;
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(8px, 1.5vmin, 11px);
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: #7a5e0f;
+	}
+
+	.appendix-points {
+		margin-top: clamp(8px, 1.8vh, 18px);
+		margin-bottom: auto;
+		max-width: none;
+		gap: clamp(6px, 1.4vh, 14px);
+	}
+
+	#p14 .bullet-item {
+		padding: clamp(4px, 1vh, 9px) 0;
+		background: none;
+		border: 0;
+	}
+
+	#p14 .bullet-item p {
+		max-width: 1320px;
+		font-size: clamp(13px, 2.6vmin, 20px);
+		line-height: 1.5;
+	}
+
+	#p14 .bullet-icon {
+		font-size: 15px;
+	}
+
+	/* ── EXPORT ── */
 	:global(body.deck-printing) nav,
 	:global(body.deck-printing) .arrow,
 	:global(body.deck-printing) .print-btn {
@@ -3489,15 +2024,9 @@
 		break-after: page;
 	}
 
-	/* ── PRINT / PDF EXPORT ── */
 	/* ══ MOBILE ══
-	   A 16:9 stage inside a portrait phone is a ~220px tall letterbox, so below
-	   900px the deck stops being a carousel: the stage becomes a normal block,
-	   every slide is a full-width card of its own height, and the page scrolls.
-	   The carousel's inline transform/opacity are cleared by the script, but the
-	   !important here also covers the moment before it runs. */
-	/* Screen only: print keeps its own landscape layout, so a PDF exported
-	   from a narrow window is still the wide deck. */
+	   Below 900px the deck stops being a carousel and every slide becomes a
+	   full-width card of its own height, the same as the old deck. */
 	@media screen and (max-width: 900px) {
 		.deck-viewport {
 			display: block;
@@ -3515,13 +2044,11 @@
 			box-shadow: none;
 		}
 
-		/* Sticky would sit on top of every headline as you scroll past it. */
 		nav {
 			position: static;
 			padding: 12px 20px;
 		}
 
-		/* Dots and the slide counter only mean something in the carousel. */
 		.nav-center,
 		.arrow {
 			display: none;
@@ -3540,39 +2067,18 @@
 			border-bottom: 1px solid rgba(20, 18, 16, 0.09);
 		}
 
+		.video-frame {
+			width: 100%;
+		}
+
 		:global(.slide .anim-in) {
 			opacity: 1 !important;
 			transform: none !important;
 			animation: none !important;
 		}
 
-		/* Every desktop nudge is measured against a 16:9 stage, so they all read
-		   as arbitrary offsets once the slides are stacked. Cleared by element
-		   rather than by slide so a new nudge upstream cannot reintroduce one. */
-		.section-label,
-		.headline,
-		.cover-content,
-		.infra-copy,
-		.infra-points,
-		.traction-layout,
-		.market-tiers,
-		.solution-col,
-		.kit-shots {
-			top: 0 !important;
-			left: 0 !important;
-		}
-
-		/* On a wide stage the posts are lifted into the empty space beside the
-		   headline. Stacked under the copy that same lift drags them over the
-		   bullets. */
-		.quote-col {
-			margin-top: 0;
-			left: 0;
-		}
-
-		/* ── Type scales off the card width instead of the short side of a phone ── */
-		.section-label {
-			font-size: 10px;
+		.cover-content {
+			top: 0;
 		}
 
 		.headline {
@@ -3583,144 +2089,40 @@
 			font-size: clamp(30px, 9vw, 46px);
 		}
 
-		/* The line breaks are balanced for a wide stage and only make the column
-		   ragged at this width, so headlines wrap on their own. */
-		.headline br,
-		.cover-title br {
+		.cover-title br,
+		.statement br {
 			display: none;
 		}
 
 		.bullet-item p,
-		.comp-body,
-		.why-card-body {
-			font-size: 15px;
+		.plain-list .bullet-item p,
+		.compact-list .bullet-item p,
+		.econ-notes .bullet-item p,
+		#p8 .bullet-item p,
+		.lead,
+		#p6 .lead,
+		.statement,
+		.partners p,
+		.raise-card p,
+		.ledger-row dt {
+			font-size: 16px;
 		}
 
-		/* ── Every two- and three-column layout becomes one column ── */
-		.solution-layout,
-		.infra-body,
-		#s8 .infra-body,
-		.problem-layout,
-		.quote-col,
-		.traction-layout,
-		.kit-layout,
-		.rev-stack,
-		.ms-track,
-		.team-grid,
-		.advisor-grid {
+		.split,
+		.frontier-grid,
+		.team-groups,
+		.raise-grid {
 			display: flex;
 			flex-direction: column;
-			gap: clamp(14px, 4vw, 24px);
+			align-items: stretch;
+			gap: 20px;
 		}
 
-		.team-grid,
-		.advisor-grid {
-			gap: 3px;
+		.split-figure img,
+		.robot-figure img {
+			max-height: 42vh;
 		}
 
-		.traction-layout .comp-list {
-			left: 0;
-		}
-
-		#s14 .traction-figure {
-			position: static;
-			top: auto;
-			right: auto;
-			transform: none;
-		}
-
-		#s14 .traction-figure video {
-			height: auto;
-			max-height: min(52vh, 420px);
-			max-width: 100%;
-		}
-
-		.traction-figure video {
-			max-height: min(52vh, 420px);
-		}
-
-		#s5 .solution-video {
-			position: static;
-			top: auto;
-			bottom: auto;
-			right: auto;
-			width: auto;
-			transform: none;
-			justify-content: center;
-			margin-right: 0;
-		}
-
-		#s5 .solution-video video {
-			height: min(52vh, 420px);
-			width: auto;
-			max-width: 100%;
-			object-fit: contain;
-		}
-
-		.approach-table-wrap {
-			width: 100%;
-		}
-
-		/* Two columns this narrow break entries across the gutter mid-sentence. */
-		.appendix-sources {
-			columns: 1;
-			font-size: 12px;
-		}
-
-		/* Reserved space that lined the milestone cards up across a four-column
-		   row. Stacked, it is just a hole in the middle of each card. */
-		.ms-step {
-			min-height: 0;
-		}
-
-		.ms-body {
-			min-height: 0;
-		}
-
-		.product-pair {
-			display: flex;
-			flex-direction: column;
-			gap: 18px;
-		}
-
-		/* The renders are sized against a landscape stage, where 70vh is roughly
-		   half the slide. On a portrait phone that is most of the screen. */
-		.kit-shots {
-			gap: 16px;
-		}
-
-		.kit-shots .kit-robot img {
-			max-height: 38vh;
-		}
-
-		.kit-extras {
-			width: 36%;
-		}
-
-		.product-specs {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 14px;
-		}
-
-		/* Blocks that hang off a zero-height anchor or the bottom of a column all
-		   rejoin the flow, since there is nothing to align them against now. */
-		.comp-unis {
-			position: static;
-			margin-top: 16px;
-		}
-
-		.infra-figure-anchor {
-			height: auto;
-			top: 0;
-			display: block;
-		}
-
-		.infra-figure-anchor figcaption {
-			margin-bottom: 0;
-		}
-
-		/* The render is pinned beside the copy on a wide stage; stacked, it reads
-		   better as a header image above it. */
 		.cover-figure {
 			position: static;
 			justify-content: center;
@@ -3732,86 +2134,39 @@
 			height: auto;
 		}
 
-		.market-tier {
-			width: 100%;
+		.partners {
 			flex-direction: column;
 			align-items: flex-start;
-			gap: 8px;
 		}
 
-		/* The fork pointed across the two revenue columns. */
-		.rev-fork {
-			width: clamp(48px, 18vw, 90px);
+		.team-group-us .team-grid,
+		.team-group-in .team-grid,
+		.advisor-grid {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		.price-row {
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			gap: 6px;
+		}
+
+		.price-op {
 			align-self: center;
-			transform: rotate(90deg);
 		}
 
-		/* ── Comparison tables ──
-		   Five columns of letter-spaced caps have a min-content width wider than
-		   a phone, which was stretching the whole page past the viewport and
-		   leaving every slide horizontally scrollable. The cells are tightened
-		   and long single words are allowed to break so the tables fit. */
-		.approach-table th,
-		.approach-table td,
-		.landscape-table-wrap .landscape-table tbody th,
-		.landscape-table-wrap .landscape-table tbody td {
-			padding: 9px 5px;
-			font-size: 12px;
-			overflow-wrap: anywhere;
+		.ledger-row {
+			flex-direction: column;
+			gap: 4px;
+		}
+
+		.ledger-row dd {
 			white-space: normal;
-		}
-
-		.approach-table thead th,
-		.landscape-table-wrap .landscape-table thead th {
-			font-size: 8px;
-			letter-spacing: 0.07em;
-			padding: 8px 5px;
-		}
-
-		/* The inset only makes sense beside a wide stage's whitespace, and the
-		   desktop column ratios are too rigid once everything is this narrow. */
-		.landscape-table-wrap .landscape-table {
-			width: 100%;
-			table-layout: auto;
-		}
-
-		.landscape-table-wrap .landscape-table th:nth-child(1),
-		.landscape-table-wrap .landscape-table th:nth-child(2),
-		.landscape-table-wrap .landscape-table th:nth-child(3),
-		.landscape-table-wrap .landscape-table th:nth-child(4),
-		.landscape-table-wrap .landscape-table th:nth-child(5) {
-			width: auto;
-		}
-
-		/* Top-aligned against the copy column on desktop; as a stacked flex item
-		   that same rule shrinks it to its content width. */
-		.approach-table-wrap {
-			align-self: stretch;
 		}
 	}
 
 	@media print {
-		@page {
-			size: 13.333in 7.5in;
-			margin: 0;
-		}
-
-		:global(html),
-		:global(body),
-		:global(body.deck-printing),
-		:global(#main),
-		:global(body::before) {
-			height: auto !important;
-			overflow: visible !important;
-			background: #ffffff !important;
-			-webkit-print-color-adjust: exact;
-			print-color-adjust: exact;
-		}
-
-		:global(body::before) {
-			display: none !important;
-		}
-
 		.deck-viewport {
 			display: block !important;
 			width: 100% !important;
@@ -3855,12 +2210,6 @@
 		.slide:last-of-type {
 			page-break-after: auto;
 			break-after: auto;
-		}
-
-		/* Scoped, so it outranks the scoped .slide rule above; the unscoped
-		   :global(.slide-hidden) loses that match and the slide comes back. */
-		.slide.slide-hidden {
-			display: none !important;
 		}
 
 		:global(.slide .anim-in),
