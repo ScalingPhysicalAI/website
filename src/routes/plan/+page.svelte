@@ -2,7 +2,7 @@
 	<title>Master Plan — The Intelligence Economy for Physical AI - Starforge</title>
 	<meta
 		name="description"
-		content="Why general-purpose humanoid robots have stayed out of reach, how a dual-brain architecture and a patent-pending data pipeline close the gap, and how Starforge turns ownership into a Robot as a Service economy."
+		content="Why general-purpose humanoid robots have stayed out of reach, how a dual-brain architecture and a patent-pending data pipeline close the gap, and how Starforge is building toward a Robot as a Service economy."
 	/>
 </svelte:head>
 
@@ -21,7 +21,7 @@
 		</div>
 		<p class="dek">
 			Why general-purpose humanoid robots have stayed out of reach, how we closed the cost and data
-			gaps, and how we're turning ownership into a Robot as a Service economy.
+			gaps, and how we're building toward a Robot as a Service economy.
 		</p>
 	</header>
 
@@ -34,10 +34,9 @@
 			scale.
 		</p>
 		<p>
-			Factories, warehouses, and construction sites operating fully autonomously will be a common
-			thing. Humans will never need to do labor work again. Even tasks at home, like laundry and
-			cleaning, will be taken over by home robots. Harnessing energy will be the only constraint in
-			that era.
+			Factories, warehouses, and construction sites operating fully autonomously will be common by
+			2035. Humans will never need to do labor work again. Harnessing energy will be the only
+			constraint in that era.
 		</p>
 		<p>
 			At Starforge, we are building this future by developing humanoid robots that work in two
@@ -116,16 +115,6 @@
 			underlying BOM well below the traditional $20,000–$50,000 range.
 		</p>
 
-		<figure class="figure">
-			<img
-				src="/assets/bom-cost-breakdown.png"
-				alt="Sankey diagram of an indicative ~$21,900 bill of materials for a full-size industrial humanoid with onboard compute for an 8B-parameter model, breaking the cost down into actuators and drivetrain (41%), onboard compute, mechanical structure, hands and end effectors, battery and power, sensors and perception, control electronics, wiring, thermal management, and assembly."
-			/>
-			<figcaption>
-				Indicative BOM breakdown for a full-size industrial humanoid, 1K–10K units/year.
-			</figcaption>
-		</figure>
-
 		<p>
 			We don't depend on Chinese suppliers, or any single supplier, for our robot. The hands are
 			developed in-house too.
@@ -134,39 +123,58 @@
 			We see Robot as a Service as the business model that aligns with how human labor is already
 			priced, by the hour. We've designed our robots specifically to solve the ownership, security,
 			tracking, and asset-protection challenges that come with deploying them at scale under rental
-			and RaaS models, which gives us an advantage in enabling distributed RaaS infrastructure.
+			and RaaS models.
 		</p>
 
-		<h3>2. The absence of real-world physical contact data</h3>
+		<h3>2. The absence of real-world contact-based skill data</h3>
 		<p>
-			Frontier foundation models like the Qwen vision-language models are open source and
-			increasingly commoditized. In robotics, the real scaling advantage now comes from
-			contact-based physical skill data, the data used to post-train the flow-based action expert
-			layered on top of these vision-language models. The internet has no such skill data.
+			The internet has no contact-based skill data. Foundation models like the Qwen 3.8 27B
+			vision-language models are open source and increasingly commoditized. In robotics, the real
+			scaling advantage now comes from contact-based skill data, the data used to post-train the
+			flow-based action expert layered on top of vision-language models.
 		</p>
 		<p class="emphasis">
 			As a result, general-purpose robotics has become a labor-arbitrage problem: whoever can
-			collect high-quality physical-world skill data at scale can train larger robot capabilities,
-			and therefore scale deployments.
+			collect high-quality contact-based skill data at scale can train larger robot capabilities and
+			therefore scale deployments. The company that builds the best general-purpose robotics model
+			will win the industry — Tesla, Figure, and Physical Intelligence are still behind.
+		</p>
+	</section>
+
+	<section>
+		<h2>The cloud-edge model extends to autonomous factories</h2>
+		<p>
+			Multiple robots working together will form the foundation of autonomous factories and
+			warehouses. Our cloud-edge architecture naturally extends to multi-robot coordination through
+			a central vision-language model that acts as a shared coordination brain for the entire
+			fleet.
+		</p>
+		<p>
+			In that setup, each humanoid robot continuously sends observation tokens together with
+			metadata such as robot identity, location, and task status to both a central vision-language
+			model and its own cloud model. The central model maintains a global understanding of the
+			environment and the state of every connected robot, allowing it to coordinate tasks, resolve
+			conflicts, allocate work, and generate fleet-level plans.
 		</p>
 	</section>
 
 	<section>
 		<h2>How we'll win the industry</h2>
 
-		<h3>1. Scale skill data collection in India</h3>
+		<h3>1. The largest tactile skill dataset</h3>
 		<p>
-			We currently have 40 full-time creators internally, and a growing network of creators across
-			India, collecting high-quality skill data using our patent-pending egocentric video glasses
-			and tactile gloves. That cuts the data-collection hours for a given skill by roughly 10x.
-			This data is used to build the robot intelligence models we host and serve through our cloud
-			infrastructure.
+			We currently have 30+ full-time creators internally, and a growing network of data
+			collection partners across India, collecting high-quality skill data using our
+			patent-pending stereo vision glasses and tactile gloves. That cuts the data-collection hours
+			for a given skill by roughly 10x. This data is used to build the robot intelligence models we
+			host and serve through our cloud infrastructure.
 		</p>
 		<p>
-			Our gloves-and-glasses patent specifies synchronized data collection: you can't pair a
-			random stereo camera with random sensor gloves, the glove and stereo-vision data have to be
-			in sync. The combination lets us scale data collection in regions like India, keeping the
-			cost of model development to a minimum.
+			Our gloves-and-glasses patent specifies synchronized contact-based skill data collection: you
+			can't pair a random stereo camera with random sensor gloves, the glove and stereo-vision data
+			have to be in sync. The economics of the general-purpose robot intelligence model work only
+			in low-labor-cost countries. Our combination of gloves and glasses lets us scale data
+			collection in regions like India.
 		</p>
 
 		<h3>2. Patents that make robots 10x more intelligent</h3>
@@ -204,19 +212,15 @@
 		<h2>About the founder</h2>
 		<p>
 			Vipul built the Cypherock hardware wallet, which currently secures more than $600M in crypto
-			assets globally. Cypherock is the highest-rated hardware wallet by Coin Bureau. Ex-Cypherock
-			team members on Starforge come from IIIT Delhi and PayPal.
+			assets globally. Cypherock is the highest-rated hardware wallet by Coin Bureau. The broader
+			Starforge team includes former Cypherock engineers, talent from IIIT Delhi and PayPal, and a
+			PhD research advisor from AIST Japan.
 		</p>
 	</section>
 
 	<section>
 		<h2>Where we are today</h2>
-		<p>Starforge is raising a seed round to scale our team and deployments.</p>
-		<p>
-			We've built a novel distributed Robot as a Service model where robot ownership can be
-			transferred and tracked on a public record. In our model, the robot owner gets 30% of the
-			inference revenue, which incentivizes anyone to deploy a robot.
-		</p>
+		<p>Starforge is raising a seed round to scale the team and build the best intelligence model.</p>
 	</section>
 </article>
 
@@ -302,28 +306,6 @@
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: var(--accent);
-	}
-
-	.figure {
-		margin: 4px 0 26px;
-	}
-
-	.figure img {
-		display: block;
-		width: 100%;
-		height: auto;
-		border: 1px solid var(--border);
-		border-radius: 2px;
-	}
-
-	.figure figcaption {
-		margin-top: 10px;
-		font-family: 'Space Mono', monospace;
-		font-size: 11px;
-		font-weight: 700;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--text-muted);
 	}
 
 	section {
