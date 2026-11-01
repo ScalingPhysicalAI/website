@@ -1,30 +1,14 @@
 <svelte:head>
-	<title>Master Plan — The Intelligence Economy for Physical AI - Starforge</title>
+	<title>StarForge Robotics Investor Memo - Starforge</title>
 	<meta
 		name="description"
-		content="Why general-purpose humanoid robots have stayed out of reach, how a dual-brain architecture and a patent-pending data pipeline close the gap, and how Starforge is building toward a Robot as a Service economy."
+		content="StarForge Robotics Investor Memo: why general-purpose humanoid robots have stayed out of reach, and how StarForge closes the cost and data gaps."
 	/>
 </svelte:head>
 
 <div class="scan" aria-hidden="true"></div>
 
 <article class="thesis">
-	<header class="head">
-		<span class="section-label">Master plan</span>
-		<h1>The intelligence economy for <span>physical AI</span></h1>
-		<div class="founder">
-			<img src="/assets/team/vipul-thesis.jpg" alt="Vipul Saini" />
-			<div>
-				<p class="founder-name">Vipul Saini</p>
-				<p class="founder-role">Founder</p>
-			</div>
-		</div>
-		<p class="dek">
-			Why general-purpose humanoid robots have stayed out of reach, how we closed the cost and data
-			gaps, and how we're building toward a Robot as a Service economy.
-		</p>
-	</header>
-
 	<section>
 		<p>
 			Computers and machines enabled us to transform energy into massive productive output.
@@ -234,67 +218,6 @@
 		max-width: 820px;
 		margin: 0 auto;
 		padding: calc(var(--header-height, 96px) + 56px) 40px 88px;
-	}
-
-	.head h1 {
-		max-width: 16ch;
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(46px, 7vw, 78px);
-		font-weight: 400;
-		letter-spacing: 0.03em;
-		line-height: 0.92;
-		color: var(--ink);
-	}
-
-	.head h1 span {
-		color: var(--accent);
-	}
-
-	.dek {
-		max-width: 38rem;
-		margin-top: 22px;
-		font-size: clamp(17px, 2vw, 20px);
-		font-weight: 500;
-		line-height: 1.5;
-		color: rgba(20, 18, 16, 0.86);
-	}
-
-	.founder {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		margin-top: 18px;
-	}
-
-	.founder img {
-		width: 52px;
-		height: 52px;
-		border-radius: 50%;
-		object-fit: cover;
-		object-position: center center;
-	}
-
-	.founder-name,
-	.founder-role {
-		margin: 0;
-	}
-
-	.founder-name {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: 22px;
-		letter-spacing: 0.04em;
-		line-height: 1;
-		color: var(--ink);
-	}
-
-	.founder-role {
-		margin-top: 6px;
-		font-family: 'Space Mono', monospace;
-		font-size: 11px;
-		font-weight: 700;
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: var(--accent);
 	}
 
 	section {
