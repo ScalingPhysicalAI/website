@@ -81,6 +81,10 @@
 			On top of that, we <strong>designed our actuators in-house</strong>, giving us the flexibility
 			to optimize them for virtually any torque, form factor, or size requirement.
 		</p>
+		<div class="figure gallery">
+			<img src="/assets/actuator-in-house-1.jpg" alt="In-house designed actuator, side view" />
+			<img src="/assets/actuator-in-house-2.jpg" alt="In-house designed actuator, top view" />
+		</div>
 		<p>
 			The <strong>actuation system is normally the biggest cost center</strong>, often representing
 			roughly 40–55% of total hardware cost. A useful public benchmark is Unitree's G1. It has about
@@ -88,6 +92,15 @@
 			$13,500 retail. That strongly suggests that aggressively vertically integrated manufacturers
 			can drive the underlying BOM well below the traditional $20k-$50k range.
 		</p>
+		<figure class="figure">
+			<img
+				src="/assets/bom-cost-breakdown.png"
+				alt="Sankey diagram of an indicative ~$21,900 bill of materials for a full-size industrial humanoid with onboard compute for an 8B-parameter model, breaking the cost down into actuators and drivetrain (41%), onboard compute, mechanical structure, hands and end effectors, battery and power, sensors and perception, control electronics, wiring, thermal management, and assembly."
+			/>
+			<figcaption>
+				BOM cost breakdown for a full-size industrial humanoid, 1K–10K units/year.
+			</figcaption>
+		</figure>
 		<p>
 			We don't have any dependency on Chinese suppliers or a specific supplier for our robot
 			components. The robot hands are also inhouse developed. We see the
@@ -127,6 +140,13 @@
 			the environment and the state of every connected robot, allowing it to coordinate tasks,
 			resolve conflicts, allocate work, and generate fleet-level plans.
 		</p>
+		<figure class="figure">
+			<img
+				src="/assets/fleet-edge-cloud-architecture.png"
+				alt="Multi-Robot Edge-Cloud Coordination Architecture diagram: a central vision-language model acting as the fleet coordination brain, handling global scene understanding, task allocation, conflict resolution, and fleet planning, connected to Robot 1 through 4's cloud VLA models via observation/metadata and coordination-token channels, which in turn route through developer APIs to description files, computer use, and enterprise software."
+			/>
+			<figcaption>Multi-robot edge-cloud coordination architecture.</figcaption>
+		</figure>
 	</section>
 
 	<section>
@@ -220,6 +240,41 @@
 		padding: calc(var(--header-height, 96px) + 56px) 40px 88px;
 	}
 
+	.figure {
+		margin: 4px 0 26px;
+	}
+
+	.figure img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border: 1px solid var(--border);
+		border-radius: 2px;
+	}
+
+	.figure figcaption {
+		margin-top: 10px;
+		font-family: 'Space Mono', monospace;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+	}
+
+	.gallery {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 14px;
+	}
+
+	.gallery img {
+		width: 100%;
+		height: auto;
+		border: 1px solid var(--border);
+		border-radius: 2px;
+	}
+
 	section {
 		padding: 48px 0 0;
 	}
@@ -284,7 +339,8 @@
 			padding: calc(var(--header-height, 88px) + 32px) 20px 64px;
 		}
 
-		.brains {
+		.brains,
+		.gallery {
 			grid-template-columns: 1fr;
 		}
 
