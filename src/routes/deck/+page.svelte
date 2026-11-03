@@ -590,7 +590,7 @@
 			<div class="video-frame anim-in anim-d2">
 				<iframe
 					bind:this={videoFrame}
-					src="https://www.youtube-nocookie.com/embed/o9j_a-majkyA?enablejsapi=1&rel=0&modestbranding=1"
+					src="https://www.youtube-nocookie.com/embed/o9j_a-makyA?enablejsapi=1&rel=0&modestbranding=1"
 					title="Starforge Robotics video"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 					referrerpolicy="strict-origin-when-cross-origin"
