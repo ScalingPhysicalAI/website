@@ -709,6 +709,16 @@
 					</div>
 				</div>
 			</div>
+			<div class="partners team-partners anim-in anim-d3">
+				<p>Backgrounds from <strong class="hl-gold">Cypherock, PayPal</strong> and top robotics labs</p>
+				<div class="partner-logos">
+					<img src="/assets/pitch/cypherock-logo.svg" alt="Cypherock" />
+					<img src="/assets/pitch/paypal-logo.svg" alt="PayPal" />
+					<img src="/assets/uni/ucsd.png" alt="UC San Diego" />
+					<img src="/assets/uni/uci.png" alt="UC Irvine" />
+					<img src="/assets/pitch/tsukuba-logo.svg" alt="University of Tsukuba" />
+				</div>
+			</div>
 		</section>
 
 		<!-- 11 · UNIT ECONOMICS -->
@@ -1502,6 +1512,22 @@
 		height: clamp(30px, 7vmin, 64px);
 		width: auto;
 		object-fit: contain;
+	}
+
+	/* Team slide reuses .partners/.partner-logos but needs to fit five marks
+	   instead of three in less vertical space, so it gets a smaller logo
+	   height, tighter gap, and no extra top margin beyond .partners' own. */
+	.team-partners {
+		margin-top: 0;
+		padding-top: clamp(4px, 1vh, 10px);
+	}
+
+	.team-partners .partner-logos {
+		gap: clamp(14px, 2.2vw, 32px);
+	}
+
+	.team-partners .partner-logos img {
+		height: clamp(16px, 3vmin, 28px);
 	}
 
 	/* ── DUAL BRAIN ── */
