@@ -393,7 +393,7 @@
 			<div class="split anim-in anim-d3">
 				<div>
 					<p class="lead">
-						Person wearing <strong>full teleoperation kit</strong> and teleoperating
+						Person wearing full teleoperation kit and teleoperating
 						<strong>one full robot</strong>
 					</p>
 					<div class="bullet-list plain-list">
@@ -433,7 +433,7 @@
 					<div class="bullet-list plain-list compact-list">
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>Full robot synchronized data collection</p>
+							<p>Synchronized data collection</p>
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
@@ -481,9 +481,9 @@
 
 		<section class="slide" id="p7">
 			<h2 class="headline anim-in anim-d2">
-            Industry is spending billions to build the <span class="hl-gold">GPT equivalent robotic intelligence<span>.
+            Industry is spending billions to build the <span class="hl-gold">GPT equivalent robot intelligence</span>.
             <br/>
-			Starforge will do it in $4 million
+			With gloves and glasses, <span class="hl-gold">Starforge will do it in $4 million</span>
 			</h2>
 			<div class="split anim-in anim-d3">
 				<div class="bullet-list compact-list plain-list">
@@ -496,13 +496,13 @@
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Consumes less power</p>
+						<p>
+							Edge model handles action chunking and real-time feedback
+						</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>
-							Smaller edge model handles action chunking and real-time feedback
-						</p>
+						<p>Consumes less power</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
@@ -584,13 +584,13 @@
 
 		<!-- 9 · VIDEO (to come) -->
 		<section class="slide" id="p9">
-			<h2 class="headline anim-in anim-d2">
-            The industry's first <span class="hl-gold">cloud-hosted VTLA model</span> controlling a full humanoid robot
+			<h2 class="headline anim-in anim-d2 video-caption">
+            Industry's first <span class="hl-gold">cloud-hosted VTLA model</span> controlling a full humanoid robot
 			</h2>
 			<div class="video-frame anim-in anim-d2">
 				<iframe
 					bind:this={videoFrame}
-					src="https://www.youtube-nocookie.com/embed/o9j_a-makyA?enablejsapi=1&rel=0&modestbranding=1"
+					src="https://www.youtube-nocookie.com/embed/o9j_a-majkyA?enablejsapi=1&rel=0&modestbranding=1"
 					title="Starforge Robotics video"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 					referrerpolicy="strict-origin-when-cross-origin"
@@ -610,7 +610,7 @@
 		<section class="slide" id="p10">
 			<h2 class="headline headline-nowrap anim-in anim-d2">
 				Builders who have scaled hardware
-				<span class="hl-gold">to $2.2B AUM and mass production</span> before
+				<span class="hl-gold">to mass production and $2.2B AUM</span> before
 			</h2>
 			<div class="team-groups anim-in anim-d3">
 				<div class="team-group team-group-us">
@@ -627,8 +627,8 @@
 							</div>
 							<div class="team-role">Founder · Chief Engineer</div>
 							<div class="team-bio">
-								Founded Cypherock and scaled the safest crypto hardware wallet to
-								<strong>$2.2B AUM</strong>. Leads Buildo from prototype to mass production.
+								Founded Cypherock and scaled his crypto hardware wallet to
+								<strong>$2.2B AUM</strong>. Leading robot development from prototype to mass production.
 							</div>
 						</div>
 						<div class="team-card">
@@ -639,11 +639,9 @@
 									linkedin="https://www.linkedin.com/in/appleswiggy/"
 								/>
 							</div>
-							<div class="team-role">Senior Machine Learning Engineer</div>
+							<div class="team-role">Machine Learning Engineer</div>
 							<div class="team-bio">
-								Pursuing a <strong>master's in robotics at UC San Diego</strong>. Shipped production
-								grade machine learning at PayPal and the cryptography securing 10,000+ Cypherock
-								devices.
+								Pursuing <strong>Master's in robotics at UC San Diego</strong>. Shipped machine learning models at PayPal and architected security protocols protecting 60,000+ Cypherock devices.
 							</div>
 						</div>
 						<div class="team-card">
@@ -656,9 +654,8 @@
 							</div>
 							<div class="team-role">Electrical Engineer</div>
 							<div class="team-bio">
-								Designs neural-interface electronics and firmware at UC Irvine's Neuroelectronics
-								Research Lab. Handles Buildo's <strong>embedded&nbsp;software</strong>, board
-								bring-up, and hardware integration.
+								Designed neural-interfaces at UC Irvine's Neuroelectronics
+								Research Lab. Developing the robot's edge model and stress-testing it in real environments.
 							</div>
 						</div>
 					</div>
@@ -676,9 +673,8 @@
 							</div>
 							<div class="team-role">Senior Robotics Engineer</div>
 							<div class="team-bio">
-								Holds multiple patents and has put <strong
-									>robotics and aerospace products into mass manufacturing</strong
-								>. Owns Buildo's mechanical design and manufacturability.
+								Holds multiple patents and has put robotics and aerospace products into mass manufacturing
+								. Owns mechanical design and manufacturability of humanoid robots.
 							</div>
 						</div>
 						<div class="team-card">
@@ -691,9 +687,7 @@
 							</div>
 							<div class="team-role">Software Engineer</div>
 							<div class="team-bio">
-								Has been writing <strong>transformer models</strong> for five years and shipped the
-								cryptography behind Cypherock's hardware wallet. Builds the AI that runs inside the
-								robot.
+								Established server infrastructure behind Cypherock's hardware wallet. Building the cloud intelligence behind Starforge robots.
 							</div>
 						</div>
 					</div>
@@ -708,12 +702,10 @@
 					</div>
 					<div class="team-role">Research Scientist</div>
 					<div class="team-bio">
-						Research scientist at Fauna Robotics and co-author of the Fauna Sprout humanoid. Earned
-						his <strong>PhD from the University of Tsukuba</strong> and spent over seven years at the
-						<strong>CNRS-AIST Joint Robotics Lab</strong> in Japan, building reinforcement learning
+						Research scientist at Fauna Robotics. Earned his PhD from the University of Tsukuba and spent over seven years at the
+						CNRS-AIST Joint Robotics Lab in Japan, building reinforcement learning
 						controllers that walk the full-size HRP-5P humanoid over compliant and uneven terrain.
-						Published at IEEE Humanoids, ICRA and IEEE Access. Advises on
-						<strong>sim-to-real reinforcement learning</strong> for real hardware.
+						Published at IEEE Humanoids, ICRA and IEEE Access.
 					</div>
 				</div>
 			</div>
@@ -1593,6 +1585,10 @@
 		font-size: clamp(10.5px, 1.95vmin, 14px);
 		letter-spacing: 0.08em;
 	}
+
+    .video-caption {
+text-align: center;
+    }
 
 	.video-link a {
 		color: #7a5e0f;
