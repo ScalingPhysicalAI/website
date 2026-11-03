@@ -21,7 +21,7 @@
 	<title>Starforge Robotics Raises $500,000 Pre-Seed - Starforge</title>
 	<meta
 		name="description"
-		content="Starforge Robotics has raised $500,000 in pre-seed funding to build Buildo, an $8,000 open-source humanoid robot and physical intelligence platform."
+		content="Starforge Robotics has raised $500,000 in pre-seed funding to build Buildo, an open-source humanoid robot and physical intelligence platform available for $600/month."
 	/>
 </svelte:head>
 
@@ -46,8 +46,8 @@
 			</div>
 		{/if}
 		<p class="post-dek">
-			Funding will accelerate the development and deployment of Buildo, Starforge Robotics' $8,000
-			open-source humanoid robot and physical intelligence platform.
+			Funding will accelerate the development and deployment of Buildo, Starforge Robotics'
+			open-source humanoid robot and physical intelligence platform, available for $600/month.
 		</p>
 	</header>
 
@@ -61,8 +61,9 @@
 		</p>
 
 		<p>
-			We're building <strong>Buildo</strong>, an $8,000 open-source humanoid robot designed for
-			developers, researchers, physical AI startups, and eventually real-world deployment. Our goal
+			We're building <strong>Buildo</strong>, an open-source humanoid robot available for $600/month,
+			designed for developers, researchers, physical AI startups, and eventually real-world
+			deployment. Our goal
 			is simple: make advanced robotics accessible to teams that today are priced out of humanoid
 			development.
 		</p>
@@ -121,8 +122,8 @@
 		<p>Buildo is the hardware layer of that vision.</p>
 
 		<p>
-			The robot is designed around an <strong>$8,000 hardware stack</strong>, compared with
-			substantially more expensive industrial and research setups. Buildo can carry payloads of up
+			Instead of the large upfront cost of most industrial and research setups, it is offered as a
+			<strong>$600/month subscription</strong>. It can carry payloads of up
 			to <strong>18 pounds</strong>, has a height adjustable from <strong>four to six feet</strong>,
 			and supports accessories for collecting egocentric video and tactile data.
 		</p>
@@ -137,7 +138,7 @@
 		</div>
 
 		<figure class="post-figure reveal">
-			<img src="/assets/buildo-product.webp" alt="Buildo, the $8,000 open-source humanoid robot" />
+			<img src="/assets/buildo-product.webp" alt="Buildo, the open-source humanoid robot" />
 			<figcaption>Buildo</figcaption>
 		</figure>
 

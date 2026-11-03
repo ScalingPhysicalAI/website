@@ -59,7 +59,7 @@
 </script>
 
 <svelte:head>
-	<title>STARFORGE - Building the intelligence layer for physical AI</title>
+	<title>STARFORGE - Building humanoid robots for autonomous factories</title>
 	<meta
 		name="description"
 		content="Starforge is building the intelligence layer for physical AI - the models and API that let humanoid robots work in the real world."
