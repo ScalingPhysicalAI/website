@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import LinkedInName from '$lib/components/LinkedInName.svelte';
+	import { hideZohoChat } from '$lib/utils/zohoChat';
 
 	let currentSlide = 0;
 	const SLIDE_SELECTOR = '.slide:not(.slide-hidden)';
@@ -158,10 +159,13 @@
 		stackedQuery.addEventListener('change', syncMode);
 		syncMode();
 
+		const restoreChat = hideZohoChat();
+
 		return () => {
 			document.removeEventListener('keydown', handleKey);
 			stackedQuery.removeEventListener('change', syncMode);
 			document.body.style.overflow = '';
+			restoreChat();
 		};
 	});
 </script>
@@ -225,6 +229,13 @@
 				opacity: 1 !important;
 				transform: none !important;
 				animation: none !important;
+			}
+			/* Zoho SalesIQ's float button and GDPR consent banner are both
+			   position: fixed, so a print engine repeats them on every
+			   page unless they're force-hidden here. */
+			#zsiqwidget,
+			#consent_container {
+				display: none !important;
 			}
 		}
 	</style>

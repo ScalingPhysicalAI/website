@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import LinkedInName from '$lib/components/LinkedInName.svelte';
+	import { hideZohoChat } from '$lib/utils/zohoChat';
 
 	let currentSlide = 0;
 	const SLIDE_SELECTOR = '.slide:not(.slide-hidden)';
@@ -166,10 +167,13 @@
 		stackedQuery.addEventListener('change', syncMode);
 		syncMode();
 
+		const restoreChat = hideZohoChat();
+
 		return () => {
 			document.removeEventListener('keydown', handleKey);
 			stackedQuery.removeEventListener('change', syncMode);
 			document.body.style.overflow = '';
+			restoreChat();
 		};
 	});
 </script>
@@ -233,6 +237,13 @@
 				opacity: 1 !important;
 				transform: none !important;
 				animation: none !important;
+			}
+			/* Zoho SalesIQ's float button and GDPR consent banner are both
+			   position: fixed, so a print engine repeats them on every
+			   page unless they're force-hidden here. */
+			#zsiqwidget,
+			#consent_container {
+				display: none !important;
 			}
 		}
 	</style>
@@ -710,13 +721,17 @@
 				</div>
 			</div>
 			<div class="partners team-partners anim-in anim-d3">
-				<p>Backgrounds from <strong class="hl-gold">Cypherock, PayPal</strong> and top robotics labs</p>
 				<div class="partner-logos">
-					<img src="/assets/pitch/cypherock-logo.svg" alt="Cypherock" />
+					<img class="logo-prominent" src="/assets/pitch/cypherock-logo.svg" alt="Cypherock" />
+					<img class="logo-prominent" src="/assets/pitch/lockheed-martin-logo.svg" alt="Lockheed Martin" />
+					<img class="logo-dtu" src="/assets/pitch/dtu-logo.png" alt="Delhi Technological University" />
+					<img class="logo-posha" src="/assets/pitch/posha-logo.png" alt="POSHA" />
 					<img src="/assets/pitch/paypal-logo.svg" alt="PayPal" />
-					<img src="/assets/uni/ucsd.png" alt="UC San Diego" />
-					<img src="/assets/uni/uci.png" alt="UC Irvine" />
-					<img src="/assets/pitch/tsukuba-logo.svg" alt="University of Tsukuba" />
+					<img class="logo-compact" src="/assets/uni/ucsd.png" alt="UC San Diego" />
+					<img class="logo-compact" src="/assets/uni/uci.png" alt="UC Irvine" />
+					<img src="/assets/pitch/iiit-delhi-logo.svg" alt="IIIT Delhi" />
+					<img src="/assets/pitch/amazon-logo.svg" alt="Amazon" />
+					<img class="logo-tsukuba" src="/assets/pitch/tsukuba-logo.svg" alt="University of Tsukuba" />
 				</div>
 			</div>
 		</section>
@@ -1520,14 +1535,39 @@
 	.team-partners {
 		margin-top: 0;
 		padding-top: clamp(4px, 1vh, 10px);
+		justify-content: center;
 	}
 
 	.team-partners .partner-logos {
-		gap: clamp(14px, 2.2vw, 32px);
+		gap: clamp(8px, 1.3vw, 16px);
+		flex-wrap: nowrap;
+		flex-shrink: 1;
+		max-width: 100%;
+		justify-content: center;
 	}
 
 	.team-partners .partner-logos img {
-		height: clamp(16px, 3vmin, 28px);
+		height: clamp(20px, 3.4vmin, 29px);
+	}
+
+	.team-partners .partner-logos img.logo-compact {
+		height: clamp(16px, 2.8vmin, 23px);
+	}
+
+	.team-partners .partner-logos img.logo-tsukuba {
+		height: clamp(27px, 4.7vmin, 40px);
+	}
+
+	.team-partners .partner-logos img.logo-dtu {
+		height: clamp(43px, 7.8vmin, 66px);
+	}
+
+	.team-partners .partner-logos img.logo-posha {
+		height: clamp(14px, 2.5vmin, 21px);
+	}
+
+	.team-partners .partner-logos img.logo-prominent {
+		height: clamp(24px, 4.1vmin, 34px);
 	}
 
 	/* ── DUAL BRAIN ── */
@@ -2241,6 +2281,38 @@ text-align: center;
 			opacity: 1 !important;
 			transform: none !important;
 			animation: none !important;
+		}
+
+		/* The logo row is sized with vmin/vw clamps tuned for the on-screen
+		   deck stage; the printed page is a fixed 1280x720 box, so those
+		   clamps can resolve wider than the page and spill off the edge.
+		   Pin fixed px heights here instead, sized to always fit. */
+		.team-partners .partner-logos {
+			gap: 14px !important;
+		}
+
+		.team-partners .partner-logos img {
+			height: 22px !important;
+		}
+
+		.team-partners .partner-logos img.logo-compact {
+			height: 18px !important;
+		}
+
+		.team-partners .partner-logos img.logo-tsukuba {
+			height: 29px !important;
+		}
+
+		.team-partners .partner-logos img.logo-dtu {
+			height: 48px !important;
+		}
+
+		.team-partners .partner-logos img.logo-posha {
+			height: 15px !important;
+		}
+
+		.team-partners .partner-logos img.logo-prominent {
+			height: 26px !important;
 		}
 	}
 </style>
