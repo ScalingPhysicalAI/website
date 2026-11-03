@@ -800,7 +800,7 @@
 					<span class="raise-val">$4 million <span class="hl-gold">seed</span></span>
 					<span class="raise-when">
                     ㅤ</span>
-					<p>Build the best robot intelligence model</p>
+					<p>Scaling team and build the best robot intelligence model</p>
 				</div>
 				<div class="raise-card">
 					<span class="raise-val">$50 million <span class="hl-gold">series A</span></span>
