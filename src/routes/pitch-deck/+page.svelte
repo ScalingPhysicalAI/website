@@ -339,30 +339,33 @@
 			</div>
 		</section>
 
-		<!-- 3 · NEXT FRONTIER -->
+		<!-- 3 · SKILLS COMPOUND -->
 		<section class="slide" id="p3">
 			<h2 class="headline anim-in anim-d2">
-				AI changed the digital world <span class="hl-gold">Intelligent Robots</span> will change the physical world
+				AI changed the digital world. <span class="hl-gold">Intelligent robots</span> will change the physical world
 			</h2>
-			<div class="frontier-grid anim-in anim-d3">
-				<div class="frontier-card">
-					<span class="card-num">01</span>
-					<span class="card-title">Autonomous Factories</span>
+			<div class="skill-stair anim-in anim-d3">
+				<div class="stair-card">
+					<span class="card-num">skill 01</span>
+					<span class="card-title">Pick and place</span>
+					<p>Move a part from A to B</p>
 				</div>
-				<div class="frontier-card">
-					<span class="card-num">02</span>
-					<span class="card-title">Build new Cities</span>
+				<div class="stair-card">
+					<span class="card-num">skill 02</span>
+					<span class="card-title">Operate tools</span>
+					<p>Drill, welding torch, screwdriver</p>
 				</div>
-				<div class="frontier-card">
-					<span class="card-num">03</span>
-					<span class="card-title">Labour meaning redefined</span>
+				<div class="stair-card">
+					<span class="card-num">skill 03</span>
+					<span class="card-title">Command machines</span>
+					<p>Load and run a CNC machine</p>
+				</div>
+				<div class="stair-card stair-card-key">
+					<span class="card-num">skill 01 + 02 + 03</span>
+					<span class="card-title">Autonomous factory</span>
+					<p>Robots pull skills from a skills database and chain them into whole jobs</p>
 				</div>
 			</div>
-			<p class="statement anim-in anim-d3">
-				Moving atoms is the <span class="hl-gold">biggest constraint</span> for civilisation level
-				progress,<br />
-				Humanoids solve it
-			</p>
 		</section>
 
 		<!-- 4 · MISSING PIECE -->
@@ -396,86 +399,101 @@
 			</div>
 		</section>
 
-		<!-- 5 · HOW OTHERS SOLVE IT -->
+		<!-- 5 · HOW OTHERS COLLECT IT -->
 		<section class="slide" id="p5">
 			<h2 class="headline anim-in anim-d2">
-				How are frontier labs <span class="hl-gold">solving it</span>?
+				Today, labs collect it by <span class="hl-gold">teleoperating robots</span>
 			</h2>
-			<div class="split anim-in anim-d3">
-				<div>
-					<p class="lead">
-						Person wearing full teleoperation kit and teleoperating
-						<strong>one full robot</strong>
-					</p>
-					<div class="bullet-list plain-list">
-						<div class="bullet-item">
-							<span class="bullet-icon mark-no">&#10007;</span>
-							<p>Not scalable</p>
-						</div>
-						<div class="bullet-item">
-							<span class="bullet-icon mark-no">&#10007;</span>
-							<p>Very costly</p>
-						</div>
-						<div class="bullet-item">
-							<span class="bullet-icon mark-no">&#10007;</span>
-							<p>Cannot collect data for more than <strong>4 hours straight</strong></p>
-						</div>
-					</div>
+			<p class="lead anim-in anim-d2">An operator drives a real robot, one motion at a time.</p>
+			<div class="metric-row anim-in anim-d3">
+				<div class="metric">
+					<span class="metric-val">1:1</span>
+					<span class="metric-label">one robot per operator</span>
 				</div>
-				<div class="stat-card">
-					<span class="stat-val">$30k</span>
-					<span class="stat-label">Training data cost for a single robot skill</span>
+				<div class="metric">
+					<span class="metric-val">4 hrs</span>
+					<span class="metric-label">before the operator tires</span>
+				</div>
+				<div class="metric">
+					<span class="metric-val">$50/hr</span>
+					<span class="metric-label">and it doesn't scale</span>
 				</div>
 			</div>
+			<p class="takeaway anim-in anim-d3">
+				<span class="takeaway-arrow" aria-hidden="true">&#8594;</span>
+				The fix: take the robot out. Record human hands doing the real task.
+			</p>
 		</section>
 
-		<!-- 6 · HOW WE SOLVE IT -->
+		<!-- 6 · HOW WE COLLECT IT -->
 		<section class="slide" id="p6">
 			<h2 class="headline anim-in anim-d2">
-				How we are <span class="hl-gold">solving it</span>?
+				We record touch on <span class="hl-gold">all five fingers</span>, for
+				<span class="hl-gold">$2 an hour</span>
 			</h2>
 			<div class="split anim-in anim-d3">
-				<div>
-					<p class="lead">
-                    We replaced the robot with
-						<span class="hl-gold">stereo vision glasses</span> and
-						<span class="hl-gold">tactile gloves</span>
-					</p>
-					<div class="bullet-list plain-list compact-list">
-						<div class="bullet-item">
-							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>Synchronized data collection</p>
-						</div>
-						<div class="bullet-item">
-							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>Cheap</p>
-						</div>
-						<div class="bullet-item">
-							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>Person can collect data straight 8+ hours</p>
-						</div>
-						<div class="bullet-item">
-							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>Highly scalable in India</p>
-						</div>
-						<div class="bullet-item">
-							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>Patent pending technology</p>
-						</div>
+				<div class="kit-col">
+					<figure class="kit-pair">
+						<img
+							class="kit-glove"
+							src="/assets/pitch/tactile-glove.webp"
+							alt="Tactile data collection glove"
+						/>
+						<img
+							class="kit-glasses"
+							src="/assets/pitch/stereo-glasses.webp"
+							alt="Stereo vision glasses"
+						/>
+					</figure>
+					<div class="kit-caption">
+						<span class="card-title">Glove + glasses</span>
+						<p>worn by a worker doing the real task</p>
 					</div>
 				</div>
-				<figure class="kit-pair">
-					<img
-						class="kit-glove"
-						src="/assets/pitch/tactile-glove.webp"
-						alt="Tactile data collection glove"
-					/>
-					<img
-						class="kit-glasses"
-						src="/assets/pitch/stereo-glasses.webp"
-						alt="Stereo vision glasses"
-					/>
-				</figure>
+				<div class="capture-col">
+					<span class="card-num">cost per hour of tactile data</span>
+					<div class="cost-bars">
+						<div class="cost-row">
+							<span class="cost-name">Teleop</span>
+							<span class="cost-bar cost-bar-teleop" aria-hidden="true"></span>
+							<span class="cost-val">$50</span>
+						</div>
+						<div class="cost-row cost-row-key">
+							<span class="cost-name">Starforge</span>
+							<span class="cost-track">
+								<span class="cost-bar cost-bar-sf" aria-hidden="true"></span>
+								<span class="cost-val">$2 &middot; 25x cheaper</span>
+							</span>
+						</div>
+					</div>
+					<p class="lead">
+						One skill (~600 hrs): <strong class="hl-gold">$30K &rarr; $1.2K</strong>. Shifts: 4 hrs
+						&rarr; 8+ hrs, no robot needed.
+					</p>
+					<dl class="stream-card">
+						<div class="stream-head"><span class="card-num">one synced stream</span></div>
+						<div class="stream-row">
+							<dt>stereo vision</dt>
+							<span class="stream-leader" aria-hidden="true"></span>
+							<dd>left + right cameras</dd>
+						</div>
+						<div class="stream-row">
+							<dt>touch</dt>
+							<span class="stream-leader" aria-hidden="true"></span>
+							<dd>all 5 fingers</dd>
+						</div>
+						<div class="stream-row">
+							<dt>hand pose</dt>
+							<span class="stream-leader" aria-hidden="true"></span>
+							<dd>every joint</dd>
+						</div>
+						<div class="stream-row">
+							<dt>maps to</dt>
+							<span class="stream-leader" aria-hidden="true"></span>
+							<dd>our 5-finger robot hand</dd>
+						</div>
+					</dl>
+				</div>
 			</div>
 			<div class="partners anim-in anim-d3">
 				<p>
@@ -490,79 +508,50 @@
 			</div>
 		</section>
 
-		<section class="slide" id="p7">
-			<h2 class="headline anim-in anim-d2">
-            Industry is spending billions to build the <span class="hl-gold">GPT equivalent robot intelligence</span>.
-            <br/>
-			With gloves and glasses, <span class="hl-gold">Starforge will do it in $4 million</span>
+		<!-- 7 · THE PRIZE -->
+		<section class="slide slide-gold" id="p7">
+			<h2 class="headline manifesto anim-in anim-d2">
+				The industry is spending billions to build the GPT of robotics. Starforge will do it with
+				$15M.
 			</h2>
-			<div class="split anim-in anim-d3">
-				<div class="bullet-list compact-list plain-list">
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>
-                        Cloud hosted intelligence enables robots to operate across both
-							<strong class="hl-gold">digital and physical worlds</strong>
-						</p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>
-							Edge model handles action chunking and real-time feedback
-						</p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>Consumes less power</p>
-					</div>
-					<div class="bullet-item">
-						<span class="bullet-icon">&#9656;</span>
-						<p>
-							Patent pending technology
-						</p>
-					</div>
-				</div>
-				<div class="brain-stack">
-					<div class="brain-item brain-item-key">
-						<svg class="brain-icon" viewBox="0 0 48 48" aria-hidden="true">
-							<path
-								d="M14 36h22a9 9 0 0 0 1.2-17.9A12 12 0 0 0 14.4 15 10.5 10.5 0 0 0 14 36Z"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2.4"
-								stroke-linejoin="round"
-							/>
-						</svg>
-						<div class="brain-text">
-							<span class="card-num">Cloud</span>
-							<span class="card-title">Large model</span>
-							<p>Digital and physical work</p>
-						</div>
-					</div>
-					<div class="brain-link" aria-hidden="true"></div>
-					<div class="brain-item">
-						<svg class="brain-icon" viewBox="0 0 48 48" aria-hidden="true">
-							<g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round">
-								<rect x="13" y="13" width="22" height="22" rx="2" />
-								<rect x="19" y="19" width="10" height="10" />
-								<path
-									d="M19 13V7M29 13V7M19 41v-6M29 41v-6M13 19H7M13 29H7M41 19h-6M41 29h-6"
-									stroke-linecap="round"
-								/>
-							</g>
-						</svg>
-						<div class="brain-text">
-							<span class="card-num">Edge</span>
-							<span class="card-title">Smaller model</span>
-							<p>Action chunking and real time feedback</p>
-						</div>
-					</div>
-				</div>
+			<p class="manifesto-sub anim-in anim-d3">
+				Whoever solves it becomes a trillion-dollar company.
+			</p>
+			<div class="manifesto-math anim-in anim-d3">
+				<span class="card-num">the math</span>
+				<p>
+					500K hours, the size of Generalist's dataset, costs us $1M at $2 an hour. The rest of the
+					$15M goes to compute and the team.
+				</p>
 			</div>
 		</section>
 
-		<!-- 7 · IN-HOUSE ROBOT -->
+		<!-- 8 · VIDEO -->
 		<section class="slide" id="p8">
+			<h2 class="headline anim-in anim-d2 video-caption">
+            Industry's first <span class="hl-gold">cloud-hosted VTLA model</span> controlling a full humanoid robot
+			</h2>
+			<div class="video-frame anim-in anim-d2">
+				<iframe
+					bind:this={videoFrame}
+					src="https://www.youtube-nocookie.com/embed/o9j_a-makyA?enablejsapi=1&rel=0&modestbranding=1"
+					title="Starforge Robotics video"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+				></iframe>
+			</div>
+			<div class="video-link anim-in anim-d3">
+				<a
+					href="https://www.youtube.com/watch?v=o9j_a-makyA"
+					target="_blank"
+					rel="noopener noreferrer">Watch the demo on YouTube</a
+				>
+			</div>
+		</section>
+
+		<!-- 9 · IN-HOUSE ROBOT -->
+		<section class="slide" id="p9">
 			<h2 class="headline anim-in anim-d2">
 				Our <span class="hl-gold">ultra-low-BOM</span> humanoid is designed to automate both <span class="hl-gold">physical and digital work</span> across factory environments
 			</h2>
@@ -591,132 +580,78 @@
 			</div>
 		</section>
 
-		<!-- 8 · CLOUD MODELS -->
-
-		<!-- 9 · VIDEO (to come) -->
-		<section class="slide" id="p9">
-			<h2 class="headline anim-in anim-d2 video-caption">
-            Industry's first <span class="hl-gold">cloud-hosted VTLA model</span> controlling a full humanoid robot
-			</h2>
-			<div class="video-frame anim-in anim-d2">
-				<iframe
-					bind:this={videoFrame}
-					src="https://www.youtube-nocookie.com/embed/o9j_a-makyA?enablejsapi=1&rel=0&modestbranding=1"
-					title="Starforge Robotics video"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen
-				></iframe>
-			</div>
-			<div class="video-link anim-in anim-d3">
-				<a
-					href="https://www.youtube.com/watch?v=o9j_a-makyA"
-					target="_blank"
-					rel="noopener noreferrer">Watch the demo on YouTube</a
-				>
-			</div>
-		</section>
-
 		<!-- 10 · TEAM -->
 		<section class="slide" id="p10">
-			<h2 class="headline headline-nowrap anim-in anim-d2">
-				Builders who have scaled hardware
-				<span class="hl-gold">to mass production and $2.2B AUM</span> before
+			<h2 class="headline anim-in anim-d2">
+				A team that has taken <span class="hl-gold">hardware to mass production</span>
 			</h2>
-			<div class="team-groups anim-in anim-d3">
-				<div class="team-group team-group-us">
-					<div class="advisor-label">US team</div>
-					<div class="team-grid">
-						<div class="team-card">
-							<img class="team-photo" src="/assets/team/vipul.jpg" alt="" />
-							<div class="team-name">
-								<LinkedInName
-									name="Vipul Saini"
-									linkedin="https://www.linkedin.com/in/vipul-saini-59a24156/"
-									x="https://x.com/vipulsaini594"
-								/>
-							</div>
-							<div class="team-role">Founder · Chief Engineer</div>
-							<div class="team-bio">
-								Founded Cypherock and scaled his crypto hardware wallet to
-								<strong>$2.2B AUM</strong>. Leading robot development from prototype to mass production.
-							</div>
-						</div>
-						<div class="team-card">
-							<img class="team-photo" src="/assets/team/chiragm.jpg" alt="" />
-							<div class="team-name">
-								<LinkedInName
-									name="Chirag Madaan"
-									linkedin="https://www.linkedin.com/in/appleswiggy/"
-								/>
-							</div>
-							<div class="team-role">Machine Learning Engineer</div>
-							<div class="team-bio">
-								Pursuing <strong>Master's in robotics at UC San Diego</strong>. Shipped machine learning models at PayPal and architected security protocols protecting 60,000+ Cypherock devices.
-							</div>
-						</div>
-						<div class="team-card">
-							<img class="team-photo" src="/assets/team/anay.jpg" alt="" />
-							<div class="team-name">
-								<LinkedInName
-									name="Anay Shiledar"
-									linkedin="https://www.linkedin.com/in/anay-shiledar-629036209/"
-								/>
-							</div>
-							<div class="team-role">Electrical Engineer</div>
-							<div class="team-bio">
-								Designed neural-interfaces at UC Irvine's Neuroelectronics
-								Research Lab. Developing the robot's edge model and stress-testing it in real environments.
-							</div>
-						</div>
+			<div class="team-grid team-grid-flat anim-in anim-d3">
+				<div class="team-card">
+					<img class="team-photo" src="/assets/team/vipul.jpg" alt="" />
+					<div class="team-name">
+						<LinkedInName
+							name="Vipul Saini"
+							linkedin="https://www.linkedin.com/in/vipul-saini-59a24156/"
+							x="https://x.com/vipulsaini594"
+						/>
+					</div>
+					<div class="team-role">founder &middot; nyc</div>
+					<div class="team-bio">
+						Founded Cypherock: <strong>60,000+ devices shipped, $2.2B secured</strong>. Leads the
+						robot to production.
 					</div>
 				</div>
-				<div class="team-group team-group-in">
-					<div class="advisor-label">India team</div>
-					<div class="team-grid">
-						<div class="team-card">
-							<img class="team-photo" src="/assets/team/rakshit.jpg" alt="" />
-							<div class="team-name">
-								<LinkedInName
-									name="Rakshit Jain"
-									linkedin="https://www.linkedin.com/in/rakshitjain003/"
-								/>
-							</div>
-							<div class="team-role">Senior Robotics Engineer</div>
-							<div class="team-bio">
-								Holds multiple patents and has put robotics and aerospace products into mass manufacturing
-								. Owns mechanical design and manufacturability of humanoid robots.
-							</div>
-						</div>
-						<div class="team-card">
-							<img class="team-photo" src="/assets/team/chirag-v4.jpg" alt="" />
-							<div class="team-name">
-								<LinkedInName
-									name="Chirag Singla"
-									linkedin="https://www.linkedin.com/in/chirag-droid/"
-								/>
-							</div>
-							<div class="team-role">Software Engineer</div>
-							<div class="team-bio">
-								Established server infrastructure behind Cypherock's hardware wallet. Building the cloud intelligence behind Starforge robots.
-							</div>
-						</div>
+				<div class="team-card">
+					<img class="team-photo" src="/assets/team/chiragm.jpg" alt="" />
+					<div class="team-name">
+						<LinkedInName name="Chirag Madaan" linkedin="https://www.linkedin.com/in/appleswiggy/" />
+					</div>
+					<div class="team-role">ml engineer &middot; us</div>
+					<div class="team-bio">
+						Robotics master's at UC San Diego. ML at PayPal. Secured 60,000+ Cypherock devices.
 					</div>
 				</div>
-			</div>
-			<div class="advisor-label advisor-label-center anim-in anim-d3">Research advisor</div>
-			<div class="advisor-grid advisor-grid-center anim-in anim-d3">
+				<div class="team-card">
+					<img class="team-photo" src="/assets/team/anay.jpg" alt="" />
+					<div class="team-name">
+						<LinkedInName
+							name="Anay Shiledar"
+							linkedin="https://www.linkedin.com/in/anay-shiledar-629036209/"
+						/>
+					</div>
+					<div class="team-role">electrical &middot; us</div>
+					<div class="team-bio">
+						Neural interfaces at UC Irvine. Builds the robot's edge model.
+					</div>
+				</div>
+				<div class="team-card">
+					<img class="team-photo" src="/assets/team/rakshit.jpg" alt="" />
+					<div class="team-name">
+						<LinkedInName name="Rakshit Jain" linkedin="https://www.linkedin.com/in/rakshitjain003/" />
+					</div>
+					<div class="team-role">robotics &middot; india</div>
+					<div class="team-bio">
+						Multiple patents. Took robotics and aerospace products to mass manufacturing.
+					</div>
+				</div>
+				<div class="team-card">
+					<img class="team-photo" src="/assets/team/chirag-v4.jpg" alt="" />
+					<div class="team-name">
+						<LinkedInName name="Chirag Singla" linkedin="https://www.linkedin.com/in/chirag-droid/" />
+					</div>
+					<div class="team-role">software &middot; india</div>
+					<div class="team-bio">
+						Built Cypherock's server infra. Builds Starforge's cloud intelligence.
+					</div>
+				</div>
 				<div class="team-card">
 					<img class="team-photo" src="/assets/team/rohan.jpg" alt="" />
 					<div class="team-name">
 						<LinkedInName name="Rohan P. Singh" linkedin="https://www.linkedin.com/in/rohanpsingh/" />
 					</div>
-					<div class="team-role">Research Scientist</div>
+					<div class="team-role">research advisor</div>
 					<div class="team-bio">
-						Research scientist at Fauna Robotics. Earned his PhD from the University of Tsukuba and spent over seven years at the
-						CNRS-AIST Joint Robotics Lab in Japan, building reinforcement learning
-						controllers that walk the full-size HRP-5P humanoid over compliant and uneven terrain.
-						Published at IEEE Humanoids, ICRA and IEEE Access.
+						Fauna Robotics. PhD, Tsukuba. 7 years making the HRP-5P humanoid walk.
 					</div>
 				</div>
 			</div>
@@ -850,6 +785,48 @@
 						We have a <strong>distributed team in New York City and New Delhi</strong>. Our team in
 						New Delhi handles data collection and firmware development.
 					</p>
+				</div>
+			</div>
+			<div class="appendix-head anim-in anim-d3">A large brain in the cloud, fast reflexes on the robot</div>
+			<div class="brain-stack appendix-brain anim-in anim-d3">
+				<div class="brain-item brain-item-key">
+					<svg class="brain-icon" viewBox="0 0 48 48" aria-hidden="true">
+						<path
+							d="M14 36h22a9 9 0 0 0 1.2-17.9A12 12 0 0 0 14.4 15 10.5 10.5 0 0 0 14 36Z"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2.4"
+							stroke-linejoin="round"
+						/>
+					</svg>
+					<div class="brain-text">
+						<span class="card-num">Cloud</span>
+						<span class="card-title">Large VTLA model</span>
+						<p>
+							Plans and decides across digital and physical work. High-end GPUs live here, not on
+							the robot.
+						</p>
+					</div>
+				</div>
+				<div class="brain-link" aria-hidden="true"></div>
+				<div class="brain-item">
+					<svg class="brain-icon" viewBox="0 0 48 48" aria-hidden="true">
+						<g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round">
+							<rect x="13" y="13" width="22" height="22" rx="2" />
+							<rect x="19" y="19" width="10" height="10" />
+							<path
+								d="M19 13V7M29 13V7M19 41v-6M29 41v-6M13 19H7M13 29H7M41 19h-6M41 29h-6"
+								stroke-linecap="round"
+							/>
+						</g>
+					</svg>
+					<div class="brain-text">
+						<span class="card-num">Edge</span>
+						<span class="card-title">Small on-robot model</span>
+						<p>
+							Action chunking and real-time feedback. Uses little power, so the robot stays cheap.
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -1099,10 +1076,6 @@
 		margin-bottom: clamp(10px, 2.6vh, 26px);
 	}
 
-	.headline-nowrap {
-		white-space: nowrap;
-	}
-
 	.hl-gold {
 		color: #7a5e0f;
 	}
@@ -1310,14 +1283,6 @@
 		font-size: clamp(15px, 3vmin, 25px);
 	}
 
-	.mark-yes {
-		color: #7a5e0f;
-	}
-
-	.mark-no {
-		color: rgba(20, 18, 16, 0.38);
-	}
-
 	.lead {
 		margin-top: clamp(12px, 3vh, 28px);
 		font-family: 'Barlow', sans-serif;
@@ -1337,8 +1302,11 @@
 		color: #7a5e0f;
 	}
 
-	.lead + .bullet-list {
-		margin-top: clamp(10px, 2.4vh, 24px);
+	/* Slide 5's lead is a full-width subhead under the headline, and slide 6's
+	   sits in a narrow column, so neither wants the default measure. */
+	#p5 .lead {
+		margin-top: clamp(2px, 0.8vh, 10px);
+		max-width: none;
 	}
 
 	/* ── COPY BESIDE A FIGURE ── */
@@ -1368,8 +1336,7 @@
 	/* These two are lighter on content, so instead of centering, keep them
 	   anchored just under the headline (like #p6) and let the leftover
 	   space collect below. */
-	#p4 .split,
-	#p5 .split {
+	#p4 .split {
 		margin-top: clamp(16px, 4vh, 40px);
 	}
 
@@ -1397,65 +1364,110 @@
 		max-height: min(72vh, 740px);
 	}
 
-	/* ── FRONTIER ── */
-	.frontier-grid {
+	/* ── SKILL STAIR ──
+	   Four cards that climb left to right, so the skills visibly stack into
+	   the last one. Each step is taller than the one before it; the grid is
+	   bottom-aligned so they share a baseline. */
+	.skill-stair {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		align-items: end;
 		gap: 3px;
 		margin-top: auto;
-	}
-
-	.frontier-card {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(8px, 2vh, 18px);
-		padding: clamp(18px, 4.4vh, 40px) clamp(16px, 2.2vw, 30px);
-		background: rgba(20, 18, 16, 0.044);
-		border: 2px solid rgba(20, 18, 16, 0.05);
-		border-top: 2px solid #7a5e0f;
-	}
-
-	.statement {
-		margin-top: clamp(22px, 5.4vh, 54px);
 		margin-bottom: auto;
-		font-family: 'Barlow', sans-serif;
-		font-size: clamp(15px, 3vmin, 25px);
-		font-weight: 500;
-		line-height: 1.5;
-		color: #3a3630;
 	}
 
-	.statement strong {
-		font-weight: 700;
-		color: #141210;
-	}
-
-	/* ── STAT CARD ── */
-	.stat-card {
+	.stair-card {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
-		gap: clamp(6px, 1.4vh, 12px);
-		padding: clamp(20px, 5vh, 48px) clamp(18px, 2.6vw, 36px);
+		gap: clamp(4px, 1vh, 10px);
+		padding: clamp(12px, 2.6vh, 26px) clamp(12px, 1.8vw, 24px);
 		background: rgba(20, 18, 16, 0.044);
 		border: 2px solid rgba(20, 18, 16, 0.05);
 		border-top: 2px solid rgba(20, 18, 16, 0.2);
 	}
 
-	.stat-val {
+	.stair-card:nth-child(1) {
+		min-height: clamp(96px, 23vh, 196px);
+	}
+	.stair-card:nth-child(2) {
+		min-height: clamp(116px, 28vh, 238px);
+	}
+	.stair-card:nth-child(3) {
+		min-height: clamp(136px, 33vh, 280px);
+	}
+	.stair-card:nth-child(4) {
+		min-height: clamp(156px, 38vh, 322px);
+	}
+
+	.stair-card p {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(11px, 1.95vmin, 17px);
+		font-weight: 500;
+		line-height: 1.4;
+		color: #5f584e;
+	}
+
+	.stair-card-key {
+		background: #feaf00;
+		border-color: #feaf00;
+		border-top-color: #141210;
+	}
+
+	.stair-card-key .card-num {
+		color: rgba(20, 18, 16, 0.62);
+	}
+
+	.stair-card-key p {
+		color: rgba(20, 18, 16, 0.78);
+	}
+
+	/* ── TELEOP METRICS ── */
+	.metric-row {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: clamp(14px, 3vw, 46px);
+		margin-top: auto;
+	}
+
+	.metric {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(2px, 0.8vh, 8px);
+		padding-top: clamp(10px, 2.4vh, 24px);
+		border-top: 2px solid rgba(20, 18, 16, 0.15);
+	}
+
+	.metric-val {
 		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(54px, 15vmin, 150px);
+		font-size: clamp(44px, 12vmin, 124px);
 		line-height: 0.9;
 		color: #141210;
 	}
 
-	.stat-label {
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(8.5px, 1.6vmin, 12px);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
+	.metric-label {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(12px, 2.2vmin, 20px);
+		font-weight: 500;
 		color: #5f584e;
+	}
+
+	.takeaway {
+		display: flex;
+		align-items: baseline;
+		gap: clamp(8px, 1.4vw, 18px);
+		margin-top: auto;
+		padding-top: clamp(12px, 2.6vh, 26px);
+		border-top: 2px solid rgba(20, 18, 16, 0.15);
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(14px, 2.6vmin, 23px);
+		font-weight: 500;
+		color: #141210;
+	}
+
+	.takeaway-arrow {
+		flex-shrink: 0;
+		color: #7a5e0f;
 	}
 
 	/* ── DATA KIT ── */
@@ -1464,8 +1476,17 @@
 	}
 
 	#p6 .lead {
-		margin-top: clamp(4px, 1.4vh, 14px);
-		font-size: clamp(17px, 3.4vmin, 30px);
+		margin-top: clamp(6px, 1.6vh, 16px);
+		font-size: clamp(13px, 2.4vmin, 21px);
+		max-width: none;
+	}
+
+	.kit-col {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: clamp(6px, 1.4vh, 16px);
+		min-width: 0;
 	}
 
 	.kit-pair {
@@ -1486,11 +1507,130 @@
 	}
 
 	.kit-glove {
-		max-height: min(42vh, 370px);
+		max-height: min(34vh, 300px);
 	}
 
 	.kit-glasses {
-		max-height: min(26vh, 220px);
+		max-height: min(21vh, 180px);
+	}
+
+	.kit-caption {
+		padding-top: clamp(6px, 1.4vh, 14px);
+		border-top: 1px solid rgba(20, 18, 16, 0.12);
+	}
+
+	.kit-caption .card-title {
+		display: block;
+		font-size: clamp(16px, 3vmin, 28px);
+	}
+
+	.kit-caption p {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(12px, 2.1vmin, 18px);
+		font-weight: 500;
+		color: #5f584e;
+	}
+
+	/* ── CAPTURE ── */
+	.capture-col {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: clamp(4px, 1vh, 10px);
+		min-width: 0;
+	}
+
+	.cost-bars {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(4px, 1vh, 10px);
+		margin-top: clamp(4px, 1vh, 10px);
+	}
+
+	.cost-row {
+		display: grid;
+		grid-template-columns: clamp(68px, 9vw, 120px) minmax(0, 1fr) auto;
+		align-items: center;
+		gap: clamp(8px, 1.2vw, 16px);
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(12px, 2.2vmin, 19px);
+		font-weight: 600;
+		color: #141210;
+	}
+
+	/* The two bars share one track, so the gold sliver reads as 1/25th of the
+	   teleop bar rather than as a bar of its own. */
+	.cost-bar {
+		height: clamp(12px, 2.2vh, 22px);
+	}
+
+	.cost-bar-teleop {
+		width: 100%;
+		background: rgba(20, 18, 16, 0.22);
+	}
+
+	/* The gold sliver keeps the teleop bar's track so 4% reads as 1/25th of
+	   it, and its label sits right beside it rather than at the far edge. */
+	.cost-track {
+		display: flex;
+		align-items: center;
+		gap: clamp(8px, 1vw, 14px);
+		min-width: 0;
+	}
+
+	.cost-bar-sf {
+		flex: none;
+		width: 4%;
+		min-width: 6px;
+		background: #feaf00;
+	}
+
+	.cost-row-key .cost-name,
+	.cost-row-key .cost-val {
+		color: #7a5e0f;
+	}
+
+	.cost-val {
+		white-space: nowrap;
+	}
+
+	.stream-card {
+		margin-top: clamp(6px, 1.4vh, 16px);
+		padding: clamp(10px, 2vh, 20px) clamp(12px, 1.6vw, 22px);
+		background: rgba(20, 18, 16, 0.044);
+		border: 2px solid rgba(20, 18, 16, 0.05);
+		border-top: 2px solid #7a5e0f;
+	}
+
+	.stream-head {
+		margin-bottom: clamp(5px, 1.2vh, 12px);
+	}
+
+	.stream-row {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		font-family: 'Space Mono', monospace;
+		font-size: clamp(9.5px, 1.75vmin, 15px);
+		line-height: 1.9;
+		color: #141210;
+	}
+
+	.stream-row dt {
+		flex-shrink: 0;
+		color: #5f584e;
+	}
+
+	.stream-row dd {
+		flex-shrink: 0;
+		margin: 0;
+	}
+
+	.stream-leader {
+		flex: 1;
+		min-width: 12px;
+		border-bottom: 1px dotted rgba(20, 18, 16, 0.35);
+		transform: translateY(-3px);
 	}
 
 	.partners {
@@ -1570,7 +1710,7 @@
 		height: clamp(24px, 4.1vmin, 34px);
 	}
 
-	/* ── DUAL BRAIN ── */
+	/* ── DUAL BRAIN (appendix) ── */
 	.brain-stack {
 		display: flex;
 		flex-direction: column;
@@ -1578,7 +1718,7 @@
 		min-width: 0;
 	}
 
-	#p8 .bullet-item p {
+	#p9 .bullet-item p {
 		font-size: clamp(15px, 3vmin, 26px);
 	}
 
@@ -1629,6 +1769,70 @@
 		);
 	}
 
+	/* The appendix carries the cloud/edge split at a smaller scale than the
+	   slide it used to live on. */
+	.appendix-brain {
+		margin-top: clamp(8px, 1.8vh, 18px);
+		margin-bottom: auto;
+	}
+
+	.appendix-brain .brain-icon {
+		width: clamp(34px, 6vmin, 58px);
+		height: clamp(34px, 6vmin, 58px);
+	}
+
+	.appendix-brain .brain-text .card-title {
+		font-size: clamp(16px, 3vmin, 28px);
+	}
+
+	.appendix-brain .brain-text p {
+		font-size: clamp(11px, 2vmin, 17px);
+	}
+
+	.appendix-brain .brain-link {
+		margin-left: calc(clamp(34px, 6vmin, 58px) / 2 - 1px);
+		height: clamp(16px, 3.4vh, 34px);
+	}
+
+	/* ── THE PRIZE ──
+	   The one full-bleed gold slide in the deck: the raise, stated plainly. */
+	.slide-gold {
+		justify-content: center;
+		background: #feaf00;
+	}
+
+	.manifesto {
+		max-width: 76%;
+		font-size: clamp(28px, 7vmin, 78px);
+		margin-top: auto;
+		margin-bottom: clamp(10px, 2.2vh, 22px);
+	}
+
+	.manifesto-sub {
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(14px, 2.8vmin, 26px);
+		font-weight: 500;
+		color: rgba(20, 18, 16, 0.78);
+	}
+
+	.manifesto-math {
+		margin-top: auto;
+		padding-top: clamp(10px, 2.2vh, 22px);
+		border-top: 1px solid rgba(20, 18, 16, 0.35);
+	}
+
+	.manifesto-math .card-num {
+		color: rgba(20, 18, 16, 0.62);
+	}
+
+	.manifesto-math p {
+		margin-top: 4px;
+		font-family: 'Barlow', sans-serif;
+		font-size: clamp(12px, 2.1vmin, 19px);
+		font-weight: 500;
+		color: #141210;
+	}
+
 	/* ── VIDEO ── */
 	.video-frame {
 		width: min(100%, calc((min(100vh, 100vw * 9 / 16) - 260px) * 16 / 9));
@@ -1674,96 +1878,61 @@ text-align: center;
 		padding-bottom: clamp(16px, 3.4vh, 32px);
 	}
 
-	.team-groups {
-		display: grid;
-		grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-		gap: clamp(10px, 1.4vw, 20px);
-		margin-top: auto;
-	}
-
-	.team-group {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.team-group .team-grid {
-		flex: 1;
-		margin-top: clamp(5px, 1.1vh, 12px);
-	}
-
-	.team-group-us .team-grid {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-	}
-
-	.team-group-in .team-grid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-
 	.team-grid {
 		display: grid;
 		gap: 3px;
 	}
 
-	.advisor-label {
-		margin-top: clamp(8px, 1.7vh, 20px);
-		font-family: 'Space Mono', monospace;
-		font-weight: 700;
-		font-size: clamp(9px, 1.5vh, 12.5px);
-		letter-spacing: 0.22em;
-		text-transform: uppercase;
-		color: #7a5e0f;
-	}
-
-	.team-group .advisor-label {
-		margin-top: 0;
-	}
-
-	/* One advisor, held to the width of a single US card pair so the row does
-	   not stretch across the whole stage. */
-	.advisor-grid {
-		display: grid;
-		grid-template-columns: minmax(0, 0.5fr);
-		gap: 3px;
-		margin-top: clamp(5px, 1.1vh, 12px);
-	}
-
-	.advisor-label-center {
-		width: 100%;
-		text-align: center;
-	}
-
-	.advisor-grid-center {
-		width: 100%;
-		justify-content: center;
+	/* Six people in two rows of three, each card reading photo-first across:
+	   name, role, then one line of why they are here. */
+	.team-grid-flat {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		column-gap: clamp(12px, 2.2vw, 40px);
+		row-gap: clamp(10px, 2.2vh, 28px);
+		margin-top: clamp(10px, 2.4vh, 28px);
 		margin-bottom: auto;
 	}
 
-	.advisor-grid .team-card {
+	.team-grid-flat .team-card {
 		display: grid;
 		grid-template-columns: auto minmax(0, 1fr);
 		grid-template-areas:
 			'photo name'
 			'photo role'
 			'photo bio';
-		column-gap: clamp(9px, 1vw, 14px);
+		column-gap: clamp(10px, 1.2vw, 18px);
+		padding: clamp(8px, 1.5vh, 18px) 0 0;
+		background: none;
+		border: 0;
+		border-top: 2px solid rgba(20, 18, 16, 0.15);
 	}
 
-	.advisor-grid .team-photo {
+	.team-grid-flat .team-photo {
 		grid-area: photo;
 		align-self: start;
 		margin-bottom: 0;
 	}
 
-	.advisor-grid .team-name {
+	.team-grid-flat .team-name {
 		grid-area: name;
 	}
 
-	.advisor-grid .team-role {
+	.team-grid-flat .team-role {
 		grid-area: role;
 	}
 
-	.advisor-grid .team-bio {
+	/* The bios are a line or two now, so breaking words only looks like damage. */
+	.team-grid-flat .team-bio {
 		grid-area: bio;
+		hyphens: none;
+		-webkit-hyphens: none;
+	}
+
+	/* Roles here read as lowercase mono labels ("founder · nyc"), not caps. */
+	.team-grid-flat .team-role {
+		text-transform: none;
+		letter-spacing: 0.04em;
+		font-size: clamp(9px, 1.5vh, 14px);
 	}
 
 	.team-card {
@@ -2153,8 +2322,7 @@ text-align: center;
 			font-size: clamp(30px, 9vw, 46px);
 		}
 
-		.cover-title br,
-		.statement br {
+		.cover-title br {
 			display: none;
 		}
 
@@ -2162,10 +2330,11 @@ text-align: center;
 		.plain-list .bullet-item p,
 		.compact-list .bullet-item p,
 		.econ-notes .bullet-item p,
-		#p8 .bullet-item p,
+		#p9 .bullet-item p,
 		.lead,
 		#p6 .lead,
-		.statement,
+		.manifesto-sub,
+		.takeaway,
 		.partners p,
 		.raise-card p,
 		.ledger-row dt {
@@ -2173,13 +2342,26 @@ text-align: center;
 		}
 
 		.split,
-		.frontier-grid,
-		.team-groups,
+		.skill-stair,
+		.metric-row,
 		.raise-grid {
 			display: flex;
 			flex-direction: column;
 			align-items: stretch;
 			gap: 20px;
+		}
+
+		/* The staircase only reads as a climb when the cards sit side by side;
+		   stacked, they are four equal cards. */
+		.stair-card:nth-child(1),
+		.stair-card:nth-child(2),
+		.stair-card:nth-child(3),
+		.stair-card:nth-child(4) {
+			min-height: 0;
+		}
+
+		.manifesto {
+			max-width: none;
 		}
 
 		.split-figure img,
@@ -2203,10 +2385,17 @@ text-align: center;
 			align-items: flex-start;
 		}
 
-		.team-group-us .team-grid,
-		.team-group-in .team-grid,
-		.advisor-grid {
+		.team-grid-flat {
 			grid-template-columns: minmax(0, 1fr);
+		}
+
+		/* Mono rows do not reflow, so hold them to a size that fits a phone. */
+		.cost-row {
+			font-size: 15px;
+		}
+
+		.stream-row {
+			font-size: 11px;
 		}
 
 		.price-row {
