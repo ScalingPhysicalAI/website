@@ -512,7 +512,7 @@
 		<section class="slide slide-gold" id="p7">
 			<h2 class="headline manifesto anim-in anim-d2">
 				The industry is spending billions to build the GPT of robotics. Starforge will do it with
-				$15M.
+				$4M.
 			</h2>
 			<p class="manifesto-sub anim-in anim-d3">
 				Whoever solves it becomes a trillion-dollar company.
