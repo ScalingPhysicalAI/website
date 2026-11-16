@@ -19,7 +19,8 @@
 	const isDeck = $derived(
 		normalizedPath === '/deck' ||
 			normalizedPath === '/deck-compute' ||
-			normalizedPath === '/pitch-deck'
+			normalizedPath === '/pitch-deck' ||
+            normalizedPath === '/pitch'
 	);
 
 	const bodyClass = $derived(normalizedPath === '/buildo' ? 'page-buildo' : '');
