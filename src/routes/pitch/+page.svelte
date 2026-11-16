@@ -2058,6 +2058,12 @@
 			font-size: clamp(26px, 7.4vw, 38px);
 		}
 
+		/* The team headline is kept on one line on the wide deck; on a phone that
+		   would push the whole page sideways, so it wraps like any other. */
+		.headline-nowrap {
+			white-space: normal;
+		}
+
 		.cover-title {
 			font-size: clamp(30px, 9vw, 46px);
 		}
