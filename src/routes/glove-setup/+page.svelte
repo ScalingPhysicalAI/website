@@ -12,6 +12,10 @@
 
 	let step = $state<Step>('idle');
 	let error = $state('');
+	// What the glove is doing right now, shown under the form rather than
+	// instead of it: the form stays usable even if a step is slow or fails.
+	let busy = $state('');
+	let note = $state('');
 	let session: ImprovSession | null = null;
 	let deviceName = $state('');
 	let networks = $state<Network[]>([]);
@@ -45,16 +49,13 @@
 
 	async function start() {
 		error = '';
+		note = '';
 		step = 'connecting';
+		busy = 'Connecting…';
 		try {
 			session = await ImprovSession.request();
-			const info = await session.info();
-			deviceName = info?.name ?? session.name;
-			step = 'network';
-			networks = await session.scan();
-			manualSsid = networks.length === 0;
-			ssid = networks[0]?.ssid ?? '';
 		} catch (e) {
+			busy = '';
 			// Dismissing the browser's device picker is not an error worth showing.
 			if (e instanceof Error && e.name === 'NotFoundError') {
 				step = 'idle';
@@ -62,6 +63,37 @@
 			}
 			error = e instanceof Error ? e.message : String(e);
 			step = 'idle';
+			return;
+		}
+		// Connected: show the form straight away. Everything below only fills
+		// it in, so a glove that will not list its networks can still be set up
+		// by typing the name.
+		deviceName = session.name;
+		manualSsid = true;
+		step = 'network';
+		busy = 'Reading the glove…';
+		const info = await session.info();
+		if (info) deviceName = info.name;
+		await rescan();
+	}
+
+	async function rescan() {
+		if (!session) return;
+		note = '';
+		busy = 'Looking for networks…';
+		try {
+			networks = await session.scan();
+			if (networks.length) {
+				manualSsid = false;
+				ssid = ssid || networks[0].ssid;
+			} else {
+				note = 'The glove saw no networks. Type the name instead.';
+			}
+		} catch (e) {
+			networks = [];
+			note = (e instanceof Error ? e.message : String(e)) + ' Type the network name instead.';
+		} finally {
+			busy = '';
 		}
 	}
 
@@ -77,6 +109,8 @@
 		} catch (e) {
 			error = e instanceof Error ? e.message : String(e);
 			step = 'network';
+		} finally {
+			busy = '';
 		}
 	}
 
@@ -85,6 +119,8 @@
 		session = null;
 		step = 'idle';
 		password = '';
+		busy = '';
+		note = '';
 	}
 
 	// Four bars from the usual -95..-35 dBm range.
@@ -126,9 +162,14 @@
 			</p>
 			<button class="btn-primary" onclick={start}>Set up over Bluetooth</button>
 		{:else if step === 'connecting'}
-			<p class="note">Connecting&hellip;</p>
+			<p class="note busy">{busy}</p>
 		{:else if step === 'network' || step === 'joining'}
-			<p class="note">Connected to <strong>{deviceName}</strong>.</p>
+			<p class="note">
+				Connected to <strong>{deviceName}</strong>.
+				{#if networks.length}
+					<button class="link" onclick={rescan} disabled={!!busy}>Rescan</button>
+				{/if}
+			</p>
 			{#if networks.length}
 				<ul class="nets">
 					{#each networks as net (net.ssid)}
@@ -175,6 +216,8 @@
 				</button>
 				<button class="btn-ghost" onclick={cancel} disabled={step === 'joining'}>Cancel</button>
 			</div>
+			{#if busy}<p class="note busy">{busy}</p>{/if}
+			{#if note}<p class="note">{note}</p>{/if}
 		{:else if step === 'done'}
 			<p class="note">
 				<strong>{deviceName}</strong> is on the network. Open it to see the hand:
@@ -404,6 +447,20 @@
 		font: inherit;
 		cursor: pointer;
 		padding: 0;
+	}
+	.busy {
+		margin-top: 1rem;
+	}
+	.busy::after {
+		content: '';
+		display: inline-block;
+		width: 0.6em;
+		animation: dots 1.2s steps(4, end) infinite;
+	}
+	@keyframes dots {
+		to {
+			width: 0;
+		}
 	}
 	.error {
 		color: #b3261e;

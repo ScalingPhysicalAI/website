@@ -30,6 +30,7 @@ const ERRORS: Record<number, string> = {
 
 /** The browser's Bluetooth API, typed down to the parts used here. */
 interface BleCharacteristic {
+	readValue(): Promise<DataView>;
 	writeValue(value: BufferSource): Promise<void>;
 	writeValueWithResponse?(value: BufferSource): Promise<void>;
 	startNotifications(): Promise<unknown>;
@@ -47,6 +48,7 @@ interface BleServer {
 interface BleDevice {
 	readonly name?: string;
 	readonly gatt?: BleServer;
+	addEventListener?(type: 'gattserverdisconnected', listener: () => void): void;
 }
 interface BluetoothLike {
 	requestDevice(options: { filters: { services: string[] }[] }): Promise<BleDevice>;
@@ -84,52 +86,77 @@ type Pending = {
 export class ImprovSession {
 	private constructor(
 		private readonly device: BleDevice,
-		private readonly command: BleCharacteristic
+		private readonly command: BleCharacteristic,
+		private readonly result: BleCharacteristic,
+		private readonly errorState: BleCharacteristic
 	) {}
 
 	private pending: Pending | null = null;
+	private gone = false;
 	name = '';
 
-	/** Shows the browser's device picker, then opens the glove's service. */
+	/**
+	 * Shows the browser's device picker, then opens the glove's service.
+	 * Every step is given a deadline: a Bluetooth stack that stalls should
+	 * say so rather than leave the page waiting.
+	 */
 	static async request(): Promise<ImprovSession> {
 		const ble = bluetooth();
 		if (!ble) throw new Error('This browser has no Web Bluetooth. Use Chrome or Edge.');
 		const device = await ble.requestDevice({ filters: [{ services: [SERVICE] }] });
 		if (!device.gatt) throw new Error('That device has no Bluetooth connection to open.');
-		const server = await device.gatt.connect();
-		const service = await server.getPrimaryService(SERVICE);
-		const session = new ImprovSession(device, await service.getCharacteristic(CHR.command));
+		const server = await deadline(device.gatt.connect(), 15000, 'connect to the glove');
+		const service = await deadline(
+			server.getPrimaryService(SERVICE),
+			10000,
+			'find the setup service'
+		);
+		const [command, result, error] = await deadline(
+			Promise.all([
+				service.getCharacteristic(CHR.command),
+				service.getCharacteristic(CHR.result),
+				service.getCharacteristic(CHR.error)
+			]),
+			10000,
+			'open the setup service'
+		);
+		const session = new ImprovSession(device, command, result, error);
 		session.name = device.name ?? 'glove';
 
-		// Results and errors both arrive as notifications; a command is finished
-		// when one of them turns up.
-		const result = await service.getCharacteristic(CHR.result);
+		// Results and errors normally arrive as notifications. Subscribing can
+		// fail, and a notification can be missed, so rpc() also reads the same
+		// characteristics while it waits - they hold the latest value either way.
 		result.addEventListener('characteristicvaluechanged', (event) =>
 			session.onResult(valueOf(event))
 		);
-		await result.startNotifications();
-		const error = await service.getCharacteristic(CHR.error);
 		error.addEventListener('characteristicvaluechanged', (event) =>
 			session.onError(valueOf(event).getUint8(0))
 		);
-		await error.startNotifications();
+		await Promise.allSettled([result.startNotifications(), error.startNotifications()]);
+		addDisconnectListener(device, () => {
+			session.gone = true;
+			session.finish(null, new Error('The glove disconnected.'));
+		});
 		return session;
 	}
 
-	/** Firmware name, version and the glove's own name. */
+	/** Firmware name, version and the glove's own name. Best effort. */
 	async info(): Promise<GloveInfo | null> {
 		try {
-			const [firmware, version, , name] = await this.rpc(CMD.info);
+			const [firmware, version, , name] = await this.rpc(CMD.info, new Uint8Array(), 8000);
 			this.name = name || this.name;
 			return { name: this.name, firmware, version };
 		} catch {
-			return null; // an older glove that does not answer this one
+			return null; // an older glove, or one that did not answer this one
 		}
 	}
 
-	/** Networks the glove can see, strongest first. */
+	/**
+	 * Networks the glove can see, strongest first. The glove scans both the
+	 * 2.4 and 5GHz bands, which takes it a few seconds.
+	 */
 	async scan(): Promise<Network[]> {
-		const values = await this.rpc(CMD.scan);
+		const values = await this.rpc(CMD.scan, new Uint8Array(), 20000);
 		const networks: Network[] = [];
 		for (let i = 0; i + 2 < values.length; i += 3)
 			networks.push({
@@ -154,7 +181,9 @@ export class ImprovSession {
 		data.set(s, 1);
 		data[1 + s.length] = p.length;
 		data.set(p, 2 + s.length);
-		const urls = await this.rpc(CMD.wifi, data);
+		// The firmware gives the access point 20 seconds to answer before it
+		// gives up, so wait longer than that.
+		const urls = await this.rpc(CMD.wifi, data, 30000);
 		this.disconnect(); // the glove is on Wi-Fi now; Bluetooth has done its job
 		return urls.filter((url) => /^https?:\/\//.test(url));
 	}
@@ -179,27 +208,48 @@ export class ImprovSession {
 			: this.command.writeValue(packet);
 	}
 
-	private rpc(command: number, data = new Uint8Array()): Promise<string[]> {
+	private rpc(command: number, data = new Uint8Array(), timeoutMs = 15000): Promise<string[]> {
 		if (this.pending) return Promise.reject(new Error('The glove is still busy.'));
+		if (this.gone) return Promise.reject(new Error('The glove disconnected.'));
 		return new Promise<string[]>((resolve, reject) => {
-			// Joining a network takes the glove up to twenty seconds.
 			const timer = setTimeout(
-				() => this.finish(null, new Error('The glove did not answer.')),
-				30000
+				() => this.finish(null, new Error('The glove did not answer in time.')),
+				timeoutMs
 			);
+			// Notifications are the fast path; polling the same characteristics
+			// covers a subscription that silently did not take.
+			const poll = setInterval(() => void this.readAnswer(), 900);
+			const done = () => {
+				clearTimeout(timer);
+				clearInterval(poll);
+			};
 			this.pending = {
 				command,
 				resolve: (values) => {
-					clearTimeout(timer);
+					done();
 					resolve(values);
 				},
 				reject: (error) => {
-					clearTimeout(timer);
+					done();
 					reject(error);
 				}
 			};
 			this.send(command, data).catch((e: Error) => this.finish(null, e));
 		});
+	}
+
+	/** Reads the result and error characteristics, for when no notification came. */
+	private async readAnswer() {
+		if (!this.pending) return;
+		try {
+			const value = await this.result.readValue();
+			if (value.byteLength >= 2) this.onResult(value);
+			if (!this.pending) return;
+			const error = await this.errorState.readValue();
+			if (error.byteLength) this.onError(error.getUint8(0));
+		} catch {
+			// Reads can be refused while the stack is busy; the next tick retries.
+		}
 	}
 
 	private finish(values: string[] | null, error: Error | null) {
@@ -232,4 +282,18 @@ export class ImprovSession {
 
 function valueOf(event: Event): DataView {
 	return (event.target as unknown as { value: DataView }).value;
+}
+
+function addDisconnectListener(device: BleDevice, onGone: () => void) {
+	device.addEventListener?.('gattserverdisconnected', onGone);
+}
+
+/** Rejects with something a person can act on if a step never finishes. */
+function deadline<T>(work: Promise<T>, ms: number, what: string): Promise<T> {
+	return Promise.race([
+		work,
+		new Promise<T>((_, reject) =>
+			setTimeout(() => reject(new Error(`Took too long to ${what}. Try again, or restart it.`)), ms)
+		)
+	]);
 }
