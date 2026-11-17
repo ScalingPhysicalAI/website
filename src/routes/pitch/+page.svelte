@@ -707,10 +707,6 @@
 					<dt>Contribution profit per kg</dt>
 					<dd>~ $100 / kg</dd>
 				</div>
-				<div class="ledger-row">
-					<dt>Profit per launch campaign</dt>
-					<dd>~ $9 M</dd>
-				</div>
 			</dl>
 		</section>
 
