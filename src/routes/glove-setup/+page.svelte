@@ -27,6 +27,9 @@
 	let supported = $state(true);
 
 	const STORE = 'starforge.gloves';
+	// The glasses setup page reads this to save typing the same network twice.
+	// The name only: a password is not ours to keep.
+	const WIFI = 'starforge.wifi';
 
 	onMount(() => {
 		supported = bluetoothAvailable();
@@ -105,6 +108,11 @@
 			urls = await session.provision(ssid, password);
 			password = '';
 			if (urls.length) remember(deviceName, urls[0]);
+			try {
+				localStorage.setItem(WIFI, JSON.stringify(ssid));
+			} catch {
+				// Storage switched off changes nothing about the glove being set up.
+			}
 			step = 'done';
 		} catch (e) {
 			error = e instanceof Error ? e.message : String(e);
@@ -233,6 +241,10 @@
 					cannot resolve .local names.
 				</p>
 			{/if}
+			<p class="note">
+				Using the glasses with it? <a href={resolve('/glasses-setup')}>Set up the glasses</a> next &mdash;
+				they are given this glove's address and send everything they see to it.
+			</p>
 			<button class="btn-ghost" onclick={() => (step = 'idle')}>Set up another</button>
 		{/if}
 		{#if error}<p class="error">{error}</p>{/if}
