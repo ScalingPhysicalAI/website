@@ -737,26 +737,8 @@
 		</section>
 
 		<section class="slide" id="p14">
-			<h2 class="headline anim-in anim-d2">Appendix 1: Manufacturing &amp; team</h2>
-			<div class="bullet-list appendix-points anim-in anim-d3">
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						We have more than 80% BOM control through in-house vertical integration. Starforge robots are produced in United States.
-					</p>
-				</div>
-				<div class="bullet-item">
-					<span class="bullet-icon">&#9656;</span>
-					<p>
-						We have a distributed team in New York City and New Delhi. Our team in
-						New Delhi handles physical AI data collection and firmware development.
-					</p>
-				</div>
-			</div>
-		</section>
-		<section class="slide" id="p14">
 			<h2 class="headline anim-in anim-d2">
-				Appendix 2: Our humanoid is designed to automate both physical and digital work across
+				Appendix 1: Our humanoid is designed to automate both physical and digital work across
 				factory environments
 			</h2>
 			<div class="anim-in anim-d3">
