@@ -379,14 +379,14 @@
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>Advanced GPU chips face regulatory restrictions on exports outside the US.</p>
+						<p>GPU chips face stringent export controls, limiting their deployment outside the US for offshore data centers.</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
 						<p>
 							Date centers in sun synchronous orbit solve it but industry does not have <span
-								class="hl-gold">launch vehicles</span
-							> that can bring down the cost of payload to orbit significantly down.
+								class="hl-gold">launch systems</span
+							> that can bring down the cost of payload to orbit.
 						</p>
 					</div>
 				</div>
@@ -408,7 +408,7 @@
 			<div class="split anim-in anim-d3">
 				<div>
 					<p class="lead">
-						Building large reusable rockets that carry full payload in a single launch
+						Building large reusable rockets that carry all payload in a single launch
 					</p>
 					<div class="bullet-list plain-list">
 						<div class="bullet-item">
@@ -437,8 +437,7 @@
 				<div>
 					<p class="lead">
 						Producing medium lift rockets where the <span class="hl-gold"
-							>upper stage stack together</span
-						> to become the data center itself
+							>upper stage stack together</span> in orbit to become data center itself
 					</p>
 					<div class="bullet-list plain-list compact-list">
 						<div class="bullet-item">
@@ -447,7 +446,7 @@
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
-							<p>High cadence</p>
+							<p>No re-entry heat shield required</p>
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
@@ -489,9 +488,7 @@
 
 		<section class="slide" id="p1">
 			<h2 class="headline anim-in anim-d2">
-				SpaceX is spending billions of dollars with their starship program. <span class="hl-gold"
-					>With autonomous rocket factories</span
-				> StarForge will do it at 1% of that cost.
+				We have developed <span class="hl-gold">fully autonomous factory</span> where robots and machines work together as coordinated system
 			</h2>
 		</section>
 
@@ -499,10 +496,6 @@
 
 		<!-- 9 · VIDEO (to come) -->
 		<section class="slide" id="p9">
-			<h2 class="headline anim-in anim-d2 video-caption">
-				Industry's first <span class="hl-gold">fully autonomous factory</span>, where robots are
-				machines work together as coordinated system
-			</h2>
 			<div class="video-frame anim-in anim-d2">
 				<iframe
 					bind:this={videoFrame}
@@ -526,7 +519,7 @@
 		<section class="slide" id="p10">
 			<h2 class="headline headline-nowrap anim-in anim-d2">
 				Builders who have scaled hardware
-				<span class="hl-gold">to mass production and $2.2B AUM</span> before
+				<span class="hl-gold">to mass production and $2.2B AUM</span>
 			</h2>
 			<div class="team-rows anim-in anim-d3">
 				<div class="team-grid team-row-lead">
@@ -542,7 +535,7 @@
 						<div class="team-role">Founder · Chief Engineer</div>
 						<div class="team-bio">
 							Founded Cypherock and scaled his crypto hardware wallet to
-							<strong>$2.2B AUM</strong>. Leading robot development from prototype to mass
+							<strong>$2.2B AUM</strong>. Led robot development from prototype to mass
 							production.
 						</div>
 					</div>
@@ -557,7 +550,7 @@
 						<div class="team-role">Senior Robotics Engineer</div>
 						<div class="team-bio">
 							Holds multiple patents and has put robotics and aerospace products into mass
-							manufacturing. Owns mechanical design and manufacturability of humanoid robots.
+							manufacturing. Owns mechanical design and manufacturability of robots and launch vehicle.
 						</div>
 					</div>
 					<div class="team-card">
@@ -570,7 +563,7 @@
 						</div>
 						<div class="team-role">Ecosystem &amp; Growth</div>
 						<div class="team-bio">
-							Operator at Vana, scaling builder ecosystems <strong>from 0 to 1</strong> across AI and
+							Ex-operator at Vana, scaled builder ecosystems <strong>from 0 to 1</strong> across AI and
 							crypto. Writes a widely followed physical AI thesis mapping the robotics market.
 						</div>
 					</div>
@@ -585,10 +578,11 @@
 						<div class="team-role">Propulsion Engineer</div>
 						<div class="team-bio">
 							Propulsion engineer at <strong>Relativity Space</strong>. Co-founded Half Cat Rocketry
-							and open-sourced Mojave Sphinx, now built by student teams worldwide.
+							and open-sourced Mojave Sphinx, now built by teams worldwide.
 						</div>
 					</div>
 				</div>
+                <!--
 				<div class="team-grid team-row-rest">
 					<div class="team-card">
 						<img class="team-photo" src="/assets/team/anay.jpg" alt="" />
@@ -634,6 +628,7 @@
 						</div>
 					</div>
 				</div>
+                -->
 			</div>
 			<!--
 			<div class="partners team-partners anim-in anim-d3">
@@ -663,16 +658,12 @@
 		<!-- 12 · 2028 PROFITS -->
 		<section class="slide" id="p12">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">$9 million</span> monthly recurring revenue in 2028
+				<span class="hl-gold">$18 million</span> monthly recurring revenue in 2028
 			</h2>
 			<dl class="ledger anim-in anim-d3">
 				<div class="ledger-row">
 					<dt>Payload capacity per launch</dt>
 					<dd>500 kg</dd>
-				</div>
-				<div class="ledger-row">
-					<dt>Launch cadence</dt>
-					<dd>6 launches per day</dd>
 				</div>
 				<div class="ledger-row">
 					<dt>Payload to SSO per month-long campaign</dt>
@@ -729,8 +720,8 @@
 		<!-- 13 · ASK -->
 		<section class="slide" id="p4">
 			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">We already have robots</span>. Now we are raising seed round to build
-				reusable medium-lift rockets designed for autonomous production
+				<span class="hl-gold">We have already built the infrastructure for autonomous factories</span>. Now we're raising seed to build
+				our patent pending rocket system designed for orbital data centers.
 			</h2>
 			<div class="split anim-in anim-d2">
 				<div class="raise-card raise-card-key">
@@ -1655,7 +1646,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 3px;
-		margin-top: auto;
+		margin-top: clamp(20px, 7vh, 84px);
 		margin-bottom: auto;
 	}
 
@@ -1665,7 +1656,7 @@
 	}
 
 	.team-row-lead {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(4, minmax(0, 2fr));
 	}
 
 	/* Three cards under four, held to the lead row's card width so the two
@@ -1718,7 +1709,7 @@
 
 	.team-bio {
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(10.5px, 1.72vh, 17px);
+		font-size: clamp(12px, 2vh, 20px);
 		font-weight: 500;
 		color: var(--deck-muted);
 		line-height: 1.45;
