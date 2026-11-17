@@ -75,6 +75,16 @@
 		goToSlide(currentSlide - 1);
 	}
 
+	// The demo cue points at the video slide, which is the next slide on the
+	// carousel but a scroll away once the deck is stacked.
+	function goToDemo() {
+		if (stacked) {
+			document.getElementById('p9')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			return;
+		}
+		nextSlide();
+	}
+
 	function handleKey(event: KeyboardEvent) {
 		if (stacked) return;
 		const t = event.target as HTMLElement | null;
@@ -490,6 +500,22 @@
 			<h2 class="headline anim-in anim-d2">
 				We have developed <span class="hl-gold">fully autonomous factory</span> where robots and machines work together as coordinated system
 			</h2>
+			<button class="demo-cue anim-in anim-d3" type="button" onclick={goToDemo}>
+				Watch demo
+				<svg
+					class="demo-cue-arrow"
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					aria-hidden="true"
+					><line x1="4" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" /></svg
+				>
+			</button>
 		</section>
 
 		<!-- 8 · CLOUD MODELS -->
@@ -718,17 +744,16 @@
 		</section>
 
 		<!-- 13 · ASK -->
-		<section class="slide" id="p4">
-			<h2 class="headline anim-in anim-d2">
-				<span class="hl-gold">We have already built the infrastructure for autonomous factories</span>. Now we're raising seed to build
-				our patent pending rocket system designed for orbital data centers.
-			</h2>
-			<div class="split anim-in anim-d2">
-				<div class="raise-card raise-card-key">
-					<span class="raise-val">$8 million <span class="hl-gold">seed</span></span>
-				</div>
+		<section class="slide" id="p13">
+			<div class="ask-card anim-in anim-d2">
+				<span class="ask-tag">Seed round · 2026</span>
+				<span class="ask-amount">$8 million</span>
+				<p class="ask-why">
+					To build <strong class="hl-gold">reusable medium-lift vehicles</strong>, produced
+					autonomously, that stack in orbit into data centers.
+				</p>
 			</div>
-			<h2 class="headline thanks anim-in anim-d3">Thank you</h2>
+			<h2 class="ask-thanks anim-in anim-d3">Thank you</h2>
 			<div class="ask-footer anim-in anim-d3">
 				<a href="https://starforgerobotics.com" target="_blank" rel="noopener noreferrer"
 					>starforgerobotics.com</a
@@ -1579,6 +1604,41 @@
 		background: repeating-linear-gradient(180deg, var(--deck-accent) 0 5px, transparent 5px 10px);
 	}
 
+	/* ── DEMO CUE ── */
+	.demo-cue {
+		display: inline-flex;
+		align-items: center;
+		align-self: center;
+		gap: clamp(8px, 1.2vw, 14px);
+		margin-top: auto;
+		margin-bottom: auto;
+		padding: clamp(8px, 1.6vh, 14px) clamp(14px, 1.8vw, 24px);
+		background: transparent;
+		border: 2px solid rgba(240, 236, 225, 0.15);
+		color: var(--deck-accent);
+		font-family: 'Space Mono', monospace;
+		font-weight: 700;
+		font-size: clamp(10px, 1.9vmin, 14px);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: all 0.2s;
+	}
+
+	.demo-cue:hover {
+		background: rgba(240, 236, 225, 0.04);
+		border-color: rgba(240, 236, 225, 0.82);
+	}
+
+	.demo-cue-arrow {
+		flex-shrink: 0;
+		transition: transform 0.2s;
+	}
+
+	.demo-cue:hover .demo-cue-arrow {
+		transform: translateX(3px);
+	}
+
 	/* ── VIDEO ── */
 	.video-frame {
 		width: min(100%, calc((min(100vh, 100vw * 9 / 16) - 260px) * 16 / 9));
@@ -1799,7 +1859,9 @@
 		white-space: nowrap;
 	}
 
-	/* ── ASK ── */
+	/* ── ASK ──
+	   Boxed, left-aligned card in the deck's standard card idiom (fill, gold top
+	   rule), with the raise as the dominant figure and the reason under it. */
 	#p13 {
 		justify-content: center;
 		background:
@@ -1807,37 +1869,19 @@
 			var(--deck-bg);
 	}
 
-	.raise-grid {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 3px;
-		width: 100%;
-		max-width: 1320px;
-	}
-
-	.raise-card {
+	.ask-card {
 		display: flex;
 		flex-direction: column;
-		gap: clamp(6px, 1.4vh, 14px);
-		padding: clamp(18px, 4.4vh, 42px) clamp(18px, 2.4vw, 34px);
-		background: var(--deck-fill);
+		align-items: flex-start;
+		width: 100%;
+		max-width: 820px;
+		padding: clamp(20px, 4.4vh, 44px) clamp(20px, 2.6vw, 40px);
+		background: rgba(255, 176, 0, 0.055);
 		border: 2px solid rgba(240, 236, 225, 0.05);
-		border-top: 2px solid rgba(240, 236, 225, 0.2);
+		border-top: 2px solid var(--deck-accent);
 	}
 
-	.raise-card-key {
-		border-top-color: var(--deck-accent);
-	}
-
-	.raise-val {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: clamp(30px, 7.4vmin, 76px);
-		line-height: 1;
-		letter-spacing: 0.02em;
-		color: var(--deck-ink);
-	}
-
-	.raise-when {
+	.ask-tag {
 		font-family: 'Space Mono', monospace;
 		font-weight: 700;
 		font-size: clamp(9px, 1.7vmin, 13px);
@@ -1846,22 +1890,41 @@
 		color: var(--deck-accent);
 	}
 
-	.raise-card p {
+	.ask-amount {
+		margin-top: clamp(8px, 1.8vh, 18px);
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: clamp(52px, 13vmin, 136px);
+		line-height: 0.9;
+		letter-spacing: 0.02em;
+		color: var(--deck-accent);
+	}
+
+	/* Hairline separates the figure from its rationale without a second box. */
+	.ask-why {
+		margin-top: clamp(14px, 3vh, 30px);
+		padding-top: clamp(12px, 2.6vh, 26px);
+		border-top: 1px solid rgba(240, 236, 225, 0.12);
+		width: 100%;
 		font-family: 'Barlow', sans-serif;
-		font-size: clamp(14px, 2.7vmin, 22px);
+		font-size: clamp(15px, 3vmin, 26px);
 		font-weight: 500;
 		line-height: 1.45;
 		color: var(--deck-ink-2);
+		max-width: 44ch;
 	}
 
-	.raise-card p strong {
+	.ask-why strong {
 		font-weight: 700;
-		color: var(--deck-ink);
 	}
 
-	.thanks {
+	.ask-thanks {
 		margin-top: clamp(26px, 6.4vh, 64px);
+		font-family: 'Bebas Neue', sans-serif;
 		font-size: clamp(30px, 7vmin, 72px);
+		font-weight: 500;
+		line-height: 1.05;
+		letter-spacing: 0.02em;
+		color: var(--deck-ink);
 	}
 
 	.ask-footer {
@@ -1879,6 +1942,7 @@
 		text-underline-offset: 3px;
 		text-decoration-color: rgba(240, 236, 225, 0.82);
 	}
+
 	.ask-footer a:hover {
 		text-decoration-color: var(--deck-accent);
 	}
@@ -2055,15 +2119,14 @@
 		#p6 .lead,
 		.statement,
 		.partners p,
-		.raise-card p,
+		.ask-why,
 		.ledger-row dt {
 			font-size: 16px;
 		}
 
 		.split,
 		.frontier-grid,
-		.team-rows,
-		.raise-grid {
+		.team-rows {
 			display: flex;
 			flex-direction: column;
 			align-items: stretch;
@@ -2117,6 +2180,21 @@
 
 		.ledger-row dd {
 			white-space: normal;
+		}
+
+		.ask-amount {
+			font-size: clamp(48px, 14vw, 72px);
+		}
+
+		/* Stacked, the next slide is below rather than to the right, so the cue
+		   points down and nudges that way on press. */
+		.demo-cue-arrow {
+			transform: rotate(90deg);
+		}
+
+		.demo-cue:hover .demo-cue-arrow,
+		.demo-cue:active .demo-cue-arrow {
+			transform: rotate(90deg) translateX(3px);
 		}
 	}
 
