@@ -301,8 +301,8 @@
 			<div class="cover-content">
 				<div class="cover-tag anim-in anim-d1">Seed Round · 2026</div>
 				<h1 class="cover-title anim-in anim-d2">
-					Building autonomous<br />
-					<span class="hl-gold">Rocket Production factories</span>
+					Building <span class="hl-gold">Autonomous Rockets</span>
+                    <br/>for orbital data centers
 				</h1>
 				<p class="cover-sub anim-in anim-d3">StarForge Robotics</p>
 				<div class="cover-divider anim-in anim-d3"></div>
@@ -353,27 +353,33 @@
 		<!-- 3 · NEXT FRONTIER -->
 		<section class="slide" id="p3">
 			<h2 class="headline anim-in anim-d2">
-				AI changed the digital world, <span class="hl-gold">Intelligent Robots</span> are changing the
-				physical world
+            Robots and AI are the biggest drivers for <span class="hl-gold">data centers</span>
 			</h2>
-			<div class="frontier-grid anim-in anim-d3">
-				<div class="frontier-card">
-					<span class="card-num">01</span>
-					<span class="card-title">Autonomous Factories</span>
+			<div class="split split-chart anim-in anim-d3">
+				<div class="frontier-grid frontier-stack">
+					<div class="frontier-card">
+						<span class="card-num">01</span>
+						<span class="card-title">Machines already out-consume people</span>
+					</div>
+					<div class="frontier-card">
+						<span class="card-num">02</span>
+						<span class="card-title">Robots are agents with bodies</span>
+					</div>
+					<div class="frontier-card">
+						<span class="card-num">03</span>
+						<span class="card-title">All of it runs in the cloud</span>
+					</div>
 				</div>
-				<div class="frontier-card">
-					<span class="card-num">02</span>
-					<span class="card-title">Build new Cities</span>
-				</div>
-				<div class="frontier-card">
-					<span class="card-num">03</span>
-					<span class="card-title">Labour meaning redefined</span>
-				</div>
+				<figure class="split-figure chart-figure">
+					<img
+						src="/assets/pitch/agentic-token-growth.webp"
+						alt="7-day average token usage on OpenRouter by type: agentic tokens overtake human tokens in February 2026 and reach 7.3 trillion, a 14x increase in a year"
+					/>
+				</figure>
 			</div>
 			<p class="statement anim-in anim-d3">
-				Moving atoms is the <span class="hl-gold">biggest constraint</span> for civilisation level
-				progress,<br />
-				Intelligent robot solves it
+				Compute demand has decoupled from population &mdash; it now scales with the number of
+				<span class="hl-gold">machines</span>, and that curve has no ceiling.
 			</p>
 		</section>
 		<!-- 4 · MISSING PIECE -->
@@ -394,9 +400,7 @@
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
 						<p>
-							Date centers in sun synchronous orbit solve it but industry does not have <span
-								class="hl-gold">launch systems</span
-							> that can bring down the cost of payload to orbit.
+							<span class="hl-gold">Data centers in sun synchronous orbit</span> solve it but industry does not have launch systems that can bring down the cost of payload to orbit.
 						</p>
 					</div>
 				</div>
@@ -418,7 +422,7 @@
 			<div class="split anim-in anim-d3">
 				<div>
 					<p class="lead">
-						Building large reusable rockets that carry all payload in a single launch
+						Building large reusable rockets that carry most compute payload in a single launch
 					</p>
 					<div class="bullet-list plain-list">
 						<div class="bullet-item">
@@ -439,7 +443,7 @@
 		</section>
 
 		<!-- 6 · HOW WE SOLVE IT -->
-		<section class="slide" id="p4">
+		<section class="slide" id="p5">
 			<h2 class="headline anim-in anim-d2">
 				How are we <span class="hl-gold">solving it</span>?
 			</h2>
@@ -470,11 +474,8 @@
 				</div>
 				<figure class="stack-pair">
 					<img
-						src="/assets/pitch/stacked-upper-stages.jpeg"
-						alt="Upper stages stacked together in orbit"
-					/>
-					<img
-						src="/assets/pitch/starforge-rocket.jpeg"
+						class="stack-rocket"
+						src="/assets/pitch/starforge-rocket-cut.webp"
 						alt="Starforge medium lift rocket with deployed solar arrays"
 					/>
 				</figure>
@@ -506,52 +507,30 @@
 			</div>
 		</section>
 
+		<!-- 7 · ROCKETS ARE ROBOTS -->
 		<section class="slide" id="p1">
 			<h2 class="headline anim-in anim-d2">
-                Our robots are already deployed and <span class="hl-gold">automating factories</span>
+				rapid reusable <span class="hl-gold">autonomous rockets</span>
 			</h2>
-			<button class="demo-cue anim-in anim-d3" type="button" onclick={goToDemo}>
-				Watch demo
-				<svg
-					class="demo-cue-arrow"
-					width="20"
-					height="20"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					aria-hidden="true"
-					><line x1="4" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" /></svg
-				>
-			</button>
+
+			<div class="split anim-in anim-d3">
+            </div>
 		</section>
 
-		<!-- 8 · CLOUD MODELS -->
+<!--
+		<section class="slide" id="p1">
+			<h2 class="headline anim-in anim-d2">
+				We developed our <span class="hl-gold">FFSC engine in-house</span> - holy grail for reusability
+			</h2>
 
-		<!-- 9 · VIDEO (to come) -->
-		<section class="slide" id="p9">
-			<div class="video-frame anim-in anim-d2">
-				<iframe
-					bind:this={videoFrame}
-					src="https://www.youtube-nocookie.com/embed/o9j_a-makyA?enablejsapi=1&rel=0&modestbranding=1"
-					title="Starforge Robotics video"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen
-				></iframe>
-			</div>
-			<div class="video-link anim-in anim-d3">
-				<a
-					href="https://www.youtube.com/watch?v=o9j_a-makyA"
-					target="_blank"
-					rel="noopener noreferrer">Watch the demo on YouTube</a
-				>
-			</div>
+			<div class="split anim-in anim-d3">
+            </div>
 		</section>
+        -->
 
-		<!-- 9b · PAYLOAD COST -->
+
+
+		<!-- 8 · PAYLOAD COST -->
 		<section class="slide" id="p9b">
 			<h2 class="headline anim-in anim-d2">
 				With autonomous manufacturing at scale, fuel cost becomes the
@@ -608,10 +587,55 @@
 							<td>StarForge</td>
 							<td>Forge 1</td>
 							<td>600 kg</td>
-							<td>&lt; $140/kg</td>
+							<td>&lt; $100/kg</td>
 						</tr>
 					</tbody>
 				</table>
+			</div>
+		</section>
+
+		<section class="slide" id="p1">
+			<h2 class="headline anim-in anim-d2">
+                We already have the best workforce that <span class="hl-gold">weld, assemble and operate machines</span> 24x7
+			</h2>
+			<button class="demo-cue anim-in anim-d3" type="button" onclick={goToDemo}>
+				Watch demo
+				<svg
+					class="demo-cue-arrow"
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					aria-hidden="true"
+					><line x1="4" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" /></svg
+				>
+			</button>
+		</section>
+
+		<!-- 8 · CLOUD MODELS -->
+
+		<!-- 9 · VIDEO (to come) -->
+		<section class="slide" id="p9">
+			<div class="video-frame anim-in anim-d2">
+				<iframe
+					bind:this={videoFrame}
+					src="https://www.youtube-nocookie.com/embed/o9j_a-makyA?enablejsapi=1&rel=0&modestbranding=1"
+					title="Starforge Robotics video"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+				></iframe>
+			</div>
+			<div class="video-link anim-in anim-d3">
+				<a
+					href="https://www.youtube.com/watch?v=o9j_a-makyA"
+					target="_blank"
+					rel="noopener noreferrer">Watch the demo on YouTube</a
+				>
 			</div>
 		</section>
 
@@ -817,10 +841,8 @@
 		<section class="slide" id="p13">
 			<div class="ask-card anim-in anim-d2">
 				<span class="ask-tag">Seed round · 2026</span>
-				<span class="ask-amount">$8 million</span>
 				<p class="ask-why">
-					To build <strong class="hl-gold">reusable medium-lift vehicles</strong>, produced
-					autonomously, that stack in orbit into data centers.
+					To scale team and build <strong class="hl-gold">autonomous rockets</strong> for orbital data centers
 				</p>
 			</div>
 			<h2 class="ask-thanks anim-in anim-d3">Thank you</h2>
@@ -1388,7 +1410,7 @@
 	   space collect below. */
 	#p4 .split,
 	#p5 .split {
-		margin-top: clamp(16px, 4vh, 40px);
+		grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
 	}
 
 	.split-figure {
@@ -1411,6 +1433,29 @@
 		max-height: min(56vh, 460px);
 	}
 
+	/* Cited chart: light source artwork, so it gets a hairline frame to sit
+	   on the dark slide instead of floating. */
+	.split-chart {
+		grid-template-columns: minmax(0, 1.26fr) minmax(0, 0.74fr);
+	}
+
+	/* 34.9vw is the same 62% measured against a width-bound stage
+	   (100vw * 9 / 16), so the chart never outgrows the slide either way. */
+	.chart-figure img {
+		max-height: min(62vh, 34.9vw, 600px);
+		border: 1px solid var(--deck-rule);
+	}
+
+	/* The chart is the tallest block on the deck, so this slide buys it room
+	   by tightening the gaps above and below the split. */
+	#p3 .headline {
+		margin-bottom: clamp(12px, 2.6vh, 28px);
+	}
+
+	#p3 .statement {
+		margin-top: clamp(14px, 3vh, 30px);
+	}
+
 	.robot-figure img {
 		max-height: min(72vh, 740px);
 	}
@@ -1431,6 +1476,22 @@
 		background: rgba(240, 236, 225, 0.044);
 		border: 2px solid rgba(240, 236, 225, 0.05);
 		border-top: 2px solid var(--deck-accent);
+	}
+
+	/* Column variant: the same cards stacked beside a figure, so they run
+	   tighter than the three-across version. */
+	.frontier-stack {
+		grid-template-columns: minmax(0, 1fr);
+		margin-top: 0;
+	}
+
+	.frontier-stack .frontier-card {
+		gap: clamp(4px, 1vh, 10px);
+		padding: clamp(14px, 3.4vh, 30px) clamp(14px, 1.8vw, 26px);
+	}
+
+	.frontier-stack .card-title {
+		font-size: clamp(17px, 3.2vmin, 30px);
 	}
 
 	.statement {
@@ -1487,23 +1548,34 @@
 	}
 
 	.stack-pair {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: clamp(8px, 1.6vw, 20px);
+		position: relative;
+		display: block;
 		margin: 0;
 		min-width: 0;
+		height: min(72vh, 620px);
 	}
 
 	.stack-pair img {
+		position: absolute;
 		display: block;
 		width: auto;
-		max-width: 50%;
-		max-height: min(46vh, 380px);
 		object-fit: contain;
-		border-radius: 10px;
-		background: #fff;
-		padding: clamp(4px, 0.8vh, 10px);
+		filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
+	}
+
+	.stack-orbit {
+		top: -5%;
+		left: -24%;
+		max-width: 112%;
+		max-height: min(34vh, 292px);
+	}
+
+	.stack-rocket {
+		right: -8%;
+		top: 50%;
+		transform: translateY(-50%);
+		max-width: 116%;
+		max-height: min(80vh, 700px);
 	}
 
 	.kit-pair {
@@ -1732,7 +1804,7 @@
 	/* ── PAYLOAD COST TABLE ── */
 	.cost-table-wrap {
 		width: 100%;
-		max-width: 1100px;
+		max-width: 1320px;
 		margin: 0 auto;
 		overflow-x: auto;
 	}
@@ -1747,21 +1819,21 @@
 	.cost-table {
 		width: 100%;
 		border-collapse: collapse;
-		font-size: clamp(11px, 2vmin, 19px);
+		font-size: clamp(13px, 2.6vmin, 25px);
 		color: var(--deck-ink);
 	}
 
 	.cost-table th,
 	.cost-table td {
-		padding: clamp(6px, 1.4vh, 14px) clamp(8px, 1.6vmin, 20px);
+		padding: clamp(7px, 1.7vh, 18px) clamp(10px, 2vmin, 26px);
 		text-align: left;
 		white-space: nowrap;
 	}
 
 	.cost-table thead th {
 		font-family: 'Space Mono', monospace;
-		font-size: clamp(8px, 1.4vmin, 12px);
-		letter-spacing: 0.16em;
+		font-size: clamp(9.5px, 1.75vmin, 15px);
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		color: var(--deck-accent);
 		border-bottom: 1px solid var(--deck-rule);
@@ -2285,6 +2357,35 @@
 		.split-figure img,
 		.robot-figure img {
 			max-height: 42vh;
+		}
+
+		/* The chart is portrait and dense; height-capping it on a phone makes it
+		   unreadable, so let it run the full column width instead. */
+		.chart-figure img {
+			width: 100%;
+			max-height: none;
+		}
+
+		.stack-pair {
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 12px;
+		}
+
+		.stack-pair img {
+			position: static;
+			max-width: 100%;
+		}
+
+		.stack-orbit {
+			max-height: 28vh;
+		}
+
+		.stack-rocket {
+			transform: none;
+			max-height: 46vh;
 		}
 
 		.cover-figure {
