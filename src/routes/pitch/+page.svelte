@@ -359,7 +359,7 @@
 				<div class="frontier-grid frontier-stack">
 					<div class="frontier-card">
 						<span class="card-num">01</span>
-						<span class="card-title">Machines already out-consume people</span>
+						<span class="card-title">Agents already out-consume people</span>
 					</div>
 					<div class="frontier-card">
 						<span class="card-num">02</span>
@@ -475,7 +475,7 @@
 				<figure class="stack-pair">
 					<img
 						class="stack-rocket"
-						src="/assets/pitch/starforge-rocket-cut.webp"
+						src="/assets/pitch/starforge-orbital-cut.webp"
 						alt="Starforge medium lift rocket with deployed solar arrays"
 					/>
 				</figure>
@@ -514,7 +514,39 @@
 			</h2>
 
 			<div class="split anim-in anim-d3">
-            </div>
+				<div>
+					<div class="bullet-list plain-list compact-list">
+						<div class="bullet-item">
+							<span class="bullet-icon mark-no">&#10007;</span>
+							<p>
+								Starship's arm-based catch systems carry higher landing-site risk — they require
+								extreme precision when targeting a fixed catch point on the tower
+							</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon mark-yes">&#10003;</span>
+							<p>
+								StarForge rockets land on legs atop our <span class="hl-gold"
+									>patent-pending mobile platform</span
+								>
+							</p>
+						</div>
+						<div class="bullet-item">
+							<span class="bullet-icon mark-yes">&#10003;</span>
+							<p>
+								The platform transports the vehicle by road to a refueling launch tower for rapid
+								turnaround and reuse
+							</p>
+						</div>
+					</div>
+				</div>
+				<figure class="pad-figure">
+					<img
+						src="/assets/pitch/starforge-launch-pad-cut.webp"
+						alt="Starforge rocket on its autonomous launch pad alongside the integration tower"
+					/>
+				</figure>
+			</div>
 		</section>
 
 <!--
@@ -1431,6 +1463,26 @@
 
 	.split-figure-wide img {
 		max-height: min(56vh, 460px);
+	}
+
+	/* Lone portrait render with no text beside it, so it centers in the
+	   leftover space under the headline rather than sitting in a split. */
+	.pad-figure {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: auto 0;
+		min-width: 0;
+		width: 100%;
+	}
+
+	.pad-figure img {
+		display: block;
+		width: auto;
+		max-width: 100%;
+		max-height: min(72vh, 620px);
+		object-fit: contain;
+		filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
 	}
 
 	/* Cited chart: light source artwork, so it gets a hairline frame to sit
@@ -2386,6 +2438,10 @@
 		.stack-rocket {
 			transform: none;
 			max-height: 46vh;
+		}
+
+		.pad-figure img {
+			max-height: 56vh;
 		}
 
 		.cover-figure {
