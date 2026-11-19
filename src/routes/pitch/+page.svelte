@@ -527,7 +527,7 @@
 							<span class="bullet-icon mark-yes">&#10003;</span>
 							<p>
 								StarForge rockets land on legs atop our <span class="hl-gold"
-									>patent-pending mobile platform</span
+									>patent-pending mobile platform with movable surface in XY plane</span
 								>
 							</p>
 						</div>
