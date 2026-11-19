@@ -468,6 +468,16 @@
 						</div>
 					</div>
 				</div>
+				<figure class="stack-pair">
+					<img
+						src="/assets/pitch/stacked-upper-stages.jpeg"
+						alt="Upper stages stacked together in orbit"
+					/>
+					<img
+						src="/assets/pitch/starforge-rocket.jpeg"
+						alt="Starforge medium lift rocket with deployed solar arrays"
+					/>
+				</figure>
 				<!--
 				<figure class="kit-pair">
 					<img
@@ -498,7 +508,7 @@
 
 		<section class="slide" id="p1">
 			<h2 class="headline anim-in anim-d2">
-				We have developed <span class="hl-gold">fully autonomous factory</span> where robots and machines work together as coordinated system
+                Our robots are already deployed and <span class="hl-gold">automating factories</span>
 			</h2>
 			<button class="demo-cue anim-in anim-d3" type="button" onclick={goToDemo}>
 				Watch demo
@@ -538,6 +548,70 @@
 					target="_blank"
 					rel="noopener noreferrer">Watch the demo on YouTube</a
 				>
+			</div>
+		</section>
+
+		<!-- 9b · PAYLOAD COST -->
+		<section class="slide" id="p9b">
+			<h2 class="headline anim-in anim-d2">
+				With autonomous manufacturing at scale, fuel cost becomes the
+				<span class="hl-gold">payload cost to orbit</span>
+			</h2>
+			<div class="cost-table-wrap anim-in anim-d3">
+				<table class="cost-table">
+					<thead>
+						<tr>
+							<th>Company</th>
+							<th>Rocket</th>
+							<th>LEO Payload</th>
+							<th>Payload Cost to LEO</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>SpaceX</td>
+							<td>Starship V3</td>
+							<td>~100 t</td>
+							<td>&lt; $185/kg target</td>
+						</tr>
+						<tr>
+							<td>SpaceX</td>
+							<td>Falcon Heavy</td>
+							<td>Up to 63.8 t*</td>
+							<td>~$1,400/kg</td>
+						</tr>
+						<tr>
+							<td>Blue Origin</td>
+							<td>New Glenn</td>
+							<td>45 t</td>
+							<td>~$1,500–2,450/kg</td>
+						</tr>
+						<tr>
+							<td>SpaceX</td>
+							<td>Falcon 9</td>
+							<td>Up to 22.8 t*</td>
+							<td>~$2,700/kg</td>
+						</tr>
+						<tr>
+							<td>Rocket Lab</td>
+							<td>Neutron</td>
+							<td>13 t</td>
+							<td>~$5,385/kg</td>
+						</tr>
+						<tr>
+							<td>Rocket Lab</td>
+							<td>Electron</td>
+							<td>300 kg</td>
+							<td>~$29,000/kg</td>
+						</tr>
+						<tr class="cost-row-ours">
+							<td>StarForge</td>
+							<td>Forge 1</td>
+							<td>600 kg</td>
+							<td>&lt; $140/kg</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</section>
 
@@ -1412,6 +1486,26 @@
 		font-size: clamp(17px, 3.4vmin, 30px);
 	}
 
+	.stack-pair {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: clamp(8px, 1.6vw, 20px);
+		margin: 0;
+		min-width: 0;
+	}
+
+	.stack-pair img {
+		display: block;
+		width: auto;
+		max-width: 50%;
+		max-height: min(46vh, 380px);
+		object-fit: contain;
+		border-radius: 10px;
+		background: #fff;
+		padding: clamp(4px, 0.8vh, 10px);
+	}
+
 	.kit-pair {
 		display: flex;
 		flex-direction: column;
@@ -1633,6 +1727,65 @@
 
 	.demo-cue:hover .demo-cue-arrow {
 		transform: translateX(3px);
+	}
+
+	/* ── PAYLOAD COST TABLE ── */
+	.cost-table-wrap {
+		width: 100%;
+		max-width: 1100px;
+		margin: 0 auto;
+		overflow-x: auto;
+	}
+
+	/* Landscape slides have headroom under the headline; nudge the table down. */
+	@media (orientation: landscape) {
+		.cost-table-wrap {
+			margin-top: clamp(16px, 5vh, 56px);
+		}
+	}
+
+	.cost-table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: clamp(11px, 2vmin, 19px);
+		color: var(--deck-ink);
+	}
+
+	.cost-table th,
+	.cost-table td {
+		padding: clamp(6px, 1.4vh, 14px) clamp(8px, 1.6vmin, 20px);
+		text-align: left;
+		white-space: nowrap;
+	}
+
+	.cost-table thead th {
+		font-family: 'Space Mono', monospace;
+		font-size: clamp(8px, 1.4vmin, 12px);
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--deck-accent);
+		border-bottom: 1px solid var(--deck-rule);
+	}
+
+	.cost-table tbody tr {
+		border-bottom: 1px solid var(--deck-rule);
+	}
+
+	.cost-table tbody td:first-child {
+		color: var(--deck-ink-2);
+	}
+
+	.cost-table tbody td:last-child {
+		font-variant-numeric: tabular-nums;
+	}
+
+	.cost-row-ours {
+		background: rgba(255, 176, 0, 0.1);
+	}
+
+	.cost-row-ours td {
+		color: var(--deck-accent);
+		font-weight: 700;
 	}
 
 	/* ── VIDEO ── */
