@@ -519,7 +519,7 @@
 						<div class="bullet-item">
 							<span class="bullet-icon mark-no">&#10007;</span>
 							<p>
-								Starship's arm-based catch systems carry higher landing-site risk — they require
+								Starship's arm-based catch systems carry high landing-site risk — they require
 								extreme precision when targeting a fixed catch point on the tower
 							</p>
 						</div>
@@ -884,6 +884,7 @@
 			</div>
 		</section>
 
+        <!--
 		<section class="slide" id="p14">
 			<h2 class="headline anim-in anim-d2">
 				Appendix 1: Our humanoid is designed to automate both physical and digital work across
@@ -910,6 +911,7 @@
 				</div>
 			</div>
 		</section>
+        -->
 	</main>
 
 	<button class="arrow arrow-prev" onclick={prevSlide} aria-label="Previous slide">
