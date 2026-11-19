@@ -528,14 +528,13 @@
 							<p>
 								StarForge rockets land on legs atop our <span class="hl-gold"
 									>patent-pending mobile platform</span> with movable top surface
-								>
 							</p>
 						</div>
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
 							<p>
 								The platform transports the vehicle by road to a refueling launch tower for rapid
-								turnaround and reuse
+								turnaround and refueling
 							</p>
 						</div>
 					</div>
