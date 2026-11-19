@@ -61,11 +61,10 @@
 		</p>
 
 		<p>
-			We're building <strong>Buildo</strong>, an open-source humanoid robot available for $600/month,
-			designed for developers, researchers, physical AI startups, and eventually real-world
-			deployment. Our goal
-			is simple: make advanced robotics accessible to teams that today are priced out of humanoid
-			development.
+			We're building <strong>Buildo</strong>, an open-source humanoid robot available for
+			$600/month, designed for developers, researchers, physical AI startups, and eventually
+			real-world deployment. Our goal is simple: make advanced robotics accessible to teams that
+			today are priced out of humanoid development.
 		</p>
 
 		<p>But Buildo is not simply an attempt to build a cheaper humanoid.</p>
@@ -123,8 +122,8 @@
 
 		<p>
 			Instead of the large upfront cost of most industrial and research setups, it is offered as a
-			<strong>$600/month subscription</strong>. It can carry payloads of up
-			to <strong>18 pounds</strong>, has a height adjustable from <strong>four to six feet</strong>,
+			<strong>$600/month subscription</strong>. It can carry payloads of up to
+			<strong>18 pounds</strong>, has a height adjustable from <strong>four to six feet</strong>,
 			and supports accessories for collecting egocentric video and tactile data.
 		</p>
 
@@ -157,48 +156,6 @@
 			The next wave of robotics will not be won by hardware alone. It will be won by the ecosystem
 			that allows thousands of developers to teach robots new capabilities.
 		</blockquote>
-
-		<h2>From a robot to an intelligence platform</h2>
-
-		<p>
-			Developers will be able to train skills and distribute those capabilities through a skill
-			ecosystem, with the original developers retaining the entire portion of skill-token revenue.
-		</p>
-
-		<p>
-			A researcher should eventually be able to create a manipulation skill, train it, publish it,
-			and allow another robot elsewhere in the world to use it.
-		</p>
-
-		<p>
-			As more robots are deployed, more real-world data can be generated. As more developers build
-			skills, the machines become more useful. And as the intelligence layer improves, every
-			compatible robot benefits.
-		</p>
-
-		<p>
-			Our ambition is to build <strong
-				>the largest open intelligence ecosystem for moving the physical world.</strong
-			>
-		</p>
-
-		<h2>Developers are already building</h2>
-
-		<p>This isn't just a concept on a whiteboard.</p>
-
-		<p>
-			More than <strong>50 developers from universities and startups</strong> are already developing on
-			top of Buildo. One early example is Mazout Electric, which is collecting data and training robots
-			for lithium-ion battery manufacturing workflows using the platform.
-		</p>
-
-		<p>That developer-first approach is intentional.</p>
-
-		<p>
-			Our initial market isn't millions of robots walking through homes. It is the researchers,
-			robotics engineers, universities, and physical AI startups that need affordable hardware today
-			to collect data, train manipulation models, test new ideas, and deploy new robotic skills.
-		</p>
 
 		<h2>What comes next</h2>
 
