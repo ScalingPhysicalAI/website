@@ -353,7 +353,7 @@
 		<!-- 3 · NEXT FRONTIER -->
 		<section class="slide" id="p3">
 			<h2 class="headline anim-in anim-d2">
-            Robots and AI are the biggest drivers for <span class="hl-gold">data centers</span>
+            AI and robots are the biggest drivers for <span class="hl-gold">compute</span>
 			</h2>
 			<div class="split split-chart anim-in anim-d3">
 				<div class="frontier-grid frontier-stack">
@@ -370,12 +370,6 @@
 						<span class="card-title">All of it runs in the cloud</span>
 					</div>
 				</div>
-				<figure class="split-figure chart-figure">
-					<img
-						src="/assets/pitch/agentic-token-growth.webp"
-						alt="7-day average token usage on OpenRouter by type: agentic tokens overtake human tokens in February 2026 and reach 7.3 trillion, a 14x increase in a year"
-					/>
-				</figure>
 			</div>
 			<p class="statement anim-in anim-d3">
 				Compute demand has decoupled from population &mdash; it now scales with the number of
@@ -533,7 +527,7 @@
 						<div class="bullet-item">
 							<span class="bullet-icon mark-yes">&#10003;</span>
 							<p>
-								The platform transports the vehicle by road to a refueling launch tower for rapid
+								The platform transports the vehicle by road to a launch tower for rapid
 								turnaround and refueling
 							</p>
 						</div>
@@ -547,17 +541,6 @@
 				</figure>
 			</div>
 		</section>
-
-<!--
-		<section class="slide" id="p1">
-			<h2 class="headline anim-in anim-d2">
-				We developed our <span class="hl-gold">FFSC engine in-house</span> - holy grail for reusability
-			</h2>
-
-			<div class="split anim-in anim-d3">
-            </div>
-		</section>
-        -->
 
 
 
@@ -722,20 +705,6 @@
 							crypto. Writes a widely followed physical AI thesis mapping the robotics market.
 						</div>
 					</div>
-					<div class="team-card">
-						<img class="team-photo" src="/assets/team/austin.jpg" alt="" />
-						<div class="team-name">
-							<LinkedInName
-								name="Austin Sennott"
-								linkedin="https://www.linkedin.com/in/austinsennott/"
-							/>
-						</div>
-						<div class="team-role">Propulsion Engineer</div>
-						<div class="team-bio">
-							Propulsion engineer at <strong>Relativity Space</strong>. Co-founded Half Cat Rocketry
-							and open-sourced Mojave Sphinx, now built by teams worldwide.
-						</div>
-					</div>
 				</div>
                 <!--
 				<div class="team-grid team-row-rest">
@@ -833,8 +802,8 @@
 					<dd>~ $40 / kg</dd>
 				</div>
 				<div class="ledger-row">
-					<dt>Contribution profit per kg</dt>
-					<dd>~ $100 / kg</dd>
+					<dt>Contribution revenue per kg</dt>
+					<dd>~ $200 / kg</dd>
 				</div>
 			</dl>
 		</section>
@@ -882,6 +851,15 @@
 					>starforgerobotics.com</a
 				>
 			</div>
+		</section>
+
+		<section class="slide" id="p1">
+			<h2 class="headline anim-in anim-d2">
+				We have in house developed the <span class="hl-gold">Full Flow Stages Combustion engine in-house</span>
+			</h2>
+
+			<div class="split anim-in anim-d3">
+            </div>
 		</section>
 
         <!--
