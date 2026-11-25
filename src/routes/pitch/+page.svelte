@@ -385,7 +385,7 @@
 				<div class="bullet-list plain-list">
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
-						<p>AI data centers are facing environmental and power supply issues.</p>
+						<p>AI data centers are facing power supply issues.</p>
 					</div>
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
@@ -394,7 +394,7 @@
 					<div class="bullet-item">
 						<span class="bullet-icon">&#9656;</span>
 						<p>
-							<span class="hl-gold">Data centers in sun synchronous orbit</span> solve it but industry does not have launch systems that can bring down the cost of payload to orbit.
+							<span class="hl-gold">Data centers in sun synchronous orbit</span> are 100-1000x cheaper but industry does not have launch systems that can bring down the cost of payload into orbit.
 						</p>
 					</div>
 				</div>
@@ -547,7 +547,7 @@
 		<!-- 8 · PAYLOAD COST -->
 		<section class="slide" id="p9b">
 			<h2 class="headline anim-in anim-d2">
-				With autonomous manufacturing at scale, fuel cost becomes the
+				With autonomous manufacturing and re-usability, fuel cost becomes the
 				<span class="hl-gold">payload cost to orbit</span>
 			</h2>
 			<div class="cost-table-wrap anim-in anim-d3">
@@ -856,7 +856,7 @@
 
 		<section class="slide" id="p1">
 			<h2 class="headline anim-in anim-d2">
-				Appendix 1: We have in house developed the <span class="hl-gold">Full Flow Stages Combustion engine in-house</span>
+				Appendix 1: We have developed the <span class="hl-gold">Full Flow Stages Combustion engine in-house</span>
 			</h2>
 
 			<div class="split anim-in anim-d3">
