@@ -692,17 +692,18 @@
 						</div>
 					</div>
 					<div class="team-card">
-						<img class="team-photo" src="/assets/team/muskan.jpg" alt="" />
+						<img class="team-photo" src="/assets/team/austin.jpg" alt="" />
 						<div class="team-name">
 							<LinkedInName
-								name="Muskan Kalra"
-								linkedin="https://www.linkedin.com/in/muskan-kalra/"
+								name="Austin Sennott"
+								linkedin="https://www.linkedin.com/in/austinsennott/"
 							/>
 						</div>
-						<div class="team-role">Ecosystem &amp; Growth</div>
+						<div class="team-role">Propulsion Engineer</div>
 						<div class="team-bio">
-							Ex-operator at Vana, scaled builder ecosystems <strong>from 0 to 1</strong> across AI and
-							crypto. Writes a widely followed physical AI thesis mapping the robotics market.
+							Propulsion engineer at <strong>Relativity Space, Anduril, Inversion and Virgin
+							Orbit</strong>. Co-founded Half Cat Rocketry, whose open-source liquid engine designs
+							are built by student teams worldwide.
 						</div>
 					</div>
 				</div>
